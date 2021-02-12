@@ -58,6 +58,12 @@
     <Compile Include="Repository\Products\SubCategory\SubCategoryService.cs" />
     <Compile Include="Repository\Products\SubCategory\Dtos\SubCategoryDto.cs" />
     <Compile Include="Repository\Products\SubCategory\ISubCategory.cs" />
+    <Compile Include="Repository\Products\Units\SmallUnit\Dtos\SmallUnitDto.cs" />
+    <Compile Include="Repository\Products\Units\SmallUnit\ISmallUnit.cs" />
+    <Compile Include="Repository\Products\Units\SmallUnit\SmallService.cs" />
+    <Compile Include="Repository\Products\Units\LargeUnit\Dtos\LargeUnitDto.cs" />
+    <Compile Include="Repository\Products\Units\LargeUnit\ILargeUnit.cs" />
+    <Compile Include="Repository\Products\Units\LargeUnit\LargeUnitService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

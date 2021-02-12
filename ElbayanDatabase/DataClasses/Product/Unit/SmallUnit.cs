@@ -15,7 +15,9 @@ namespace ElbayanDatabase.DataClasses.Product.Unit
         public Guid Id { get; set; }
         [Required]
         public string Name { get; set; }
+        public string Description { get; set; }
         public string Weight { get; set; }
+        public bool IsDeleted { get; set; } = false;
         public ICollection<Product> Products { get; set; }
     }
 }

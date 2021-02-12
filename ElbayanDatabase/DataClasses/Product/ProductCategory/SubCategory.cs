@@ -16,6 +16,5 @@ namespace ElbayanDatabase.DataClasses.Product.ProductCategory
         public Guid CategoryId { get; set; }
         public Category Category { get; set; }
         public ICollection<Product> Products { get; set; }
-
     }
 }
