@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElbayanDatabase", "ElbayanDatabase\ElbayanDatabase.csproj", "{439D51BE-FAB1-4DD8-A480-3316ED65B7A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElbayanServices", "ElbayanServices\ElbayanServices.csproj", "{867292B3-1931-47BB-A3FA-FA0001762DA9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{439D51BE-FAB1-4DD8-A480-3316ED65B7A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{439D51BE-FAB1-4DD8-A480-3316ED65B7A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{439D51BE-FAB1-4DD8-A480-3316ED65B7A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{439D51BE-FAB1-4DD8-A480-3316ED65B7A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{867292B3-1931-47BB-A3FA-FA0001762DA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{867292B3-1931-47BB-A3FA-FA0001762DA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{867292B3-1931-47BB-A3FA-FA0001762DA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{867292B3-1931-47BB-A3FA-FA0001762DA9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EA1D0EA7-D525-4282-ABB4-7972ADBD8490}
+	EndGlobalSection
+EndGlobal
