@@ -52,6 +52,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Products\Category\CategoryService.cs" />
+    <Compile Include="Repository\Products\Category\Dtos\CategoryDto.cs" />
+    <Compile Include="Repository\Products\Category\ICategory.cs" />
+    <Compile Include="Repository\Products\SubCategory\SubCategoryService.cs" />
+    <Compile Include="Repository\Products\SubCategory\Dtos\SubCategoryDto.cs" />
+    <Compile Include="Repository\Products\SubCategory\ISubCategory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -59,7 +65,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />
-    <Folder Include="Repository\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ElbayanDatabase\ElbayanDatabase.csproj">
+      <Project>{439D51BE-FAB1-4DD8-A480-3316ED65B7A9}</Project>
+      <Name>ElbayanDatabase</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
