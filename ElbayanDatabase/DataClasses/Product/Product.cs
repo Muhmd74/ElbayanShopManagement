@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity.Migrations.Model;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ElbayanDatabase.DataClasses.Product.ProductCategory;
 using ElbayanDatabase.DataClasses.Product.Unit;
 
@@ -16,8 +12,8 @@ namespace ElbayanDatabase.DataClasses.Product
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
-        public string UCP { get; set; }
-        public string BarCode { get; set; }
+        public int UCP { get; set; }
+        public int BarCode { get; set; }
         [Required]
         public string Name { get; set; }
 
@@ -35,7 +31,8 @@ namespace ElbayanDatabase.DataClasses.Product
         public Guid SmallUnitId { get; set; }
         public bool IsDeleted { get; set; }
         public int LimitedDemand { get; set; }
-
+        public ICollection<ProductStock> ProductStocks { get; set; }
+        public ICollection<ProductPrice> ProductPrices { get; set; }
 
 
     }

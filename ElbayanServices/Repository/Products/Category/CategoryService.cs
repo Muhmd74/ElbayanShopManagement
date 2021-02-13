@@ -15,7 +15,7 @@ namespace ElbayanServices.Repository.Products.Category
            _context = context;
        }
 
-       public CategoryDto Add(CategoryDto model)
+       public string Add(CategoryDto model)
        {
            try
            {
@@ -27,16 +27,11 @@ namespace ElbayanServices.Repository.Products.Category
 
                });
                _context.SaveChanges();
-               return new CategoryDto()
-               {
-                   Name = model.Name,
-                   Description = model.Description,
-                   Id = result.Id
-               };
+               return result.Description;
            }
            catch (Exception e)
            {
-              return null;
+              return e.Message;
            }
        }
 

@@ -9,7 +9,7 @@ namespace ElbayanServices.Repository.Products.Category
 {
     public interface ICategory
     {
-        CategoryDto Add(CategoryDto model);
+        string Add(CategoryDto model);
         CategoryDto Update(CategoryDto model);
         bool DeleteOrRestore(Guid id);
         List<CategoryDto> GetAll();

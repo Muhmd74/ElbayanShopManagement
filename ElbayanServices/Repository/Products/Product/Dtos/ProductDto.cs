@@ -11,8 +11,8 @@ namespace ElbayanServices.Repository.Products.Product.Dtos
    public class ProductDto
     {
         public Guid Id { get; set; }
-        public string UCP { get; set; }
-        public string BarCode { get; set; }
+        public int UCP { get; set; }
+        public int BarCode { get; set; }
          public string Name { get; set; }
         public string Description { get; set; }
         public decimal DefaultPrice { get; set; }

@@ -61,7 +61,7 @@ namespace ElbayanServices.Repository.Products.Units.LargeUnit
 
         public List<LargeUnitDto> GetAllLargeUnit()
         {
-            var model = _context.LargeUnits.Select(d => new LargeUnitDto()
+            var model = _context.LargeUnits.Where(d=>d.IsDeleted==false).Select(d => new LargeUnitDto()
             {
                 Description = d.Description,
                 Name = d.Name,

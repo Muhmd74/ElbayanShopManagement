@@ -6,22 +6,22 @@ using ElbayanServices.Repository.Products.Units.SmallUnit.Dtos;
 
 namespace ElbayanServices.Repository.Products.Units.SmallUnit
 {
-   public class SmallService :ISmallUnit
-   {
-       private readonly ConnectionOption _context;
+    public class SmallService : ISmallUnit
+    {
+        private readonly ConnectionOption _context;
 
-       public SmallService(ConnectionOption context)
-       {
-           _context = context;
-       }
+        public SmallService(ConnectionOption context)
+        {
+            _context = context;
+        }
 
-       public bool Add(SmallUnitDto model)
+        public bool Add(SmallUnitDto model)
         {
             var result = _context.SmallUnits.Add(
                 new ElbayanDatabase.DataClasses.Product.Unit.SmallUnit()
                 {
                     Name = model.Name,
-                   Description  = model.Description,
+                    Description = model.Description,
                     IsDeleted = false
                 });
             _context.SaveChanges();
@@ -59,7 +59,7 @@ namespace ElbayanServices.Repository.Products.Units.SmallUnit
 
         public List<SmallUnitDto> GetAllSmallUnit()
         {
-            var model = _context.SmallUnits.Select(d => new SmallUnitDto()
+            var model = _context.SmallUnits.Where(d=>d.IsDeleted==false).Select(d => new SmallUnitDto()
             {
                 Description = d.Description,
                 Name = d.Name,

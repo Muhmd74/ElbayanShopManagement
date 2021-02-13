@@ -29,35 +29,38 @@ namespace ElbayanDatabase.ConnectionTools
         public DbSet<LargeUnit> LargeUnits { get; set; }
         public DbSet<SmallUnit> SmallUnits { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<ProductPrice> ProductPrices { get; set; }
+        public DbSet<ProductStock> ProductStocks { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Role>()
+            modelBuilder.Entity<Role>()// Role : MemberRoles
                 .HasMany(d=>d.MemberRoles)
                 .WithRequired(d=>d.Role)
                 .HasForeignKey(d=>d.RoleId)
                 .WillCascadeOnDelete(true);
-            modelBuilder.Entity<Member>()
+            modelBuilder.Entity<Member>()//Member : MemberRole
                 .HasMany(d=>d.MemberRoles)
                 .WithRequired(d=>d.Member)
                 .HasForeignKey(d=>d.MemberId)
                 .WillCascadeOnDelete(true);
             //Product
-            modelBuilder.Entity<Category>()
+            modelBuilder.Entity<Category>()//Category : SubCategory
                 .HasMany(d=>d.SubCategories)
                 .WithRequired(d=>d.Category)
                 .HasForeignKey(d=>d.CategoryId)
                 .WillCascadeOnDelete(true);
-            modelBuilder.Entity<SubCategory>()
+            modelBuilder.Entity<SubCategory>()//SubCategory Product
                 .HasMany(d=>d.Products)
                 .WithRequired(d=>d.SubCategory)
                 .HasForeignKey(d=>d.SubCategoryId)
                 .WillCascadeOnDelete(true);
-            modelBuilder.Entity<LargeUnit>()
+            modelBuilder.Entity<LargeUnit>()//LargeUnit: Product
                 .HasMany(d=>d.Products)
                 .WithRequired(d=>d.LargeUnit)
                 .HasForeignKey(d=>d.LargeUnitId)
                 .WillCascadeOnDelete(true);
-            modelBuilder.Entity<SmallUnit>()
+            modelBuilder.Entity<SmallUnit>() // SmallUnit : Product
                 .HasMany(d=>d.Products)
                 .WithRequired(d=>d.SmallUnit)
                 .HasForeignKey(d=>d.SmallUnitId)
@@ -65,8 +68,16 @@ namespace ElbayanDatabase.ConnectionTools
             modelBuilder.Entity<Category>()
                 .Property(d => d.Id)
                 .Equals(Guid.NewGuid());
-
-
+            modelBuilder.Entity<Product>()//Product : ProductPrices
+                .HasMany(d=>d.ProductPrices)
+                .WithRequired(d=>d.Product)
+                .HasForeignKey(d=>d.ProductId)
+                .WillCascadeOnDelete(true);
+            modelBuilder.Entity<Product>()//Product : ProductStocks
+                .HasMany(d=>d.ProductStocks)
+                .WithRequired(d=>d.Product)
+                .HasForeignKey(d=>d.ProductId)
+                .WillCascadeOnDelete(true);
             base.OnModelCreating(modelBuilder);
         }
     }
