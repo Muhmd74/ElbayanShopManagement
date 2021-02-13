@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ElbayanDatabase.ConnectionTools;
 using ElbayanServices.Repository.Products.SubCategory.Dtos;
+using ElbayanServices.Repository.Products.SubCategory.Validators;
 
 namespace ElbayanServices.Repository.Products.SubCategory
 {
@@ -19,20 +20,25 @@ namespace ElbayanServices.Repository.Products.SubCategory
        {
            try
            {
-               var result = _context.SubCategories.Add(new ElbayanDatabase.DataClasses.Product.ProductCategory.SubCategory
+               if (CreateSubCategoryValidator.IsUnique(model.Name))
                {
-                   Name = model.Name,
-                   Description = model.Description,
-                   CategoryId = model.CategoryId
+                   var result = _context.SubCategories.Add(new ElbayanDatabase.DataClasses.Product.ProductCategory.SubCategory
+                   {
+                       Name = model.Name,
+                       Description = model.Description,
+                       CategoryId = model.CategoryId
 
-               });
-               _context.SaveChanges();
-               return new SubCategoryDto()
-               {
-                   Name = model.Name,
-                   Description = model.Description,
-                   Id = result.Id
-               };
+                   });
+                   _context.SaveChanges();
+                   return new SubCategoryDto()
+                   {
+                       Name = model.Name,
+                       Description = model.Description,
+                       Id = result.Id
+                   };
+               }
+
+               return null;
            }
            catch (Exception e)
            {
@@ -42,22 +48,20 @@ namespace ElbayanServices.Repository.Products.SubCategory
 
         public SubCategoryDto Update(SubCategoryDto model)
         {
+            if (!CreateSubCategoryValidator.IsUnique(model.Name)) return null;
             var result = _context.SubCategories.FirstOrDefault(d => d.Id == model.Id);
-            if (result!=null)
+            if (result == null) return null;
+            result.Description = model.Description;
+            result.Name = model.Name;
+            result.CategoryId = model.CategoryId;
+            _context.SaveChanges();
+            return new SubCategoryDto()
             {
-                result.Description = model.Description;
-                result.Name = model.Name;
-                result.CategoryId = model.CategoryId;
-                _context.SaveChanges();
-                return new SubCategoryDto()
-                {
-                    Name = model.Name,
-                    Description = model.Description,
-                    Id = result.Id
-                };
-            }
+                Name = model.Name,
+                Description = model.Description,
+                Id = result.Id
+            };
 
-            return null;
         }
 
         public bool Delete(Guid id)

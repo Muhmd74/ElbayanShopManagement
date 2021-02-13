@@ -5,7 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ElbayanDatabase.ConnectionTools;
+using ElbayanServices.Common;
 using ElbayanServices.Repository.Products.Product.Dtos;
+using ElbayanServices.Repository.Products.Product.Validators;
 
 namespace ElbayanServices.Repository.Products.Product
 {
@@ -19,35 +21,41 @@ namespace ElbayanServices.Repository.Products.Product
             _context = context;
         }
 
+       
         public bool Add(ProductDto model)
         {
-            Random randomNumber = new Random();
-            var result = _context.Products.Add(new ElbayanDatabase.DataClasses.Product.Product()
+            if (CreateProductValidator.IsUnique(model.Name)&&CreateProductValidator.BarCodeIsUnique(model.BarCode))
             {
-                Description = model.Description,
-                Name = model.Name,
-                BarCode = model.BarCode,
-                DefaultPrice = model.DefaultPrice,
-                IsExpired = model.IsExpired,
-                LargeUnitId = model.LargeUnitId,
-                LimitedDemand = model.LimitedDemand,
-                ProductNumber = randomNumber.Next(0, Int32.MaxValue),
-                SmallUnitId = model.SmallUnitId,
-                SubCategoryId = model.SubCategoryId,
-                UCP = model.UCP,
-                IsDeleted = false,
-                DateTime = DateTime.UtcNow
-            });
-            _context.SaveChanges();
-            return true;
+                var result = _context.Products.Add(new ElbayanDatabase.DataClasses.Product.Product()
+                {
+                    Description = model.Description,
+                    Name = model.Name,
+                    BarCode = model.BarCode,
+                    DefaultPrice = model.DefaultPrice,
+                    IsExpired = model.IsExpired,
+                    LargeUnitId = model.LargeUnitId,
+                    LimitedDemand = model.LimitedDemand,
+                    ProductNumber = GeneratorRandomNumber(),
+                    SmallUnitId = model.SmallUnitId,
+                    SubCategoryId = model.SubCategoryId,
+                    UCP = model.UCP,
+                    IsDeleted = false,
+                    DateTime = DateTime.UtcNow
+                });
+                _context.SaveChanges();
+                return true;
+            }
+
+            return false;
 
         }
 
         public bool Update(ProductDto model)
         {
-            var result = _context.Products.FirstOrDefault(d => d.Id == model.Id);
-            if (result != null)
+            if (CreateProductValidator.IsUnique(model.Name) && CreateProductValidator.BarCodeIsUnique(model.BarCode))
             {
+                var result = _context.Products.FirstOrDefault(d => d.Id == model.Id);
+                if (result == null) return false;
                 result.Description = model.Description;
                 result.Name = model.Name;
                 result.BarCode = model.BarCode;
@@ -61,7 +69,6 @@ namespace ElbayanServices.Repository.Products.Product
                 return true;
 
             }
-
             return false;
         }
 
@@ -181,7 +188,17 @@ namespace ElbayanServices.Repository.Products.Product
 
             return null;
         }
-
+        public long GeneratorRandomNumber()
+        {
+            while (true)
+            {
+                var number = new Random().NextLong(0, long.MaxValue);
+                if (!_context.Products.Any(d => d.ProductNumber == number))
+                {
+                    return number;
+                }
+            }
+        }
         public void Dispose()
         {
             _context.Dispose();

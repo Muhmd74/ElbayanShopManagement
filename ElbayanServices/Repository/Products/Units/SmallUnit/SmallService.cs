@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ElbayanDatabase.ConnectionTools;
 using ElbayanServices.Repository.Products.Units.SmallUnit.Dtos;
+using ElbayanServices.Repository.Products.Units.SmallUnit.Validators;
 
 namespace ElbayanServices.Repository.Products.Units.SmallUnit
 {
@@ -17,23 +18,29 @@ namespace ElbayanServices.Repository.Products.Units.SmallUnit
 
         public bool Add(SmallUnitDto model)
         {
-            var result = _context.SmallUnits.Add(
-                new ElbayanDatabase.DataClasses.Product.Unit.SmallUnit()
-                {
-                    Name = model.Name,
-                    Description = model.Description,
-                    IsDeleted = false
-                });
-            _context.SaveChanges();
-            return true;
+            if (CreateSmallUnitValidator.IsUnique(model.Name))
+            {
+                var result = _context.SmallUnits.Add(
+                    new ElbayanDatabase.DataClasses.Product.Unit.SmallUnit()
+                    {
+                        Name = model.Name,
+                        Description = model.Description,
+                        IsDeleted = false
+                    });
+                _context.SaveChanges();
+                return true;
+            }
+
+            return false;
 
         }
 
         public bool Update(SmallUnitDto model)
         {
-            var result = _context.SmallUnits.FirstOrDefault(d => d.Id == model.Id);
-            if (result != null)
+            if (CreateSmallUnitValidator.IsUnique(model.Name))
             {
+                var result = _context.SmallUnits.FirstOrDefault(d => d.Id == model.Id);
+                if (result == null) return false;
                 result.Description = model.Description;
                 result.Name = model.Name;
                 _context.SaveChanges();

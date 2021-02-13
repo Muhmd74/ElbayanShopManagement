@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ElbayanDatabase.ConnectionTools;
 using ElbayanServices.Repository.Products.Units.LargeUnit.Dtos;
+using ElbayanServices.Repository.Products.Units.LargeUnit.Validators;
 
 namespace ElbayanServices.Repository.Products.Units.LargeUnit
 {
@@ -19,30 +20,31 @@ namespace ElbayanServices.Repository.Products.Units.LargeUnit
 
         public bool Add(LargeUnitDto model)
         {
-            var result = _context.LargeUnits.Add(
-                new ElbayanDatabase.DataClasses.Product.Unit.LargeUnit()
-                {
-                    Name = model.Name,
-                    Description = model.Description,
-                    IsDeleted = false
-                });
-            _context.SaveChanges();
-            return true;
-
-        }
-
-        public bool Update(LargeUnitDto model)
-        {
-            var result = _context.LargeUnits.FirstOrDefault(d => d.Id == model.Id);
-            if (result!=null)
+            if (CreateLargeUnitValidator.IsUnique(model.Name))
             {
-                result.Description = model.Description;
-                result.Name = model.Name;
+                var result = _context.LargeUnits.Add(
+                    new ElbayanDatabase.DataClasses.Product.Unit.LargeUnit()
+                    {
+                        Name = model.Name,
+                        Description = model.Description,
+                        IsDeleted = false
+                    });
                 _context.SaveChanges();
                 return true;
             }
 
             return false;
+        }
+
+        public bool Update(LargeUnitDto model)
+        {
+            if (!CreateLargeUnitValidator.IsUnique(model.Name)) return false;
+            var result = _context.LargeUnits.FirstOrDefault(d => d.Id == model.Id);
+            if (result == null) return false;
+            result.Description = model.Description;
+            result.Name = model.Name;
+            _context.SaveChanges();
+            return true;
 
         }
 

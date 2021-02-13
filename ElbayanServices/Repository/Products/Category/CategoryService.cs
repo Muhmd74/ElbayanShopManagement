@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ElbayanDatabase.ConnectionTools;
 using ElbayanServices.Repository.Products.Category.Dtos;
+using ElbayanServices.Repository.Products.Category.Validators;
 
 namespace ElbayanServices.Repository.Products.Category
 {
@@ -19,15 +20,20 @@ namespace ElbayanServices.Repository.Products.Category
        {
            try
            {
-               var result = _context.Categories.Add(new ElbayanDatabase.DataClasses.Product.ProductCategory.Category()
+               if (CreateCategoryValidator.IsUnique(model.Name))
                {
-                   Name = model.Name,
-                   Description = model.Description,
-                   IsDeleted = false,
+                   var result = _context.Categories.Add(new ElbayanDatabase.DataClasses.Product.ProductCategory.Category()
+                   {
+                       Name = model.Name,
+                       Description = model.Description,
+                       IsDeleted = false,
 
-               });
-               _context.SaveChanges();
-               return result.Description;
+                   });
+                   _context.SaveChanges();
+                   return result.Description;
+               }
+
+               return $"{model.Name} موجود بالفعل ";
            }
            catch (Exception e)
            {
@@ -37,9 +43,10 @@ namespace ElbayanServices.Repository.Products.Category
 
         public CategoryDto Update(CategoryDto model)
         {
-            var result = _context.Categories.FirstOrDefault(d => d.Id == model.Id);
-            if (result!=null)
+            if (CreateCategoryValidator.IsUnique(model.Name))
             {
+                var result = _context.Categories.FirstOrDefault(d => d.Id == model.Id);
+                if (result == null) return null;
                 result.Description = model.Description;
                 result.Name = model.Name;
                 _context.SaveChanges();
@@ -49,8 +56,8 @@ namespace ElbayanServices.Repository.Products.Category
                     Description = model.Description,
                     Id = result.Id
                 };
-            }
 
+            }
             return null;
         }
 
