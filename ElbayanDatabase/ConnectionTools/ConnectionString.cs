@@ -20,6 +20,7 @@ namespace ElbayanDatabase.ConnectionTools
                 InitialCatalog = "ElBayan",
                 IntegratedSecurity = true,
                 DataSource = @".\SQLEXPRESS",
+                MultipleActiveResultSets = true,
                 ApplicationName = "Elbayan"
             };
             return buillder.ConnectionString;

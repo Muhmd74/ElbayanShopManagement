@@ -55,6 +55,10 @@
     <Compile Include="Repository\Products\Category\CategoryService.cs" />
     <Compile Include="Repository\Products\Category\Dtos\CategoryDto.cs" />
     <Compile Include="Repository\Products\Category\ICategory.cs" />
+    <Compile Include="Repository\Products\Product\Dtos\ProductDto.cs" />
+    <Compile Include="Repository\Products\Product\Dtos\ProductNameDto.cs" />
+    <Compile Include="Repository\Products\Product\IProduct.cs" />
+    <Compile Include="Repository\Products\Product\ProductService.cs" />
     <Compile Include="Repository\Products\SubCategory\SubCategoryService.cs" />
     <Compile Include="Repository\Products\SubCategory\Dtos\SubCategoryDto.cs" />
     <Compile Include="Repository\Products\SubCategory\ISubCategory.cs" />
