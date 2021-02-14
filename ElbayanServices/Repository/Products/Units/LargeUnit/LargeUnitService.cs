@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ElbayanDatabase.ConnectionTools;
 using ElbayanServices.Repository.Products.Units.LargeUnit.Dtos;
 using ElbayanServices.Repository.Products.Units.LargeUnit.Validators;
@@ -20,7 +18,7 @@ namespace ElbayanServices.Repository.Products.Units.LargeUnit
 
         public bool Add(LargeUnitDto model)
         {
-            if (CreateLargeUnitValidator.IsUnique(model.Name))
+            if (LargeUnitResolution.IsUnique(model.Name))
             {
                 var result = _context.LargeUnits.Add(
                     new ElbayanDatabase.DataClasses.Product.Unit.LargeUnit()
@@ -38,7 +36,7 @@ namespace ElbayanServices.Repository.Products.Units.LargeUnit
 
         public bool Update(LargeUnitDto model)
         {
-            if (!CreateLargeUnitValidator.IsUnique(model.Name)) return false;
+            if (!LargeUnitResolution.IsUnique(model.Name)) return false;
             var result = _context.LargeUnits.FirstOrDefault(d => d.Id == model.Id);
             if (result == null) return false;
             result.Description = model.Description;

@@ -8,7 +8,6 @@ namespace ElbayanServices.Common
 {
     public static class StaticGenerator
     {
-        
         public static long NextLong(this Random random, long max, long min)
         {
             if (max <= min)

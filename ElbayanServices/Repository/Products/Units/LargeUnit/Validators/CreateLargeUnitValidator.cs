@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ElbayanDatabase.ConnectionTools;
+﻿using ElbayanServices.Repository.Products.Units.LargeUnit.Dtos;
+using FluentValidation;
 
 namespace ElbayanServices.Repository.Products.Units.LargeUnit.Validators
 {
-    public class CreateLargeUnitValidator 
+    public class CreateLargeUnitValidator : AbstractValidator<LargeUnitDto>
     {
-        public static bool IsUnique(string name)
+        public CreateLargeUnitValidator()
         {
-            var context = new ConnectionOption();
-            var largeName = context.LargeUnits.Any(d => d.Name == name);
-            context.Dispose();
-            return largeName;
+            //Name
+            RuleFor(d => d.Name)
+                .NotNull().WithMessage("يجب ألا يكون الحقل فارغاً")
+                .NotEmpty().WithMessage("يجب ألا يكون الحقل فارغاً")
+                .Must(LargeUnitResolution.IsUnique).WithMessage("الاسم موجود بالفعل");
         }
+
     }
 }

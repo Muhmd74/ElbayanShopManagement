@@ -20,7 +20,7 @@ namespace ElbayanServices.Repository.Products.SubCategory
        {
            try
            {
-               if (CreateSubCategoryValidator.IsUnique(model.Name))
+               if (SubCategoryResolution.IsUnique(model.Name))
                {
                    var result = _context.SubCategories.Add(new ElbayanDatabase.DataClasses.Product.ProductCategory.SubCategory
                    {
@@ -48,7 +48,7 @@ namespace ElbayanServices.Repository.Products.SubCategory
 
         public SubCategoryDto Update(SubCategoryDto model)
         {
-            if (!CreateSubCategoryValidator.IsUnique(model.Name)) return null;
+            if (!SubCategoryResolution.IsUnique(model.Name)) return null;
             var result = _context.SubCategories.FirstOrDefault(d => d.Id == model.Id);
             if (result == null) return null;
             result.Description = model.Description;

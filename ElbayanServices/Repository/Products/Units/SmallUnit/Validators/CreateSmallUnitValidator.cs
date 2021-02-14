@@ -1,16 +1,19 @@
-﻿using System.Linq;
-using ElbayanDatabase.ConnectionTools;
+﻿using ElbayanServices.Repository.Products.Units.SmallUnit.Dtos;
+using FluentValidation;
 
 namespace ElbayanServices.Repository.Products.Units.SmallUnit.Validators
 {
-    public class CreateSmallUnitValidator 
+    public class CreateSmallUnitValidator :AbstractValidator<SmallUnitDto>
     {
-        public static bool IsUnique(string name)
+        public CreateSmallUnitValidator()
         {
-            var context = new ConnectionOption();
-            var smallUnit = context.SmallUnits.Any(d => d.Name == name);
-            context.Dispose();
-            return smallUnit;
+            //Name
+            RuleFor(d => d.Name)
+                .NotNull().WithMessage("يجب ألا يكون الحقل فارغاً")
+                .NotEmpty().WithMessage("يجب ألا يكون الحقل فارغاً")
+                .Must(SmallUnitResolution.IsUnique).WithMessage("الاسم موجود بالفعل");
+
         }
+
     }
 }

@@ -1,16 +1,22 @@
 ﻿using System.Linq;
 using ElbayanDatabase.ConnectionTools;
+using ElbayanServices.Repository.Products.SubCategory.Dtos;
+using FluentValidation;
 
 namespace ElbayanServices.Repository.Products.SubCategory.Validators
 {
-    public class CreateSubCategoryValidator 
+    public class CreateSubCategoryValidator :AbstractValidator<SubCategoryDto>
     {
-        public static bool IsUnique(string name)
+        
+        public CreateSubCategoryValidator()
         {
-            var context = new ConnectionOption();
-            var isUnique = context.SubCategories.Any(d => d.Name == name);
-            context.Dispose();
-            return isUnique;
+            //Name
+            RuleFor(d => d.Name)
+                .NotNull().WithMessage("يجب ألا يكون الحقل فارغاً")
+                .NotEmpty().WithMessage("يجب ألا يكون الحقل فارغاً")
+                .Must(SubCategoryResolution.IsUnique).WithMessage("الاسم موجود بالفعل");
+
         }
+       
     }
 }

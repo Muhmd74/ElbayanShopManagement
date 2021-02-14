@@ -18,7 +18,7 @@ namespace ElbayanServices.Repository.Products.Units.SmallUnit
 
         public bool Add(SmallUnitDto model)
         {
-            if (CreateSmallUnitValidator.IsUnique(model.Name))
+            if (SmallUnitResolution.IsUnique(model.Name))
             {
                 var result = _context.SmallUnits.Add(
                     new ElbayanDatabase.DataClasses.Product.Unit.SmallUnit()
@@ -37,7 +37,7 @@ namespace ElbayanServices.Repository.Products.Units.SmallUnit
 
         public bool Update(SmallUnitDto model)
         {
-            if (CreateSmallUnitValidator.IsUnique(model.Name))
+            if (SmallUnitResolution.IsUnique(model.Name))
             {
                 var result = _context.SmallUnits.FirstOrDefault(d => d.Id == model.Id);
                 if (result == null) return false;

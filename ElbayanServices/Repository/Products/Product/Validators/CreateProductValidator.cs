@@ -1,23 +1,28 @@
-﻿using System.Linq;
+﻿using System.Globalization;
+using System.Linq;
 using ElbayanDatabase.ConnectionTools;
+using ElbayanServices.Repository.Products.Product.Dtos;
+using FluentValidation;
 
 namespace ElbayanServices.Repository.Products.Product.Validators
 {
-    public class CreateProductValidator 
+    public class CreateProductValidator : AbstractValidator<ProductDto>
     {
-        public static bool IsUnique(string name)
+        public CreateProductValidator()
         {
-            var context = new ConnectionOption();
-            var isUnique = !context.Products.Any(d => d.Name == name);
-            context.Dispose();
-            return isUnique;
+            //Name
+            RuleFor(d => d.Name)
+                .NotEmpty().WithMessage("يجب ألا يكون الحقل فارغاً")
+                .NotNull().WithMessage("يجب ألا يكون الحقل فارغاً")
+                .Must(ProductResolution.IsUnique).WithMessage("الاسم موجود بالفعل");
+            //DefaultPrice
+            RuleFor(d => d.DefaultPrice)
+                .NotEmpty().WithMessage("يجب ألا يكون الحقل فارغاً")
+                .NotNull().WithMessage("يجب ألا يكون الحقل فارغاً");
+            //BarCode
+            RuleFor(d => d.BarCode)
+                .Must(ProductResolution.BarCodeIsUnique).WithMessage("الرمز الشريطي  موجود بالفعل");
         }
-        public static bool BarCodeIsUnique(int barCode)
-        {
-            var context = new ConnectionOption();
-            var barCodeIsUnique =! context.Products.Any(d => d.BarCode == barCode);
-            context.Dispose();
-            return barCodeIsUnique;
-        }
+       
     }
 }
