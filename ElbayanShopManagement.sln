@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElbayanDatabase", "ElbayanD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElbayanServices", "ElbayanServices\ElbayanServices.csproj", "{867292B3-1931-47BB-A3FA-FA0001762DA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElbayanPresentation", "..\..\ElbayanPresentation\ElbayanPresentation\ElbayanPresentation.csproj", "{7A22F071-788C-47DC-82DE-41D6E58EAE34}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElbayanPresentation", "ElbayanPresentation\ElbayanPresentation.csproj", "{7A22F071-788C-47DC-82DE-41D6E58EAE34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
