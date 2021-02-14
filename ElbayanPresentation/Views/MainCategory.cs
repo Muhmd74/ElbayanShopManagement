@@ -16,6 +16,7 @@ namespace ElbayanPresentation.Views
         public MainCategory()
         {
             InitializeComponent();
+            Presenter = new MainCategoryPresenter(this);
         }
 
         public string CategoryName { get => txtCategoryName.Text; set => txtCategoryName.Text = value; }
@@ -24,7 +25,8 @@ namespace ElbayanPresentation.Views
 
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
-            Presenter = new MainCategoryPresenter(this);
+            Presenter.click();
+           
         }
     }
 }
