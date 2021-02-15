@@ -32,5 +32,10 @@ namespace ElbayaNPresentation
         {
             Ribbon.SelectPage(ribbonPage1);
         }
+
+        private void accordionControl1_Click(object sender, EventArgs e)
+        {
+            Ribbon.SelectPage(ribbonPage1);
+        }
     }
 }
