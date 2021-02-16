@@ -1,7 +1,7 @@
 ﻿
 namespace ElbayaNPresentation.Views.Store.Category
 {
-    partial class Maincategory
+    partial class ucMaincategory
     {
         /// <summary> 
         /// Required designer variable.

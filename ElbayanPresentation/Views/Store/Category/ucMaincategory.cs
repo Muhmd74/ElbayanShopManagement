@@ -11,19 +11,19 @@ using System.Windows.Forms;
 
 namespace ElbayaNPresentation.Views.Store.Category
 {
-    public partial class Maincategory : DevExpress.XtraEditors.XtraUserControl
+    public partial class ucMaincategory : DevExpress.XtraEditors.XtraUserControl
     {
-        private static Maincategory _instance;
-        public static Maincategory Instance
+        private static ucMaincategory _instance;
+        public static ucMaincategory Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new Maincategory();
+                    _instance = new ucMaincategory();
                 return _instance;
             }
         }
-        public Maincategory()
+        public ucMaincategory()
         {
             InitializeComponent();
         }

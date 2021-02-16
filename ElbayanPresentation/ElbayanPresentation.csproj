@@ -72,11 +72,11 @@
     <Compile Include="Presenters\Store\Category\SubCategory\IViewSubCategory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\Store\Category\Maincategory.cs">
+    <Compile Include="Views\Store\Category\ucMaincategory.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Store\Category\Maincategory.Designer.cs">
-      <DependentUpon>Maincategory.cs</DependentUpon>
+    <Compile Include="Views\Store\Category\ucMaincategory.Designer.cs">
+      <DependentUpon>ucMaincategory.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="StartUp\frmMainBoard.resx">
       <DependentUpon>frmMainBoard.cs</DependentUpon>
@@ -91,8 +91,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\Store\Category\Maincategory.resx">
-      <DependentUpon>Maincategory.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Store\Category\ucMaincategory.resx">
+      <DependentUpon>ucMaincategory.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
