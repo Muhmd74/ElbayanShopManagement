@@ -9,9 +9,9 @@ namespace ElbayaNPresentation.Presenters.Store.Category.MainCategory
 {
     public interface IViewMainCategory
     {
-        string Name { get; set; }
+        string MainCategoryName { get; set; }
 
-        string Description { get; set; }
+        string MainCategoryDescription { get; set; }
 
         List<CategoryDto> MainCategory { get; set; }
 
