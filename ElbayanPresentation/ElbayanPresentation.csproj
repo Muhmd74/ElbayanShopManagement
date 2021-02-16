@@ -62,6 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Presenters\Store\Category\MainCategory\MainCategoryPresenter.cs" />
     <Compile Include="StartUp\frmMainBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,7 +109,16 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ElbayanDatabase\ElbayanDatabase.csproj">
+      <Project>{439d51be-fab1-4dd8-a480-3316ed65b7a9}</Project>
+      <Name>ElbayanDatabase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ElbayanServices\ElbayanServices.csproj">
+      <Project>{867292b3-1931-47bb-a3fa-fa0001762da9}</Project>
+      <Name>ElbayanServices</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

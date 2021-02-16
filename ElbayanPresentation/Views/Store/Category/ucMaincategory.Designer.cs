@@ -31,6 +31,7 @@ namespace ElbayaNPresentation.Views.Store.Category
         {
             this.gcMainCategory = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.gcMainCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
@@ -51,10 +52,18 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.gridView1.GridControl = this.gcMainCategory;
             this.gridView1.Name = "gridView1";
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(91, 33);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(292, 128);
+            this.panel1.TabIndex = 1;
+            // 
             // ucMaincategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.gcMainCategory);
             this.Name = "ucMaincategory";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -69,5 +78,6 @@ namespace ElbayaNPresentation.Views.Store.Category
 
         private DevExpress.XtraGrid.GridControl gcMainCategory;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
