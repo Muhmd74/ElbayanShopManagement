@@ -11,15 +11,15 @@ namespace ElbayanDatabase.ConnectionTools
     {
         public static string Create()
         {
-            return DevMachine();
+            return GetConnectionDetails();
         }
-        private static string DevMachine()
+        private static string GetConnectionDetails()
         {
             var buillder = new SqlConnectionStringBuilder()
             {
                 InitialCatalog = "ElBayan",
                 IntegratedSecurity = true,
-                DataSource = @".\SQLEXPRESS",
+                DataSource = @".",
                 MultipleActiveResultSets = true,
                 ApplicationName = "Elbayan"
             };
