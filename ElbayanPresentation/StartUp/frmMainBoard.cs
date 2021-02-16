@@ -21,13 +21,6 @@ namespace ElbayaNPresentation
             InitializeComponent();
         }
 
-        //async Task LoadModuleAsync(ModuleInfo module)
-        //{
-        //    await Task.Factory.StartNew(m =>
-        //   {
-
-        //   });
-        //}
 
         private void accordionControlElement21_Click(object sender, EventArgs e)
         {
