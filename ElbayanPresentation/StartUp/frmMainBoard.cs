@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.DXperience.Demos;
+using ElbayaNPresentation.Views.Store.Category;
 
 namespace ElbayaNPresentation
 {
@@ -31,6 +32,14 @@ namespace ElbayaNPresentation
         private void accordionControlElement21_Click(object sender, EventArgs e)
         {
             Ribbon.SelectPage(ribbonPage1);
+            if (!gcContainer.Controls.Contains(ucMaincategory.Instance))
+            {
+                gcContainer.Controls.Add(ucMaincategory.Instance);
+                ucMaincategory.Instance.Dock = DockStyle.Fill;
+                ucMaincategory.Instance.BringToFront();
+            }
+            ucMaincategory.Instance.BringToFront();
+
         }
 
         private void accordionControl1_Click(object sender, EventArgs e)
