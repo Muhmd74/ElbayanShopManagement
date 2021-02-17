@@ -36,8 +36,12 @@ namespace ElbayaNPresentation.Presenters.Store.Category.SubCategory
                 CategoryId = new Guid (_view.CategoryId),
                 Name = _view.SubCategoryName,
                 Description = _view.SubCategoryName 
-            }
-                );
+            });
+        }
+        public List<SubCategoryDto> GetAllSubCategory()
+        {
+            _view.subCategories =  subCategory.GetAll();
+            return _view.subCategories.ToList();
         }
     }
 }

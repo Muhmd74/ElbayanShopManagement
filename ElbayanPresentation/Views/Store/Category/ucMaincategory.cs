@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using ElbayaNPresentation.Presenters.Store.Category.MainCategory;
 using ElbayanServices.Repository.Products.Category.Dtos;
 using System.Runtime.InteropServices;
+using ElbayaNPresentation.Presenters.CommonPresenter;
 
 namespace ElbayaNPresentation.Views.Store.Category 
 {
@@ -24,8 +25,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             Presenter = new MainCategoryPresenter(this);
             dgvMainCategory.DataSource = Presenter.GetCategories();
             dgvMainCategory.Columns[0].Visible = false;
-            StyleDatagridview(dgvMainCategory);
-
+            DataGridViewStyle.StyleDatagridview(dgvMainCategory);
 
         }
         private Guid CatID;
@@ -110,22 +110,7 @@ namespace ElbayaNPresentation.Views.Store.Category
                 return;
             }
         }
-        void StyleDatagridview(DataGridView dataGrid)
-        {
-            dataGrid.BorderStyle = BorderStyle.None;
-            dataGrid.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
-            dataGrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGrid.DefaultCellStyle.SelectionBackColor = Color.SeaGreen;
-            dataGrid.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
-            dataGrid.BackgroundColor = Color.FromArgb(32, 99, 155);
-            dataGrid.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;//optional
-            dataGrid.EnableHeadersVisualStyles = false;
-            dataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 10);
-            dataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
-            dataGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-        }
-
+       
         private void btnSearch_Click(object sender, EventArgs e)
         {
             BindingSource bs = new BindingSource();
@@ -149,7 +134,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             {
                 dgvDeletedMainCategory.DataSource = Presenter.GetDeletedCategories();
                 dgvDeletedMainCategory.Columns[0].Visible = false;
-                StyleDatagridview(dgvDeletedMainCategory);
+                DataGridViewStyle.StyleDatagridview(dgvDeletedMainCategory);
                 btnAdd.Enabled = false;
                 btnDeleteByOne.Text = "إستعادة التصنيف";
                 btnUpdate.Enabled = false;
