@@ -55,23 +55,37 @@ namespace ElbayaNPresentation.Views.Store.Category
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Presenter.OnClickAddButtonFuction();
-            MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
-            txtName.Clear();
-            txtDescription.Clear();
-            dgvMainCategory.DataSource = Presenter.GetCategories();
+            if (txtName.Text != string.Empty)
+            {
+                Presenter.OnClickAddButtonFuction();
+                MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
+                txtName.Clear();
+                txtDescription.Clear();
+                dgvMainCategory.DataSource = Presenter.GetCategories();
+            }
+            else
+            {
+                MessageBox.Show("لا بد من إدخال اسم التصنيف", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
         }
 
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            //CatID = new Guid(dgvMainCategory.CurrentRow.Cells["ID"].Value.ToString());
+            if (txtName.Text != string.Empty)
+            {
             Presenter.OnCLickbtnUpdate(CatID);
             MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
             txtName.Clear();
             txtDescription.Clear();
             dgvMainCategory.DataSource = Presenter.GetCategories();
-
+            }
+            else
+            {
+                MessageBox.Show("لا بد من تحديد صف من البيانات من خلال الضغط مرتين على الصف", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -93,6 +107,22 @@ namespace ElbayaNPresentation.Views.Store.Category
         {
             dgvDeletedMainCategory.DataSource = Presenter.GetCategories();
 
+        }
+
+        private void btnDeleteByOne_Click(object sender, EventArgs e)
+        {
+            if(txtName.Text != string.Empty) { 
+            Presenter.OnClickDelete(CatID);
+            MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
+            txtName.Clear();
+            txtDescription.Clear();
+            dgvMainCategory.DataSource = Presenter.GetCategories();
+            }
+            else
+            {
+                MessageBox.Show("لا بد من تحديد صف من البيانات من خلال الضغط مرتين على الصف", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
         }
     }
 }
