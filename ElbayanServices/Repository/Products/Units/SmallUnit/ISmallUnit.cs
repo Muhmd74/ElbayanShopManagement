@@ -12,7 +12,7 @@ namespace ElbayanServices.Repository.Products.Units.SmallUnit
 
         bool DeleteOrRestore(Guid id);
         List<SmallUnitDto> GetAllSmallUnit();
-        List<SmallUnitDto> GetAllSmallUnitDelted();
+        List<SmallUnitDto> GetAllSmallUnitDeleted();
         SmallUnitDto Get(Guid id);
         SmallUnitDto GetByName(string smallName);
 

@@ -66,7 +66,10 @@ namespace ElbayanServices.Repository.Products.Units.SmallUnit
                 IsDeleted = d.IsDeleted
             }).ToList();
             return model;
-        } public List<SmallUnitDto> GetAllSmallUnitDeleted()
+        }
+
+
+        public List<SmallUnitDto> GetAllSmallUnitDeleted()
         {
             var model = _context.SmallUnits.Where(d=>d.IsDeleted).Select(d => new SmallUnitDto()
             {
