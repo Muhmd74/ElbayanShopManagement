@@ -32,6 +32,11 @@ namespace ElbayaNPresentation.Presenters.Store.Category.MainCategory
             _view.MainCategory = Category.GetAll();
             return _view.MainCategory.ToList();
         }
+        public List<CategoryDto> GetDeletedCategories()
+        {
+            _view.MainCategory = Category.GetAllDeleted();
+            return _view.MainCategory.ToList();
+        }
         public void OnCLickbtnUpdate(Guid ID)
         {
             Category.Update(new CategoryDto

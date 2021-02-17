@@ -35,8 +35,9 @@ namespace ElbayaNPresentation
 
         }
 
-        private void accordionControl1_Click(object sender, EventArgs e)
+        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
+            accordionControlElement21_Click(null, null);
         }
     }
 }

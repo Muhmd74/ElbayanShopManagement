@@ -28,13 +28,13 @@ namespace ElbayaNPresentation.Views.Store.Category
        );
        private static ucMaincategory _instance;
 
-    public ucMaincategory()
-    {
-        InitializeComponent();
-        Presenter = new MainCategoryPresenter(this);
-        dgvMainCategory.DataSource = Presenter.GetCategories();
-        dgvMainCategory.Columns[0].Visible = false;
-            StyleDatagridview();
+        public ucMaincategory()
+        {
+            InitializeComponent();
+            Presenter = new MainCategoryPresenter(this);
+            dgvMainCategory.DataSource = Presenter.GetCategories();
+            dgvMainCategory.Columns[0].Visible = false;
+            StyleDatagridview(dgvMainCategory);
 
 
         }
@@ -89,10 +89,6 @@ namespace ElbayaNPresentation.Views.Store.Category
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void dgvMainCategory_DoubleClick(object sender, EventArgs e)
         {
@@ -106,8 +102,7 @@ namespace ElbayaNPresentation.Views.Store.Category
 
         private void ActiveMainCategory_Click(object sender, EventArgs e)
         {
-            dgvDeletedMainCategory.DataSource = Presenter.GetCategories();
-
+            
         }
 
         private void btnDeleteByOne_Click(object sender, EventArgs e)
@@ -125,20 +120,61 @@ namespace ElbayaNPresentation.Views.Store.Category
                 return;
             }
         }
-        void StyleDatagridview()
+        void StyleDatagridview(DataGridView dataGrid)
         {
-            dgvMainCategory.BorderStyle = BorderStyle.None;
-            dgvMainCategory.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
-            dgvMainCategory.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvMainCategory.DefaultCellStyle.SelectionBackColor = Color.SeaGreen;
-            dgvMainCategory.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
-            dgvMainCategory.BackgroundColor = Color.FromArgb(30, 30, 30);
-            dgvMainCategory.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;//optional
-            dgvMainCategory.EnableHeadersVisualStyles = false;
-            dgvMainCategory.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dgvMainCategory.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 10);
-            dgvMainCategory.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
-            dgvMainCategory.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGrid.BorderStyle = BorderStyle.None;
+            dataGrid.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dataGrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGrid.DefaultCellStyle.SelectionBackColor = Color.SeaGreen;
+            dataGrid.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dataGrid.BackgroundColor = Color.FromArgb(32, 99, 155);
+            dataGrid.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;//optional
+            dataGrid.EnableHeadersVisualStyles = false;
+            dataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 10);
+            dataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
+            dataGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dgvMainCategory.DataSource;
+            bs.Filter = "CategoryName LIKE '%" + txtSearch.Text + "%";
+            dgvMainCategory.DataSource = bs;
+            
+        }
+
+
+        private void ActiveMainCategory_Selected(object sender, TabControlEventArgs e)
+        {
+            if(ActiveMainCategory.SelectedIndex == 0)
+            {
+                btnAdd.Enabled = true;
+                btnDeleteByOne.Text = "أرشفة التصنيف";
+                btnUpdate.Enabled = true;
+                txtDescription.Text = txtName.Text = txtSearch.Text = "";
+            }
+            else if (ActiveMainCategory.SelectedIndex == 1)
+            {
+                dgvDeletedMainCategory.DataSource = Presenter.GetDeletedCategories();
+                dgvDeletedMainCategory.Columns[0].Visible = false;
+                StyleDatagridview(dgvDeletedMainCategory);
+                btnAdd.Enabled = false;
+                btnDeleteByOne.Text = "إستعادة التصنيف";
+                btnUpdate.Enabled = false;
+                txtDescription.Text = txtName.Text = txtSearch.Text = "";
+            }
+        }
+
+        private void dgvDeletedMainCategory_DoubleClick(object sender, EventArgs e)
+        {
+            if (dgvDeletedMainCategory.CurrentRow.Index != -1)
+            {
+                txtName.Text = dgvDeletedMainCategory.CurrentRow.Cells["DeletedName"].Value.ToString();
+                txtDescription.Text = dgvDeletedMainCategory.CurrentRow.Cells["DeletedDescription"].Value.ToString();
+                CatID = new Guid(dgvDeletedMainCategory.CurrentRow.Cells["ID"].Value.ToString());
+            }
         }
     }
 }
