@@ -55,6 +55,11 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbxMainCategory = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.dgvSubCategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSubCategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSubcategoryDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvMainCategoryId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvMainCategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedSubCategory)).BeginInit();
@@ -298,6 +303,12 @@ namespace ElbayaNPresentation.Views.Store.Category
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvSubCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSubCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSubCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvSubCategoryID,
+            this.dgvSubCategoryName,
+            this.dgvSubcategoryDescription,
+            this.dgvMainCategoryId,
+            this.dgvMainCategoryName});
             this.dgvSubCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSubCategory.Location = new System.Drawing.Point(3, 3);
             this.dgvSubCategory.Name = "dgvSubCategory";
@@ -377,6 +388,48 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.label3.TabIndex = 0;
             this.label3.Text = "اختر التصنيف الرئيسي";
             // 
+            // dgvSubCategoryID
+            // 
+            this.dgvSubCategoryID.DataPropertyName = "Id";
+            this.dgvSubCategoryID.HeaderText = "الرقم المرجعي";
+            this.dgvSubCategoryID.MinimumWidth = 6;
+            this.dgvSubCategoryID.Name = "dgvSubCategoryID";
+            this.dgvSubCategoryID.ReadOnly = true;
+            this.dgvSubCategoryID.Visible = false;
+            // 
+            // dgvSubCategoryName
+            // 
+            this.dgvSubCategoryName.DataPropertyName = "Name";
+            this.dgvSubCategoryName.HeaderText = "اسم التصنيف الفرعي";
+            this.dgvSubCategoryName.MinimumWidth = 6;
+            this.dgvSubCategoryName.Name = "dgvSubCategoryName";
+            this.dgvSubCategoryName.ReadOnly = true;
+            // 
+            // dgvSubcategoryDescription
+            // 
+            this.dgvSubcategoryDescription.DataPropertyName = "Description";
+            this.dgvSubcategoryDescription.HeaderText = "وصف التصنيف الفرعي";
+            this.dgvSubcategoryDescription.MinimumWidth = 6;
+            this.dgvSubcategoryDescription.Name = "dgvSubcategoryDescription";
+            this.dgvSubcategoryDescription.ReadOnly = true;
+            // 
+            // dgvMainCategoryId
+            // 
+            this.dgvMainCategoryId.DataPropertyName = "CategoryId";
+            this.dgvMainCategoryId.HeaderText = "الرقم المرجعي للتصنيف الرئيسي";
+            this.dgvMainCategoryId.MinimumWidth = 6;
+            this.dgvMainCategoryId.Name = "dgvMainCategoryId";
+            this.dgvMainCategoryId.ReadOnly = true;
+            this.dgvMainCategoryId.Visible = false;
+            // 
+            // dgvMainCategoryName
+            // 
+            this.dgvMainCategoryName.DataPropertyName = "CategoryName";
+            this.dgvMainCategoryName.HeaderText = "اسم التصنيف الرئيسي";
+            this.dgvMainCategoryName.MinimumWidth = 6;
+            this.dgvMainCategoryName.Name = "dgvMainCategoryName";
+            this.dgvMainCategoryName.ReadOnly = true;
+            // 
             // ucSubCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -423,5 +476,10 @@ namespace ElbayaNPresentation.Views.Store.Category
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbxMainCategory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvSubCategoryID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvSubCategoryName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvSubcategoryDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvMainCategoryId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvMainCategoryName;
     }
 }
