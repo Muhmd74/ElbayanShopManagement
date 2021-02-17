@@ -56,7 +56,6 @@ namespace ElbayaNPresentation
             this.accordionControlElement12 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement18 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement21 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement22 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement23 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement17 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement19 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -73,6 +72,17 @@ namespace ElbayaNPresentation
             this.accordionControlSeparator7 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.gcContainer = new DevExpress.XtraEditors.GroupControl();
+            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcContainer)).BeginInit();
@@ -81,16 +91,24 @@ namespace ElbayaNPresentation
             // ribbon
             // 
             this.ribbon.ExpandCollapseItem.Id = 0;
+            this.ribbon.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
             this.ribbon.SearchEditItem,
             this.barButtonItem1,
             this.barCheckItem1,
             this.barButtonItem2,
-            this.barButtonItem3});
+            this.barButtonItem3,
+            this.barButtonItem4,
+            this.barButtonItem5,
+            this.barButtonItem6,
+            this.barButtonItem7,
+            this.barButtonItem8,
+            this.barButtonItem9,
+            this.barButtonItem10});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.ribbon.MaxItemId = 5;
+            this.ribbon.MaxItemId = 14;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -128,11 +146,13 @@ namespace ElbayaNPresentation
             this.barButtonItem2.Caption = "التصنيفات الرئيسية";
             this.barButtonItem2.Id = 3;
             this.barButtonItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
-            this.barButtonItem2.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 6F);
+            this.barButtonItem2.ItemAppearance.Disabled.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F);
+            this.barButtonItem2.ItemAppearance.Disabled.Options.UseFont = true;
+            this.barButtonItem2.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F);
             this.barButtonItem2.ItemAppearance.Hovered.Options.UseFont = true;
             this.barButtonItem2.ItemAppearance.Hovered.Options.UseTextOptions = true;
             this.barButtonItem2.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem2.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 6F);
+            this.barButtonItem2.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F);
             this.barButtonItem2.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem2.ItemAppearance.Normal.Options.UseTextOptions = true;
             this.barButtonItem2.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
@@ -149,11 +169,11 @@ namespace ElbayaNPresentation
             this.barButtonItem3.Caption = "التصنيفات الفرعية";
             this.barButtonItem3.Id = 4;
             this.barButtonItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem3.ImageOptions.SvgImage")));
-            this.barButtonItem3.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 6F);
+            this.barButtonItem3.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F);
             this.barButtonItem3.ItemAppearance.Hovered.Options.UseFont = true;
             this.barButtonItem3.ItemAppearance.Hovered.Options.UseTextOptions = true;
             this.barButtonItem3.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem3.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 6F);
+            this.barButtonItem3.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F);
             this.barButtonItem3.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem3.ItemAppearance.Normal.Options.UseTextOptions = true;
             this.barButtonItem3.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
@@ -166,15 +186,19 @@ namespace ElbayaNPresentation
             // 
             // ribbonPage1
             // 
-            this.ribbonPage1.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ribbonPage1.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbonPage1.Appearance.Options.UseFont = true;
             this.ribbonPage1.Appearance.Options.UseTextOptions = true;
             this.ribbonPage1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup3});
+            this.ribbonPageGroup3,
+            this.ribbonPageGroup4,
+            this.ribbonPageGroup5,
+            this.ribbonPageGroup6,
+            this.ribbonPageGroup7});
             this.ribbonPage1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ribbonPage1.ImageOptions.SvgImage")));
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "التصنيفات";
+            this.ribbonPage1.Text = "إعدادات المنتجات";
             // 
             // ribbonPageGroup3
             // 
@@ -241,7 +265,6 @@ namespace ElbayaNPresentation
             this.accordionControlElement5,
             this.accordionControlElement6,
             this.accordionControlElement7});
-            this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement1.ImageOptions.SvgImage")));
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "المبيعات";
@@ -379,7 +402,6 @@ namespace ElbayaNPresentation
             this.accordionControlElement18,
             this.accordionControlElement19,
             this.accordionControlElement20});
-            this.accordionControlElement12.Expanded = true;
             this.accordionControlElement12.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement12.ImageOptions.SvgImage")));
             this.accordionControlElement12.Name = "accordionControlElement12";
             this.accordionControlElement12.Text = "إدارة المخزون";
@@ -394,7 +416,6 @@ namespace ElbayaNPresentation
             this.accordionControlElement18.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement18.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement21,
-            this.accordionControlElement22,
             this.accordionControlElement23,
             this.accordionControlElement17});
             this.accordionControlElement18.Expanded = true;
@@ -413,21 +434,8 @@ namespace ElbayaNPresentation
             this.accordionControlElement21.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement21.ImageOptions.SvgImage")));
             this.accordionControlElement21.Name = "accordionControlElement21";
             this.accordionControlElement21.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement21.Text = "التصنيفات";
+            this.accordionControlElement21.Text = "إعدادات المنتجات";
             this.accordionControlElement21.Click += new System.EventHandler(this.accordionControlElement21_Click);
-            // 
-            // accordionControlElement22
-            // 
-            this.accordionControlElement22.Appearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold);
-            this.accordionControlElement22.Appearance.Normal.Options.UseFont = true;
-            this.accordionControlElement22.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement22.Appearance.Pressed.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold);
-            this.accordionControlElement22.Appearance.Pressed.Options.UseBackColor = true;
-            this.accordionControlElement22.Appearance.Pressed.Options.UseFont = true;
-            this.accordionControlElement22.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement22.ImageOptions.SvgImage")));
-            this.accordionControlElement22.Name = "accordionControlElement22";
-            this.accordionControlElement22.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement22.Text = "الوحدات";
             // 
             // accordionControlElement23
             // 
@@ -552,6 +560,170 @@ namespace ElbayaNPresentation
             this.gcContainer.TabIndex = 5;
             this.gcContainer.Text = "منطقة العمل";
             // 
+            // ribbonPageGroup4
+            // 
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem5);
+            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "الوحدات الرئيسية";
+            this.barButtonItem4.Id = 5;
+            this.barButtonItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem4.ImageOptions.SvgImage")));
+            this.barButtonItem4.ItemAppearance.Disabled.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F);
+            this.barButtonItem4.ItemAppearance.Disabled.Options.UseFont = true;
+            this.barButtonItem4.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F);
+            this.barButtonItem4.ItemAppearance.Hovered.Options.UseFont = true;
+            this.barButtonItem4.ItemAppearance.Hovered.Options.UseTextOptions = true;
+            this.barButtonItem4.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem4.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F);
+            this.barButtonItem4.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem4.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.barButtonItem4.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem4.ItemAppearance.Pressed.Font = new System.Drawing.Font("Droid Arabic Kufi", 6F);
+            this.barButtonItem4.ItemAppearance.Pressed.Options.UseFont = true;
+            this.barButtonItem4.ItemAppearance.Pressed.Options.UseTextOptions = true;
+            this.barButtonItem4.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "الوحدات الفرعية";
+            this.barButtonItem5.Id = 6;
+            this.barButtonItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem5.ImageOptions.SvgImage")));
+            this.barButtonItem5.ItemAppearance.Disabled.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F);
+            this.barButtonItem5.ItemAppearance.Disabled.Options.UseFont = true;
+            this.barButtonItem5.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F);
+            this.barButtonItem5.ItemAppearance.Hovered.Options.UseFont = true;
+            this.barButtonItem5.ItemAppearance.Hovered.Options.UseTextOptions = true;
+            this.barButtonItem5.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem5.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F);
+            this.barButtonItem5.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem5.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.barButtonItem5.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem5.ItemAppearance.Pressed.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F);
+            this.barButtonItem5.ItemAppearance.Pressed.Options.UseFont = true;
+            this.barButtonItem5.ItemAppearance.Pressed.Options.UseTextOptions = true;
+            this.barButtonItem5.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // ribbonPageGroup5
+            // 
+            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem6);
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem7);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "العلامات التجارية";
+            this.barButtonItem6.Id = 7;
+            this.barButtonItem6.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem6.ImageOptions.SvgImage")));
+            this.barButtonItem6.ItemAppearance.Disabled.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F);
+            this.barButtonItem6.ItemAppearance.Disabled.Options.UseFont = true;
+            this.barButtonItem6.ItemAppearance.Disabled.Options.UseTextOptions = true;
+            this.barButtonItem6.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem6.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F);
+            this.barButtonItem6.ItemAppearance.Hovered.Options.UseFont = true;
+            this.barButtonItem6.ItemAppearance.Hovered.Options.UseTextOptions = true;
+            this.barButtonItem6.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem6.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F);
+            this.barButtonItem6.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem6.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.barButtonItem6.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem6.ItemAppearance.Pressed.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F);
+            this.barButtonItem6.ItemAppearance.Pressed.Options.UseFont = true;
+            this.barButtonItem6.ItemAppearance.Pressed.Options.UseTextOptions = true;
+            this.barButtonItem6.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem6.Name = "barButtonItem6";
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "حركة الأسعار";
+            this.barButtonItem7.Id = 8;
+            this.barButtonItem7.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem7.ImageOptions.SvgImage")));
+            this.barButtonItem7.ItemAppearance.Disabled.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F);
+            this.barButtonItem7.ItemAppearance.Disabled.Options.UseFont = true;
+            this.barButtonItem7.ItemAppearance.Disabled.Options.UseTextOptions = true;
+            this.barButtonItem7.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem7.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F);
+            this.barButtonItem7.ItemAppearance.Hovered.Options.UseFont = true;
+            this.barButtonItem7.ItemAppearance.Hovered.Options.UseTextOptions = true;
+            this.barButtonItem7.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem7.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F);
+            this.barButtonItem7.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem7.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.barButtonItem7.ItemAppearance.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.None;
+            this.barButtonItem7.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem7.ItemAppearance.Pressed.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F);
+            this.barButtonItem7.ItemAppearance.Pressed.Options.UseFont = true;
+            this.barButtonItem7.ItemAppearance.Pressed.Options.UseTextOptions = true;
+            this.barButtonItem7.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem7.Name = "barButtonItem7";
+            // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem9);
+            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem10);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "إعدادات باركود";
+            this.barButtonItem8.Id = 9;
+            this.barButtonItem8.Name = "barButtonItem8";
+            // 
+            // barButtonItem9
+            // 
+            this.barButtonItem9.Caption = "إعدادات الباركود";
+            this.barButtonItem9.Id = 12;
+            this.barButtonItem9.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem9.ImageOptions.SvgImage")));
+            this.barButtonItem9.ItemAppearance.Disabled.Font = new System.Drawing.Font("Droid Arabic Kufi", 7.2F);
+            this.barButtonItem9.ItemAppearance.Disabled.Options.UseFont = true;
+            this.barButtonItem9.ItemAppearance.Disabled.Options.UseTextOptions = true;
+            this.barButtonItem9.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem9.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 7.2F);
+            this.barButtonItem9.ItemAppearance.Hovered.Options.UseFont = true;
+            this.barButtonItem9.ItemAppearance.Hovered.Options.UseTextOptions = true;
+            this.barButtonItem9.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem9.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 7.2F);
+            this.barButtonItem9.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem9.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.barButtonItem9.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem9.ItemAppearance.Pressed.Font = new System.Drawing.Font("Droid Arabic Kufi", 7.2F);
+            this.barButtonItem9.ItemAppearance.Pressed.Options.UseFont = true;
+            this.barButtonItem9.ItemAppearance.Pressed.Options.UseTextOptions = true;
+            this.barButtonItem9.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem9.Name = "barButtonItem9";
+            // 
+            // barButtonItem10
+            // 
+            this.barButtonItem10.Caption = "طباعة باركود";
+            this.barButtonItem10.Id = 13;
+            this.barButtonItem10.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem10.ImageOptions.SvgImage")));
+            this.barButtonItem10.ItemAppearance.Disabled.Font = new System.Drawing.Font("Droid Arabic Kufi", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barButtonItem10.ItemAppearance.Disabled.Options.UseFont = true;
+            this.barButtonItem10.ItemAppearance.Disabled.Options.UseTextOptions = true;
+            this.barButtonItem10.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem10.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 7.2F);
+            this.barButtonItem10.ItemAppearance.Hovered.Options.UseFont = true;
+            this.barButtonItem10.ItemAppearance.Hovered.Options.UseTextOptions = true;
+            this.barButtonItem10.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem10.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 7.2F);
+            this.barButtonItem10.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem10.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.barButtonItem10.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem10.ItemAppearance.Pressed.Font = new System.Drawing.Font("Droid Arabic Kufi", 7.2F);
+            this.barButtonItem10.ItemAppearance.Pressed.Options.UseFont = true;
+            this.barButtonItem10.ItemAppearance.Pressed.Options.UseTextOptions = true;
+            this.barButtonItem10.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem10.Name = "barButtonItem10";
+            // 
             // frmMainBoard
             // 
             this.Appearance.Options.UseFont = true;
@@ -604,7 +776,6 @@ namespace ElbayaNPresentation
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement12;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement18;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement21;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement22;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement23;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement17;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement19;
@@ -628,5 +799,16 @@ namespace ElbayaNPresentation
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         public DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraEditors.GroupControl gcContainer;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem10;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
     }
 }

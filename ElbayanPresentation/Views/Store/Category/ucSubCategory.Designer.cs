@@ -50,16 +50,16 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dgvSubCategory = new System.Windows.Forms.DataGridView();
-            this.ActiveMainCategory = new System.Windows.Forms.TabControl();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbxMainCategory = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.dgvSubCategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSubCategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSubcategoryDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvMainCategoryId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvMainCategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActiveMainCategory = new System.Windows.Forms.TabControl();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbxMainCategory = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedSubCategory)).BeginInit();
@@ -110,9 +110,9 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.btnSearch.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
             this.btnSearch.ImageOptions.ImageToTextIndent = 23;
             this.btnSearch.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSearch.ImageOptions.SvgImage")));
-            this.btnSearch.Location = new System.Drawing.Point(107, 186);
+            this.btnSearch.Location = new System.Drawing.Point(423, 179);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(459, 55);
+            this.btnSearch.Size = new System.Drawing.Size(143, 55);
             this.btnSearch.TabIndex = 7;
             this.btnSearch.Text = "ابحث";
             // 
@@ -283,7 +283,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.tabPage3.Location = new System.Drawing.Point(4, 37);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1497, 468);
+            this.tabPage3.Size = new System.Drawing.Size(1497, 458);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "التصنيفات النشطة";
             // 
@@ -317,76 +317,8 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.dgvSubCategory.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvSubCategory.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.dgvSubCategory.RowTemplate.Height = 35;
-            this.dgvSubCategory.Size = new System.Drawing.Size(1491, 462);
+            this.dgvSubCategory.Size = new System.Drawing.Size(1491, 452);
             this.dgvSubCategory.TabIndex = 0;
-            // 
-            // ActiveMainCategory
-            // 
-            this.ActiveMainCategory.Controls.Add(this.tabPage3);
-            this.ActiveMainCategory.Controls.Add(this.tabPage4);
-            this.ActiveMainCategory.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ActiveMainCategory.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ActiveMainCategory.Location = new System.Drawing.Point(0, 293);
-            this.ActiveMainCategory.Name = "ActiveMainCategory";
-            this.ActiveMainCategory.RightToLeftLayout = true;
-            this.ActiveMainCategory.SelectedIndex = 0;
-            this.ActiveMainCategory.Size = new System.Drawing.Size(1505, 509);
-            this.ActiveMainCategory.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1370, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 28);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "اسم التصنيف";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.AutoSize = true;
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.cbxMainCategory);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.btnSearch);
-            this.groupBox1.Controls.Add(this.txtSearch);
-            this.groupBox1.Controls.Add(this.btnDeleteByOne);
-            this.groupBox1.Controls.Add(this.btnUpdate);
-            this.groupBox1.Controls.Add(this.btnAdd);
-            this.groupBox1.Controls.Add(this.txtName);
-            this.groupBox1.Controls.Add(this.txtDescription);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(99)))), ((int)(((byte)(155)))));
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1505, 297);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            // 
-            // cbxMainCategory
-            // 
-            this.cbxMainCategory.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cbxMainCategory.FormattingEnabled = true;
-            this.cbxMainCategory.Location = new System.Drawing.Point(107, 44);
-            this.cbxMainCategory.Name = "cbxMainCategory";
-            this.cbxMainCategory.Size = new System.Drawing.Size(459, 36);
-            this.cbxMainCategory.TabIndex = 15;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(601, 44);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(174, 28);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "اختر التصنيف الرئيسي";
             // 
             // dgvSubCategoryID
             // 
@@ -429,6 +361,75 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.dgvMainCategoryName.MinimumWidth = 6;
             this.dgvMainCategoryName.Name = "dgvMainCategoryName";
             this.dgvMainCategoryName.ReadOnly = true;
+            // 
+            // ActiveMainCategory
+            // 
+            this.ActiveMainCategory.Controls.Add(this.tabPage3);
+            this.ActiveMainCategory.Controls.Add(this.tabPage4);
+            this.ActiveMainCategory.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ActiveMainCategory.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ActiveMainCategory.Location = new System.Drawing.Point(0, 303);
+            this.ActiveMainCategory.Name = "ActiveMainCategory";
+            this.ActiveMainCategory.RightToLeftLayout = true;
+            this.ActiveMainCategory.SelectedIndex = 0;
+            this.ActiveMainCategory.Size = new System.Drawing.Size(1505, 499);
+            this.ActiveMainCategory.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1370, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 28);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "اسم التصنيف";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.AutoSize = true;
+            this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox1.Controls.Add(this.cbxMainCategory);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Controls.Add(this.txtSearch);
+            this.groupBox1.Controls.Add(this.btnDeleteByOne);
+            this.groupBox1.Controls.Add(this.btnUpdate);
+            this.groupBox1.Controls.Add(this.btnAdd);
+            this.groupBox1.Controls.Add(this.txtName);
+            this.groupBox1.Controls.Add(this.txtDescription);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox1.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(99)))), ((int)(((byte)(155)))));
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1505, 297);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            // 
+            // cbxMainCategory
+            // 
+            this.cbxMainCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxMainCategory.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbxMainCategory.FormattingEnabled = true;
+            this.cbxMainCategory.Location = new System.Drawing.Point(107, 40);
+            this.cbxMainCategory.Name = "cbxMainCategory";
+            this.cbxMainCategory.Size = new System.Drawing.Size(459, 36);
+            this.cbxMainCategory.TabIndex = 15;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(601, 44);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(174, 28);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "اختر التصنيف الرئيسي";
             // 
             // ucSubCategory
             // 

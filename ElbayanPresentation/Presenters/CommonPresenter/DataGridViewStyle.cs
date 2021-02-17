@@ -21,8 +21,8 @@ namespace ElbayaNPresentation.Presenters.CommonPresenter
             dataGrid.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing; //optional
             dataGrid.EnableHeadersVisualStyles = false;
             dataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 10);
-            dataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
+            dataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Droid Arabic Kufi", 10);
+            dataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(23, 63, 95);
             dataGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
     }
