@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using ElbayanDatabase.ConnectionTools;
 using ElbayanServices.Repository.Products.Units.LargeUnit.Dtos;
-using ElbayanServices.Repository.Products.Units.LargeUnit.Validators;
 
 namespace ElbayanServices.Repository.Products.Units.LargeUnit
 {
@@ -18,8 +17,7 @@ namespace ElbayanServices.Repository.Products.Units.LargeUnit
 
         public bool Add(LargeUnitDto model)
         {
-            if (LargeUnitResolution.IsUnique(model.Name))
-            {
+        
                 var result = _context.LargeUnits.Add(
                     new ElbayanDatabase.DataClasses.Product.Unit.LargeUnit()
                     {
@@ -29,15 +27,11 @@ namespace ElbayanServices.Repository.Products.Units.LargeUnit
                     });
                 _context.SaveChanges();
                 return true;
-            }
-
-            return false;
         }
 
         public bool Update(LargeUnitDto model)
         {
-            if (!LargeUnitResolution.IsUnique(model.Name)) return false;
-            var result = _context.LargeUnits.FirstOrDefault(d => d.Id == model.Id);
+             var result = _context.LargeUnits.FirstOrDefault(d => d.Id == model.Id);
             if (result == null) return false;
             result.Description = model.Description;
             result.Name = model.Name;
@@ -68,6 +62,15 @@ namespace ElbayanServices.Repository.Products.Units.LargeUnit
                 IsDeleted = d.IsDeleted
             }).ToList();
             return model;
+        } public List<LargeUnitDto> GetAllLargeUnitDeleted()
+        {
+            var model = _context.LargeUnits.Where(d=>d.IsDeleted).Select(d => new LargeUnitDto()
+            {
+                Description = d.Description,
+                Name = d.Name,
+                IsDeleted = d.IsDeleted
+            }).ToList();
+            return model;
         }
 
         public LargeUnitDto Get(Guid id)
@@ -80,7 +83,25 @@ namespace ElbayanServices.Repository.Products.Units.LargeUnit
                 {
                     Description = model.Description,
                     Name = model.Name,
-                    IsDeleted = model.IsDeleted
+                    IsDeleted = model.IsDeleted,
+                     Id = model.Id
+                };
+            }
+
+            return null;
+        }
+
+        public LargeUnitDto GetByName(string largeName)
+        {
+            var model = _context.LargeUnits.FirstOrDefault(d => d.Name == largeName&&d.IsDeleted==false);
+
+            if (model != null)
+            {
+                return new LargeUnitDto()
+                {
+                   Name = model.Name,
+                   Description = model.Description,
+                   Id = model.Id
                 };
             }
 

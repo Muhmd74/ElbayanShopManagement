@@ -24,8 +24,7 @@ namespace ElbayanServices.Repository.Products.Product
        
         public bool Add(ProductDto model)
         {
-            if (CreateProductValidator.IsUnique(model.Name)&&CreateProductValidator.BarCodeIsUnique(model.BarCode))
-            {
+
                 var result = _context.Products.Add(new ElbayanDatabase.DataClasses.Product.Product()
                 {
                     Description = model.Description,
@@ -44,16 +43,11 @@ namespace ElbayanServices.Repository.Products.Product
                 });
                 _context.SaveChanges();
                 return true;
-            }
-
-            return false;
-
         }
 
         public bool Update(ProductDto model)
         {
-            if (CreateProductValidator.IsUnique(model.Name) && CreateProductValidator.BarCodeIsUnique(model.BarCode))
-            {
+
                 var result = _context.Products.FirstOrDefault(d => d.Id == model.Id);
                 if (result == null) return false;
                 result.Description = model.Description;
@@ -67,9 +61,6 @@ namespace ElbayanServices.Repository.Products.Product
                 result.UCP = model.UCP;
                 _context.SaveChanges();
                 return true;
-
-            }
-            return false;
         }
 
         public bool IsDeleted(Guid id)
@@ -141,6 +132,36 @@ namespace ElbayanServices.Repository.Products.Product
             return Products.Any() ? Products : null;
         }
 
+        public List<ProductDto> GetAllByCategory(Guid categoryId)
+        {
+            var Products = _context.Products
+                .Where(d =>d.SubCategoryId==categoryId 
+                           &&d.IsDeleted == false)
+                .Include(d => d.SmallUnit)
+                .Include(d => d.LargeUnit)
+                .Include(d => d.SubCategory)
+                .OrderByDescending(d => d.DateTime)
+                .Select(d => new ProductDto()
+                {
+                    Description = d.Description,
+                    Name = d.Name,
+                    BarCode = d.BarCode,
+                    DefaultPrice = d.DefaultPrice,
+                    IsExpired = d.IsExpired,
+                    LargeUnitId = d.LargeUnitId,
+                    LimitedDemand = d.LimitedDemand,
+                    ProductNumber = d.ProductNumber,
+                    SmallUnitId = d.SmallUnitId,
+                    SubCategoryId = d.SubCategoryId,
+                    UCP = d.UCP,
+                    Id = d.Id,
+                    SmallUnitName = d.SmallUnit.Name,
+                    LargeUnitName = d.LargeUnit.Name,
+                    SubCategoryName = d.SubCategory.Name
+                }).ToList();
+            return Products.Any() ? Products : null;
+        }
+
         public ProductDto GetById(Guid id)
         {
             var model = _context.Products
@@ -172,6 +193,40 @@ namespace ElbayanServices.Repository.Products.Product
 
             return null;
         }
+
+        public ProductDto GetByName(string productName)
+        {
+
+            var model = _context.Products
+                .Include(d => d.SmallUnit)
+                .Include(d => d.LargeUnit)
+                .Include(d => d.SubCategory)
+                .FirstOrDefault(d => d.Name == productName&&d.IsDeleted==false);
+            if (model != null)
+            {
+                return new ProductDto()
+                {
+                    Description = model.Description,
+                    Name = model.Name,
+                    BarCode = model.BarCode,
+                    DefaultPrice = model.DefaultPrice,
+                    IsExpired = model.IsExpired,
+                    LargeUnitName = model.LargeUnit.Name,
+                    LargeUnitId = model.LargeUnitId,
+                    Id = model.Id,
+                    LimitedDemand = model.LimitedDemand,
+                    ProductNumber = model.ProductNumber,
+                    SmallUnitId = model.SmallUnitId,
+                    SmallUnitName = model.SmallUnit.Name,
+                    SubCategoryId = model.SubCategoryId,
+                    SubCategoryName = model.SubCategory.Name,
+                    UCP = model.UCP
+                };
+            }
+
+            return null;
+        }
+
 
         public List<ProductNameDto> GetAllProductName()
         {

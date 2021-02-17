@@ -8,9 +8,11 @@ namespace ElbayanServices.Repository.Products.SubCategory
     {
         SubCategoryDto Add(SubCategoryDto model);
         SubCategoryDto Update(SubCategoryDto model);
-        bool Delete(Guid id);
+        bool DeleteOrRestore(Guid id);
         List<SubCategoryDto> GetAll();
+        List<SubCategoryDto> GetAllIsDeleted();
         SubCategoryDto GetById(Guid id);
+        SubCategoryDto GetByName(string subCategoryName);
 
     }
 }

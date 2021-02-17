@@ -20,8 +20,7 @@ namespace ElbayanServices.Repository.Products.Category
        {
            try
            {
-               if (CreateCategoryValidator.IsUnique(model.Name))
-               {
+              
                    var result = _context.Categories.Add(new ElbayanDatabase.DataClasses.Product.ProductCategory.Category()
                    {
                        Name = model.Name,
@@ -31,9 +30,7 @@ namespace ElbayanServices.Repository.Products.Category
                    });
                    _context.SaveChanges();
                    return result.Description;
-               }
-
-               return $"{model.Name} موجود بالفعل ";
+              
            }
            catch (Exception e)
            {
@@ -43,22 +40,22 @@ namespace ElbayanServices.Repository.Products.Category
 
         public CategoryDto Update(CategoryDto model)
         {
-            if (CreateCategoryValidator.IsUnique(model.Name))
-            {
+         
                 var result = _context.Categories.FirstOrDefault(d => d.Id == model.Id);
-                if (result == null) return null;
-                result.Description = model.Description;
-                result.Name = model.Name;
-                _context.SaveChanges();
-                return new CategoryDto()
+                if (result != null)
                 {
-                    Name = model.Name,
-                    Description = model.Description,
-                    Id = result.Id
-                };
+                    result.Description = model.Description;
+                    result.Name = model.Name;
+                    _context.SaveChanges();
+                    return new CategoryDto()
+                    {
+                        Name = model.Name,
+                        Description = model.Description,
+                        Id = result.Id
+                    };
+                }
 
-            }
-            return null;
+                return null;
         }
 
         public bool DeleteOrRestore(Guid id)
@@ -77,7 +74,15 @@ namespace ElbayanServices.Repository.Products.Category
 
         public List<CategoryDto> GetAll()
         {
-            var model = _context.Categories.Select(d => new CategoryDto()
+            var model = _context.Categories.Where(d=>d.IsDeleted==false).Select(d => new CategoryDto()
+            {
+                Name = d.Name,
+                Description = d.Description
+            }).ToList();
+            return model.Any() ? model : null;
+        }  public List<CategoryDto> GetAllDeleted()
+        {
+            var model = _context.Categories.Where(d=>d.IsDeleted).Select(d => new CategoryDto()
             {
                 Name = d.Name,
                 Description = d.Description
@@ -100,5 +105,21 @@ namespace ElbayanServices.Repository.Products.Category
 
             return null;                                                                                                                    
         }
-    }
+
+        public CategoryDto GetByName(string categoryName)
+        {
+            var model = _context.Categories.FirstOrDefault(d => d.Name == categoryName && d.IsDeleted == false);
+            if (model!=null)
+            {
+                return new CategoryDto()
+                {
+                     Name = model.Name,
+                     Description = model.Description,
+                     Id = model.Id
+                };
+            }
+
+            return null;
+        }
+   }
 }

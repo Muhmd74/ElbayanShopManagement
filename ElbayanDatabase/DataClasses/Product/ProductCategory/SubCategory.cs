@@ -13,6 +13,7 @@ namespace ElbayanDatabase.DataClasses.Product.ProductCategory
         [Required]
         public string Name { get; set; }
         public string Description { get; set; }
+        public bool IsDeleted { get; set; }
         public Guid CategoryId { get; set; }
         public Category Category { get; set; }
         public ICollection<Product> Products { get; set; }
