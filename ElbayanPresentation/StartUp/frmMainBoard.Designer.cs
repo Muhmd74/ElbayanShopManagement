@@ -146,7 +146,7 @@ namespace ElbayaNPresentation
             // 
             // barButtonItem3
             // 
-            this.barButtonItem3.Caption = "إضافة تصنيف رئيسي";
+            this.barButtonItem3.Caption = "التصنيفات الفرعية";
             this.barButtonItem3.Id = 4;
             this.barButtonItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem3.ImageOptions.SvgImage")));
             this.barButtonItem3.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 6F);
@@ -162,6 +162,7 @@ namespace ElbayaNPresentation
             this.barButtonItem3.ItemAppearance.Pressed.Options.UseTextOptions = true;
             this.barButtonItem3.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
             // 
             // ribbonPage1
             // 

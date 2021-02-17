@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Presenters\Store\Category\MainCategory\MainCategoryPresenter.cs" />
+    <Compile Include="Presenters\Store\Category\SubCategory\SubCategoryPresenter.cs" />
     <Compile Include="StartUp\frmMainBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,11 +93,11 @@
     <Compile Include="Views\Store\Category\ucMaincategory.Designer.cs">
       <DependentUpon>ucMaincategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Store\Category\usSubCategory.cs">
+    <Compile Include="Views\Store\Category\ucSubCategory.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Store\Category\usSubCategory.Designer.cs">
-      <DependentUpon>usSubCategory.cs</DependentUpon>
+    <Compile Include="Views\Store\Category\ucSubCategory.Designer.cs">
+      <DependentUpon>ucSubCategory.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="StartUp\frmMainBoard.resx">
       <DependentUpon>frmMainBoard.cs</DependentUpon>
@@ -114,8 +115,8 @@
     <EmbeddedResource Include="Views\Store\Category\ucMaincategory.resx">
       <DependentUpon>ucMaincategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Store\Category\usSubCategory.resx">
-      <DependentUpon>usSubCategory.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Store\Category\ucSubCategory.resx">
+      <DependentUpon>ucSubCategory.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />

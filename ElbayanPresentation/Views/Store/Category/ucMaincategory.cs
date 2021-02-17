@@ -16,16 +16,6 @@ namespace ElbayaNPresentation.Views.Store.Category
 {
     public partial class ucMaincategory : DevExpress.XtraEditors.XtraUserControl, IViewMainCategory
     {
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
-       (
-           int nLeftRect,     // x-coordinate of upper-left corner
-           int nTopRect,      // y-coordinate of upper-left corner
-           int nRightRect,    // x-coordinate of lower-right corner
-           int nBottomRect,   // y-coordinate of lower-right corner
-           int nWidthEllipse, // width of ellipse
-           int nHeightEllipse // height of ellipse
-       );
        private static ucMaincategory _instance;
 
         public ucMaincategory()

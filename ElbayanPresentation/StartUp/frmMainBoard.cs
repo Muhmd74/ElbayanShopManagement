@@ -39,5 +39,16 @@ namespace ElbayaNPresentation
         {
             accordionControlElement21_Click(null, null);
         }
+
+        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!gcContainer.Controls.Contains(ucSubCategory.Instance))
+            {
+                gcContainer.Controls.Add(ucSubCategory.Instance);
+                ucSubCategory.Instance.Dock = DockStyle.Fill;
+                ucSubCategory.Instance.BringToFront();
+            }
+            ucSubCategory.Instance.BringToFront();
+        }
     }
 }
