@@ -72,8 +72,10 @@ namespace ElbayaNPresentation
             this.accordionControlElement26 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator7 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.gcContainer = new DevExpress.XtraEditors.GroupControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcContainer)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -140,10 +142,11 @@ namespace ElbayaNPresentation
             this.barButtonItem2.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.barButtonItem2.Name = "barButtonItem2";
             this.barButtonItem2.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // barButtonItem3
             // 
-            this.barButtonItem3.Caption = "إضافة تصنيف رئيسي";
+            this.barButtonItem3.Caption = "التصنيفات الفرعية";
             this.barButtonItem3.Id = 4;
             this.barButtonItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem3.ImageOptions.SvgImage")));
             this.barButtonItem3.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 6F);
@@ -159,6 +162,7 @@ namespace ElbayaNPresentation
             this.barButtonItem3.ItemAppearance.Pressed.Options.UseTextOptions = true;
             this.barButtonItem3.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -227,7 +231,6 @@ namespace ElbayaNPresentation
             this.accordionControl1.Size = new System.Drawing.Size(376, 855);
             this.accordionControl1.TabIndex = 2;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
-            this.accordionControl1.Click += new System.EventHandler(this.accordionControl1_Click);
             // 
             // accordionControlElement1
             // 
@@ -540,17 +543,30 @@ namespace ElbayaNPresentation
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "ribbonPageGroup1";
             // 
+            // gcContainer
+            // 
+            this.gcContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcContainer.Location = new System.Drawing.Point(376, 218);
+            this.gcContainer.Name = "gcContainer";
+            this.gcContainer.Size = new System.Drawing.Size(1374, 855);
+            this.gcContainer.TabIndex = 5;
+            this.gcContainer.Text = "منطقة العمل";
+            // 
             // frmMainBoard
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1750, 1101);
+            this.Controls.Add(this.gcContainer);
             this.Controls.Add(this.accordionControl1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmMainBoard";
             this.Ribbon = this.ribbon;
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -561,6 +577,7 @@ namespace ElbayaNPresentation
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcContainer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -610,5 +627,6 @@ namespace ElbayaNPresentation
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         public DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+        private DevExpress.XtraEditors.GroupControl gcContainer;
     }
 }
