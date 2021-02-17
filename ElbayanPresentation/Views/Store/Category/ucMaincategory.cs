@@ -34,6 +34,7 @@ namespace ElbayaNPresentation.Views.Store.Category
         Presenter = new MainCategoryPresenter(this);
         dgvMainCategory.DataSource = Presenter.GetCategories();
         dgvMainCategory.Columns[0].Visible = false;
+            StyleDatagridview();
 
 
         }
@@ -123,6 +124,21 @@ namespace ElbayaNPresentation.Views.Store.Category
                 MessageBox.Show("لا بد من تحديد صف من البيانات من خلال الضغط مرتين على الصف", "تأكيد", MessageBoxButtons.OK);
                 return;
             }
+        }
+        void StyleDatagridview()
+        {
+            dgvMainCategory.BorderStyle = BorderStyle.None;
+            dgvMainCategory.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dgvMainCategory.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvMainCategory.DefaultCellStyle.SelectionBackColor = Color.SeaGreen;
+            dgvMainCategory.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dgvMainCategory.BackgroundColor = Color.FromArgb(30, 30, 30);
+            dgvMainCategory.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;//optional
+            dgvMainCategory.EnableHeadersVisualStyles = false;
+            dgvMainCategory.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvMainCategory.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 10);
+            dgvMainCategory.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
+            dgvMainCategory.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
     }
 }
