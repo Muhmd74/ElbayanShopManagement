@@ -36,7 +36,8 @@ namespace ElbayanServices.Repository.Products.SubCategory
            }
            catch (Exception e)
            {
-              return null;
+              Console.WriteLine(e.Message) ;
+                return null;
            }
        }
 

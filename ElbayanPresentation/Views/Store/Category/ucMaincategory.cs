@@ -36,8 +36,8 @@ namespace ElbayaNPresentation.Views.Store.Category
         dgvMainCategory.Columns[0].Visible = false;
 
 
-    }
-
+        }
+        private Guid CatID;
         public static ucMaincategory Instance
     {
         get
@@ -60,26 +60,39 @@ namespace ElbayaNPresentation.Views.Store.Category
             txtName.Clear();
             txtDescription.Clear();
             dgvMainCategory.DataSource = Presenter.GetCategories();
+        }
 
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            //CatID = new Guid(dgvMainCategory.CurrentRow.Cells["ID"].Value.ToString());
+            Presenter.OnCLickbtnUpdate(CatID);
+            MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
+            txtName.Clear();
+            txtDescription.Clear();
+            dgvMainCategory.DataSource = Presenter.GetCategories();
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
         }
 
         private void dgvMainCategory_DoubleClick(object sender, EventArgs e)
         {
-            if(dgvMainCategory.CurrentRow.Index != -1)
+            if (dgvMainCategory.CurrentRow.Index != -1)
             {
                 txtName.Text = dgvMainCategory.CurrentRow.Cells["CategoryName"].Value.ToString();
-                txtDescription.Text = dgvMainCategory.CurrentRow.Cells["CategoryDescription"].Value.ToString();
+                txtDescription.Text = dgvMainCategory.CurrentRow.Cells["Description"].Value.ToString();
+                CatID = new Guid(dgvMainCategory.CurrentRow.Cells["ID"].Value.ToString());
             }
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void ActiveMainCategory_Click(object sender, EventArgs e)
         {
-            Presenter.OnCLickbtnUpdate();
-            MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
-            txtName.Clear();
-            txtDescription.Clear();
-            dgvMainCategory.DataSource = Presenter.GetCategories();
+            dgvDeletedMainCategory.DataSource = Presenter.GetCategories();
+
         }
     }
 }

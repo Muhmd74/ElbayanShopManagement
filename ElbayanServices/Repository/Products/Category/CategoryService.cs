@@ -72,6 +72,7 @@ namespace ElbayanServices.Repository.Products.Category
         {
             var model = _context.Categories.Select(d => new CategoryDto()
             {
+                Id = d.Id,
                 Name = d.Name,
                 Description = d.Description
             }).ToList();
