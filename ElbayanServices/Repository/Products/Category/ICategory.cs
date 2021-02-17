@@ -13,7 +13,9 @@ namespace ElbayanServices.Repository.Products.Category
         CategoryDto Update(CategoryDto model);
         bool DeleteOrRestore(Guid id);
         List<CategoryDto> GetAll();
+        List<CategoryDto> GetAllDeleted();
         CategoryDto GetById(Guid id);
+        CategoryDto GetByName(string categoryName);
 
     }
 }

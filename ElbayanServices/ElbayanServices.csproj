@@ -40,9 +40,18 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.8.0.0\lib\net45\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.ComponentModel.Primitives, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Primitives.4.3.0\lib\net45\System.ComponentModel.Primitives.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,31 +60,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\StaticGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Products\Category\CategoryService.cs" />
     <Compile Include="Repository\Products\Category\Dtos\CategoryDto.cs" />
     <Compile Include="Repository\Products\Category\ICategory.cs" />
+    <Compile Include="Repository\Products\Category\Validators\CreateCategoryValidator.cs" />
     <Compile Include="Repository\Products\Product\Dtos\ProductDto.cs" />
     <Compile Include="Repository\Products\Product\Dtos\ProductNameDto.cs" />
     <Compile Include="Repository\Products\Product\IProduct.cs" />
     <Compile Include="Repository\Products\Product\ProductService.cs" />
+    <Compile Include="Repository\Products\Product\Validators\CreateProductValidator.cs" />
+    <Compile Include="Repository\Products\Product\Validators\ProductResolution.cs" />
+    <Compile Include="Repository\Products\SubCategory\Validators\SubCategoryResolution.cs" />
     <Compile Include="Repository\Products\SubCategory\SubCategoryService.cs" />
     <Compile Include="Repository\Products\SubCategory\Dtos\SubCategoryDto.cs" />
     <Compile Include="Repository\Products\SubCategory\ISubCategory.cs" />
+    <Compile Include="Repository\Products\SubCategory\Validators\CreateSubCategoryValidator.cs" />
+    <Compile Include="Repository\Products\Units\LargeUnit\Validators\LargeUnitResolution.cs" />
+    <Compile Include="Repository\Products\Units\LargeUnit\Validators\CreateLargeUnitValidator.cs" />
     <Compile Include="Repository\Products\Units\SmallUnit\Dtos\SmallUnitDto.cs" />
+    <Compile Include="Repository\Products\Units\SmallUnit\Validators\SmallUnitResolution.cs" />
     <Compile Include="Repository\Products\Units\SmallUnit\ISmallUnit.cs" />
     <Compile Include="Repository\Products\Units\SmallUnit\SmallService.cs" />
     <Compile Include="Repository\Products\Units\LargeUnit\Dtos\LargeUnitDto.cs" />
     <Compile Include="Repository\Products\Units\LargeUnit\ILargeUnit.cs" />
     <Compile Include="Repository\Products\Units\LargeUnit\LargeUnitService.cs" />
+    <Compile Include="Repository\Products\Units\SmallUnit\Validators\CreateSmallUnitValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Common\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\ElbayanDatabase\ElbayanDatabase.csproj">
       <Project>{439D51BE-FAB1-4DD8-A480-3316ED65B7A9}</Project>

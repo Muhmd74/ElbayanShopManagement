@@ -5,7 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ElbayanDatabase.ConnectionTools;
+using ElbayanServices.Common;
 using ElbayanServices.Repository.Products.Product.Dtos;
+using ElbayanServices.Repository.Products.Product.Validators;
 
 namespace ElbayanServices.Repository.Products.Product
 {
@@ -19,35 +21,35 @@ namespace ElbayanServices.Repository.Products.Product
             _context = context;
         }
 
+       
         public bool Add(ProductDto model)
         {
-            Random randomNumber = new Random();
-            var result = _context.Products.Add(new ElbayanDatabase.DataClasses.Product.Product()
-            {
-                Description = model.Description,
-                Name = model.Name,
-                BarCode = model.BarCode,
-                DefaultPrice = model.DefaultPrice,
-                IsExpired = model.IsExpired,
-                LargeUnitId = model.LargeUnitId,
-                LimitedDemand = model.LimitedDemand,
-                ProductNumber = randomNumber.Next(0, Int32.MaxValue),
-                SmallUnitId = model.SmallUnitId,
-                SubCategoryId = model.SubCategoryId,
-                UCP = model.UCP,
-                IsDeleted = false,
-                DateTime = DateTime.UtcNow
-            });
-            _context.SaveChanges();
-            return true;
 
+                var result = _context.Products.Add(new ElbayanDatabase.DataClasses.Product.Product()
+                {
+                    Description = model.Description,
+                    Name = model.Name,
+                    BarCode = model.BarCode,
+                    DefaultPrice = model.DefaultPrice,
+                    IsExpired = model.IsExpired,
+                    LargeUnitId = model.LargeUnitId,
+                    LimitedDemand = model.LimitedDemand,
+                    ProductNumber = GeneratorRandomNumber(),
+                    SmallUnitId = model.SmallUnitId,
+                    SubCategoryId = model.SubCategoryId,
+                    UCP = model.UCP,
+                    IsDeleted = false,
+                    DateTime = DateTime.UtcNow
+                });
+                _context.SaveChanges();
+                return true;
         }
 
         public bool Update(ProductDto model)
         {
-            var result = _context.Products.FirstOrDefault(d => d.Id == model.Id);
-            if (result != null)
-            {
+
+                var result = _context.Products.FirstOrDefault(d => d.Id == model.Id);
+                if (result == null) return false;
                 result.Description = model.Description;
                 result.Name = model.Name;
                 result.BarCode = model.BarCode;
@@ -59,10 +61,6 @@ namespace ElbayanServices.Repository.Products.Product
                 result.UCP = model.UCP;
                 _context.SaveChanges();
                 return true;
-
-            }
-
-            return false;
         }
 
         public bool IsDeleted(Guid id)
@@ -134,6 +132,36 @@ namespace ElbayanServices.Repository.Products.Product
             return Products.Any() ? Products : null;
         }
 
+        public List<ProductDto> GetAllByCategory(Guid categoryId)
+        {
+            var Products = _context.Products
+                .Where(d =>d.SubCategoryId==categoryId 
+                           &&d.IsDeleted == false)
+                .Include(d => d.SmallUnit)
+                .Include(d => d.LargeUnit)
+                .Include(d => d.SubCategory)
+                .OrderByDescending(d => d.DateTime)
+                .Select(d => new ProductDto()
+                {
+                    Description = d.Description,
+                    Name = d.Name,
+                    BarCode = d.BarCode,
+                    DefaultPrice = d.DefaultPrice,
+                    IsExpired = d.IsExpired,
+                    LargeUnitId = d.LargeUnitId,
+                    LimitedDemand = d.LimitedDemand,
+                    ProductNumber = d.ProductNumber,
+                    SmallUnitId = d.SmallUnitId,
+                    SubCategoryId = d.SubCategoryId,
+                    UCP = d.UCP,
+                    Id = d.Id,
+                    SmallUnitName = d.SmallUnit.Name,
+                    LargeUnitName = d.LargeUnit.Name,
+                    SubCategoryName = d.SubCategory.Name
+                }).ToList();
+            return Products.Any() ? Products : null;
+        }
+
         public ProductDto GetById(Guid id)
         {
             var model = _context.Products
@@ -166,6 +194,40 @@ namespace ElbayanServices.Repository.Products.Product
             return null;
         }
 
+        public ProductDto GetByName(string productName)
+        {
+
+            var model = _context.Products
+                .Include(d => d.SmallUnit)
+                .Include(d => d.LargeUnit)
+                .Include(d => d.SubCategory)
+                .FirstOrDefault(d => d.Name == productName&&d.IsDeleted==false);
+            if (model != null)
+            {
+                return new ProductDto()
+                {
+                    Description = model.Description,
+                    Name = model.Name,
+                    BarCode = model.BarCode,
+                    DefaultPrice = model.DefaultPrice,
+                    IsExpired = model.IsExpired,
+                    LargeUnitName = model.LargeUnit.Name,
+                    LargeUnitId = model.LargeUnitId,
+                    Id = model.Id,
+                    LimitedDemand = model.LimitedDemand,
+                    ProductNumber = model.ProductNumber,
+                    SmallUnitId = model.SmallUnitId,
+                    SmallUnitName = model.SmallUnit.Name,
+                    SubCategoryId = model.SubCategoryId,
+                    SubCategoryName = model.SubCategory.Name,
+                    UCP = model.UCP
+                };
+            }
+
+            return null;
+        }
+
+
         public List<ProductNameDto> GetAllProductName()
         {
             var model = _context.Products.Where(d => d.IsDeleted == false)
@@ -181,7 +243,17 @@ namespace ElbayanServices.Repository.Products.Product
 
             return null;
         }
-
+        public long GeneratorRandomNumber()
+        {
+            while (true)
+            {
+                var number = new Random().NextLong(0, long.MaxValue);
+                if (!_context.Products.Any(d => d.ProductNumber == number))
+                {
+                    return number;
+                }
+            }
+        }
         public void Dispose()
         {
             _context.Dispose();
