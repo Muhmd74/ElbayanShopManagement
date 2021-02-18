@@ -101,20 +101,32 @@ namespace ElbayaNPresentation.Views.Store.Category
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(98)))), ((int)(((byte)(247)))));
             this.btnSearch.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Appearance.Options.UseBackColor = true;
             this.btnSearch.Appearance.Options.UseFont = true;
+            this.btnSearch.Appearance.Options.UseForeColor = true;
+            this.btnSearch.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(98)))), ((int)(((byte)(247)))));
             this.btnSearch.AppearanceHovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.AppearanceHovered.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.AppearanceHovered.Options.UseBackColor = true;
             this.btnSearch.AppearanceHovered.Options.UseFont = true;
+            this.btnSearch.AppearanceHovered.Options.UseForeColor = true;
             this.btnSearch.AppearanceHovered.Options.UseTextOptions = true;
             this.btnSearch.AppearanceHovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.btnSearch.AppearancePressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(98)))), ((int)(((byte)(247)))));
+            this.btnSearch.AppearancePressed.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.AppearancePressed.Options.UseBackColor = true;
+            this.btnSearch.AppearancePressed.Options.UseForeColor = true;
             this.btnSearch.AppearancePressed.Options.UseTextOptions = true;
             this.btnSearch.AppearancePressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.btnSearch.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
             this.btnSearch.ImageOptions.ImageToTextIndent = 23;
             this.btnSearch.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSearch.ImageOptions.SvgImage")));
-            this.btnSearch.Location = new System.Drawing.Point(347, 109);
+            this.btnSearch.Location = new System.Drawing.Point(388, 109);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(187, 55);
+            this.btnSearch.Size = new System.Drawing.Size(146, 48);
             this.btnSearch.TabIndex = 7;
             this.btnSearch.Text = "ابحث";
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);

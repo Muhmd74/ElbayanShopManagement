@@ -117,22 +117,9 @@ namespace ElbayaNPresentation.Views.Store.Category
        
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            BindingSource bs = new BindingSource();
-            bs.DataSource = dgvMainCategory.DataSource;
-            bs.Filter = "CategoryName LIKE '%" + txtSearch.Text + "%";
-            dgvMainCategory.DataSource = bs;
+           
 
 
-            foreach (DataGridViewRow row in dgvMainCategory.Rows)
-            {
-                if (row.Cells[1].ToString().Trim().Contains(txtSearch.Text.Trim()))
-                {
-                    row.Visible = true;
-                    dgvMainCategory.Refresh();
-                }
-                else
-                    row.Visible = false;
-            }
         }
 
 
