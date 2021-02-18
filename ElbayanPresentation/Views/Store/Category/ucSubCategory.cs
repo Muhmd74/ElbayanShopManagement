@@ -42,9 +42,15 @@ namespace ElbayaNPresentation.Views.Store.Category
                 return _instance;
             }
         }
-         
+
+        // handle Guid Ids
+        // sub category ID
+        private Guid SubCatID;
+        // main category id
+        private Guid MainCatID;
         public string SubCategoryName { get => txtName.Text; set => txtName.Text = value; }
-        public string SubCategoryDescription { get => txtName.Text; set => txtName.Text = value; }
+        public string SubCategoryDescription { get => txtDescription.Text; set => txtDescription.Text = value; }
+        public string DgvMainCategoryName { get; set; }
         public List<SubCategoryDto> subCategories { get; set; }
         public SubCategoryPresenter Presenter { private get; set; }
         public List<CategoryDto> MainCategory { get; set; }
@@ -70,7 +76,7 @@ namespace ElbayaNPresentation.Views.Store.Category
                     txtName.Clear();
                     txtDescription.Clear();
                     errorProvider.Clear();
-                    cbxMainCategory.Refresh();
+                    cbxMainCategory.Text = "";
                     dgvSubCategory.DataSource = Presenter.GetAllSubCategory();
                 }
                 else
@@ -85,6 +91,52 @@ namespace ElbayaNPresentation.Views.Store.Category
                 MessageBox.Show("لا بد من إدخال اسم التصنيف", "تأكيد", MessageBoxButtons.OK);
                 return;
             }
+        }
+
+        private void dgvSubCategory_DoubleClick(object sender, EventArgs e)
+        {
+            if (dgvSubCategory.CurrentRow.Index != -1)
+            {
+                btnAdd.Enabled = false;
+                btnDeleteByOne.Enabled = false;
+                txtName.Text = dgvSubCategory.CurrentRow.Cells["dgvSubCategoryName"].Value.ToString();
+                txtDescription.Text = dgvSubCategory.CurrentRow.Cells["dgvSubcategoryDescription"].Value.ToString();
+                SubCatID = new Guid(dgvSubCategory.CurrentRow.Cells["dgvSubCategoryID"].Value.ToString());
+                MainCatID = new Guid(dgvSubCategory.CurrentRow.Cells["dgvMainCategoryId"].Value.ToString());
+                // dgvMainCategoryName
+                DgvMainCategoryName  = dgvSubCategory.CurrentRow.Cells["dgvMainCategoryName"].Value.ToString();
+                cbxMainCategory.Text = DgvMainCategoryName;
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            //if (MessageBox.Show("", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            //{
+            if (txtName.Text != string.Empty)
+            {
+                if (cbxMainCategory.SelectedItem != null)
+                {
+                    Presenter.OnClickbtnUpdate(SubCatID, new Guid(CategoryId));
+                MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
+                btnAdd.Enabled = true;
+                btnDeleteByOne.Enabled = true;
+                cbxMainCategory.Text = txtDescription.Text = txtName.Text = "";
+                dgvSubCategory.DataSource = Presenter.GetAllSubCategory();
+                }
+                else
+                {
+                    errorProvider.SetError(cbxMainCategory, "كرما أختر قيمة تصنيف رئيسي");
+                    MessageBox.Show("كرما أختر قيمة تصنيف رئيس", "تأكيد", MessageBoxButtons.OK);
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("لا بد من إدخال اسم التصنيف", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
+            //}
         }
     }
 }

@@ -103,6 +103,10 @@ namespace ElbayaNPresentation.Views.Store.Category
             txtName.Clear();
             txtDescription.Clear();
             dgvMainCategory.DataSource = Presenter.GetCategories();
+                if (ActiveMainCategory.SelectedIndex == 1)
+                {
+                    dgvDeletedMainCategory.DataSource = Presenter.GetDeletedCategories();
+                }
             }
             else
             {

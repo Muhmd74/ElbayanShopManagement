@@ -80,6 +80,7 @@ namespace ElbayanServices.Repository.Products.SubCategory
             var model = _context.SubCategories
                 .Select(d => new SubCategoryDto()
             {
+                Id= d.Id,
                 Name = d.Name,
                 Description = d.Description,
                 CategoryId = d.CategoryId,

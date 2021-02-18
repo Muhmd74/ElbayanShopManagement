@@ -13,6 +13,8 @@ namespace ElbayaNPresentation.Presenters.Store.Category.SubCategory
         string SubCategoryName { get; set; }
         string SubCategoryDescription { get; set; }
 
+        string DgvMainCategoryName { get; set; }
+
         string CategoryId { get; set; }
         List<CategoryDto> MainCategory { get; set; }
         List<SubCategoryDto> subCategories { get; set; }

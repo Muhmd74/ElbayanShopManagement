@@ -35,7 +35,7 @@ namespace ElbayaNPresentation.Presenters.Store.Category.SubCategory
             subCategory.Add(new SubCategoryDto {
                 CategoryId = new Guid (_view.CategoryId),
                 Name = _view.SubCategoryName,
-                Description = _view.SubCategoryName 
+                Description = _view.SubCategoryDescription 
             });
         }
         public List<SubCategoryDto> GetAllSubCategory()
@@ -43,5 +43,16 @@ namespace ElbayaNPresentation.Presenters.Store.Category.SubCategory
             _view.subCategories =  subCategory.GetAll();
             return _view.subCategories.ToList();
         }
+        public void OnClickbtnUpdate(Guid ID, Guid MainCateogrID)
+        {
+            subCategory.Update(new SubCategoryDto {
+                CategoryId = /*new Guid (_view.CategoryId)*/ MainCateogrID,
+                Name = _view.SubCategoryName,
+                Description = _view.SubCategoryDescription, 
+                Id = ID,
+                //CategoryName = _view.DgvMainCategoryName
+            });
+        }
+
     }
 }

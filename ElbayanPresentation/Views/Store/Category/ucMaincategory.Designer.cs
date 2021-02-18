@@ -51,10 +51,10 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dgvDeletedMainCategory = new System.Windows.Forms.DataGridView();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeletedName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeletedDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.ActiveMainCategory.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -112,9 +112,9 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.btnSearch.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
             this.btnSearch.ImageOptions.ImageToTextIndent = 23;
             this.btnSearch.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSearch.ImageOptions.SvgImage")));
-            this.btnSearch.Location = new System.Drawing.Point(43, 94);
+            this.btnSearch.Location = new System.Drawing.Point(347, 109);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(491, 55);
+            this.btnSearch.Size = new System.Drawing.Size(187, 55);
             this.btnSearch.TabIndex = 7;
             this.btnSearch.Text = "ابحث";
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -353,10 +353,6 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.dgvDeletedMainCategory.TabIndex = 1;
             this.dgvDeletedMainCategory.DoubleClick += new System.EventHandler(this.dgvDeletedMainCategory_DoubleClick);
             // 
-            // errorProvider
-            // 
-            this.errorProvider.ContainerControl = this;
-            // 
             // ID
             // 
             this.ID.DataPropertyName = "Id";
@@ -381,6 +377,10 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.DeletedDescription.MinimumWidth = 6;
             this.DeletedDescription.Name = "DeletedDescription";
             this.DeletedDescription.ReadOnly = true;
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // ucMaincategory
             // 

@@ -50,16 +50,16 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dgvSubCategory = new System.Windows.Forms.DataGridView();
-            this.dgvSubCategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvSubCategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvSubcategoryDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvMainCategoryId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvMainCategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActiveMainCategory = new System.Windows.Forms.TabControl();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbxMainCategory = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.dgvSubCategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSubCategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSubcategoryDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvMainCategoryId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvMainCategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedSubCategory)).BeginInit();
@@ -165,6 +165,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.btnUpdate.Size = new System.Drawing.Size(187, 48);
             this.btnUpdate.TabIndex = 4;
             this.btnUpdate.Text = "حفظ التعديلات";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -220,7 +221,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.tabPage4.Location = new System.Drawing.Point(4, 37);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1497, 468);
+            this.tabPage4.Size = new System.Drawing.Size(1497, 458);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "التصنفيات المؤرشفة";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -253,7 +254,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.dgvDeletedSubCategory.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvDeletedSubCategory.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.dgvDeletedSubCategory.RowTemplate.Height = 35;
-            this.dgvDeletedSubCategory.Size = new System.Drawing.Size(1491, 462);
+            this.dgvDeletedSubCategory.Size = new System.Drawing.Size(1491, 452);
             this.dgvDeletedSubCategory.TabIndex = 1;
             // 
             // DeletedName
@@ -319,48 +320,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.dgvSubCategory.RowTemplate.Height = 35;
             this.dgvSubCategory.Size = new System.Drawing.Size(1491, 452);
             this.dgvSubCategory.TabIndex = 0;
-            // 
-            // dgvSubCategoryID
-            // 
-            this.dgvSubCategoryID.DataPropertyName = "Id";
-            this.dgvSubCategoryID.HeaderText = "الرقم المرجعي";
-            this.dgvSubCategoryID.MinimumWidth = 6;
-            this.dgvSubCategoryID.Name = "dgvSubCategoryID";
-            this.dgvSubCategoryID.ReadOnly = true;
-            this.dgvSubCategoryID.Visible = false;
-            // 
-            // dgvSubCategoryName
-            // 
-            this.dgvSubCategoryName.DataPropertyName = "Name";
-            this.dgvSubCategoryName.HeaderText = "اسم التصنيف الفرعي";
-            this.dgvSubCategoryName.MinimumWidth = 6;
-            this.dgvSubCategoryName.Name = "dgvSubCategoryName";
-            this.dgvSubCategoryName.ReadOnly = true;
-            // 
-            // dgvSubcategoryDescription
-            // 
-            this.dgvSubcategoryDescription.DataPropertyName = "Description";
-            this.dgvSubcategoryDescription.HeaderText = "وصف التصنيف الفرعي";
-            this.dgvSubcategoryDescription.MinimumWidth = 6;
-            this.dgvSubcategoryDescription.Name = "dgvSubcategoryDescription";
-            this.dgvSubcategoryDescription.ReadOnly = true;
-            // 
-            // dgvMainCategoryId
-            // 
-            this.dgvMainCategoryId.DataPropertyName = "CategoryId";
-            this.dgvMainCategoryId.HeaderText = "الرقم المرجعي للتصنيف الرئيسي";
-            this.dgvMainCategoryId.MinimumWidth = 6;
-            this.dgvMainCategoryId.Name = "dgvMainCategoryId";
-            this.dgvMainCategoryId.ReadOnly = true;
-            this.dgvMainCategoryId.Visible = false;
-            // 
-            // dgvMainCategoryName
-            // 
-            this.dgvMainCategoryName.DataPropertyName = "CategoryName";
-            this.dgvMainCategoryName.HeaderText = "اسم التصنيف الرئيسي";
-            this.dgvMainCategoryName.MinimumWidth = 6;
-            this.dgvMainCategoryName.Name = "dgvMainCategoryName";
-            this.dgvMainCategoryName.ReadOnly = true;
+            this.dgvSubCategory.DoubleClick += new System.EventHandler(this.dgvSubCategory_DoubleClick);
             // 
             // ActiveMainCategory
             // 
@@ -430,6 +390,48 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.label3.Size = new System.Drawing.Size(174, 28);
             this.label3.TabIndex = 0;
             this.label3.Text = "اختر التصنيف الرئيسي";
+            // 
+            // dgvSubCategoryID
+            // 
+            this.dgvSubCategoryID.DataPropertyName = "Id";
+            this.dgvSubCategoryID.HeaderText = "الرقم المرجعي";
+            this.dgvSubCategoryID.MinimumWidth = 6;
+            this.dgvSubCategoryID.Name = "dgvSubCategoryID";
+            this.dgvSubCategoryID.ReadOnly = true;
+            this.dgvSubCategoryID.Visible = false;
+            // 
+            // dgvSubCategoryName
+            // 
+            this.dgvSubCategoryName.DataPropertyName = "Name";
+            this.dgvSubCategoryName.HeaderText = "اسم التصنيف الفرعي";
+            this.dgvSubCategoryName.MinimumWidth = 6;
+            this.dgvSubCategoryName.Name = "dgvSubCategoryName";
+            this.dgvSubCategoryName.ReadOnly = true;
+            // 
+            // dgvSubcategoryDescription
+            // 
+            this.dgvSubcategoryDescription.DataPropertyName = "Description";
+            this.dgvSubcategoryDescription.HeaderText = "وصف التصنيف الفرعي";
+            this.dgvSubcategoryDescription.MinimumWidth = 6;
+            this.dgvSubcategoryDescription.Name = "dgvSubcategoryDescription";
+            this.dgvSubcategoryDescription.ReadOnly = true;
+            // 
+            // dgvMainCategoryId
+            // 
+            this.dgvMainCategoryId.DataPropertyName = "CategoryId";
+            this.dgvMainCategoryId.HeaderText = "الرقم المرجعي للتصنيف الرئيسي";
+            this.dgvMainCategoryId.MinimumWidth = 6;
+            this.dgvMainCategoryId.Name = "dgvMainCategoryId";
+            this.dgvMainCategoryId.ReadOnly = true;
+            this.dgvMainCategoryId.Visible = false;
+            // 
+            // dgvMainCategoryName
+            // 
+            this.dgvMainCategoryName.DataPropertyName = "CategoryName";
+            this.dgvMainCategoryName.HeaderText = "اسم التصنيف الرئيسي";
+            this.dgvMainCategoryName.MinimumWidth = 6;
+            this.dgvMainCategoryName.Name = "dgvMainCategoryName";
+            this.dgvMainCategoryName.ReadOnly = true;
             // 
             // ucSubCategory
             // 
