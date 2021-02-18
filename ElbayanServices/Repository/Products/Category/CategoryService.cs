@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ElbayanDatabase.ConnectionTools;
 using ElbayanServices.Repository.Products.Category.Dtos;
+using ElbayanServices.Repository.Products.Category.Validators;
 
 namespace ElbayanServices.Repository.Products.Category
 {
@@ -19,15 +20,17 @@ namespace ElbayanServices.Repository.Products.Category
        {
            try
            {
-               var result = _context.Categories.Add(new ElbayanDatabase.DataClasses.Product.ProductCategory.Category()
-               {
-                   Name = model.Name,
-                   Description = model.Description,
-                   IsDeleted = false,
+              
+                   var result = _context.Categories.Add(new ElbayanDatabase.DataClasses.Product.ProductCategory.Category()
+                   {
+                       Name = model.Name,
+                       Description = model.Description,
+                       IsDeleted = false,
 
-               });
-               _context.SaveChanges();
-               return result.Description;
+                   });
+                   _context.SaveChanges();
+                   return result.Description;
+              
            }
            catch (Exception e)
            {
@@ -37,21 +40,22 @@ namespace ElbayanServices.Repository.Products.Category
 
         public CategoryDto Update(CategoryDto model)
         {
-            var result = _context.Categories.FirstOrDefault(d => d.Id == model.Id);
-            if (result!=null)
-            {
-                result.Description = model.Description;
-                result.Name = model.Name;
-                _context.SaveChanges();
-                return new CategoryDto()
+         
+                var result = _context.Categories.FirstOrDefault(d => d.Id == model.Id);
+                if (result != null)
                 {
-                    Name = model.Name,
-                    Description = model.Description,
-                    Id = result.Id
-                };
-            }
+                    result.Description = model.Description;
+                    result.Name = model.Name;
+                    _context.SaveChanges();
+                    return new CategoryDto()
+                    {
+                        Name = model.Name,
+                        Description = model.Description,
+                        Id = result.Id
+                    };
+                }
 
-            return null;
+                return null;
         }
 
         public bool DeleteOrRestore(Guid id)
@@ -70,19 +74,17 @@ namespace ElbayanServices.Repository.Products.Category
 
         public List<CategoryDto> GetAll()
         {
-            var model = _context.Categories.Where(d => d.IsDeleted == false).Select(d => new CategoryDto()
+            var model = _context.Categories.Where(d=>d.IsDeleted==false).Select(d => new CategoryDto()
             {
                 Id = d.Id,
                 Name = d.Name,
-                Description = d.Description,
+                Description = d.Description
             }).ToList();
             return model.Any() ? model : null;
-        }
-        public List<CategoryDto> GetAllDeleted()
+        }  public List<CategoryDto> GetAllDeleted()
         {
-            var model = _context.Categories.Where(d => d.IsDeleted).Select(d => new CategoryDto()
+            var model = _context.Categories.Where(d=>d.IsDeleted).Select(d => new CategoryDto()
             {
-                Id = d.Id,
                 Name = d.Name,
                 Description = d.Description
             }).ToList();
@@ -104,5 +106,21 @@ namespace ElbayanServices.Repository.Products.Category
 
             return null;                                                                                                                    
         }
-    }
+
+        public CategoryDto GetByName(string categoryName)
+        {
+            var model = _context.Categories.FirstOrDefault(d => d.Name == categoryName && d.IsDeleted == false);
+            if (model!=null)
+            {
+                return new CategoryDto()
+                {
+                     Name = model.Name,
+                     Description = model.Description,
+                     Id = model.Id
+                };
+            }
+
+            return null;
+        }
+   }
 }

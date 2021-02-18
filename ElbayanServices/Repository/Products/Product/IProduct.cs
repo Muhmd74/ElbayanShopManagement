@@ -14,7 +14,9 @@ namespace ElbayanServices.Repository.Products.Product
        bool IsDeleted(Guid id);
        List<ProductDto> GetAllProductDeleted();
        List<ProductDto> GetAll();
+       List<ProductDto> GetAllByCategory(Guid categoryId);
        ProductDto GetById(Guid id);
+       ProductDto GetByName(string productName);
        List<ProductNameDto> GetAllProductName();
    }
 }
