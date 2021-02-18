@@ -24,7 +24,7 @@ namespace ElbayaNPresentation
 
         private void accordionControlElement21_Click(object sender, EventArgs e)
         {
-            Ribbon.SelectPage(ribbonPage1);
+            //Ribbon.SelectPage(ribbonPage1);
             if (!gcContainer.Controls.Contains(ucMaincategory.Instance))
             {
                 gcContainer.Controls.Add(ucMaincategory.Instance);

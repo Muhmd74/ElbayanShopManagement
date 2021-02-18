@@ -17,6 +17,7 @@ namespace ElbayaNPresentation.Views.Store.Category
 {
     public partial class ucMaincategory : DevExpress.XtraEditors.XtraUserControl, IViewMainCategory
     {
+
        private static ucMaincategory _instance;
 
         public ucMaincategory()
@@ -130,7 +131,7 @@ namespace ElbayaNPresentation.Views.Store.Category
                 btnAdd.Enabled = true;
                 btnDeleteByOne.Text = "أرشفة التصنيف";
                 btnUpdate.Enabled = true;
-                txtDescription.Text = txtName.Text = txtSearch.Text = "";
+                //txtDescription.Text = txtName.Text = txtSearch.Text = "";
             }
             else if (ActiveMainCategory.SelectedIndex == 1)
             {
@@ -140,7 +141,7 @@ namespace ElbayaNPresentation.Views.Store.Category
                 btnAdd.Enabled = false;
                 btnDeleteByOne.Text = "إستعادة التصنيف";
                 btnUpdate.Enabled = false;
-                txtDescription.Text = txtName.Text = txtSearch.Text = "";
+                //txtDescription.Text = txtName.Text = txtSearch.Text = "";
             }
         }
 
@@ -153,5 +154,7 @@ namespace ElbayaNPresentation.Views.Store.Category
                 CatID = new Guid(dgvDeletedMainCategory.CurrentRow.Cells["ID"].Value.ToString());
             }
         }
+
+        
     }
 }
