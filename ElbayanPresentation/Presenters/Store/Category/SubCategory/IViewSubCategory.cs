@@ -16,6 +16,6 @@ namespace ElbayaNPresentation.Presenters.Store.Category.SubCategory
         string CategoryId { get; set; }
         List<CategoryDto> MainCategory { get; set; }
         List<SubCategoryDto> subCategories { get; set; }
-        SubCategoryPresenter presenter { set; }
+        SubCategoryPresenter Presenter { set; }
     }
 }

@@ -20,14 +20,14 @@ namespace ElbayaNPresentation.Views.Store.Category
         public ucSubCategory()
         {
             InitializeComponent();
-            presenter = new SubCategoryPresenter(this);
+            Presenter = new SubCategoryPresenter(this);
 
             // Pupulate Main category in combo box
             FillMaincategorycbx();
 
             // Load All sub categories in Data grid view with style
             DataGridViewStyle.StyleDatagridview(dgvSubCategory);
-            dgvSubCategory.DataSource = presenter.GetAllSubCategory();
+            dgvSubCategory.DataSource = Presenter.GetAllSubCategory();
             dgvSubCategory.Columns[0].Visible = false;
             dgvSubCategory.Columns[3].Visible = false;
         }
@@ -46,14 +46,14 @@ namespace ElbayaNPresentation.Views.Store.Category
         public string SubCategoryName { get => txtName.Text; set => txtName.Text = value; }
         public string SubCategoryDescription { get => txtName.Text; set => txtName.Text = value; }
         public List<SubCategoryDto> subCategories { get; set; }
-        public SubCategoryPresenter presenter { private get; set; }
+        public SubCategoryPresenter Presenter { private get; set; }
         public List<CategoryDto> MainCategory { get; set; }
         public string CategoryId { get => cbxMainCategory.SelectedValue.ToString(); set => cbxMainCategory.SelectedValue = value; }
 
         public void FillMaincategorycbx()
         {
             // Pupulate Main category in combo box
-            cbxMainCategory.DataSource = presenter.FillcbxMainCategory();
+            cbxMainCategory.DataSource = Presenter.FillcbxMainCategory();
             cbxMainCategory.DisplayMember = "Name";
             cbxMainCategory.ValueMember = "Id";
             cbxMainCategory.SelectedValue = "Id";
@@ -65,13 +65,13 @@ namespace ElbayaNPresentation.Views.Store.Category
             {
                 if(cbxMainCategory.SelectedItem != null)
                 {
-                    presenter.OnClickbtnAdd();
+                    Presenter.OnClickbtnAdd();
                     MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
                     txtName.Clear();
                     txtDescription.Clear();
                     errorProvider.Clear();
                     cbxMainCategory.Refresh();
-                    //dgvMainCategory.DataSource = Presenter.GetCategories();
+                    dgvSubCategory.DataSource = Presenter.GetAllSubCategory();
                 }
                 else
                 {
