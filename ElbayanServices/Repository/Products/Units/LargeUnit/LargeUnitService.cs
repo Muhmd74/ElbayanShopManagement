@@ -57,8 +57,9 @@ namespace ElbayanServices.Repository.Products.Units.LargeUnit
         {
             var model = _context.LargeUnits.Where(d=>d.IsDeleted==false).Select(d => new LargeUnitDto()
             {
-                Description = d.Description,
+                Id = d.Id,
                 Name = d.Name,
+                Description = d.Description,
                 IsDeleted = d.IsDeleted
             }).ToList();
             return model;

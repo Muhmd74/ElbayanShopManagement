@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using ElbayaNPresentation.Presenters.CommonPresenter;
 using ElbayaNPresentation.Presenters.Store.Unit.LargeUnit;
 using ElbayanServices.Repository.Products.Units.LargeUnit.Dtos;
 using System;
@@ -18,8 +19,11 @@ namespace ElbayaNPresentation.Views.Store.Units
         public ucLargeUnits()
         {
             InitializeComponent();
-            LargeUnitPresenter Presenter = new LargeUnitPresenter(this);
-
+            
+            // 
+            Presenter = new LargeUnitPresenter(this);
+            // load Active Units list
+            PopulateAllUnitDataGridView();
         }
 
         // Apply singlton pattern for form Instance
@@ -42,10 +46,28 @@ namespace ElbayaNPresentation.Views.Store.Units
         public List<LargeUnitDto> LargeUnit { get; set; }
         public LargeUnitPresenter Presenter { private get;  set; }
 
+        public void PopulateAllUnitDataGridView()
+        {
+            dgvLargeUnit.DataSource = Presenter.GetAllLargeUnit();
+            dgvLargeUnit.Columns[0].Visible = false;
+            DataGridViewStyle.StyleDatagridview(dgvLargeUnit);
 
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Presenter.AddNewUnit();
+            if (txtName.Text != string.Empty)
+            {
+                Presenter.AddNewUnit();
+                MessageBox.Show("تمت عملية الإضافة بنجاح", "تأكيد", MessageBoxButtons.OK);
+                txtName.Clear();
+                txtDescription.Clear();
+                dgvLargeUnit.DataSource = Presenter.GetAllLargeUnit();
+            }
+            else
+            {
+                MessageBox.Show("لا بد من إدخال اسم الوحدة", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
 
         }
     }

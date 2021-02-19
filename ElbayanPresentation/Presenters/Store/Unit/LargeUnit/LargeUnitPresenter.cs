@@ -21,7 +21,7 @@ namespace ElbayaNPresentation.Presenters.Store.Unit.LargeUnit
 
         public void AddNewUnit()
         {
-            largeUnit.Add(new ElbayanServices.Repository.Products.Units.LargeUnit.Dtos.LargeUnitDto
+            largeUnit.Add(new LargeUnitDto
             {
                 Name = _view.LargeUnitName,
                 Description = _view.LargeUnitDescirption
@@ -30,10 +30,10 @@ namespace ElbayaNPresentation.Presenters.Store.Unit.LargeUnit
 
         public List<LargeUnitDto> GetAllLargeUnit()
         {
-            if (largeUnit.GetAllLargeUnit().Any())
-            {
-                return _view.LargeUnit = largeUnit.GetAllLargeUnit().ToList();
-            }
+            //if (!largeUnit.GetAllLargeUnit().Any())
+            //{
+                 _view.LargeUnit = largeUnit.GetAllLargeUnit();
+            //}
 
             return _view.LargeUnit.ToList();
         }
