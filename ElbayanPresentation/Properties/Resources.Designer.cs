@@ -61,12 +61,72 @@ namespace ElbayaNPresentation.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bar_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("bar_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bar_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("bar_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap barcode_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("barcode_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap barcode_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("barcode_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
         internal static DevExpress.Utils.Svg.SvgImage bo_appearance {
             get {
                 object obj = ResourceManager.GetObject("bo_appearance", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap colorlegend_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("colorlegend_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap colorlegend_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("colorlegend_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -93,6 +153,26 @@ namespace ElbayaNPresentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap managerules_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("managerules_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap managerules_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("managerules_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap newtablestyle_16x16 {
             get {
                 object obj = ResourceManager.GetObject("newtablestyle_16x16", resourceCulture);
@@ -106,6 +186,26 @@ namespace ElbayaNPresentation.Properties {
         internal static System.Drawing.Bitmap newtablestyle_32x32 {
             get {
                 object obj = ResourceManager.GetObject("newtablestyle_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap snaptogglefieldhighlighting_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("snaptogglefieldhighlighting_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap snaptogglefieldhighlighting_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("snaptogglefieldhighlighting_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
