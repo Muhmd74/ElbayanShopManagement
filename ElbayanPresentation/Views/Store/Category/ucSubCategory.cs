@@ -65,11 +65,30 @@ namespace ElbayaNPresentation.Views.Store.Category
             cbxMainCategory.SelectedValue = "Id";
         }
 
+
+
+        private void dgvSubCategory_DoubleClick(object sender, EventArgs e)
+        {
+            if (dgvSubCategory.CurrentRow.Index != -1)
+            {
+                btnAdd.Enabled = false;
+                btnDeleteByOne.Enabled = false;
+                txtName.Text = dgvSubCategory.CurrentRow.Cells["dgvSubCategoryName"].Value.ToString();
+                txtDescription.Text = dgvSubCategory.CurrentRow.Cells["dgvSubcategoryDescription"].Value.ToString();
+                SubCatID = new Guid(dgvSubCategory.CurrentRow.Cells["dgvSubCategoryID"].Value.ToString());
+                MainCatID = new Guid(dgvSubCategory.CurrentRow.Cells["dgvMainCategoryId"].Value.ToString());
+                // dgvMainCategoryName
+                DgvMainCategoryName  = dgvSubCategory.CurrentRow.Cells["dgvMainCategoryName"].Value.ToString();
+                cbxMainCategory.Text = DgvMainCategoryName;
+            }
+        }
+
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (txtName.Text != string.Empty)
             {
-                if(cbxMainCategory.SelectedItem != null)
+                if (cbxMainCategory.SelectedItem != null)
                 {
                     Presenter.OnClickbtnAdd();
                     MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
@@ -93,22 +112,6 @@ namespace ElbayaNPresentation.Views.Store.Category
             }
         }
 
-        private void dgvSubCategory_DoubleClick(object sender, EventArgs e)
-        {
-            if (dgvSubCategory.CurrentRow.Index != -1)
-            {
-                btnAdd.Enabled = false;
-                btnDeleteByOne.Enabled = false;
-                txtName.Text = dgvSubCategory.CurrentRow.Cells["dgvSubCategoryName"].Value.ToString();
-                txtDescription.Text = dgvSubCategory.CurrentRow.Cells["dgvSubcategoryDescription"].Value.ToString();
-                SubCatID = new Guid(dgvSubCategory.CurrentRow.Cells["dgvSubCategoryID"].Value.ToString());
-                MainCatID = new Guid(dgvSubCategory.CurrentRow.Cells["dgvMainCategoryId"].Value.ToString());
-                // dgvMainCategoryName
-                DgvMainCategoryName  = dgvSubCategory.CurrentRow.Cells["dgvMainCategoryName"].Value.ToString();
-                cbxMainCategory.Text = DgvMainCategoryName;
-            }
-        }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             //if (MessageBox.Show("", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -118,11 +121,11 @@ namespace ElbayaNPresentation.Views.Store.Category
                 if (cbxMainCategory.SelectedItem != null)
                 {
                     Presenter.OnClickbtnUpdate(SubCatID, new Guid(CategoryId));
-                MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
-                btnAdd.Enabled = true;
-                btnDeleteByOne.Enabled = true;
-                cbxMainCategory.Text = txtDescription.Text = txtName.Text = "";
-                dgvSubCategory.DataSource = Presenter.GetAllSubCategory();
+                    MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
+                    btnAdd.Enabled = true;
+                    btnDeleteByOne.Enabled = true;
+                    cbxMainCategory.Text = txtDescription.Text = txtName.Text = "";
+                    dgvSubCategory.DataSource = Presenter.GetAllSubCategory();
                 }
                 else
                 {
