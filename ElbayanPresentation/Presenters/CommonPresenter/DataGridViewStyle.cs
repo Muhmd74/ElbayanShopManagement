@@ -15,9 +15,9 @@ namespace ElbayaNPresentation.Presenters.CommonPresenter
             dataGrid.BorderStyle = BorderStyle.None;
             dataGrid.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             dataGrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGrid.DefaultCellStyle.SelectionBackColor = Color.SeaGreen;
+            dataGrid.DefaultCellStyle.SelectionBackColor = Color.FromArgb(92, 184, 92);
             dataGrid.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
-            dataGrid.BackgroundColor = Color.FromArgb(92, 184, 92);
+            dataGrid.BackgroundColor = Color.FromArgb(247, 247, 247);
             dataGrid.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing; //optional
             dataGrid.EnableHeadersVisualStyles = false;
             dataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;

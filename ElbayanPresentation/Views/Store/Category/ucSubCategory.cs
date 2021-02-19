@@ -71,6 +71,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             {
                 if (cbxMainCategory.SelectedItem != null)
                 {
+
                     Presenter.OnClickbtnAdd();
                     MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
                     txtName.Clear();

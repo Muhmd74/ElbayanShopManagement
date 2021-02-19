@@ -14,7 +14,7 @@ using ElbayaNPresentation.Views.Store.Category;
 
 namespace ElbayaNPresentation
 {
-    public partial class frmMainBoard : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class frmMainBoard : DevExpress.XtraEditors.XtraForm
     {
         public frmMainBoard()
         {
