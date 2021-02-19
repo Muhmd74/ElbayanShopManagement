@@ -1,4 +1,5 @@
 ﻿using ElbayanServices.Repository.Products.Units.LargeUnit;
+using ElbayanServices.Repository.Products.Units.LargeUnit.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,16 @@ namespace ElbayaNPresentation.Presenters.Store.Unit.LargeUnit
                 Name = _view.LargeUnitName,
                 Description = _view.LargeUnitDescirption
             });
+        }
+
+        public List<LargeUnitDto> GetAllLargeUnit()
+        {
+            if (largeUnit.GetAllLargeUnit().Any())
+            {
+                return _view.LargeUnit = largeUnit.GetAllLargeUnit().ToList();
+            }
+
+            return _view.LargeUnit.ToList();
         }
 
     }

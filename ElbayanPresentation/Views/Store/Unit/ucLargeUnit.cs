@@ -41,5 +41,12 @@ namespace ElbayaNPresentation.Views.Store.Units
         public string SearchKeyword { get => txtSearch.Text; set => txtSearch.Text = value; }
         public List<LargeUnitDto> LargeUnit { get; set; }
         public LargeUnitPresenter Presenter { private get;  set; }
+
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Presenter.AddNewUnit();
+
+        }
     }
 }

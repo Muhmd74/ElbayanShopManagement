@@ -29,8 +29,8 @@ namespace ElbayaNPresentation.Views.Store.Units
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
@@ -45,11 +45,11 @@ namespace ElbayaNPresentation.Views.Store.Units
             this.ActiveMainCategory = new System.Windows.Forms.TabControl();
             this.tpActiveLargeUnits = new System.Windows.Forms.TabPage();
             this.dgvSubCategory = new System.Windows.Forms.DataGridView();
-            this.tpArchieveLargeUnits = new System.Windows.Forms.TabPage();
-            this.dgvDeletedMainCategory = new System.Windows.Forms.DataGridView();
             this.dgvLargeUnitID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvLargeUnitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvLargeUnitDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tpArchieveLargeUnits = new System.Windows.Forms.TabPage();
+            this.dgvDeletedMainCategory = new System.Windows.Forms.DataGridView();
             this.dgvLargeUnitDeletedID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvLargeUnitDeletedName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvLargeUnitDeletedDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,7 +81,7 @@ namespace ElbayaNPresentation.Views.Store.Units
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(99)))), ((int)(((byte)(155)))));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1550, 311);
+            this.groupBox1.Size = new System.Drawing.Size(1550, 323);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "إعدادات الوحدات الرئيسية";
@@ -155,12 +155,13 @@ namespace ElbayaNPresentation.Views.Store.Units
             this.btnAdd.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Location = new System.Drawing.Point(1205, 220);
+            this.btnAdd.Location = new System.Drawing.Point(1205, 232);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
             this.btnAdd.Size = new System.Drawing.Size(190, 56);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "إضافة جديدة";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
@@ -172,7 +173,7 @@ namespace ElbayaNPresentation.Views.Store.Units
             this.btnUpdate.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.HoverState.Parent = this.btnUpdate;
-            this.btnUpdate.Location = new System.Drawing.Point(971, 220);
+            this.btnUpdate.Location = new System.Drawing.Point(971, 232);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
             this.btnUpdate.Size = new System.Drawing.Size(190, 56);
@@ -189,7 +190,7 @@ namespace ElbayaNPresentation.Views.Store.Units
             this.btnDeleteByOne.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteByOne.ForeColor = System.Drawing.Color.White;
             this.btnDeleteByOne.HoverState.Parent = this.btnDeleteByOne;
-            this.btnDeleteByOne.Location = new System.Drawing.Point(727, 220);
+            this.btnDeleteByOne.Location = new System.Drawing.Point(727, 232);
             this.btnDeleteByOne.Name = "btnDeleteByOne";
             this.btnDeleteByOne.ShadowDecoration.Parent = this.btnDeleteByOne;
             this.btnDeleteByOne.Size = new System.Drawing.Size(190, 56);
@@ -307,15 +308,15 @@ namespace ElbayaNPresentation.Views.Store.Units
             this.dgvSubCategory.AllowUserToDeleteRows = false;
             this.dgvSubCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSubCategory.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSubCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSubCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSubCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSubCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvLargeUnitID,
@@ -331,48 +332,6 @@ namespace ElbayaNPresentation.Views.Store.Units
             this.dgvSubCategory.RowTemplate.Height = 35;
             this.dgvSubCategory.Size = new System.Drawing.Size(1536, 434);
             this.dgvSubCategory.TabIndex = 0;
-            // 
-            // tpArchieveLargeUnits
-            // 
-            this.tpArchieveLargeUnits.Controls.Add(this.dgvDeletedMainCategory);
-            this.tpArchieveLargeUnits.Location = new System.Drawing.Point(4, 63);
-            this.tpArchieveLargeUnits.Name = "tpArchieveLargeUnits";
-            this.tpArchieveLargeUnits.Padding = new System.Windows.Forms.Padding(3);
-            this.tpArchieveLargeUnits.Size = new System.Drawing.Size(1542, 424);
-            this.tpArchieveLargeUnits.TabIndex = 1;
-            this.tpArchieveLargeUnits.Text = "الوحدات المؤرشفة";
-            this.tpArchieveLargeUnits.UseVisualStyleBackColor = true;
-            // 
-            // dgvDeletedMainCategory
-            // 
-            this.dgvDeletedMainCategory.AllowUserToAddRows = false;
-            this.dgvDeletedMainCategory.AllowUserToDeleteRows = false;
-            this.dgvDeletedMainCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDeletedMainCategory.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDeletedMainCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDeletedMainCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDeletedMainCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgvLargeUnitDeletedID,
-            this.dgvLargeUnitDeletedName,
-            this.dgvLargeUnitDeletedDescription});
-            this.dgvDeletedMainCategory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDeletedMainCategory.Location = new System.Drawing.Point(3, 3);
-            this.dgvDeletedMainCategory.Name = "dgvDeletedMainCategory";
-            this.dgvDeletedMainCategory.ReadOnly = true;
-            this.dgvDeletedMainCategory.RowHeadersWidth = 51;
-            this.dgvDeletedMainCategory.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgvDeletedMainCategory.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            this.dgvDeletedMainCategory.RowTemplate.Height = 35;
-            this.dgvDeletedMainCategory.Size = new System.Drawing.Size(1536, 418);
-            this.dgvDeletedMainCategory.TabIndex = 1;
             // 
             // dgvLargeUnitID
             // 
@@ -398,6 +357,48 @@ namespace ElbayaNPresentation.Views.Store.Units
             this.dgvLargeUnitDescription.MinimumWidth = 6;
             this.dgvLargeUnitDescription.Name = "dgvLargeUnitDescription";
             this.dgvLargeUnitDescription.ReadOnly = true;
+            // 
+            // tpArchieveLargeUnits
+            // 
+            this.tpArchieveLargeUnits.Controls.Add(this.dgvDeletedMainCategory);
+            this.tpArchieveLargeUnits.Location = new System.Drawing.Point(4, 63);
+            this.tpArchieveLargeUnits.Name = "tpArchieveLargeUnits";
+            this.tpArchieveLargeUnits.Padding = new System.Windows.Forms.Padding(3);
+            this.tpArchieveLargeUnits.Size = new System.Drawing.Size(1542, 440);
+            this.tpArchieveLargeUnits.TabIndex = 1;
+            this.tpArchieveLargeUnits.Text = "الوحدات المؤرشفة";
+            this.tpArchieveLargeUnits.UseVisualStyleBackColor = true;
+            // 
+            // dgvDeletedMainCategory
+            // 
+            this.dgvDeletedMainCategory.AllowUserToAddRows = false;
+            this.dgvDeletedMainCategory.AllowUserToDeleteRows = false;
+            this.dgvDeletedMainCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDeletedMainCategory.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDeletedMainCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvDeletedMainCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDeletedMainCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvLargeUnitDeletedID,
+            this.dgvLargeUnitDeletedName,
+            this.dgvLargeUnitDeletedDescription});
+            this.dgvDeletedMainCategory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDeletedMainCategory.Location = new System.Drawing.Point(3, 3);
+            this.dgvDeletedMainCategory.Name = "dgvDeletedMainCategory";
+            this.dgvDeletedMainCategory.ReadOnly = true;
+            this.dgvDeletedMainCategory.RowHeadersWidth = 51;
+            this.dgvDeletedMainCategory.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgvDeletedMainCategory.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.dgvDeletedMainCategory.RowTemplate.Height = 35;
+            this.dgvDeletedMainCategory.Size = new System.Drawing.Size(1536, 434);
+            this.dgvDeletedMainCategory.TabIndex = 1;
             // 
             // dgvLargeUnitDeletedID
             // 
