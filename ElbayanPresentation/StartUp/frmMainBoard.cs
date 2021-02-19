@@ -27,7 +27,7 @@ namespace ElbayaNPresentation
 
         private void accordionControlElement21_Click(object sender, EventArgs e)
         {
-            //Ribbon.SelectPage(ribbonPage1);
+            ribbon.SelectPage(rpProductSetting);
             if (!gcContainer.Controls.Contains(ucMaincategory.Instance))
             {
                 gcContainer.Controls.Add(ucMaincategory.Instance);
@@ -40,7 +40,6 @@ namespace ElbayaNPresentation
 
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
-            accordionControlElement21_Click(null, null);
         }
 
         private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
@@ -56,6 +55,16 @@ namespace ElbayaNPresentation
         private void guna2CircleButton1_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void accordionControl1_Click(object sender, EventArgs e)
+        {
+            ribbon.SelectPage(rpProductSetting);
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
