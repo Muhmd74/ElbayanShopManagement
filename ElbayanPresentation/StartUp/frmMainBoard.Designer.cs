@@ -32,15 +32,11 @@ namespace ElbayaNPresentation
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainBoard));
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barCheckItem1 = new DevExpress.XtraBars.BarCheckItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.rpProductSetting = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -68,15 +64,22 @@ namespace ElbayaNPresentation
             this.accordionControlSeparator3 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlElement12 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement17 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlSeparator17 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlElement18 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement21 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlSeparator20 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlSeparator21 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.accordionControlSeparator19 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlElement19 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator2 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlElement9 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlSeparator15 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlElement10 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlSeparator16 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlElement11 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -88,15 +91,15 @@ namespace ElbayaNPresentation
             this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.accordionControlElement20 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlSeparator11 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlSeparator12 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.gcContainer = new DevExpress.XtraEditors.GroupControl();
             this.tabFormContentContainer1 = new DevExpress.XtraBars.TabFormContentContainer();
             this.tabFormPage1 = new DevExpress.XtraBars.TabFormPage();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnMinimize = new Guna.UI2.WinForms.Guna2CircleButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.accordionControlSeparator11 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.btnMinimize = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
@@ -122,15 +125,11 @@ namespace ElbayaNPresentation
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
             this.ribbon.SearchEditItem,
-            this.barButtonItem1,
-            this.barCheckItem1,
             this.barButtonItem2,
             this.barButtonItem3,
             this.barButtonItem4,
             this.barButtonItem5,
             this.barButtonItem6,
-            this.barButtonItem7,
-            this.barButtonItem8,
             this.barButtonItem9,
             this.barButtonItem10});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
@@ -144,47 +143,23 @@ namespace ElbayaNPresentation
             this.ribbon.Size = new System.Drawing.Size(1766, 191);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "شركة دوجي";
-            this.barButtonItem1.Id = 1;
-            this.barButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            // 
-            // barCheckItem1
-            // 
-            this.barCheckItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Left;
-            this.barCheckItem1.Caption = "برمجة وتطوير شركة دوجتي سوفت وير ";
-            this.barCheckItem1.Enabled = false;
-            this.barCheckItem1.Id = 2;
-            this.barCheckItem1.ImageOptions.ImageUri.Uri = "Square";
-            this.barCheckItem1.ItemAppearance.Disabled.Font = new System.Drawing.Font("Droid Arabic Kufi", 6F);
-            this.barCheckItem1.ItemAppearance.Disabled.Options.UseFont = true;
-            this.barCheckItem1.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 6F);
-            this.barCheckItem1.ItemAppearance.Hovered.Options.UseFont = true;
-            this.barCheckItem1.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barCheckItem1.ItemAppearance.Normal.Options.UseFont = true;
-            this.barCheckItem1.ItemAppearance.Pressed.Font = new System.Drawing.Font("Droid Arabic Kufi", 6F);
-            this.barCheckItem1.ItemAppearance.Pressed.Options.UseFont = true;
-            this.barCheckItem1.Name = "barCheckItem1";
-            // 
             // barButtonItem2
             // 
             this.barButtonItem2.Caption = "التصنيفات الرئيسية";
             this.barButtonItem2.Id = 3;
-            this.barButtonItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
-            this.barButtonItem2.ItemAppearance.Disabled.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F);
+            this.barButtonItem2.ImageOptions.Image = global::ElbayaNPresentation.Properties.Resources.formatastable_16x16;
+            this.barButtonItem2.ImageOptions.LargeImage = global::ElbayaNPresentation.Properties.Resources.formatastable_32x32;
+            this.barButtonItem2.ItemAppearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barButtonItem2.ItemAppearance.Disabled.Options.UseFont = true;
-            this.barButtonItem2.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F);
+            this.barButtonItem2.ItemAppearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 11.2F, System.Drawing.FontStyle.Bold);
             this.barButtonItem2.ItemAppearance.Hovered.Options.UseFont = true;
             this.barButtonItem2.ItemAppearance.Hovered.Options.UseTextOptions = true;
             this.barButtonItem2.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem2.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F);
+            this.barButtonItem2.ItemAppearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
             this.barButtonItem2.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem2.ItemAppearance.Normal.Options.UseTextOptions = true;
             this.barButtonItem2.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem2.ItemAppearance.Pressed.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F);
+            this.barButtonItem2.ItemAppearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
             this.barButtonItem2.ItemAppearance.Pressed.Options.UseFont = true;
             this.barButtonItem2.ItemAppearance.Pressed.Options.UseTextOptions = true;
             this.barButtonItem2.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
@@ -196,20 +171,26 @@ namespace ElbayaNPresentation
             // 
             this.barButtonItem3.Caption = "التصنيفات الفرعية";
             this.barButtonItem3.Id = 4;
-            this.barButtonItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem3.ImageOptions.SvgImage")));
-            this.barButtonItem3.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F);
+            this.barButtonItem3.ImageOptions.Image = global::ElbayaNPresentation.Properties.Resources.newtablestyle_16x16;
+            this.barButtonItem3.ImageOptions.LargeImage = global::ElbayaNPresentation.Properties.Resources.newtablestyle_32x32;
+            this.barButtonItem3.ItemAppearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem3.ItemAppearance.Disabled.Options.UseFont = true;
+            this.barButtonItem3.ItemAppearance.Disabled.Options.UseTextOptions = true;
+            this.barButtonItem3.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem3.ItemAppearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 11.2F, System.Drawing.FontStyle.Bold);
             this.barButtonItem3.ItemAppearance.Hovered.Options.UseFont = true;
             this.barButtonItem3.ItemAppearance.Hovered.Options.UseTextOptions = true;
             this.barButtonItem3.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem3.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F);
+            this.barButtonItem3.ItemAppearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
             this.barButtonItem3.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem3.ItemAppearance.Normal.Options.UseTextOptions = true;
             this.barButtonItem3.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem3.ItemAppearance.Pressed.Font = new System.Drawing.Font("Droid Arabic Kufi", 6F);
+            this.barButtonItem3.ItemAppearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
             this.barButtonItem3.ItemAppearance.Pressed.Options.UseFont = true;
             this.barButtonItem3.ItemAppearance.Pressed.Options.UseTextOptions = true;
             this.barButtonItem3.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
             // 
             // barButtonItem4
@@ -278,36 +259,6 @@ namespace ElbayaNPresentation
             this.barButtonItem6.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.barButtonItem6.Name = "barButtonItem6";
             // 
-            // barButtonItem7
-            // 
-            this.barButtonItem7.Caption = "حركة الأسعار";
-            this.barButtonItem7.Id = 8;
-            this.barButtonItem7.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem7.ImageOptions.SvgImage")));
-            this.barButtonItem7.ItemAppearance.Disabled.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F);
-            this.barButtonItem7.ItemAppearance.Disabled.Options.UseFont = true;
-            this.barButtonItem7.ItemAppearance.Disabled.Options.UseTextOptions = true;
-            this.barButtonItem7.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem7.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F);
-            this.barButtonItem7.ItemAppearance.Hovered.Options.UseFont = true;
-            this.barButtonItem7.ItemAppearance.Hovered.Options.UseTextOptions = true;
-            this.barButtonItem7.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem7.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F);
-            this.barButtonItem7.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem7.ItemAppearance.Normal.Options.UseTextOptions = true;
-            this.barButtonItem7.ItemAppearance.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.None;
-            this.barButtonItem7.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem7.ItemAppearance.Pressed.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F);
-            this.barButtonItem7.ItemAppearance.Pressed.Options.UseFont = true;
-            this.barButtonItem7.ItemAppearance.Pressed.Options.UseTextOptions = true;
-            this.barButtonItem7.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem7.Name = "barButtonItem7";
-            // 
-            // barButtonItem8
-            // 
-            this.barButtonItem8.Caption = "إعدادات باركود";
-            this.barButtonItem8.Id = 9;
-            this.barButtonItem8.Name = "barButtonItem8";
-            // 
             // barButtonItem9
             // 
             this.barButtonItem9.Caption = "إعدادات الباركود";
@@ -370,7 +321,7 @@ namespace ElbayaNPresentation
             // 
             // ribbonPageGroup3
             // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem2);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem2, true);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem3);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 
@@ -427,12 +378,19 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement13
             // 
+            this.accordionControlElement13.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement13.Appearance.Hovered.Options.UseFont = true;
             this.accordionControlElement13.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement13.Appearance.Normal.Options.UseFont = true;
+            this.accordionControlElement13.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
+            this.accordionControlElement13.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement13.Appearance.Pressed.Options.UseBackColor = true;
+            this.accordionControlElement13.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement13.Expanded = true;
+            this.accordionControlElement13.Height = 59;
             this.accordionControlElement13.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement13.ImageOptions.SvgImage")));
             this.accordionControlElement13.Name = "accordionControlElement13";
-            this.accordionControlElement13.Text = "خدمات وأعمل حرة";
+            this.accordionControlElement13.Text = "    منطقة الأعمال الحرة";
             // 
             // accordionControlSeparator6
             // 
@@ -440,11 +398,18 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement16
             // 
-            this.accordionControlElement16.Appearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F);
+            this.accordionControlElement16.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement16.Appearance.Hovered.Options.UseFont = true;
+            this.accordionControlElement16.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement16.Appearance.Normal.Options.UseFont = true;
+            this.accordionControlElement16.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
+            this.accordionControlElement16.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement16.Appearance.Pressed.Options.UseBackColor = true;
+            this.accordionControlElement16.Appearance.Pressed.Options.UseFont = true;
+            this.accordionControlElement16.Height = 59;
             this.accordionControlElement16.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement16.ImageOptions.SvgImage")));
             this.accordionControlElement16.Name = "accordionControlElement16";
-            this.accordionControlElement16.Text = "الإعدادات";
+            this.accordionControlElement16.Text = "     الإعدادات";
             // 
             // accordionControlSeparator5
             // 
@@ -452,11 +417,18 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement15
             // 
-            this.accordionControlElement15.Appearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F);
+            this.accordionControlElement15.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement15.Appearance.Hovered.Options.UseFont = true;
+            this.accordionControlElement15.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement15.Appearance.Normal.Options.UseFont = true;
+            this.accordionControlElement15.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
+            this.accordionControlElement15.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement15.Appearance.Pressed.Options.UseBackColor = true;
+            this.accordionControlElement15.Appearance.Pressed.Options.UseFont = true;
+            this.accordionControlElement15.Height = 59;
             this.accordionControlElement15.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement15.ImageOptions.SvgImage")));
             this.accordionControlElement15.Name = "accordionControlElement15";
-            this.accordionControlElement15.Text = "التقارير";
+            this.accordionControlElement15.Text = "     التقارير";
             // 
             // accordionControlSeparator4
             // 
@@ -464,23 +436,37 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement14
             // 
-            this.accordionControlElement14.Appearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F);
+            this.accordionControlElement14.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement14.Appearance.Hovered.Options.UseFont = true;
+            this.accordionControlElement14.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement14.Appearance.Normal.Options.UseFont = true;
+            this.accordionControlElement14.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
+            this.accordionControlElement14.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement14.Appearance.Pressed.Options.UseBackColor = true;
+            this.accordionControlElement14.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement14.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement22,
             this.accordionControlSeparator13,
             this.accordionControlElement24,
             this.accordionControlSeparator14,
             this.accordionControlElement25});
+            this.accordionControlElement14.Height = 59;
             this.accordionControlElement14.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement14.ImageOptions.SvgImage")));
             this.accordionControlElement14.Name = "accordionControlElement14";
-            this.accordionControlElement14.Text = "إدارة مالية";
+            this.accordionControlElement14.Text = "    إدارة مالية";
             // 
             // accordionControlElement22
             // 
+            this.accordionControlElement22.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement22.Appearance.Hovered.Options.UseFont = true;
+            this.accordionControlElement22.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement22.Appearance.Normal.Options.UseFont = true;
+            this.accordionControlElement22.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement22.Appearance.Pressed.Options.UseFont = true;
+            this.accordionControlElement22.Height = 59;
             this.accordionControlElement22.Name = "accordionControlElement22";
             this.accordionControlElement22.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement22.Text = "شؤون الموظفين";
+            this.accordionControlElement22.Text = "    شؤون الموظفين";
             // 
             // accordionControlSeparator13
             // 
@@ -488,9 +474,16 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement24
             // 
+            this.accordionControlElement24.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement24.Appearance.Hovered.Options.UseFont = true;
+            this.accordionControlElement24.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement24.Appearance.Normal.Options.UseFont = true;
+            this.accordionControlElement24.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement24.Appearance.Pressed.Options.UseFont = true;
+            this.accordionControlElement24.Height = 59;
             this.accordionControlElement24.Name = "accordionControlElement24";
             this.accordionControlElement24.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement24.Text = "المصرفات العامة";
+            this.accordionControlElement24.Text = "    المصروفات العامة";
             // 
             // accordionControlSeparator14
             // 
@@ -498,9 +491,16 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement25
             // 
+            this.accordionControlElement25.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement25.Appearance.Hovered.Options.UseFont = true;
+            this.accordionControlElement25.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement25.Appearance.Normal.Options.UseFont = true;
+            this.accordionControlElement25.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement25.Appearance.Pressed.Options.UseFont = true;
+            this.accordionControlElement25.Height = 59;
             this.accordionControlElement25.Name = "accordionControlElement25";
             this.accordionControlElement25.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement25.Text = "القيود اليديوة";
+            this.accordionControlElement25.Text = "     القيود اليدوية";
             // 
             // accordionControlSeparator3
             // 
@@ -508,100 +508,135 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement12
             // 
-            this.accordionControlElement12.Appearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F);
+            this.accordionControlElement12.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement12.Appearance.Hovered.Options.UseFont = true;
+            this.accordionControlElement12.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement12.Appearance.Normal.Options.UseFont = true;
+            this.accordionControlElement12.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement12.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement12.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement17,
+            this.accordionControlSeparator17,
             this.accordionControlElement18,
+            this.accordionControlSeparator19,
             this.accordionControlElement19});
-            this.accordionControlElement12.Expanded = true;
+            this.accordionControlElement12.Height = 59;
             this.accordionControlElement12.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement12.ImageOptions.SvgImage")));
             this.accordionControlElement12.Name = "accordionControlElement12";
             this.accordionControlElement12.Text = "إدارة المخزون";
             // 
             // accordionControlElement17
             // 
-            this.accordionControlElement17.Appearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement17.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement17.Appearance.Hovered.Options.UseFont = true;
+            this.accordionControlElement17.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement17.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement17.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement17.Appearance.Pressed.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement17.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement17.Appearance.Pressed.Options.UseBackColor = true;
             this.accordionControlElement17.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement17.Expanded = true;
+            this.accordionControlElement17.Height = 59;
             this.accordionControlElement17.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement17.ImageOptions.SvgImage")));
             this.accordionControlElement17.Name = "accordionControlElement17";
             this.accordionControlElement17.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement17.Text = "إدارة المخازن والفروع";
+            this.accordionControlElement17.Text = "    إدارة المخازن والفروع";
+            // 
+            // accordionControlSeparator17
+            // 
+            this.accordionControlSeparator17.Name = "accordionControlSeparator17";
             // 
             // accordionControlElement18
             // 
-            this.accordionControlElement18.Appearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement18.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement18.Appearance.Hovered.Options.UseFont = true;
+            this.accordionControlElement18.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement18.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement18.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement18.Appearance.Pressed.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement18.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement18.Appearance.Pressed.Options.UseBackColor = true;
             this.accordionControlElement18.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement18.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement21,
-            this.accordionControlElement4});
+            this.accordionControlSeparator20,
+            this.accordionControlElement4,
+            this.accordionControlSeparator21});
             this.accordionControlElement18.Expanded = true;
+            this.accordionControlElement18.Height = 59;
             this.accordionControlElement18.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement18.ImageOptions.SvgImage")));
             this.accordionControlElement18.Name = "accordionControlElement18";
-            this.accordionControlElement18.Text = "إدارة المنتجات";
+            this.accordionControlElement18.Text = "    إدارة المنتجات ";
             // 
             // accordionControlElement21
             // 
-            this.accordionControlElement21.Appearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement21.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement21.Appearance.Hovered.Options.UseFont = true;
             this.accordionControlElement21.Appearance.Hovered.Options.UseTextOptions = true;
             this.accordionControlElement21.Appearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.accordionControlElement21.Appearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement21.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement21.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement21.Appearance.Normal.Options.UseTextOptions = true;
             this.accordionControlElement21.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.accordionControlElement21.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement21.Appearance.Pressed.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement21.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement21.Appearance.Pressed.Options.UseBackColor = true;
             this.accordionControlElement21.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement21.Appearance.Pressed.Options.UseTextOptions = true;
             this.accordionControlElement21.Appearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.accordionControlElement21.Height = 59;
             this.accordionControlElement21.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement21.ImageOptions.SvgImage")));
             this.accordionControlElement21.Name = "accordionControlElement21";
             this.accordionControlElement21.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement21.Text = "إعدادات المنتجات";
+            this.accordionControlElement21.Text = "    إعدادات المنتجات";
             this.accordionControlElement21.Click += new System.EventHandler(this.accordionControlElement21_Click);
+            // 
+            // accordionControlSeparator20
+            // 
+            this.accordionControlSeparator20.Name = "accordionControlSeparator20";
             // 
             // accordionControlElement4
             // 
-            this.accordionControlElement4.Appearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement4.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement4.Appearance.Hovered.Options.UseFont = true;
             this.accordionControlElement4.Appearance.Hovered.Options.UseTextOptions = true;
             this.accordionControlElement4.Appearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.accordionControlElement4.Appearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement4.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement4.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement4.Appearance.Normal.Options.UseTextOptions = true;
             this.accordionControlElement4.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.accordionControlElement4.Appearance.Pressed.Font = new System.Drawing.Font("Droid Arabic Kufi", 7F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement4.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement4.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement4.Appearance.Pressed.Options.UseTextOptions = true;
             this.accordionControlElement4.Appearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.accordionControlElement4.Height = 59;
             this.accordionControlElement4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement4.ImageOptions.SvgImage")));
             this.accordionControlElement4.Name = "accordionControlElement4";
             this.accordionControlElement4.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement4.Text = "بطاقة الصنف";
+            this.accordionControlElement4.Text = "    بطاقة الصنف";
+            // 
+            // accordionControlSeparator21
+            // 
+            this.accordionControlSeparator21.Name = "accordionControlSeparator21";
+            // 
+            // accordionControlSeparator19
+            // 
+            this.accordionControlSeparator19.Name = "accordionControlSeparator19";
             // 
             // accordionControlElement19
             // 
-            this.accordionControlElement19.Appearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement19.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement19.Appearance.Hovered.Options.UseFont = true;
+            this.accordionControlElement19.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement19.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement19.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement19.Appearance.Pressed.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement19.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement19.Appearance.Pressed.Options.UseBackColor = true;
             this.accordionControlElement19.Appearance.Pressed.Options.UseFont = true;
+            this.accordionControlElement19.Height = 59;
             this.accordionControlElement19.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement19.ImageOptions.SvgImage")));
             this.accordionControlElement19.Name = "accordionControlElement19";
             this.accordionControlElement19.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement19.Text = "الأرصدة الإقتتاحية";
+            this.accordionControlElement19.Text = "     الأرصدة الإقتتاحية";
             // 
             // accordionControlSeparator2
             // 
@@ -623,8 +658,11 @@ namespace ElbayaNPresentation
             this.accordionControlElement3.Appearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.accordionControlElement3.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement8,
+            this.accordionControlSeparator1,
             this.accordionControlElement9,
+            this.accordionControlSeparator15,
             this.accordionControlElement10,
+            this.accordionControlSeparator16,
             this.accordionControlElement11});
             this.accordionControlElement3.Height = 59;
             this.accordionControlElement3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement3.ImageOptions.SvgImage")));
@@ -633,55 +671,91 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement8
             // 
-            this.accordionControlElement8.Appearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement8.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElement8.Appearance.Hovered.Options.UseFont = true;
+            this.accordionControlElement8.Appearance.Hovered.Options.UseTextOptions = true;
+            this.accordionControlElement8.Appearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.accordionControlElement8.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement8.Appearance.Normal.Options.UseFont = true;
+            this.accordionControlElement8.Appearance.Normal.Options.UseTextOptions = true;
+            this.accordionControlElement8.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.accordionControlElement8.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement8.Appearance.Pressed.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement8.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement8.Appearance.Pressed.Options.UseBackColor = true;
             this.accordionControlElement8.Appearance.Pressed.Options.UseFont = true;
+            this.accordionControlElement8.Appearance.Pressed.Options.UseTextOptions = true;
+            this.accordionControlElement8.Appearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.accordionControlElement8.Height = 59;
             this.accordionControlElement8.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement8.ImageOptions.SvgImage")));
             this.accordionControlElement8.Name = "accordionControlElement8";
             this.accordionControlElement8.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement8.Text = "إدراة الموردين";
+            this.accordionControlElement8.Text = "    إدراة الموردين";
+            // 
+            // accordionControlSeparator1
+            // 
+            this.accordionControlSeparator1.Name = "accordionControlSeparator1";
             // 
             // accordionControlElement9
             // 
-            this.accordionControlElement9.Appearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement9.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement9.Appearance.Hovered.Options.UseFont = true;
+            this.accordionControlElement9.Appearance.Hovered.Options.UseTextOptions = true;
+            this.accordionControlElement9.Appearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.accordionControlElement9.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement9.Appearance.Normal.Options.UseFont = true;
+            this.accordionControlElement9.Appearance.Normal.Options.UseTextOptions = true;
+            this.accordionControlElement9.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.accordionControlElement9.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement9.Appearance.Pressed.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement9.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement9.Appearance.Pressed.Options.UseBackColor = true;
             this.accordionControlElement9.Appearance.Pressed.Options.UseFont = true;
+            this.accordionControlElement9.Appearance.Pressed.Options.UseTextOptions = true;
+            this.accordionControlElement9.Appearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.accordionControlElement9.Height = 59;
             this.accordionControlElement9.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement9.ImageOptions.SvgImage")));
             this.accordionControlElement9.Name = "accordionControlElement9";
             this.accordionControlElement9.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement9.Text = "فواتير مشتريات";
+            this.accordionControlElement9.Text = "    فواتير مشتريات ";
+            // 
+            // accordionControlSeparator15
+            // 
+            this.accordionControlSeparator15.Name = "accordionControlSeparator15";
             // 
             // accordionControlElement10
             // 
-            this.accordionControlElement10.Appearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement10.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement10.Appearance.Hovered.Options.UseFont = true;
+            this.accordionControlElement10.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement10.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement10.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement10.Appearance.Pressed.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement10.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement10.Appearance.Pressed.Options.UseBackColor = true;
             this.accordionControlElement10.Appearance.Pressed.Options.UseFont = true;
+            this.accordionControlElement10.Height = 59;
             this.accordionControlElement10.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement10.ImageOptions.SvgImage")));
             this.accordionControlElement10.Name = "accordionControlElement10";
             this.accordionControlElement10.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement10.Text = "طلبات شراء ";
+            this.accordionControlElement10.Text = "    طلبات شراء ";
+            // 
+            // accordionControlSeparator16
+            // 
+            this.accordionControlSeparator16.Name = "accordionControlSeparator16";
             // 
             // accordionControlElement11
             // 
-            this.accordionControlElement11.Appearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement11.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement11.Appearance.Hovered.Options.UseFont = true;
+            this.accordionControlElement11.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement11.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement11.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement11.Appearance.Pressed.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement11.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement11.Appearance.Pressed.Options.UseBackColor = true;
             this.accordionControlElement11.Appearance.Pressed.Options.UseFont = true;
+            this.accordionControlElement11.Height = 59;
             this.accordionControlElement11.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement11.ImageOptions.SvgImage")));
             this.accordionControlElement11.Name = "accordionControlElement11";
             this.accordionControlElement11.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement11.Text = "مرتجعات الشراء";
+            this.accordionControlElement11.Text = "    مرتجعات الشراء";
             // 
             // accordionControlElement1
             // 
@@ -891,6 +965,10 @@ namespace ElbayaNPresentation
             this.accordionControlElement20.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement20.Text = "       لوحة التحكم";
             // 
+            // accordionControlSeparator11
+            // 
+            this.accordionControlSeparator11.Name = "accordionControlSeparator11";
+            // 
             // accordionControlSeparator12
             // 
             this.accordionControlSeparator12.Name = "accordionControlSeparator12";
@@ -933,25 +1011,19 @@ namespace ElbayaNPresentation
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1766, 74);
             this.guna2CustomGradientPanel1.TabIndex = 10;
             // 
-            // guna2CircleButton1
+            // label1
             // 
-            this.guna2CircleButton1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.guna2CircleButton1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton1.CheckedState.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.CustomImages.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
-            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton1.HoverState.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.Location = new System.Drawing.Point(12, 16);
-            this.guna2CircleButton1.Name = "guna2CircleButton1";
-            this.guna2CircleButton1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton1.ShadowDecoration.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.Size = new System.Drawing.Size(30, 33);
-            this.guna2CircleButton1.TabIndex = 1;
-            this.guna2CircleButton1.Text = "X";
-            this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click_1);
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(676, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(446, 35);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "البيان     |    إدارة المبيعات والمشتريات للمحلات والمخازن";
             // 
             // btnMinimize
             // 
@@ -973,27 +1045,28 @@ namespace ElbayaNPresentation
             this.btnMinimize.Text = "-";
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
-            // label1
+            // guna2CircleButton1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(676, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(446, 35);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "البيان     |    إدارة المبيعات والمشتريات للمحلات والمخازن";
-            // 
-            // accordionControlSeparator11
-            // 
-            this.accordionControlSeparator11.Name = "accordionControlSeparator11";
+            this.guna2CircleButton1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.guna2CircleButton1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton1.CheckedState.Parent = this.guna2CircleButton1;
+            this.guna2CircleButton1.CustomImages.Parent = this.guna2CircleButton1;
+            this.guna2CircleButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
+            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton1.HoverState.Parent = this.guna2CircleButton1;
+            this.guna2CircleButton1.Location = new System.Drawing.Point(12, 16);
+            this.guna2CircleButton1.Name = "guna2CircleButton1";
+            this.guna2CircleButton1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton1.ShadowDecoration.Parent = this.guna2CircleButton1;
+            this.guna2CircleButton1.Size = new System.Drawing.Size(30, 33);
+            this.guna2CircleButton1.TabIndex = 1;
+            this.guna2CircleButton1.Text = "X";
+            this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click_1);
             // 
             // ribbonPageGroup6
             // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem7);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             // 
             // frmMainBoard
@@ -1064,15 +1137,11 @@ namespace ElbayaNPresentation
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator10;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement20;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarCheckItem barCheckItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;
         public DevExpress.XtraBars.Ribbon.RibbonPage rpProductSetting;
@@ -1097,5 +1166,12 @@ namespace ElbayaNPresentation
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator11;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator17;
+        private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator20;
+        private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator21;
+        private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator19;
+        private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator1;
+        private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator15;
+        private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator16;
     }
 }

@@ -168,6 +168,18 @@
   <ItemGroup>
     <None Include="Resources\warning.svg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\formatastable_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\formatastable_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newtablestyle_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newtablestyle_16x16.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

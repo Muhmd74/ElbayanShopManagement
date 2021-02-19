@@ -40,6 +40,13 @@ namespace ElbayaNPresentation
 
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
+            if (!gcContainer.Controls.Contains(ucMaincategory.Instance))
+            {
+                gcContainer.Controls.Add(ucMaincategory.Instance);
+                ucMaincategory.Instance.Dock = DockStyle.Fill;
+                ucMaincategory.Instance.BringToFront();
+            }
+            ucMaincategory.Instance.BringToFront();
         }
 
         private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)

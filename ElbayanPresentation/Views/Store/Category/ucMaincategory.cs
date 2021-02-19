@@ -27,18 +27,17 @@ namespace ElbayaNPresentation.Views.Store.Category
             dgvMainCategory.DataSource = Presenter.GetCategories();
             dgvMainCategory.Columns[0].Visible = false;
             DataGridViewStyle.StyleDatagridview(dgvMainCategory);
-
         }
         private Guid CatID;
         public static ucMaincategory Instance
-    {
+        {
         get
         {
             if (_instance == null)
                 _instance = new ucMaincategory();
             return _instance;
         }
-    }
+        }
 
         public List<CategoryDto> MainCategory { get; set; }
         public MainCategoryPresenter Presenter { private get;  set; }
