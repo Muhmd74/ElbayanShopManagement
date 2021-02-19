@@ -58,5 +58,10 @@ namespace ElbayaNPresentation.Presenters.Store.Category.SubCategory
             });
         }
 
+        public void onClickbtnDelete(Guid ID)
+        {
+            subCategory.DeleteOrRestore(ID);
+        }
+
     }
 }

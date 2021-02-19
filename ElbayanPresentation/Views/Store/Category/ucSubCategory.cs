@@ -128,7 +128,6 @@ namespace ElbayaNPresentation.Views.Store.Category
             if (dgvSubCategory.CurrentRow.Index != -1)
             {
                 btnAdd.Enabled = false;
-                btnDeleteByOne.Enabled = false;
                 txtName.Text = dgvSubCategory.CurrentRow.Cells["dgvSubCategoryName"].Value.ToString();
                 txtDescription.Text = dgvSubCategory.CurrentRow.Cells["dgvSubcategoryDescription"].Value.ToString();
                 SubCatID = new Guid(dgvSubCategory.CurrentRow.Cells["dgvSubCategoryID"].Value.ToString());
@@ -150,10 +149,50 @@ namespace ElbayaNPresentation.Views.Store.Category
             }
             else if(ActiveMainCategory.SelectedIndex == 1)
             {
+                DataGridViewStyle.StyleDatagridview(dgvDeletedMainCategory);
                 dgvDeletedMainCategory.DataSource = Presenter.GetAllDeletedSubCategory();
                 btnAdd.Enabled = false;
-                btnUpdate.Enabled = false;
-                cbxMainCategory.Enabled = false;
+                //btnUpdate.Enabled = false;
+                //cbxMainCategory.Enabled = false;
+            }
+        }
+
+        private void btnDeleteByOne_Click(object sender, EventArgs e)
+        {
+            if (txtName.Text != string.Empty)
+            {
+                Presenter.onClickbtnDelete(SubCatID);
+                txtName.Clear();
+                txtDescription.Clear();
+                if (ActiveMainCategory.SelectedIndex == 1)
+                {
+                    dgvDeletedMainCategory.DataSource = Presenter.GetAllDeletedSubCategory();
+                }
+                else if(ActiveMainCategory.SelectedIndex == 0)
+                {
+                    dgvSubCategory.DataSource = Presenter.GetAllSubCategory();
+                }
+                MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("لا بد من تحديد صف من البيانات من خلال الضغط مرتين على الصف", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
+        }
+
+        private void dgvDeletedMainCategory_DoubleClick(object sender, EventArgs e)
+        {
+            if (dgvDeletedMainCategory.CurrentRow.Index != -1)
+            {
+                btnAdd.Enabled = false;
+                txtName.Text = dgvDeletedMainCategory.CurrentRow.Cells["dgvSubCategoryDeletedName"].Value.ToString();
+                txtDescription.Text = dgvDeletedMainCategory.CurrentRow.Cells["dgvSubCategoryDeletedDescription"].Value.ToString();
+                SubCatID = new Guid(dgvDeletedMainCategory.CurrentRow.Cells["dgvSubCategoryDeletedID"].Value.ToString());
+                MainCatID = new Guid(dgvDeletedMainCategory.CurrentRow.Cells["dgvSubCategoryDeletedManiCategoryID"].Value.ToString());
+                // dgvMainCategoryName
+                DgvMainCategoryName = dgvDeletedMainCategory.CurrentRow.Cells["dgvSubCategoryDeletedMainCategoryName"].Value.ToString();
+                cbxMainCategory.Text = DgvMainCategoryName;
             }
         }
     }
