@@ -81,7 +81,25 @@ namespace ElbayaNPresentation.Views.Store.Units
                 txtName.Text = dgvLargeUnit.CurrentRow.Cells["dgvLargeUnitName"].Value.ToString();
                 txtDescription.Text = dgvLargeUnit.CurrentRow.Cells["dgvLargeUnitDescription"].Value.ToString();
                 LargeUnitID = new Guid(dgvLargeUnit.CurrentRow.Cells["dgvLargeUnitID"].Value.ToString());
-                
+
+                btnAdd.Enabled = false;
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (txtName.Text != string.Empty)
+            {
+                Presenter.OnClickUpdatebtn(LargeUnitID);
+                MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
+                txtName.Clear();
+                txtDescription.Clear();
+                dgvLargeUnit.DataSource = Presenter.GetAllLargeUnit();
+            }
+            else
+            {
+                MessageBox.Show("لا بد من تحديد صف من البيانات من خلال الضغط مرتين على الصف", "تأكيد", MessageBoxButtons.OK);
+                return;
             }
         }
     }

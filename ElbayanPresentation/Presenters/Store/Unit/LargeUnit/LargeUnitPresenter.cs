@@ -38,5 +38,15 @@ namespace ElbayaNPresentation.Presenters.Store.Unit.LargeUnit
             return _view.LargeUnit.ToList();
         }
 
+        public void OnClickUpdatebtn(Guid ID)
+        {
+            largeUnit.Update(new LargeUnitDto
+            {
+                Id = ID,
+                Name = _view.LargeUnitName,
+                Description = _view.LargeUnitDescirption
+            });
+        }
+
     }
 }
