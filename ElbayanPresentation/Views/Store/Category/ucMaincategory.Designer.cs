@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucMaincategory));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDeleteByOne = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnDeleteByOne = new DevExpress.XtraEditors.SimpleButton();
-            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtDescription = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ActiveMainCategory = new System.Windows.Forms.TabControl();
@@ -52,8 +53,6 @@
             this.DeletedName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeletedDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox1.SuspendLayout();
             this.ActiveMainCategory.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -67,14 +66,14 @@
             // 
             this.groupBox1.AutoSize = true;
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.btnSearch);
-            this.groupBox1.Controls.Add(this.guna2TextBox1);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.btnDeleteByOne);
-            this.groupBox1.Controls.Add(this.btnUpdate);
-            this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.txtDescription);
+            this.groupBox1.Controls.Add(this.btnAdd);
+            this.groupBox1.Controls.Add(this.btnUpdate);
+            this.groupBox1.Controls.Add(this.btnDeleteByOne);
+            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Controls.Add(this.txtSearch);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -83,9 +82,162 @@
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(99)))), ((int)(((byte)(155)))));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1282, 298);
+            this.groupBox1.Size = new System.Drawing.Size(1282, 296);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // txtName
+            // 
+            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtName.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtName.BorderRadius = 17;
+            this.txtName.BorderThickness = 2;
+            this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtName.DefaultText = "";
+            this.txtName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtName.DisabledState.Parent = this.txtName;
+            this.txtName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtName.FocusedState.Parent = this.txtName;
+            this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtName.HoverState.Parent = this.txtName;
+            this.txtName.Location = new System.Drawing.Point(586, 32);
+            this.txtName.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.txtName.Name = "txtName";
+            this.txtName.PasswordChar = '\0';
+            this.txtName.PlaceholderText = "";
+            this.txtName.SelectedText = "";
+            this.txtName.ShadowDecoration.Parent = this.txtName;
+            this.txtName.Size = new System.Drawing.Size(542, 54);
+            this.txtName.TabIndex = 18;
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDescription.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtDescription.BorderRadius = 17;
+            this.txtDescription.BorderThickness = 2;
+            this.txtDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDescription.DefaultText = "";
+            this.txtDescription.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDescription.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDescription.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDescription.DisabledState.Parent = this.txtDescription;
+            this.txtDescription.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDescription.FocusedState.Parent = this.txtDescription;
+            this.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDescription.HoverState.Parent = this.txtDescription;
+            this.txtDescription.Location = new System.Drawing.Point(586, 95);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.PasswordChar = '\0';
+            this.txtDescription.PlaceholderText = "";
+            this.txtDescription.SelectedText = "";
+            this.txtDescription.ShadowDecoration.Parent = this.txtDescription;
+            this.txtDescription.Size = new System.Drawing.Size(542, 100);
+            this.txtDescription.TabIndex = 17;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.BorderRadius = 17;
+            this.btnAdd.CheckedState.Parent = this.btnAdd;
+            this.btnAdd.CustomImages.Parent = this.btnAdd;
+            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
+            this.btnAdd.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.HoverState.Parent = this.btnAdd;
+            this.btnAdd.Location = new System.Drawing.Point(937, 205);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
+            this.btnAdd.Size = new System.Drawing.Size(190, 56);
+            this.btnAdd.TabIndex = 16;
+            this.btnAdd.Text = "إضافة جديدة";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.BorderRadius = 17;
+            this.btnUpdate.CheckedState.Parent = this.btnUpdate;
+            this.btnUpdate.CustomImages.Parent = this.btnUpdate;
+            this.btnUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
+            this.btnUpdate.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.HoverState.Parent = this.btnUpdate;
+            this.btnUpdate.Location = new System.Drawing.Point(703, 205);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
+            this.btnUpdate.Size = new System.Drawing.Size(190, 56);
+            this.btnUpdate.TabIndex = 16;
+            this.btnUpdate.Text = "حفظ التعديلات";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnDeleteByOne
+            // 
+            this.btnDeleteByOne.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeleteByOne.BorderRadius = 17;
+            this.btnDeleteByOne.CheckedState.Parent = this.btnDeleteByOne;
+            this.btnDeleteByOne.CustomImages.Parent = this.btnDeleteByOne;
+            this.btnDeleteByOne.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(117)))), ((int)(((byte)(216)))));
+            this.btnDeleteByOne.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteByOne.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteByOne.HoverState.Parent = this.btnDeleteByOne;
+            this.btnDeleteByOne.Location = new System.Drawing.Point(459, 205);
+            this.btnDeleteByOne.Name = "btnDeleteByOne";
+            this.btnDeleteByOne.ShadowDecoration.Parent = this.btnDeleteByOne;
+            this.btnDeleteByOne.Size = new System.Drawing.Size(190, 56);
+            this.btnDeleteByOne.TabIndex = 16;
+            this.btnDeleteByOne.Text = "أرشفة";
+            this.btnDeleteByOne.Click += new System.EventHandler(this.btnDeleteByOne_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BorderRadius = 17;
+            this.btnSearch.CheckedState.Parent = this.btnSearch;
+            this.btnSearch.CustomImages.Parent = this.btnSearch;
+            this.btnSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(173)))), ((int)(((byte)(78)))));
+            this.btnSearch.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.HoverState.Parent = this.btnSearch;
+            this.btnSearch.Location = new System.Drawing.Point(143, 114);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.ShadowDecoration.Parent = this.btnSearch;
+            this.btnSearch.Size = new System.Drawing.Size(190, 56);
+            this.btnSearch.TabIndex = 16;
+            this.btnSearch.Text = "إبحث";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.BorderRadius = 15;
+            this.txtSearch.BorderThickness = 2;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.DisabledState.Parent = this.txtSearch;
+            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.FocusedState.Parent = this.txtSearch;
+            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.HoverState.Parent = this.txtSearch;
+            this.txtSearch.Location = new System.Drawing.Point(7, 32);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.PlaceholderText = "";
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
+            this.txtSearch.Size = new System.Drawing.Size(372, 58);
+            this.txtSearch.TabIndex = 15;
             // 
             // label9
             // 
@@ -97,97 +249,11 @@
             this.label9.TabIndex = 14;
             this.label9.Text = "بحث باسم التصنيف";
             // 
-            // btnDeleteByOne
-            // 
-            this.btnDeleteByOne.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeleteByOne.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteByOne.Appearance.Options.UseFont = true;
-            this.btnDeleteByOne.AppearanceHovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteByOne.AppearanceHovered.Options.UseFont = true;
-            this.btnDeleteByOne.AppearanceHovered.Options.UseTextOptions = true;
-            this.btnDeleteByOne.AppearanceHovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.btnDeleteByOne.AppearancePressed.Options.UseTextOptions = true;
-            this.btnDeleteByOne.AppearancePressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.btnDeleteByOne.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.btnDeleteByOne.ImageOptions.ImageToTextIndent = 23;
-            this.btnDeleteByOne.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDeleteByOne.ImageOptions.SvgImage")));
-            this.btnDeleteByOne.Location = new System.Drawing.Point(565, 214);
-            this.btnDeleteByOne.Name = "btnDeleteByOne";
-            this.btnDeleteByOne.Size = new System.Drawing.Size(212, 48);
-            this.btnDeleteByOne.TabIndex = 5;
-            this.btnDeleteByOne.Text = "أرشفة ";
-            this.btnDeleteByOne.Click += new System.EventHandler(this.btnDeleteByOne_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdate.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Appearance.Options.UseFont = true;
-            this.btnUpdate.AppearanceHovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.AppearanceHovered.Options.UseFont = true;
-            this.btnUpdate.AppearanceHovered.Options.UseTextOptions = true;
-            this.btnUpdate.AppearanceHovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.btnUpdate.AppearancePressed.Options.UseTextOptions = true;
-            this.btnUpdate.AppearancePressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.btnUpdate.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.btnUpdate.ImageOptions.ImageToTextIndent = 23;
-            this.btnUpdate.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnUpdate.ImageOptions.SvgImage")));
-            this.btnUpdate.Location = new System.Drawing.Point(810, 213);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(187, 48);
-            this.btnUpdate.TabIndex = 4;
-            this.btnUpdate.Text = "حفظ التعديلات";
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Appearance.Options.UseFont = true;
-            this.btnAdd.Appearance.Options.UseTextOptions = true;
-            this.btnAdd.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.btnAdd.AppearanceHovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.AppearanceHovered.Options.UseFont = true;
-            this.btnAdd.AppearanceHovered.Options.UseTextOptions = true;
-            this.btnAdd.AppearanceHovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.btnAdd.AppearancePressed.Options.UseTextOptions = true;
-            this.btnAdd.AppearancePressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdd.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.btnAdd.ImageOptions.ImageToTextIndent = 11;
-            this.btnAdd.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnAdd.ImageOptions.SvgImage")));
-            this.btnAdd.Location = new System.Drawing.Point(1063, 213);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(187, 48);
-            this.btnAdd.TabIndex = 3;
-            this.btnAdd.Text = "إضافة ";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // txtName
-            // 
-            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtName.Location = new System.Drawing.Point(566, 40);
-            this.txtName.MaxLength = 250;
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(573, 36);
-            this.txtName.TabIndex = 1;
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDescription.Location = new System.Drawing.Point(566, 82);
-            this.txtDescription.MaxLength = 1000;
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(573, 104);
-            this.txtDescription.TabIndex = 2;
-            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1148, 109);
+            this.label2.Location = new System.Drawing.Point(1147, 134);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 28);
             this.label2.TabIndex = 0;
@@ -197,7 +263,7 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1147, 44);
+            this.label1.Location = new System.Drawing.Point(1146, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 28);
             this.label1.TabIndex = 0;
@@ -216,7 +282,6 @@
             this.ActiveMainCategory.Size = new System.Drawing.Size(1282, 448);
             this.ActiveMainCategory.TabIndex = 0;
             this.ActiveMainCategory.Selected += new System.Windows.Forms.TabControlEventHandler(this.ActiveMainCategory_Selected);
-            this.ActiveMainCategory.Click += new System.EventHandler(this.ActiveMainCategory_Click);
             // 
             // tabPage3
             // 
@@ -350,47 +415,6 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
-            // guna2TextBox1
-            // 
-            this.guna2TextBox1.BorderRadius = 15;
-            this.guna2TextBox1.BorderThickness = 2;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(82, 32);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(297, 57);
-            this.guna2TextBox1.TabIndex = 15;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BorderRadius = 17;
-            this.btnSearch.CheckedState.Parent = this.btnSearch;
-            this.btnSearch.CustomImages.Parent = this.btnSearch;
-            this.btnSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(117)))), ((int)(((byte)(216)))));
-            this.btnSearch.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.HoverState.Parent = this.btnSearch;
-            this.btnSearch.Location = new System.Drawing.Point(331, 207);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.ShadowDecoration.Parent = this.btnSearch;
-            this.btnSearch.Size = new System.Drawing.Size(190, 56);
-            this.btnSearch.TabIndex = 16;
-            this.btnSearch.Text = "إبحث";
-            // 
             // ucMaincategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -415,15 +439,10 @@
 
         #endregion
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl ActiveMainCategory;
         private System.Windows.Forms.TabPage tabPage3;
-        private DevExpress.XtraEditors.SimpleButton btnAdd;
-        private DevExpress.XtraEditors.SimpleButton btnDeleteByOne;
-        private DevExpress.XtraEditors.SimpleButton btnUpdate;
         private System.Windows.Forms.DataGridView dgvMainCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn CategoryName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
@@ -434,7 +453,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn DeletedName;
         private System.Windows.Forms.DataGridViewTextBoxColumn DeletedDescription;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2Button btnSearch;
+        private Guna.UI2.WinForms.Guna2TextBox txtName;
+        private Guna.UI2.WinForms.Guna2TextBox txtDescription;
+        private Guna.UI2.WinForms.Guna2Button btnAdd;
+        private Guna.UI2.WinForms.Guna2Button btnUpdate;
+        private Guna.UI2.WinForms.Guna2Button btnDeleteByOne;
     }
 }

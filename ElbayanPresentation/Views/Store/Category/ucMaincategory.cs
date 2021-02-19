@@ -45,7 +45,48 @@ namespace ElbayaNPresentation.Views.Store.Category
         public string MainCategoryName { get => txtName.Text; set => txtName.Text = value; }
         public string MainCategoryDescription { get => txtDescription.Text; set => txtDescription.Text = value; }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void dgvMainCategory_DoubleClick(object sender, EventArgs e)
+        {
+            if (dgvMainCategory.CurrentRow.Index != -1)
+            {
+                txtName.Text = dgvMainCategory.CurrentRow.Cells["CategoryName"].Value.ToString();
+                txtDescription.Text = dgvMainCategory.CurrentRow.Cells["Description"].Value.ToString();
+                CatID = new Guid(dgvMainCategory.CurrentRow.Cells["ID"].Value.ToString());
+            }
+        }
+
+        private void ActiveMainCategory_Selected(object sender, TabControlEventArgs e)
+        {
+            if(ActiveMainCategory.SelectedIndex == 0)
+            {
+                btnAdd.Enabled = true;
+                btnDeleteByOne.Text = "أرشفة التصنيف";
+                btnUpdate.Enabled = true;
+                txtDescription.Text = txtName.Text = txtSearch.Text = "";
+            }
+            else if (ActiveMainCategory.SelectedIndex == 1)
+            {
+                dgvDeletedMainCategory.DataSource = Presenter.GetDeletedCategories();
+                dgvDeletedMainCategory.Columns[0].Visible = false;
+                DataGridViewStyle.StyleDatagridview(dgvDeletedMainCategory);
+                btnAdd.Enabled = false;
+                btnDeleteByOne.Text = "إستعادة التصنيف";
+                btnUpdate.Enabled = false;
+                txtDescription.Text = txtName.Text = txtSearch.Text = "";
+            }
+        }
+
+        private void dgvDeletedMainCategory_DoubleClick(object sender, EventArgs e)
+        {
+            if (dgvDeletedMainCategory.CurrentRow.Index != -1)
+            {
+                txtName.Text = dgvDeletedMainCategory.CurrentRow.Cells["DeletedName"].Value.ToString();
+                txtDescription.Text = dgvDeletedMainCategory.CurrentRow.Cells["DeletedDescription"].Value.ToString();
+                CatID = new Guid(dgvDeletedMainCategory.CurrentRow.Cells["ID"].Value.ToString());
+            }
+        }
+
+        private void btnAdd_Click_1(object sender, EventArgs e)
         {
             if (txtName.Text != string.Empty)
             {
@@ -62,16 +103,15 @@ namespace ElbayaNPresentation.Views.Store.Category
             }
         }
 
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (txtName.Text != string.Empty)
             {
-            Presenter.OnCLickbtnUpdate(CatID);
-            MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
-            txtName.Clear();
-            txtDescription.Clear();
-            dgvMainCategory.DataSource = Presenter.GetCategories();
+                Presenter.OnCLickbtnUpdate(CatID);
+                MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
+                txtName.Clear();
+                txtDescription.Clear();
+                dgvMainCategory.DataSource = Presenter.GetCategories();
             }
             else
             {
@@ -80,30 +120,15 @@ namespace ElbayaNPresentation.Views.Store.Category
             }
         }
 
-
-        private void dgvMainCategory_DoubleClick(object sender, EventArgs e)
-        {
-            if (dgvMainCategory.CurrentRow.Index != -1)
-            {
-                txtName.Text = dgvMainCategory.CurrentRow.Cells["CategoryName"].Value.ToString();
-                txtDescription.Text = dgvMainCategory.CurrentRow.Cells["Description"].Value.ToString();
-                CatID = new Guid(dgvMainCategory.CurrentRow.Cells["ID"].Value.ToString());
-            }
-        }
-
-        private void ActiveMainCategory_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnDeleteByOne_Click(object sender, EventArgs e)
         {
-            if(txtName.Text != string.Empty) { 
-            Presenter.OnClickDelete(CatID);
-            MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
-            txtName.Clear();
-            txtDescription.Clear();
-            dgvMainCategory.DataSource = Presenter.GetCategories();
+            if (txtName.Text != string.Empty)
+            {
+                Presenter.OnClickDelete(CatID);
+                MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
+                txtName.Clear();
+                txtDescription.Clear();
+                dgvMainCategory.DataSource = Presenter.GetCategories();
                 if (ActiveMainCategory.SelectedIndex == 1)
                 {
                     dgvDeletedMainCategory.DataSource = Presenter.GetDeletedCategories();
@@ -115,46 +140,10 @@ namespace ElbayaNPresentation.Views.Store.Category
                 return;
             }
         }
-       
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
-           
-
 
         }
-
-
-        private void ActiveMainCategory_Selected(object sender, TabControlEventArgs e)
-        {
-            if(ActiveMainCategory.SelectedIndex == 0)
-            {
-                btnAdd.Enabled = true;
-                btnDeleteByOne.Text = "أرشفة التصنيف";
-                btnUpdate.Enabled = true;
-                //txtDescription.Text = txtName.Text = txtSearch.Text = "";
-            }
-            else if (ActiveMainCategory.SelectedIndex == 1)
-            {
-                dgvDeletedMainCategory.DataSource = Presenter.GetDeletedCategories();
-                dgvDeletedMainCategory.Columns[0].Visible = false;
-                DataGridViewStyle.StyleDatagridview(dgvDeletedMainCategory);
-                btnAdd.Enabled = false;
-                btnDeleteByOne.Text = "إستعادة التصنيف";
-                btnUpdate.Enabled = false;
-                //txtDescription.Text = txtName.Text = txtSearch.Text = "";
-            }
-        }
-
-        private void dgvDeletedMainCategory_DoubleClick(object sender, EventArgs e)
-        {
-            if (dgvDeletedMainCategory.CurrentRow.Index != -1)
-            {
-                txtName.Text = dgvDeletedMainCategory.CurrentRow.Cells["DeletedName"].Value.ToString();
-                txtDescription.Text = dgvDeletedMainCategory.CurrentRow.Cells["DeletedDescription"].Value.ToString();
-                CatID = new Guid(dgvDeletedMainCategory.CurrentRow.Cells["ID"].Value.ToString());
-            }
-        }
-
-        
     }
 }
