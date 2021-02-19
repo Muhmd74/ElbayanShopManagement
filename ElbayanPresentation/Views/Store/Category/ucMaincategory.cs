@@ -59,6 +59,7 @@ namespace ElbayaNPresentation.Views.Store.Category
         {
             if(ActiveMainCategory.SelectedIndex == 0)
             {
+                dgvMainCategory.DataSource = Presenter.GetCategories();
                 btnAdd.Enabled = true;
                 btnDeleteByOne.Text = "أرشفة التصنيف";
                 btnUpdate.Enabled = true;
@@ -82,7 +83,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             {
                 txtName.Text = dgvDeletedMainCategory.CurrentRow.Cells["DeletedName"].Value.ToString();
                 txtDescription.Text = dgvDeletedMainCategory.CurrentRow.Cells["DeletedDescription"].Value.ToString();
-                CatID = new Guid(dgvDeletedMainCategory.CurrentRow.Cells["ID"].Value.ToString());
+                CatID = new Guid(dgvDeletedMainCategory.CurrentRow.Cells["CategoryID"].Value.ToString());
             }
         }
 
@@ -125,14 +126,17 @@ namespace ElbayaNPresentation.Views.Store.Category
             if (txtName.Text != string.Empty)
             {
                 Presenter.OnClickDelete(CatID);
-                MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
                 txtName.Clear();
                 txtDescription.Clear();
-                dgvMainCategory.DataSource = Presenter.GetCategories();
                 if (ActiveMainCategory.SelectedIndex == 1)
                 {
                     dgvDeletedMainCategory.DataSource = Presenter.GetDeletedCategories();
                 }
+                else
+                {
+                    dgvMainCategory.DataSource = Presenter.GetCategories();
+                }
+                MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
             }
             else
             {
