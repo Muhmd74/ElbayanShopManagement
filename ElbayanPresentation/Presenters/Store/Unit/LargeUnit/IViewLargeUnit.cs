@@ -11,7 +11,7 @@ namespace ElbayaNPresentation.Presenters.Store.Unit.LargeUnit
     {
         string LargeUnitName { get; set; }
         string LargeUnitDescirption { get; set; }
-
+        Guid LargeUnitID { get; set; }
         string SearchKeyword { get; set; }
 
         List<LargeUnitDto> LargeUnit { get; set; }

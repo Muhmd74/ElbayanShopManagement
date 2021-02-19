@@ -334,6 +334,7 @@ namespace ElbayaNPresentation.Views.Store.Units
             this.dgvLargeUnit.RowTemplate.Height = 35;
             this.dgvLargeUnit.Size = new System.Drawing.Size(1536, 434);
             this.dgvLargeUnit.TabIndex = 0;
+            this.dgvLargeUnit.DoubleClick += new System.EventHandler(this.dgvLargeUnit_DoubleClick);
             // 
             // tpArchieveLargeUnits
             // 

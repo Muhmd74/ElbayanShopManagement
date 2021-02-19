@@ -43,6 +43,7 @@ namespace ElbayaNPresentation.Views.Store.Units
         public string LargeUnitName { get => txtName.Text; set => txtName.Text = value; }
         public string LargeUnitDescirption { get => txtDescription.Text; set => txtDescription.Text = value; }
         public string SearchKeyword { get => txtSearch.Text; set => txtSearch.Text = value; }
+        public Guid LargeUnitID { get; set; }
         public List<LargeUnitDto> LargeUnit { get; set; }
         public LargeUnitPresenter Presenter { private get;  set; }
 
@@ -71,6 +72,17 @@ namespace ElbayaNPresentation.Views.Store.Units
                 return;
             }
 
+        }
+
+        private void dgvLargeUnit_DoubleClick(object sender, EventArgs e)
+        {
+            if (dgvLargeUnit.CurrentRow.Index != -1)
+            {
+                txtName.Text = dgvLargeUnit.CurrentRow.Cells["dgvLargeUnitName"].Value.ToString();
+                txtDescription.Text = dgvLargeUnit.CurrentRow.Cells["dgvLargeUnitDescription"].Value.ToString();
+                LargeUnitID = new Guid(dgvLargeUnit.CurrentRow.Cells["dgvLargeUnitID"].Value.ToString());
+                
+            }
         }
     }
 }
