@@ -30,8 +30,8 @@ namespace ElbayaNPresentation.Views.Store.Category
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ActiveMainCategory = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dgvSubCategory = new System.Windows.Forms.DataGridView();
@@ -56,7 +56,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.label3 = new System.Windows.Forms.Label();
             this.dgvSubCategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSubCategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvSubCategoryDesciprtion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSubcategoryDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvMainCategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvMainCategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActiveMainCategory.SuspendLayout();
@@ -100,20 +100,20 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.dgvSubCategory.AllowUserToDeleteRows = false;
             this.dgvSubCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSubCategory.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSubCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSubCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSubCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSubCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvSubCategoryID,
             this.dgvSubCategoryName,
-            this.dgvSubCategoryDesciprtion,
+            this.dgvSubcategoryDescription,
             this.dgvMainCategoryID,
             this.dgvMainCategoryName});
             this.dgvSubCategory.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -126,6 +126,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.dgvSubCategory.RowTemplate.Height = 35;
             this.dgvSubCategory.Size = new System.Drawing.Size(1491, 401);
             this.dgvSubCategory.TabIndex = 0;
+            this.dgvSubCategory.DoubleClick += new System.EventHandler(this.dgvSubCategory_DoubleClick_1);
             // 
             // tabPage4
             // 
@@ -144,15 +145,15 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.dgvDeletedMainCategory.AllowUserToDeleteRows = false;
             this.dgvDeletedMainCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDeletedMainCategory.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDeletedMainCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDeletedMainCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDeletedMainCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDeletedMainCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDeletedMainCategory.Location = new System.Drawing.Point(3, 3);
@@ -193,7 +194,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.txtDescription.SelectedText = "";
             this.txtDescription.ShadowDecoration.Parent = this.txtDescription;
             this.txtDescription.Size = new System.Drawing.Size(542, 100);
-            this.txtDescription.TabIndex = 17;
+            this.txtDescription.TabIndex = 2;
             // 
             // btnAdd
             // 
@@ -209,7 +210,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
             this.btnAdd.Size = new System.Drawing.Size(190, 56);
-            this.btnAdd.TabIndex = 16;
+            this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "إضافة جديدة";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -227,7 +228,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
             this.btnUpdate.Size = new System.Drawing.Size(190, 56);
-            this.btnUpdate.TabIndex = 16;
+            this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "حفظ التعديلات";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -258,7 +259,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.txtSearch.SelectedText = "";
             this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
             this.txtSearch.Size = new System.Drawing.Size(372, 58);
-            this.txtSearch.TabIndex = 15;
+            this.txtSearch.TabIndex = 7;
             // 
             // Description
             // 
@@ -303,7 +304,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.ShadowDecoration.Parent = this.btnSearch;
             this.btnSearch.Size = new System.Drawing.Size(190, 56);
-            this.btnSearch.TabIndex = 16;
+            this.btnSearch.TabIndex = 8;
             this.btnSearch.Text = "إبحث";
             // 
             // errorProvider
@@ -337,7 +338,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.txtName.SelectedText = "";
             this.txtName.ShadowDecoration.Parent = this.txtName;
             this.txtName.Size = new System.Drawing.Size(542, 54);
-            this.txtName.TabIndex = 18;
+            this.txtName.TabIndex = 1;
             // 
             // label9
             // 
@@ -373,7 +374,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.btnDeleteByOne.Name = "btnDeleteByOne";
             this.btnDeleteByOne.ShadowDecoration.Parent = this.btnDeleteByOne;
             this.btnDeleteByOne.Size = new System.Drawing.Size(190, 56);
-            this.btnDeleteByOne.TabIndex = 16;
+            this.btnDeleteByOne.TabIndex = 6;
             this.btnDeleteByOne.Text = "أرشفة";
             // 
             // DeletedDescription
@@ -421,20 +422,25 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.cbxMainCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbxMainCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMainCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbxMainCategory.FocusedColor = System.Drawing.Color.Empty;
+            this.cbxMainCategory.FocusedColor = System.Drawing.Color.Silver;
+            this.cbxMainCategory.FocusedState.BorderColor = System.Drawing.Color.Silver;
             this.cbxMainCategory.FocusedState.Parent = this.cbxMainCategory;
             this.cbxMainCategory.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbxMainCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbxMainCategory.FormattingEnabled = true;
+            this.cbxMainCategory.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cbxMainCategory.HoverState.Parent = this.cbxMainCategory;
             this.cbxMainCategory.ItemHeight = 30;
+            this.cbxMainCategory.ItemsAppearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cbxMainCategory.ItemsAppearance.Parent = this.cbxMainCategory;
+            this.cbxMainCategory.ItemsAppearance.SelectedForeColor = System.Drawing.SystemColors.Highlight;
             this.cbxMainCategory.Location = new System.Drawing.Point(153, 62);
             this.cbxMainCategory.Name = "cbxMainCategory";
             this.cbxMainCategory.ShadowDecoration.Parent = this.cbxMainCategory;
             this.cbxMainCategory.Size = new System.Drawing.Size(372, 36);
-            this.cbxMainCategory.TabIndex = 19;
-            this.cbxMainCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cbxMainCategory.TabIndex = 3;
+            this.cbxMainCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.cbxMainCategory.TextOffset = new System.Drawing.Point(5, 0);
             // 
             // label3
             // 
@@ -463,13 +469,13 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.dgvSubCategoryName.Name = "dgvSubCategoryName";
             this.dgvSubCategoryName.ReadOnly = true;
             // 
-            // dgvSubCategoryDesciprtion
+            // dgvSubcategoryDescription
             // 
-            this.dgvSubCategoryDesciprtion.DataPropertyName = "Description";
-            this.dgvSubCategoryDesciprtion.HeaderText = "وصف التصنيف";
-            this.dgvSubCategoryDesciprtion.MinimumWidth = 6;
-            this.dgvSubCategoryDesciprtion.Name = "dgvSubCategoryDesciprtion";
-            this.dgvSubCategoryDesciprtion.ReadOnly = true;
+            this.dgvSubcategoryDescription.DataPropertyName = "Description";
+            this.dgvSubcategoryDescription.HeaderText = "وصف التصنيف";
+            this.dgvSubcategoryDescription.MinimumWidth = 6;
+            this.dgvSubcategoryDescription.Name = "dgvSubcategoryDescription";
+            this.dgvSubcategoryDescription.ReadOnly = true;
             // 
             // dgvMainCategoryID
             // 
@@ -536,7 +542,7 @@ namespace ElbayaNPresentation.Views.Store.Category
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvSubCategoryID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvSubCategoryName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvSubCategoryDesciprtion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvSubcategoryDescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvMainCategoryID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvMainCategoryName;
     }

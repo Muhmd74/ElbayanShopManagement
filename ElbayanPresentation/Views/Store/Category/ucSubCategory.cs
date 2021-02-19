@@ -65,25 +65,6 @@ namespace ElbayaNPresentation.Views.Store.Category
             cbxMainCategory.SelectedValue = "Id";
         }
 
-
-
-        private void dgvSubCategory_DoubleClick(object sender, EventArgs e)
-        {
-            if (dgvSubCategory.CurrentRow.Index != -1)
-            {
-                btnAdd.Enabled = false;
-                btnDeleteByOne.Enabled = false;
-                txtName.Text = dgvSubCategory.CurrentRow.Cells["dgvSubCategoryName"].Value.ToString();
-                txtDescription.Text = dgvSubCategory.CurrentRow.Cells["dgvSubcategoryDescription"].Value.ToString();
-                SubCatID = new Guid(dgvSubCategory.CurrentRow.Cells["dgvSubCategoryID"].Value.ToString());
-                MainCatID = new Guid(dgvSubCategory.CurrentRow.Cells["dgvMainCategoryId"].Value.ToString());
-                // dgvMainCategoryName
-                DgvMainCategoryName  = dgvSubCategory.CurrentRow.Cells["dgvMainCategoryName"].Value.ToString();
-                cbxMainCategory.Text = DgvMainCategoryName;
-            }
-        }
-
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (txtName.Text != string.Empty)
@@ -140,6 +121,22 @@ namespace ElbayaNPresentation.Views.Store.Category
                 return;
             }
             //}
+        }
+
+        private void dgvSubCategory_DoubleClick_1(object sender, EventArgs e)
+        {
+            if (dgvSubCategory.CurrentRow.Index != -1)
+            {
+                btnAdd.Enabled = false;
+                btnDeleteByOne.Enabled = false;
+                txtName.Text = dgvSubCategory.CurrentRow.Cells["dgvSubCategoryName"].Value.ToString();
+                txtDescription.Text = dgvSubCategory.CurrentRow.Cells["dgvSubcategoryDescription"].Value.ToString();
+                SubCatID = new Guid(dgvSubCategory.CurrentRow.Cells["dgvSubCategoryID"].Value.ToString());
+                MainCatID = new Guid(dgvSubCategory.CurrentRow.Cells["dgvMainCategoryId"].Value.ToString());
+                // dgvMainCategoryName
+                DgvMainCategoryName = dgvSubCategory.CurrentRow.Cells["dgvMainCategoryName"].Value.ToString();
+                cbxMainCategory.Text = DgvMainCategoryName;
+            }
         }
     }
 }
