@@ -216,6 +216,7 @@ namespace ElbayaNPresentation
             this.bbiLatgeUnit.ItemAppearance.Pressed.Options.UseTextOptions = true;
             this.bbiLatgeUnit.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.bbiLatgeUnit.Name = "bbiLatgeUnit";
+            this.bbiLatgeUnit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiLatgeUnit_ItemClick);
             // 
             // barButtonItem5
             // 
@@ -949,7 +950,6 @@ namespace ElbayaNPresentation
             this.accordionControl1.Size = new System.Drawing.Size(376, 843);
             this.accordionControl1.TabIndex = 2;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
-            this.accordionControl1.Click += new System.EventHandler(this.accordionControl1_Click);
             // 
             // accordionControlElement20
             // 

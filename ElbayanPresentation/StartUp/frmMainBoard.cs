@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.DXperience.Demos;
 using ElbayaNPresentation.Views.Store.Category;
+using ElbayaNPresentation.Views.Store.Units;
 
 namespace ElbayaNPresentation
 {
@@ -19,12 +20,25 @@ namespace ElbayaNPresentation
         public frmMainBoard()
         {
             InitializeComponent();
+            
+            // Hanle Full screen Issues 
             System.Drawing.Rectangle rect = Screen.GetWorkingArea(this);
             this.MaximizedBounds = Screen.GetWorkingArea(this);
             this.WindowState = FormWindowState.Maximized;
         }
 
+        // Global Functionality:
+        private void guna2CircleButton1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        // Calling ribbon Pages by side bar: 
         private void accordionControlElement21_Click(object sender, EventArgs e)
         {
             ribbon.SelectPage(rpProductSetting);
@@ -38,6 +52,10 @@ namespace ElbayaNPresentation
 
         }
 
+
+        // Ribbon Buttons //
+
+        // Product Setting Ribbon pages buttons
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (!gcContainer.Controls.Contains(ucMaincategory.Instance))
@@ -59,19 +77,17 @@ namespace ElbayaNPresentation
             }
             ucSubCategory.Instance.BringToFront();
         }
-        private void guna2CircleButton1_Click_1(object sender, EventArgs e)
+        private void bbiLatgeUnit_ItemClick(object sender, ItemClickEventArgs e)
         {
-            this.Close();
+            if (!gcContainer.Controls.Contains(ucSubCategory.Instance))
+            {
+                gcContainer.Controls.Add(ucLargeUnits.Instance);
+                ucLargeUnits.Instance.Dock = DockStyle.Fill;
+                ucLargeUnits.Instance.BringToFront();
+            }
+            ucLargeUnits.Instance.BringToFront();
         }
-
-        private void accordionControl1_Click(object sender, EventArgs e)
-        {
-            ribbon.SelectPage(rpProductSetting);
-        }
-
-        private void btnMinimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
+       
+       
     }
 }

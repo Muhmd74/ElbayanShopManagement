@@ -43,21 +43,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ActiveMainCategory = new System.Windows.Forms.TabControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tpActiveMainCategory = new System.Windows.Forms.TabPage();
             this.dgvMainCategory = new System.Windows.Forms.DataGridView();
             this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tpDeletedMainCategory = new System.Windows.Forms.TabPage();
             this.dgvDeletedMainCategory = new System.Windows.Forms.DataGridView();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.CategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeletedName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeletedDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.ActiveMainCategory.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.tpActiveMainCategory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMainCategory)).BeginInit();
-            this.tabPage4.SuspendLayout();
+            this.tpDeletedMainCategory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedMainCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +85,7 @@
             this.groupBox1.Size = new System.Drawing.Size(1282, 296);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "إعداد التصنيفات الرئيسية";
             // 
             // txtName
             // 
@@ -278,30 +279,32 @@
             // 
             // ActiveMainCategory
             // 
-            this.ActiveMainCategory.Controls.Add(this.tabPage3);
-            this.ActiveMainCategory.Controls.Add(this.tabPage4);
-            this.ActiveMainCategory.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ActiveMainCategory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ActiveMainCategory.Controls.Add(this.tpActiveMainCategory);
+            this.ActiveMainCategory.Controls.Add(this.tpDeletedMainCategory);
             this.ActiveMainCategory.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ActiveMainCategory.ItemSize = new System.Drawing.Size(132, 59);
             this.ActiveMainCategory.Location = new System.Drawing.Point(0, 296);
             this.ActiveMainCategory.Name = "ActiveMainCategory";
             this.ActiveMainCategory.RightToLeftLayout = true;
             this.ActiveMainCategory.SelectedIndex = 0;
-            this.ActiveMainCategory.Size = new System.Drawing.Size(1282, 448);
+            this.ActiveMainCategory.Size = new System.Drawing.Size(1283, 448);
             this.ActiveMainCategory.TabIndex = 0;
             this.ActiveMainCategory.Selected += new System.Windows.Forms.TabControlEventHandler(this.ActiveMainCategory_Selected);
             // 
-            // tabPage3
+            // tpActiveMainCategory
             // 
-            this.tabPage3.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.tabPage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.tabPage3.Controls.Add(this.dgvMainCategory);
-            this.tabPage3.ForeColor = System.Drawing.Color.White;
-            this.tabPage3.Location = new System.Drawing.Point(4, 37);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1274, 407);
-            this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "التصنيفات النشطة";
+            this.tpActiveMainCategory.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.tpActiveMainCategory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.tpActiveMainCategory.Controls.Add(this.dgvMainCategory);
+            this.tpActiveMainCategory.ForeColor = System.Drawing.Color.White;
+            this.tpActiveMainCategory.Location = new System.Drawing.Point(4, 63);
+            this.tpActiveMainCategory.Name = "tpActiveMainCategory";
+            this.tpActiveMainCategory.Padding = new System.Windows.Forms.Padding(3);
+            this.tpActiveMainCategory.Size = new System.Drawing.Size(1275, 381);
+            this.tpActiveMainCategory.TabIndex = 0;
+            this.tpActiveMainCategory.Text = "التصنيفات النشطة";
             // 
             // dgvMainCategory
             // 
@@ -330,7 +333,7 @@
             this.dgvMainCategory.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvMainCategory.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.dgvMainCategory.RowTemplate.Height = 35;
-            this.dgvMainCategory.Size = new System.Drawing.Size(1268, 401);
+            this.dgvMainCategory.Size = new System.Drawing.Size(1269, 375);
             this.dgvMainCategory.TabIndex = 0;
             this.dgvMainCategory.DoubleClick += new System.EventHandler(this.dgvMainCategory_DoubleClick);
             // 
@@ -350,16 +353,16 @@
             this.Description.Name = "Description";
             this.Description.ReadOnly = true;
             // 
-            // tabPage4
+            // tpDeletedMainCategory
             // 
-            this.tabPage4.Controls.Add(this.dgvDeletedMainCategory);
-            this.tabPage4.Location = new System.Drawing.Point(4, 37);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1274, 407);
-            this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "التصنفيات المؤرشفة";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tpDeletedMainCategory.Controls.Add(this.dgvDeletedMainCategory);
+            this.tpDeletedMainCategory.Location = new System.Drawing.Point(4, 63);
+            this.tpDeletedMainCategory.Name = "tpDeletedMainCategory";
+            this.tpDeletedMainCategory.Padding = new System.Windows.Forms.Padding(3);
+            this.tpDeletedMainCategory.Size = new System.Drawing.Size(1274, 381);
+            this.tpDeletedMainCategory.TabIndex = 1;
+            this.tpDeletedMainCategory.Text = "التصنفيات المؤرشفة";
+            this.tpDeletedMainCategory.UseVisualStyleBackColor = true;
             // 
             // dgvDeletedMainCategory
             // 
@@ -389,13 +392,9 @@
             this.dgvDeletedMainCategory.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvDeletedMainCategory.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.dgvDeletedMainCategory.RowTemplate.Height = 35;
-            this.dgvDeletedMainCategory.Size = new System.Drawing.Size(1268, 401);
+            this.dgvDeletedMainCategory.Size = new System.Drawing.Size(1268, 375);
             this.dgvDeletedMainCategory.TabIndex = 1;
             this.dgvDeletedMainCategory.DoubleClick += new System.EventHandler(this.dgvDeletedMainCategory_DoubleClick);
-            // 
-            // errorProvider
-            // 
-            this.errorProvider.ContainerControl = this;
             // 
             // CategoryID
             // 
@@ -422,6 +421,10 @@
             this.DeletedDescription.Name = "DeletedDescription";
             this.DeletedDescription.ReadOnly = true;
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // ucMaincategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -434,9 +437,9 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ActiveMainCategory.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
+            this.tpActiveMainCategory.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMainCategory)).EndInit();
-            this.tabPage4.ResumeLayout(false);
+            this.tpDeletedMainCategory.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedMainCategory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
@@ -449,11 +452,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl ActiveMainCategory;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tpActiveMainCategory;
         private System.Windows.Forms.DataGridView dgvMainCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn CategoryName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tpDeletedMainCategory;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dgvDeletedMainCategory;
         private System.Windows.Forms.ErrorProvider errorProvider;
