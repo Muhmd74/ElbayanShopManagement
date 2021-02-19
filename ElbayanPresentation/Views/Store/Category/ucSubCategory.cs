@@ -138,5 +138,23 @@ namespace ElbayaNPresentation.Views.Store.Category
                 cbxMainCategory.Text = DgvMainCategoryName;
             }
         }
+
+        private void ActiveMainCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(ActiveMainCategory.SelectedIndex == 0)
+            {
+                dgvSubCategory.DataSource = Presenter.GetAllSubCategory();
+                btnAdd.Enabled = true;
+                btnUpdate.Enabled = true;
+                cbxMainCategory.Enabled = true;
+            }
+            else if(ActiveMainCategory.SelectedIndex == 1)
+            {
+                dgvDeletedMainCategory.DataSource = Presenter.GetAllDeletedSubCategory();
+                btnAdd.Enabled = false;
+                btnUpdate.Enabled = false;
+                cbxMainCategory.Enabled = false;
+            }
+        }
     }
 }
