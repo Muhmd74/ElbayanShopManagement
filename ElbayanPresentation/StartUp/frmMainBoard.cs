@@ -19,6 +19,9 @@ namespace ElbayaNPresentation
         public frmMainBoard()
         {
             InitializeComponent();
+            System.Drawing.Rectangle rect = Screen.GetWorkingArea(this);
+            this.MaximizedBounds = Screen.GetWorkingArea(this);
+            this.WindowState = FormWindowState.Maximized;
         }
 
 
@@ -49,6 +52,10 @@ namespace ElbayaNPresentation
                 ucSubCategory.Instance.BringToFront();
             }
             ucSubCategory.Instance.BringToFront();
+        }
+        private void guna2CircleButton1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
