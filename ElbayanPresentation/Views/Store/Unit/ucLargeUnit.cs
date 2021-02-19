@@ -49,7 +49,9 @@ namespace ElbayaNPresentation.Views.Store.Units
         public void PopulateAllUnitDataGridView()
         {
             dgvLargeUnit.DataSource = Presenter.GetAllLargeUnit();
-            dgvLargeUnit.Columns[0].Visible = false;
+            /// Notes: columns[0] == Name
+            //dgvLargeUnit.Columns[2].Visible = true;
+            //dgvLargeUnit.Columns[3].Visible = true;
             DataGridViewStyle.StyleDatagridview(dgvLargeUnit);
 
         }
