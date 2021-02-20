@@ -15,7 +15,7 @@ namespace ElbayanServices.Repository.Products.Product.Validators
                 .NotEmpty().WithMessage("يجب ألا يكون الحقل فارغاً")
                 .NotNull().WithMessage("يجب ألا يكون الحقل فارغاً")
                 .Must(ProductResolution.IsUnique).WithMessage("الاسم موجود بالفعل");
-            //DefaultPrice
+            //PurshaceDefaultPrice
             RuleFor(d => d.DefaultPrice)
                 .NotEmpty().WithMessage("يجب ألا يكون الحقل فارغاً")
                 .NotNull().WithMessage("يجب ألا يكون الحقل فارغاً");

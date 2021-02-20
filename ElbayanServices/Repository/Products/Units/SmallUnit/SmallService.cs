@@ -63,7 +63,8 @@ namespace ElbayanServices.Repository.Products.Units.SmallUnit
             {
                 Description = d.Description,
                 Name = d.Name,
-                IsDeleted = d.IsDeleted
+                IsDeleted = d.IsDeleted,
+                Id = d.Id
             }).ToList();
             return model;
         }
@@ -75,7 +76,8 @@ namespace ElbayanServices.Repository.Products.Units.SmallUnit
             {
                 Description = d.Description,
                 Name = d.Name,
-                IsDeleted = d.IsDeleted
+                IsDeleted = d.IsDeleted,
+                Id = d.Id
             }).ToList();
             return model;
         }
