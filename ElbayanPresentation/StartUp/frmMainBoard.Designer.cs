@@ -328,6 +328,7 @@ namespace ElbayaNPresentation
             this.barButtonItem1.ImageOptions.Image = global::ElbayaNPresentation.Properties.Resources.addchartpane_16x16;
             this.barButtonItem1.ImageOptions.LargeImage = global::ElbayaNPresentation.Properties.Resources.addchartpane_32x32;
             this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // barButtonItem2
             // 

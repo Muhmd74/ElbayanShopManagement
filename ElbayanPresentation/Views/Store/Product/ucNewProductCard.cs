@@ -17,5 +17,17 @@ namespace ElbayaNPresentation.Views.Store.Product
         {
             InitializeComponent();
         }
+
+        // Apply singlton pattern for form Instance
+        private static ucNewProductCard _instance;
+        public static ucNewProductCard Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new ucNewProductCard();
+                return _instance;
+            }
+        }
     }
 }

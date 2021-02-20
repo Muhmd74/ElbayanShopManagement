@@ -13,6 +13,7 @@ using DevExpress.DXperience.Demos;
 using ElbayaNPresentation.Views.Store.Category;
 using ElbayaNPresentation.Views.Store.Units;
 using ElbayaNPresentation.Views.Store.Unit;
+using ElbayaNPresentation.Views.Store.Product;
 
 namespace ElbayaNPresentation
 {
@@ -98,6 +99,17 @@ namespace ElbayaNPresentation
                 ucSmallUnit.Instance.BringToFront();
             }
             ucSmallUnit.Instance.BringToFront();
+        }
+
+        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!gcContainer.Controls.Contains(ucNewProductCard.Instance))
+            {
+                gcContainer.Controls.Add(ucNewProductCard.Instance);
+                ucNewProductCard.Instance.Dock = DockStyle.Fill;
+                ucNewProductCard.Instance.BringToFront();
+            }
+            ucNewProductCard.Instance.BringToFront();
         }
     }
 }
