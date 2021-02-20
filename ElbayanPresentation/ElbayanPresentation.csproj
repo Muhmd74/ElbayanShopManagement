@@ -111,6 +111,12 @@
     <Compile Include="Views\Store\Category\ucSubCategory.Designer.cs">
       <DependentUpon>ucSubCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Store\Product\AllProductsView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Store\Product\AllProductsView.Designer.cs">
+      <DependentUpon>AllProductsView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Store\Product\ucNewProductCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Store\Category\ucSubCategory.resx">
       <DependentUpon>ucSubCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Store\Product\AllProductsView.resx">
+      <DependentUpon>AllProductsView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Store\Product\ucNewProductCard.resx">
       <DependentUpon>ucNewProductCard.cs</DependentUpon>

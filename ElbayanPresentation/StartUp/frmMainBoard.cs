@@ -111,5 +111,16 @@ namespace ElbayaNPresentation
             }
             ucNewProductCard.Instance.BringToFront();
         }
+
+        private void barButtonItem2_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            if (!gcContainer.Controls.Contains(AllProductsView.Instance))
+            {
+                gcContainer.Controls.Add(AllProductsView.Instance);
+                AllProductsView.Instance.Dock = DockStyle.Fill;
+                AllProductsView.Instance.BringToFront();
+            }
+            AllProductsView.Instance.BringToFront();
+        }
     }
 }

@@ -11,25 +11,21 @@ using System.Windows.Forms;
 
 namespace ElbayaNPresentation.Views.Store.Product
 {
-    public partial class ucNewProductCard : DevExpress.XtraEditors.XtraUserControl
+    public partial class AllProductsView : DevExpress.XtraEditors.XtraUserControl
     {
-        public ucNewProductCard()
+        public AllProductsView()
         {
             InitializeComponent();
         }
-
-        // Apply singlton pattern for form Instance
-        private static ucNewProductCard _instance;
-        public static ucNewProductCard Instance
+        private static AllProductsView _instance;
+        public static AllProductsView Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new ucNewProductCard();
+                    _instance = new AllProductsView();
                 return _instance;
             }
         }
-
-
     }
 }
