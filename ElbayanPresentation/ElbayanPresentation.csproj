@@ -117,6 +117,12 @@
     <Compile Include="Views\Store\Unit\ucLargeUnit.Designer.cs">
       <DependentUpon>ucLargeUnit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Store\Unit\ucSmallUnit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Store\Unit\ucSmallUnit.Designer.cs">
+      <DependentUpon>ucSmallUnit.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="StartUp\frmMainBoard.resx">
       <DependentUpon>frmMainBoard.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Store\Unit\ucLargeUnit.resx">
       <DependentUpon>ucLargeUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Store\Unit\ucSmallUnit.resx">
+      <DependentUpon>ucSmallUnit.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
