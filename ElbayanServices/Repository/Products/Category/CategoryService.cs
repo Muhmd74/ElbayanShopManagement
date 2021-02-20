@@ -81,10 +81,13 @@ namespace ElbayanServices.Repository.Products.Category
                 Description = d.Description
             }).ToList();
             return model.Any() ? model : null;
-        }  public List<CategoryDto> GetAllDeleted()
+        }
+        
+        public List<CategoryDto> GetAllDeleted()
         {
             var model = _context.Categories.Where(d=>d.IsDeleted).Select(d => new CategoryDto()
             {
+                Id = d.Id,
                 Name = d.Name,
                 Description = d.Description
             }).ToList();

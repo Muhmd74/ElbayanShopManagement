@@ -99,6 +99,7 @@ namespace ElbayanServices.Repository.Products.SubCategory
                 .Where(d => d.IsDeleted)
                 .Select(d => new SubCategoryDto()
                 {
+                    Id = d.Id,
                     Name = d.Name,
                     Description = d.Description,
                     CategoryId = d.CategoryId,

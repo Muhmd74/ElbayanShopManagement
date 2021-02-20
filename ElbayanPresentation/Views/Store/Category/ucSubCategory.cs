@@ -69,8 +69,9 @@ namespace ElbayaNPresentation.Views.Store.Category
         {
             if (txtName.Text != string.Empty)
             {
-                if(cbxMainCategory.SelectedItem != null)
+                if (cbxMainCategory.SelectedItem != null)
                 {
+
                     Presenter.OnClickbtnAdd();
                     MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
                     txtName.Clear();
@@ -93,22 +94,6 @@ namespace ElbayaNPresentation.Views.Store.Category
             }
         }
 
-        private void dgvSubCategory_DoubleClick(object sender, EventArgs e)
-        {
-            if (dgvSubCategory.CurrentRow.Index != -1)
-            {
-                btnAdd.Enabled = false;
-                btnDeleteByOne.Enabled = false;
-                txtName.Text = dgvSubCategory.CurrentRow.Cells["dgvSubCategoryName"].Value.ToString();
-                txtDescription.Text = dgvSubCategory.CurrentRow.Cells["dgvSubcategoryDescription"].Value.ToString();
-                SubCatID = new Guid(dgvSubCategory.CurrentRow.Cells["dgvSubCategoryID"].Value.ToString());
-                MainCatID = new Guid(dgvSubCategory.CurrentRow.Cells["dgvMainCategoryId"].Value.ToString());
-                // dgvMainCategoryName
-                DgvMainCategoryName  = dgvSubCategory.CurrentRow.Cells["dgvMainCategoryName"].Value.ToString();
-                cbxMainCategory.Text = DgvMainCategoryName;
-            }
-        }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             //if (MessageBox.Show("", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -118,11 +103,11 @@ namespace ElbayaNPresentation.Views.Store.Category
                 if (cbxMainCategory.SelectedItem != null)
                 {
                     Presenter.OnClickbtnUpdate(SubCatID, new Guid(CategoryId));
-                MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
-                btnAdd.Enabled = true;
-                btnDeleteByOne.Enabled = true;
-                cbxMainCategory.Text = txtDescription.Text = txtName.Text = "";
-                dgvSubCategory.DataSource = Presenter.GetAllSubCategory();
+                    MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
+                    btnAdd.Enabled = true;
+                    btnDeleteByOne.Enabled = true;
+                    cbxMainCategory.Text = txtDescription.Text = txtName.Text = "";
+                    dgvSubCategory.DataSource = Presenter.GetAllSubCategory();
                 }
                 else
                 {
@@ -137,6 +122,79 @@ namespace ElbayaNPresentation.Views.Store.Category
                 return;
             }
             //}
+        }
+
+        private void dgvSubCategory_DoubleClick_1(object sender, EventArgs e)
+        {
+            if (dgvSubCategory.CurrentRow.Index != -1)
+            {
+                btnAdd.Enabled = false;
+                txtName.Text = dgvSubCategory.CurrentRow.Cells["dgvSubCategoryName"].Value.ToString();
+                txtDescription.Text = dgvSubCategory.CurrentRow.Cells["dgvSubcategoryDescription"].Value.ToString();
+                SubCatID = new Guid(dgvSubCategory.CurrentRow.Cells["dgvSubCategoryID"].Value.ToString());
+                MainCatID = new Guid(dgvSubCategory.CurrentRow.Cells["dgvMainCategoryId"].Value.ToString());
+                // dgvMainCategoryName
+                DgvMainCategoryName = dgvSubCategory.CurrentRow.Cells["dgvMainCategoryName"].Value.ToString();
+                cbxMainCategory.Text = DgvMainCategoryName;
+            }
+        }
+
+        private void ActiveMainCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(ActiveMainCategory.SelectedIndex == 0)
+            {
+                dgvSubCategory.DataSource = Presenter.GetAllSubCategory();
+                btnAdd.Enabled = true;
+                btnUpdate.Enabled = true;
+                cbxMainCategory.Enabled = true;
+            }
+            else if(ActiveMainCategory.SelectedIndex == 1)
+            {
+                DataGridViewStyle.StyleDatagridview(dgvDeletedMainCategory);
+                dgvDeletedMainCategory.DataSource = Presenter.GetAllDeletedSubCategory();
+                btnAdd.Enabled = false;
+                //btnUpdate.Enabled = false;
+                //cbxMainCategory.Enabled = false;
+            }
+        }
+
+        private void btnDeleteByOne_Click(object sender, EventArgs e)
+        {
+            if (txtName.Text != string.Empty)
+            {
+                Presenter.onClickbtnDelete(SubCatID);
+                txtName.Clear();
+                txtDescription.Clear();
+                if (ActiveMainCategory.SelectedIndex == 1)
+                {
+                    dgvDeletedMainCategory.DataSource = Presenter.GetAllDeletedSubCategory();
+                }
+                else if(ActiveMainCategory.SelectedIndex == 0)
+                {
+                    dgvSubCategory.DataSource = Presenter.GetAllSubCategory();
+                }
+                MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("لا بد من تحديد صف من البيانات من خلال الضغط مرتين على الصف", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
+        }
+
+        private void dgvDeletedMainCategory_DoubleClick(object sender, EventArgs e)
+        {
+            if (dgvDeletedMainCategory.CurrentRow.Index != -1)
+            {
+                btnAdd.Enabled = false;
+                txtName.Text = dgvDeletedMainCategory.CurrentRow.Cells["dgvSubCategoryDeletedName"].Value.ToString();
+                txtDescription.Text = dgvDeletedMainCategory.CurrentRow.Cells["dgvSubCategoryDeletedDescription"].Value.ToString();
+                SubCatID = new Guid(dgvDeletedMainCategory.CurrentRow.Cells["dgvSubCategoryDeletedID"].Value.ToString());
+                MainCatID = new Guid(dgvDeletedMainCategory.CurrentRow.Cells["dgvSubCategoryDeletedManiCategoryID"].Value.ToString());
+                // dgvMainCategoryName
+                DgvMainCategoryName = dgvDeletedMainCategory.CurrentRow.Cells["dgvSubCategoryDeletedMainCategoryName"].Value.ToString();
+                cbxMainCategory.Text = DgvMainCategoryName;
+            }
         }
     }
 }
