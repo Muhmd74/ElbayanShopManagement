@@ -188,7 +188,7 @@ namespace ElbayaNPresentation.Views.Store.Units
                 dgvLargeUnit.DataSource = Presenter.FilterDataGridView().ToList();
             }else if (dgvTabContainer.SelectedIndex == 1)
             {
-                dgvDeletedLargeUnit.DataSource = Presenter.FilterDataGridView();
+                dgvDeletedLargeUnit.DataSource = Presenter.FilterDataGridViewDeleted();
             }
         }
     }
