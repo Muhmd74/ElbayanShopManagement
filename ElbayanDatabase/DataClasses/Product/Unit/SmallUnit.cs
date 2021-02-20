@@ -18,6 +18,8 @@ namespace ElbayanDatabase.DataClasses.Product.Unit
         public string Description { get; set; }
         public string Weight { get; set; }
         public bool IsDeleted { get; set; } = false;
+        public Guid LargeUnitId { get; set; }
+        public LargeUnit LargeUnit { get; set; }
         public ICollection<Product> Products { get; set; }
     }
 }

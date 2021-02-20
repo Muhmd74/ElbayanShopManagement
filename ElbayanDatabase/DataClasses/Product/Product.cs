@@ -17,13 +17,17 @@ namespace ElbayanDatabase.DataClasses.Product
         [Required]
         public string Name { get; set; }
 
+        public string ImageUrl { get; set; }
         public DateTime DateTime { get; set; }
         public string Description { get; set; }
-        [Required]
-        public decimal DefaultPrice { get; set; }
+        public decimal PurchaseDefaultPrice { get; set; }
+        public decimal SaleDefaultPrice { get; set; }
+        public decimal WholesalePrice{ get; set; }
+        public bool IsUnitSale { get; set; }//true ? LargeSale : SmallSale
         public Guid SubCategoryId { get; set; }
         public SubCategory SubCategory { get; set; }
         public long ProductNumber { get; set; }
+
         public bool IsExpired { get; set; } = false;
         public Guid LargeUnitId { get; set; }
         public LargeUnit LargeUnit { get; set; }

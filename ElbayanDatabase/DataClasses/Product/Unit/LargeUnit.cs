@@ -17,6 +17,7 @@ namespace ElbayanDatabase.DataClasses.Product.Unit
         public string Name { get; set; }
         public string Description { get; set; }
         public string Weight { get; set; }
+        public ICollection<SmallUnit> SmallUnits { get; set; }
         public bool IsDeleted { get; set; } = false;
         public ICollection<Product> Products { get; set; }
     }

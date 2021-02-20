@@ -13,4 +13,10 @@ namespace ElbayanServices.Repository.Products.Units.LargeUnit.Dtos
         public bool IsDeleted { get; set; } = false;
         public Guid Id { get; set; }
     }
+
+  public class SmallUnitNameDto
+  {
+      public Guid SmallUnitId { get; set; }
+      public string Name { get; set; }
+  }
 }
