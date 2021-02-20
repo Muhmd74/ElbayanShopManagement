@@ -44,15 +44,15 @@ namespace ElbayaNPresentation.Views.Store.Units
             this.dgvTabContainer = new System.Windows.Forms.TabControl();
             this.tpActiveLargeUnits = new System.Windows.Forms.TabPage();
             this.dgvLargeUnit = new System.Windows.Forms.DataGridView();
+            this.dgvLargeUnitID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvLargeUnitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvLargeUnitDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpArchieveLargeUnits = new System.Windows.Forms.TabPage();
             this.dgvDeletedLargeUnit = new System.Windows.Forms.DataGridView();
             this.dgvLargeUnitDeletedID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvLargeUnitDeletedName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvLargeUnitDeletedDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvLargeUnitID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvLargeUnitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvLargeUnitDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IsDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.groupBox1.SuspendLayout();
             this.dgvTabContainer.SuspendLayout();
@@ -81,7 +81,7 @@ namespace ElbayaNPresentation.Views.Store.Units
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(99)))), ((int)(((byte)(155)))));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1550, 327);
+            this.groupBox1.Size = new System.Drawing.Size(1550, 328);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "إعدادات الوحدات الرئيسية";
@@ -203,11 +203,11 @@ namespace ElbayaNPresentation.Views.Store.Units
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(539, 250);
+            this.label9.Location = new System.Drawing.Point(470, 250);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(151, 28);
+            this.label9.Size = new System.Drawing.Size(204, 28);
             this.label9.TabIndex = 14;
-            this.label9.Text = "بحث باسم التصنيف";
+            this.label9.Text = "بحث باسم أو وصف الوحدة";
             // 
             // label2
             // 
@@ -227,7 +227,7 @@ namespace ElbayaNPresentation.Views.Store.Units
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 28);
             this.label1.TabIndex = 0;
-            this.label1.Text = "اسم التصنيف";
+            this.label1.Text = "اسم االوحدة ";
             // 
             // dgvTabContainer
             // 
@@ -291,6 +291,43 @@ namespace ElbayaNPresentation.Views.Store.Units
             this.dgvLargeUnit.Size = new System.Drawing.Size(1536, 434);
             this.dgvLargeUnit.TabIndex = 0;
             this.dgvLargeUnit.DoubleClick += new System.EventHandler(this.dgvLargeUnit_DoubleClick);
+            // 
+            // dgvLargeUnitID
+            // 
+            this.dgvLargeUnitID.DataPropertyName = "Id";
+            this.dgvLargeUnitID.HeaderText = "رقم الوحدة المرجعي";
+            this.dgvLargeUnitID.MaxInputLength = 50;
+            this.dgvLargeUnitID.MinimumWidth = 6;
+            this.dgvLargeUnitID.Name = "dgvLargeUnitID";
+            this.dgvLargeUnitID.ReadOnly = true;
+            this.dgvLargeUnitID.Visible = false;
+            // 
+            // dgvLargeUnitName
+            // 
+            this.dgvLargeUnitName.DataPropertyName = "Name";
+            this.dgvLargeUnitName.HeaderText = "اسم الوحدة";
+            this.dgvLargeUnitName.MaxInputLength = 250;
+            this.dgvLargeUnitName.MinimumWidth = 6;
+            this.dgvLargeUnitName.Name = "dgvLargeUnitName";
+            this.dgvLargeUnitName.ReadOnly = true;
+            // 
+            // dgvLargeUnitDescription
+            // 
+            this.dgvLargeUnitDescription.DataPropertyName = "Description";
+            this.dgvLargeUnitDescription.HeaderText = "وصف الوحدة";
+            this.dgvLargeUnitDescription.MaxInputLength = 1000;
+            this.dgvLargeUnitDescription.MinimumWidth = 6;
+            this.dgvLargeUnitDescription.Name = "dgvLargeUnitDescription";
+            this.dgvLargeUnitDescription.ReadOnly = true;
+            // 
+            // IsDeleted
+            // 
+            this.IsDeleted.DataPropertyName = "IsDeleted";
+            this.IsDeleted.HeaderText = "حالة الحذف";
+            this.IsDeleted.MinimumWidth = 6;
+            this.IsDeleted.Name = "IsDeleted";
+            this.IsDeleted.ReadOnly = true;
+            this.IsDeleted.Visible = false;
             // 
             // tpArchieveLargeUnits
             // 
@@ -360,43 +397,6 @@ namespace ElbayaNPresentation.Views.Store.Units
             this.dgvLargeUnitDeletedDescription.Name = "dgvLargeUnitDeletedDescription";
             this.dgvLargeUnitDeletedDescription.ReadOnly = true;
             // 
-            // dgvLargeUnitID
-            // 
-            this.dgvLargeUnitID.DataPropertyName = "Id";
-            this.dgvLargeUnitID.HeaderText = "رقم الوحدة المرجعي";
-            this.dgvLargeUnitID.MaxInputLength = 50;
-            this.dgvLargeUnitID.MinimumWidth = 6;
-            this.dgvLargeUnitID.Name = "dgvLargeUnitID";
-            this.dgvLargeUnitID.ReadOnly = true;
-            this.dgvLargeUnitID.Visible = false;
-            // 
-            // dgvLargeUnitName
-            // 
-            this.dgvLargeUnitName.DataPropertyName = "Name";
-            this.dgvLargeUnitName.HeaderText = "اسم الوحدة";
-            this.dgvLargeUnitName.MaxInputLength = 250;
-            this.dgvLargeUnitName.MinimumWidth = 6;
-            this.dgvLargeUnitName.Name = "dgvLargeUnitName";
-            this.dgvLargeUnitName.ReadOnly = true;
-            // 
-            // dgvLargeUnitDescription
-            // 
-            this.dgvLargeUnitDescription.DataPropertyName = "Description";
-            this.dgvLargeUnitDescription.HeaderText = "وصف الوحدة";
-            this.dgvLargeUnitDescription.MaxInputLength = 1000;
-            this.dgvLargeUnitDescription.MinimumWidth = 6;
-            this.dgvLargeUnitDescription.Name = "dgvLargeUnitDescription";
-            this.dgvLargeUnitDescription.ReadOnly = true;
-            // 
-            // IsDeleted
-            // 
-            this.IsDeleted.DataPropertyName = "IsDeleted";
-            this.IsDeleted.HeaderText = "حالة الحذف";
-            this.IsDeleted.MinimumWidth = 6;
-            this.IsDeleted.Name = "IsDeleted";
-            this.IsDeleted.ReadOnly = true;
-            this.IsDeleted.Visible = false;
-            // 
             // txtSearch
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -421,7 +421,7 @@ namespace ElbayaNPresentation.Views.Store.Units
             this.txtSearch.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconLeft")));
             this.txtSearch.IconLeftOffset = new System.Drawing.Point(9, 0);
             this.txtSearch.IconLeftSize = new System.Drawing.Size(32, 32);
-            this.txtSearch.Location = new System.Drawing.Point(118, 231);
+            this.txtSearch.Location = new System.Drawing.Point(49, 232);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
