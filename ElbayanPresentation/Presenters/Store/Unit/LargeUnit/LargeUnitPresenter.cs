@@ -60,5 +60,15 @@ namespace ElbayaNPresentation.Presenters.Store.Unit.LargeUnit
             largeUnit.DeleteOrRestore(ID);
         }
 
+        public List<LargeUnitDto> FilterDataGridView()
+        {
+            _view.LargeUnit = largeUnit.GetAllLargeUnit().Where(x => x.Name.Contains(_view.SearchKeyword) || x.Description.Contains(_view.SearchKeyword)).ToList();
+            return _view.LargeUnit.ToList();
+        }     
+        public List<LargeUnitDto> FilterDataGridViewDeleted()
+        {
+            _view.LargeUnit = largeUnit.GetAllLargeUnitDeleted().Where(x => x.Name.Contains(_view.SearchKeyword) || x.Description.Contains(_view.SearchKeyword)).ToList();
+            return _view.LargeUnit.ToList();
+        }
     }
 }

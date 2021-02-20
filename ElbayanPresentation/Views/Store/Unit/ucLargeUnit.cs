@@ -181,11 +181,15 @@ namespace ElbayaNPresentation.Views.Store.Units
             }
         }
 
-        private void txtSearch_TextChanged(object sender, EventArgs e)
+        private void txtSearch_TextChanged_1(object sender, EventArgs e)
         {
-            List<LargeUnitDto> searchResults = Presenter.GetAllLargeUnit().Where(x => x.Name.Contains(txtSearch.Text)).ToList();
-            dgvLargeUnit.DataSource = searchResults;
-
+            if(dgvTabContainer.SelectedIndex == 0)
+            {
+                dgvLargeUnit.DataSource = Presenter.FilterDataGridView().ToList();
+            }else if (dgvTabContainer.SelectedIndex == 1)
+            {
+                dgvDeletedLargeUnit.DataSource = Presenter.FilterDataGridView();
+            }
         }
     }
 }
