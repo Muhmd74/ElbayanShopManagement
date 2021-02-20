@@ -24,6 +24,9 @@ namespace ElbayaNPresentation.Views.Store.Units
             Presenter = new LargeUnitPresenter(this);
             // load Active Units list
             PopulateAllUnitDataGridView();
+
+            btnUpdate.Enabled = false;
+            btnDeleteByOne.Enabled = false;
         }
 
         // Apply singlton pattern for form Instance
@@ -49,7 +52,16 @@ namespace ElbayaNPresentation.Views.Store.Units
 
         public void PopulateAllUnitDataGridView()
         {
-            dgvLargeUnit.DataSource = Presenter.GetAllLargeUnit();
+
+            if (Presenter.GetAllLargeUnit().Any())
+            {
+                dgvLargeUnit.DataSource = Presenter.GetAllLargeUnit();
+            }
+            else
+            {
+                dgvLargeUnit.DataSource = null;
+            }
+
             /// Notes: columns[0] == Name
             //dgvLargeUnit.Columns[2].Visible = true;
             //dgvLargeUnit.Columns[3].Visible = true;
@@ -83,6 +95,8 @@ namespace ElbayaNPresentation.Views.Store.Units
                 LargeUnitID = new Guid(dgvLargeUnit.CurrentRow.Cells["dgvLargeUnitID"].Value.ToString());
 
                 btnAdd.Enabled = false;
+                btnUpdate.Enabled = true;
+                btnDeleteByOne.Enabled = true;
             }
         }
 
@@ -95,12 +109,83 @@ namespace ElbayaNPresentation.Views.Store.Units
                 txtName.Clear();
                 txtDescription.Clear();
                 dgvLargeUnit.DataSource = Presenter.GetAllLargeUnit();
+
+                btnAdd.Enabled = true;
+                btnUpdate.Enabled = false;
+                btnDeleteByOne.Enabled = false;
             }
             else
             {
                 MessageBox.Show("لا بد من تحديد صف من البيانات من خلال الضغط مرتين على الصف", "تأكيد", MessageBoxButtons.OK);
                 return;
             }
+        }
+
+        private void dgvTabContainer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(dgvTabContainer.SelectedIndex == 0)
+            {
+                PopulateAllUnitDataGridView();
+
+                txtDescription.Text = txtName.Text = txtSearch.Text = string.Empty;
+                btnAdd.Enabled = true;
+                btnDeleteByOne.Text = "أرشفة الوحدة";
+                btnUpdate.Enabled = false;
+                btnDeleteByOne.Enabled = false;
+            }
+            else if (dgvTabContainer.SelectedIndex == 1)
+            {
+                dgvDeletedLargeUnit.DataSource = Presenter.GetAllDeltetdUnits();
+                dgvDeletedLargeUnit.Columns[2].Visible = false;
+                DataGridViewStyle.StyleDatagridview(dgvDeletedLargeUnit);
+
+                btnAdd.Enabled = false;
+                btnDeleteByOne.Text = "إستعادة الوحدة";
+                btnUpdate.Enabled = false;
+                btnDeleteByOne.Enabled = true;
+                txtDescription.Text = txtName.Text = txtSearch.Text = string.Empty;
+            }
+        }
+
+        private void btnDeleteByOne_Click(object sender, EventArgs e)
+        {
+            if (txtName.Text != string.Empty)
+            {
+                Presenter.DeletedOrRestore(LargeUnitID);
+                txtName.Clear();
+                txtDescription.Clear();
+                if (dgvTabContainer.SelectedIndex == 1)
+                {
+                    dgvDeletedLargeUnit.DataSource = Presenter.GetAllDeltetdUnits();
+                }
+                else
+                {
+                    dgvLargeUnit.DataSource = Presenter.GetAllLargeUnit();
+                }
+                MessageBox.Show("تمت العملية بنجاح", "تأكيد", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("لا بد من تحديد صف من البيانات من خلال الضغط مرتين على الصف", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
+        }
+
+        private void dgvDeletedLargeUnit_DoubleClick(object sender, EventArgs e)
+        {
+            if (dgvDeletedLargeUnit.CurrentRow.Index != -1)
+            {
+                txtName.Text = dgvDeletedLargeUnit.CurrentRow.Cells["dgvLargeUnitDeletedName"].Value.ToString();
+                txtDescription.Text = dgvDeletedLargeUnit.CurrentRow.Cells["dgvLargeUnitDeletedName"].Value.ToString();
+                LargeUnitID = new Guid(dgvDeletedLargeUnit.CurrentRow.Cells["dgvLargeUnitDeletedID"].Value.ToString());
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            List<LargeUnitDto> searchResults = Presenter.GetAllLargeUnit().Where(x => x.Name.Contains(txtSearch.Text)).ToList();
+            dgvLargeUnit.DataSource = searchResults;
+
         }
     }
 }

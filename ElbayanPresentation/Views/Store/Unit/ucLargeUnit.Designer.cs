@@ -42,7 +42,7 @@ namespace ElbayaNPresentation.Views.Store.Units
             this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ActiveMainCategory = new System.Windows.Forms.TabControl();
+            this.dgvTabContainer = new System.Windows.Forms.TabControl();
             this.tpActiveLargeUnits = new System.Windows.Forms.TabPage();
             this.dgvLargeUnit = new System.Windows.Forms.DataGridView();
             this.tpArchieveLargeUnits = new System.Windows.Forms.TabPage();
@@ -55,7 +55,7 @@ namespace ElbayaNPresentation.Views.Store.Units
             this.dgvLargeUnitDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            this.ActiveMainCategory.SuspendLayout();
+            this.dgvTabContainer.SuspendLayout();
             this.tpActiveLargeUnits.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLargeUnit)).BeginInit();
             this.tpArchieveLargeUnits.SuspendLayout();
@@ -198,6 +198,7 @@ namespace ElbayaNPresentation.Views.Store.Units
             this.btnDeleteByOne.Size = new System.Drawing.Size(190, 56);
             this.btnDeleteByOne.TabIndex = 6;
             this.btnDeleteByOne.Text = "أرشفة";
+            this.btnDeleteByOne.Click += new System.EventHandler(this.btnDeleteByOne_Click);
             // 
             // btnSearch
             // 
@@ -244,6 +245,7 @@ namespace ElbayaNPresentation.Views.Store.Units
             this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
             this.txtSearch.Size = new System.Drawing.Size(372, 58);
             this.txtSearch.TabIndex = 7;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // label9
             // 
@@ -275,20 +277,21 @@ namespace ElbayaNPresentation.Views.Store.Units
             this.label1.TabIndex = 0;
             this.label1.Text = "اسم التصنيف";
             // 
-            // ActiveMainCategory
+            // dgvTabContainer
             // 
-            this.ActiveMainCategory.Controls.Add(this.tpActiveLargeUnits);
-            this.ActiveMainCategory.Controls.Add(this.tpArchieveLargeUnits);
-            this.ActiveMainCategory.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ActiveMainCategory.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ActiveMainCategory.ItemSize = new System.Drawing.Size(132, 59);
-            this.ActiveMainCategory.Location = new System.Drawing.Point(0, 311);
-            this.ActiveMainCategory.Name = "ActiveMainCategory";
-            this.ActiveMainCategory.Padding = new System.Drawing.Point(6, 5);
-            this.ActiveMainCategory.RightToLeftLayout = true;
-            this.ActiveMainCategory.SelectedIndex = 0;
-            this.ActiveMainCategory.Size = new System.Drawing.Size(1550, 507);
-            this.ActiveMainCategory.TabIndex = 4;
+            this.dgvTabContainer.Controls.Add(this.tpActiveLargeUnits);
+            this.dgvTabContainer.Controls.Add(this.tpArchieveLargeUnits);
+            this.dgvTabContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvTabContainer.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvTabContainer.ItemSize = new System.Drawing.Size(132, 59);
+            this.dgvTabContainer.Location = new System.Drawing.Point(0, 311);
+            this.dgvTabContainer.Name = "dgvTabContainer";
+            this.dgvTabContainer.Padding = new System.Drawing.Point(6, 5);
+            this.dgvTabContainer.RightToLeftLayout = true;
+            this.dgvTabContainer.SelectedIndex = 0;
+            this.dgvTabContainer.Size = new System.Drawing.Size(1550, 507);
+            this.dgvTabContainer.TabIndex = 4;
+            this.dgvTabContainer.SelectedIndexChanged += new System.EventHandler(this.dgvTabContainer_SelectedIndexChanged);
             // 
             // tpActiveLargeUnits
             // 
@@ -378,6 +381,7 @@ namespace ElbayaNPresentation.Views.Store.Units
             this.dgvDeletedLargeUnit.RowTemplate.Height = 35;
             this.dgvDeletedLargeUnit.Size = new System.Drawing.Size(1536, 434);
             this.dgvDeletedLargeUnit.TabIndex = 1;
+            this.dgvDeletedLargeUnit.DoubleClick += new System.EventHandler(this.dgvDeletedLargeUnit_DoubleClick);
             // 
             // dgvLargeUnitDeletedID
             // 
@@ -445,14 +449,14 @@ namespace ElbayaNPresentation.Views.Store.Units
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.ActiveMainCategory);
+            this.Controls.Add(this.dgvTabContainer);
             this.Controls.Add(this.groupBox1);
             this.Name = "ucLargeUnits";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Size = new System.Drawing.Size(1550, 818);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.ActiveMainCategory.ResumeLayout(false);
+            this.dgvTabContainer.ResumeLayout(false);
             this.tpActiveLargeUnits.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLargeUnit)).EndInit();
             this.tpArchieveLargeUnits.ResumeLayout(false);
@@ -475,7 +479,7 @@ namespace ElbayaNPresentation.Views.Store.Units
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabControl ActiveMainCategory;
+        private System.Windows.Forms.TabControl dgvTabContainer;
         private System.Windows.Forms.TabPage tpActiveLargeUnits;
         private System.Windows.Forms.DataGridView dgvLargeUnit;
         private System.Windows.Forms.TabPage tpArchieveLargeUnits;

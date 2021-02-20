@@ -48,5 +48,17 @@ namespace ElbayaNPresentation.Presenters.Store.Unit.LargeUnit
             });
         }
 
+        public List<LargeUnitDto> GetAllDeltetdUnits()
+        {
+            _view.LargeUnit =  largeUnit.GetAllLargeUnitDeleted();
+
+            return _view.LargeUnit.ToList();
+        }
+
+        public void DeletedOrRestore(Guid ID)
+        {
+            largeUnit.DeleteOrRestore(ID);
+        }
+
     }
 }
