@@ -164,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Images\" />
+    <Folder Include="Views\Store\Product\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\warning.svg" />
@@ -209,6 +210,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\managerules_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addchartpane_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addchartpane_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boreport_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boreport_16x16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

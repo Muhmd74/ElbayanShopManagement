@@ -63,6 +63,26 @@ namespace ElbayaNPresentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap addchartpane_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("addchartpane_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap addchartpane_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("addchartpane_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bar_16x16 {
             get {
                 object obj = ResourceManager.GetObject("bar_16x16", resourceCulture);
@@ -107,6 +127,26 @@ namespace ElbayaNPresentation.Properties {
             get {
                 object obj = ResourceManager.GetObject("bo_appearance", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap boreport_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("boreport_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap boreport_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("boreport_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

@@ -39,11 +39,13 @@ namespace ElbayaNPresentation
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.rpProductSetting = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -101,6 +103,7 @@ namespace ElbayaNPresentation
             this.btnMinimize = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcContainer)).BeginInit();
@@ -131,10 +134,12 @@ namespace ElbayaNPresentation
             this.barButtonItem5,
             this.barButtonItem6,
             this.barButtonItem9,
-            this.barButtonItem10});
+            this.barButtonItem10,
+            this.barButtonItem1,
+            this.barButtonItem2});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.ribbon.MaxItemId = 14;
+            this.ribbon.MaxItemId = 18;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rpProductSetting,
@@ -315,6 +320,14 @@ namespace ElbayaNPresentation
             this.barButtonItem10.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.barButtonItem10.Name = "barButtonItem10";
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "إضافة صنف جديد";
+            this.barButtonItem1.Id = 15;
+            this.barButtonItem1.ImageOptions.Image = global::ElbayaNPresentation.Properties.Resources.addchartpane_16x16;
+            this.barButtonItem1.ImageOptions.LargeImage = global::ElbayaNPresentation.Properties.Resources.addchartpane_32x32;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
             // rpProductSetting
             // 
             this.rpProductSetting.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -325,7 +338,8 @@ namespace ElbayaNPresentation
             this.ribbonPageGroup3,
             this.ribbonPageGroup4,
             this.ribbonPageGroup5,
-            this.ribbonPageGroup7});
+            this.ribbonPageGroup7,
+            this.ribbonPageGroup8});
             this.rpProductSetting.Name = "rpProductSetting";
             this.rpProductSetting.Text = "إعدادات المنتجات";
             // 
@@ -351,6 +365,12 @@ namespace ElbayaNPresentation
             this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem9);
             this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem10);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            // 
+            // ribbonPageGroup8
+            // 
+            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem2);
+            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             // 
             // ribbonPage2
             // 
@@ -530,6 +550,7 @@ namespace ElbayaNPresentation
             this.accordionControlElement18,
             this.accordionControlSeparator19,
             this.accordionControlElement19});
+            this.accordionControlElement12.Expanded = true;
             this.accordionControlElement12.Height = 59;
             this.accordionControlElement12.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement12.ImageOptions.SvgImage")));
             this.accordionControlElement12.Name = "accordionControlElement12";
@@ -1078,6 +1099,14 @@ namespace ElbayaNPresentation
             // 
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "قائمة الأصناف";
+            this.barButtonItem2.Id = 17;
+            this.barButtonItem2.ImageOptions.Image = global::ElbayaNPresentation.Properties.Resources.boreport_16x16;
+            this.barButtonItem2.ImageOptions.LargeImage = global::ElbayaNPresentation.Properties.Resources.boreport_32x32;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
             // frmMainBoard
             // 
             this.Appearance.Options.UseFont = true;
@@ -1182,5 +1211,8 @@ namespace ElbayaNPresentation
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator1;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator15;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator16;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
     }
 }
