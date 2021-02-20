@@ -16,6 +16,27 @@ namespace ElbayaNPresentation.Views.Store.Unit
         public ucSmallUnit()
         {
             InitializeComponent();
+            
+        }
+        private static ucSmallUnit _instance;
+        public static ucSmallUnit Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new ucSmallUnit();
+                return _instance;
+            }
+        }
+
+        private void txtWeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verify that the pressed key isn't CTRL or any non-numeric digit
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            
         }
     }
 }

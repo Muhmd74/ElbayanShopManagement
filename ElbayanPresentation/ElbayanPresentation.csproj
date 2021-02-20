@@ -111,6 +111,12 @@
     <Compile Include="Views\Store\Category\ucSubCategory.Designer.cs">
       <DependentUpon>ucSubCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Store\Product\ucNewProductCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Store\Product\ucNewProductCard.Designer.cs">
+      <DependentUpon>ucNewProductCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Store\Unit\ucLargeUnit.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     <EmbeddedResource Include="Views\Store\Category\ucSubCategory.resx">
       <DependentUpon>ucSubCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Store\Product\ucNewProductCard.resx">
+      <DependentUpon>ucNewProductCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Store\Unit\ucLargeUnit.resx">
       <DependentUpon>ucLargeUnit.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,7 +182,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Images\" />
-    <Folder Include="Views\Store\Product\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\warning.svg" />

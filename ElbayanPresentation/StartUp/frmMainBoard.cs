@@ -12,6 +12,7 @@ using DevExpress.XtraBars.Ribbon;
 using DevExpress.DXperience.Demos;
 using ElbayaNPresentation.Views.Store.Category;
 using ElbayaNPresentation.Views.Store.Units;
+using ElbayaNPresentation.Views.Store.Unit;
 
 namespace ElbayaNPresentation
 {
@@ -87,7 +88,16 @@ namespace ElbayaNPresentation
             }
             ucLargeUnits.Instance.BringToFront();
         }
-       
-       
+
+        private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!gcContainer.Controls.Contains(ucSubCategory.Instance))
+            {
+                gcContainer.Controls.Add(ucSmallUnit.Instance);
+                ucSmallUnit.Instance.Dock = DockStyle.Fill;
+                ucSmallUnit.Instance.BringToFront();
+            }
+            ucSmallUnit.Instance.BringToFront();
+        }
     }
 }

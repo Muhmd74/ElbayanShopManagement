@@ -40,6 +40,7 @@ namespace ElbayaNPresentation
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.rpProductSetting = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -103,7 +104,6 @@ namespace ElbayaNPresentation
             this.btnMinimize = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcContainer)).BeginInit();
@@ -247,6 +247,7 @@ namespace ElbayaNPresentation
             this.barButtonItem5.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.barButtonItem5.Name = "barButtonItem5";
             this.barButtonItem5.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
             // 
             // barButtonItem6
             // 
@@ -327,6 +328,14 @@ namespace ElbayaNPresentation
             this.barButtonItem1.ImageOptions.Image = global::ElbayaNPresentation.Properties.Resources.addchartpane_16x16;
             this.barButtonItem1.ImageOptions.LargeImage = global::ElbayaNPresentation.Properties.Resources.addchartpane_32x32;
             this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "قائمة الأصناف";
+            this.barButtonItem2.Id = 17;
+            this.barButtonItem2.ImageOptions.Image = global::ElbayaNPresentation.Properties.Resources.boreport_16x16;
+            this.barButtonItem2.ImageOptions.LargeImage = global::ElbayaNPresentation.Properties.Resources.boreport_32x32;
+            this.barButtonItem2.Name = "barButtonItem2";
             // 
             // rpProductSetting
             // 
@@ -1098,14 +1107,6 @@ namespace ElbayaNPresentation
             // ribbonPageGroup6
             // 
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "قائمة الأصناف";
-            this.barButtonItem2.Id = 17;
-            this.barButtonItem2.ImageOptions.Image = global::ElbayaNPresentation.Properties.Resources.boreport_16x16;
-            this.barButtonItem2.ImageOptions.LargeImage = global::ElbayaNPresentation.Properties.Resources.boreport_32x32;
-            this.barButtonItem2.Name = "barButtonItem2";
             // 
             // frmMainBoard
             // 

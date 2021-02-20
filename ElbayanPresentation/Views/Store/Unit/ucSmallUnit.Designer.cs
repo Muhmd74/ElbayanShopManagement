@@ -30,8 +30,8 @@ namespace ElbayaNPresentation.Views.Store.Unit
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucSmallUnit));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvLargeUnitDeletedName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvLargeUnitDeletedID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +59,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.dgvLargeUnitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvLargeUnitDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValidateTextboxForNumbers = new Guna.UI2.WinForms.Guna2HtmlToolTip();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedLargeUnit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLargeUnit)).BeginInit();
             this.tpActiveLargeUnits.SuspendLayout();
@@ -125,15 +126,15 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.dgvDeletedLargeUnit.AllowUserToDeleteRows = false;
             this.dgvDeletedLargeUnit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDeletedLargeUnit.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDeletedLargeUnit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDeletedLargeUnit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDeletedLargeUnit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDeletedLargeUnit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvLargeUnitDeletedID,
@@ -164,15 +165,15 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.dgvLargeUnit.AllowUserToDeleteRows = false;
             this.dgvLargeUnit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLargeUnit.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLargeUnit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLargeUnit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvLargeUnit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLargeUnit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvSmallUnitID,
@@ -437,6 +438,8 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.txtWeight.ShadowDecoration.Parent = this.txtWeight;
             this.txtWeight.Size = new System.Drawing.Size(444, 54);
             this.txtWeight.TabIndex = 1;
+            this.ValidateTextboxForNumbers.SetToolTip(this.txtWeight, "أرقام صحيحة فقط");
+            this.txtWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWeight_KeyPress);
             // 
             // label4
             // 
@@ -518,6 +521,11 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.IsDeleted.ReadOnly = true;
             this.IsDeleted.Visible = false;
             // 
+            // ValidateTextboxForNumbers
+            // 
+            this.ValidateTextboxForNumbers.AllowLinksHandling = true;
+            this.ValidateTextboxForNumbers.MaximumSize = new System.Drawing.Size(0, 0);
+            // 
             // ucSmallUnit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -568,5 +576,6 @@ namespace ElbayaNPresentation.Views.Store.Unit
         private System.Windows.Forms.DataGridViewTextBoxColumn IsDeleted;
         private Guna.UI2.WinForms.Guna2ComboBox cbxLargeUnit;
         private System.Windows.Forms.Label label5;
+        private Guna.UI2.WinForms.Guna2HtmlToolTip ValidateTextboxForNumbers;
     }
 }
