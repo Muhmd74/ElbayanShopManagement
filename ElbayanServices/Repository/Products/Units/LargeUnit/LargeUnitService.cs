@@ -60,6 +60,7 @@ namespace ElbayanServices.Repository.Products.Units.LargeUnit
                 Id = d.Id,
                 Name = d.Name,
                 Description = d.Description,
+                Name = d.Name,
                 IsDeleted = d.IsDeleted
             }).ToList();
             return model;
