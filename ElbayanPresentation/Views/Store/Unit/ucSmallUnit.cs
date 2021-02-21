@@ -60,19 +60,19 @@ namespace ElbayaNPresentation.Views.Store.Unit
         public void PopulateAllUnitDataGridView()
         {
 
-            if (Presenter.GetAllSubCategory().Any())
+            if (Presenter.GetAllSmallUnit().Any())
             {
-                dgvSmallUnit.DataSource = Presenter.GetAllSubCategory();
+                dgvSmallUnit.DataSource = Presenter.GetAllSmallUnit();
             }
             else
             {
                 dgvSmallUnit.DataSource = null;
             }
-
-            /// Notes: columns[0] == Name
-            //dgvLargeUnit.Columns[2].Visible = true;
-            //dgvLargeUnit.Columns[3].Visible = true;
+            dgvSmallUnit.AutoGenerateColumns =false;
             DataGridViewStyle.StyleDatagridview(dgvSmallUnit);
+            //dgvSmallUnit.Columns[6].Visible = false;
+            //dgvSmallUnit.Columns[5].Visible = false;
+            //dgvSmallUnit.Columns[0].Visible = false;
 
         }
 
@@ -88,7 +88,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
                     txtName.Clear();
                     txtDescription.Clear();
                     cbxLargeUnit.Text = "";
-                    dgvSmallUnit.DataSource = Presenter.GetAllSubCategory();
+                    dgvSmallUnit.DataSource = Presenter.GetAllSmallUnit();
                 }
                 else
                 {

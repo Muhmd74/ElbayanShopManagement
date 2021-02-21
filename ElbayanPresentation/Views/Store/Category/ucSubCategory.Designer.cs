@@ -53,6 +53,8 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.DeletedDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbMainOperations = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.cbxMainCategory = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
@@ -62,8 +64,6 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbxMainCategory = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.ActiveMainCategory.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubCategory)).BeginInit();
@@ -184,7 +184,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.tabPage4.Location = new System.Drawing.Point(4, 63);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1498, 414);
+            this.tabPage4.Size = new System.Drawing.Size(1522, 414);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "التصنفيات المؤرشفة";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -219,7 +219,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.dgvDeletedMainCategory.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvDeletedMainCategory.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.dgvDeletedMainCategory.RowTemplate.Height = 35;
-            this.dgvDeletedMainCategory.Size = new System.Drawing.Size(1492, 408);
+            this.dgvDeletedMainCategory.Size = new System.Drawing.Size(1516, 408);
             this.dgvDeletedMainCategory.TabIndex = 1;
             this.dgvDeletedMainCategory.DoubleClick += new System.EventHandler(this.dgvDeletedMainCategory_DoubleClick);
             // 
@@ -321,8 +321,43 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.gbMainOperations.ShadowDecoration.Parent = this.gbMainOperations;
             this.gbMainOperations.Size = new System.Drawing.Size(1529, 320);
             this.gbMainOperations.TabIndex = 6;
-            this.gbMainOperations.Text = "وحدات المنتجات الكبرى";
+            this.gbMainOperations.Text = "تصنيفات المنتجات الفرعية";
             this.gbMainOperations.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // cbxMainCategory
+            // 
+            this.cbxMainCategory.BackColor = System.Drawing.Color.Transparent;
+            this.cbxMainCategory.BorderColor = System.Drawing.Color.Gray;
+            this.cbxMainCategory.BorderRadius = 11;
+            this.cbxMainCategory.BorderThickness = 2;
+            this.cbxMainCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxMainCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxMainCategory.FocusedColor = System.Drawing.Color.Empty;
+            this.cbxMainCategory.FocusedState.Parent = this.cbxMainCategory;
+            this.cbxMainCategory.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbxMainCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbxMainCategory.FormattingEnabled = true;
+            this.cbxMainCategory.HoverState.Parent = this.cbxMainCategory;
+            this.cbxMainCategory.ItemHeight = 30;
+            this.cbxMainCategory.ItemsAppearance.Parent = this.cbxMainCategory;
+            this.cbxMainCategory.ItemsAppearance.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.cbxMainCategory.Location = new System.Drawing.Point(79, 68);
+            this.cbxMainCategory.Name = "cbxMainCategory";
+            this.cbxMainCategory.ShadowDecoration.Parent = this.cbxMainCategory;
+            this.cbxMainCategory.Size = new System.Drawing.Size(444, 36);
+            this.cbxMainCategory.TabIndex = 25;
+            this.cbxMainCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.DimGray;
+            this.label5.Location = new System.Drawing.Point(546, 70);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(179, 32);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "إختر التصنيف الرئيسي";
             // 
             // txtSearch
             // 
@@ -505,41 +540,6 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.label1.Size = new System.Drawing.Size(106, 32);
             this.label1.TabIndex = 16;
             this.label1.Text = "اسم الوحدة ";
-            // 
-            // cbxMainCategory
-            // 
-            this.cbxMainCategory.BackColor = System.Drawing.Color.Transparent;
-            this.cbxMainCategory.BorderColor = System.Drawing.Color.Gray;
-            this.cbxMainCategory.BorderRadius = 11;
-            this.cbxMainCategory.BorderThickness = 2;
-            this.cbxMainCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxMainCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxMainCategory.FocusedColor = System.Drawing.Color.Empty;
-            this.cbxMainCategory.FocusedState.Parent = this.cbxMainCategory;
-            this.cbxMainCategory.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbxMainCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbxMainCategory.FormattingEnabled = true;
-            this.cbxMainCategory.HoverState.Parent = this.cbxMainCategory;
-            this.cbxMainCategory.ItemHeight = 30;
-            this.cbxMainCategory.ItemsAppearance.Parent = this.cbxMainCategory;
-            this.cbxMainCategory.ItemsAppearance.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.cbxMainCategory.Location = new System.Drawing.Point(79, 68);
-            this.cbxMainCategory.Name = "cbxMainCategory";
-            this.cbxMainCategory.ShadowDecoration.Parent = this.cbxMainCategory;
-            this.cbxMainCategory.Size = new System.Drawing.Size(444, 36);
-            this.cbxMainCategory.TabIndex = 25;
-            this.cbxMainCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(546, 70);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(179, 32);
-            this.label5.TabIndex = 24;
-            this.label5.Text = "إختر التصنيف الرئيسي";
             // 
             // ucSubCategory
             // 

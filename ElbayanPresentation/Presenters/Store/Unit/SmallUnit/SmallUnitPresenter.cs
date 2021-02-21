@@ -30,12 +30,12 @@ namespace ElbayaNPresentation.Presenters.Store.Unit.SmallUnit
             return _view.LargeUnit.ToList();
         }
 
-        public List<SmallUnitDto> GetAllSubCategory()
+        public List<SmallUnitDto> GetAllSmallUnit()
         {
             _view.SmallUnits = smallUnit.GetAllSmallUnit();
             return _view.SmallUnits.ToList();
         }
-        public List<SmallUnitDto> GetAllDeletedSubCategory()
+        public List<SmallUnitDto> GetAllSmallUnitDeleted()
         {
             _view.SmallUnits = smallUnit.GetAllSmallUnitDeleted();
             return _view.SmallUnits.ToList();
@@ -47,7 +47,8 @@ namespace ElbayaNPresentation.Presenters.Store.Unit.SmallUnit
             {
                 Name = _view.Name,
                 Description = _view.Description,
-                
+                Weight = _view.Weight.ToString(),
+                LargeUnitId = _view.LargeUnitID                
             });
         }
     }
