@@ -62,6 +62,12 @@
   <ItemGroup>
     <Compile Include="ConnectionTools\ConnectionOption.cs" />
     <Compile Include="ConnectionTools\ConnectionString.cs" />
+    <Compile Include="DataClasses\Customers\Customer.cs" />
+    <Compile Include="DataClasses\Customers\Sales\DeferredPayment.cs" />
+    <Compile Include="DataClasses\Customers\Sales\Order.cs" />
+    <Compile Include="DataClasses\Customers\Sales\PaymentType.cs" />
+    <Compile Include="DataClasses\Customers\Sales\POS.cs" />
+    <Compile Include="DataClasses\Customers\Sales\Sale.cs" />
     <Compile Include="DataClasses\Member\Member.cs" />
     <Compile Include="DataClasses\Member\MemberRole.cs" />
     <Compile Include="DataClasses\Member\Role.cs" />

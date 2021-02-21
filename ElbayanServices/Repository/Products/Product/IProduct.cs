@@ -18,6 +18,8 @@ namespace ElbayanServices.Repository.Products.Product
         List<ProductDto> GetAll();
         List<ProductDto> GetAllByCategory(Guid categoryId);
         List<SmallUnitNameDto> GetAllSmallUnitByLargeUnit(Guid largeUnitId);
+        List<SmallUnitNameDto> GetAllSmallUnit();
+        List<LargeUnitNameDto> GetAllLargeUnit();
         ProductDto GetById(Guid id);
         ProductDto GetByName(string productName);
         List<ProductNameDto> GetAllProductName();

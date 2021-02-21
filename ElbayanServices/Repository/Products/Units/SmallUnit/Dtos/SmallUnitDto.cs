@@ -9,6 +9,7 @@ namespace ElbayanServices.Repository.Products.Units.SmallUnit.Dtos
         public string Description { get; set; }
         public Guid LargeUnitId { get; set; }
         public string LargeUnitName { get; set; }
+        public string Weight { get; set; }
         public bool IsDeleted { get; set; } = false;
     }
 }

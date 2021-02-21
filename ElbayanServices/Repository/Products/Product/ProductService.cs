@@ -86,6 +86,41 @@ namespace ElbayanServices.Repository.Products.Product
             return null;
         }
 
+        public List<SmallUnitNameDto> GetAllSmallUnit()
+        {
+            var model = _context.SmallUnits.
+                Where(d =>d.IsDeleted == false)
+                .Select(d => new SmallUnitNameDto()
+                {
+                    SmallUnitId = d.Id,
+                    Name = d.Name
+                }).ToList();
+            if (model.Any())
+            {
+                return model;
+            }
+
+            return null;
+        }
+
+        public List<LargeUnitNameDto> GetAllLargeUnit()
+        {
+            var model = _context.LargeUnits.
+                Where(d => d.IsDeleted == false)
+                .Select(d => new LargeUnitNameDto()
+                {
+                    LargeUnitId = d.Id,
+                    Name = d.Name
+                }).ToList();
+
+            if (model.Any())
+            {
+                return model;
+            }
+
+            return null;
+        }
+
         public bool IsDeleted(Guid id)
         {
             var model = _context.Products.FirstOrDefault(d => d.Id == id);

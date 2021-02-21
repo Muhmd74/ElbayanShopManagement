@@ -26,7 +26,8 @@ namespace ElbayanServices.Repository.Products.Units.SmallUnit
                         Name = model.Name,
                         Description = model.Description,
                         IsDeleted = false,
-                        LargeUnitId = model.LargeUnitId
+                        LargeUnitId = model.LargeUnitId,
+                        Weight = model.Weight
                     });
                 _context.SaveChanges();
                 return true;
@@ -42,6 +43,7 @@ namespace ElbayanServices.Repository.Products.Units.SmallUnit
                 result.Description = model.Description;
                 result.Name = model.Name;
                 result.LargeUnitId = model.LargeUnitId;
+                result.Weight = model.Weight;
                 _context.SaveChanges();
                 return true;
 
@@ -70,6 +72,7 @@ namespace ElbayanServices.Repository.Products.Units.SmallUnit
                 LargeUnitId = d.LargeUnitId,
                 LargeUnitName = d.LargeUnit.Name,
                 IsDeleted = d.IsDeleted,
+                Weight = d.Weight,
                 Id = d.Id
             }).ToList();
             return model;
@@ -86,6 +89,7 @@ namespace ElbayanServices.Repository.Products.Units.SmallUnit
                 Name = d.Name,
                 IsDeleted = d.IsDeleted,
                 Id = d.Id,
+                Weight = d.Weight,
                 LargeUnitId = d.LargeUnitId,
                 LargeUnitName = d.LargeUnit.Name
             }).ToList();
@@ -102,6 +106,8 @@ namespace ElbayanServices.Repository.Products.Units.SmallUnit
                 {
                     Description = model.Description,
                     Name = model.Name,
+                    Weight = model.Weight,
+
                     IsDeleted = model.IsDeleted,
                     LargeUnitId = model.LargeUnitId,
                     LargeUnitName = model.LargeUnit.Name
