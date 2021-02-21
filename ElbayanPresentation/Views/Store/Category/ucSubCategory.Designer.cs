@@ -32,6 +32,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucSubCategory));
             this.ActiveMainCategory = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dgvSubCategory = new System.Windows.Forms.DataGridView();
@@ -47,30 +48,29 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.dgvSubCategoryDeletedDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSubCategoryDeletedManiCategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSubCategoryDeletedMainCategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.DeletedDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gbMainOperations = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.CategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnDeleteByOne = new Guna.UI2.WinForms.Guna2Button();
-            this.DeletedDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.cbxMainCategory = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.ActiveMainCategory.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubCategory)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedMainCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.gbMainOperations.SuspendLayout();
             this.SuspendLayout();
             // 
             // ActiveMainCategory
@@ -85,7 +85,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.ActiveMainCategory.Name = "ActiveMainCategory";
             this.ActiveMainCategory.RightToLeftLayout = true;
             this.ActiveMainCategory.SelectedIndex = 0;
-            this.ActiveMainCategory.Size = new System.Drawing.Size(1506, 481);
+            this.ActiveMainCategory.Size = new System.Drawing.Size(1530, 481);
             this.ActiveMainCategory.TabIndex = 1;
             this.ActiveMainCategory.SelectedIndexChanged += new System.EventHandler(this.ActiveMainCategory_SelectedIndexChanged);
             // 
@@ -98,7 +98,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.tabPage3.Location = new System.Drawing.Point(4, 63);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1498, 414);
+            this.tabPage3.Size = new System.Drawing.Size(1522, 414);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "التصنيفات النشطة";
             // 
@@ -132,7 +132,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.dgvSubCategory.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvSubCategory.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.dgvSubCategory.RowTemplate.Height = 35;
-            this.dgvSubCategory.Size = new System.Drawing.Size(1492, 408);
+            this.dgvSubCategory.Size = new System.Drawing.Size(1516, 408);
             this.dgvSubCategory.TabIndex = 0;
             this.dgvSubCategory.DoubleClick += new System.EventHandler(this.dgvSubCategory_DoubleClick_1);
             // 
@@ -184,7 +184,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.tabPage4.Location = new System.Drawing.Point(4, 63);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1497, 414);
+            this.tabPage4.Size = new System.Drawing.Size(1498, 414);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "التصنفيات المؤرشفة";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -219,7 +219,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.dgvDeletedMainCategory.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvDeletedMainCategory.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.dgvDeletedMainCategory.RowTemplate.Height = 35;
-            this.dgvDeletedMainCategory.Size = new System.Drawing.Size(1491, 408);
+            this.dgvDeletedMainCategory.Size = new System.Drawing.Size(1492, 408);
             this.dgvDeletedMainCategory.TabIndex = 1;
             this.dgvDeletedMainCategory.DoubleClick += new System.EventHandler(this.dgvDeletedMainCategory_DoubleClick);
             // 
@@ -265,101 +265,6 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.dgvSubCategoryDeletedMainCategoryName.Name = "dgvSubCategoryDeletedMainCategoryName";
             this.dgvSubCategoryDeletedMainCategoryName.ReadOnly = true;
             // 
-            // txtDescription
-            // 
-            this.txtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDescription.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtDescription.BorderRadius = 17;
-            this.txtDescription.BorderThickness = 2;
-            this.txtDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDescription.DefaultText = "";
-            this.txtDescription.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtDescription.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtDescription.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDescription.DisabledState.Parent = this.txtDescription;
-            this.txtDescription.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDescription.FocusedState.Parent = this.txtDescription;
-            this.txtDescription.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.ForeColor = System.Drawing.Color.Gray;
-            this.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDescription.HoverState.Parent = this.txtDescription;
-            this.txtDescription.Location = new System.Drawing.Point(809, 118);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.PasswordChar = '\0';
-            this.txtDescription.PlaceholderText = "";
-            this.txtDescription.SelectedText = "";
-            this.txtDescription.ShadowDecoration.Parent = this.txtDescription;
-            this.txtDescription.Size = new System.Drawing.Size(542, 100);
-            this.txtDescription.TabIndex = 2;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.BorderRadius = 17;
-            this.btnAdd.CheckedState.Parent = this.btnAdd;
-            this.btnAdd.CustomImages.Parent = this.btnAdd;
-            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
-            this.btnAdd.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Location = new System.Drawing.Point(1160, 228);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
-            this.btnAdd.Size = new System.Drawing.Size(190, 56);
-            this.btnAdd.TabIndex = 4;
-            this.btnAdd.Text = "إضافة جديدة";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdate.BorderRadius = 17;
-            this.btnUpdate.CheckedState.Parent = this.btnUpdate;
-            this.btnUpdate.CustomImages.Parent = this.btnUpdate;
-            this.btnUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
-            this.btnUpdate.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.HoverState.Parent = this.btnUpdate;
-            this.btnUpdate.Location = new System.Drawing.Point(926, 228);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
-            this.btnUpdate.Size = new System.Drawing.Size(190, 56);
-            this.btnUpdate.TabIndex = 5;
-            this.btnUpdate.Text = "حفظ التعديلات";
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtSearch.BorderRadius = 15;
-            this.txtSearch.BorderThickness = 2;
-            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.DefaultText = "";
-            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.DisabledState.Parent = this.txtSearch;
-            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.FocusedState.Parent = this.txtSearch;
-            this.txtSearch.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.ForeColor = System.Drawing.Color.Gray;
-            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.HoverState.Parent = this.txtSearch;
-            this.txtSearch.Location = new System.Drawing.Point(153, 157);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.PlaceholderText = "";
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
-            this.txtSearch.Size = new System.Drawing.Size(372, 58);
-            this.txtSearch.TabIndex = 7;
-            // 
             // Description
             // 
             this.Description.DataPropertyName = "Description";
@@ -368,16 +273,6 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.Description.Name = "Description";
             this.Description.ReadOnly = true;
             this.Description.Width = 125;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1370, 157);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 28);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "وصف تعريفي";
             // 
             // CategoryID
             // 
@@ -389,26 +284,81 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.CategoryID.Visible = false;
             this.CategoryID.Width = 125;
             // 
-            // btnSearch
-            // 
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.BorderRadius = 17;
-            this.btnSearch.CheckedState.Parent = this.btnSearch;
-            this.btnSearch.CustomImages.Parent = this.btnSearch;
-            this.btnSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(173)))), ((int)(((byte)(78)))));
-            this.btnSearch.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.HoverState.Parent = this.btnSearch;
-            this.btnSearch.Location = new System.Drawing.Point(153, 228);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.ShadowDecoration.Parent = this.btnSearch;
-            this.btnSearch.Size = new System.Drawing.Size(190, 56);
-            this.btnSearch.TabIndex = 8;
-            this.btnSearch.Text = "إبحث";
-            // 
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
+            // 
+            // DeletedDescription
+            // 
+            this.DeletedDescription.DataPropertyName = "Description";
+            this.DeletedDescription.HeaderText = "وصف التصنيف";
+            this.DeletedDescription.MinimumWidth = 6;
+            this.DeletedDescription.Name = "DeletedDescription";
+            this.DeletedDescription.ReadOnly = true;
+            this.DeletedDescription.Width = 125;
+            // 
+            // gbMainOperations
+            // 
+            this.gbMainOperations.BorderRadius = 29;
+            this.gbMainOperations.Controls.Add(this.cbxMainCategory);
+            this.gbMainOperations.Controls.Add(this.label5);
+            this.gbMainOperations.Controls.Add(this.txtSearch);
+            this.gbMainOperations.Controls.Add(this.txtName);
+            this.gbMainOperations.Controls.Add(this.txtDescription);
+            this.gbMainOperations.Controls.Add(this.btnAdd);
+            this.gbMainOperations.Controls.Add(this.btnUpdate);
+            this.gbMainOperations.Controls.Add(this.btnDeleteByOne);
+            this.gbMainOperations.Controls.Add(this.label9);
+            this.gbMainOperations.Controls.Add(this.label2);
+            this.gbMainOperations.Controls.Add(this.label1);
+            this.gbMainOperations.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(117)))), ((int)(((byte)(216)))));
+            this.gbMainOperations.CustomBorderThickness = new System.Windows.Forms.Padding(0, 45, 0, 0);
+            this.gbMainOperations.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbMainOperations.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbMainOperations.ForeColor = System.Drawing.Color.White;
+            this.gbMainOperations.Location = new System.Drawing.Point(0, 0);
+            this.gbMainOperations.Name = "gbMainOperations";
+            this.gbMainOperations.ShadowDecoration.Parent = this.gbMainOperations;
+            this.gbMainOperations.Size = new System.Drawing.Size(1529, 320);
+            this.gbMainOperations.TabIndex = 6;
+            this.gbMainOperations.Text = "وحدات المنتجات الكبرى";
+            this.gbMainOperations.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.BackColor = System.Drawing.Color.Transparent;
+            this.txtSearch.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtSearch.BorderRadius = 11;
+            this.txtSearch.BorderThickness = 2;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.DisabledState.Parent = this.txtSearch;
+            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.FillColor = System.Drawing.Color.PapayaWhip;
+            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.FocusedState.Parent = this.txtSearch;
+            this.txtSearch.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.Gray;
+            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.HoverState.Parent = this.txtSearch;
+            this.txtSearch.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconLeft")));
+            this.txtSearch.IconLeftOffset = new System.Drawing.Point(9, 0);
+            this.txtSearch.IconLeftSize = new System.Drawing.Size(32, 32);
+            this.txtSearch.Location = new System.Drawing.Point(23, 245);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.PlaceholderText = "";
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
+            this.txtSearch.Size = new System.Drawing.Size(412, 57);
+            this.txtSearch.TabIndex = 22;
+            this.txtSearch.TextOffset = new System.Drawing.Point(15, 0);
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // txtName
             // 
@@ -429,7 +379,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.txtName.ForeColor = System.Drawing.Color.Gray;
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtName.HoverState.Parent = this.txtName;
-            this.txtName.Location = new System.Drawing.Point(809, 55);
+            this.txtName.Location = new System.Drawing.Point(828, 60);
             this.txtName.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
@@ -437,27 +387,73 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.txtName.SelectedText = "";
             this.txtName.ShadowDecoration.Parent = this.txtName;
             this.txtName.Size = new System.Drawing.Size(542, 54);
-            this.txtName.TabIndex = 1;
+            this.txtName.TabIndex = 17;
             // 
-            // label9
+            // txtDescription
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(548, 168);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(151, 28);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "بحث باسم التصنيف";
+            this.txtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDescription.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtDescription.BorderRadius = 17;
+            this.txtDescription.BorderThickness = 2;
+            this.txtDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDescription.DefaultText = "";
+            this.txtDescription.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDescription.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDescription.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDescription.DisabledState.Parent = this.txtDescription;
+            this.txtDescription.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDescription.FocusedState.Parent = this.txtDescription;
+            this.txtDescription.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.ForeColor = System.Drawing.Color.Gray;
+            this.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDescription.HoverState.Parent = this.txtDescription;
+            this.txtDescription.Location = new System.Drawing.Point(828, 123);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.PasswordChar = '\0';
+            this.txtDescription.PlaceholderText = "";
+            this.txtDescription.SelectedText = "";
+            this.txtDescription.ShadowDecoration.Parent = this.txtDescription;
+            this.txtDescription.Size = new System.Drawing.Size(542, 100);
+            this.txtDescription.TabIndex = 18;
             // 
-            // label1
+            // btnAdd
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1369, 65);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 28);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "اسم التصنيف";
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.BorderRadius = 11;
+            this.btnAdd.CheckedState.Parent = this.btnAdd;
+            this.btnAdd.CustomImages.Parent = this.btnAdd;
+            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
+            this.btnAdd.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.HoverState.Parent = this.btnAdd;
+            this.btnAdd.Location = new System.Drawing.Point(1179, 245);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
+            this.btnAdd.Size = new System.Drawing.Size(190, 56);
+            this.btnAdd.TabIndex = 19;
+            this.btnAdd.Text = "إضافة جديدة";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.BorderRadius = 17;
+            this.btnUpdate.CheckedState.Parent = this.btnUpdate;
+            this.btnUpdate.CustomImages.Parent = this.btnUpdate;
+            this.btnUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
+            this.btnUpdate.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.HoverState.Parent = this.btnUpdate;
+            this.btnUpdate.Location = new System.Drawing.Point(945, 245);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
+            this.btnUpdate.Size = new System.Drawing.Size(190, 56);
+            this.btnUpdate.TabIndex = 20;
+            this.btnUpdate.Text = "حفظ التعديلات";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click_1);
             // 
             // btnDeleteByOne
             // 
@@ -465,113 +461,104 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.btnDeleteByOne.BorderRadius = 17;
             this.btnDeleteByOne.CheckedState.Parent = this.btnDeleteByOne;
             this.btnDeleteByOne.CustomImages.Parent = this.btnDeleteByOne;
-            this.btnDeleteByOne.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(117)))), ((int)(((byte)(216)))));
+            this.btnDeleteByOne.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
             this.btnDeleteByOne.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteByOne.ForeColor = System.Drawing.Color.White;
             this.btnDeleteByOne.HoverState.Parent = this.btnDeleteByOne;
-            this.btnDeleteByOne.Location = new System.Drawing.Point(682, 228);
+            this.btnDeleteByOne.Location = new System.Drawing.Point(701, 245);
             this.btnDeleteByOne.Name = "btnDeleteByOne";
             this.btnDeleteByOne.ShadowDecoration.Parent = this.btnDeleteByOne;
             this.btnDeleteByOne.Size = new System.Drawing.Size(190, 56);
-            this.btnDeleteByOne.TabIndex = 6;
+            this.btnDeleteByOne.TabIndex = 21;
             this.btnDeleteByOne.Text = "أرشفة";
-            this.btnDeleteByOne.Click += new System.EventHandler(this.btnDeleteByOne_Click);
+            this.btnDeleteByOne.Click += new System.EventHandler(this.btnDeleteByOne_Click_1);
             // 
-            // DeletedDescription
+            // label9
             // 
-            this.DeletedDescription.DataPropertyName = "Description";
-            this.DeletedDescription.HeaderText = "وصف التصنيف";
-            this.DeletedDescription.MinimumWidth = 6;
-            this.DeletedDescription.Name = "DeletedDescription";
-            this.DeletedDescription.ReadOnly = true;
-            this.DeletedDescription.Width = 125;
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.DimGray;
+            this.label9.Location = new System.Drawing.Point(444, 263);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(208, 32);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "بحث باسم أو وصف الوحدة";
             // 
-            // groupBox1
+            // label2
             // 
-            this.groupBox1.AutoSize = true;
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.cbxMainCategory);
-            this.groupBox1.Controls.Add(this.txtName);
-            this.groupBox1.Controls.Add(this.txtDescription);
-            this.groupBox1.Controls.Add(this.btnAdd);
-            this.groupBox1.Controls.Add(this.btnUpdate);
-            this.groupBox1.Controls.Add(this.btnDeleteByOne);
-            this.groupBox1.Controls.Add(this.btnSearch);
-            this.groupBox1.Controls.Add(this.txtSearch);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(99)))), ((int)(((byte)(155)))));
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1505, 319);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "إعدادات التصنيفات الفرعية";
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(1389, 162);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(109, 32);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "وصف تعريفي";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(1388, 70);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 32);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "اسم الوحدة ";
             // 
             // cbxMainCategory
             // 
-            this.cbxMainCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxMainCategory.BackColor = System.Drawing.Color.Transparent;
-            this.cbxMainCategory.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.cbxMainCategory.BorderRadius = 17;
+            this.cbxMainCategory.BorderColor = System.Drawing.Color.Gray;
+            this.cbxMainCategory.BorderRadius = 11;
             this.cbxMainCategory.BorderThickness = 2;
             this.cbxMainCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbxMainCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxMainCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbxMainCategory.FocusedColor = System.Drawing.Color.Silver;
-            this.cbxMainCategory.FocusedState.BorderColor = System.Drawing.Color.Silver;
+            this.cbxMainCategory.FocusedColor = System.Drawing.Color.Empty;
             this.cbxMainCategory.FocusedState.Parent = this.cbxMainCategory;
             this.cbxMainCategory.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbxMainCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbxMainCategory.FormattingEnabled = true;
-            this.cbxMainCategory.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cbxMainCategory.HoverState.Parent = this.cbxMainCategory;
             this.cbxMainCategory.ItemHeight = 30;
-            this.cbxMainCategory.ItemsAppearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cbxMainCategory.ItemsAppearance.Parent = this.cbxMainCategory;
-            this.cbxMainCategory.ItemsAppearance.SelectedForeColor = System.Drawing.SystemColors.Highlight;
-            this.cbxMainCategory.Location = new System.Drawing.Point(153, 85);
+            this.cbxMainCategory.ItemsAppearance.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.cbxMainCategory.Location = new System.Drawing.Point(79, 68);
             this.cbxMainCategory.Name = "cbxMainCategory";
             this.cbxMainCategory.ShadowDecoration.Parent = this.cbxMainCategory;
-            this.cbxMainCategory.Size = new System.Drawing.Size(372, 36);
-            this.cbxMainCategory.TabIndex = 3;
-            this.cbxMainCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.cbxMainCategory.TextOffset = new System.Drawing.Point(5, 0);
+            this.cbxMainCategory.Size = new System.Drawing.Size(444, 36);
+            this.cbxMainCategory.TabIndex = 25;
+            this.cbxMainCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label3
+            // label5
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(548, 93);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(174, 28);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "أختر التصنيف الرئيسي";
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.DimGray;
+            this.label5.Location = new System.Drawing.Point(546, 70);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(179, 32);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "إختر التصنيف الرئيسي";
             // 
             // ucSubCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.gbMainOperations);
             this.Controls.Add(this.ActiveMainCategory);
-            this.Controls.Add(this.groupBox1);
             this.Name = "ucSubCategory";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Size = new System.Drawing.Size(1505, 802);
+            this.Size = new System.Drawing.Size(1529, 802);
             this.ActiveMainCategory.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubCategory)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedMainCategory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbMainOperations.ResumeLayout(false);
+            this.gbMainOperations.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -582,23 +569,10 @@ namespace ElbayaNPresentation.Views.Store.Category
         private System.Windows.Forms.DataGridView dgvSubCategory;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DataGridView dgvDeletedMainCategory;
-        private Guna.UI2.WinForms.Guna2TextBox txtDescription;
-        private Guna.UI2.WinForms.Guna2Button btnAdd;
-        private Guna.UI2.WinForms.Guna2Button btnUpdate;
-        private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn CategoryID;
-        private Guna.UI2.WinForms.Guna2Button btnSearch;
         private System.Windows.Forms.ErrorProvider errorProvider;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private Guna.UI2.WinForms.Guna2TextBox txtName;
-        private Guna.UI2.WinForms.Guna2Button btnDeleteByOne;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn DeletedDescription;
-        private Guna.UI2.WinForms.Guna2ComboBox cbxMainCategory;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvSubCategoryID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvSubCategoryName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvSubcategoryDescription;
@@ -609,5 +583,17 @@ namespace ElbayaNPresentation.Views.Store.Category
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvSubCategoryDeletedDescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvSubCategoryDeletedManiCategoryID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvSubCategoryDeletedMainCategoryName;
+        private Guna.UI2.WinForms.Guna2GroupBox gbMainOperations;
+        private Guna.UI2.WinForms.Guna2TextBox txtSearch;
+        private Guna.UI2.WinForms.Guna2TextBox txtName;
+        private Guna.UI2.WinForms.Guna2TextBox txtDescription;
+        private Guna.UI2.WinForms.Guna2Button btnAdd;
+        private Guna.UI2.WinForms.Guna2Button btnUpdate;
+        private Guna.UI2.WinForms.Guna2Button btnDeleteByOne;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxMainCategory;
+        private System.Windows.Forms.Label label5;
     }
 }

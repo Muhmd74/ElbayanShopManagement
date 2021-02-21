@@ -62,6 +62,15 @@ namespace ElbayaNPresentation.Presenters.Store.Category.SubCategory
         {
             subCategory.DeleteOrRestore(ID);
         }
-
+        public List<SubCategoryDto> FilterDataGridView()
+        {
+            _view.subCategories = subCategory.GetAll().Where(x => x.Name.Contains(_view.SearchKeyword) || x.Description.Contains(_view.SearchKeyword)).ToList();
+            return _view.subCategories.ToList();
+        }
+        public List<SubCategoryDto> FilterDataGridViewDeleted()
+        {
+            _view.subCategories = subCategory.GetAllIsDeleted().Where(x => x.Name.Contains(_view.SearchKeyword) || x.Description.Contains(_view.SearchKeyword)).ToList();
+            return _view.subCategories.ToList();
+        }
     }
 }

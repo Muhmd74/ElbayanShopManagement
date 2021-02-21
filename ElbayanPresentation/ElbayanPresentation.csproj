@@ -89,6 +89,8 @@
     <Compile Include="Presenters\Store\Category\SubCategory\SubCategoryPresenter.cs" />
     <Compile Include="Presenters\Store\Unit\LargeUnit\IViewLargeUnit.cs" />
     <Compile Include="Presenters\Store\Unit\LargeUnit\LargeUnitPresenter.cs" />
+    <Compile Include="Presenters\Store\Unit\SmallUnit\IViewSmallUnit.cs" />
+    <Compile Include="Presenters\Store\Unit\SmallUnit\SmallUnitPresenter.cs" />
     <Compile Include="StartUp\frmMainBoard.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -51,6 +51,8 @@ namespace ElbayaNPresentation.Views.Store.Category
         public string SubCategoryName { get => txtName.Text; set => txtName.Text = value; }
         public string SubCategoryDescription { get => txtDescription.Text; set => txtDescription.Text = value; }
         public string DgvMainCategoryName { get; set; }
+
+        public string SearchKeyword { get => txtSearch.Text; set => txtSearch.Text = value; }
         public List<SubCategoryDto> subCategories { get; set; }
         public SubCategoryPresenter Presenter { private get; set; }
         public List<CategoryDto> MainCategory { get; set; }
@@ -65,64 +67,6 @@ namespace ElbayaNPresentation.Views.Store.Category
             cbxMainCategory.SelectedValue = "Id";
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            if (txtName.Text != string.Empty)
-            {
-                if (cbxMainCategory.SelectedItem != null)
-                {
-
-                    Presenter.OnClickbtnAdd();
-                    MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
-                    txtName.Clear();
-                    txtDescription.Clear();
-                    errorProvider.Clear();
-                    cbxMainCategory.Text = "";
-                    dgvSubCategory.DataSource = Presenter.GetAllSubCategory();
-                }
-                else
-                {
-                    errorProvider.SetError(cbxMainCategory, "كرما أختر قيمة تصنيف رئيسي");
-                    MessageBox.Show("كرما أختر قيمة تصنيف رئيس", "تأكيد", MessageBoxButtons.OK);
-                    return;
-                }
-            }
-            else
-            {
-                MessageBox.Show("لا بد من إدخال اسم التصنيف", "تأكيد", MessageBoxButtons.OK);
-                return;
-            }
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            //if (MessageBox.Show("", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            //{
-            if (txtName.Text != string.Empty)
-            {
-                if (cbxMainCategory.SelectedItem != null)
-                {
-                    Presenter.OnClickbtnUpdate(SubCatID, new Guid(CategoryId));
-                    MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
-                    btnAdd.Enabled = true;
-                    btnDeleteByOne.Enabled = true;
-                    cbxMainCategory.Text = txtDescription.Text = txtName.Text = "";
-                    dgvSubCategory.DataSource = Presenter.GetAllSubCategory();
-                }
-                else
-                {
-                    errorProvider.SetError(cbxMainCategory, "كرما أختر قيمة تصنيف رئيسي");
-                    MessageBox.Show("كرما أختر قيمة تصنيف رئيس", "تأكيد", MessageBoxButtons.OK);
-                    return;
-                }
-            }
-            else
-            {
-                MessageBox.Show("لا بد من إدخال اسم التصنيف", "تأكيد", MessageBoxButtons.OK);
-                return;
-            }
-            //}
-        }
 
         private void dgvSubCategory_DoubleClick_1(object sender, EventArgs e)
         {
@@ -158,30 +102,6 @@ namespace ElbayaNPresentation.Views.Store.Category
             }
         }
 
-        private void btnDeleteByOne_Click(object sender, EventArgs e)
-        {
-            if (txtName.Text != string.Empty)
-            {
-                Presenter.onClickbtnDelete(SubCatID);
-                txtName.Clear();
-                txtDescription.Clear();
-                if (ActiveMainCategory.SelectedIndex == 1)
-                {
-                    dgvDeletedMainCategory.DataSource = Presenter.GetAllDeletedSubCategory();
-                }
-                else if(ActiveMainCategory.SelectedIndex == 0)
-                {
-                    dgvSubCategory.DataSource = Presenter.GetAllSubCategory();
-                }
-                MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
-            }
-            else
-            {
-                MessageBox.Show("لا بد من تحديد صف من البيانات من خلال الضغط مرتين على الصف", "تأكيد", MessageBoxButtons.OK);
-                return;
-            }
-        }
-
         private void dgvDeletedMainCategory_DoubleClick(object sender, EventArgs e)
         {
             if (dgvDeletedMainCategory.CurrentRow.Index != -1)
@@ -194,6 +114,101 @@ namespace ElbayaNPresentation.Views.Store.Category
                 // dgvMainCategoryName
                 DgvMainCategoryName = dgvDeletedMainCategory.CurrentRow.Cells["dgvSubCategoryDeletedMainCategoryName"].Value.ToString();
                 cbxMainCategory.Text = DgvMainCategoryName;
+            }
+        }
+
+        private void btnAdd_Click_1(object sender, EventArgs e)
+        {
+            if (txtName.Text != string.Empty)
+            {
+                if (cbxMainCategory.SelectedItem != null)
+                {
+
+                    Presenter.OnClickbtnAdd();
+                    MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
+                    txtName.Clear();
+                    txtDescription.Clear();
+                    errorProvider.Clear();
+                    cbxMainCategory.Text = "";
+                    dgvSubCategory.DataSource = Presenter.GetAllSubCategory();
+                }
+                else
+                {
+                    errorProvider.SetError(cbxMainCategory, "كرما أختر قيمة تصنيف رئيسي");
+                    MessageBox.Show("كرما أختر قيمة تصنيف رئيس", "تأكيد", MessageBoxButtons.OK);
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("لا بد من إدخال اسم التصنيف", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
+        }
+
+        private void btnUpdate_Click_1(object sender, EventArgs e)
+        {
+            //if (MessageBox.Show("", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            //{
+            if (txtName.Text != string.Empty)
+            {
+                if (cbxMainCategory.SelectedItem != null)
+                {
+                    Presenter.OnClickbtnUpdate(SubCatID, new Guid(CategoryId));
+                    MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
+                    btnAdd.Enabled = true;
+                    btnDeleteByOne.Enabled = true;
+                    cbxMainCategory.Text = txtDescription.Text = txtName.Text = "";
+                    dgvSubCategory.DataSource = Presenter.GetAllSubCategory();
+                }
+                else
+                {
+                    errorProvider.SetError(cbxMainCategory, "كرما أختر قيمة تصنيف رئيسي");
+                    MessageBox.Show("كرما أختر قيمة تصنيف رئيس", "تأكيد", MessageBoxButtons.OK);
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("لا بد من إدخال اسم التصنيف", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
+            //}
+        }
+
+        private void btnDeleteByOne_Click_1(object sender, EventArgs e)
+        {
+            if (txtName.Text != string.Empty)
+            {
+                Presenter.onClickbtnDelete(SubCatID);
+                txtName.Clear();
+                txtDescription.Clear();
+                if (ActiveMainCategory.SelectedIndex == 1)
+                {
+                    dgvDeletedMainCategory.DataSource = Presenter.GetAllDeletedSubCategory();
+                }
+                else if (ActiveMainCategory.SelectedIndex == 0)
+                {
+                    dgvSubCategory.DataSource = Presenter.GetAllSubCategory();
+                }
+                MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("لا بد من تحديد صف من البيانات من خلال الضغط مرتين على الصف", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (ActiveMainCategory.SelectedIndex == 0)
+            {
+                dgvSubCategory.DataSource = Presenter.FilterDataGridView().ToList();
+            }
+            else if (ActiveMainCategory.SelectedIndex == 1)
+            {
+                dgvDeletedMainCategory.DataSource = Presenter.FilterDataGridViewDeleted();
             }
         }
     }

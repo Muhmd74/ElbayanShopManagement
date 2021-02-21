@@ -75,7 +75,7 @@ namespace ElbayaNPresentation.Views.Store.Category
 
         private void ActiveMainCategory_Selected(object sender, TabControlEventArgs e)
         {
-            if(dgvTabContainer.SelectedIndex == 0)
+            if(ActiveMainCategory.SelectedIndex == 0)
             {
                 dgvMainCategory.DataSource = Presenter.GetCategories();
                 btnAdd.Enabled = true;
@@ -83,7 +83,7 @@ namespace ElbayaNPresentation.Views.Store.Category
                 btnUpdate.Enabled = true;
                 txtDescription.Text = txtName.Text = txtSearch.Text = "";
             }
-            else if (dgvTabContainer.SelectedIndex == 1)
+            else if (ActiveMainCategory.SelectedIndex == 1)
             {
                 dgvDeletedMainCategory.DataSource = Presenter.GetDeletedCategories();
                 dgvDeletedMainCategory.Columns[0].Visible = false;
@@ -146,7 +146,7 @@ namespace ElbayaNPresentation.Views.Store.Category
                 Presenter.OnClickDelete(CatID);
                 txtName.Clear();
                 txtDescription.Clear();
-                if (dgvTabContainer.SelectedIndex == 1)
+                if (ActiveMainCategory.SelectedIndex == 1)
                 {
                     dgvDeletedMainCategory.DataSource = Presenter.GetDeletedCategories();
                 }
@@ -165,11 +165,11 @@ namespace ElbayaNPresentation.Views.Store.Category
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            if (dgvTabContainer.SelectedIndex == 0)
+            if (ActiveMainCategory.SelectedIndex == 0)
             {
                 dgvMainCategory.DataSource = Presenter.FilterDataGridView().ToList();
             }
-            else if (dgvTabContainer.SelectedIndex == 1)
+            else if (ActiveMainCategory.SelectedIndex == 1)
             {
                 dgvDeletedMainCategory.DataSource = Presenter.FilterDataGridViewDeleted();
             }

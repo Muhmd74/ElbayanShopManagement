@@ -32,9 +32,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucMaincategory));
-            this.dgvTabContainer = new System.Windows.Forms.TabControl();
+            this.ActiveMainCategory = new System.Windows.Forms.TabControl();
             this.tpActiveMainCategory = new System.Windows.Forms.TabPage();
             this.dgvMainCategory = new System.Windows.Forms.DataGridView();
+            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MainCategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpDeletedMainCategory = new System.Windows.Forms.TabPage();
             this.dgvDeletedMainCategory = new System.Windows.Forms.DataGridView();
             this.CategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,8 +45,6 @@
             this.DeletedDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbMainOperations = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
@@ -51,10 +52,9 @@
             this.btnDeleteByOne = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MainCategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvTabContainer.SuspendLayout();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.ActiveMainCategory.SuspendLayout();
             this.tpActiveMainCategory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMainCategory)).BeginInit();
             this.tpDeletedMainCategory.SuspendLayout();
@@ -63,21 +63,21 @@
             this.gbMainOperations.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgvTabContainer
+            // ActiveMainCategory
             // 
-            this.dgvTabContainer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.ActiveMainCategory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvTabContainer.Controls.Add(this.tpActiveMainCategory);
-            this.dgvTabContainer.Controls.Add(this.tpDeletedMainCategory);
-            this.dgvTabContainer.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvTabContainer.ItemSize = new System.Drawing.Size(132, 59);
-            this.dgvTabContainer.Location = new System.Drawing.Point(0, 312);
-            this.dgvTabContainer.Name = "dgvTabContainer";
-            this.dgvTabContainer.RightToLeftLayout = true;
-            this.dgvTabContainer.SelectedIndex = 0;
-            this.dgvTabContainer.Size = new System.Drawing.Size(1536, 432);
-            this.dgvTabContainer.TabIndex = 0;
-            this.dgvTabContainer.Selected += new System.Windows.Forms.TabControlEventHandler(this.ActiveMainCategory_Selected);
+            this.ActiveMainCategory.Controls.Add(this.tpActiveMainCategory);
+            this.ActiveMainCategory.Controls.Add(this.tpDeletedMainCategory);
+            this.ActiveMainCategory.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ActiveMainCategory.ItemSize = new System.Drawing.Size(132, 59);
+            this.ActiveMainCategory.Location = new System.Drawing.Point(0, 312);
+            this.ActiveMainCategory.Name = "ActiveMainCategory";
+            this.ActiveMainCategory.RightToLeftLayout = true;
+            this.ActiveMainCategory.SelectedIndex = 0;
+            this.ActiveMainCategory.Size = new System.Drawing.Size(1536, 432);
+            this.ActiveMainCategory.TabIndex = 0;
+            this.ActiveMainCategory.Selected += new System.Windows.Forms.TabControlEventHandler(this.ActiveMainCategory_Selected);
             // 
             // tpActiveMainCategory
             // 
@@ -123,6 +123,31 @@
             this.dgvMainCategory.Size = new System.Drawing.Size(1522, 359);
             this.dgvMainCategory.TabIndex = 0;
             this.dgvMainCategory.DoubleClick += new System.EventHandler(this.dgvMainCategory_DoubleClick);
+            // 
+            // CategoryName
+            // 
+            this.CategoryName.DataPropertyName = "Name";
+            this.CategoryName.HeaderText = "اسم التصنيف";
+            this.CategoryName.MinimumWidth = 6;
+            this.CategoryName.Name = "CategoryName";
+            this.CategoryName.ReadOnly = true;
+            // 
+            // MainCategoryID
+            // 
+            this.MainCategoryID.DataPropertyName = "Id";
+            this.MainCategoryID.HeaderText = "الرقم المرجعي";
+            this.MainCategoryID.MinimumWidth = 6;
+            this.MainCategoryID.Name = "MainCategoryID";
+            this.MainCategoryID.ReadOnly = true;
+            this.MainCategoryID.Visible = false;
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "Description";
+            this.Description.HeaderText = "وصف التصنيف";
+            this.Description.MinimumWidth = 6;
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
             // 
             // tpDeletedMainCategory
             // 
@@ -220,53 +245,6 @@
             this.gbMainOperations.TabIndex = 6;
             this.gbMainOperations.Text = "التصنيفات الرئيسية";
             this.gbMainOperations.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch.BackColor = System.Drawing.Color.Transparent;
-            this.txtSearch.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtSearch.BorderRadius = 11;
-            this.txtSearch.BorderThickness = 2;
-            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.DefaultText = "";
-            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.DisabledState.Parent = this.txtSearch;
-            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.FillColor = System.Drawing.Color.PapayaWhip;
-            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.FocusedState.Parent = this.txtSearch;
-            this.txtSearch.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.ForeColor = System.Drawing.Color.Gray;
-            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.HoverState.Parent = this.txtSearch;
-            this.txtSearch.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconLeft")));
-            this.txtSearch.IconLeftOffset = new System.Drawing.Point(9, 0);
-            this.txtSearch.IconLeftSize = new System.Drawing.Size(32, 32);
-            this.txtSearch.Location = new System.Drawing.Point(29, 245);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.PlaceholderText = "";
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
-            this.txtSearch.Size = new System.Drawing.Size(412, 57);
-            this.txtSearch.TabIndex = 22;
-            this.txtSearch.TextOffset = new System.Drawing.Point(15, 0);
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(450, 263);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(208, 32);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "بحث باسم أو وصف الوحدة";
             // 
             // txtName
             // 
@@ -403,41 +381,63 @@
             this.label1.TabIndex = 27;
             this.label1.Text = "اسم التصنيف";
             // 
-            // CategoryName
+            // txtSearch
             // 
-            this.CategoryName.DataPropertyName = "Name";
-            this.CategoryName.HeaderText = "اسم التصنيف";
-            this.CategoryName.MinimumWidth = 6;
-            this.CategoryName.Name = "CategoryName";
-            this.CategoryName.ReadOnly = true;
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.BackColor = System.Drawing.Color.Transparent;
+            this.txtSearch.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtSearch.BorderRadius = 11;
+            this.txtSearch.BorderThickness = 2;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.DisabledState.Parent = this.txtSearch;
+            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.FillColor = System.Drawing.Color.PapayaWhip;
+            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.FocusedState.Parent = this.txtSearch;
+            this.txtSearch.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.Gray;
+            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.HoverState.Parent = this.txtSearch;
+            this.txtSearch.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconLeft")));
+            this.txtSearch.IconLeftOffset = new System.Drawing.Point(9, 0);
+            this.txtSearch.IconLeftSize = new System.Drawing.Size(32, 32);
+            this.txtSearch.Location = new System.Drawing.Point(29, 245);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.PlaceholderText = "";
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
+            this.txtSearch.Size = new System.Drawing.Size(412, 57);
+            this.txtSearch.TabIndex = 22;
+            this.txtSearch.TextOffset = new System.Drawing.Point(15, 0);
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // MainCategoryID
+            // label9
             // 
-            this.MainCategoryID.DataPropertyName = "Id";
-            this.MainCategoryID.HeaderText = "الرقم المرجعي";
-            this.MainCategoryID.MinimumWidth = 6;
-            this.MainCategoryID.Name = "MainCategoryID";
-            this.MainCategoryID.ReadOnly = true;
-            this.MainCategoryID.Visible = false;
-            // 
-            // Description
-            // 
-            this.Description.DataPropertyName = "Description";
-            this.Description.HeaderText = "وصف التصنيف";
-            this.Description.MinimumWidth = 6;
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.DimGray;
+            this.label9.Location = new System.Drawing.Point(450, 263);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(208, 32);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "بحث باسم أو وصف الوحدة";
             // 
             // ucMaincategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gbMainOperations);
-            this.Controls.Add(this.dgvTabContainer);
+            this.Controls.Add(this.ActiveMainCategory);
             this.Name = "ucMaincategory";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Size = new System.Drawing.Size(1535, 717);
-            this.dgvTabContainer.ResumeLayout(false);
+            this.ActiveMainCategory.ResumeLayout(false);
             this.tpActiveMainCategory.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMainCategory)).EndInit();
             this.tpDeletedMainCategory.ResumeLayout(false);
@@ -450,7 +450,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.TabControl dgvTabContainer;
+        private System.Windows.Forms.TabControl ActiveMainCategory;
         private System.Windows.Forms.TabPage tpActiveMainCategory;
         private System.Windows.Forms.DataGridView dgvMainCategory;
         private System.Windows.Forms.TabPage tpDeletedMainCategory;
