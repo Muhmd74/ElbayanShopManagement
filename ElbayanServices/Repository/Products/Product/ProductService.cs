@@ -70,12 +70,49 @@ namespace ElbayanServices.Repository.Products.Product
 
         public List<SmallUnitNameDto> GetAllSmallUnitByLargeUnit(Guid largeUnitId)
         {
-            var model = _context.SmallUnits.Where(d => d.LargeUnitId == largeUnitId && d.IsDeleted == false)
+            var model = _context.SmallUnits.
+                Where(d => d.LargeUnitId == largeUnitId
+                           && d.IsDeleted == false)
                 .Select(d => new SmallUnitNameDto()
                 {
                     SmallUnitId = d.Id,
                     Name = d.Name
                 }).ToList();
+            if (model.Any())
+            {
+                return model;
+            }
+
+            return null;
+        }
+
+        public List<SmallUnitNameDto> GetAllSmallUnit()
+        {
+            var model = _context.SmallUnits.
+                Where(d =>d.IsDeleted == false)
+                .Select(d => new SmallUnitNameDto()
+                {
+                    SmallUnitId = d.Id,
+                    Name = d.Name
+                }).ToList();
+            if (model.Any())
+            {
+                return model;
+            }
+
+            return null;
+        }
+
+        public List<LargeUnitNameDto> GetAllLargeUnit()
+        {
+            var model = _context.LargeUnits.
+                Where(d => d.IsDeleted == false)
+                .Select(d => new LargeUnitNameDto()
+                {
+                    LargeUnitId = d.Id,
+                    Name = d.Name
+                }).ToList();
+
             if (model.Any())
             {
                 return model;
