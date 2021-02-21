@@ -9,7 +9,6 @@ namespace ElbayanServices.Repository.Products.Units.SmallUnit
     {
         bool Add(SmallUnitDto model);
         bool Update(SmallUnitDto model);
-
         bool DeleteOrRestore(Guid id);
         List<SmallUnitDto> GetAllSmallUnit();
         List<SmallUnitDto> GetAllSmallUnitDeleted();

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using ElbayanDatabase.ConnectionTools;
 using ElbayanServices.Repository.Products.Units.SmallUnit.Dtos;
@@ -24,7 +25,8 @@ namespace ElbayanServices.Repository.Products.Units.SmallUnit
                     {
                         Name = model.Name,
                         Description = model.Description,
-                        IsDeleted = false
+                        IsDeleted = false,
+                        LargeUnitId = model.LargeUnitId
                     });
                 _context.SaveChanges();
                 return true;
@@ -39,6 +41,7 @@ namespace ElbayanServices.Repository.Products.Units.SmallUnit
                 if (result == null) return false;
                 result.Description = model.Description;
                 result.Name = model.Name;
+                result.LargeUnitId = model.LargeUnitId;
                 _context.SaveChanges();
                 return true;
 
@@ -59,10 +62,13 @@ namespace ElbayanServices.Repository.Products.Units.SmallUnit
 
         public List<SmallUnitDto> GetAllSmallUnit()
         {
-            var model = _context.SmallUnits.Where(d=>d.IsDeleted==false).Select(d => new SmallUnitDto()
+            var model = _context.SmallUnits.Include(d=>d.LargeUnit)
+                .Where(d=>d.IsDeleted==false).Select(d => new SmallUnitDto()
             {
                 Description = d.Description,
                 Name = d.Name,
+                LargeUnitId = d.LargeUnitId,
+                LargeUnitName = d.LargeUnit.Name,
                 IsDeleted = d.IsDeleted,
                 Id = d.Id
             }).ToList();
@@ -72,19 +78,23 @@ namespace ElbayanServices.Repository.Products.Units.SmallUnit
 
         public List<SmallUnitDto> GetAllSmallUnitDeleted()
         {
-            var model = _context.SmallUnits.Where(d=>d.IsDeleted).Select(d => new SmallUnitDto()
+            var model = _context.SmallUnits
+                .Include(d=>d.LargeUnit)
+                .Where(d=>d.IsDeleted).Select(d => new SmallUnitDto()
             {
                 Description = d.Description,
                 Name = d.Name,
                 IsDeleted = d.IsDeleted,
-                Id = d.Id
+                Id = d.Id,
+                LargeUnitId = d.LargeUnitId,
+                LargeUnitName = d.LargeUnit.Name
             }).ToList();
             return model;
         }
 
         public SmallUnitDto Get(Guid id)
         {
-            var model = _context.SmallUnits.FirstOrDefault(d => d.Id == id);
+            var model = _context.SmallUnits.Include(d=>d.LargeUnit).FirstOrDefault(d => d.Id == id);
 
             if (model != null)
             {
@@ -92,7 +102,9 @@ namespace ElbayanServices.Repository.Products.Units.SmallUnit
                 {
                     Description = model.Description,
                     Name = model.Name,
-                    IsDeleted = model.IsDeleted
+                    IsDeleted = model.IsDeleted,
+                    LargeUnitId = model.LargeUnitId,
+                    LargeUnitName = model.LargeUnit.Name
                 };
             }
 
