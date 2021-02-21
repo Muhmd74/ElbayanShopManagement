@@ -51,5 +51,15 @@ namespace ElbayaNPresentation.Presenters.Store.Category.MainCategory
             Category.DeleteOrRestore(ID);
         }
 
+        public List<CategoryDto> FilterDataGridView()
+        {
+            _view.MainCategory = Category.GetAll().Where(x => x.Name.Contains(_view.SearchKeyword) || x.Description.Contains(_view.SearchKeyword)).ToList();
+            return _view.MainCategory.ToList();
+        }
+        public List<CategoryDto> FilterDataGridViewDeleted()
+        {
+            _view.MainCategory = Category.GetAllDeleted().Where(x => x.Name.Contains(_view.SearchKeyword) || x.Description.Contains(_view.SearchKeyword)).ToList();
+            return _view.MainCategory.ToList();
+        }
     }
 }

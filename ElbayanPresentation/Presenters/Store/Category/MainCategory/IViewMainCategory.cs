@@ -12,6 +12,7 @@ namespace ElbayaNPresentation.Presenters.Store.Category.MainCategory
         string MainCategoryName { get; set; }
 
         string MainCategoryDescription { get; set; }
+        string SearchKeyword { get; set; }
 
         List<CategoryDto> MainCategory { get; set; }
 

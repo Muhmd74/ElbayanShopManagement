@@ -24,10 +24,8 @@ namespace ElbayaNPresentation.Views.Store.Category
         {
             InitializeComponent();
             Presenter = new MainCategoryPresenter(this);
-            dgvMainCategory.DataSource = Presenter.GetCategories();
-            dgvMainCategory.Columns[0].Visible = false;
-            DataGridViewStyle.StyleDatagridview(dgvMainCategory);
 
+            PopulateAllUnitDataGridView();
         }
         private Guid CatID;
         public static ucMaincategory Instance
@@ -45,19 +43,39 @@ namespace ElbayaNPresentation.Views.Store.Category
         public string MainCategoryName { get => txtName.Text; set => txtName.Text = value; }
         public string MainCategoryDescription { get => txtDescription.Text; set => txtDescription.Text = value; }
 
+        public string SearchKeyword { get => txtSearch.Text; set => txtSearch.Text = value; }
+
+        public void PopulateAllUnitDataGridView()
+        {
+
+            if (Presenter.GetCategories().Any())
+            {
+                dgvMainCategory.DataSource = Presenter.GetCategories();
+            }
+            else
+            {
+                dgvMainCategory.DataSource = null;
+            }
+            DataGridViewStyle.StyleDatagridview(dgvMainCategory);
+
+        }
         private void dgvMainCategory_DoubleClick(object sender, EventArgs e)
         {
             if (dgvMainCategory.CurrentRow.Index != -1)
             {
                 txtName.Text = dgvMainCategory.CurrentRow.Cells["CategoryName"].Value.ToString();
                 txtDescription.Text = dgvMainCategory.CurrentRow.Cells["Description"].Value.ToString();
-                CatID = new Guid(dgvMainCategory.CurrentRow.Cells["ID"].Value.ToString());
+                CatID = new Guid(dgvMainCategory.CurrentRow.Cells["MainCategoryID"].Value.ToString());
+
+                btnAdd.Enabled = false;
+                btnUpdate.Enabled = true;
+                btnDeleteByOne.Enabled = true;
             }
         }
 
         private void ActiveMainCategory_Selected(object sender, TabControlEventArgs e)
         {
-            if(ActiveMainCategory.SelectedIndex == 0)
+            if(dgvTabContainer.SelectedIndex == 0)
             {
                 dgvMainCategory.DataSource = Presenter.GetCategories();
                 btnAdd.Enabled = true;
@@ -65,7 +83,7 @@ namespace ElbayaNPresentation.Views.Store.Category
                 btnUpdate.Enabled = true;
                 txtDescription.Text = txtName.Text = txtSearch.Text = "";
             }
-            else if (ActiveMainCategory.SelectedIndex == 1)
+            else if (dgvTabContainer.SelectedIndex == 1)
             {
                 dgvDeletedMainCategory.DataSource = Presenter.GetDeletedCategories();
                 dgvDeletedMainCategory.Columns[0].Visible = false;
@@ -87,7 +105,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             }
         }
 
-        private void btnAdd_Click_1(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             if (txtName.Text != string.Empty)
             {
@@ -104,7 +122,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             }
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnUpdate_Click_1(object sender, EventArgs e)
         {
             if (txtName.Text != string.Empty)
             {
@@ -128,7 +146,7 @@ namespace ElbayaNPresentation.Views.Store.Category
                 Presenter.OnClickDelete(CatID);
                 txtName.Clear();
                 txtDescription.Clear();
-                if (ActiveMainCategory.SelectedIndex == 1)
+                if (dgvTabContainer.SelectedIndex == 1)
                 {
                     dgvDeletedMainCategory.DataSource = Presenter.GetDeletedCategories();
                 }
@@ -145,9 +163,16 @@ namespace ElbayaNPresentation.Views.Store.Category
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-
+            if (dgvTabContainer.SelectedIndex == 0)
+            {
+                dgvMainCategory.DataSource = Presenter.FilterDataGridView().ToList();
+            }
+            else if (dgvTabContainer.SelectedIndex == 1)
+            {
+                dgvDeletedMainCategory.DataSource = Presenter.FilterDataGridViewDeleted();
+            }
         }
     }
 }
