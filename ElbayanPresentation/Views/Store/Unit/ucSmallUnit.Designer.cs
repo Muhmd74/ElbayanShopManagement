@@ -33,17 +33,11 @@ namespace ElbayaNPresentation.Views.Store.Unit
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucSmallUnit));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tpArchieveLargeUnits = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDeletedSmallUnit = new System.Windows.Forms.DataGridView();
             this.dgvTabContainer = new System.Windows.Forms.TabControl();
             this.ValidateTextboxForNumbers = new Guna.UI2.WinForms.Guna2HtmlToolTip();
             this.gbMainOperations = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.nupSmallUnitWeight = new System.Windows.Forms.NumericUpDown();
+            this.nudSmallUnitWeight = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cbxLargeUnit = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -53,31 +47,38 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDeleteByOne = new Guna.UI2.WinForms.Guna2Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.tpActiveLargeUnits = new System.Windows.Forms.TabPage();
             this.dgvSmallUnit = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IsDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSmallUnitID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvIsDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSmallUnitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSmallUnitDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvLargeUnitIDForSmallUnitActive = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvLargeUnitNameForSmallUnitActive = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSmallUnitWeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSmallUnitIDDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSmallUnitNameDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSmallUnitDescriptionDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvLargeUnitIDForSmallUnitDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvLargeUnitNameForSmallUnitDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSmallUnitWeightDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvIsDeletedDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpArchieveLargeUnits.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedSmallUnit)).BeginInit();
             this.dgvTabContainer.SuspendLayout();
             this.gbMainOperations.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nupSmallUnitWeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSmallUnitWeight)).BeginInit();
             this.tpActiveLargeUnits.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSmallUnit)).BeginInit();
             this.SuspendLayout();
             // 
             // tpArchieveLargeUnits
             // 
-            this.tpArchieveLargeUnits.Controls.Add(this.dataGridView1);
+            this.tpArchieveLargeUnits.Controls.Add(this.dgvDeletedSmallUnit);
             this.tpArchieveLargeUnits.Location = new System.Drawing.Point(4, 63);
             this.tpArchieveLargeUnits.Name = "tpArchieveLargeUnits";
             this.tpArchieveLargeUnits.Padding = new System.Windows.Forms.Padding(3);
@@ -86,12 +87,12 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.tpArchieveLargeUnits.Text = "الوحدات المؤرشفة";
             this.tpArchieveLargeUnits.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvDeletedSmallUnit
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDeletedSmallUnit.AllowUserToAddRows = false;
+            this.dgvDeletedSmallUnit.AllowUserToDeleteRows = false;
+            this.dgvDeletedSmallUnit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDeletedSmallUnit.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -100,75 +101,27 @@ namespace ElbayaNPresentation.Views.Store.Unit
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dataGridView1.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            this.dataGridView1.RowTemplate.Height = 35;
-            this.dataGridView1.Size = new System.Drawing.Size(1504, 434);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "رقم الوحدة المرجعي";
-            this.dataGridViewTextBoxColumn1.MaxInputLength = 50;
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "اسم الوحدة الصغرى";
-            this.dataGridViewTextBoxColumn2.MaxInputLength = 250;
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Description";
-            this.dataGridViewTextBoxColumn3.HeaderText = " وصف الوحدة الصغرى";
-            this.dataGridViewTextBoxColumn3.MaxInputLength = 1000;
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "الرقم المرجعي للوحدة الكبري";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "اسم الوحدة الكبرى";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "وزن الوحدة الصغرى من الكبرى";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dgvDeletedSmallUnit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDeletedSmallUnit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDeletedSmallUnit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvSmallUnitIDDeleted,
+            this.dgvSmallUnitNameDeleted,
+            this.dgvSmallUnitDescriptionDeleted,
+            this.dgvLargeUnitIDForSmallUnitDeleted,
+            this.dgvLargeUnitNameForSmallUnitDeleted,
+            this.dgvSmallUnitWeightDeleted,
+            this.dgvIsDeletedDeleted});
+            this.dgvDeletedSmallUnit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDeletedSmallUnit.Location = new System.Drawing.Point(3, 3);
+            this.dgvDeletedSmallUnit.Name = "dgvDeletedSmallUnit";
+            this.dgvDeletedSmallUnit.ReadOnly = true;
+            this.dgvDeletedSmallUnit.RowHeadersWidth = 51;
+            this.dgvDeletedSmallUnit.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgvDeletedSmallUnit.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.dgvDeletedSmallUnit.RowTemplate.Height = 35;
+            this.dgvDeletedSmallUnit.Size = new System.Drawing.Size(1504, 434);
+            this.dgvDeletedSmallUnit.TabIndex = 1;
+            this.dgvDeletedSmallUnit.DoubleClick += new System.EventHandler(this.dgvDeletedSmallUnit_DoubleClick);
             // 
             // dgvTabContainer
             // 
@@ -184,6 +137,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.dgvTabContainer.SelectedIndex = 0;
             this.dgvTabContainer.Size = new System.Drawing.Size(1518, 507);
             this.dgvTabContainer.TabIndex = 6;
+            this.dgvTabContainer.SelectedIndexChanged += new System.EventHandler(this.dgvTabContainer_SelectedIndexChanged);
             // 
             // ValidateTextboxForNumbers
             // 
@@ -193,7 +147,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
             // gbMainOperations
             // 
             this.gbMainOperations.BorderRadius = 29;
-            this.gbMainOperations.Controls.Add(this.nupSmallUnitWeight);
+            this.gbMainOperations.Controls.Add(this.nudSmallUnitWeight);
             this.gbMainOperations.Controls.Add(this.label4);
             this.gbMainOperations.Controls.Add(this.label3);
             this.gbMainOperations.Controls.Add(this.cbxLargeUnit);
@@ -203,7 +157,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.gbMainOperations.Controls.Add(this.txtDescription);
             this.gbMainOperations.Controls.Add(this.btnAdd);
             this.gbMainOperations.Controls.Add(this.btnUpdate);
-            this.gbMainOperations.Controls.Add(this.btnDelete);
+            this.gbMainOperations.Controls.Add(this.btnDeleteByOne);
             this.gbMainOperations.Controls.Add(this.label7);
             this.gbMainOperations.Controls.Add(this.label8);
             this.gbMainOperations.Controls.Add(this.label10);
@@ -220,26 +174,26 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.gbMainOperations.Text = "وحدات المنتجات الكبرى";
             this.gbMainOperations.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // nupSmallUnitWeight
+            // nudSmallUnitWeight
             // 
-            this.nupSmallUnitWeight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nupSmallUnitWeight.DecimalPlaces = 2;
-            this.nupSmallUnitWeight.Location = new System.Drawing.Point(79, 137);
-            this.nupSmallUnitWeight.Maximum = new decimal(new int[] {
+            this.nudSmallUnitWeight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudSmallUnitWeight.DecimalPlaces = 2;
+            this.nudSmallUnitWeight.Location = new System.Drawing.Point(79, 137);
+            this.nudSmallUnitWeight.Maximum = new decimal(new int[] {
             10000000,
             0,
             0,
             0});
-            this.nupSmallUnitWeight.Minimum = new decimal(new int[] {
+            this.nudSmallUnitWeight.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.nupSmallUnitWeight.Name = "nupSmallUnitWeight";
-            this.nupSmallUnitWeight.Size = new System.Drawing.Size(444, 40);
-            this.nupSmallUnitWeight.TabIndex = 28;
-            this.nupSmallUnitWeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nupSmallUnitWeight.Value = new decimal(new int[] {
+            this.nudSmallUnitWeight.Name = "nudSmallUnitWeight";
+            this.nudSmallUnitWeight.Size = new System.Drawing.Size(444, 40);
+            this.nudSmallUnitWeight.TabIndex = 28;
+            this.nudSmallUnitWeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudSmallUnitWeight.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -337,6 +291,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.txtSearch.Size = new System.Drawing.Size(412, 57);
             this.txtSearch.TabIndex = 22;
             this.txtSearch.TextOffset = new System.Drawing.Point(15, 0);
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // txtName
             // 
@@ -431,23 +386,25 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.btnUpdate.Size = new System.Drawing.Size(190, 56);
             this.btnUpdate.TabIndex = 20;
             this.btnUpdate.Text = "حفظ التعديلات";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // btnDelete
+            // btnDeleteByOne
             // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.BorderRadius = 17;
-            this.btnDelete.CheckedState.Parent = this.btnDelete;
-            this.btnDelete.CustomImages.Parent = this.btnDelete;
-            this.btnDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
-            this.btnDelete.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.HoverState.Parent = this.btnDelete;
-            this.btnDelete.Location = new System.Drawing.Point(690, 245);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.ShadowDecoration.Parent = this.btnDelete;
-            this.btnDelete.Size = new System.Drawing.Size(190, 56);
-            this.btnDelete.TabIndex = 21;
-            this.btnDelete.Text = "أرشفة";
+            this.btnDeleteByOne.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeleteByOne.BorderRadius = 17;
+            this.btnDeleteByOne.CheckedState.Parent = this.btnDeleteByOne;
+            this.btnDeleteByOne.CustomImages.Parent = this.btnDeleteByOne;
+            this.btnDeleteByOne.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
+            this.btnDeleteByOne.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteByOne.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteByOne.HoverState.Parent = this.btnDeleteByOne;
+            this.btnDeleteByOne.Location = new System.Drawing.Point(690, 245);
+            this.btnDeleteByOne.Name = "btnDeleteByOne";
+            this.btnDeleteByOne.ShadowDecoration.Parent = this.btnDeleteByOne;
+            this.btnDeleteByOne.Size = new System.Drawing.Size(190, 56);
+            this.btnDeleteByOne.TabIndex = 21;
+            this.btnDeleteByOne.Text = "أرشفة";
+            this.btnDeleteByOne.Click += new System.EventHandler(this.btnDeleteByOne_Click);
             // 
             // label7
             // 
@@ -513,13 +470,13 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.dgvSmallUnit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSmallUnit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSmallUnit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn7,
-            this.IsDeleted,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12});
+            this.dgvSmallUnitID,
+            this.dgvIsDeleted,
+            this.dgvSmallUnitName,
+            this.dgvSmallUnitDescription,
+            this.dgvLargeUnitIDForSmallUnitActive,
+            this.dgvLargeUnitNameForSmallUnitActive,
+            this.dgvSmallUnitWeight});
             this.dgvSmallUnit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSmallUnit.Location = new System.Drawing.Point(3, 3);
             this.dgvSmallUnit.Name = "dgvSmallUnit";
@@ -530,68 +487,131 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.dgvSmallUnit.RowTemplate.Height = 35;
             this.dgvSmallUnit.Size = new System.Drawing.Size(1504, 434);
             this.dgvSmallUnit.TabIndex = 2;
+            this.dgvSmallUnit.DoubleClick += new System.EventHandler(this.dgvSmallUnit_DoubleClick);
             // 
-            // dataGridViewTextBoxColumn7
+            // dgvSmallUnitID
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn7.HeaderText = "رقم الوحدة المرجعي";
-            this.dataGridViewTextBoxColumn7.MaxInputLength = 50;
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Visible = false;
+            this.dgvSmallUnitID.DataPropertyName = "Id";
+            this.dgvSmallUnitID.HeaderText = "رقم الوحدة المرجعي";
+            this.dgvSmallUnitID.MaxInputLength = 50;
+            this.dgvSmallUnitID.MinimumWidth = 6;
+            this.dgvSmallUnitID.Name = "dgvSmallUnitID";
+            this.dgvSmallUnitID.ReadOnly = true;
+            this.dgvSmallUnitID.Visible = false;
             // 
-            // IsDeleted
+            // dgvIsDeleted
             // 
-            this.IsDeleted.DataPropertyName = "IsDeleted";
-            this.IsDeleted.HeaderText = "Is Deleted";
-            this.IsDeleted.MinimumWidth = 6;
-            this.IsDeleted.Name = "IsDeleted";
-            this.IsDeleted.ReadOnly = true;
-            this.IsDeleted.Visible = false;
+            this.dgvIsDeleted.DataPropertyName = "IsDeleted";
+            this.dgvIsDeleted.HeaderText = "Is Deleted";
+            this.dgvIsDeleted.MinimumWidth = 6;
+            this.dgvIsDeleted.Name = "dgvIsDeleted";
+            this.dgvIsDeleted.ReadOnly = true;
+            this.dgvIsDeleted.Visible = false;
             // 
-            // dataGridViewTextBoxColumn8
+            // dgvSmallUnitName
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn8.HeaderText = "اسم الوحدة الصغرى";
-            this.dataGridViewTextBoxColumn8.MaxInputLength = 250;
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dgvSmallUnitName.DataPropertyName = "Name";
+            this.dgvSmallUnitName.HeaderText = "اسم الوحدة الصغرى";
+            this.dgvSmallUnitName.MaxInputLength = 250;
+            this.dgvSmallUnitName.MinimumWidth = 6;
+            this.dgvSmallUnitName.Name = "dgvSmallUnitName";
+            this.dgvSmallUnitName.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn9
+            // dgvSmallUnitDescription
             // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Description";
-            this.dataGridViewTextBoxColumn9.HeaderText = " وصف الوحدة الصغرى";
-            this.dataGridViewTextBoxColumn9.MaxInputLength = 1000;
-            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dgvSmallUnitDescription.DataPropertyName = "Description";
+            this.dgvSmallUnitDescription.HeaderText = " وصف الوحدة الصغرى";
+            this.dgvSmallUnitDescription.MaxInputLength = 1000;
+            this.dgvSmallUnitDescription.MinimumWidth = 6;
+            this.dgvSmallUnitDescription.Name = "dgvSmallUnitDescription";
+            this.dgvSmallUnitDescription.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn10
+            // dgvLargeUnitIDForSmallUnitActive
             // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "LargeUnitId";
-            this.dataGridViewTextBoxColumn10.HeaderText = "الرقم المرجعي للوحدة الكبري";
-            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Visible = false;
+            this.dgvLargeUnitIDForSmallUnitActive.DataPropertyName = "LargeUnitId";
+            this.dgvLargeUnitIDForSmallUnitActive.HeaderText = "الرقم المرجعي للوحدة الكبري";
+            this.dgvLargeUnitIDForSmallUnitActive.MinimumWidth = 6;
+            this.dgvLargeUnitIDForSmallUnitActive.Name = "dgvLargeUnitIDForSmallUnitActive";
+            this.dgvLargeUnitIDForSmallUnitActive.ReadOnly = true;
+            this.dgvLargeUnitIDForSmallUnitActive.Visible = false;
             // 
-            // dataGridViewTextBoxColumn11
+            // dgvLargeUnitNameForSmallUnitActive
             // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "LargeUnitName";
-            this.dataGridViewTextBoxColumn11.HeaderText = "اسم الوحدة الكبرى";
-            this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dgvLargeUnitNameForSmallUnitActive.DataPropertyName = "LargeUnitName";
+            this.dgvLargeUnitNameForSmallUnitActive.HeaderText = "اسم الوحدة الكبرى";
+            this.dgvLargeUnitNameForSmallUnitActive.MinimumWidth = 6;
+            this.dgvLargeUnitNameForSmallUnitActive.Name = "dgvLargeUnitNameForSmallUnitActive";
+            this.dgvLargeUnitNameForSmallUnitActive.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn12
+            // dgvSmallUnitWeight
             // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "Weight";
-            this.dataGridViewTextBoxColumn12.HeaderText = "وزن الوحدة الصغرى من الكبرى";
-            this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dgvSmallUnitWeight.DataPropertyName = "Weight";
+            this.dgvSmallUnitWeight.HeaderText = "وزن الوحدة الصغرى من الكبرى";
+            this.dgvSmallUnitWeight.MinimumWidth = 6;
+            this.dgvSmallUnitWeight.Name = "dgvSmallUnitWeight";
+            this.dgvSmallUnitWeight.ReadOnly = true;
+            // 
+            // dgvSmallUnitIDDeleted
+            // 
+            this.dgvSmallUnitIDDeleted.DataPropertyName = "Id";
+            this.dgvSmallUnitIDDeleted.HeaderText = "رقم الوحدة المرجعي";
+            this.dgvSmallUnitIDDeleted.MaxInputLength = 50;
+            this.dgvSmallUnitIDDeleted.MinimumWidth = 6;
+            this.dgvSmallUnitIDDeleted.Name = "dgvSmallUnitIDDeleted";
+            this.dgvSmallUnitIDDeleted.ReadOnly = true;
+            this.dgvSmallUnitIDDeleted.Visible = false;
+            // 
+            // dgvSmallUnitNameDeleted
+            // 
+            this.dgvSmallUnitNameDeleted.DataPropertyName = "Name";
+            this.dgvSmallUnitNameDeleted.HeaderText = "اسم الوحدة الصغرى";
+            this.dgvSmallUnitNameDeleted.MaxInputLength = 250;
+            this.dgvSmallUnitNameDeleted.MinimumWidth = 6;
+            this.dgvSmallUnitNameDeleted.Name = "dgvSmallUnitNameDeleted";
+            this.dgvSmallUnitNameDeleted.ReadOnly = true;
+            // 
+            // dgvSmallUnitDescriptionDeleted
+            // 
+            this.dgvSmallUnitDescriptionDeleted.DataPropertyName = "Description";
+            this.dgvSmallUnitDescriptionDeleted.HeaderText = " وصف الوحدة الصغرى";
+            this.dgvSmallUnitDescriptionDeleted.MaxInputLength = 1000;
+            this.dgvSmallUnitDescriptionDeleted.MinimumWidth = 6;
+            this.dgvSmallUnitDescriptionDeleted.Name = "dgvSmallUnitDescriptionDeleted";
+            this.dgvSmallUnitDescriptionDeleted.ReadOnly = true;
+            // 
+            // dgvLargeUnitIDForSmallUnitDeleted
+            // 
+            this.dgvLargeUnitIDForSmallUnitDeleted.DataPropertyName = "LargeUnitId";
+            this.dgvLargeUnitIDForSmallUnitDeleted.HeaderText = "الرقم المرجعي للوحدة الكبري";
+            this.dgvLargeUnitIDForSmallUnitDeleted.MinimumWidth = 6;
+            this.dgvLargeUnitIDForSmallUnitDeleted.Name = "dgvLargeUnitIDForSmallUnitDeleted";
+            this.dgvLargeUnitIDForSmallUnitDeleted.ReadOnly = true;
+            this.dgvLargeUnitIDForSmallUnitDeleted.Visible = false;
+            // 
+            // dgvLargeUnitNameForSmallUnitDeleted
+            // 
+            this.dgvLargeUnitNameForSmallUnitDeleted.DataPropertyName = "LargeUnitName";
+            this.dgvLargeUnitNameForSmallUnitDeleted.HeaderText = "اسم الوحدة الكبرى";
+            this.dgvLargeUnitNameForSmallUnitDeleted.MinimumWidth = 6;
+            this.dgvLargeUnitNameForSmallUnitDeleted.Name = "dgvLargeUnitNameForSmallUnitDeleted";
+            this.dgvLargeUnitNameForSmallUnitDeleted.ReadOnly = true;
+            // 
+            // dgvSmallUnitWeightDeleted
+            // 
+            this.dgvSmallUnitWeightDeleted.DataPropertyName = "Weight";
+            this.dgvSmallUnitWeightDeleted.HeaderText = "وزن الوحدة الصغرى من الكبرى";
+            this.dgvSmallUnitWeightDeleted.MinimumWidth = 6;
+            this.dgvSmallUnitWeightDeleted.Name = "dgvSmallUnitWeightDeleted";
+            this.dgvSmallUnitWeightDeleted.ReadOnly = true;
+            // 
+            // dgvIsDeletedDeleted
+            // 
+            this.dgvIsDeletedDeleted.DataPropertyName = "IsDeleted";
+            this.dgvIsDeletedDeleted.HeaderText = "dgvIsDeletedDeleted";
+            this.dgvIsDeletedDeleted.MinimumWidth = 6;
+            this.dgvIsDeletedDeleted.Name = "dgvIsDeletedDeleted";
+            this.dgvIsDeletedDeleted.ReadOnly = true;
+            this.dgvIsDeletedDeleted.Visible = false;
             // 
             // ucSmallUnit
             // 
@@ -603,11 +623,11 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Size = new System.Drawing.Size(1518, 834);
             this.tpArchieveLargeUnits.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedSmallUnit)).EndInit();
             this.dgvTabContainer.ResumeLayout(false);
             this.gbMainOperations.ResumeLayout(false);
             this.gbMainOperations.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nupSmallUnitWeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSmallUnitWeight)).EndInit();
             this.tpActiveLargeUnits.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSmallUnit)).EndInit();
             this.ResumeLayout(false);
@@ -619,7 +639,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
         private System.Windows.Forms.TabControl dgvTabContainer;
         private Guna.UI2.WinForms.Guna2HtmlToolTip ValidateTextboxForNumbers;
         private Guna.UI2.WinForms.Guna2GroupBox gbMainOperations;
-        private System.Windows.Forms.NumericUpDown nupSmallUnitWeight;
+        private System.Windows.Forms.NumericUpDown nudSmallUnitWeight;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2ComboBox cbxLargeUnit;
@@ -629,25 +649,26 @@ namespace ElbayaNPresentation.Views.Store.Unit
         private Guna.UI2.WinForms.Guna2TextBox txtDescription;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2Button btnUpdate;
-        private Guna.UI2.WinForms.Guna2Button btnDelete;
+        private Guna.UI2.WinForms.Guna2Button btnDeleteByOne;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridView dgvDeletedSmallUnit;
         private System.Windows.Forms.TabPage tpActiveLargeUnits;
         private System.Windows.Forms.DataGridView dgvSmallUnit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IsDeleted;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvSmallUnitID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvIsDeleted;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvSmallUnitName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvSmallUnitDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvLargeUnitIDForSmallUnitActive;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvLargeUnitNameForSmallUnitActive;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvSmallUnitWeight;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvSmallUnitIDDeleted;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvSmallUnitNameDeleted;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvSmallUnitDescriptionDeleted;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvLargeUnitIDForSmallUnitDeleted;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvLargeUnitNameForSmallUnitDeleted;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvSmallUnitWeightDeleted;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvIsDeletedDeleted;
     }
 }

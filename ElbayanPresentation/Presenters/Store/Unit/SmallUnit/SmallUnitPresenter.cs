@@ -45,11 +45,38 @@ namespace ElbayaNPresentation.Presenters.Store.Unit.SmallUnit
         {
             smallUnit.Add(new SmallUnitDto
             {
-                Name = _view.Name,
+                Name = _view.SmallUnitName,
                 Description = _view.Description,
                 Weight = _view.Weight.ToString(),
                 LargeUnitId = _view.LargeUnitID                
             });
         }
+        public void OnclickUpdate(Guid ID, Guid LargeUnitID)
+        {
+            smallUnit.Update( new SmallUnitDto
+            {
+                Id = ID,
+                Name = _view.SmallUnitName,
+                Description = _view.Description,
+                LargeUnitId = LargeUnitID,
+                Weight = _view.Weight.ToString()
+            });
+        }
+
+        public void onClickbtnDelete(Guid ID)
+        {
+            smallUnit.DeleteOrRestore(ID);
+            
+        }
+
+        public List<SmallUnitDto> FilterDataGridView()
+        {
+            return _view.SmallUnits = smallUnit.GetAllSmallUnit().Where(d => d.Name.Contains(_view.SearchKeyword) || d.LargeUnitName.Contains(_view.SearchKeyword)).ToList();
+        }
+        public List<SmallUnitDto> FilterDataGridViewDeleted()
+        {
+            return _view.SmallUnits = smallUnit.GetAllSmallUnitDeleted().Where(d => d.Name.Contains(_view.SearchKeyword) || d.LargeUnitName.Contains(_view.SearchKeyword)).ToList();
+        }
+
     }
 }

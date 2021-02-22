@@ -12,7 +12,7 @@ namespace ElbayaNPresentation.Presenters.Store.Unit.SmallUnit
     public interface IViewSmallUnit
     {
         Guid SmallUnitID { get; set; }
-        string Name { get; set; }
+        string SmallUnitName { get; set; }
         string Description { get; set; }
         decimal Weight { get; set; }
 
