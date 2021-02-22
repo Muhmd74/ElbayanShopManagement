@@ -177,7 +177,6 @@ namespace ElbayanServices.Repository.Products.Product
                 {
                     Description = d.Description,
                     Name = d.Name,
-                    IsMAinSalesUnit = d.IsUnitSale,
                     BarCode = d.BarCode,
                     PurchaseDefaultPrice = d.PurchaseDefaultPrice,
                     IsExpired = d.IsExpired,
@@ -193,7 +192,9 @@ namespace ElbayanServices.Repository.Products.Product
                     SubCategoryName = d.SubCategory.Name,
                     SaleDefaultPrice = d.SaleDefaultPrice,
                     WholesalePrice = d.WholesalePrice,
-                    ImageUrl = d.ImageUrl
+                    ImageUrl = d.ImageUrl,
+                    IsMAinSalesUnit = Convert.ToBoolean(d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name)
+
                 }).ToList();
             return Products.Any() ? Products : null;
         }
@@ -224,7 +225,7 @@ namespace ElbayanServices.Repository.Products.Product
                     SubCategoryName = d.SubCategory.Name,
                     SaleDefaultPrice = d.SaleDefaultPrice,
                     WholesalePrice = d.WholesalePrice,
-                    IsMAinSalesUnit = d.IsUnitSale
+                    IsMAinSalesUnit = Convert.ToBoolean(d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name)
                 }).ToList();
             return Products.Any() ? Products : null;
         }
@@ -257,7 +258,7 @@ namespace ElbayanServices.Repository.Products.Product
                     SubCategoryName = d.SubCategory.Name,
                     WholesalePrice = d.WholesalePrice,
                     SaleDefaultPrice = d.SaleDefaultPrice,
-                    IsMAinSalesUnit = d.IsUnitSale
+                    IsMAinSalesUnit = Convert.ToBoolean(d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name)
                 }).ToList();
             return Products.Any() ? Products : null;
         }
@@ -290,7 +291,7 @@ namespace ElbayanServices.Repository.Products.Product
                     UCP = model.UCP,
                     WholesalePrice = model.WholesalePrice,
                     SaleDefaultPrice = model.SaleDefaultPrice,
-                    IsMAinSalesUnit = model.IsUnitSale
+                    IsMAinSalesUnit = Convert.ToBoolean(model.IsUnitSale ? model.LargeUnit.Name : model.SmallUnit.Name)
                 };
             }
 
