@@ -25,8 +25,10 @@ namespace ElbayaNPresentation.Views.Store.Unit
             nudSmallUnitWeight.Controls[0].Visible = false;
 
             PopulateAllUnitDataGridView();
+
             PopulatecbxLargeUnit();
-           
+
+          
         }
         private static ucSmallUnit _instance;
         public static ucSmallUnit Instance
@@ -53,6 +55,9 @@ namespace ElbayaNPresentation.Views.Store.Unit
         public void PopulatecbxLargeUnit()
         {
             // Pupulate Main category in combo box
+
+            cbxLargeUnit.DataSource = null;
+            cbxLargeUnit.Items.Clear();
             cbxLargeUnit.DataSource = Presenter.FillcbxLargeUnit();
             cbxLargeUnit.DisplayMember = "Name";
             cbxLargeUnit.ValueMember = "Id";
@@ -222,6 +227,11 @@ namespace ElbayaNPresentation.Views.Store.Unit
             {
                 dgvDeletedSmallUnit.DataSource = Presenter.FilterDataGridViewDeleted();
             }
+        }
+
+        private void cbxLargeUnit_Click(object sender, EventArgs e)
+        {
+            PopulatecbxLargeUnit();
         }
     }
 }

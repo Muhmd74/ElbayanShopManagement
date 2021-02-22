@@ -81,18 +81,18 @@ namespace ElbayaNPresentation
         }
         private void bbiLatgeUnit_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (!gcContainer.Controls.Contains(ucMaincategory.Instance))
+            if (!gcContainer.Controls.Contains(ucLargeUnits.Instance))
             {
-                gcContainer.Controls.Add(ucMaincategory.Instance);
-                ucMaincategory.Instance.Dock = DockStyle.Fill;
-                ucMaincategory.Instance.BringToFront();
+                gcContainer.Controls.Add(ucLargeUnits.Instance);
+                ucLargeUnits.Instance.Dock = DockStyle.Fill;
+                ucLargeUnits.Instance.BringToFront();
             }
-            ucMaincategory.Instance.BringToFront();
+            ucLargeUnits.Instance.BringToFront();
         }
 
         private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (!gcContainer.Controls.Contains(ucSubCategory.Instance))
+            if (!gcContainer.Controls.Contains(ucSmallUnit.Instance))
             {
                 gcContainer.Controls.Add(ucSmallUnit.Instance);
                 ucSmallUnit.Instance.Dock = DockStyle.Fill;

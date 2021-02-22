@@ -347,6 +347,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.cbxMainCategory.Size = new System.Drawing.Size(444, 36);
             this.cbxMainCategory.TabIndex = 25;
             this.cbxMainCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cbxMainCategory.Click += new System.EventHandler(this.cbxMainCategory_Click);
             // 
             // label5
             // 

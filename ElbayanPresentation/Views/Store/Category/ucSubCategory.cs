@@ -211,5 +211,10 @@ namespace ElbayaNPresentation.Views.Store.Category
                 dgvDeletedMainCategory.DataSource = Presenter.FilterDataGridViewDeleted();
             }
         }
+
+        private void cbxMainCategory_Click(object sender, EventArgs e)
+        {
+            FillMaincategorycbx();
+        }
     }
 }
