@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ElbayanDatabase.DataClasses.Product.Unit;
 
 namespace ElbayanServices.Repository.Products.Product.Dtos
 {
@@ -29,5 +23,6 @@ namespace ElbayanServices.Repository.Products.Product.Dtos
         public decimal SaleDefaultPrice { get; set; }
         public decimal WholesalePrice { get; set; }
         public int LimitedDemand { get; set; }
+        public bool IsUnitSale { get; set; }
     }
 }

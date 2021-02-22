@@ -8,6 +8,7 @@ using ElbayanDatabase.ConnectionTools;
 using ElbayanServices.Common;
 using ElbayanServices.Repository.Products.Product.Dtos;
 using ElbayanServices.Repository.Products.Product.Validators;
+using ElbayanServices.Repository.Products.SubCategory.Dtos;
 using ElbayanServices.Repository.Products.Units.LargeUnit.Dtos;
 
 namespace ElbayanServices.Repository.Products.Product
@@ -42,7 +43,9 @@ namespace ElbayanServices.Repository.Products.Product
                     IsDeleted = false,
                     DateTime = DateTime.UtcNow,
                     SaleDefaultPrice = model.SaleDefaultPrice,
-                    WholesalePrice = model.WholesalePrice
+                    WholesalePrice = model.WholesalePrice,
+                    IsUnitSale = model.IsUnitSale,
+                    ImageUrl = model.ImageUrl
                 });
                 _context.SaveChanges();
                 return true;
@@ -93,6 +96,23 @@ namespace ElbayanServices.Repository.Products.Product
                 .Select(d => new SmallUnitNameDto()
                 {
                     SmallUnitId = d.Id,
+                    Name = d.Name
+                }).ToList();
+            if (model.Any())
+            {
+                return model;
+            }
+
+            return null;
+        }
+
+        public List<SubCategoryNameDto> GetAllSubCategory()
+        {
+            var model = _context.SubCategories.
+                Where(d => d.IsDeleted == false&&d.Category.IsDeleted==false)
+                .Select(d => new SubCategoryNameDto()
+                {
+                    Id = d.Id,
                     Name = d.Name
                 }).ToList();
             if (model.Any())
@@ -157,7 +177,6 @@ namespace ElbayanServices.Repository.Products.Product
                 {
                     Description = d.Description,
                     Name = d.Name,
-                    IsMAinSalesUnit = d.IsUnitSale,
                     BarCode = d.BarCode,
                     PurchaseDefaultPrice = d.PurchaseDefaultPrice,
                     IsExpired = d.IsExpired,
@@ -173,6 +192,9 @@ namespace ElbayanServices.Repository.Products.Product
                     SubCategoryName = d.SubCategory.Name,
                     SaleDefaultPrice = d.SaleDefaultPrice,
                     WholesalePrice = d.WholesalePrice,
+                    ImageUrl = d.ImageUrl,
+                    IsMAinSalesUnit = Convert.ToBoolean(d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name)
+
                 }).ToList();
             return Products.Any() ? Products : null;
         }
@@ -203,7 +225,7 @@ namespace ElbayanServices.Repository.Products.Product
                     SubCategoryName = d.SubCategory.Name,
                     SaleDefaultPrice = d.SaleDefaultPrice,
                     WholesalePrice = d.WholesalePrice,
-                    IsMAinSalesUnit = d.IsUnitSale
+                    IsMAinSalesUnit = Convert.ToBoolean(d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name)
                 }).ToList();
             return Products.Any() ? Products : null;
         }
@@ -236,7 +258,7 @@ namespace ElbayanServices.Repository.Products.Product
                     SubCategoryName = d.SubCategory.Name,
                     WholesalePrice = d.WholesalePrice,
                     SaleDefaultPrice = d.SaleDefaultPrice,
-                    IsMAinSalesUnit = d.IsUnitSale
+                    IsMAinSalesUnit = Convert.ToBoolean(d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name)
                 }).ToList();
             return Products.Any() ? Products : null;
         }
@@ -269,7 +291,7 @@ namespace ElbayanServices.Repository.Products.Product
                     UCP = model.UCP,
                     WholesalePrice = model.WholesalePrice,
                     SaleDefaultPrice = model.SaleDefaultPrice,
-                    IsMAinSalesUnit = model.IsUnitSale
+                    IsMAinSalesUnit = Convert.ToBoolean(model.IsUnitSale ? model.LargeUnit.Name : model.SmallUnit.Name)
                 };
             }
 
