@@ -194,7 +194,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\Images\" />
+    <Folder Include="Resources\ProductImage\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\warning.svg" />

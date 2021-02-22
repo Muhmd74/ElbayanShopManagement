@@ -19,9 +19,9 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
             _view = view;
         }
 
-        public List<SubCategoryDto> GetAllSubCategory()
-        {
-            return _view.smallUnits = productServices.GetAllByCategory().ToList();
-        }
+        //public List<SubCategoryDto> GetAllSubCategory()
+        //{
+        //    //return _view.smallUnits = productServices.GetAllByCategory().ToList();
+        //}
     }
 }

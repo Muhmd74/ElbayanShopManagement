@@ -81,6 +81,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.nudDefaultWholesalePrice = new System.Windows.Forms.NumericUpDown();
             this.nudVATPercent = new System.Windows.Forms.NumericUpDown();
             this.nudDiscountPercent = new System.Windows.Forms.NumericUpDown();
+            this.btnUploadPicture = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
@@ -524,6 +525,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox3.Controls.Add(this.pbProductImage);
             this.guna2GroupBox3.Controls.Add(this.dtpExpireDate);
             this.guna2GroupBox3.Controls.Add(this.rbSmallUnitIsMainUnit);
+            this.guna2GroupBox3.Controls.Add(this.btnUploadPicture);
             this.guna2GroupBox3.Controls.Add(this.rbLargeUnitIsmainUnit);
             this.guna2GroupBox3.Controls.Add(this.rbIsExpiredProduct);
             this.guna2GroupBox3.Controls.Add(this.cbxLargeUnit);
@@ -549,7 +551,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox3.Location = new System.Drawing.Point(627, 69);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
             this.guna2GroupBox3.ShadowDecoration.Parent = this.guna2GroupBox3;
-            this.guna2GroupBox3.Size = new System.Drawing.Size(691, 620);
+            this.guna2GroupBox3.Size = new System.Drawing.Size(691, 707);
             this.guna2GroupBox3.TabIndex = 20;
             this.guna2GroupBox3.Text = "بيانات تعريفية بالصنف";
             this.guna2GroupBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -958,6 +960,24 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.nudDiscountPercent.TabIndex = 33;
             this.nudDiscountPercent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // btnUploadPicture
+            // 
+            this.btnUploadPicture.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUploadPicture.BorderRadius = 11;
+            this.btnUploadPicture.CheckedState.Parent = this.btnUploadPicture;
+            this.btnUploadPicture.CustomImages.Parent = this.btnUploadPicture;
+            this.btnUploadPicture.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
+            this.btnUploadPicture.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUploadPicture.ForeColor = System.Drawing.Color.White;
+            this.btnUploadPicture.HoverState.Parent = this.btnUploadPicture;
+            this.btnUploadPicture.Location = new System.Drawing.Point(48, 610);
+            this.btnUploadPicture.Name = "btnUploadPicture";
+            this.btnUploadPicture.ShadowDecoration.Parent = this.btnUploadPicture;
+            this.btnUploadPicture.Size = new System.Drawing.Size(190, 56);
+            this.btnUploadPicture.TabIndex = 19;
+            this.btnUploadPicture.Text = "صورة المنتج";
+            this.btnUploadPicture.Click += new System.EventHandler(this.btnUploadPicture_Click);
+            // 
             // ucNewProductCard
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -1040,5 +1060,6 @@ namespace ElbayaNPresentation.Views.Store.Product
         private System.Windows.Forms.NumericUpDown nudDefaultWholesalePrice;
         private System.Windows.Forms.NumericUpDown nudDefaultSalePrice;
         private System.Windows.Forms.NumericUpDown nudDefaultPurchasePrice;
+        private Guna.UI2.WinForms.Guna2Button btnUploadPicture;
     }
 }

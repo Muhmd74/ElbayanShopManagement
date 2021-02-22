@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,5 +57,20 @@ namespace ElbayaNPresentation.Views.Store.Product
         public List<SmallUnitDto> smallUnits { get; set; }
         public int LimitedDemand { get; set; }
         public ProductPresnter Presenter { private get; set; }
+
+        private void btnUploadPicture_Click(object sender, EventArgs e)
+        {
+            string ImageName = "";
+            
+            OpenFileDialog image = new OpenFileDialog();
+            image.Filter = "Image Files (*.jpg; *.jpeg; *.gif; *.png; *.bmp;) | *.jpg; *.jpeg; *.gif; *.png; *.bmp;";
+            if (image.ShowDialog() == DialogResult.OK )
+            {
+                ImageName = image.FileName;
+                pbProductImage.Image = new Bitmap(image.FileName);
+            }
+            ImageUrl = Path.Combine(System.IO.Path.GetFullPath(@"..\..\"), @"Resources\ProductImage\", Path.GetFileName(ImageName));
+            File.Copy(ImageName, ImageUrl);
+        }
     }
 }
