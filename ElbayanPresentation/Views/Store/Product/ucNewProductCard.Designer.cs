@@ -33,17 +33,19 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2TextBox6 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.guna2TextBox7 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.guna2TextBox8 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtPSNNumber = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtCBCNumber = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtUCPNumber = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.guna2CustomRadioButton4 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.guna2CustomRadioButton3 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.label21 = new System.Windows.Forms.Label();
@@ -52,40 +54,42 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label19 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.guna2TextBox9 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox5 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.guna2TextBox10 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.guna2CustomRadioButton2 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.guna2CustomRadioButton1 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.pbProductImage = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.dtpExpireDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.rbSmallUnitIsMainUnit = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.rbLargeUnitIsmainUnit = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.rbIsExpiredProduct = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.cbxLargeUnit = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbxSubcategory = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbxSmallUnit = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.guna2TextBox11 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtLimitedDemand = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.guna2CustomRadioButton5 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.nudDefaultPurchasePrice = new System.Windows.Forms.NumericUpDown();
+            this.nudDefaultSalePrice = new System.Windows.Forms.NumericUpDown();
+            this.nudDefaultWholesalePrice = new System.Windows.Forms.NumericUpDown();
+            this.nudVATPercent = new System.Windows.Forms.NumericUpDown();
+            this.nudDiscountPercent = new System.Windows.Forms.NumericUpDown();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDefaultPurchasePrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDefaultSalePrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDefaultWholesalePrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVATPercent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDiscountPercent)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2TextBox1
@@ -149,9 +153,9 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox1.Controls.Add(this.label18);
             this.guna2GroupBox1.Controls.Add(this.label17);
             this.guna2GroupBox1.Controls.Add(this.label16);
-            this.guna2GroupBox1.Controls.Add(this.guna2TextBox8);
-            this.guna2GroupBox1.Controls.Add(this.guna2TextBox7);
-            this.guna2GroupBox1.Controls.Add(this.guna2TextBox6);
+            this.guna2GroupBox1.Controls.Add(this.txtPSNNumber);
+            this.guna2GroupBox1.Controls.Add(this.txtCBCNumber);
+            this.guna2GroupBox1.Controls.Add(this.txtUCPNumber);
             this.guna2GroupBox1.Controls.Add(this.label15);
             this.guna2GroupBox1.Controls.Add(this.label14);
             this.guna2GroupBox1.Controls.Add(this.label13);
@@ -167,159 +171,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox1.Text = "بيانات ارقام المنتج";
             this.guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // guna2TextBox6
-            // 
-            this.guna2TextBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2TextBox6.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.guna2TextBox6.BorderRadius = 11;
-            this.guna2TextBox6.BorderThickness = 2;
-            this.guna2TextBox6.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox6.DefaultText = "";
-            this.guna2TextBox6.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox6.DisabledState.Parent = this.guna2TextBox6;
-            this.guna2TextBox6.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox6.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox6.FocusedState.Parent = this.guna2TextBox6;
-            this.guna2TextBox6.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox6.ForeColor = System.Drawing.Color.Gray;
-            this.guna2TextBox6.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox6.HoverState.Parent = this.guna2TextBox6;
-            this.guna2TextBox6.Location = new System.Drawing.Point(116, 64);
-            this.guna2TextBox6.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.guna2TextBox6.Name = "guna2TextBox6";
-            this.guna2TextBox6.PasswordChar = '\0';
-            this.guna2TextBox6.PlaceholderText = "اكتب هنا اسم الصنف";
-            this.guna2TextBox6.SelectedText = "";
-            this.guna2TextBox6.ShadowDecoration.Parent = this.guna2TextBox6;
-            this.guna2TextBox6.Size = new System.Drawing.Size(295, 44);
-            this.guna2TextBox6.TabIndex = 3;
-            this.guna2TextBox6.TextOffset = new System.Drawing.Point(7, 0);
-            // 
-            // label13
-            // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label13.ForeColor = System.Drawing.Color.Gray;
-            this.label13.Location = new System.Drawing.Point(420, 70);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(148, 32);
-            this.label13.TabIndex = 4;
-            this.label13.Text = "رقم الباركود الدولي";
-            // 
-            // label14
-            // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label14.ForeColor = System.Drawing.Color.Gray;
-            this.label14.Location = new System.Drawing.Point(420, 125);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(157, 32);
-            this.label14.TabIndex = 4;
-            this.label14.Text = "رقم الباركود الخاص";
-            // 
-            // guna2TextBox7
-            // 
-            this.guna2TextBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2TextBox7.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.guna2TextBox7.BorderRadius = 11;
-            this.guna2TextBox7.BorderThickness = 2;
-            this.guna2TextBox7.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox7.DefaultText = "";
-            this.guna2TextBox7.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox7.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox7.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox7.DisabledState.Parent = this.guna2TextBox7;
-            this.guna2TextBox7.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox7.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox7.FocusedState.Parent = this.guna2TextBox7;
-            this.guna2TextBox7.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox7.ForeColor = System.Drawing.Color.Gray;
-            this.guna2TextBox7.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox7.HoverState.Parent = this.guna2TextBox7;
-            this.guna2TextBox7.Location = new System.Drawing.Point(116, 119);
-            this.guna2TextBox7.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.guna2TextBox7.MaxLength = 13;
-            this.guna2TextBox7.Name = "guna2TextBox7";
-            this.guna2TextBox7.PasswordChar = '\0';
-            this.guna2TextBox7.PlaceholderText = "اكتب هنا اسم الصنف";
-            this.guna2TextBox7.SelectedText = "";
-            this.guna2TextBox7.ShadowDecoration.Parent = this.guna2TextBox7;
-            this.guna2TextBox7.Size = new System.Drawing.Size(295, 44);
-            this.guna2TextBox7.TabIndex = 3;
-            this.guna2TextBox7.TextOffset = new System.Drawing.Point(7, 0);
-            // 
-            // label15
-            // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label15.ForeColor = System.Drawing.Color.Gray;
-            this.label15.Location = new System.Drawing.Point(420, 179);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(139, 32);
-            this.label15.TabIndex = 4;
-            this.label15.Text = "رقم المنتج الخاص";
-            // 
-            // guna2TextBox8
-            // 
-            this.guna2TextBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2TextBox8.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.guna2TextBox8.BorderRadius = 11;
-            this.guna2TextBox8.BorderThickness = 2;
-            this.guna2TextBox8.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox8.DefaultText = "";
-            this.guna2TextBox8.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox8.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2TextBox8.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2TextBox8.DisabledState.Parent = this.guna2TextBox8;
-            this.guna2TextBox8.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox8.Enabled = false;
-            this.guna2TextBox8.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox8.FocusedState.Parent = this.guna2TextBox8;
-            this.guna2TextBox8.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox8.ForeColor = System.Drawing.Color.Gray;
-            this.guna2TextBox8.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox8.HoverState.Parent = this.guna2TextBox8;
-            this.guna2TextBox8.Location = new System.Drawing.Point(116, 173);
-            this.guna2TextBox8.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.guna2TextBox8.MaxLength = 7;
-            this.guna2TextBox8.Name = "guna2TextBox8";
-            this.guna2TextBox8.PasswordChar = '\0';
-            this.guna2TextBox8.PlaceholderText = "اكتب هنا اسم الصنف";
-            this.guna2TextBox8.SelectedText = "";
-            this.guna2TextBox8.ShadowDecoration.Parent = this.guna2TextBox8;
-            this.guna2TextBox8.Size = new System.Drawing.Size(295, 44);
-            this.guna2TextBox8.TabIndex = 3;
-            this.guna2TextBox8.TextOffset = new System.Drawing.Point(7, 0);
-            // 
-            // label16
-            // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label16.ForeColor = System.Drawing.Color.Gray;
-            this.label16.Location = new System.Drawing.Point(60, 70);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(49, 32);
-            this.label16.TabIndex = 4;
-            this.label16.Text = "UCP";
-            // 
-            // label17
-            // 
-            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label17.ForeColor = System.Drawing.Color.Gray;
-            this.label17.Location = new System.Drawing.Point(60, 125);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(47, 32);
-            this.label17.TabIndex = 4;
-            this.label17.Text = "CBC";
-            // 
             // label18
             // 
             this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -333,15 +184,168 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label18.TabIndex = 4;
             this.label18.Text = "PSN";
             // 
+            // label17
+            // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label17.ForeColor = System.Drawing.Color.Gray;
+            this.label17.Location = new System.Drawing.Point(60, 125);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(47, 32);
+            this.label17.TabIndex = 4;
+            this.label17.Text = "CBC";
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label16.ForeColor = System.Drawing.Color.Gray;
+            this.label16.Location = new System.Drawing.Point(60, 70);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(49, 32);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "UCP";
+            // 
+            // txtPSNNumber
+            // 
+            this.txtPSNNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPSNNumber.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtPSNNumber.BorderRadius = 11;
+            this.txtPSNNumber.BorderThickness = 2;
+            this.txtPSNNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPSNNumber.DefaultText = "";
+            this.txtPSNNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPSNNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtPSNNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtPSNNumber.DisabledState.Parent = this.txtPSNNumber;
+            this.txtPSNNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPSNNumber.Enabled = false;
+            this.txtPSNNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPSNNumber.FocusedState.Parent = this.txtPSNNumber;
+            this.txtPSNNumber.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPSNNumber.ForeColor = System.Drawing.Color.Gray;
+            this.txtPSNNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPSNNumber.HoverState.Parent = this.txtPSNNumber;
+            this.txtPSNNumber.Location = new System.Drawing.Point(116, 173);
+            this.txtPSNNumber.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.txtPSNNumber.Name = "txtPSNNumber";
+            this.txtPSNNumber.PasswordChar = '\0';
+            this.txtPSNNumber.PlaceholderText = "اكتب هنا اسم الصنف";
+            this.txtPSNNumber.SelectedText = "";
+            this.txtPSNNumber.ShadowDecoration.Parent = this.txtPSNNumber;
+            this.txtPSNNumber.Size = new System.Drawing.Size(295, 44);
+            this.txtPSNNumber.TabIndex = 3;
+            this.txtPSNNumber.TextOffset = new System.Drawing.Point(7, 0);
+            // 
+            // txtCBCNumber
+            // 
+            this.txtCBCNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCBCNumber.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtCBCNumber.BorderRadius = 11;
+            this.txtCBCNumber.BorderThickness = 2;
+            this.txtCBCNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCBCNumber.DefaultText = "";
+            this.txtCBCNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCBCNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCBCNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCBCNumber.DisabledState.Parent = this.txtCBCNumber;
+            this.txtCBCNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCBCNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCBCNumber.FocusedState.Parent = this.txtCBCNumber;
+            this.txtCBCNumber.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCBCNumber.ForeColor = System.Drawing.Color.Gray;
+            this.txtCBCNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCBCNumber.HoverState.Parent = this.txtCBCNumber;
+            this.txtCBCNumber.Location = new System.Drawing.Point(116, 119);
+            this.txtCBCNumber.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.txtCBCNumber.Name = "txtCBCNumber";
+            this.txtCBCNumber.PasswordChar = '\0';
+            this.txtCBCNumber.PlaceholderText = "اكتب هنا اسم الصنف";
+            this.txtCBCNumber.SelectedText = "";
+            this.txtCBCNumber.ShadowDecoration.Parent = this.txtCBCNumber;
+            this.txtCBCNumber.Size = new System.Drawing.Size(295, 44);
+            this.txtCBCNumber.TabIndex = 3;
+            this.txtCBCNumber.TextOffset = new System.Drawing.Point(7, 0);
+            // 
+            // txtUCPNumber
+            // 
+            this.txtUCPNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUCPNumber.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtUCPNumber.BorderRadius = 11;
+            this.txtUCPNumber.BorderThickness = 2;
+            this.txtUCPNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUCPNumber.DefaultText = "";
+            this.txtUCPNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtUCPNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtUCPNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtUCPNumber.DisabledState.Parent = this.txtUCPNumber;
+            this.txtUCPNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtUCPNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtUCPNumber.FocusedState.Parent = this.txtUCPNumber;
+            this.txtUCPNumber.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUCPNumber.ForeColor = System.Drawing.Color.Gray;
+            this.txtUCPNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtUCPNumber.HoverState.Parent = this.txtUCPNumber;
+            this.txtUCPNumber.Location = new System.Drawing.Point(116, 64);
+            this.txtUCPNumber.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.txtUCPNumber.Name = "txtUCPNumber";
+            this.txtUCPNumber.PasswordChar = '\0';
+            this.txtUCPNumber.PlaceholderText = "اكتب هنا اسم الصنف";
+            this.txtUCPNumber.SelectedText = "";
+            this.txtUCPNumber.ShadowDecoration.Parent = this.txtUCPNumber;
+            this.txtUCPNumber.Size = new System.Drawing.Size(295, 44);
+            this.txtUCPNumber.TabIndex = 3;
+            this.txtUCPNumber.TextOffset = new System.Drawing.Point(7, 0);
+            // 
+            // label15
+            // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label15.ForeColor = System.Drawing.Color.Gray;
+            this.label15.Location = new System.Drawing.Point(420, 179);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(139, 32);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "رقم المنتج الخاص";
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label14.ForeColor = System.Drawing.Color.Gray;
+            this.label14.Location = new System.Drawing.Point(420, 125);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(157, 32);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "رقم الباركود الخاص";
+            // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label13.ForeColor = System.Drawing.Color.Gray;
+            this.label13.Location = new System.Drawing.Point(420, 70);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(148, 32);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "رقم الباركود الدولي";
+            // 
             // guna2GroupBox2
             // 
             this.guna2GroupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2GroupBox2.BorderColor = System.Drawing.Color.LightGray;
             this.guna2GroupBox2.BorderRadius = 15;
-            this.guna2GroupBox2.Controls.Add(this.guna2TextBox10);
-            this.guna2GroupBox2.Controls.Add(this.guna2TextBox4);
-            this.guna2GroupBox2.Controls.Add(this.guna2TextBox3);
+            this.guna2GroupBox2.Controls.Add(this.nudDiscountPercent);
+            this.guna2GroupBox2.Controls.Add(this.nudVATPercent);
+            this.guna2GroupBox2.Controls.Add(this.nudDefaultWholesalePrice);
+            this.guna2GroupBox2.Controls.Add(this.nudDefaultSalePrice);
+            this.guna2GroupBox2.Controls.Add(this.nudDefaultPurchasePrice);
             this.guna2GroupBox2.Controls.Add(this.label22);
             this.guna2GroupBox2.Controls.Add(this.label8);
             this.guna2GroupBox2.Controls.Add(this.label7);
@@ -353,8 +357,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox2.Controls.Add(this.label19);
             this.guna2GroupBox2.Controls.Add(this.label11);
             this.guna2GroupBox2.Controls.Add(this.label10);
-            this.guna2GroupBox2.Controls.Add(this.guna2TextBox9);
-            this.guna2GroupBox2.Controls.Add(this.guna2TextBox5);
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(173)))), ((int)(((byte)(78)))));
             this.guna2GroupBox2.CustomBorderThickness = new System.Windows.Forms.Padding(0, 51, 0, 0);
             this.guna2GroupBox2.Font = new System.Drawing.Font("Sakkal Majalla", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -368,235 +370,17 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guna2GroupBox2.TextOffset = new System.Drawing.Point(15, 0);
             // 
-            // guna2CustomRadioButton4
+            // label22
             // 
-            this.guna2CustomRadioButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2CustomRadioButton4.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton4.CheckedState.BorderThickness = 0;
-            this.guna2CustomRadioButton4.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton4.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2CustomRadioButton4.CheckedState.Parent = this.guna2CustomRadioButton4;
-            this.guna2CustomRadioButton4.Location = new System.Drawing.Point(534, 327);
-            this.guna2CustomRadioButton4.Name = "guna2CustomRadioButton4";
-            this.guna2CustomRadioButton4.ShadowDecoration.Parent = this.guna2CustomRadioButton4;
-            this.guna2CustomRadioButton4.Size = new System.Drawing.Size(20, 20);
-            this.guna2CustomRadioButton4.TabIndex = 27;
-            this.guna2CustomRadioButton4.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CustomRadioButton4.UncheckedState.BorderThickness = 2;
-            this.guna2CustomRadioButton4.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton4.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton4.UncheckedState.Parent = this.guna2CustomRadioButton4;
-            // 
-            // guna2CustomRadioButton3
-            // 
-            this.guna2CustomRadioButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2CustomRadioButton3.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton3.CheckedState.BorderThickness = 0;
-            this.guna2CustomRadioButton3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton3.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2CustomRadioButton3.CheckedState.Parent = this.guna2CustomRadioButton3;
-            this.guna2CustomRadioButton3.Location = new System.Drawing.Point(533, 274);
-            this.guna2CustomRadioButton3.Name = "guna2CustomRadioButton3";
-            this.guna2CustomRadioButton3.ShadowDecoration.Parent = this.guna2CustomRadioButton3;
-            this.guna2CustomRadioButton3.Size = new System.Drawing.Size(20, 20);
-            this.guna2CustomRadioButton3.TabIndex = 28;
-            this.guna2CustomRadioButton3.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CustomRadioButton3.UncheckedState.BorderThickness = 2;
-            this.guna2CustomRadioButton3.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton3.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton3.UncheckedState.Parent = this.guna2CustomRadioButton3;
-            // 
-            // label21
-            // 
-            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label21.ForeColor = System.Drawing.Color.Gray;
-            this.label21.Location = new System.Drawing.Point(377, 321);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(158, 32);
-            this.label21.TabIndex = 21;
-            this.label21.Text = "المنتج له نسبة خصم";
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label9.ForeColor = System.Drawing.Color.Gray;
-            this.label9.Location = new System.Drawing.Point(395, 268);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(140, 32);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "المنتج عليه ضريبة";
-            // 
-            // label20
-            // 
-            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label20.ForeColor = System.Drawing.Color.Gray;
-            this.label20.Location = new System.Drawing.Point(50, 321);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(29, 32);
-            this.label20.TabIndex = 23;
-            this.label20.Text = "%";
-            // 
-            // label19
-            // 
-            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label19.ForeColor = System.Drawing.Color.Gray;
-            this.label19.Location = new System.Drawing.Point(259, 321);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(108, 32);
-            this.label19.TabIndex = 24;
-            this.label19.Text = "نسبة الخصم";
-            // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label11.ForeColor = System.Drawing.Color.Gray;
-            this.label11.Location = new System.Drawing.Point(49, 269);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(29, 32);
-            this.label11.TabIndex = 25;
-            this.label11.Text = "%";
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label10.ForeColor = System.Drawing.Color.Gray;
-            this.label10.Location = new System.Drawing.Point(271, 268);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(112, 32);
-            this.label10.TabIndex = 26;
-            this.label10.Text = "قيمة الضريبة";
-            // 
-            // guna2TextBox9
-            // 
-            this.guna2TextBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2TextBox9.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.guna2TextBox9.BorderRadius = 11;
-            this.guna2TextBox9.BorderThickness = 2;
-            this.guna2TextBox9.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox9.DefaultText = "";
-            this.guna2TextBox9.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox9.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox9.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox9.DisabledState.Parent = this.guna2TextBox9;
-            this.guna2TextBox9.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox9.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox9.FocusedState.Parent = this.guna2TextBox9;
-            this.guna2TextBox9.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox9.ForeColor = System.Drawing.Color.Gray;
-            this.guna2TextBox9.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox9.HoverState.Parent = this.guna2TextBox9;
-            this.guna2TextBox9.Location = new System.Drawing.Point(41, 315);
-            this.guna2TextBox9.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.guna2TextBox9.Name = "guna2TextBox9";
-            this.guna2TextBox9.PasswordChar = '\0';
-            this.guna2TextBox9.PlaceholderText = "اكتب هنا اسم الصنف";
-            this.guna2TextBox9.SelectedText = "";
-            this.guna2TextBox9.ShadowDecoration.Parent = this.guna2TextBox9;
-            this.guna2TextBox9.Size = new System.Drawing.Size(194, 44);
-            this.guna2TextBox9.TabIndex = 19;
-            this.guna2TextBox9.TextOffset = new System.Drawing.Point(7, 0);
-            // 
-            // guna2TextBox5
-            // 
-            this.guna2TextBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2TextBox5.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.guna2TextBox5.BorderRadius = 11;
-            this.guna2TextBox5.BorderThickness = 2;
-            this.guna2TextBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox5.DefaultText = "";
-            this.guna2TextBox5.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox5.DisabledState.Parent = this.guna2TextBox5;
-            this.guna2TextBox5.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox5.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox5.FocusedState.Parent = this.guna2TextBox5;
-            this.guna2TextBox5.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox5.ForeColor = System.Drawing.Color.Gray;
-            this.guna2TextBox5.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox5.HoverState.Parent = this.guna2TextBox5;
-            this.guna2TextBox5.Location = new System.Drawing.Point(40, 262);
-            this.guna2TextBox5.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.guna2TextBox5.Name = "guna2TextBox5";
-            this.guna2TextBox5.PasswordChar = '\0';
-            this.guna2TextBox5.PlaceholderText = "اكتب هنا اسم الصنف";
-            this.guna2TextBox5.SelectedText = "";
-            this.guna2TextBox5.ShadowDecoration.Parent = this.guna2TextBox5;
-            this.guna2TextBox5.Size = new System.Drawing.Size(194, 44);
-            this.guna2TextBox5.TabIndex = 20;
-            this.guna2TextBox5.TextOffset = new System.Drawing.Point(7, 0);
-            // 
-            // guna2TextBox4
-            // 
-            this.guna2TextBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2TextBox4.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.guna2TextBox4.BorderRadius = 11;
-            this.guna2TextBox4.BorderThickness = 2;
-            this.guna2TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox4.DefaultText = "";
-            this.guna2TextBox4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox4.DisabledState.Parent = this.guna2TextBox4;
-            this.guna2TextBox4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox4.FocusedState.Parent = this.guna2TextBox4;
-            this.guna2TextBox4.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox4.ForeColor = System.Drawing.Color.Gray;
-            this.guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox4.HoverState.Parent = this.guna2TextBox4;
-            this.guna2TextBox4.Location = new System.Drawing.Point(150, 138);
-            this.guna2TextBox4.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.guna2TextBox4.Name = "guna2TextBox4";
-            this.guna2TextBox4.PasswordChar = '\0';
-            this.guna2TextBox4.PlaceholderText = "";
-            this.guna2TextBox4.SelectedText = "";
-            this.guna2TextBox4.ShadowDecoration.Parent = this.guna2TextBox4;
-            this.guna2TextBox4.Size = new System.Drawing.Size(256, 44);
-            this.guna2TextBox4.TabIndex = 29;
-            this.guna2TextBox4.TextOffset = new System.Drawing.Point(7, 0);
-            // 
-            // guna2TextBox3
-            // 
-            this.guna2TextBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2TextBox3.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.guna2TextBox3.BorderRadius = 11;
-            this.guna2TextBox3.BorderThickness = 2;
-            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox3.DefaultText = "";
-            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.DisabledState.Parent = this.guna2TextBox3;
-            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.FocusedState.Parent = this.guna2TextBox3;
-            this.guna2TextBox3.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox3.ForeColor = System.Drawing.Color.Gray;
-            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.HoverState.Parent = this.guna2TextBox3;
-            this.guna2TextBox3.Location = new System.Drawing.Point(151, 81);
-            this.guna2TextBox3.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.guna2TextBox3.Name = "guna2TextBox3";
-            this.guna2TextBox3.PasswordChar = '\0';
-            this.guna2TextBox3.PlaceholderText = "";
-            this.guna2TextBox3.SelectedText = "";
-            this.guna2TextBox3.ShadowDecoration.Parent = this.guna2TextBox3;
-            this.guna2TextBox3.Size = new System.Drawing.Size(256, 44);
-            this.guna2TextBox3.TabIndex = 30;
-            this.guna2TextBox3.TextOffset = new System.Drawing.Point(7, 0);
+            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Sakkal Majalla", 11.8F, System.Drawing.FontStyle.Bold);
+            this.label22.ForeColor = System.Drawing.Color.Gray;
+            this.label22.Location = new System.Drawing.Point(447, 215);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(112, 25);
+            this.label22.TabIndex = 31;
+            this.label22.Text = "سعرالبيع  الجملة";
             // 
             // label8
             // 
@@ -622,69 +406,137 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label7.TabIndex = 32;
             this.label7.Text = "سعر الشراء الإفتراضي";
             // 
-            // label22
+            // guna2CustomRadioButton4
             // 
-            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Sakkal Majalla", 11.8F, System.Drawing.FontStyle.Bold);
-            this.label22.ForeColor = System.Drawing.Color.Gray;
-            this.label22.Location = new System.Drawing.Point(447, 215);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(112, 25);
-            this.label22.TabIndex = 31;
-            this.label22.Text = "سعرالبيع  الجملة";
+            this.guna2CustomRadioButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2CustomRadioButton4.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CustomRadioButton4.CheckedState.BorderThickness = 0;
+            this.guna2CustomRadioButton4.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CustomRadioButton4.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.guna2CustomRadioButton4.CheckedState.Parent = this.guna2CustomRadioButton4;
+            this.guna2CustomRadioButton4.Location = new System.Drawing.Point(534, 337);
+            this.guna2CustomRadioButton4.Name = "guna2CustomRadioButton4";
+            this.guna2CustomRadioButton4.ShadowDecoration.Parent = this.guna2CustomRadioButton4;
+            this.guna2CustomRadioButton4.Size = new System.Drawing.Size(20, 20);
+            this.guna2CustomRadioButton4.TabIndex = 27;
+            this.guna2CustomRadioButton4.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CustomRadioButton4.UncheckedState.BorderThickness = 2;
+            this.guna2CustomRadioButton4.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CustomRadioButton4.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.guna2CustomRadioButton4.UncheckedState.Parent = this.guna2CustomRadioButton4;
             // 
-            // guna2TextBox10
+            // guna2CustomRadioButton3
             // 
-            this.guna2TextBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2TextBox10.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.guna2TextBox10.BorderRadius = 11;
-            this.guna2TextBox10.BorderThickness = 2;
-            this.guna2TextBox10.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox10.DefaultText = "";
-            this.guna2TextBox10.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox10.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox10.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox10.DisabledState.Parent = this.guna2TextBox10;
-            this.guna2TextBox10.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox10.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox10.FocusedState.Parent = this.guna2TextBox10;
-            this.guna2TextBox10.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox10.ForeColor = System.Drawing.Color.Gray;
-            this.guna2TextBox10.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox10.HoverState.Parent = this.guna2TextBox10;
-            this.guna2TextBox10.Location = new System.Drawing.Point(151, 196);
-            this.guna2TextBox10.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.guna2TextBox10.Name = "guna2TextBox10";
-            this.guna2TextBox10.PasswordChar = '\0';
-            this.guna2TextBox10.PlaceholderText = "";
-            this.guna2TextBox10.SelectedText = "";
-            this.guna2TextBox10.ShadowDecoration.Parent = this.guna2TextBox10;
-            this.guna2TextBox10.Size = new System.Drawing.Size(256, 44);
-            this.guna2TextBox10.TabIndex = 29;
-            this.guna2TextBox10.TextOffset = new System.Drawing.Point(7, 0);
+            this.guna2CustomRadioButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2CustomRadioButton3.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CustomRadioButton3.CheckedState.BorderThickness = 0;
+            this.guna2CustomRadioButton3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CustomRadioButton3.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.guna2CustomRadioButton3.CheckedState.Parent = this.guna2CustomRadioButton3;
+            this.guna2CustomRadioButton3.Location = new System.Drawing.Point(533, 278);
+            this.guna2CustomRadioButton3.Name = "guna2CustomRadioButton3";
+            this.guna2CustomRadioButton3.ShadowDecoration.Parent = this.guna2CustomRadioButton3;
+            this.guna2CustomRadioButton3.Size = new System.Drawing.Size(20, 20);
+            this.guna2CustomRadioButton3.TabIndex = 28;
+            this.guna2CustomRadioButton3.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CustomRadioButton3.UncheckedState.BorderThickness = 2;
+            this.guna2CustomRadioButton3.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CustomRadioButton3.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.guna2CustomRadioButton3.UncheckedState.Parent = this.guna2CustomRadioButton3;
+            // 
+            // label21
+            // 
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label21.ForeColor = System.Drawing.Color.Gray;
+            this.label21.Location = new System.Drawing.Point(377, 331);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(158, 32);
+            this.label21.TabIndex = 21;
+            this.label21.Text = "المنتج له نسبة خصم";
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.Color.Gray;
+            this.label9.Location = new System.Drawing.Point(395, 272);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(140, 32);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "المنتج عليه ضريبة";
+            // 
+            // label20
+            // 
+            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label20.ForeColor = System.Drawing.Color.Gray;
+            this.label20.Location = new System.Drawing.Point(50, 331);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(29, 32);
+            this.label20.TabIndex = 23;
+            this.label20.Text = "%";
+            // 
+            // label19
+            // 
+            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label19.ForeColor = System.Drawing.Color.Gray;
+            this.label19.Location = new System.Drawing.Point(259, 331);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(108, 32);
+            this.label19.TabIndex = 24;
+            this.label19.Text = "نسبة الخصم";
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.Color.Gray;
+            this.label11.Location = new System.Drawing.Point(49, 272);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(29, 32);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "%";
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.Color.Gray;
+            this.label10.Location = new System.Drawing.Point(271, 272);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(112, 32);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "قيمة الضريبة";
             // 
             // guna2GroupBox3
             // 
             this.guna2GroupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2GroupBox3.BorderColor = System.Drawing.Color.LightGray;
             this.guna2GroupBox3.BorderRadius = 9;
-            this.guna2GroupBox3.Controls.Add(this.guna2PictureBox1);
-            this.guna2GroupBox3.Controls.Add(this.guna2DateTimePicker1);
-            this.guna2GroupBox3.Controls.Add(this.guna2CustomRadioButton5);
-            this.guna2GroupBox3.Controls.Add(this.guna2CustomRadioButton2);
-            this.guna2GroupBox3.Controls.Add(this.guna2CustomRadioButton1);
-            this.guna2GroupBox3.Controls.Add(this.guna2ComboBox1);
+            this.guna2GroupBox3.Controls.Add(this.pbProductImage);
+            this.guna2GroupBox3.Controls.Add(this.dtpExpireDate);
+            this.guna2GroupBox3.Controls.Add(this.rbSmallUnitIsMainUnit);
+            this.guna2GroupBox3.Controls.Add(this.rbLargeUnitIsmainUnit);
+            this.guna2GroupBox3.Controls.Add(this.rbIsExpiredProduct);
+            this.guna2GroupBox3.Controls.Add(this.cbxLargeUnit);
             this.guna2GroupBox3.Controls.Add(this.label25);
             this.guna2GroupBox3.Controls.Add(this.label6);
-            this.guna2GroupBox3.Controls.Add(this.guna2ComboBox2);
-            this.guna2GroupBox3.Controls.Add(this.cbxLargeUnit);
+            this.guna2GroupBox3.Controls.Add(this.cbxSubcategory);
+            this.guna2GroupBox3.Controls.Add(this.cbxSmallUnit);
             this.guna2GroupBox3.Controls.Add(this.label4);
             this.guna2GroupBox3.Controls.Add(this.label3);
             this.guna2GroupBox3.Controls.Add(this.label12);
             this.guna2GroupBox3.Controls.Add(this.label5);
-            this.guna2GroupBox3.Controls.Add(this.guna2TextBox2);
-            this.guna2GroupBox3.Controls.Add(this.guna2TextBox11);
+            this.guna2GroupBox3.Controls.Add(this.txtDescription);
+            this.guna2GroupBox3.Controls.Add(this.txtLimitedDemand);
             this.guna2GroupBox3.Controls.Add(this.txtName);
             this.guna2GroupBox3.Controls.Add(this.label2);
             this.guna2GroupBox3.Controls.Add(this.label24);
@@ -702,186 +554,89 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox3.Text = "بيانات تعريفية بالصنف";
             this.guna2GroupBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // guna2TextBox2
+            // pbProductImage
             // 
-            this.guna2TextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2TextBox2.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.guna2TextBox2.BorderRadius = 11;
-            this.guna2TextBox2.BorderThickness = 2;
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.FocusedState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox2.ForeColor = System.Drawing.Color.Gray;
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.HoverState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Location = new System.Drawing.Point(78, 137);
-            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.guna2TextBox2.Multiline = true;
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderText = "";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.ShadowDecoration.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Size = new System.Drawing.Size(435, 82);
-            this.guna2TextBox2.TabIndex = 3;
-            this.guna2TextBox2.TextOffset = new System.Drawing.Point(7, 0);
+            this.pbProductImage.BackColor = System.Drawing.Color.Transparent;
+            this.pbProductImage.BorderRadius = 19;
+            this.pbProductImage.FillColor = System.Drawing.Color.Silver;
+            this.pbProductImage.Location = new System.Drawing.Point(26, 446);
+            this.pbProductImage.Name = "pbProductImage";
+            this.pbProductImage.ShadowDecoration.Parent = this.pbProductImage;
+            this.pbProductImage.Size = new System.Drawing.Size(228, 158);
+            this.pbProductImage.TabIndex = 30;
+            this.pbProductImage.TabStop = false;
             // 
-            // txtName
+            // dtpExpireDate
             // 
-            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtName.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtName.BorderRadius = 11;
-            this.txtName.BorderThickness = 2;
-            this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtName.DefaultText = "";
-            this.txtName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtName.DisabledState.Parent = this.txtName;
-            this.txtName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtName.FocusedState.Parent = this.txtName;
-            this.txtName.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.ForeColor = System.Drawing.Color.Gray;
-            this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtName.HoverState.Parent = this.txtName;
-            this.txtName.Location = new System.Drawing.Point(78, 71);
-            this.txtName.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.txtName.Name = "txtName";
-            this.txtName.PasswordChar = '\0';
-            this.txtName.PlaceholderText = "";
-            this.txtName.SelectedText = "";
-            this.txtName.ShadowDecoration.Parent = this.txtName;
-            this.txtName.Size = new System.Drawing.Size(435, 44);
-            this.txtName.TabIndex = 4;
-            this.txtName.TextOffset = new System.Drawing.Point(7, 0);
+            this.dtpExpireDate.BorderRadius = 9;
+            this.dtpExpireDate.CheckedState.Parent = this.dtpExpireDate;
+            this.dtpExpireDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtpExpireDate.HoverState.Parent = this.dtpExpireDate;
+            this.dtpExpireDate.Location = new System.Drawing.Point(397, 556);
+            this.dtpExpireDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpExpireDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpExpireDate.Name = "dtpExpireDate";
+            this.dtpExpireDate.ShadowDecoration.Parent = this.dtpExpireDate;
+            this.dtpExpireDate.Size = new System.Drawing.Size(276, 36);
+            this.dtpExpireDate.TabIndex = 29;
+            this.dtpExpireDate.Value = new System.DateTime(2021, 2, 20, 22, 33, 15, 559);
             // 
-            // label2
+            // rbSmallUnitIsMainUnit
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(561, 161);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 32);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "وصف تعريفي";
+            this.rbSmallUnitIsMainUnit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbSmallUnitIsMainUnit.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbSmallUnitIsMainUnit.CheckedState.BorderThickness = 0;
+            this.rbSmallUnitIsMainUnit.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbSmallUnitIsMainUnit.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rbSmallUnitIsMainUnit.CheckedState.Parent = this.rbSmallUnitIsMainUnit;
+            this.rbSmallUnitIsMainUnit.Location = new System.Drawing.Point(187, 341);
+            this.rbSmallUnitIsMainUnit.Name = "rbSmallUnitIsMainUnit";
+            this.rbSmallUnitIsMainUnit.ShadowDecoration.Parent = this.rbSmallUnitIsMainUnit;
+            this.rbSmallUnitIsMainUnit.Size = new System.Drawing.Size(20, 20);
+            this.rbSmallUnitIsMainUnit.TabIndex = 27;
+            this.rbSmallUnitIsMainUnit.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rbSmallUnitIsMainUnit.UncheckedState.BorderThickness = 2;
+            this.rbSmallUnitIsMainUnit.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rbSmallUnitIsMainUnit.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rbSmallUnitIsMainUnit.UncheckedState.Parent = this.rbSmallUnitIsMainUnit;
             // 
-            // label1
+            // rbLargeUnitIsmainUnit
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(564, 83);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 32);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "اسم الصنف";
+            this.rbLargeUnitIsmainUnit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbLargeUnitIsmainUnit.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbLargeUnitIsmainUnit.CheckedState.BorderThickness = 0;
+            this.rbLargeUnitIsmainUnit.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbLargeUnitIsmainUnit.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rbLargeUnitIsmainUnit.CheckedState.Parent = this.rbLargeUnitIsmainUnit;
+            this.rbLargeUnitIsmainUnit.Location = new System.Drawing.Point(187, 292);
+            this.rbLargeUnitIsmainUnit.Name = "rbLargeUnitIsmainUnit";
+            this.rbLargeUnitIsmainUnit.ShadowDecoration.Parent = this.rbLargeUnitIsmainUnit;
+            this.rbLargeUnitIsmainUnit.Size = new System.Drawing.Size(20, 20);
+            this.rbLargeUnitIsmainUnit.TabIndex = 27;
+            this.rbLargeUnitIsmainUnit.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rbLargeUnitIsmainUnit.UncheckedState.BorderThickness = 2;
+            this.rbLargeUnitIsmainUnit.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rbLargeUnitIsmainUnit.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rbLargeUnitIsmainUnit.UncheckedState.Parent = this.rbLargeUnitIsmainUnit;
             // 
-            // guna2CustomRadioButton2
+            // rbIsExpiredProduct
             // 
-            this.guna2CustomRadioButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2CustomRadioButton2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton2.CheckedState.BorderThickness = 0;
-            this.guna2CustomRadioButton2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton2.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2CustomRadioButton2.CheckedState.Parent = this.guna2CustomRadioButton2;
-            this.guna2CustomRadioButton2.Location = new System.Drawing.Point(174, 293);
-            this.guna2CustomRadioButton2.Name = "guna2CustomRadioButton2";
-            this.guna2CustomRadioButton2.ShadowDecoration.Parent = this.guna2CustomRadioButton2;
-            this.guna2CustomRadioButton2.Size = new System.Drawing.Size(20, 20);
-            this.guna2CustomRadioButton2.TabIndex = 27;
-            this.guna2CustomRadioButton2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CustomRadioButton2.UncheckedState.BorderThickness = 2;
-            this.guna2CustomRadioButton2.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton2.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton2.UncheckedState.Parent = this.guna2CustomRadioButton2;
-            // 
-            // guna2CustomRadioButton1
-            // 
-            this.guna2CustomRadioButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2CustomRadioButton1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton1.CheckedState.BorderThickness = 0;
-            this.guna2CustomRadioButton1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton1.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2CustomRadioButton1.CheckedState.Parent = this.guna2CustomRadioButton1;
-            this.guna2CustomRadioButton1.Location = new System.Drawing.Point(653, 459);
-            this.guna2CustomRadioButton1.Name = "guna2CustomRadioButton1";
-            this.guna2CustomRadioButton1.ShadowDecoration.Parent = this.guna2CustomRadioButton1;
-            this.guna2CustomRadioButton1.Size = new System.Drawing.Size(20, 20);
-            this.guna2CustomRadioButton1.TabIndex = 28;
-            this.guna2CustomRadioButton1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CustomRadioButton1.UncheckedState.BorderThickness = 2;
-            this.guna2CustomRadioButton1.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton1.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton1.UncheckedState.Parent = this.guna2CustomRadioButton1;
-            // 
-            // guna2ComboBox1
-            // 
-            this.guna2ComboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.guna2ComboBox1.BorderRadius = 11;
-            this.guna2ComboBox1.BorderThickness = 2;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.Empty;
-            this.guna2ComboBox1.FocusedState.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.FormattingEnabled = true;
-            this.guna2ComboBox1.HoverState.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.ItemsAppearance.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Location = new System.Drawing.Point(214, 285);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.ShadowDecoration.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Size = new System.Drawing.Size(299, 36);
-            this.guna2ComboBox1.TabIndex = 24;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.Gray;
-            this.label6.Location = new System.Drawing.Point(21, 287);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(160, 32);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "وحدة البيع الرئيسية";
-            // 
-            // guna2ComboBox2
-            // 
-            this.guna2ComboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ComboBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox2.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.guna2ComboBox2.BorderRadius = 11;
-            this.guna2ComboBox2.BorderThickness = 2;
-            this.guna2ComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox2.FocusedColor = System.Drawing.Color.Empty;
-            this.guna2ComboBox2.FocusedState.Parent = this.guna2ComboBox2;
-            this.guna2ComboBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox2.FormattingEnabled = true;
-            this.guna2ComboBox2.HoverState.Parent = this.guna2ComboBox2;
-            this.guna2ComboBox2.ItemHeight = 30;
-            this.guna2ComboBox2.ItemsAppearance.Parent = this.guna2ComboBox2;
-            this.guna2ComboBox2.Location = new System.Drawing.Point(214, 233);
-            this.guna2ComboBox2.Name = "guna2ComboBox2";
-            this.guna2ComboBox2.ShadowDecoration.Parent = this.guna2ComboBox2;
-            this.guna2ComboBox2.Size = new System.Drawing.Size(299, 36);
-            this.guna2ComboBox2.TabIndex = 25;
+            this.rbIsExpiredProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbIsExpiredProduct.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbIsExpiredProduct.CheckedState.BorderThickness = 0;
+            this.rbIsExpiredProduct.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbIsExpiredProduct.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rbIsExpiredProduct.CheckedState.Parent = this.rbIsExpiredProduct;
+            this.rbIsExpiredProduct.Location = new System.Drawing.Point(653, 459);
+            this.rbIsExpiredProduct.Name = "rbIsExpiredProduct";
+            this.rbIsExpiredProduct.ShadowDecoration.Parent = this.rbIsExpiredProduct;
+            this.rbIsExpiredProduct.Size = new System.Drawing.Size(20, 20);
+            this.rbIsExpiredProduct.TabIndex = 28;
+            this.rbIsExpiredProduct.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rbIsExpiredProduct.UncheckedState.BorderThickness = 2;
+            this.rbIsExpiredProduct.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rbIsExpiredProduct.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rbIsExpiredProduct.UncheckedState.Parent = this.rbIsExpiredProduct;
             // 
             // cbxLargeUnit
             // 
@@ -900,11 +655,81 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.cbxLargeUnit.HoverState.Parent = this.cbxLargeUnit;
             this.cbxLargeUnit.ItemHeight = 30;
             this.cbxLargeUnit.ItemsAppearance.Parent = this.cbxLargeUnit;
-            this.cbxLargeUnit.Location = new System.Drawing.Point(216, 336);
+            this.cbxLargeUnit.Location = new System.Drawing.Point(214, 285);
             this.cbxLargeUnit.Name = "cbxLargeUnit";
             this.cbxLargeUnit.ShadowDecoration.Parent = this.cbxLargeUnit;
             this.cbxLargeUnit.Size = new System.Drawing.Size(299, 36);
-            this.cbxLargeUnit.TabIndex = 26;
+            this.cbxLargeUnit.TabIndex = 24;
+            // 
+            // label25
+            // 
+            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label25.ForeColor = System.Drawing.Color.Gray;
+            this.label25.Location = new System.Drawing.Point(21, 336);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(160, 32);
+            this.label25.TabIndex = 19;
+            this.label25.Text = "وحدة البيع الرئيسية";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.Gray;
+            this.label6.Location = new System.Drawing.Point(21, 287);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(160, 32);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "وحدة البيع الرئيسية";
+            // 
+            // cbxSubcategory
+            // 
+            this.cbxSubcategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxSubcategory.BackColor = System.Drawing.Color.Transparent;
+            this.cbxSubcategory.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cbxSubcategory.BorderRadius = 11;
+            this.cbxSubcategory.BorderThickness = 2;
+            this.cbxSubcategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxSubcategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxSubcategory.FocusedColor = System.Drawing.Color.Empty;
+            this.cbxSubcategory.FocusedState.Parent = this.cbxSubcategory;
+            this.cbxSubcategory.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbxSubcategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbxSubcategory.FormattingEnabled = true;
+            this.cbxSubcategory.HoverState.Parent = this.cbxSubcategory;
+            this.cbxSubcategory.ItemHeight = 30;
+            this.cbxSubcategory.ItemsAppearance.Parent = this.cbxSubcategory;
+            this.cbxSubcategory.Location = new System.Drawing.Point(214, 233);
+            this.cbxSubcategory.Name = "cbxSubcategory";
+            this.cbxSubcategory.ShadowDecoration.Parent = this.cbxSubcategory;
+            this.cbxSubcategory.Size = new System.Drawing.Size(299, 36);
+            this.cbxSubcategory.TabIndex = 25;
+            // 
+            // cbxSmallUnit
+            // 
+            this.cbxSmallUnit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxSmallUnit.BackColor = System.Drawing.Color.Transparent;
+            this.cbxSmallUnit.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cbxSmallUnit.BorderRadius = 11;
+            this.cbxSmallUnit.BorderThickness = 2;
+            this.cbxSmallUnit.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxSmallUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxSmallUnit.FocusedColor = System.Drawing.Color.Empty;
+            this.cbxSmallUnit.FocusedState.Parent = this.cbxSmallUnit;
+            this.cbxSmallUnit.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbxSmallUnit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbxSmallUnit.FormattingEnabled = true;
+            this.cbxSmallUnit.HoverState.Parent = this.cbxSmallUnit;
+            this.cbxSmallUnit.ItemHeight = 30;
+            this.cbxSmallUnit.ItemsAppearance.Parent = this.cbxSmallUnit;
+            this.cbxSmallUnit.Location = new System.Drawing.Point(216, 336);
+            this.cbxSmallUnit.Name = "cbxSmallUnit";
+            this.cbxSmallUnit.ShadowDecoration.Parent = this.cbxSmallUnit;
+            this.cbxSmallUnit.Size = new System.Drawing.Size(299, 36);
+            this.cbxSmallUnit.TabIndex = 26;
             // 
             // label4
             // 
@@ -954,62 +779,108 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label5.TabIndex = 23;
             this.label5.Text = "اختر الوحدة الكبري";
             // 
-            // label23
+            // txtDescription
             // 
-            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label23.ForeColor = System.Drawing.Color.Gray;
-            this.label23.Location = new System.Drawing.Point(488, 507);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(191, 32);
-            this.label23.TabIndex = 6;
-            this.label23.Text = "أختر تاريخ انتهاء الصلاحية";
+            this.txtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDescription.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtDescription.BorderRadius = 11;
+            this.txtDescription.BorderThickness = 2;
+            this.txtDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDescription.DefaultText = "";
+            this.txtDescription.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDescription.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDescription.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDescription.DisabledState.Parent = this.txtDescription;
+            this.txtDescription.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDescription.FocusedState.Parent = this.txtDescription;
+            this.txtDescription.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.ForeColor = System.Drawing.Color.Gray;
+            this.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDescription.HoverState.Parent = this.txtDescription;
+            this.txtDescription.Location = new System.Drawing.Point(78, 137);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.PasswordChar = '\0';
+            this.txtDescription.PlaceholderText = "";
+            this.txtDescription.SelectedText = "";
+            this.txtDescription.ShadowDecoration.Parent = this.txtDescription;
+            this.txtDescription.Size = new System.Drawing.Size(435, 82);
+            this.txtDescription.TabIndex = 3;
+            this.txtDescription.TextOffset = new System.Drawing.Point(7, 0);
             // 
-            // guna2TextBox11
+            // txtLimitedDemand
             // 
-            this.guna2TextBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2TextBox11.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.guna2TextBox11.BorderRadius = 11;
-            this.guna2TextBox11.BorderThickness = 2;
-            this.guna2TextBox11.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox11.DefaultText = "";
-            this.guna2TextBox11.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox11.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox11.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox11.DisabledState.Parent = this.guna2TextBox11;
-            this.guna2TextBox11.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox11.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox11.FocusedState.Parent = this.guna2TextBox11;
-            this.guna2TextBox11.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox11.ForeColor = System.Drawing.Color.Gray;
-            this.guna2TextBox11.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox11.HoverState.Parent = this.guna2TextBox11;
-            this.guna2TextBox11.Location = new System.Drawing.Point(176, 392);
-            this.guna2TextBox11.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.guna2TextBox11.Name = "guna2TextBox11";
-            this.guna2TextBox11.PasswordChar = '\0';
-            this.guna2TextBox11.PlaceholderText = "";
-            this.guna2TextBox11.SelectedText = "";
-            this.guna2TextBox11.ShadowDecoration.Parent = this.guna2TextBox11;
-            this.guna2TextBox11.Size = new System.Drawing.Size(337, 44);
-            this.guna2TextBox11.TabIndex = 4;
-            this.guna2TextBox11.TextOffset = new System.Drawing.Point(7, 0);
+            this.txtLimitedDemand.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtLimitedDemand.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtLimitedDemand.BorderRadius = 11;
+            this.txtLimitedDemand.BorderThickness = 2;
+            this.txtLimitedDemand.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtLimitedDemand.DefaultText = "";
+            this.txtLimitedDemand.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtLimitedDemand.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtLimitedDemand.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtLimitedDemand.DisabledState.Parent = this.txtLimitedDemand;
+            this.txtLimitedDemand.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtLimitedDemand.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtLimitedDemand.FocusedState.Parent = this.txtLimitedDemand;
+            this.txtLimitedDemand.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLimitedDemand.ForeColor = System.Drawing.Color.Gray;
+            this.txtLimitedDemand.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtLimitedDemand.HoverState.Parent = this.txtLimitedDemand;
+            this.txtLimitedDemand.Location = new System.Drawing.Point(176, 392);
+            this.txtLimitedDemand.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.txtLimitedDemand.Name = "txtLimitedDemand";
+            this.txtLimitedDemand.PasswordChar = '\0';
+            this.txtLimitedDemand.PlaceholderText = "";
+            this.txtLimitedDemand.SelectedText = "";
+            this.txtLimitedDemand.ShadowDecoration.Parent = this.txtLimitedDemand;
+            this.txtLimitedDemand.Size = new System.Drawing.Size(337, 44);
+            this.txtLimitedDemand.TabIndex = 4;
+            this.txtLimitedDemand.TextOffset = new System.Drawing.Point(7, 0);
             // 
-            // guna2DateTimePicker1
+            // txtName
             // 
-            this.guna2DateTimePicker1.BorderRadius = 9;
-            this.guna2DateTimePicker1.CheckedState.Parent = this.guna2DateTimePicker1;
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker1.HoverState.Parent = this.guna2DateTimePicker1;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(397, 556);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.ShadowDecoration.Parent = this.guna2DateTimePicker1;
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(276, 36);
-            this.guna2DateTimePicker1.TabIndex = 29;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2021, 2, 20, 22, 33, 15, 559);
+            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtName.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtName.BorderRadius = 11;
+            this.txtName.BorderThickness = 2;
+            this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtName.DefaultText = "";
+            this.txtName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtName.DisabledState.Parent = this.txtName;
+            this.txtName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtName.FocusedState.Parent = this.txtName;
+            this.txtName.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.ForeColor = System.Drawing.Color.Gray;
+            this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtName.HoverState.Parent = this.txtName;
+            this.txtName.Location = new System.Drawing.Point(78, 71);
+            this.txtName.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.txtName.Name = "txtName";
+            this.txtName.PasswordChar = '\0';
+            this.txtName.PlaceholderText = "";
+            this.txtName.SelectedText = "";
+            this.txtName.ShadowDecoration.Parent = this.txtName;
+            this.txtName.Size = new System.Drawing.Size(435, 44);
+            this.txtName.TabIndex = 4;
+            this.txtName.TextOffset = new System.Drawing.Point(7, 0);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.Location = new System.Drawing.Point(561, 161);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(109, 32);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "وصف تعريفي";
             // 
             // label24
             // 
@@ -1023,48 +894,69 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label24.TabIndex = 6;
             this.label24.Text = "حد الطلب للصنف";
             // 
-            // guna2PictureBox1
+            // label23
             // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.BorderRadius = 19;
-            this.guna2PictureBox1.FillColor = System.Drawing.Color.Silver;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(26, 446);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(228, 158);
-            this.guna2PictureBox1.TabIndex = 30;
-            this.guna2PictureBox1.TabStop = false;
+            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label23.ForeColor = System.Drawing.Color.Gray;
+            this.label23.Location = new System.Drawing.Point(488, 507);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(191, 32);
+            this.label23.TabIndex = 6;
+            this.label23.Text = "أختر تاريخ انتهاء الصلاحية";
             // 
-            // label25
+            // label1
             // 
-            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label25.ForeColor = System.Drawing.Color.Gray;
-            this.label25.Location = new System.Drawing.Point(21, 336);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(160, 32);
-            this.label25.TabIndex = 19;
-            this.label25.Text = "وحدة البيع الرئيسية";
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.Location = new System.Drawing.Point(564, 83);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 32);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "اسم الصنف";
             // 
-            // guna2CustomRadioButton5
+            // nudDefaultPurchasePrice
             // 
-            this.guna2CustomRadioButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2CustomRadioButton5.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton5.CheckedState.BorderThickness = 0;
-            this.guna2CustomRadioButton5.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton5.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2CustomRadioButton5.CheckedState.Parent = this.guna2CustomRadioButton5;
-            this.guna2CustomRadioButton5.Location = new System.Drawing.Point(174, 342);
-            this.guna2CustomRadioButton5.Name = "guna2CustomRadioButton5";
-            this.guna2CustomRadioButton5.ShadowDecoration.Parent = this.guna2CustomRadioButton5;
-            this.guna2CustomRadioButton5.Size = new System.Drawing.Size(20, 20);
-            this.guna2CustomRadioButton5.TabIndex = 27;
-            this.guna2CustomRadioButton5.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CustomRadioButton5.UncheckedState.BorderThickness = 2;
-            this.guna2CustomRadioButton5.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton5.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton5.UncheckedState.Parent = this.guna2CustomRadioButton5;
+            this.nudDefaultPurchasePrice.Location = new System.Drawing.Point(271, 74);
+            this.nudDefaultPurchasePrice.Name = "nudDefaultPurchasePrice";
+            this.nudDefaultPurchasePrice.Size = new System.Drawing.Size(140, 49);
+            this.nudDefaultPurchasePrice.TabIndex = 33;
+            this.nudDefaultPurchasePrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nudDefaultSalePrice
+            // 
+            this.nudDefaultSalePrice.Location = new System.Drawing.Point(271, 138);
+            this.nudDefaultSalePrice.Name = "nudDefaultSalePrice";
+            this.nudDefaultSalePrice.Size = new System.Drawing.Size(140, 49);
+            this.nudDefaultSalePrice.TabIndex = 33;
+            this.nudDefaultSalePrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nudDefaultWholesalePrice
+            // 
+            this.nudDefaultWholesalePrice.Location = new System.Drawing.Point(271, 199);
+            this.nudDefaultWholesalePrice.Name = "nudDefaultWholesalePrice";
+            this.nudDefaultWholesalePrice.Size = new System.Drawing.Size(140, 49);
+            this.nudDefaultWholesalePrice.TabIndex = 33;
+            this.nudDefaultWholesalePrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nudVATPercent
+            // 
+            this.nudVATPercent.Location = new System.Drawing.Point(84, 264);
+            this.nudVATPercent.Name = "nudVATPercent";
+            this.nudVATPercent.Size = new System.Drawing.Size(150, 49);
+            this.nudVATPercent.TabIndex = 33;
+            this.nudVATPercent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nudDiscountPercent
+            // 
+            this.nudDiscountPercent.Location = new System.Drawing.Point(85, 323);
+            this.nudDiscountPercent.Name = "nudDiscountPercent";
+            this.nudDiscountPercent.Size = new System.Drawing.Size(150, 49);
+            this.nudDiscountPercent.TabIndex = 33;
+            this.nudDiscountPercent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ucNewProductCard
             // 
@@ -1086,7 +978,12 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox2.PerformLayout();
             this.guna2GroupBox3.ResumeLayout(false);
             this.guna2GroupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDefaultPurchasePrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDefaultSalePrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDefaultWholesalePrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVATPercent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDiscountPercent)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1095,20 +992,16 @@ namespace ElbayaNPresentation.Views.Store.Product
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox7;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox6;
+        private Guna.UI2.WinForms.Guna2TextBox txtCBCNumber;
+        private Guna.UI2.WinForms.Guna2TextBox txtUCPNumber;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox8;
+        private Guna.UI2.WinForms.Guna2TextBox txtPSNNumber;
         private System.Windows.Forms.Label label15;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox10;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -1120,29 +1013,32 @@ namespace ElbayaNPresentation.Views.Store.Product
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox9;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox5;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox3;
-        private Guna.UI2.WinForms.Guna2CustomRadioButton guna2CustomRadioButton2;
-        private Guna.UI2.WinForms.Guna2CustomRadioButton guna2CustomRadioButton1;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
-        private System.Windows.Forms.Label label6;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox2;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton rbLargeUnitIsmainUnit;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton rbIsExpiredProduct;
         private Guna.UI2.WinForms.Guna2ComboBox cbxLargeUnit;
+        private System.Windows.Forms.Label label6;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxSubcategory;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxSmallUnit;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Guna.UI2.WinForms.Guna2TextBox txtDescription;
         private Guna.UI2.WinForms.Guna2TextBox txtName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox11;
+        private Guna.UI2.WinForms.Guna2TextBox txtLimitedDemand;
         private System.Windows.Forms.Label label23;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpExpireDate;
         private System.Windows.Forms.Label label24;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2CustomRadioButton guna2CustomRadioButton5;
+        private Guna.UI2.WinForms.Guna2PictureBox pbProductImage;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton rbSmallUnitIsMainUnit;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.NumericUpDown nudDiscountPercent;
+        private System.Windows.Forms.NumericUpDown nudVATPercent;
+        private System.Windows.Forms.NumericUpDown nudDefaultWholesalePrice;
+        private System.Windows.Forms.NumericUpDown nudDefaultSalePrice;
+        private System.Windows.Forms.NumericUpDown nudDefaultPurchasePrice;
     }
 }

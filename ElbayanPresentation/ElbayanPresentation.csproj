@@ -87,6 +87,8 @@
     <Compile Include="Presenters\CommonPresenter\DataGridViewStyle.cs" />
     <Compile Include="Presenters\Store\Category\MainCategory\MainCategoryPresenter.cs" />
     <Compile Include="Presenters\Store\Category\SubCategory\SubCategoryPresenter.cs" />
+    <Compile Include="Presenters\Store\Product\ProductCard\IViewProdct.cs" />
+    <Compile Include="Presenters\Store\Product\ProductCard\ProductPresnter.cs" />
     <Compile Include="Presenters\Store\Unit\LargeUnit\IViewLargeUnit.cs" />
     <Compile Include="Presenters\Store\Unit\LargeUnit\LargeUnitPresenter.cs" />
     <Compile Include="Presenters\Store\Unit\SmallUnit\IViewSmallUnit.cs" />
