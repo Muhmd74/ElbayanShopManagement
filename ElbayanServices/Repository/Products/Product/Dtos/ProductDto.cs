@@ -7,9 +7,9 @@ namespace ElbayanServices.Repository.Products.Product.Dtos
         public Guid Id { get; set; }
         public int UCP { get; set; }
         public string ImageUrl { get; set; }
-        public bool IsMAinSalesUnit { get; set; }
+        public string IsMAinSalesUnit { get; set; }
         public int BarCode { get; set; }
-         public string Name { get; set; }
+        public string Name { get; set; }
         public string Description { get; set; }
         public Guid SubCategoryId { get; set; }
         public string SubCategoryName { get; set; }

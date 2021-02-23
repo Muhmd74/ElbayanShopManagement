@@ -8,7 +8,7 @@ namespace ElbayanServices.Common
 {
     public static class StaticGenerator
     {
-        public static long NextLong(this Random random, long max, long min)
+        public static long NextLong(this Random random, long min, long max)
         {
             if (max <= min)
                 throw new ArgumentOutOfRangeException("max", "max must be > min");

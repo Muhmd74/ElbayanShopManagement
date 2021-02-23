@@ -193,7 +193,7 @@ namespace ElbayanServices.Repository.Products.Product
                     SaleDefaultPrice = d.SaleDefaultPrice,
                     WholesalePrice = d.WholesalePrice,
                     ImageUrl = d.ImageUrl,
-                    IsMAinSalesUnit = Convert.ToBoolean(d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name)
+                    IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name
 
                 }).ToList();
             return Products.Any() ? Products : null;
@@ -225,7 +225,7 @@ namespace ElbayanServices.Repository.Products.Product
                     SubCategoryName = d.SubCategory.Name,
                     SaleDefaultPrice = d.SaleDefaultPrice,
                     WholesalePrice = d.WholesalePrice,
-                    //IsMAinSalesUnit = Convert.ToBoolean(d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name)
+                    IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name
                 }).ToList();
             return Products.Any() ? Products : null;
         }
@@ -258,7 +258,7 @@ namespace ElbayanServices.Repository.Products.Product
                     SubCategoryName = d.SubCategory.Name,
                     WholesalePrice = d.WholesalePrice,
                     SaleDefaultPrice = d.SaleDefaultPrice,
-                    IsMAinSalesUnit = Convert.ToBoolean(d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name)
+                    IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name
                 }).ToList();
             return Products.Any() ? Products : null;
         }
@@ -291,7 +291,7 @@ namespace ElbayanServices.Repository.Products.Product
                     UCP = model.UCP,
                     WholesalePrice = model.WholesalePrice,
                     SaleDefaultPrice = model.SaleDefaultPrice,
-                    IsMAinSalesUnit = Convert.ToBoolean(model.IsUnitSale ? model.LargeUnit.Name : model.SmallUnit.Name)
+                    IsMAinSalesUnit = model.IsUnitSale ? model.LargeUnit.Name : model.SmallUnit.Name
                 };
             }
 
@@ -350,7 +350,7 @@ namespace ElbayanServices.Repository.Products.Product
         {
             while (true)
             {
-                var number = new Random().NextLong(0, long.MaxValue);
+                var number = new Random().NextLong(1, long.MaxValue);
                 if (!_context.Products.Any(d => d.ProductNumber == number))
                 {
                     return number;
