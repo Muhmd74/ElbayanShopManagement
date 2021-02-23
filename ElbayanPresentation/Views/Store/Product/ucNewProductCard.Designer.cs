@@ -60,15 +60,16 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.pbProductImage = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.dtpExpireDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbSmallUnitIsMainUnit = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.btnUploadPicture = new Guna.UI2.WinForms.Guna2Button();
             this.rbLargeUnitIsmainUnit = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.rbIsExpiredProduct = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.cbxLargeUnit = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.pbProductImage = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.dtpExpireDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.btnUploadPicture = new Guna.UI2.WinForms.Guna2Button();
+            this.rbIsExpiredProduct = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.cbxLargeUnit = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbxSubcategory = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbxSmallUnit = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -82,7 +83,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDiscountPercent)).BeginInit();
@@ -91,8 +92,8 @@ namespace ElbayaNPresentation.Views.Store.Product
             ((System.ComponentModel.ISupportInitialize)(this.nudDefaultSalePrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDefaultPurchasePrice)).BeginInit();
             this.guna2GroupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2TextBox1
@@ -155,6 +156,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.LightGray;
             this.guna2GroupBox1.BorderRadius = 9;
+            this.guna2GroupBox1.Controls.Add(this.guna2Button1);
             this.guna2GroupBox1.Controls.Add(this.label18);
             this.guna2GroupBox1.Controls.Add(this.label17);
             this.guna2GroupBox1.Controls.Add(this.label16);
@@ -226,7 +228,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.txtPSNNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtPSNNumber.DisabledState.Parent = this.txtPSNNumber;
             this.txtPSNNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPSNNumber.Enabled = false;
             this.txtPSNNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPSNNumber.FocusedState.Parent = this.txtPSNNumber;
             this.txtPSNNumber.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -597,32 +598,21 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox3.Text = "بيانات تعريفية بالصنف";
             this.guna2GroupBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // pbProductImage
+            // groupBox1
             // 
-            this.pbProductImage.BackColor = System.Drawing.Color.Transparent;
-            this.pbProductImage.BorderRadius = 19;
-            this.pbProductImage.FillColor = System.Drawing.Color.Silver;
-            this.pbProductImage.Location = new System.Drawing.Point(26, 446);
-            this.pbProductImage.Name = "pbProductImage";
-            this.pbProductImage.ShadowDecoration.Parent = this.pbProductImage;
-            this.pbProductImage.Size = new System.Drawing.Size(228, 158);
-            this.pbProductImage.TabIndex = 30;
-            this.pbProductImage.TabStop = false;
-            // 
-            // dtpExpireDate
-            // 
-            this.dtpExpireDate.BorderRadius = 9;
-            this.dtpExpireDate.CheckedState.Parent = this.dtpExpireDate;
-            this.dtpExpireDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpExpireDate.HoverState.Parent = this.dtpExpireDate;
-            this.dtpExpireDate.Location = new System.Drawing.Point(397, 556);
-            this.dtpExpireDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpExpireDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpExpireDate.Name = "dtpExpireDate";
-            this.dtpExpireDate.ShadowDecoration.Parent = this.dtpExpireDate;
-            this.dtpExpireDate.Size = new System.Drawing.Size(276, 36);
-            this.dtpExpireDate.TabIndex = 10;
-            this.dtpExpireDate.Value = new System.DateTime(2021, 2, 20, 22, 33, 15, 559);
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.rbSmallUnitIsMainUnit);
+            this.groupBox1.Controls.Add(this.rbLargeUnitIsmainUnit);
+            this.groupBox1.Controls.Add(this.label25);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Font = new System.Drawing.Font("Sakkal Majalla", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Gray;
+            this.groupBox1.Location = new System.Drawing.Point(0, 245);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(210, 137);
+            this.groupBox1.TabIndex = 31;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "اختر وحدة البيع الرئيسية";
             // 
             // rbSmallUnitIsMainUnit
             // 
@@ -644,25 +634,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.rbSmallUnitIsMainUnit.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.rbSmallUnitIsMainUnit.UncheckedState.Parent = this.rbSmallUnitIsMainUnit;
             // 
-            // btnUploadPicture
-            // 
-            this.btnUploadPicture.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUploadPicture.BorderRadius = 11;
-            this.btnUploadPicture.CheckedState.Parent = this.btnUploadPicture;
-            this.btnUploadPicture.CustomImages.Parent = this.btnUploadPicture;
-            this.btnUploadPicture.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
-            this.btnUploadPicture.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUploadPicture.ForeColor = System.Drawing.Color.White;
-            this.btnUploadPicture.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnUploadPicture.HoverState.Parent = this.btnUploadPicture;
-            this.btnUploadPicture.Location = new System.Drawing.Point(48, 610);
-            this.btnUploadPicture.Name = "btnUploadPicture";
-            this.btnUploadPicture.ShadowDecoration.Parent = this.btnUploadPicture;
-            this.btnUploadPicture.Size = new System.Drawing.Size(190, 56);
-            this.btnUploadPicture.TabIndex = 11;
-            this.btnUploadPicture.Text = "صورة المنتج";
-            this.btnUploadPicture.Click += new System.EventHandler(this.btnUploadPicture_Click);
-            // 
             // rbLargeUnitIsmainUnit
             // 
             this.rbLargeUnitIsmainUnit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -682,6 +653,77 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.rbLargeUnitIsmainUnit.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rbLargeUnitIsmainUnit.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.rbLargeUnitIsmainUnit.UncheckedState.Parent = this.rbLargeUnitIsmainUnit;
+            // 
+            // label25
+            // 
+            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label25.ForeColor = System.Drawing.Color.Gray;
+            this.label25.Location = new System.Drawing.Point(11, 88);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(160, 32);
+            this.label25.TabIndex = 19;
+            this.label25.Text = "وحدة البيع الرئيسية";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.Gray;
+            this.label6.Location = new System.Drawing.Point(17, 42);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(160, 32);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "وحدة البيع الرئيسية";
+            // 
+            // pbProductImage
+            // 
+            this.pbProductImage.BackColor = System.Drawing.Color.Transparent;
+            this.pbProductImage.BorderRadius = 19;
+            this.pbProductImage.FillColor = System.Drawing.Color.Silver;
+            this.pbProductImage.Location = new System.Drawing.Point(26, 446);
+            this.pbProductImage.Name = "pbProductImage";
+            this.pbProductImage.ShadowDecoration.Parent = this.pbProductImage;
+            this.pbProductImage.Size = new System.Drawing.Size(228, 158);
+            this.pbProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbProductImage.TabIndex = 30;
+            this.pbProductImage.TabStop = false;
+            // 
+            // dtpExpireDate
+            // 
+            this.dtpExpireDate.BorderRadius = 9;
+            this.dtpExpireDate.CheckedState.Parent = this.dtpExpireDate;
+            this.dtpExpireDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtpExpireDate.HoverState.Parent = this.dtpExpireDate;
+            this.dtpExpireDate.Location = new System.Drawing.Point(397, 556);
+            this.dtpExpireDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpExpireDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpExpireDate.Name = "dtpExpireDate";
+            this.dtpExpireDate.ShadowDecoration.Parent = this.dtpExpireDate;
+            this.dtpExpireDate.Size = new System.Drawing.Size(276, 36);
+            this.dtpExpireDate.TabIndex = 10;
+            this.dtpExpireDate.Value = new System.DateTime(2021, 2, 20, 22, 33, 15, 559);
+            // 
+            // btnUploadPicture
+            // 
+            this.btnUploadPicture.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUploadPicture.BorderRadius = 11;
+            this.btnUploadPicture.CheckedState.Parent = this.btnUploadPicture;
+            this.btnUploadPicture.CustomImages.Parent = this.btnUploadPicture;
+            this.btnUploadPicture.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
+            this.btnUploadPicture.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUploadPicture.ForeColor = System.Drawing.Color.White;
+            this.btnUploadPicture.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnUploadPicture.HoverState.Parent = this.btnUploadPicture;
+            this.btnUploadPicture.Location = new System.Drawing.Point(48, 610);
+            this.btnUploadPicture.Name = "btnUploadPicture";
+            this.btnUploadPicture.ShadowDecoration.Parent = this.btnUploadPicture;
+            this.btnUploadPicture.Size = new System.Drawing.Size(190, 56);
+            this.btnUploadPicture.TabIndex = 11;
+            this.btnUploadPicture.Text = "صورة المنتج";
+            this.btnUploadPicture.Click += new System.EventHandler(this.btnUploadPicture_Click);
             // 
             // rbIsExpiredProduct
             // 
@@ -725,30 +767,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.cbxLargeUnit.ShadowDecoration.Parent = this.cbxLargeUnit;
             this.cbxLargeUnit.Size = new System.Drawing.Size(299, 36);
             this.cbxLargeUnit.TabIndex = 4;
-            // 
-            // label25
-            // 
-            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label25.ForeColor = System.Drawing.Color.Gray;
-            this.label25.Location = new System.Drawing.Point(11, 88);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(160, 32);
-            this.label25.TabIndex = 19;
-            this.label25.Text = "وحدة البيع الرئيسية";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.Gray;
-            this.label6.Location = new System.Drawing.Point(17, 42);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(160, 32);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "وحدة البيع الرئيسية";
             // 
             // cbxSubcategory
             // 
@@ -985,21 +1003,25 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label1.TabIndex = 6;
             this.label1.Text = "اسم الصنف";
             // 
-            // groupBox1
+            // guna2Button1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.rbSmallUnitIsMainUnit);
-            this.groupBox1.Controls.Add(this.rbLargeUnitIsmainUnit);
-            this.groupBox1.Controls.Add(this.label25);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Font = new System.Drawing.Font("Sakkal Majalla", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.Gray;
-            this.groupBox1.Location = new System.Drawing.Point(0, 245);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(210, 137);
-            this.groupBox1.TabIndex = 31;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "اختر وحدة البيع الرئيسية";
+            this.guna2Button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Button1.BorderColor = System.Drawing.Color.DimGray;
+            this.guna2Button1.BorderRadius = 21;
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.FillColor = System.Drawing.SystemColors.HotTrack;
+            this.guna2Button1.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
+            this.guna2Button1.Location = new System.Drawing.Point(3, 169);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(50, 42);
+            this.guna2Button1.TabIndex = 32;
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // ucNewProductCard
             // 
@@ -1026,9 +1048,9 @@ namespace ElbayaNPresentation.Views.Store.Product
             ((System.ComponentModel.ISupportInitialize)(this.nudDefaultPurchasePrice)).EndInit();
             this.guna2GroupBox3.ResumeLayout(false);
             this.guna2GroupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1087,5 +1109,6 @@ namespace ElbayaNPresentation.Views.Store.Product
         private System.Windows.Forms.NumericUpDown nudDefaultPurchasePrice;
         private Guna.UI2.WinForms.Guna2Button btnUploadPicture;
         private System.Windows.Forms.GroupBox groupBox1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

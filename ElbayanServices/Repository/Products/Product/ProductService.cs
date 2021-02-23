@@ -225,7 +225,7 @@ namespace ElbayanServices.Repository.Products.Product
                     SubCategoryName = d.SubCategory.Name,
                     SaleDefaultPrice = d.SaleDefaultPrice,
                     WholesalePrice = d.WholesalePrice,
-                    IsMAinSalesUnit = Convert.ToBoolean(d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name)
+                    //IsMAinSalesUnit = Convert.ToBoolean(d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name)
                 }).ToList();
             return Products.Any() ? Products : null;
         }
@@ -350,8 +350,7 @@ namespace ElbayanServices.Repository.Products.Product
         {
             while (true)
             {
-                //var number = new Random().NextLong(0, long.MaxValue);
-                var number = new Random().NextLong(long.MaxValue, 1);
+                var number = new Random().NextLong(0, long.MaxValue);
                 if (!_context.Products.Any(d => d.ProductNumber == number))
                 {
                     return number;

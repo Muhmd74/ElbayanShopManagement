@@ -87,6 +87,8 @@
     <Compile Include="Presenters\CommonPresenter\DataGridViewStyle.cs" />
     <Compile Include="Presenters\Store\Category\MainCategory\MainCategoryPresenter.cs" />
     <Compile Include="Presenters\Store\Category\SubCategory\SubCategoryPresenter.cs" />
+    <Compile Include="Presenters\Store\Product\AllProduct\AllProductPresenter.cs" />
+    <Compile Include="Presenters\Store\Product\AllProduct\IViewAllProduct.cs" />
     <Compile Include="Presenters\Store\Product\ProductCard\IViewProdct.cs" />
     <Compile Include="Presenters\Store\Product\ProductCard\ProductPresnter.cs" />
     <Compile Include="Presenters\Store\Unit\LargeUnit\IViewLargeUnit.cs" />
@@ -252,6 +254,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\boreport_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Ecommerce-Barcode-Scanner-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -34,25 +34,19 @@ namespace ElbayaNPresentation.Views.Store.Product
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllProductsView));
             this.dgvTabContainer = new System.Windows.Forms.TabControl();
             this.tpActiveLargeUnits = new System.Windows.Forms.TabPage();
-            this.dgvLargeUnit = new System.Windows.Forms.DataGridView();
+            this.dgvAllProduct = new System.Windows.Forms.DataGridView();
             this.tpArchieveLargeUnits = new System.Windows.Forms.TabPage();
             this.dgvDeletedLargeUnit = new System.Windows.Forms.DataGridView();
             this.dgvLargeUnitDeletedID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvLargeUnitDeletedName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvLargeUnitDeletedDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnDeleteByOne = new Guna.UI2.WinForms.Guna2Button();
-            this.ProductNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VAT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PurshaceDefaultprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvTabContainer.SuspendLayout();
             this.tpActiveLargeUnits.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLargeUnit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAllProduct)).BeginInit();
             this.tpArchieveLargeUnits.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedLargeUnit)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
@@ -77,7 +71,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             // 
             this.tpActiveLargeUnits.BackColor = System.Drawing.SystemColors.HotTrack;
             this.tpActiveLargeUnits.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.tpActiveLargeUnits.Controls.Add(this.dgvLargeUnit);
+            this.tpActiveLargeUnits.Controls.Add(this.dgvAllProduct);
             this.tpActiveLargeUnits.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tpActiveLargeUnits.ForeColor = System.Drawing.Color.White;
             this.tpActiveLargeUnits.Location = new System.Drawing.Point(4, 43);
@@ -87,14 +81,14 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.tpActiveLargeUnits.TabIndex = 0;
             this.tpActiveLargeUnits.Text = "قائمة الأصناف";
             // 
-            // dgvLargeUnit
+            // dgvAllProduct
             // 
-            this.dgvLargeUnit.AllowUserToAddRows = false;
-            this.dgvLargeUnit.AllowUserToDeleteRows = false;
-            this.dgvLargeUnit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvAllProduct.AllowUserToAddRows = false;
+            this.dgvAllProduct.AllowUserToDeleteRows = false;
+            this.dgvAllProduct.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvLargeUnit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvLargeUnit.BackgroundColor = System.Drawing.Color.White;
+            this.dgvAllProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvAllProduct.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -103,24 +97,17 @@ namespace ElbayaNPresentation.Views.Store.Product
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLargeUnit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvLargeUnit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLargeUnit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ProductNumber,
-            this.Product,
-            this.Quantity,
-            this.VAT,
-            this.Category,
-            this.PurshaceDefaultprice});
-            this.dgvLargeUnit.Location = new System.Drawing.Point(3, 3);
-            this.dgvLargeUnit.Name = "dgvLargeUnit";
-            this.dgvLargeUnit.ReadOnly = true;
-            this.dgvLargeUnit.RowHeadersWidth = 51;
-            this.dgvLargeUnit.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgvLargeUnit.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            this.dgvLargeUnit.RowTemplate.Height = 35;
-            this.dgvLargeUnit.Size = new System.Drawing.Size(1436, 657);
-            this.dgvLargeUnit.TabIndex = 0;
+            this.dgvAllProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvAllProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAllProduct.Location = new System.Drawing.Point(3, 3);
+            this.dgvAllProduct.Name = "dgvAllProduct";
+            this.dgvAllProduct.ReadOnly = true;
+            this.dgvAllProduct.RowHeadersWidth = 51;
+            this.dgvAllProduct.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgvAllProduct.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.dgvAllProduct.RowTemplate.Height = 35;
+            this.dgvAllProduct.Size = new System.Drawing.Size(1436, 657);
+            this.dgvAllProduct.TabIndex = 0;
             // 
             // tpArchieveLargeUnits
             // 
@@ -207,6 +194,40 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox1.Text = "قائمة الأصناف المتوفرة بالمخزن";
             this.guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.BorderRadius = 17;
+            this.btnUpdate.CheckedState.Parent = this.btnUpdate;
+            this.btnUpdate.CustomImages.Parent = this.btnUpdate;
+            this.btnUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
+            this.btnUpdate.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.HoverState.Parent = this.btnUpdate;
+            this.btnUpdate.Location = new System.Drawing.Point(818, 53);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
+            this.btnUpdate.Size = new System.Drawing.Size(190, 56);
+            this.btnUpdate.TabIndex = 16;
+            this.btnUpdate.Text = "حفظ التعديلات";
+            // 
+            // btnDeleteByOne
+            // 
+            this.btnDeleteByOne.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeleteByOne.BorderRadius = 17;
+            this.btnDeleteByOne.CheckedState.Parent = this.btnDeleteByOne;
+            this.btnDeleteByOne.CustomImages.Parent = this.btnDeleteByOne;
+            this.btnDeleteByOne.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
+            this.btnDeleteByOne.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteByOne.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteByOne.HoverState.Parent = this.btnDeleteByOne;
+            this.btnDeleteByOne.Location = new System.Drawing.Point(622, 52);
+            this.btnDeleteByOne.Name = "btnDeleteByOne";
+            this.btnDeleteByOne.ShadowDecoration.Parent = this.btnDeleteByOne;
+            this.btnDeleteByOne.Size = new System.Drawing.Size(190, 56);
+            this.btnDeleteByOne.TabIndex = 17;
+            this.btnDeleteByOne.Text = "أرشفة";
+            // 
             // txtSearch
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -242,82 +263,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.txtSearch.TabIndex = 15;
             this.txtSearch.TextOffset = new System.Drawing.Point(15, 0);
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdate.BorderRadius = 17;
-            this.btnUpdate.CheckedState.Parent = this.btnUpdate;
-            this.btnUpdate.CustomImages.Parent = this.btnUpdate;
-            this.btnUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
-            this.btnUpdate.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.HoverState.Parent = this.btnUpdate;
-            this.btnUpdate.Location = new System.Drawing.Point(818, 53);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
-            this.btnUpdate.Size = new System.Drawing.Size(190, 56);
-            this.btnUpdate.TabIndex = 16;
-            this.btnUpdate.Text = "حفظ التعديلات";
-            // 
-            // btnDeleteByOne
-            // 
-            this.btnDeleteByOne.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeleteByOne.BorderRadius = 17;
-            this.btnDeleteByOne.CheckedState.Parent = this.btnDeleteByOne;
-            this.btnDeleteByOne.CustomImages.Parent = this.btnDeleteByOne;
-            this.btnDeleteByOne.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
-            this.btnDeleteByOne.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteByOne.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteByOne.HoverState.Parent = this.btnDeleteByOne;
-            this.btnDeleteByOne.Location = new System.Drawing.Point(622, 52);
-            this.btnDeleteByOne.Name = "btnDeleteByOne";
-            this.btnDeleteByOne.ShadowDecoration.Parent = this.btnDeleteByOne;
-            this.btnDeleteByOne.Size = new System.Drawing.Size(190, 56);
-            this.btnDeleteByOne.TabIndex = 17;
-            this.btnDeleteByOne.Text = "أرشفة";
-            // 
-            // ProductNumber
-            // 
-            this.ProductNumber.HeaderText = "كود الصنف";
-            this.ProductNumber.MinimumWidth = 6;
-            this.ProductNumber.Name = "ProductNumber";
-            this.ProductNumber.ReadOnly = true;
-            // 
-            // Product
-            // 
-            this.Product.HeaderText = "إسم الصنف";
-            this.Product.MinimumWidth = 6;
-            this.Product.Name = "Product";
-            this.Product.ReadOnly = true;
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "الكمية المتوفرة";
-            this.Quantity.MinimumWidth = 6;
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            // 
-            // VAT
-            // 
-            this.VAT.HeaderText = "الضريبة المضافة";
-            this.VAT.MinimumWidth = 6;
-            this.VAT.Name = "VAT";
-            this.VAT.ReadOnly = true;
-            // 
-            // Category
-            // 
-            this.Category.HeaderText = "التصنيف";
-            this.Category.MinimumWidth = 6;
-            this.Category.Name = "Category";
-            this.Category.ReadOnly = true;
-            // 
-            // PurshaceDefaultprice
-            // 
-            this.PurshaceDefaultprice.HeaderText = "سعر الشراء الافتراضي";
-            this.PurshaceDefaultprice.MinimumWidth = 6;
-            this.PurshaceDefaultprice.Name = "PurshaceDefaultprice";
-            this.PurshaceDefaultprice.ReadOnly = true;
-            // 
             // AllProductsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -329,7 +274,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.Size = new System.Drawing.Size(1449, 829);
             this.dgvTabContainer.ResumeLayout(false);
             this.tpActiveLargeUnits.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLargeUnit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAllProduct)).EndInit();
             this.tpArchieveLargeUnits.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedLargeUnit)).EndInit();
             this.guna2GroupBox1.ResumeLayout(false);
@@ -341,7 +286,7 @@ namespace ElbayaNPresentation.Views.Store.Product
 
         private System.Windows.Forms.TabControl dgvTabContainer;
         private System.Windows.Forms.TabPage tpActiveLargeUnits;
-        private System.Windows.Forms.DataGridView dgvLargeUnit;
+        private System.Windows.Forms.DataGridView dgvAllProduct;
         private System.Windows.Forms.TabPage tpArchieveLargeUnits;
         private System.Windows.Forms.DataGridView dgvDeletedLargeUnit;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvLargeUnitDeletedID;
@@ -351,11 +296,5 @@ namespace ElbayaNPresentation.Views.Store.Product
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2Button btnUpdate;
         private Guna.UI2.WinForms.Guna2Button btnDeleteByOne;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Product;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VAT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Category;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PurshaceDefaultprice;
     }
 }

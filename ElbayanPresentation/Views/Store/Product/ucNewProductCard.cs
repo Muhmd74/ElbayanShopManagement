@@ -23,8 +23,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             InitializeComponent();
             Presenter = new ProductPresnter(this);
 
-            //Genrate Random number
-            txtPSNNumber.Text =  Presenter.GenerateProductNumber().ToString();
             PopulatecbxSubcategory();
             PopulatecbxLargeUnit();
             PopulatecbxSmallUnit();
@@ -72,7 +70,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             string ImageName = "";
             
             OpenFileDialog image = new OpenFileDialog();
-            image.Filter = "Image Files (*.jpg; *.jpeg; *.gif; *.png; *.bmp;) | *.jpg; *.jpeg; *.gif; *.png; *.bmp;";
+            image.Filter = "ملفات الصور (*.jpg; *.jpeg; *.gif; *.png; *.bmp;) | *.jpg; *.jpeg; *.gif; *.png; *.bmp;";
             if (image.ShowDialog() == DialogResult.OK )
             {
                 ImageName = image.FileName;
@@ -107,6 +105,11 @@ namespace ElbayaNPresentation.Views.Store.Product
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Presenter.OnCLickbtnAdd();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            txtPSNNumber.Text = Presenter.GenerateProductNumber().ToString();
         }
     }
 }
