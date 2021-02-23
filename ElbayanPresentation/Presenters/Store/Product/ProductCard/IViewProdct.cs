@@ -13,7 +13,7 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
     {
         int UCP { get; set; }
         int BarCode { get; set; }
-        string Name { get; set; }
+        string ProudctName { get; set; }
         string ImageUrl { get; set; }
         string Description { get; set; }
         decimal PurchaseDefaultPrice { get; set; }
@@ -22,6 +22,7 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
         bool IsUnitSale { get; set; }//true ? LargeSale : SmallSale
         Guid SubCategoryId { get; set; }
         SubCategoryDto SubCategory { get; set; }
+        List<SubCategoryDto> SubCategories { get; set; }
         long ProductNumber { get; set; }
 
         bool IsExpired { get; set; }

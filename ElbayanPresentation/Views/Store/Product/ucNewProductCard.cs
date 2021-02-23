@@ -22,6 +22,12 @@ namespace ElbayaNPresentation.Views.Store.Product
         {
             InitializeComponent();
             Presenter = new ProductPresnter(this);
+
+            //Genrate Random number
+            txtPSNNumber.Text =  Presenter.GenerateProductNumber().ToString();
+            PopulatecbxSubcategory();
+            PopulatecbxLargeUnit();
+            PopulatecbxSmallUnit();
         }
 
         // Apply singlton pattern for form Instance
@@ -39,25 +45,28 @@ namespace ElbayaNPresentation.Views.Store.Product
         public int UCP { get => Convert.ToInt32(txtUCPNumber.Text); set => Convert.ToInt32(txtUCPNumber.Text); }
         public int BarCode { get => Convert.ToInt32(txtCBCNumber.Text); set => Convert.ToInt32(txtCBCNumber.Text); }
         public string ImageUrl { get; set; }
+        public string ProudctName { get => txtName.Text; set => txtName.Text = value; }
         public string Description { get => txtDescription.Text; set => txtDescription.Text = value; }
         public decimal PurchaseDefaultPrice { get => nudDefaultPurchasePrice.Value; set => nudDefaultPurchasePrice.Value = value; }
         public decimal SaleDefaultPrice { get => nudDefaultSalePrice.Value; set => nudDefaultSalePrice.Value = value; }
         public decimal WholesalePrice { get => nudDefaultWholesalePrice.Value; set => nudDefaultWholesalePrice.Value = value; }
         public bool IsUnitSale { get; set; }
-        public Guid SubCategoryId { get; set; }
+        public Guid SubCategoryId { get => new Guid(cbxSubcategory.SelectedValue.ToString()); set => cbxSubcategory.SelectedValue = value; }
         public SubCategoryDto SubCategory { get; set; }
-        public long ProductNumber { get; set; }
-        public bool IsExpired { get; set; }
-        public DateTime ExpireDateTime { get; set; }
-        public Guid LargeUnitId { get; set; }
+        public long ProductNumber { get => long.Parse(txtPSNNumber.Text); set => value = long.Parse(txtPSNNumber.Text); }
+        public bool IsExpired { get => rbIsExpiredProduct.Checked; set => rbIsExpiredProduct.Checked = value; }
+        public DateTime ExpireDateTime { get => dtpExpireDate.Value; set => dtpExpireDate.Value = value; }
+        public Guid LargeUnitId { get => new Guid (cbxLargeUnit.SelectedValue.ToString()); set => cbxLargeUnit.SelectedValue = value; }
         public LargeUnitDto LargeUnit { get; set; }
         public List<LargeUnitDto> LargeUnits { get; set; }
-        public Guid SmallUnitId { get; set; }
+        public Guid SmallUnitId { get => new Guid(cbxSmallUnit.SelectedValue.ToString()); set => cbxSmallUnit.SelectedValue = value; }
         public SmallUnitDto SmallUnit { get; set; }
         public List<SmallUnitDto> smallUnits { get; set; }
-        public int LimitedDemand { get; set; }
+        public int LimitedDemand { get => Convert.ToInt32(txtLimitedDemand.Text); set => Convert.ToInt32(txtLimitedDemand.Text); }
         public ProductPresnter Presenter { private get; set; }
+        public List<SubCategoryDto> SubCategories { get; set; }
 
+        // Handle Picture Uplode
         private void btnUploadPicture_Click(object sender, EventArgs e)
         {
             string ImageName = "";
@@ -71,6 +80,33 @@ namespace ElbayaNPresentation.Views.Store.Product
             }
             ImageUrl = Path.Combine(System.IO.Path.GetFullPath(@"..\..\"), @"Resources\ProductImage\", Path.GetFileName(ImageName));
             File.Copy(ImageName, ImageUrl);
+        }
+
+        private void PopulatecbxSubcategory()
+        {
+            cbxSubcategory.DataSource = Presenter.FillcbxSubcategory();
+            cbxSubcategory.DisplayMember = "Name";
+            cbxSubcategory.ValueMember = "Id";
+            cbxSubcategory.SelectedValue = "Id";
+        }
+        private void PopulatecbxLargeUnit()
+        {
+            cbxLargeUnit.DataSource = Presenter.FillcbxLargeUnit();
+            cbxLargeUnit.DisplayMember = "Name";
+            cbxLargeUnit.ValueMember = "Id";
+            cbxLargeUnit.SelectedValue = "Id";
+        }
+        private void PopulatecbxSmallUnit() 
+        {
+            cbxSmallUnit.DataSource = Presenter.FillcbxSmallunit();
+            cbxSmallUnit.DisplayMember = "Name";
+            cbxSmallUnit.ValueMember = "Id";
+            cbxSmallUnit.SelectedValue = "Id";
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Presenter.OnCLickbtnAdd();
         }
     }
 }
