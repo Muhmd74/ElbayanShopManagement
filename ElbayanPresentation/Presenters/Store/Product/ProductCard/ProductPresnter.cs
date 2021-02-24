@@ -64,7 +64,6 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
                 //DateTime = _view.ExpireDateTime,
                 ImageUrl = _view.ImageUrl,
                 UCP =_view.UCP,
-                ProductNumber = _view.ProductNumber,
                 PurchaseDefaultPrice = _view.PurchaseDefaultPrice,
                 SaleDefaultPrice = _view.SaleDefaultPrice,
                 WholesalePrice = _view.WholesalePrice,

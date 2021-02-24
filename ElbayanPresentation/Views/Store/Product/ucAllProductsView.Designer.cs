@@ -45,6 +45,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.btnDeleteByOne = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvTabContainer.SuspendLayout();
             this.tpActiveLargeUnits.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllProduct)).BeginInit();
@@ -101,7 +102,8 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dgvAllProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAllProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAllProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ProductName});
+            this.ProductName,
+            this.ProductNumber});
             this.dgvAllProduct.Location = new System.Drawing.Point(3, 3);
             this.dgvAllProduct.Name = "dgvAllProduct";
             this.dgvAllProduct.ReadOnly = true;
@@ -276,6 +278,15 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.ProductName.ReadOnly = true;
             this.ProductName.Width = 117;
             // 
+            // ProductNumber
+            // 
+            this.ProductNumber.DataPropertyName = "ProductNumber";
+            this.ProductNumber.HeaderText = "رقم المنتج";
+            this.ProductNumber.MinimumWidth = 6;
+            this.ProductNumber.Name = "ProductNumber";
+            this.ProductNumber.ReadOnly = true;
+            this.ProductNumber.Width = 111;
+            // 
             // ucAllProductsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -310,5 +321,6 @@ namespace ElbayaNPresentation.Views.Store.Product
         private Guna.UI2.WinForms.Guna2Button btnUpdate;
         private Guna.UI2.WinForms.Guna2Button btnDeleteByOne;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductNumber;
     }
 }

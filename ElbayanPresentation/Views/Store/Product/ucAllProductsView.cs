@@ -59,6 +59,7 @@ namespace ElbayaNPresentation.Views.Store.Product
         {
             // string productName = dgvAllProduct.CurrentRow.Cells["ProductName"].Value.ToString();
             ucNewProductCard.Instance.txtName.Text = dgvAllProduct.CurrentRow.Cells["ProductName"].Value.ToString();
+            ucNewProductCard.Instance.txtPSNNumber.Text = dgvAllProduct.CurrentRow.Cells["ProductNumber"].Value.ToString();
         }
     }
 }

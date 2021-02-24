@@ -54,7 +54,6 @@ namespace ElbayaNPresentation.Views.Store.Product
         public bool IsUnitSale { get; set; }
         public Guid SubCategoryId { get => new Guid(cbxSubcategory.SelectedValue.ToString()); set => cbxSubcategory.SelectedValue = value; }
         public SubCategoryDto SubCategory { get; set; }
-        public long ProductNumber { get => long.Parse(txtPSNNumber.Text); set => value = long.Parse(txtPSNNumber.Text); }
         public bool IsExpired { get => rbIsExpiredProduct.Checked; set => rbIsExpiredProduct.Checked = value; }
         public DateTime ExpireDateTime { get => dtpExpireDate.Value; set => dtpExpireDate.Value = value; }
         public Guid LargeUnitId { get => new Guid (cbxLargeUnit.SelectedValue.ToString()); set => cbxLargeUnit.SelectedValue = value; }
@@ -116,16 +115,30 @@ namespace ElbayaNPresentation.Views.Store.Product
             {
                 if (cbxSubcategory.SelectedItem != null)
                 {
-                    if(txtLimitedDemand.Text == string.Empty)
+                    if(txtLimitedDemand.Text.Trim() == string.Empty)
                     {
-
+                        txtLimitedDemand.Text = "0";
                     }
-                    if (txtLimitedDemand.Text == string.Empty)
+                    if (txtCBCNumber.Text.Trim() == string.Empty)
                     {
+                        txtCBCNumber.Text = "0";
+                    }
+                    if (txtUCPNumber.Text.Trim() == string.Empty)
+                    {
+                        txtUCPNumber.Text = "0";
+                    }
+                    if (txtPSNNumber.Text.Trim() == string.Empty)
+                    {
+                        txtPSNNumber.Text = "0";
+                    }
+                    if(cbxSmallUnit.SelectedItem == null)
+                    {
+                        MessageBox.Show("يجب اختيار الوحدة الكبرى للمنتج", "تأكيد", MessageBoxButtons.OK);
                         return;
                     }
-                    if (txtLimitedDemand.Text == string.Empty)
+                    if (cbxLargeUnit.SelectedItem == null)
                     {
+                        MessageBox.Show("يجب اختيار الوحدة الصغرى للمنتج", "تأكيد", MessageBoxButtons.OK);
                         return;
                     }
                     if (rbSmallUnitIsMainUnit.Checked)
@@ -160,31 +173,32 @@ namespace ElbayaNPresentation.Views.Store.Product
             ucAllProductsView.Instance.BringToFront();
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+       
+      
+        // Validate text box for only numbers
+        private void txtLimitedDemand_KeyPress(object sender, KeyPressEventArgs e)
         {
-            txtPSNNumber.Text = Presenter.GenerateProductNumber().ToString();
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
-        private void txtLimitedDemand_Validating(object sender, CancelEventArgs e)
+        private void txtUCPNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
-            ValidateNumverictxt(txtLimitedDemand);
-        }
-        private bool ValidateNumverictxt(Guna2TextBox textBox)
-        {
-            bool isValidated = true;
-            //KeyPressEventArgs e = new KeyPressEventArgs();
-            //if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            //{
-            //    e.Handled = true;
-            //}
-            if (textBox.Text == "")
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                errorProvider.SetError(textBox, "Please enter your Name");
-                isValidated = false;
+                e.Handled = true;
             }
-            else
-                errorProvider.SetError(textBox, "");
-            return isValidated;
         }
+
+        private void txtCBCNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
     }
 }

@@ -19,12 +19,10 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
         decimal PurchaseDefaultPrice { get; set; }
         decimal SaleDefaultPrice { get; set; }
         decimal WholesalePrice { get; set; }
-        bool IsUnitSale { get; set; }//true ? LargeSale : SmallSale
+        bool IsUnitSale { get; set; } //true ? LargeSale : SmallSale
         Guid SubCategoryId { get; set; }
         SubCategoryDto SubCategory { get; set; }
         List<SubCategoryDto> SubCategories { get; set; }
-        long ProductNumber { get; set; }
-
         bool IsExpired { get; set; }
         DateTime ExpireDateTime { get; set; }
 

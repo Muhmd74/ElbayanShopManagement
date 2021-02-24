@@ -34,7 +34,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -159,7 +158,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.LightGray;
             this.guna2GroupBox1.BorderRadius = 9;
-            this.guna2GroupBox1.Controls.Add(this.guna2Button1);
             this.guna2GroupBox1.Controls.Add(this.label18);
             this.guna2GroupBox1.Controls.Add(this.label17);
             this.guna2GroupBox1.Controls.Add(this.label16);
@@ -180,26 +178,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox1.TabIndex = 20;
             this.guna2GroupBox1.Text = "بيانات ارقام المنتج";
             this.guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button1.BorderColor = System.Drawing.Color.DimGray;
-            this.guna2Button1.BorderRadius = 21;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.SystemColors.HotTrack;
-            this.guna2Button1.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.Location = new System.Drawing.Point(3, 169);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(50, 42);
-            this.guna2Button1.TabIndex = 32;
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // label18
             // 
@@ -246,11 +224,12 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.txtPSNNumber.BorderThickness = 2;
             this.txtPSNNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPSNNumber.DefaultText = "";
-            this.txtPSNNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPSNNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtPSNNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtPSNNumber.DisabledState.BorderColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtPSNNumber.DisabledState.FillColor = System.Drawing.Color.Gainsboro;
+            this.txtPSNNumber.DisabledState.ForeColor = System.Drawing.Color.Gray;
             this.txtPSNNumber.DisabledState.Parent = this.txtPSNNumber;
-            this.txtPSNNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPSNNumber.DisabledState.PlaceholderForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtPSNNumber.Enabled = false;
             this.txtPSNNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPSNNumber.FocusedState.Parent = this.txtPSNNumber;
             this.txtPSNNumber.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -950,7 +929,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.txtLimitedDemand.Size = new System.Drawing.Size(337, 44);
             this.txtLimitedDemand.TabIndex = 8;
             this.txtLimitedDemand.TextOffset = new System.Drawing.Point(7, 0);
-            this.txtLimitedDemand.Validating += new System.ComponentModel.CancelEventHandler(this.txtLimitedDemand_Validating);
             // 
             // txtName
             // 
@@ -1078,7 +1056,6 @@ namespace ElbayaNPresentation.Views.Store.Product
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
-        private Guna.UI2.WinForms.Guna2TextBox txtPSNNumber;
         private System.Windows.Forms.Label label15;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
         private System.Windows.Forms.Label label22;
@@ -1120,8 +1097,8 @@ namespace ElbayaNPresentation.Views.Store.Product
         private System.Windows.Forms.NumericUpDown nudDefaultPurchasePrice;
         private Guna.UI2.WinForms.Guna2Button btnUploadPicture;
         private System.Windows.Forms.GroupBox groupBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.ErrorProvider errorProvider;
         public Guna.UI2.WinForms.Guna2TextBox txtName;
+        public Guna.UI2.WinForms.Guna2TextBox txtPSNNumber;
     }
 }
