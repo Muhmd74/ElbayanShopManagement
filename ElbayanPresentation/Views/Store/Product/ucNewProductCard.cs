@@ -22,6 +22,8 @@ namespace ElbayaNPresentation.Views.Store.Product
         {
             InitializeComponent();
             Presenter = new ProductPresnter(this);
+            
+            _instance = this;
 
             PopulatecbxSubcategory();
             PopulatecbxLargeUnit();
@@ -109,36 +111,41 @@ namespace ElbayaNPresentation.Views.Store.Product
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Presenter.OnCLickbtnAdd();
+            if(txtName.Text != string.Empty)
+            {
+                if (cbxSubcategory.SelectedItem != null)
+                {
+                    if (rbSmallUnitIsMainUnit.Checked)
+                    {
+                        IsUnitSale = false;
+                    }
+                    Presenter.OnCLickbtnAdd();
+                }
+                else
+                {
+                    MessageBox.Show("يجب اختيار التصنيف الفرعي للمنتج", "تأكيد", MessageBoxButtons.OK);
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("يجب أدخل اسم المنتج", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
+
+            // Navigate to AllProuductView:
+            if (!frmMainBoard.Instance.gcContainer.Contains(ucAllProductsView.Instance))
+            {
+                frmMainBoard.Instance.Controls.Add(ucAllProductsView.Instance);
+                ucAllProductsView.Instance.Dock = DockStyle.Fill;
+                ucAllProductsView.Instance.BringToFront();
+            }
+            ucAllProductsView.Instance.BringToFront();
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             txtPSNNumber.Text = Presenter.GenerateProductNumber().ToString();
-        }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-            //if (MessageBox.Show("هل تريد إضافة منتجات إخرى", "تأكيد", MessageBoxButtons.YesNo) != DialogResult.Yes)
-            //{
-            //frmMainBoard.Instance.gcContainer.Controls.Clear();
-
-            AllProductsView allProductsView = new AllProductsView();
-            if (!frmMainBoard.Instance.gcContainer.Controls.Contains(allProductsView))
-            {
-                allProductsView.Dock = DockStyle.Fill;
-                allProductsView.BringToFront();
-                allProductsView.Focus();
-                frmMainBoard.Instance.gcContainer.Controls.Add(allProductsView);
-
-            }
-            AllProductsView.Instance.BringToFront();
-            //}
-            //else   
-            //{
-            //    return ;
-            //}
-
         }
     }
 }

@@ -33,6 +33,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -83,8 +84,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDiscountPercent)).BeginInit();
@@ -178,6 +177,26 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox1.TabIndex = 20;
             this.guna2GroupBox1.Text = "بيانات ارقام المنتج";
             this.guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Button1.BorderColor = System.Drawing.Color.DimGray;
+            this.guna2Button1.BorderRadius = 21;
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.FillColor = System.Drawing.SystemColors.HotTrack;
+            this.guna2Button1.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
+            this.guna2Button1.Location = new System.Drawing.Point(3, 169);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(50, 42);
+            this.guna2Button1.TabIndex = 32;
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // label18
             // 
@@ -351,7 +370,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox2.Controls.Add(this.nudDiscountPercent);
             this.guna2GroupBox2.Controls.Add(this.nudVATPercent);
             this.guna2GroupBox2.Controls.Add(this.nudDefaultWholesalePrice);
-            this.guna2GroupBox2.Controls.Add(this.guna2Button2);
             this.guna2GroupBox2.Controls.Add(this.nudDefaultSalePrice);
             this.guna2GroupBox2.Controls.Add(this.nudDefaultPurchasePrice);
             this.guna2GroupBox2.Controls.Add(this.label22);
@@ -380,6 +398,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             // 
             // nudDiscountPercent
             // 
+            this.nudDiscountPercent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudDiscountPercent.Location = new System.Drawing.Point(85, 323);
             this.nudDiscountPercent.Name = "nudDiscountPercent";
             this.nudDiscountPercent.Size = new System.Drawing.Size(150, 49);
@@ -388,6 +407,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             // 
             // nudVATPercent
             // 
+            this.nudVATPercent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudVATPercent.Location = new System.Drawing.Point(84, 264);
             this.nudVATPercent.Name = "nudVATPercent";
             this.nudVATPercent.Size = new System.Drawing.Size(150, 49);
@@ -1005,45 +1025,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label1.TabIndex = 6;
             this.label1.Text = "اسم الصنف";
             // 
-            // guna2Button1
-            // 
-            this.guna2Button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button1.BorderColor = System.Drawing.Color.DimGray;
-            this.guna2Button1.BorderRadius = 21;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.SystemColors.HotTrack;
-            this.guna2Button1.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.Location = new System.Drawing.Point(3, 169);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(50, 42);
-            this.guna2Button1.TabIndex = 32;
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button2.BorderRadius = 11;
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(173)))), ((int)(((byte)(78)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(44, 117);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(190, 56);
-            this.guna2Button2.TabIndex = 11;
-            this.guna2Button2.Text = "صورة المنتج";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
-            // 
             // ucNewProductCard
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -1131,6 +1112,5 @@ namespace ElbayaNPresentation.Views.Store.Product
         private Guna.UI2.WinForms.Guna2Button btnUploadPicture;
         private System.Windows.Forms.GroupBox groupBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }

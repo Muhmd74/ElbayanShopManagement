@@ -21,6 +21,7 @@ namespace ElbayaNPresentation.Views.Store.Category
         {
             InitializeComponent();
             Presenter = new SubCategoryPresenter(this);
+            _instance = this;
 
             // Pupulate Main category in combo box
             FillMaincategorycbx();

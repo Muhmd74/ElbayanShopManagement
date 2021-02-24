@@ -1,7 +1,7 @@
 ﻿
 namespace ElbayaNPresentation.Views.Store.Product
 {
-    partial class AllProductsView
+    partial class ucAllProductsView
     {
         /// <summary> 
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace ElbayaNPresentation.Views.Store.Product
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllProductsView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucAllProductsView));
             this.dgvTabContainer = new System.Windows.Forms.TabControl();
             this.tpActiveLargeUnits = new System.Windows.Forms.TabPage();
             this.dgvAllProduct = new System.Windows.Forms.DataGridView();
@@ -108,6 +108,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dgvAllProduct.RowTemplate.Height = 35;
             this.dgvAllProduct.Size = new System.Drawing.Size(1436, 657);
             this.dgvAllProduct.TabIndex = 0;
+            this.dgvAllProduct.DoubleClick += new System.EventHandler(this.dgvAllProduct_DoubleClick);
             // 
             // tpArchieveLargeUnits
             // 
@@ -263,13 +264,13 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.txtSearch.TabIndex = 15;
             this.txtSearch.TextOffset = new System.Drawing.Point(15, 0);
             // 
-            // AllProductsView
+            // ucAllProductsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.dgvTabContainer);
-            this.Name = "AllProductsView";
+            this.Name = "ucAllProductsView";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Size = new System.Drawing.Size(1449, 829);
             this.dgvTabContainer.ResumeLayout(false);

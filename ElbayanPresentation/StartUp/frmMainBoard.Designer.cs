@@ -853,7 +853,6 @@ namespace ElbayaNPresentation
             this.accordionControlElement6,
             this.accordionControlSeparator10,
             this.accordionControlElement7});
-            this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.Height = 59;
             this.accordionControlElement1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement1.ImageOptions.SvgImage")));
             this.accordionControlElement1.Name = "accordionControlElement1";

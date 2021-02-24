@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using ElbayaNPresentation.Presenters.Store.Product.AllProduct;
+using ElbayaNPresentation.Presenters.Store.Product.ProductCard;
 using ElbayanServices.Repository.Products.Product.Dtos;
 using System;
 using System.Collections.Generic;
@@ -13,21 +14,22 @@ using System.Windows.Forms;
 
 namespace ElbayaNPresentation.Views.Store.Product
 {
-    public partial class AllProductsView : DevExpress.XtraEditors.XtraUserControl, IViewAllProduct
+    public partial class ucAllProductsView : DevExpress.XtraEditors.XtraUserControl, IViewAllProduct
     {
-        public AllProductsView()
+        public ucAllProductsView()
         {
             InitializeComponent();
+            _instance = this;
             Presenter = new AllProductPresenter(this);
             PopulatedgvAllProduct();
         }
-        private static AllProductsView _instance;
-        public static AllProductsView Instance
+        private static ucAllProductsView _instance;
+        public static ucAllProductsView Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new AllProductsView();
+                    _instance = new ucAllProductsView();
                 return _instance;
             }
         }
@@ -40,5 +42,18 @@ namespace ElbayaNPresentation.Views.Store.Product
         {
             dgvAllProduct.DataSource = Presenter.PopulatedgvAllproduct();
         }
+
+        private void dgvAllProduct_DoubleClick(object sender, EventArgs e)
+        {
+            if (!frmMainBoard.Instance.gcContainer.Contains(ucNewProductCard.Instance))
+            {
+                frmMainBoard.Instance.gcContainer.Controls.Add(ucNewProductCard.Instance);
+                ucNewProductCard.Instance.Dock = DockStyle.Fill;
+                ucNewProductCard.Instance.BringToFront();
+            }
+            ucNewProductCard.Instance.BringToFront();
+        }
+
+        private readonly IViewProdct _viewProdct;
     }
 }

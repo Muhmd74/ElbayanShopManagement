@@ -34,6 +34,7 @@ namespace ElbayaNPresentation
         public frmMainBoard()
         {
             InitializeComponent();
+            _instance = this;
 
             // Hanle Full screen Issues 
             System.Drawing.Rectangle rect = Screen.GetWorkingArea(this);
@@ -126,13 +127,13 @@ namespace ElbayaNPresentation
 
         private void barButtonItem2_ItemClick_1(object sender, ItemClickEventArgs e)
         {
-            if (!gcContainer.Controls.Contains(AllProductsView.Instance))
+            if (!gcContainer.Controls.Contains(ucAllProductsView.Instance))
             {
-                gcContainer.Controls.Add(AllProductsView.Instance);
-                AllProductsView.Instance.Dock = DockStyle.Fill;
-                AllProductsView.Instance.BringToFront();
+                gcContainer.Controls.Add(ucAllProductsView.Instance);
+                ucAllProductsView.Instance.Dock = DockStyle.Fill;
+                ucAllProductsView.Instance.BringToFront();
             }
-            AllProductsView.Instance.BringToFront();
+            ucAllProductsView.Instance.BringToFront();
         }
     }
 }
