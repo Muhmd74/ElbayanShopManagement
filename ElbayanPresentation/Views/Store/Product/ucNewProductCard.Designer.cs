@@ -29,6 +29,7 @@ namespace ElbayaNPresentation.Views.Store.Product
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucNewProductCard));
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
@@ -84,6 +85,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDiscountPercent)).BeginInit();
@@ -94,6 +96,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2TextBox1
@@ -659,6 +662,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             // rbLargeUnitIsmainUnit
             // 
             this.rbLargeUnitIsmainUnit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbLargeUnitIsmainUnit.Checked = true;
             this.rbLargeUnitIsmainUnit.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.rbLargeUnitIsmainUnit.CheckedState.BorderThickness = 0;
             this.rbLargeUnitIsmainUnit.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -946,6 +950,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.txtLimitedDemand.Size = new System.Drawing.Size(337, 44);
             this.txtLimitedDemand.TabIndex = 8;
             this.txtLimitedDemand.TextOffset = new System.Drawing.Point(7, 0);
+            this.txtLimitedDemand.Validating += new System.ComponentModel.CancelEventHandler(this.txtLimitedDemand_Validating);
             // 
             // txtName
             // 
@@ -1025,6 +1030,10 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label1.TabIndex = 6;
             this.label1.Text = "اسم الصنف";
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // ucNewProductCard
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -1053,6 +1062,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1094,7 +1104,6 @@ namespace ElbayaNPresentation.Views.Store.Product
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2TextBox txtDescription;
-        private Guna.UI2.WinForms.Guna2TextBox txtName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txtLimitedDemand;
@@ -1112,5 +1121,7 @@ namespace ElbayaNPresentation.Views.Store.Product
         private Guna.UI2.WinForms.Guna2Button btnUploadPicture;
         private System.Windows.Forms.GroupBox groupBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private System.Windows.Forms.ErrorProvider errorProvider;
+        public Guna.UI2.WinForms.Guna2TextBox txtName;
     }
 }

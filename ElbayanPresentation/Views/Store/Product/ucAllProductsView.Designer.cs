@@ -44,6 +44,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnDeleteByOne = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvTabContainer.SuspendLayout();
             this.tpActiveLargeUnits.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllProduct)).BeginInit();
@@ -99,6 +100,8 @@ namespace ElbayaNPresentation.Views.Store.Product
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvAllProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAllProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAllProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProductName});
             this.dgvAllProduct.Location = new System.Drawing.Point(3, 3);
             this.dgvAllProduct.Name = "dgvAllProduct";
             this.dgvAllProduct.ReadOnly = true;
@@ -264,6 +267,15 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.txtSearch.TabIndex = 15;
             this.txtSearch.TextOffset = new System.Drawing.Point(15, 0);
             // 
+            // ProductName
+            // 
+            this.ProductName.DataPropertyName = "Name";
+            this.ProductName.HeaderText = "اسم المنتج";
+            this.ProductName.MinimumWidth = 6;
+            this.ProductName.Name = "ProductName";
+            this.ProductName.ReadOnly = true;
+            this.ProductName.Width = 117;
+            // 
             // ucAllProductsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -297,5 +309,6 @@ namespace ElbayaNPresentation.Views.Store.Product
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2Button btnUpdate;
         private Guna.UI2.WinForms.Guna2Button btnDeleteByOne;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
     }
 }

@@ -3,6 +3,7 @@ using ElbayaNPresentation.Presenters.Store.Product.ProductCard;
 using ElbayanServices.Repository.Products.SubCategory.Dtos;
 using ElbayanServices.Repository.Products.Units.LargeUnit.Dtos;
 using ElbayanServices.Repository.Products.Units.SmallUnit.Dtos;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -115,11 +116,27 @@ namespace ElbayaNPresentation.Views.Store.Product
             {
                 if (cbxSubcategory.SelectedItem != null)
                 {
+                    if(txtLimitedDemand.Text == string.Empty)
+                    {
+
+                    }
+                    if (txtLimitedDemand.Text == string.Empty)
+                    {
+                        return;
+                    }
+                    if (txtLimitedDemand.Text == string.Empty)
+                    {
+                        return;
+                    }
                     if (rbSmallUnitIsMainUnit.Checked)
                     {
                         IsUnitSale = false;
+                        Presenter.OnCLickbtnAdd();
                     }
-                    Presenter.OnCLickbtnAdd();
+                    else
+                    {
+                        Presenter.OnCLickbtnAdd();
+                    }
                 }
                 else
                 {
@@ -146,6 +163,28 @@ namespace ElbayaNPresentation.Views.Store.Product
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             txtPSNNumber.Text = Presenter.GenerateProductNumber().ToString();
+        }
+
+        private void txtLimitedDemand_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateNumverictxt(txtLimitedDemand);
+        }
+        private bool ValidateNumverictxt(Guna2TextBox textBox)
+        {
+            bool isValidated = true;
+            //KeyPressEventArgs e = new KeyPressEventArgs();
+            //if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            //{
+            //    e.Handled = true;
+            //}
+            if (textBox.Text == "")
+            {
+                errorProvider.SetError(textBox, "Please enter your Name");
+                isValidated = false;
+            }
+            else
+                errorProvider.SetError(textBox, "");
+            return isValidated;
         }
     }
 }

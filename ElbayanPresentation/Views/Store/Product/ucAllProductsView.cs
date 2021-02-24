@@ -50,10 +50,15 @@ namespace ElbayaNPresentation.Views.Store.Product
                 frmMainBoard.Instance.gcContainer.Controls.Add(ucNewProductCard.Instance);
                 ucNewProductCard.Instance.Dock = DockStyle.Fill;
                 ucNewProductCard.Instance.BringToFront();
+                PopulateucNewProuct();
             }
             ucNewProductCard.Instance.BringToFront();
         }
 
-        private readonly IViewProdct _viewProdct;
+        private void PopulateucNewProuct()
+        {
+            // string productName = dgvAllProduct.CurrentRow.Cells["ProductName"].Value.ToString();
+            ucNewProductCard.Instance.txtName.Text = dgvAllProduct.CurrentRow.Cells["ProductName"].Value.ToString();
+        }
     }
 }
