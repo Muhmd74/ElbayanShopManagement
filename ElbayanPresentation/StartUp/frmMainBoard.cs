@@ -14,15 +14,27 @@ using ElbayaNPresentation.Views.Store.Category;
 using ElbayaNPresentation.Views.Store.Units;
 using ElbayaNPresentation.Views.Store.Unit;
 using ElbayaNPresentation.Views.Store.Product;
+using DevExpress.XtraEditors;
 
 namespace ElbayaNPresentation
 {
     public partial class frmMainBoard : DevExpress.XtraEditors.XtraForm
     {
+        private static frmMainBoard _instance;
+
+        public static frmMainBoard Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new frmMainBoard();
+                return _instance;
+            }
+        }
         public frmMainBoard()
         {
             InitializeComponent();
-            
+
             // Hanle Full screen Issues 
             System.Drawing.Rectangle rect = Screen.GetWorkingArea(this);
             this.MaximizedBounds = Screen.GetWorkingArea(this);

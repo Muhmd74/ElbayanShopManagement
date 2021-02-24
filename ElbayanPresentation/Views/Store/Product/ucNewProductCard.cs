@@ -77,6 +77,11 @@ namespace ElbayaNPresentation.Views.Store.Product
                 pbProductImage.Image = new Bitmap(image.FileName);
             }
             ImageUrl = Path.Combine(System.IO.Path.GetFullPath(@"..\..\"), @"Resources\ProductImage\", Path.GetFileName(ImageName));
+            if (File.Exists(ImageUrl))
+            {
+                File.Delete(ImageUrl);
+            }
+            //File.Move(@"c:\test\SomeFile.txt", @"c:\test\Test\SomeFile.txt");
             File.Copy(ImageName, ImageUrl);
         }
 
@@ -110,6 +115,30 @@ namespace ElbayaNPresentation.Views.Store.Product
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             txtPSNNumber.Text = Presenter.GenerateProductNumber().ToString();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            //if (MessageBox.Show("هل تريد إضافة منتجات إخرى", "تأكيد", MessageBoxButtons.YesNo) != DialogResult.Yes)
+            //{
+            //frmMainBoard.Instance.gcContainer.Controls.Clear();
+
+            AllProductsView allProductsView = new AllProductsView();
+            if (!frmMainBoard.Instance.gcContainer.Controls.Contains(allProductsView))
+            {
+                allProductsView.Dock = DockStyle.Fill;
+                allProductsView.BringToFront();
+                allProductsView.Focus();
+                frmMainBoard.Instance.gcContainer.Controls.Add(allProductsView);
+
+            }
+            AllProductsView.Instance.BringToFront();
+            //}
+            //else   
+            //{
+            //    return ;
+            //}
+
         }
     }
 }

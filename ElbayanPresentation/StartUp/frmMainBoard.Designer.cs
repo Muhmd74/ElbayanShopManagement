@@ -96,7 +96,6 @@ namespace ElbayaNPresentation
             this.accordionControlElement20 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator11 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlSeparator12 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
-            this.gcContainer = new DevExpress.XtraEditors.GroupControl();
             this.tabFormContentContainer1 = new DevExpress.XtraBars.TabFormContentContainer();
             this.tabFormPage1 = new DevExpress.XtraBars.TabFormPage();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
@@ -104,9 +103,9 @@ namespace ElbayaNPresentation
             this.btnMinimize = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.gcContainer = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcContainer)).BeginInit();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1046,16 +1045,6 @@ namespace ElbayaNPresentation
             // 
             this.accordionControlSeparator12.Name = "accordionControlSeparator12";
             // 
-            // gcContainer
-            // 
-            this.gcContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcContainer.GroupStyle = DevExpress.Utils.GroupStyle.Title;
-            this.gcContainer.Location = new System.Drawing.Point(376, 191);
-            this.gcContainer.Name = "gcContainer";
-            this.gcContainer.ShowCaption = false;
-            this.gcContainer.Size = new System.Drawing.Size(1390, 843);
-            this.gcContainer.TabIndex = 5;
-            // 
             // tabFormContentContainer1
             // 
             this.tabFormContentContainer1.Location = new System.Drawing.Point(0, 0);
@@ -1142,20 +1131,29 @@ namespace ElbayaNPresentation
             // 
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             // 
+            // gcContainer
+            // 
+            this.gcContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcContainer.Location = new System.Drawing.Point(376, 191);
+            this.gcContainer.Name = "gcContainer";
+            this.gcContainer.Size = new System.Drawing.Size(1390, 843);
+            this.gcContainer.TabIndex = 13;
+            // 
             // frmMainBoard
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1766, 1062);
-            this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Controls.Add(this.gcContainer);
+            this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Controls.Add(this.accordionControl1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.tabFormContentContainer1);
             this.Controls.Add(this.ribbon);
             this.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -1166,7 +1164,6 @@ namespace ElbayaNPresentation
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcContainer)).EndInit();
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -1224,7 +1221,6 @@ namespace ElbayaNPresentation
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraEditors.GroupControl gcContainer;
         private DevExpress.XtraBars.TabFormPage tabFormPage1;
         private DevExpress.XtraBars.TabFormContentContainer tabFormContentContainer1;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator12;
@@ -1249,5 +1245,6 @@ namespace ElbayaNPresentation
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        public System.Windows.Forms.Panel gcContainer;
     }
 }

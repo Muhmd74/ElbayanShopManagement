@@ -350,7 +350,7 @@ namespace ElbayanServices.Repository.Products.Product
         {
             while (true)
             {
-                var number = new Random().NextLong(1, long.MaxValue);
+                var number = new Random().NextLong(1, 1000000);
                 if (!_context.Products.Any(d => d.ProductNumber == number))
                 {
                     return number;
