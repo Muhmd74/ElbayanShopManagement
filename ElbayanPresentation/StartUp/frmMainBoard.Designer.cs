@@ -104,9 +104,11 @@ namespace ElbayaNPresentation
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.gcContainer = new System.Windows.Forms.Panel();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             this.guna2CustomGradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonStatusBar
@@ -123,7 +125,7 @@ namespace ElbayaNPresentation
             this.ribbon.ExpandCollapseItem.AllowDrawArrowInMenu = false;
             this.ribbon.ExpandCollapseItem.Id = 0;
             this.ribbon.ExpandCollapseItem.VisibleInSearchMenu = false;
-            this.ribbon.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ribbon.Font = new System.Drawing.Font("Arabic Typesetting", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
             this.ribbon.SearchEditItem,
@@ -144,26 +146,28 @@ namespace ElbayaNPresentation
             this.rpProductSetting,
             this.ribbonPage2});
             this.ribbon.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbon.Size = new System.Drawing.Size(1766, 191);
+            this.ribbon.Size = new System.Drawing.Size(1766, 185);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // bbiMaincategory
             // 
             this.bbiMaincategory.Caption = "التصنيفات الرئيسية";
             this.bbiMaincategory.Id = 3;
-            this.bbiMaincategory.ImageOptions.Image = global::ElbayaNPresentation.Properties.Resources.formatastable_16x16;
-            this.bbiMaincategory.ImageOptions.LargeImage = global::ElbayaNPresentation.Properties.Resources.formatastable_32x32;
-            this.bbiMaincategory.ItemAppearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbiMaincategory.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiMaincategory.ImageOptions.Image")));
+            this.bbiMaincategory.ItemAppearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bbiMaincategory.ItemAppearance.Disabled.Options.UseFont = true;
-            this.bbiMaincategory.ItemAppearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 11.2F, System.Drawing.FontStyle.Bold);
+            this.bbiMaincategory.ItemAppearance.Disabled.Options.UseTextOptions = true;
+            this.bbiMaincategory.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.bbiMaincategory.ItemAppearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 11.8F, System.Drawing.FontStyle.Bold);
             this.bbiMaincategory.ItemAppearance.Hovered.Options.UseFont = true;
             this.bbiMaincategory.ItemAppearance.Hovered.Options.UseTextOptions = true;
+            this.bbiMaincategory.ItemAppearance.Hovered.TextOptions.Trimming = DevExpress.Utils.Trimming.None;
             this.bbiMaincategory.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.bbiMaincategory.ItemAppearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.bbiMaincategory.ItemAppearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.bbiMaincategory.ItemAppearance.Normal.Options.UseFont = true;
             this.bbiMaincategory.ItemAppearance.Normal.Options.UseTextOptions = true;
             this.bbiMaincategory.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.bbiMaincategory.ItemAppearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.bbiMaincategory.ItemAppearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.bbiMaincategory.ItemAppearance.Pressed.Options.UseFont = true;
             this.bbiMaincategory.ItemAppearance.Pressed.Options.UseTextOptions = true;
             this.bbiMaincategory.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
@@ -175,21 +179,20 @@ namespace ElbayaNPresentation
             // 
             this.bbiSubCategory.Caption = "التصنيفات الفرعية";
             this.bbiSubCategory.Id = 4;
-            this.bbiSubCategory.ImageOptions.Image = global::ElbayaNPresentation.Properties.Resources.newtablestyle_16x16;
-            this.bbiSubCategory.ImageOptions.LargeImage = global::ElbayaNPresentation.Properties.Resources.newtablestyle_32x32;
-            this.bbiSubCategory.ItemAppearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.bbiSubCategory.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiSubCategory.ImageOptions.Image")));
+            this.bbiSubCategory.ItemAppearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.bbiSubCategory.ItemAppearance.Disabled.Options.UseFont = true;
             this.bbiSubCategory.ItemAppearance.Disabled.Options.UseTextOptions = true;
             this.bbiSubCategory.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.bbiSubCategory.ItemAppearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 11.2F, System.Drawing.FontStyle.Bold);
+            this.bbiSubCategory.ItemAppearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 11.8F, System.Drawing.FontStyle.Bold);
             this.bbiSubCategory.ItemAppearance.Hovered.Options.UseFont = true;
             this.bbiSubCategory.ItemAppearance.Hovered.Options.UseTextOptions = true;
             this.bbiSubCategory.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.bbiSubCategory.ItemAppearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.bbiSubCategory.ItemAppearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.bbiSubCategory.ItemAppearance.Normal.Options.UseFont = true;
             this.bbiSubCategory.ItemAppearance.Normal.Options.UseTextOptions = true;
             this.bbiSubCategory.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.bbiSubCategory.ItemAppearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.bbiSubCategory.ItemAppearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.bbiSubCategory.ItemAppearance.Pressed.Options.UseFont = true;
             this.bbiSubCategory.ItemAppearance.Pressed.Options.UseTextOptions = true;
             this.bbiSubCategory.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
@@ -201,46 +204,45 @@ namespace ElbayaNPresentation
             // 
             this.bbiLatgeUnit.Caption = "الوحدات الكبرى";
             this.bbiLatgeUnit.Id = 5;
-            this.bbiLatgeUnit.ImageOptions.Image = global::ElbayaNPresentation.Properties.Resources.bar_16x16;
-            this.bbiLatgeUnit.ImageOptions.LargeImage = global::ElbayaNPresentation.Properties.Resources.bar_32x32;
-            this.bbiLatgeUnit.ItemAppearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.bbiLatgeUnit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiLatgeUnit.ImageOptions.Image")));
+            this.bbiLatgeUnit.ItemAppearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.bbiLatgeUnit.ItemAppearance.Disabled.Options.UseFont = true;
             this.bbiLatgeUnit.ItemAppearance.Disabled.Options.UseTextOptions = true;
             this.bbiLatgeUnit.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.bbiLatgeUnit.ItemAppearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 11.2F, System.Drawing.FontStyle.Bold);
+            this.bbiLatgeUnit.ItemAppearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 11.8F, System.Drawing.FontStyle.Bold);
             this.bbiLatgeUnit.ItemAppearance.Hovered.Options.UseFont = true;
             this.bbiLatgeUnit.ItemAppearance.Hovered.Options.UseTextOptions = true;
             this.bbiLatgeUnit.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.bbiLatgeUnit.ItemAppearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.bbiLatgeUnit.ItemAppearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.bbiLatgeUnit.ItemAppearance.Normal.Options.UseFont = true;
             this.bbiLatgeUnit.ItemAppearance.Normal.Options.UseTextOptions = true;
             this.bbiLatgeUnit.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.bbiLatgeUnit.ItemAppearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.bbiLatgeUnit.ItemAppearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.bbiLatgeUnit.ItemAppearance.Pressed.Options.UseFont = true;
             this.bbiLatgeUnit.ItemAppearance.Pressed.Options.UseTextOptions = true;
             this.bbiLatgeUnit.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.bbiLatgeUnit.Name = "bbiLatgeUnit";
+            this.bbiLatgeUnit.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.bbiLatgeUnit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiLatgeUnit_ItemClick);
             // 
             // barButtonItem5
             // 
             this.barButtonItem5.Caption = "الوحدات الصغرى";
             this.barButtonItem5.Id = 6;
-            this.barButtonItem5.ImageOptions.Image = global::ElbayaNPresentation.Properties.Resources.colorlegend_16x16;
-            this.barButtonItem5.ImageOptions.LargeImage = global::ElbayaNPresentation.Properties.Resources.colorlegend_32x32;
-            this.barButtonItem5.ItemAppearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
+            this.barButtonItem5.ItemAppearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.barButtonItem5.ItemAppearance.Disabled.Options.UseFont = true;
             this.barButtonItem5.ItemAppearance.Disabled.Options.UseTextOptions = true;
             this.barButtonItem5.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem5.ItemAppearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem5.ItemAppearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 11.8F, System.Drawing.FontStyle.Bold);
             this.barButtonItem5.ItemAppearance.Hovered.Options.UseFont = true;
             this.barButtonItem5.ItemAppearance.Hovered.Options.UseTextOptions = true;
             this.barButtonItem5.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem5.ItemAppearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem5.ItemAppearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.barButtonItem5.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem5.ItemAppearance.Normal.Options.UseTextOptions = true;
             this.barButtonItem5.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem5.ItemAppearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem5.ItemAppearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.barButtonItem5.ItemAppearance.Pressed.Options.UseFont = true;
             this.barButtonItem5.ItemAppearance.Pressed.Options.UseTextOptions = true;
             this.barButtonItem5.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
@@ -252,127 +254,127 @@ namespace ElbayaNPresentation
             // 
             this.barButtonItem6.Caption = "العلامات التجارية";
             this.barButtonItem6.Id = 7;
-            this.barButtonItem6.ImageOptions.Image = global::ElbayaNPresentation.Properties.Resources.snaptogglefieldhighlighting_16x16;
-            this.barButtonItem6.ImageOptions.LargeImage = global::ElbayaNPresentation.Properties.Resources.snaptogglefieldhighlighting_32x32;
-            this.barButtonItem6.ItemAppearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
+            this.barButtonItem6.ItemAppearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.barButtonItem6.ItemAppearance.Disabled.Options.UseFont = true;
             this.barButtonItem6.ItemAppearance.Disabled.Options.UseTextOptions = true;
             this.barButtonItem6.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem6.ItemAppearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 11.2F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem6.ItemAppearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 11.8F, System.Drawing.FontStyle.Bold);
             this.barButtonItem6.ItemAppearance.Hovered.Options.UseFont = true;
             this.barButtonItem6.ItemAppearance.Hovered.Options.UseTextOptions = true;
             this.barButtonItem6.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem6.ItemAppearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem6.ItemAppearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.barButtonItem6.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem6.ItemAppearance.Normal.Options.UseTextOptions = true;
             this.barButtonItem6.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem6.ItemAppearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem6.ItemAppearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.barButtonItem6.ItemAppearance.Pressed.Options.UseFont = true;
             this.barButtonItem6.ItemAppearance.Pressed.Options.UseTextOptions = true;
             this.barButtonItem6.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.barButtonItem6.Name = "barButtonItem6";
+            this.barButtonItem6.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
             // barButtonItem9
             // 
             this.barButtonItem9.Caption = "إعدادات الباركود";
             this.barButtonItem9.Id = 12;
-            this.barButtonItem9.ImageOptions.Image = global::ElbayaNPresentation.Properties.Resources.managerules_16x16;
-            this.barButtonItem9.ImageOptions.LargeImage = global::ElbayaNPresentation.Properties.Resources.managerules_32x32;
-            this.barButtonItem9.ItemAppearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem9.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.Image")));
+            this.barButtonItem9.ItemAppearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.barButtonItem9.ItemAppearance.Disabled.Options.UseFont = true;
             this.barButtonItem9.ItemAppearance.Disabled.Options.UseTextOptions = true;
             this.barButtonItem9.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem9.ItemAppearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 11.2F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem9.ItemAppearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 11.8F, System.Drawing.FontStyle.Bold);
             this.barButtonItem9.ItemAppearance.Hovered.Options.UseFont = true;
             this.barButtonItem9.ItemAppearance.Hovered.Options.UseTextOptions = true;
             this.barButtonItem9.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem9.ItemAppearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem9.ItemAppearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.barButtonItem9.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem9.ItemAppearance.Normal.Options.UseTextOptions = true;
             this.barButtonItem9.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem9.ItemAppearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem9.ItemAppearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.barButtonItem9.ItemAppearance.Pressed.Options.UseFont = true;
             this.barButtonItem9.ItemAppearance.Pressed.Options.UseTextOptions = true;
             this.barButtonItem9.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.barButtonItem9.Name = "barButtonItem9";
+            this.barButtonItem9.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
             // barButtonItem10
             // 
             this.barButtonItem10.Caption = "طباعة باركود";
             this.barButtonItem10.Id = 13;
-            this.barButtonItem10.ImageOptions.Image = global::ElbayaNPresentation.Properties.Resources.barcode_16x16;
-            this.barButtonItem10.ImageOptions.LargeImage = global::ElbayaNPresentation.Properties.Resources.barcode_32x32;
-            this.barButtonItem10.ItemAppearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem10.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.Image")));
+            this.barButtonItem10.ItemAppearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.barButtonItem10.ItemAppearance.Disabled.Options.UseFont = true;
             this.barButtonItem10.ItemAppearance.Disabled.Options.UseTextOptions = true;
             this.barButtonItem10.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem10.ItemAppearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 11.2F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem10.ItemAppearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 11.8F, System.Drawing.FontStyle.Bold);
             this.barButtonItem10.ItemAppearance.Hovered.Options.UseFont = true;
             this.barButtonItem10.ItemAppearance.Hovered.Options.UseTextOptions = true;
             this.barButtonItem10.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem10.ItemAppearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem10.ItemAppearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.barButtonItem10.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem10.ItemAppearance.Normal.Options.UseTextOptions = true;
             this.barButtonItem10.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem10.ItemAppearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem10.ItemAppearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.barButtonItem10.ItemAppearance.Pressed.Options.UseFont = true;
             this.barButtonItem10.ItemAppearance.Pressed.Options.UseTextOptions = true;
             this.barButtonItem10.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.barButtonItem10.Name = "barButtonItem10";
+            this.barButtonItem10.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
             // barButtonItem1
             // 
             this.barButtonItem1.Caption = "صنف جديد";
             this.barButtonItem1.Id = 15;
-            this.barButtonItem1.ImageOptions.Image = global::ElbayaNPresentation.Properties.Resources.addchartpane_16x16;
-            this.barButtonItem1.ImageOptions.LargeImage = global::ElbayaNPresentation.Properties.Resources.addchartpane_32x32;
-            this.barButtonItem1.ItemAppearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ItemAppearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.barButtonItem1.ItemAppearance.Disabled.Options.UseFont = true;
             this.barButtonItem1.ItemAppearance.Disabled.Options.UseTextOptions = true;
             this.barButtonItem1.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem1.ItemAppearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem1.ItemAppearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 11.8F, System.Drawing.FontStyle.Bold);
             this.barButtonItem1.ItemAppearance.Hovered.Options.UseFont = true;
             this.barButtonItem1.ItemAppearance.Hovered.Options.UseTextOptions = true;
             this.barButtonItem1.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem1.ItemAppearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem1.ItemAppearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.barButtonItem1.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem1.ItemAppearance.Normal.Options.UseTextOptions = true;
             this.barButtonItem1.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem1.ItemAppearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem1.ItemAppearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.barButtonItem1.ItemAppearance.Pressed.Options.UseFont = true;
             this.barButtonItem1.ItemAppearance.Pressed.Options.UseTextOptions = true;
             this.barButtonItem1.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // barButtonItem2
             // 
             this.barButtonItem2.Caption = "قائمة الأصناف";
             this.barButtonItem2.Id = 17;
-            this.barButtonItem2.ImageOptions.Image = global::ElbayaNPresentation.Properties.Resources.boreport_16x16;
-            this.barButtonItem2.ImageOptions.LargeImage = global::ElbayaNPresentation.Properties.Resources.boreport_32x32;
-            this.barButtonItem2.ItemAppearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.ItemAppearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.barButtonItem2.ItemAppearance.Disabled.Options.UseFont = true;
             this.barButtonItem2.ItemAppearance.Disabled.Options.UseTextOptions = true;
             this.barButtonItem2.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem2.ItemAppearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem2.ItemAppearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 11.8F, System.Drawing.FontStyle.Bold);
             this.barButtonItem2.ItemAppearance.Hovered.Options.UseFont = true;
             this.barButtonItem2.ItemAppearance.Hovered.Options.UseTextOptions = true;
             this.barButtonItem2.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem2.ItemAppearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem2.ItemAppearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.barButtonItem2.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem2.ItemAppearance.Normal.Options.UseTextOptions = true;
             this.barButtonItem2.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem2.ItemAppearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem2.ItemAppearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.barButtonItem2.ItemAppearance.Pressed.Options.UseFont = true;
             this.barButtonItem2.ItemAppearance.Pressed.Options.UseTextOptions = true;
             this.barButtonItem2.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick_1);
             // 
             // rpProductSetting
             // 
-            this.rpProductSetting.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rpProductSetting.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rpProductSetting.Appearance.Options.UseFont = true;
             this.rpProductSetting.Appearance.Options.UseTextOptions = true;
             this.rpProductSetting.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
@@ -433,10 +435,10 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement23
             // 
-            this.accordionControlElement23.Appearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement23.Appearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement23.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement23.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement23.Appearance.Pressed.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement23.Appearance.Pressed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement23.Appearance.Pressed.Options.UseBackColor = true;
             this.accordionControlElement23.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement23.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement23.ImageOptions.SvgImage")));
@@ -450,12 +452,12 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement13
             // 
-            this.accordionControlElement13.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement13.Appearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement13.Appearance.Hovered.Options.UseFont = true;
-            this.accordionControlElement13.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement13.Appearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement13.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement13.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement13.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement13.Appearance.Pressed.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement13.Appearance.Pressed.Options.UseBackColor = true;
             this.accordionControlElement13.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement13.Expanded = true;
@@ -470,12 +472,12 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement16
             // 
-            this.accordionControlElement16.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement16.Appearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement16.Appearance.Hovered.Options.UseFont = true;
-            this.accordionControlElement16.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement16.Appearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement16.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement16.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement16.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement16.Appearance.Pressed.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement16.Appearance.Pressed.Options.UseBackColor = true;
             this.accordionControlElement16.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement16.Height = 59;
@@ -489,12 +491,12 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement15
             // 
-            this.accordionControlElement15.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement15.Appearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement15.Appearance.Hovered.Options.UseFont = true;
-            this.accordionControlElement15.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement15.Appearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement15.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement15.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement15.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement15.Appearance.Pressed.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement15.Appearance.Pressed.Options.UseBackColor = true;
             this.accordionControlElement15.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement15.Height = 59;
@@ -508,12 +510,12 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement14
             // 
-            this.accordionControlElement14.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement14.Appearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement14.Appearance.Hovered.Options.UseFont = true;
-            this.accordionControlElement14.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement14.Appearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement14.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement14.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement14.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement14.Appearance.Pressed.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement14.Appearance.Pressed.Options.UseBackColor = true;
             this.accordionControlElement14.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement14.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
@@ -529,11 +531,11 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement22
             // 
-            this.accordionControlElement22.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement22.Appearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement22.Appearance.Hovered.Options.UseFont = true;
-            this.accordionControlElement22.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement22.Appearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement22.Appearance.Normal.Options.UseFont = true;
-            this.accordionControlElement22.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement22.Appearance.Pressed.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement22.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement22.Height = 59;
             this.accordionControlElement22.Name = "accordionControlElement22";
@@ -546,11 +548,11 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement24
             // 
-            this.accordionControlElement24.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement24.Appearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement24.Appearance.Hovered.Options.UseFont = true;
-            this.accordionControlElement24.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement24.Appearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement24.Appearance.Normal.Options.UseFont = true;
-            this.accordionControlElement24.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement24.Appearance.Pressed.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement24.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement24.Height = 59;
             this.accordionControlElement24.Name = "accordionControlElement24";
@@ -563,11 +565,11 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement25
             // 
-            this.accordionControlElement25.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement25.Appearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement25.Appearance.Hovered.Options.UseFont = true;
-            this.accordionControlElement25.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement25.Appearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement25.Appearance.Normal.Options.UseFont = true;
-            this.accordionControlElement25.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement25.Appearance.Pressed.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement25.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement25.Height = 59;
             this.accordionControlElement25.Name = "accordionControlElement25";
@@ -580,11 +582,11 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement12
             // 
-            this.accordionControlElement12.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement12.Appearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement12.Appearance.Hovered.Options.UseFont = true;
-            this.accordionControlElement12.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement12.Appearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement12.Appearance.Normal.Options.UseFont = true;
-            this.accordionControlElement12.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement12.Appearance.Pressed.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement12.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement12.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement17,
@@ -599,12 +601,12 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement17
             // 
-            this.accordionControlElement17.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement17.Appearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement17.Appearance.Hovered.Options.UseFont = true;
-            this.accordionControlElement17.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement17.Appearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement17.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement17.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement17.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement17.Appearance.Pressed.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement17.Appearance.Pressed.Options.UseBackColor = true;
             this.accordionControlElement17.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement17.Expanded = true;
@@ -620,12 +622,12 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement18
             // 
-            this.accordionControlElement18.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement18.Appearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement18.Appearance.Hovered.Options.UseFont = true;
-            this.accordionControlElement18.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement18.Appearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement18.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement18.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement18.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement18.Appearance.Pressed.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement18.Appearance.Pressed.Options.UseBackColor = true;
             this.accordionControlElement18.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement18.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
@@ -641,16 +643,16 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement21
             // 
-            this.accordionControlElement21.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement21.Appearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement21.Appearance.Hovered.Options.UseFont = true;
             this.accordionControlElement21.Appearance.Hovered.Options.UseTextOptions = true;
             this.accordionControlElement21.Appearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.accordionControlElement21.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement21.Appearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement21.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement21.Appearance.Normal.Options.UseTextOptions = true;
             this.accordionControlElement21.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.accordionControlElement21.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement21.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement21.Appearance.Pressed.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement21.Appearance.Pressed.Options.UseBackColor = true;
             this.accordionControlElement21.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement21.Appearance.Pressed.Options.UseTextOptions = true;
@@ -668,15 +670,15 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement4
             // 
-            this.accordionControlElement4.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement4.Appearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement4.Appearance.Hovered.Options.UseFont = true;
             this.accordionControlElement4.Appearance.Hovered.Options.UseTextOptions = true;
             this.accordionControlElement4.Appearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.accordionControlElement4.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement4.Appearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement4.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement4.Appearance.Normal.Options.UseTextOptions = true;
             this.accordionControlElement4.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.accordionControlElement4.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement4.Appearance.Pressed.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement4.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement4.Appearance.Pressed.Options.UseTextOptions = true;
             this.accordionControlElement4.Appearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
@@ -696,12 +698,12 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement19
             // 
-            this.accordionControlElement19.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement19.Appearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement19.Appearance.Hovered.Options.UseFont = true;
-            this.accordionControlElement19.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement19.Appearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement19.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement19.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement19.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement19.Appearance.Pressed.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement19.Appearance.Pressed.Options.UseBackColor = true;
             this.accordionControlElement19.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement19.Height = 59;
@@ -716,15 +718,15 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement3
             // 
-            this.accordionControlElement3.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement3.Appearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement3.Appearance.Hovered.Options.UseFont = true;
             this.accordionControlElement3.Appearance.Hovered.Options.UseTextOptions = true;
             this.accordionControlElement3.Appearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.accordionControlElement3.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElement3.Appearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accordionControlElement3.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement3.Appearance.Normal.Options.UseTextOptions = true;
             this.accordionControlElement3.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.accordionControlElement3.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElement3.Appearance.Pressed.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accordionControlElement3.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement3.Appearance.Pressed.Options.UseTextOptions = true;
             this.accordionControlElement3.Appearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
@@ -743,16 +745,16 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement8
             // 
-            this.accordionControlElement8.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElement8.Appearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accordionControlElement8.Appearance.Hovered.Options.UseFont = true;
             this.accordionControlElement8.Appearance.Hovered.Options.UseTextOptions = true;
             this.accordionControlElement8.Appearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.accordionControlElement8.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement8.Appearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement8.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement8.Appearance.Normal.Options.UseTextOptions = true;
             this.accordionControlElement8.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.accordionControlElement8.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement8.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement8.Appearance.Pressed.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement8.Appearance.Pressed.Options.UseBackColor = true;
             this.accordionControlElement8.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement8.Appearance.Pressed.Options.UseTextOptions = true;
@@ -769,16 +771,16 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement9
             // 
-            this.accordionControlElement9.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement9.Appearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement9.Appearance.Hovered.Options.UseFont = true;
             this.accordionControlElement9.Appearance.Hovered.Options.UseTextOptions = true;
             this.accordionControlElement9.Appearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.accordionControlElement9.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement9.Appearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement9.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement9.Appearance.Normal.Options.UseTextOptions = true;
             this.accordionControlElement9.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.accordionControlElement9.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement9.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement9.Appearance.Pressed.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement9.Appearance.Pressed.Options.UseBackColor = true;
             this.accordionControlElement9.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement9.Appearance.Pressed.Options.UseTextOptions = true;
@@ -795,12 +797,12 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement10
             // 
-            this.accordionControlElement10.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement10.Appearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement10.Appearance.Hovered.Options.UseFont = true;
-            this.accordionControlElement10.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement10.Appearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement10.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement10.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement10.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement10.Appearance.Pressed.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement10.Appearance.Pressed.Options.UseBackColor = true;
             this.accordionControlElement10.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement10.Height = 59;
@@ -815,12 +817,12 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement11
             // 
-            this.accordionControlElement11.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement11.Appearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement11.Appearance.Hovered.Options.UseFont = true;
-            this.accordionControlElement11.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement11.Appearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement11.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement11.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement11.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement11.Appearance.Pressed.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement11.Appearance.Pressed.Options.UseBackColor = true;
             this.accordionControlElement11.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement11.Height = 59;
@@ -831,18 +833,20 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement1
             // 
-            this.accordionControlElement1.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement1.Appearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 15.8F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement1.Appearance.Disabled.Options.UseFont = true;
+            this.accordionControlElement1.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 15.8F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement1.Appearance.Hovered.Options.UseFont = true;
             this.accordionControlElement1.Appearance.Hovered.Options.UseTextOptions = true;
             this.accordionControlElement1.Appearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.accordionControlElement1.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElement1.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 15.8F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement1.Appearance.Normal.ForeColor = System.Drawing.Color.White;
             this.accordionControlElement1.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement1.Appearance.Normal.Options.UseForeColor = true;
             this.accordionControlElement1.Appearance.Normal.Options.UseTextOptions = true;
             this.accordionControlElement1.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.accordionControlElement1.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement1.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElement1.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 15.8F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement1.Appearance.Pressed.Options.UseBackColor = true;
             this.accordionControlElement1.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
@@ -860,16 +864,16 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement2
             // 
-            this.accordionControlElement2.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement2.Appearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement2.Appearance.Hovered.Options.UseFont = true;
             this.accordionControlElement2.Appearance.Hovered.Options.UseTextOptions = true;
             this.accordionControlElement2.Appearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.accordionControlElement2.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElement2.Appearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accordionControlElement2.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement2.Appearance.Normal.Options.UseTextOptions = true;
             this.accordionControlElement2.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.accordionControlElement2.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement2.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElement2.Appearance.Pressed.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accordionControlElement2.Appearance.Pressed.Options.UseBackColor = true;
             this.accordionControlElement2.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement2.Appearance.Pressed.Options.UseTextOptions = true;
@@ -886,16 +890,16 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement5
             // 
-            this.accordionControlElement5.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElement5.Appearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accordionControlElement5.Appearance.Hovered.Options.UseFont = true;
             this.accordionControlElement5.Appearance.Hovered.Options.UseTextOptions = true;
             this.accordionControlElement5.Appearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.accordionControlElement5.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElement5.Appearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accordionControlElement5.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement5.Appearance.Normal.Options.UseTextOptions = true;
             this.accordionControlElement5.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.accordionControlElement5.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement5.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElement5.Appearance.Pressed.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accordionControlElement5.Appearance.Pressed.Options.UseBackColor = true;
             this.accordionControlElement5.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement5.Appearance.Pressed.Options.UseTextOptions = true;
@@ -912,12 +916,12 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement6
             // 
-            this.accordionControlElement6.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElement6.Appearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accordionControlElement6.Appearance.Hovered.Options.UseFont = true;
-            this.accordionControlElement6.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElement6.Appearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accordionControlElement6.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement6.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement6.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElement6.Appearance.Pressed.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accordionControlElement6.Appearance.Pressed.Options.UseBackColor = true;
             this.accordionControlElement6.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement6.Appearance.Pressed.Options.UseTextOptions = true;
@@ -934,16 +938,16 @@ namespace ElbayaNPresentation
             // 
             // accordionControlElement7
             // 
-            this.accordionControlElement7.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElement7.Appearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accordionControlElement7.Appearance.Hovered.Options.UseFont = true;
             this.accordionControlElement7.Appearance.Hovered.Options.UseTextOptions = true;
             this.accordionControlElement7.Appearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.accordionControlElement7.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElement7.Appearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accordionControlElement7.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement7.Appearance.Normal.Options.UseTextOptions = true;
             this.accordionControlElement7.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.accordionControlElement7.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement7.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElement7.Appearance.Pressed.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accordionControlElement7.Appearance.Pressed.Options.UseBackColor = true;
             this.accordionControlElement7.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement7.Appearance.Pressed.Options.UseTextOptions = true;
@@ -957,30 +961,30 @@ namespace ElbayaNPresentation
             // accordionControl1
             // 
             this.accordionControl1.Appearance.AccordionControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(57)))), ((int)(((byte)(108)))));
+            this.accordionControl1.Appearance.AccordionControl.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accordionControl1.Appearance.AccordionControl.Options.UseBackColor = true;
-            this.accordionControl1.Appearance.AccordionControl.Options.UseTextOptions = true;
-            this.accordionControl1.Appearance.AccordionControl.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.accordionControl1.Appearance.Group.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControl1.Appearance.AccordionControl.Options.UseFont = true;
+            this.accordionControl1.Appearance.Group.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControl1.Appearance.Group.Hovered.Options.UseFont = true;
             this.accordionControl1.Appearance.Group.Hovered.Options.UseTextOptions = true;
             this.accordionControl1.Appearance.Group.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.accordionControl1.Appearance.Group.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControl1.Appearance.Group.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControl1.Appearance.Group.Normal.Options.UseFont = true;
             this.accordionControl1.Appearance.Group.Normal.Options.UseTextOptions = true;
             this.accordionControl1.Appearance.Group.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.accordionControl1.Appearance.Group.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControl1.Appearance.Group.Pressed.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControl1.Appearance.Group.Pressed.Options.UseFont = true;
             this.accordionControl1.Appearance.Group.Pressed.Options.UseTextOptions = true;
             this.accordionControl1.Appearance.Group.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.accordionControl1.Appearance.Item.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControl1.Appearance.Item.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accordionControl1.Appearance.Item.Hovered.Options.UseFont = true;
             this.accordionControl1.Appearance.Item.Hovered.Options.UseTextOptions = true;
             this.accordionControl1.Appearance.Item.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.accordionControl1.Appearance.Item.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControl1.Appearance.Item.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControl1.Appearance.Item.Normal.Options.UseFont = true;
             this.accordionControl1.Appearance.Item.Normal.Options.UseTextOptions = true;
             this.accordionControl1.Appearance.Item.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.accordionControl1.Appearance.Item.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControl1.Appearance.Item.Pressed.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.accordionControl1.Appearance.Item.Pressed.Options.UseFont = true;
             this.accordionControl1.Appearance.Item.Pressed.Options.UseTextOptions = true;
             this.accordionControl1.Appearance.Item.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
@@ -1003,35 +1007,37 @@ namespace ElbayaNPresentation
             this.accordionControlSeparator6,
             this.accordionControlElement13,
             this.accordionControlSeparator7});
-            this.accordionControl1.Location = new System.Drawing.Point(0, 191);
+            this.accordionControl1.Location = new System.Drawing.Point(0, 185);
             this.accordionControl1.Margin = new System.Windows.Forms.Padding(1);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.OptionsMinimizing.AllowMinimizeMode = DevExpress.Utils.DefaultBoolean.False;
             this.accordionControl1.Padding = new System.Windows.Forms.Padding(25);
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.accordionControl1.Size = new System.Drawing.Size(376, 843);
+            this.accordionControl1.Size = new System.Drawing.Size(376, 849);
             this.accordionControl1.TabIndex = 2;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
             // accordionControlElement20
             // 
-            this.accordionControlElement20.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement20.Appearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 15.8F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement20.Appearance.Disabled.Options.UseFont = true;
+            this.accordionControlElement20.Appearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement20.Appearance.Hovered.Options.UseFont = true;
             this.accordionControlElement20.Appearance.Hovered.Options.UseTextOptions = true;
             this.accordionControlElement20.Appearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.accordionControlElement20.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement20.Appearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 15.8F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement20.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement20.Appearance.Normal.Options.UseTextOptions = true;
             this.accordionControlElement20.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.accordionControlElement20.Appearance.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(163)))));
-            this.accordionControlElement20.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.accordionControlElement20.Appearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 15.8F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement20.Appearance.Pressed.Options.UseBackColor = true;
             this.accordionControlElement20.Appearance.Pressed.Options.UseFont = true;
             this.accordionControlElement20.Appearance.Pressed.Options.UseTextOptions = true;
             this.accordionControlElement20.Appearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.accordionControlElement20.Expanded = true;
             this.accordionControlElement20.Height = 59;
-            this.accordionControlElement20.ImageOptions.SvgImage = global::ElbayaNPresentation.Properties.Resources.bo_appearance;
+            this.accordionControlElement20.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement20.ImageOptions.Image")));
             this.accordionControlElement20.Name = "accordionControlElement20";
             this.accordionControlElement20.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement20.Text = "       لوحة التحكم";
@@ -1059,6 +1065,7 @@ namespace ElbayaNPresentation
             // 
             this.guna2CustomGradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2CustomGradientPanel1.Controls.Add(this.guna2PictureBox1);
             this.guna2CustomGradientPanel1.Controls.Add(this.label1);
             this.guna2CustomGradientPanel1.Controls.Add(this.btnMinimize);
             this.guna2CustomGradientPanel1.Controls.Add(this.guna2CircleButton1);
@@ -1074,15 +1081,14 @@ namespace ElbayaNPresentation
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Sakkal Majalla", 18.8F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(676, 21);
+            this.label1.Location = new System.Drawing.Point(1036, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(446, 35);
+            this.label1.Size = new System.Drawing.Size(581, 42);
             this.label1.TabIndex = 2;
             this.label1.Text = "البيان     |    إدارة المبيعات والمشتريات للمحلات والمخازن";
             // 
@@ -1133,15 +1139,29 @@ namespace ElbayaNPresentation
             // gcContainer
             // 
             this.gcContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcContainer.Location = new System.Drawing.Point(376, 191);
+            this.gcContainer.Font = new System.Drawing.Font("Arabic Typesetting", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gcContainer.Location = new System.Drawing.Point(376, 185);
             this.gcContainer.Name = "gcContainer";
-            this.gcContainer.Size = new System.Drawing.Size(1390, 843);
+            this.gcContainer.Size = new System.Drawing.Size(1390, 849);
             this.gcContainer.TabIndex = 13;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(57)))), ((int)(((byte)(108)))));
+            this.guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.Location = new System.Drawing.Point(1602, 0);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
+            this.guna2PictureBox1.Size = new System.Drawing.Size(164, 74);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 3;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // frmMainBoard
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1766, 1062);
             this.Controls.Add(this.gcContainer);
@@ -1150,7 +1170,7 @@ namespace ElbayaNPresentation
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.tabFormContentContainer1);
             this.Controls.Add(this.ribbon);
-            this.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -1165,6 +1185,7 @@ namespace ElbayaNPresentation
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1245,5 +1266,6 @@ namespace ElbayaNPresentation
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         public System.Windows.Forms.Panel gcContainer;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }

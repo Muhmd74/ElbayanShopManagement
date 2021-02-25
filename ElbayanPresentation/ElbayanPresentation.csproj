@@ -95,6 +95,11 @@
     <Compile Include="Presenters\Store\Unit\LargeUnit\LargeUnitPresenter.cs" />
     <Compile Include="Presenters\Store\Unit\SmallUnit\IViewSmallUnit.cs" />
     <Compile Include="Presenters\Store\Unit\SmallUnit\SmallUnitPresenter.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="StartUp\frmMainBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,14 +152,9 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Views\Store\Category\ucMaincategory.resx">
       <DependentUpon>ucMaincategory.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,68 +195,72 @@
       <Name>ElbayanServices</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Resources\ProductImage\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\warning.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\formatastable_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\formatastable_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\newtablestyle_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\newtablestyle_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bar_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bar_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\colorlegend_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\colorlegend_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\snaptogglefieldhighlighting_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\snaptogglefieldhighlighting_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\barcode_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\barcode_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\managerules_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\managerules_16x16.png" />
+    <None Include="Resources\addchartpane_16x16.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\addchartpane_32x32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\addchartpane_16x16.png" />
+    <None Include="Resources\bar_16x16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\boreport_32x32.png" />
+    <None Include="Resources\bar_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcode_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcode_32x32.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\boreport_16x16.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\Ecommerce-Barcode-Scanner-icon.png" />
+    <None Include="Resources\boreport_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colorlegend_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colorlegend_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ecommerce-Barcode-Scanner-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\formatastable_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\formatastable_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\managerules_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\managerules_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newtablestyle_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newtablestyle_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\snaptogglefieldhighlighting_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\snaptogglefieldhighlighting_32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
