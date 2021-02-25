@@ -80,6 +80,7 @@ namespace ElbayanServices.Repository.Products.Category
                 Name = d.Name,
                 Description = d.Description
             }).ToList();
+            // return model.Any() ? null : model;
             return model.Any() ? model : null;
         }
         

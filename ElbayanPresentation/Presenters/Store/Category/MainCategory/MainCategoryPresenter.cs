@@ -29,8 +29,15 @@ namespace ElbayaNPresentation.Presenters.Store.Category.MainCategory
         }
         public List<CategoryDto> GetCategories()
         {
-            _view.MainCategory = Category.GetAll();
-            return _view.MainCategory.ToList();
+            if (Category.GetAll().Any())
+            {
+                _view.MainCategory = Category.GetAll();
+                return _view.MainCategory.ToList();
+            }
+            else
+            {
+                return _view.MainCategory = null;
+            }
         }
         public List<CategoryDto> GetDeletedCategories()
         {

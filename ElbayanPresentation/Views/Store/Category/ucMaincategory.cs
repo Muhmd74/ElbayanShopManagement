@@ -48,14 +48,11 @@ namespace ElbayaNPresentation.Views.Store.Category
         public void PopulateAllUnitDataGridView()
         {
 
-            if (Presenter.GetCategories().Any())
-            {
+            //if (Presenter.GetCategories().Any())
+            //{
                 dgvMainCategory.DataSource = Presenter.GetCategories();
-            }
-            else
-            {
-                dgvMainCategory.DataSource = null;
-            }
+            //}
+            
             DataGridViewStyle.StyleDatagridview(dgvMainCategory);
 
         }
