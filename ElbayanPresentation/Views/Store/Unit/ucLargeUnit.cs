@@ -185,5 +185,12 @@ namespace ElbayaNPresentation.Views.Store.Units
                 LargeUnitID = new Guid(dgvDeletedLargeUnit.CurrentRow.Cells["dgvLargeUnitDeletedID"].Value.ToString());
             }
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
