@@ -63,11 +63,12 @@
     <Compile Include="ConnectionTools\ConnectionOption.cs" />
     <Compile Include="ConnectionTools\ConnectionString.cs" />
     <Compile Include="DataClasses\Customers\Customer.cs" />
+    <Compile Include="DataClasses\Customers\CustomerType.cs" />
+    <Compile Include="DataClasses\Customers\Sales\Building.cs" />
     <Compile Include="DataClasses\Customers\Sales\DeferredPayment.cs" />
     <Compile Include="DataClasses\Customers\Sales\Order.cs" />
-    <Compile Include="DataClasses\Customers\Sales\PaymentType.cs" />
+    <Compile Include="DataClasses\Customers\Sales\OrderProduct.cs" />
     <Compile Include="DataClasses\Customers\Sales\POS.cs" />
-    <Compile Include="DataClasses\Customers\Sales\Sale.cs" />
     <Compile Include="DataClasses\Member\Member.cs" />
     <Compile Include="DataClasses\Member\MemberRole.cs" />
     <Compile Include="DataClasses\Member\Role.cs" />
@@ -106,6 +107,10 @@
     <Compile Include="Migrations\202102261353073_CreateEnhancementProduct.designer.cs">
       <DependentUpon>202102261353073_CreateEnhancementProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102261801593_CreateCustomer.cs" />
+    <Compile Include="Migrations\202102261801593_CreateCustomer.designer.cs">
+      <DependentUpon>202102261801593_CreateCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -134,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102261353073_CreateEnhancementProduct.resx">
       <DependentUpon>202102261353073_CreateEnhancementProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102261801593_CreateCustomer.resx">
+      <DependentUpon>202102261801593_CreateCustomer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

@@ -6,6 +6,8 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ElbayanDatabase.DataClasses.Customers;
+using ElbayanDatabase.DataClasses.Customers.Sales;
 using ElbayanDatabase.DataClasses.Member;
 using ElbayanDatabase.DataClasses.Product;
 using ElbayanDatabase.DataClasses.Product.ProductCategory;
@@ -31,6 +33,14 @@ namespace ElbayanDatabase.ConnectionTools
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductPrice> ProductPrices { get; set; }
         public DbSet<ProductStock> ProductStocks { get; set; }
+        public DbSet<CustomerType> CustomerTypes { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<POS> Poses { get; set; }
+        public DbSet<OrderProduct> OrderProducts { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<DeferredPayment> DeferredPayments { get; set; }
+        public DbSet<Building> Buildings { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -84,6 +94,41 @@ namespace ElbayanDatabase.ConnectionTools
                 .HasForeignKey(d => d.ProductId)
                 .WillCascadeOnDelete(true);
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<CustomerType>()
+                .HasMany(d=>d.Customers)
+                .WithRequired(d=>d.CustomerType)
+                .HasForeignKey(d=>d.CustomerTypeId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Customer>()
+                .HasMany(d=>d.Orders)
+                .WithRequired(d=>d.Customer)
+                .HasForeignKey(d=>d.CustomerId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<POS>()
+                .HasMany(d=>d.Orders)
+                .WithRequired(d=>d.Pos)
+                .HasForeignKey(d=>d.PosId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Building>()
+                .HasMany(d=>d.Poses)
+                .WithRequired(d=>d.Building)
+                .HasForeignKey(d=>d.BuildingId)
+                .WillCascadeOnDelete(true);
+            modelBuilder.Entity<Order>()
+                .HasMany(d=>d.DeferredPayments)
+                .WithRequired(d=>d.Order)
+                .HasForeignKey(d=>d.OrderId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Product>()
+                .HasMany(d=>d.OrderProducts)
+                .WithRequired(d=>d.Product)
+                .HasForeignKey(d=>d.ProductId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Order>()
+                .HasMany(d=>d.OrderProducts)
+                .WithRequired(d=>d.Order)
+                .HasForeignKey(d=>d.OrderId)
+                .WillCascadeOnDelete(false);
         }
     }
 }

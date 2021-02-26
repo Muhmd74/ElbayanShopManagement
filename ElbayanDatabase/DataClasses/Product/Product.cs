@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using ElbayanDatabase.DataClasses.Customers.Sales;
 using ElbayanDatabase.DataClasses.Product.ProductCategory;
 using ElbayanDatabase.DataClasses.Product.Unit;
 
@@ -39,6 +40,7 @@ namespace ElbayanDatabase.DataClasses.Product
         public int Discount { get; set; }
         public ICollection<ProductStock> ProductStocks { get; set; }
         public ICollection<ProductPrice> ProductPrices { get; set; }
+        public ICollection<OrderProduct> OrderProducts { get; set; }
 
 
     }
