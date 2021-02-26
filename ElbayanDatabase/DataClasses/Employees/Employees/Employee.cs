@@ -27,6 +27,7 @@ namespace ElbayanDatabase.DataClasses.Employees.Employees
         public string Mobile { get; set; }
         public string Address { get; set; }
         public DateTime DateOfBirth { get; set; }
+        public string Position { get; set; }
         public string Identity { get; set; }
         public DateTime IdentityExpirationDate { get; set; }
         public int PassportNumber { get; set; }

@@ -81,12 +81,9 @@ namespace ElbayanServices.Repository.Products.Product
                     SmallUnitId = d.Id,
                     Name = d.Name
                 }).ToList();
-            if (model.Any())
-            {
-                return model;
-            }
+           
 
-            return null;
+            return model;
         }
 
         public List<SmallUnitNameDto> GetAllSmallUnit()
@@ -98,12 +95,7 @@ namespace ElbayanServices.Repository.Products.Product
                     SmallUnitId = d.Id,
                     Name = d.Name
                 }).ToList();
-            if (model.Any())
-            {
-                return model;
-            }
-
-            return null;
+            return model;
         }
 
         public List<SubCategoryNameDto> GetAllSubCategory()
@@ -115,12 +107,7 @@ namespace ElbayanServices.Repository.Products.Product
                     Id = d.Id,
                     Name = d.Name
                 }).ToList();
-            if (model.Any())
-            {
-                return model;
-            }
-
-            return null;
+            return model;
         }
 
         public List<LargeUnitNameDto> GetAllLargeUnit()
@@ -196,12 +183,12 @@ namespace ElbayanServices.Repository.Products.Product
                     IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name
 
                 }).ToList();
-            return Products.Any() ? Products : null;
+            return Products;
         }
 
         public List<ProductDto> GetAll()
         {
-            var Products = _context.Products.Where(d => d.IsDeleted == false)
+            return _context.Products.Where(d => d.IsDeleted == false)
                 .Include(d => d.SmallUnit)
                 .Include(d => d.LargeUnit)
                 .Include(d => d.SubCategory)
@@ -227,12 +214,12 @@ namespace ElbayanServices.Repository.Products.Product
                     WholesalePrice = d.WholesalePrice,
                     IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name
                 }).ToList();
-            return Products.Any() ? Products : null;
+           
         }
 
         public List<ProductDto> GetAllByCategory(Guid categoryId)
         {
-            var Products = _context.Products
+            return _context.Products
                 .Where(d =>d.SubCategoryId==categoryId 
                            &&d.IsDeleted == false)
                 .Include(d => d.SmallUnit)
@@ -260,8 +247,7 @@ namespace ElbayanServices.Repository.Products.Product
                     SaleDefaultPrice = d.SaleDefaultPrice,
                     IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name
                 }).ToList();
-            return Products.Any() ? Products : null;
-        }
+         }
 
         public ProductDto GetById(Guid id)
         {
@@ -339,12 +325,9 @@ namespace ElbayanServices.Repository.Products.Product
                     ProductId = d.Id,
                     ProductName = d.Name
                 }).ToList();
-            if (model.Any())
-            {
-                return model;
-            }
+         
 
-            return null;
+            return model;
         }
         public long GeneratorRandomNumber()
         {

@@ -9,6 +9,7 @@ namespace ElbayanDatabase.DataClasses.Employees.CashierDrawers
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
+
         public DateTime EndShift { get; set; }
         public decimal TotalMoneyOffShift { get; set; }
         public Guid CashierDrawerId { get; set; }
