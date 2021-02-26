@@ -73,18 +73,6 @@ namespace ElbayaNPresentation.Views.Store.Units
             DataGridViewStyle.StyleDatagridview(dgvLargeUnit);
 
         }
-       
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            if (dgvTabContainer.SelectedIndex == 0)
-            {
-                dgvLargeUnit.DataSource = Presenter.FilterDataGridView().ToList();
-            }
-            else if (dgvTabContainer.SelectedIndex == 1)
-            {
-                dgvDeletedLargeUnit.DataSource = Presenter.FilterDataGridViewDeleted();
-            }
-        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
