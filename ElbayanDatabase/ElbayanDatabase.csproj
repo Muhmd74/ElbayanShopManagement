@@ -69,7 +69,6 @@
     <Compile Include="DataClasses\Customers\Sales\Order.cs" />
     <Compile Include="DataClasses\Customers\Sales\OrderProduct.cs" />
     <Compile Include="DataClasses\Customers\Sales\POS.cs" />
-    <Compile Include="DataClasses\Customers\Sales\Sale.cs" />
     <Compile Include="DataClasses\Employees\CashierDrawers\CashierDrawer.cs" />
     <Compile Include="DataClasses\Employees\CashierDrawers\DailyOffShift.cs" />
     <Compile Include="DataClasses\Employees\CashierDrawers\DrawerTransaction.cs" />
