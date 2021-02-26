@@ -612,6 +612,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox3.Location = new System.Drawing.Point(618, 62);
             this.guna2GroupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
+            this.guna2GroupBox3.ShadowDecoration.Depth = 35;
             this.guna2GroupBox3.ShadowDecoration.Parent = this.guna2GroupBox3;
             this.guna2GroupBox3.Size = new System.Drawing.Size(744, 753);
             this.guna2GroupBox3.TabIndex = 20;
@@ -712,7 +713,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.pbProductImage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbProductImage.Name = "pbProductImage";
             this.pbProductImage.ShadowDecoration.Parent = this.pbProductImage;
-            this.pbProductImage.Size = new System.Drawing.Size(228, 219);
+            this.pbProductImage.Size = new System.Drawing.Size(236, 243);
             this.pbProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbProductImage.TabIndex = 30;
             this.pbProductImage.TabStop = false;
@@ -747,7 +748,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.btnUploadPicture.Image = ((System.Drawing.Image)(resources.GetObject("btnUploadPicture.Image")));
             this.btnUploadPicture.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnUploadPicture.ImageSize = new System.Drawing.Size(45, 45);
-            this.btnUploadPicture.Location = new System.Drawing.Point(14, 658);
+            this.btnUploadPicture.Location = new System.Drawing.Point(31, 680);
             this.btnUploadPicture.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUploadPicture.Name = "btnUploadPicture";
             this.btnUploadPicture.ShadowDecoration.Parent = this.btnUploadPicture;
