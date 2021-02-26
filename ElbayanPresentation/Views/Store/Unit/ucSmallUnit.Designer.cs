@@ -29,8 +29,8 @@ namespace ElbayaNPresentation.Views.Store.Unit
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucSmallUnit));
             this.tpArchieveLargeUnits = new System.Windows.Forms.TabPage();
             this.dgvDeletedSmallUnit = new System.Windows.Forms.DataGridView();
@@ -80,9 +80,10 @@ namespace ElbayaNPresentation.Views.Store.Unit
             // 
             this.tpArchieveLargeUnits.Controls.Add(this.dgvDeletedSmallUnit);
             this.tpArchieveLargeUnits.Location = new System.Drawing.Point(4, 63);
+            this.tpArchieveLargeUnits.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tpArchieveLargeUnits.Name = "tpArchieveLargeUnits";
-            this.tpArchieveLargeUnits.Padding = new System.Windows.Forms.Padding(3);
-            this.tpArchieveLargeUnits.Size = new System.Drawing.Size(1510, 440);
+            this.tpArchieveLargeUnits.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tpArchieveLargeUnits.Size = new System.Drawing.Size(1510, 651);
             this.tpArchieveLargeUnits.TabIndex = 1;
             this.tpArchieveLargeUnits.Text = "الوحدات المؤرشفة";
             this.tpArchieveLargeUnits.UseVisualStyleBackColor = true;
@@ -93,15 +94,15 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.dgvDeletedSmallUnit.AllowUserToDeleteRows = false;
             this.dgvDeletedSmallUnit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDeletedSmallUnit.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDeletedSmallUnit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDeletedSmallUnit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDeletedSmallUnit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDeletedSmallUnit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvSmallUnitIDDeleted,
@@ -112,14 +113,15 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.dgvSmallUnitWeightDeleted,
             this.dgvIsDeletedDeleted});
             this.dgvDeletedSmallUnit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDeletedSmallUnit.Location = new System.Drawing.Point(3, 3);
+            this.dgvDeletedSmallUnit.Location = new System.Drawing.Point(3, 4);
+            this.dgvDeletedSmallUnit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvDeletedSmallUnit.Name = "dgvDeletedSmallUnit";
             this.dgvDeletedSmallUnit.ReadOnly = true;
             this.dgvDeletedSmallUnit.RowHeadersWidth = 51;
             this.dgvDeletedSmallUnit.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvDeletedSmallUnit.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.dgvDeletedSmallUnit.RowTemplate.Height = 35;
-            this.dgvDeletedSmallUnit.Size = new System.Drawing.Size(1504, 434);
+            this.dgvDeletedSmallUnit.Size = new System.Drawing.Size(1504, 643);
             this.dgvDeletedSmallUnit.TabIndex = 1;
             this.dgvDeletedSmallUnit.DoubleClick += new System.EventHandler(this.dgvDeletedSmallUnit_DoubleClick);
             // 
@@ -192,12 +194,13 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.dgvTabContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvTabContainer.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvTabContainer.ItemSize = new System.Drawing.Size(132, 59);
-            this.dgvTabContainer.Location = new System.Drawing.Point(0, 327);
+            this.dgvTabContainer.Location = new System.Drawing.Point(0, 317);
+            this.dgvTabContainer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvTabContainer.Name = "dgvTabContainer";
             this.dgvTabContainer.Padding = new System.Drawing.Point(6, 5);
             this.dgvTabContainer.RightToLeftLayout = true;
             this.dgvTabContainer.SelectedIndex = 0;
-            this.dgvTabContainer.Size = new System.Drawing.Size(1518, 507);
+            this.dgvTabContainer.Size = new System.Drawing.Size(1518, 546);
             this.dgvTabContainer.TabIndex = 6;
             this.dgvTabContainer.SelectedIndexChanged += new System.EventHandler(this.dgvTabContainer_SelectedIndexChanged);
             // 
@@ -209,9 +212,10 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.tpActiveLargeUnits.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tpActiveLargeUnits.ForeColor = System.Drawing.Color.White;
             this.tpActiveLargeUnits.Location = new System.Drawing.Point(4, 63);
+            this.tpActiveLargeUnits.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tpActiveLargeUnits.Name = "tpActiveLargeUnits";
-            this.tpActiveLargeUnits.Padding = new System.Windows.Forms.Padding(3);
-            this.tpActiveLargeUnits.Size = new System.Drawing.Size(1510, 440);
+            this.tpActiveLargeUnits.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tpActiveLargeUnits.Size = new System.Drawing.Size(1510, 479);
             this.tpActiveLargeUnits.TabIndex = 0;
             this.tpActiveLargeUnits.Text = "الوحدات النشطة";
             // 
@@ -221,15 +225,15 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.dgvSmallUnit.AllowUserToDeleteRows = false;
             this.dgvSmallUnit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSmallUnit.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSmallUnit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSmallUnit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSmallUnit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSmallUnit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvSmallUnitID,
@@ -240,14 +244,15 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.dgvLargeUnitNameForSmallUnitActive,
             this.dgvSmallUnitWeight});
             this.dgvSmallUnit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvSmallUnit.Location = new System.Drawing.Point(3, 3);
+            this.dgvSmallUnit.Location = new System.Drawing.Point(3, 4);
+            this.dgvSmallUnit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvSmallUnit.Name = "dgvSmallUnit";
             this.dgvSmallUnit.ReadOnly = true;
             this.dgvSmallUnit.RowHeadersWidth = 51;
             this.dgvSmallUnit.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvSmallUnit.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.dgvSmallUnit.RowTemplate.Height = 35;
-            this.dgvSmallUnit.Size = new System.Drawing.Size(1504, 434);
+            this.dgvSmallUnit.Size = new System.Drawing.Size(1504, 471);
             this.dgvSmallUnit.TabIndex = 2;
             this.dgvSmallUnit.DoubleClick += new System.EventHandler(this.dgvSmallUnit_DoubleClick);
             // 
@@ -341,9 +346,10 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.gbMainOperations.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbMainOperations.ForeColor = System.Drawing.Color.White;
             this.gbMainOperations.Location = new System.Drawing.Point(0, 0);
+            this.gbMainOperations.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gbMainOperations.Name = "gbMainOperations";
             this.gbMainOperations.ShadowDecoration.Parent = this.gbMainOperations;
-            this.gbMainOperations.Size = new System.Drawing.Size(1518, 320);
+            this.gbMainOperations.Size = new System.Drawing.Size(1518, 318);
             this.gbMainOperations.TabIndex = 7;
             this.gbMainOperations.Text = "وحدات المنتجات الصغرى";
             this.gbMainOperations.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -352,7 +358,8 @@ namespace ElbayaNPresentation.Views.Store.Unit
             // 
             this.nudSmallUnitWeight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudSmallUnitWeight.DecimalPlaces = 2;
-            this.nudSmallUnitWeight.Location = new System.Drawing.Point(79, 137);
+            this.nudSmallUnitWeight.Location = new System.Drawing.Point(85, 137);
+            this.nudSmallUnitWeight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.nudSmallUnitWeight.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -377,11 +384,11 @@ namespace ElbayaNPresentation.Views.Store.Unit
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Droid Arabic Kufi", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Sakkal Majalla", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(78, 188);
+            this.label4.Location = new System.Drawing.Point(85, 181);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(448, 19);
+            this.label4.Size = new System.Drawing.Size(436, 24);
             this.label4.TabIndex = 26;
             this.label4.Text = "كام جزء من الوحدة الكبري ، مثال الدستة تحتوى على 12 قعطة يكتب هنا الرقم فقط";
             // 
@@ -390,9 +397,9 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(539, 145);
+            this.label3.Location = new System.Drawing.Point(545, 148);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(171, 32);
+            this.label3.Size = new System.Drawing.Size(178, 32);
             this.label3.TabIndex = 27;
             this.label3.Text = "قيمة الوحدة الصغري";
             // 
@@ -413,7 +420,8 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.cbxLargeUnit.ItemHeight = 30;
             this.cbxLargeUnit.ItemsAppearance.Parent = this.cbxLargeUnit;
             this.cbxLargeUnit.ItemsAppearance.SelectedForeColor = System.Drawing.Color.Gray;
-            this.cbxLargeUnit.Location = new System.Drawing.Point(79, 68);
+            this.cbxLargeUnit.Location = new System.Drawing.Point(79, 67);
+            this.cbxLargeUnit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbxLargeUnit.Name = "cbxLargeUnit";
             this.cbxLargeUnit.ShadowDecoration.Parent = this.cbxLargeUnit;
             this.cbxLargeUnit.Size = new System.Drawing.Size(444, 36);
@@ -426,9 +434,9 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(535, 70);
+            this.label6.Location = new System.Drawing.Point(535, 69);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(179, 32);
+            this.label6.Size = new System.Drawing.Size(188, 32);
             this.label6.TabIndex = 24;
             this.label6.Text = "إختر التصنيف الرئيسي";
             // 
@@ -449,15 +457,15 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.txtSearch.FillColor = System.Drawing.Color.PapayaWhip;
             this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.FocusedState.Parent = this.txtSearch;
-            this.txtSearch.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.Color.Gray;
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.HoverState.Parent = this.txtSearch;
             this.txtSearch.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconLeft")));
             this.txtSearch.IconLeftOffset = new System.Drawing.Point(9, 0);
             this.txtSearch.IconLeftSize = new System.Drawing.Size(32, 32);
-            this.txtSearch.Location = new System.Drawing.Point(12, 245);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.txtSearch.Location = new System.Drawing.Point(79, 224);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "";
@@ -483,18 +491,18 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.txtName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtName.FocusedState.Parent = this.txtName;
-            this.txtName.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.ForeColor = System.Drawing.Color.Gray;
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtName.HoverState.Parent = this.txtName;
-            this.txtName.Location = new System.Drawing.Point(817, 60);
-            this.txtName.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.txtName.Location = new System.Drawing.Point(847, 62);
+            this.txtName.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderText = "";
             this.txtName.SelectedText = "";
             this.txtName.ShadowDecoration.Parent = this.txtName;
-            this.txtName.Size = new System.Drawing.Size(542, 54);
+            this.txtName.Size = new System.Drawing.Size(504, 47);
             this.txtName.TabIndex = 17;
             // 
             // txtDescription
@@ -512,19 +520,19 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.txtDescription.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtDescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescription.FocusedState.Parent = this.txtDescription;
-            this.txtDescription.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescription.ForeColor = System.Drawing.Color.Gray;
             this.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescription.HoverState.Parent = this.txtDescription;
-            this.txtDescription.Location = new System.Drawing.Point(817, 123);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.txtDescription.Location = new System.Drawing.Point(839, 118);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.PasswordChar = '\0';
             this.txtDescription.PlaceholderText = "";
             this.txtDescription.SelectedText = "";
             this.txtDescription.ShadowDecoration.Parent = this.txtDescription;
-            this.txtDescription.Size = new System.Drawing.Size(542, 100);
+            this.txtDescription.Size = new System.Drawing.Size(512, 103);
             this.txtDescription.TabIndex = 18;
             // 
             // btnAdd
@@ -534,13 +542,14 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.btnAdd.CheckedState.Parent = this.btnAdd;
             this.btnAdd.CustomImages.Parent = this.btnAdd;
             this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
-            this.btnAdd.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Location = new System.Drawing.Point(1168, 245);
+            this.btnAdd.Location = new System.Drawing.Point(1189, 235);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
-            this.btnAdd.Size = new System.Drawing.Size(190, 56);
+            this.btnAdd.Size = new System.Drawing.Size(162, 46);
             this.btnAdd.TabIndex = 19;
             this.btnAdd.Text = "إضافة جديدة";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -552,13 +561,14 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.btnUpdate.CheckedState.Parent = this.btnUpdate;
             this.btnUpdate.CustomImages.Parent = this.btnUpdate;
             this.btnUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
-            this.btnUpdate.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.HoverState.Parent = this.btnUpdate;
-            this.btnUpdate.Location = new System.Drawing.Point(934, 245);
+            this.btnUpdate.Location = new System.Drawing.Point(1021, 235);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
-            this.btnUpdate.Size = new System.Drawing.Size(190, 56);
+            this.btnUpdate.Size = new System.Drawing.Size(162, 46);
             this.btnUpdate.TabIndex = 20;
             this.btnUpdate.Text = "حفظ التعديلات";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -570,13 +580,14 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.btnDeleteByOne.CheckedState.Parent = this.btnDeleteByOne;
             this.btnDeleteByOne.CustomImages.Parent = this.btnDeleteByOne;
             this.btnDeleteByOne.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
-            this.btnDeleteByOne.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteByOne.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteByOne.ForeColor = System.Drawing.Color.White;
             this.btnDeleteByOne.HoverState.Parent = this.btnDeleteByOne;
-            this.btnDeleteByOne.Location = new System.Drawing.Point(690, 245);
+            this.btnDeleteByOne.Location = new System.Drawing.Point(853, 235);
+            this.btnDeleteByOne.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDeleteByOne.Name = "btnDeleteByOne";
             this.btnDeleteByOne.ShadowDecoration.Parent = this.btnDeleteByOne;
-            this.btnDeleteByOne.Size = new System.Drawing.Size(190, 56);
+            this.btnDeleteByOne.Size = new System.Drawing.Size(162, 46);
             this.btnDeleteByOne.TabIndex = 21;
             this.btnDeleteByOne.Text = "أرشفة";
             this.btnDeleteByOne.Click += new System.EventHandler(this.btnDeleteByOne_Click);
@@ -586,9 +597,9 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(433, 263);
+            this.label7.Location = new System.Drawing.Point(500, 238);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(208, 32);
+            this.label7.Size = new System.Drawing.Size(226, 32);
             this.label7.TabIndex = 23;
             this.label7.Text = "بحث باسم أو وصف الوحدة";
             // 
@@ -597,9 +608,9 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(1378, 162);
+            this.label8.Location = new System.Drawing.Point(1386, 148);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(109, 32);
+            this.label8.Size = new System.Drawing.Size(117, 32);
             this.label8.TabIndex = 15;
             this.label8.Text = "وصف تعريفي";
             // 
@@ -608,21 +619,22 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.DimGray;
-            this.label10.Location = new System.Drawing.Point(1377, 70);
+            this.label10.Location = new System.Drawing.Point(1368, 69);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(106, 32);
+            this.label10.Size = new System.Drawing.Size(113, 32);
             this.label10.TabIndex = 16;
             this.label10.Text = "اسم الوحدة ";
             // 
             // ucSmallUnit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gbMainOperations);
             this.Controls.Add(this.dgvTabContainer);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ucSmallUnit";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Size = new System.Drawing.Size(1518, 834);
+            this.Size = new System.Drawing.Size(1518, 863);
             this.tpArchieveLargeUnits.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedSmallUnit)).EndInit();
             this.dgvTabContainer.ResumeLayout(false);

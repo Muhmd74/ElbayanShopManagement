@@ -19,7 +19,7 @@ namespace ElbayanDatabase.ConnectionTools
             {
                 InitialCatalog = "ElBayan",
                 IntegratedSecurity = true,
-                DataSource = @".",
+                DataSource = @".\SQLEXPRESS",
                 MultipleActiveResultSets = true,
                 ApplicationName = "Elbayan"
             };

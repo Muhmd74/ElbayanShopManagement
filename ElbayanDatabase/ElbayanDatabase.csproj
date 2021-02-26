@@ -63,9 +63,11 @@
     <Compile Include="ConnectionTools\ConnectionOption.cs" />
     <Compile Include="ConnectionTools\ConnectionString.cs" />
     <Compile Include="DataClasses\Customers\Customer.cs" />
+    <Compile Include="DataClasses\Customers\CustomerType.cs" />
+    <Compile Include="DataClasses\Customers\Sales\Building.cs" />
     <Compile Include="DataClasses\Customers\Sales\DeferredPayment.cs" />
     <Compile Include="DataClasses\Customers\Sales\Order.cs" />
-    <Compile Include="DataClasses\Customers\Sales\PaymentType.cs" />
+    <Compile Include="DataClasses\Customers\Sales\OrderProduct.cs" />
     <Compile Include="DataClasses\Customers\Sales\POS.cs" />
     <Compile Include="DataClasses\Customers\Sales\Sale.cs" />
     <Compile Include="DataClasses\Employees\CashierDrawers\CashierDrawer.cs" />

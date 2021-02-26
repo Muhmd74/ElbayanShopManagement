@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using ElbayanDatabase.DataClasses.Customers.Sales;
 using ElbayanDatabase.DataClasses.Product.ProductCategory;
 using ElbayanDatabase.DataClasses.Product.Unit;
 
@@ -16,9 +17,9 @@ namespace ElbayanDatabase.DataClasses.Product
         public int BarCode { get; set; }
         [Required]
         public string Name { get; set; }
-
         public string ImageUrl { get; set; }
         public DateTime DateTime { get; set; }
+        public int TotalQuantity { get; set; }
         public string Description { get; set; }
         public decimal PurchaseDefaultPrice { get; set; }
         public decimal SaleDefaultPrice { get; set; }
@@ -35,8 +36,11 @@ namespace ElbayanDatabase.DataClasses.Product
         public Guid SmallUnitId { get; set; }
         public bool IsDeleted { get; set; }
         public int LimitedDemand { get; set; }
+        public int Vat { get; set; }
+        public int Discount { get; set; }
         public ICollection<ProductStock> ProductStocks { get; set; }
         public ICollection<ProductPrice> ProductPrices { get; set; }
+        public ICollection<OrderProduct> OrderProducts { get; set; }
 
 
     }

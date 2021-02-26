@@ -42,6 +42,7 @@ namespace ElbayanDatabase.ConnectionTools
         public DbSet<DetectionsSalary> DetectionsSalaries { get; set; }
         public DbSet<IncreasesSalary> IncreasesSalaries { get; set; }
 
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Employee>().HasIndex(u => u.Email).IsUnique();

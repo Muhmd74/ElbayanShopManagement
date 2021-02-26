@@ -25,5 +25,14 @@ namespace ElbayanServices.Common
 
             return (long)(ulongRand % uRange) + min;
         }
+        public static class ProductStockStatues
+        {
+            public const string Sale = "مبيعات";
+            public const string Procurement = "المشتريات ";
+            public const string Returns = "مرتجعات";
+            public const string Adjective = "تالف";
+            public const string OpeningBalances = "أرصدة أفتتاحية";
+           
+        }
     }
 }

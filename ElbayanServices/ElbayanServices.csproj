@@ -76,6 +76,9 @@
     <Compile Include="Repository\Products\Category\Dtos\CategoryDto.cs" />
     <Compile Include="Repository\Products\Category\ICategory.cs" />
     <Compile Include="Repository\Products\Category\Validators\CreateCategoryValidator.cs" />
+    <Compile Include="Repository\Products\ProductStock\Dtos\ProductStockDto.cs" />
+    <Compile Include="Repository\Products\ProductStock\IProductStock.cs" />
+    <Compile Include="Repository\Products\ProductStock\ProductStockService.cs" />
     <Compile Include="Repository\Products\Product\Dtos\ProductDto.cs" />
     <Compile Include="Repository\Products\Product\Dtos\ProductNameDto.cs" />
     <Compile Include="Repository\Products\Product\IProduct.cs" />

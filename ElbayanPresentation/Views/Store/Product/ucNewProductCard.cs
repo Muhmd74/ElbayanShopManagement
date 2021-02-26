@@ -22,13 +22,21 @@ namespace ElbayaNPresentation.Views.Store.Product
         public ucNewProductCard()
         {
             InitializeComponent();
-            Presenter = new ProductPresnter(this);
             
+            Presenter = new ProductPresnter(this);
+
             _instance = this;
 
-            PopulatecbxSubcategory();
-            PopulatecbxLargeUnit();
-            PopulatecbxSmallUnit();
+            // hide Unmeric up down Arrows:
+            nudDefaultPurchasePrice.Controls[0].Visible = false;
+            nudDefaultSalePrice.Controls[0].Visible = false;
+            nudDefaultWholesalePrice.Controls[0].Visible = false;
+            nudDiscountPercent.Controls[0].Visible = false;
+            nudVATPercent.Controls[0].Visible = false;
+
+            //PopulatecbxSubcategory();
+            //PopulatecbxLargeUnit();
+            //PopulatecbxSmallUnit();
         }
 
         // Apply singlton pattern for form Instance
@@ -55,7 +63,7 @@ namespace ElbayaNPresentation.Views.Store.Product
         public Guid SubCategoryId { get => new Guid(cbxSubcategory.SelectedValue.ToString()); set => cbxSubcategory.SelectedValue = value; }
         public SubCategoryDto SubCategory { get; set; }
         public bool IsExpired { get => rbIsExpiredProduct.Checked; set => rbIsExpiredProduct.Checked = value; }
-        public DateTime ExpireDateTime { get => dtpExpireDate.Value; set => dtpExpireDate.Value = value; }
+        public DateTime ExpireDateTime { get; set; }
         public Guid LargeUnitId { get => new Guid (cbxLargeUnit.SelectedValue.ToString()); set => cbxLargeUnit.SelectedValue = value; }
         public LargeUnitDto LargeUnit { get; set; }
         public List<LargeUnitDto> LargeUnits { get; set; }
@@ -115,22 +123,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             {
                 if (cbxSubcategory.SelectedItem != null)
                 {
-                    if(txtLimitedDemand.Text.Trim() == string.Empty)
-                    {
-                        txtLimitedDemand.Text = "0";
-                    }
-                    if (txtCBCNumber.Text.Trim() == string.Empty)
-                    {
-                        txtCBCNumber.Text = "0";
-                    }
-                    if (txtUCPNumber.Text.Trim() == string.Empty)
-                    {
-                        txtUCPNumber.Text = "0";
-                    }
-                    if (txtPSNNumber.Text.Trim() == string.Empty)
-                    {
-                        txtPSNNumber.Text = "0";
-                    }
                     if(cbxSmallUnit.SelectedItem == null)
                     {
                         MessageBox.Show("يجب اختيار الوحدة الكبرى للمنتج", "تأكيد", MessageBoxButtons.OK);
@@ -176,29 +168,48 @@ namespace ElbayaNPresentation.Views.Store.Product
        
       
         // Validate text box for only numbers
-        private void txtLimitedDemand_KeyPress(object sender, KeyPressEventArgs e)
+        public void onlynumwithsinglepoint(object sender, KeyPressEventArgs e, Guna2TextBox textBox)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
+            { e.Handled = true; }
+            if (e.KeyChar == '.' && textBox.Text.Contains("."))
             {
                 e.Handled = true;
             }
+            
         }
-
-        private void txtUCPNumber_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtLimitedDemand_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            onlynumwithsinglepoint(sender, e, txtLimitedDemand);
         }
 
         private void txtCBCNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            onlynumwithsinglepoint(sender, e, txtCBCNumber);
+
         }
 
+        private void txtUCPNumber_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                //txtUCPNumber.Text = e.KeyCode.ToString();
+                txtUCPNumber.Focus();
+            }
+        }
+        private void txtUCPNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            onlynumwithsinglepoint(sender, e, txtUCPNumber);
+            if (e.KeyChar == 13)
+            {
+                txtUCPNumber.Text = e.KeyChar.ToString();
+            }
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            txtCBCNumber.Text = Presenter.GenerateProductNumber().ToString();
+        }
     }
 }

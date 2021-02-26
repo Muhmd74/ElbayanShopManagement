@@ -45,7 +45,9 @@ namespace ElbayanServices.Repository.Products.Product
                     SaleDefaultPrice = model.SaleDefaultPrice,
                     WholesalePrice = model.WholesalePrice,
                     IsUnitSale = model.IsUnitSale,
-                    ImageUrl = model.ImageUrl
+                    ImageUrl = model.ImageUrl,
+                    Discount = model.Discount,
+                    Vat = model.Vat
                 });
                 _context.SaveChanges();
                 return true;
@@ -155,7 +157,7 @@ namespace ElbayanServices.Repository.Products.Product
 
         public List<ProductDto> GetAllProductDeleted()
         {
-            var Products = _context.Products.Where(d => d.IsDeleted)
+            return _context.Products.Where(d => d.IsDeleted)
                 .Include(d => d.SmallUnit)
                 .Include(d => d.LargeUnit)
                 .Include(d => d.SubCategory)

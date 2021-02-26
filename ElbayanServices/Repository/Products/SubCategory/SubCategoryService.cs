@@ -95,7 +95,7 @@ namespace ElbayanServices.Repository.Products.SubCategory
 
         public List<SubCategoryDto> GetAllIsDeleted()
         {
-            var model = _context.SubCategories
+           return _context.SubCategories
                 .Where(d => d.IsDeleted)
                 .Select(d => new SubCategoryDto()
                 {
