@@ -69,11 +69,86 @@ namespace ElbayaNPresentation.Views.Store.Units
 
             /// Notes: columns[0] == Name
             //dgvLargeUnit.Columns[2].Visible = true;
-            //dgvLargeUnit.Columns[3].Visible = true;
+            dgvLargeUnit.Columns[3].Visible = false;
             DataGridViewStyle.StyleDatagridview(dgvLargeUnit);
 
         }
-        private void dgvLargeUnit_DoubleClick(object sender, EventArgs e)
+       
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (dgvTabContainer.SelectedIndex == 0)
+            {
+                dgvLargeUnit.DataSource = Presenter.FilterDataGridView().ToList();
+            }
+            else if (dgvTabContainer.SelectedIndex == 1)
+            {
+                dgvDeletedLargeUnit.DataSource = Presenter.FilterDataGridViewDeleted();
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (txtName.Text != string.Empty)
+            {
+                Presenter.AddNewUnit();
+                MessageBox.Show("تمت عملية الإضافة بنجاح", "تأكيد", MessageBoxButtons.OK);
+                txtName.Clear();
+                txtDescription.Clear();
+                dgvLargeUnit.DataSource = Presenter.GetAllLargeUnit();
+            }
+            else
+            {
+                MessageBox.Show("لا بد من إدخال اسم الوحدة", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (txtName.Text != string.Empty)
+            {
+                Presenter.OnClickUpdatebtn(LargeUnitID);
+                MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
+                txtName.Clear();
+                txtDescription.Clear();
+                dgvLargeUnit.DataSource = Presenter.GetAllLargeUnit();
+
+                btnAdd.Enabled = true;
+                btnUpdate.Enabled = false;
+                btnDeleteByOne.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("لا بد من تحديد صف من البيانات من خلال الضغط مرتين على الصف", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
+        }
+
+        private void btnDeleteByOne_Click(object sender, EventArgs e)
+        {
+            if (txtName.Text != string.Empty)
+            {
+                Presenter.DeletedOrRestore(LargeUnitID);
+                txtName.Clear();
+                txtDescription.Clear();
+                if (dgvTabContainer.SelectedIndex == 1)
+                {
+                    dgvDeletedLargeUnit.DataSource = Presenter.GetAllDeltetdUnits();
+                }
+                else
+                {
+                    dgvLargeUnit.DataSource = Presenter.GetAllLargeUnit();
+                }
+                MessageBox.Show("تمت العملية بنجاح", "تأكيد", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("لا بد من تحديد صف من البيانات من خلال الضغط مرتين على الصف", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
+        }
+
+        private void dgvLargeUnit_DoubleClick_1(object sender, EventArgs e)
         {
             if (dgvLargeUnit.CurrentRow.Index != -1)
             {
@@ -87,9 +162,9 @@ namespace ElbayaNPresentation.Views.Store.Units
             }
         }
 
-        private void dgvTabContainer_SelectedIndexChanged(object sender, EventArgs e)
+        private void dgvTabContainer_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            if(dgvTabContainer.SelectedIndex == 0)
+            if (dgvTabContainer.SelectedIndex == 0)
             {
                 PopulateAllUnitDataGridView();
 
@@ -120,80 +195,6 @@ namespace ElbayaNPresentation.Views.Store.Units
                 txtName.Text = dgvDeletedLargeUnit.CurrentRow.Cells["dgvLargeUnitDeletedName"].Value.ToString();
                 txtDescription.Text = dgvDeletedLargeUnit.CurrentRow.Cells["dgvLargeUnitDeletedName"].Value.ToString();
                 LargeUnitID = new Guid(dgvDeletedLargeUnit.CurrentRow.Cells["dgvLargeUnitDeletedID"].Value.ToString());
-            }
-        }
-
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            if (dgvTabContainer.SelectedIndex == 0)
-            {
-                dgvLargeUnit.DataSource = Presenter.FilterDataGridView().ToList();
-            }
-            else if (dgvTabContainer.SelectedIndex == 1)
-            {
-                dgvDeletedLargeUnit.DataSource = Presenter.FilterDataGridViewDeleted();
-            }
-        }
-
-        private void btnAdd_Click_1(object sender, EventArgs e)
-        {
-            if (txtName.Text != string.Empty)
-            {
-                Presenter.AddNewUnit();
-                MessageBox.Show("تمت عملية الإضافة بنجاح", "تأكيد", MessageBoxButtons.OK);
-                txtName.Clear();
-                txtDescription.Clear();
-                dgvLargeUnit.DataSource = Presenter.GetAllLargeUnit();
-            }
-            else
-            {
-                MessageBox.Show("لا بد من إدخال اسم الوحدة", "تأكيد", MessageBoxButtons.OK);
-                return;
-            }
-        }
-
-        private void btnUpdate_Click_1(object sender, EventArgs e)
-        {
-            if (txtName.Text != string.Empty)
-            {
-                Presenter.OnClickUpdatebtn(LargeUnitID);
-                MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
-                txtName.Clear();
-                txtDescription.Clear();
-                dgvLargeUnit.DataSource = Presenter.GetAllLargeUnit();
-
-                btnAdd.Enabled = true;
-                btnUpdate.Enabled = false;
-                btnDeleteByOne.Enabled = false;
-            }
-            else
-            {
-                MessageBox.Show("لا بد من تحديد صف من البيانات من خلال الضغط مرتين على الصف", "تأكيد", MessageBoxButtons.OK);
-                return;
-            }
-        }
-
-        private void btnDeleteByOne_Click_1(object sender, EventArgs e)
-        {
-            if (txtName.Text != string.Empty)
-            {
-                Presenter.DeletedOrRestore(LargeUnitID);
-                txtName.Clear();
-                txtDescription.Clear();
-                if (dgvTabContainer.SelectedIndex == 1)
-                {
-                    dgvDeletedLargeUnit.DataSource = Presenter.GetAllDeltetdUnits();
-                }
-                else
-                {
-                    dgvLargeUnit.DataSource = Presenter.GetAllLargeUnit();
-                }
-                MessageBox.Show("تمت العملية بنجاح", "تأكيد", MessageBoxButtons.OK);
-            }
-            else
-            {
-                MessageBox.Show("لا بد من تحديد صف من البيانات من خلال الضغط مرتين على الصف", "تأكيد", MessageBoxButtons.OK);
-                return;
             }
         }
     }

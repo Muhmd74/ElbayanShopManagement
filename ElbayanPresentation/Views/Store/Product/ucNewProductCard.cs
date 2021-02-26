@@ -25,8 +25,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             
             Presenter = new ProductPresnter(this);
 
-            txtPSNNumber.Text = Presenter.GenerateProductNumber().ToString();
-            
             _instance = this;
 
             // hide Unmeric up down Arrows:
@@ -65,7 +63,7 @@ namespace ElbayaNPresentation.Views.Store.Product
         public Guid SubCategoryId { get => new Guid(cbxSubcategory.SelectedValue.ToString()); set => cbxSubcategory.SelectedValue = value; }
         public SubCategoryDto SubCategory { get; set; }
         public bool IsExpired { get => rbIsExpiredProduct.Checked; set => rbIsExpiredProduct.Checked = value; }
-        public DateTime ExpireDateTime { get => dtpExpireDate.Value; set => dtpExpireDate.Value = value; }
+        public DateTime ExpireDateTime { get; set; }
         public Guid LargeUnitId { get => new Guid (cbxLargeUnit.SelectedValue.ToString()); set => cbxLargeUnit.SelectedValue = value; }
         public LargeUnitDto LargeUnit { get; set; }
         public List<LargeUnitDto> LargeUnits { get; set; }
@@ -209,5 +207,9 @@ namespace ElbayaNPresentation.Views.Store.Product
 
         }
 
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            txtCBCNumber.Text = Presenter.GenerateProductNumber().ToString();
+        }
     }
 }

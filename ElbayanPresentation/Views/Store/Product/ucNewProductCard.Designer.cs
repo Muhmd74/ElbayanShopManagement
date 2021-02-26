@@ -62,11 +62,9 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbSmallUnitIsMainUnit = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.rbLargeUnitIsmainUnit = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.label25 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pbProductImage = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.dtpExpireDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.btnUploadPicture = new Guna.UI2.WinForms.Guna2Button();
             this.rbIsExpiredProduct = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.cbxLargeUnit = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -81,9 +79,11 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.guna2CustomRadioButton1 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDiscountPercent)).BeginInit();
@@ -94,7 +94,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2TextBox1
@@ -119,7 +118,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
             this.guna2TextBox1.IconLeft = ((System.Drawing.Image)(resources.GetObject("guna2TextBox1.IconLeft")));
-            this.guna2TextBox1.Location = new System.Drawing.Point(946, -3);
+            this.guna2TextBox1.Location = new System.Drawing.Point(435, -3);
             this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 10, 4, 10);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PasswordChar = '\0';
@@ -128,7 +127,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2TextBox1.SelectedText = "";
             this.guna2TextBox1.SelectionStart = 22;
             this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(372, 60);
+            this.guna2TextBox1.Size = new System.Drawing.Size(372, 51);
             this.guna2TextBox1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.guna2TextBox1.TabIndex = 3;
             // 
@@ -142,7 +141,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.btnAdd.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Location = new System.Drawing.Point(17, 828);
+            this.btnAdd.Location = new System.Drawing.Point(23, 749);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
@@ -158,9 +157,9 @@ namespace ElbayaNPresentation.Views.Store.Product
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.LightGray;
             this.guna2GroupBox1.BorderRadius = 9;
-            this.guna2GroupBox1.Controls.Add(this.guna2PictureBox1);
             this.guna2GroupBox1.Controls.Add(this.label18);
             this.guna2GroupBox1.Controls.Add(this.label17);
+            this.guna2GroupBox1.Controls.Add(this.guna2Button1);
             this.guna2GroupBox1.Controls.Add(this.label16);
             this.guna2GroupBox1.Controls.Add(this.txtPSNNumber);
             this.guna2GroupBox1.Controls.Add(this.txtCBCNumber);
@@ -176,7 +175,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
-            this.guna2GroupBox1.Size = new System.Drawing.Size(589, 330);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(589, 256);
             this.guna2GroupBox1.TabIndex = 20;
             this.guna2GroupBox1.Text = "بيانات ارقام المنتج";
             this.guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -200,7 +199,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.label17.ForeColor = System.Drawing.Color.Gray;
-            this.label17.Location = new System.Drawing.Point(60, 134);
+            this.label17.Location = new System.Drawing.Point(105, 134);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(50, 32);
             this.label17.TabIndex = 4;
@@ -227,11 +226,12 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.txtPSNNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPSNNumber.DefaultText = "";
             this.txtPSNNumber.DisabledState.BorderColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtPSNNumber.DisabledState.FillColor = System.Drawing.Color.Gainsboro;
+            this.txtPSNNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.txtPSNNumber.DisabledState.ForeColor = System.Drawing.Color.Gray;
             this.txtPSNNumber.DisabledState.Parent = this.txtPSNNumber;
             this.txtPSNNumber.DisabledState.PlaceholderForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.txtPSNNumber.Enabled = false;
+            this.txtPSNNumber.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.txtPSNNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPSNNumber.FocusedState.Parent = this.txtPSNNumber;
             this.txtPSNNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -268,7 +268,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.txtCBCNumber.ForeColor = System.Drawing.Color.Gray;
             this.txtCBCNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCBCNumber.HoverState.Parent = this.txtCBCNumber;
-            this.txtCBCNumber.Location = new System.Drawing.Point(116, 126);
+            this.txtCBCNumber.Location = new System.Drawing.Point(164, 126);
             this.txtCBCNumber.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
             this.txtCBCNumber.Name = "txtCBCNumber";
             this.txtCBCNumber.PasswordChar = '\0';
@@ -276,7 +276,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.txtCBCNumber.SelectedText = "";
             this.txtCBCNumber.SelectionStart = 1;
             this.txtCBCNumber.ShadowDecoration.Parent = this.txtCBCNumber;
-            this.txtCBCNumber.Size = new System.Drawing.Size(292, 48);
+            this.txtCBCNumber.Size = new System.Drawing.Size(244, 48);
             this.txtCBCNumber.TabIndex = 13;
             this.txtCBCNumber.TextOffset = new System.Drawing.Point(7, 0);
             this.txtCBCNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCBCNumber_KeyPress);
@@ -376,7 +376,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox2.CustomBorderThickness = new System.Windows.Forms.Padding(0, 51, 0, 0);
             this.guna2GroupBox2.Font = new System.Drawing.Font("Sakkal Majalla", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox2.Location = new System.Drawing.Point(17, 400);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(23, 326);
             this.guna2GroupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.ShadowDecoration.Parent = this.guna2GroupBox2;
@@ -588,7 +588,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox3.BorderRadius = 9;
             this.guna2GroupBox3.Controls.Add(this.groupBox1);
             this.guna2GroupBox3.Controls.Add(this.pbProductImage);
-            this.guna2GroupBox3.Controls.Add(this.dtpExpireDate);
             this.guna2GroupBox3.Controls.Add(this.btnUploadPicture);
             this.guna2GroupBox3.Controls.Add(this.rbIsExpiredProduct);
             this.guna2GroupBox3.Controls.Add(this.cbxLargeUnit);
@@ -600,12 +599,13 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox3.Controls.Add(this.label5);
             this.guna2GroupBox3.Controls.Add(this.txtDescription);
             this.guna2GroupBox3.Controls.Add(this.txtLimitedDemand);
+            this.guna2GroupBox3.Controls.Add(this.guna2TextBox2);
             this.guna2GroupBox3.Controls.Add(this.txtName);
             this.guna2GroupBox3.Controls.Add(this.label2);
             this.guna2GroupBox3.Controls.Add(this.label24);
-            this.guna2GroupBox3.Controls.Add(this.label23);
+            this.guna2GroupBox3.Controls.Add(this.label26);
             this.guna2GroupBox3.Controls.Add(this.label1);
-            this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
+            this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(117)))), ((int)(((byte)(216)))));
             this.guna2GroupBox3.CustomBorderThickness = new System.Windows.Forms.Padding(0, 51, 0, 0);
             this.guna2GroupBox3.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.White;
@@ -614,7 +614,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox3.Name = "guna2GroupBox3";
             this.guna2GroupBox3.ShadowDecoration.Depth = 35;
             this.guna2GroupBox3.ShadowDecoration.Parent = this.guna2GroupBox3;
-            this.guna2GroupBox3.Size = new System.Drawing.Size(744, 753);
+            this.guna2GroupBox3.Size = new System.Drawing.Size(744, 704);
             this.guna2GroupBox3.TabIndex = 20;
             this.guna2GroupBox3.Text = "بيانات تعريفية بالصنف";
             this.guna2GroupBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -622,8 +622,8 @@ namespace ElbayaNPresentation.Views.Store.Product
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.guna2CustomRadioButton1);
             this.groupBox1.Controls.Add(this.rbSmallUnitIsMainUnit);
-            this.groupBox1.Controls.Add(this.rbLargeUnitIsmainUnit);
             this.groupBox1.Controls.Add(this.label25);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Font = new System.Drawing.Font("Sakkal Majalla", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -658,28 +658,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.rbSmallUnitIsMainUnit.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.rbSmallUnitIsMainUnit.UncheckedState.Parent = this.rbSmallUnitIsMainUnit;
             // 
-            // rbLargeUnitIsmainUnit
-            // 
-            this.rbLargeUnitIsmainUnit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rbLargeUnitIsmainUnit.Checked = true;
-            this.rbLargeUnitIsmainUnit.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rbLargeUnitIsmainUnit.CheckedState.BorderThickness = 0;
-            this.rbLargeUnitIsmainUnit.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rbLargeUnitIsmainUnit.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rbLargeUnitIsmainUnit.CheckedState.Parent = this.rbLargeUnitIsmainUnit;
-            this.rbLargeUnitIsmainUnit.Location = new System.Drawing.Point(180, 64);
-            this.rbLargeUnitIsmainUnit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.rbLargeUnitIsmainUnit.Name = "rbLargeUnitIsmainUnit";
-            this.rbLargeUnitIsmainUnit.ShadowDecoration.Parent = this.rbLargeUnitIsmainUnit;
-            this.rbLargeUnitIsmainUnit.Size = new System.Drawing.Size(20, 24);
-            this.rbLargeUnitIsmainUnit.TabIndex = 5;
-            this.rbLargeUnitIsmainUnit.TabStop = false;
-            this.rbLargeUnitIsmainUnit.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rbLargeUnitIsmainUnit.UncheckedState.BorderThickness = 2;
-            this.rbLargeUnitIsmainUnit.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rbLargeUnitIsmainUnit.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.rbLargeUnitIsmainUnit.UncheckedState.Parent = this.rbLargeUnitIsmainUnit;
-            // 
             // label25
             // 
             this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -709,30 +687,15 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.pbProductImage.BackColor = System.Drawing.Color.Transparent;
             this.pbProductImage.BorderRadius = 19;
             this.pbProductImage.FillColor = System.Drawing.Color.Silver;
+            this.pbProductImage.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbProductImage.InitialImage")));
             this.pbProductImage.Location = new System.Drawing.Point(14, 429);
             this.pbProductImage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbProductImage.Name = "pbProductImage";
             this.pbProductImage.ShadowDecoration.Parent = this.pbProductImage;
-            this.pbProductImage.Size = new System.Drawing.Size(236, 243);
+            this.pbProductImage.Size = new System.Drawing.Size(236, 186);
             this.pbProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbProductImage.TabIndex = 30;
             this.pbProductImage.TabStop = false;
-            // 
-            // dtpExpireDate
-            // 
-            this.dtpExpireDate.BorderRadius = 9;
-            this.dtpExpireDate.CheckedState.Parent = this.dtpExpireDate;
-            this.dtpExpireDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpExpireDate.HoverState.Parent = this.dtpExpireDate;
-            this.dtpExpireDate.Location = new System.Drawing.Point(259, 528);
-            this.dtpExpireDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dtpExpireDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpExpireDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpExpireDate.Name = "dtpExpireDate";
-            this.dtpExpireDate.ShadowDecoration.Parent = this.dtpExpireDate;
-            this.dtpExpireDate.Size = new System.Drawing.Size(290, 48);
-            this.dtpExpireDate.TabIndex = 10;
-            this.dtpExpireDate.Value = new System.DateTime(2021, 2, 20, 22, 33, 15, 559);
             // 
             // btnUploadPicture
             // 
@@ -748,7 +711,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.btnUploadPicture.Image = ((System.Drawing.Image)(resources.GetObject("btnUploadPicture.Image")));
             this.btnUploadPicture.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnUploadPicture.ImageSize = new System.Drawing.Size(45, 45);
-            this.btnUploadPicture.Location = new System.Drawing.Point(31, 680);
+            this.btnUploadPicture.Location = new System.Drawing.Point(31, 624);
             this.btnUploadPicture.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUploadPicture.Name = "btnUploadPicture";
             this.btnUploadPicture.ShadowDecoration.Parent = this.btnUploadPicture;
@@ -766,7 +729,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.rbIsExpiredProduct.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.rbIsExpiredProduct.CheckedState.InnerColor = System.Drawing.Color.White;
             this.rbIsExpiredProduct.CheckedState.Parent = this.rbIsExpiredProduct;
-            this.rbIsExpiredProduct.Location = new System.Drawing.Point(700, 497);
+            this.rbIsExpiredProduct.Location = new System.Drawing.Point(682, 560);
             this.rbIsExpiredProduct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rbIsExpiredProduct.Name = "rbIsExpiredProduct";
             this.rbIsExpiredProduct.ShadowDecoration.Parent = this.rbIsExpiredProduct;
@@ -796,11 +759,11 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.cbxLargeUnit.HoverState.Parent = this.cbxLargeUnit;
             this.cbxLargeUnit.ItemHeight = 30;
             this.cbxLargeUnit.ItemsAppearance.Parent = this.cbxLargeUnit;
-            this.cbxLargeUnit.Location = new System.Drawing.Point(259, 300);
+            this.cbxLargeUnit.Location = new System.Drawing.Point(277, 302);
             this.cbxLargeUnit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbxLargeUnit.Name = "cbxLargeUnit";
             this.cbxLargeUnit.ShadowDecoration.Parent = this.cbxLargeUnit;
-            this.cbxLargeUnit.Size = new System.Drawing.Size(282, 36);
+            this.cbxLargeUnit.Size = new System.Drawing.Size(252, 36);
             this.cbxLargeUnit.TabIndex = 4;
             // 
             // cbxSubcategory
@@ -821,11 +784,11 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.cbxSubcategory.HoverState.Parent = this.cbxSubcategory;
             this.cbxSubcategory.ItemHeight = 30;
             this.cbxSubcategory.ItemsAppearance.Parent = this.cbxSubcategory;
-            this.cbxSubcategory.Location = new System.Drawing.Point(259, 242);
+            this.cbxSubcategory.Location = new System.Drawing.Point(277, 242);
             this.cbxSubcategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbxSubcategory.Name = "cbxSubcategory";
             this.cbxSubcategory.ShadowDecoration.Parent = this.cbxSubcategory;
-            this.cbxSubcategory.Size = new System.Drawing.Size(282, 36);
+            this.cbxSubcategory.Size = new System.Drawing.Size(252, 36);
             this.cbxSubcategory.TabIndex = 3;
             // 
             // cbxSmallUnit
@@ -846,11 +809,11 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.cbxSmallUnit.HoverState.Parent = this.cbxSmallUnit;
             this.cbxSmallUnit.ItemHeight = 30;
             this.cbxSmallUnit.ItemsAppearance.Parent = this.cbxSmallUnit;
-            this.cbxSmallUnit.Location = new System.Drawing.Point(259, 367);
+            this.cbxSmallUnit.Location = new System.Drawing.Point(277, 362);
             this.cbxSmallUnit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbxSmallUnit.Name = "cbxSmallUnit";
             this.cbxSmallUnit.ShadowDecoration.Parent = this.cbxSmallUnit;
-            this.cbxSmallUnit.Size = new System.Drawing.Size(282, 36);
+            this.cbxSmallUnit.Size = new System.Drawing.Size(252, 36);
             this.cbxSmallUnit.TabIndex = 6;
             // 
             // label4
@@ -859,7 +822,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(559, 492);
+            this.label4.Location = new System.Drawing.Point(541, 553);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(135, 32);
             this.label4.TabIndex = 20;
@@ -920,7 +883,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.txtDescription.ForeColor = System.Drawing.Color.Gray;
             this.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescription.HoverState.Parent = this.txtDescription;
-            this.txtDescription.Location = new System.Drawing.Point(104, 127);
+            this.txtDescription.Location = new System.Drawing.Point(31, 127);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
@@ -928,7 +891,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.txtDescription.PlaceholderText = "";
             this.txtDescription.SelectedText = "";
             this.txtDescription.ShadowDecoration.Parent = this.txtDescription;
-            this.txtDescription.Size = new System.Drawing.Size(435, 104);
+            this.txtDescription.Size = new System.Drawing.Size(508, 87);
             this.txtDescription.TabIndex = 2;
             this.txtDescription.TextOffset = new System.Drawing.Point(7, 0);
             // 
@@ -951,7 +914,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.txtLimitedDemand.ForeColor = System.Drawing.Color.Gray;
             this.txtLimitedDemand.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtLimitedDemand.HoverState.Parent = this.txtLimitedDemand;
-            this.txtLimitedDemand.Location = new System.Drawing.Point(259, 421);
+            this.txtLimitedDemand.Location = new System.Drawing.Point(277, 422);
             this.txtLimitedDemand.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
             this.txtLimitedDemand.Name = "txtLimitedDemand";
             this.txtLimitedDemand.PasswordChar = '\0';
@@ -959,7 +922,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.txtLimitedDemand.SelectedText = "";
             this.txtLimitedDemand.SelectionStart = 1;
             this.txtLimitedDemand.ShadowDecoration.Parent = this.txtLimitedDemand;
-            this.txtLimitedDemand.Size = new System.Drawing.Size(290, 49);
+            this.txtLimitedDemand.Size = new System.Drawing.Size(252, 36);
             this.txtLimitedDemand.TabIndex = 8;
             this.txtLimitedDemand.TextOffset = new System.Drawing.Point(7, 0);
             this.txtLimitedDemand.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLimitedDemand_KeyPress_1);
@@ -983,14 +946,14 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.txtName.ForeColor = System.Drawing.Color.Gray;
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtName.HoverState.Parent = this.txtName;
-            this.txtName.Location = new System.Drawing.Point(104, 68);
+            this.txtName.Location = new System.Drawing.Point(31, 68);
             this.txtName.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderText = "";
             this.txtName.SelectedText = "";
             this.txtName.ShadowDecoration.Parent = this.txtName;
-            this.txtName.Size = new System.Drawing.Size(435, 54);
+            this.txtName.Size = new System.Drawing.Size(508, 49);
             this.txtName.TabIndex = 1;
             this.txtName.TextOffset = new System.Drawing.Point(7, 0);
             // 
@@ -1012,23 +975,11 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.label24.ForeColor = System.Drawing.Color.Gray;
-            this.label24.Location = new System.Drawing.Point(567, 438);
+            this.label24.Location = new System.Drawing.Point(567, 428);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(157, 32);
             this.label24.TabIndex = 6;
             this.label24.Text = "حد الطلب للصنف";
-            // 
-            // label23
-            // 
-            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Sakkal Majalla", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.Gray;
-            this.label23.Location = new System.Drawing.Point(551, 544);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(174, 25);
-            this.label23.TabIndex = 6;
-            this.label23.Text = "أختر تاريخ انتهاء الصلاحية";
             // 
             // label1
             // 
@@ -1042,19 +993,94 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label1.TabIndex = 6;
             this.label1.Text = "اسم الصنف";
             // 
-            // guna2PictureBox1
+            // guna2TextBox2
             // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.BorderRadius = 19;
-            this.guna2PictureBox1.FillColor = System.Drawing.Color.Silver;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(116, 242);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(291, 84);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 32;
-            this.guna2PictureBox1.TabStop = false;
+            this.guna2TextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2TextBox2.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.guna2TextBox2.BorderRadius = 11;
+            this.guna2TextBox2.BorderThickness = 2;
+            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox2.DefaultText = "0";
+            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.guna2TextBox2.DisabledState.Parent = this.guna2TextBox2;
+            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.Enabled = false;
+            this.guna2TextBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox2.FocusedState.Parent = this.guna2TextBox2;
+            this.guna2TextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2TextBox2.ForeColor = System.Drawing.Color.Gray;
+            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox2.HoverState.Parent = this.guna2TextBox2;
+            this.guna2TextBox2.Location = new System.Drawing.Point(277, 483);
+            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
+            this.guna2TextBox2.Name = "guna2TextBox2";
+            this.guna2TextBox2.PasswordChar = '\0';
+            this.guna2TextBox2.PlaceholderText = "";
+            this.guna2TextBox2.SelectedText = "";
+            this.guna2TextBox2.SelectionStart = 1;
+            this.guna2TextBox2.ShadowDecoration.Parent = this.guna2TextBox2;
+            this.guna2TextBox2.Size = new System.Drawing.Size(252, 41);
+            this.guna2TextBox2.TabIndex = 1;
+            this.guna2TextBox2.TextOffset = new System.Drawing.Point(7, 0);
+            // 
+            // label26
+            // 
+            this.label26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label26.ForeColor = System.Drawing.Color.Gray;
+            this.label26.Location = new System.Drawing.Point(587, 492);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(132, 32);
+            this.label26.TabIndex = 6;
+            this.label26.Text = "الكمية  المتوفرة";
+            // 
+            // guna2CustomRadioButton1
+            // 
+            this.guna2CustomRadioButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2CustomRadioButton1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CustomRadioButton1.CheckedState.BorderThickness = 0;
+            this.guna2CustomRadioButton1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CustomRadioButton1.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.guna2CustomRadioButton1.CheckedState.Parent = this.guna2CustomRadioButton1;
+            this.guna2CustomRadioButton1.Location = new System.Drawing.Point(180, 62);
+            this.guna2CustomRadioButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2CustomRadioButton1.Name = "guna2CustomRadioButton1";
+            this.guna2CustomRadioButton1.ShadowDecoration.Parent = this.guna2CustomRadioButton1;
+            this.guna2CustomRadioButton1.Size = new System.Drawing.Size(20, 21);
+            this.guna2CustomRadioButton1.TabIndex = 7;
+            this.guna2CustomRadioButton1.TabStop = false;
+            this.guna2CustomRadioButton1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CustomRadioButton1.UncheckedState.BorderThickness = 2;
+            this.guna2CustomRadioButton1.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CustomRadioButton1.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.guna2CustomRadioButton1.UncheckedState.Parent = this.guna2CustomRadioButton1;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Button1.BorderRadius = 19;
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.FillColor = System.Drawing.Color.Silver;
+            this.guna2Button1.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
+            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.guna2Button1.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2Button1.Location = new System.Drawing.Point(39, 127);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(60, 47);
+            this.guna2Button1.TabIndex = 11;
+            this.guna2Button1.TextOffset = new System.Drawing.Point(-15, 0);
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // ucNewProductCard
             // 
@@ -1086,7 +1112,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1115,7 +1140,6 @@ namespace ElbayaNPresentation.Views.Store.Product
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox3;
-        private Guna.UI2.WinForms.Guna2CustomRadioButton rbLargeUnitIsmainUnit;
         private Guna.UI2.WinForms.Guna2CustomRadioButton rbIsExpiredProduct;
         private Guna.UI2.WinForms.Guna2ComboBox cbxLargeUnit;
         private System.Windows.Forms.Label label6;
@@ -1129,8 +1153,6 @@ namespace ElbayaNPresentation.Views.Store.Product
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txtLimitedDemand;
-        private System.Windows.Forms.Label label23;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpExpireDate;
         private System.Windows.Forms.Label label24;
         private Guna.UI2.WinForms.Guna2PictureBox pbProductImage;
         private Guna.UI2.WinForms.Guna2CustomRadioButton rbSmallUnitIsMainUnit;
@@ -1145,6 +1167,9 @@ namespace ElbayaNPresentation.Views.Store.Product
         public Guna.UI2.WinForms.Guna2TextBox txtName;
         public Guna.UI2.WinForms.Guna2TextBox txtPSNNumber;
         public Guna.UI2.WinForms.Guna2TextBox txtUCPNumber;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton guna2CustomRadioButton1;
+        public Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private System.Windows.Forms.Label label26;
     }
 }
