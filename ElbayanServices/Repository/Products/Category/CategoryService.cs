@@ -74,25 +74,23 @@ namespace ElbayanServices.Repository.Products.Category
 
         public List<CategoryDto> GetAll()
         {
-            var model = _context.Categories.Where(d=>d.IsDeleted==false).Select(d => new CategoryDto()
+            return _context.Categories.Where(d=>d.IsDeleted==false).Select(d => new CategoryDto()
             {
                 Id = d.Id,
                 Name = d.Name,
                 Description = d.Description
             }).ToList();
-            // return model.Any() ? null : model;
-            return model.Any() ? model : null;
+           
         }
         
         public List<CategoryDto> GetAllDeleted()
         {
-            var model = _context.Categories.Where(d=>d.IsDeleted).Select(d => new CategoryDto()
+            return _context.Categories.Where(d=>d.IsDeleted).Select(d => new CategoryDto()
             {
                 Id = d.Id,
                 Name = d.Name,
                 Description = d.Description
             }).ToList();
-            return model.Any() ? model : null;
         }
 
         public CategoryDto GetById(Guid id)

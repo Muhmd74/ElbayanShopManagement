@@ -9,6 +9,8 @@ namespace ElbayanServices.Repository.Products.Product.Dtos
         public string ImageUrl { get; set; }
         public string IsMAinSalesUnit { get; set; }
         public int BarCode { get; set; }
+        public int Vat { get; set; } = 0;
+        public int Discount { get; set; } = 0;
         public string Name { get; set; }
         public string Description { get; set; }
         public Guid SubCategoryId { get; set; }

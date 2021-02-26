@@ -9,14 +9,7 @@ namespace ElbayanDatabase.DataClasses.Product
         public Product Product { get; set; }
         public string StockStatues { get; set; }
         public int Stock { get; set; }
-        public Guid StockTypeId { get; set; }
      }
 
-  public enum StockStatues
-  {
-      Sale,
-      Procurement,
-      Returns,
-      Adjective
-  }
+
 }

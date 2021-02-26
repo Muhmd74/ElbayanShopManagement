@@ -80,7 +80,7 @@ namespace ElbayanServices.Repository.Products.SubCategory
 
         public List<SubCategoryDto> GetAll()
         {
-            var model = _context.SubCategories
+            return _context.SubCategories
                 .Where(d=>d.IsDeleted==false)
                 .Select(d => new SubCategoryDto()
             {
@@ -90,12 +90,11 @@ namespace ElbayanServices.Repository.Products.SubCategory
                 CategoryId = d.CategoryId,
                 CategoryName = d.Category.Name
             }).ToList();
-            return model.Any() ? model : null;
         }
 
         public List<SubCategoryDto> GetAllIsDeleted()
         {
-            var model = _context.SubCategories
+           return _context.SubCategories
                 .Where(d => d.IsDeleted)
                 .Select(d => new SubCategoryDto()
                 {
@@ -105,7 +104,6 @@ namespace ElbayanServices.Repository.Products.SubCategory
                     CategoryId = d.CategoryId,
                     CategoryName = d.Category.Name
                 }).ToList();
-            return model.Any() ? model : null;
         }
 
         public SubCategoryDto GetById(Guid id)
