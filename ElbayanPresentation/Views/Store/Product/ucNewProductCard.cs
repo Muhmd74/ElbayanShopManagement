@@ -26,6 +26,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             Presenter = new ProductPresnter(this);
 
             txtPSNNumber.Text = Presenter.GenerateProductNumber().ToString();
+            
             _instance = this;
 
             // hide Unmeric up down Arrows:

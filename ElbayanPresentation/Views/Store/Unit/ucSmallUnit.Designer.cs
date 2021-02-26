@@ -83,7 +83,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.tpArchieveLargeUnits.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tpArchieveLargeUnits.Name = "tpArchieveLargeUnits";
             this.tpArchieveLargeUnits.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tpArchieveLargeUnits.Size = new System.Drawing.Size(1510, 637);
+            this.tpArchieveLargeUnits.Size = new System.Drawing.Size(1510, 651);
             this.tpArchieveLargeUnits.TabIndex = 1;
             this.tpArchieveLargeUnits.Text = "الوحدات المؤرشفة";
             this.tpArchieveLargeUnits.UseVisualStyleBackColor = true;
@@ -121,7 +121,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.dgvDeletedSmallUnit.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvDeletedSmallUnit.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.dgvDeletedSmallUnit.RowTemplate.Height = 35;
-            this.dgvDeletedSmallUnit.Size = new System.Drawing.Size(1504, 629);
+            this.dgvDeletedSmallUnit.Size = new System.Drawing.Size(1504, 643);
             this.dgvDeletedSmallUnit.TabIndex = 1;
             this.dgvDeletedSmallUnit.DoubleClick += new System.EventHandler(this.dgvDeletedSmallUnit_DoubleClick);
             // 
@@ -194,13 +194,13 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.dgvTabContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvTabContainer.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvTabContainer.ItemSize = new System.Drawing.Size(132, 59);
-            this.dgvTabContainer.Location = new System.Drawing.Point(0, 454);
+            this.dgvTabContainer.Location = new System.Drawing.Point(0, 317);
             this.dgvTabContainer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvTabContainer.Name = "dgvTabContainer";
             this.dgvTabContainer.Padding = new System.Drawing.Point(6, 5);
             this.dgvTabContainer.RightToLeftLayout = true;
             this.dgvTabContainer.SelectedIndex = 0;
-            this.dgvTabContainer.Size = new System.Drawing.Size(1518, 704);
+            this.dgvTabContainer.Size = new System.Drawing.Size(1518, 546);
             this.dgvTabContainer.TabIndex = 6;
             this.dgvTabContainer.SelectedIndexChanged += new System.EventHandler(this.dgvTabContainer_SelectedIndexChanged);
             // 
@@ -215,7 +215,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.tpActiveLargeUnits.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tpActiveLargeUnits.Name = "tpActiveLargeUnits";
             this.tpActiveLargeUnits.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tpActiveLargeUnits.Size = new System.Drawing.Size(1510, 637);
+            this.tpActiveLargeUnits.Size = new System.Drawing.Size(1510, 479);
             this.tpActiveLargeUnits.TabIndex = 0;
             this.tpActiveLargeUnits.Text = "الوحدات النشطة";
             // 
@@ -252,7 +252,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.dgvSmallUnit.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvSmallUnit.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.dgvSmallUnit.RowTemplate.Height = 35;
-            this.dgvSmallUnit.Size = new System.Drawing.Size(1504, 629);
+            this.dgvSmallUnit.Size = new System.Drawing.Size(1504, 471);
             this.dgvSmallUnit.TabIndex = 2;
             this.dgvSmallUnit.DoubleClick += new System.EventHandler(this.dgvSmallUnit_DoubleClick);
             // 
@@ -349,7 +349,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.gbMainOperations.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gbMainOperations.Name = "gbMainOperations";
             this.gbMainOperations.ShadowDecoration.Parent = this.gbMainOperations;
-            this.gbMainOperations.Size = new System.Drawing.Size(1518, 444);
+            this.gbMainOperations.Size = new System.Drawing.Size(1518, 318);
             this.gbMainOperations.TabIndex = 7;
             this.gbMainOperations.Text = "وحدات المنتجات الصغرى";
             this.gbMainOperations.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -358,7 +358,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
             // 
             this.nudSmallUnitWeight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudSmallUnitWeight.DecimalPlaces = 2;
-            this.nudSmallUnitWeight.Location = new System.Drawing.Point(79, 190);
+            this.nudSmallUnitWeight.Location = new System.Drawing.Point(85, 137);
             this.nudSmallUnitWeight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.nudSmallUnitWeight.Maximum = new decimal(new int[] {
             10000000,
@@ -384,11 +384,11 @@ namespace ElbayaNPresentation.Views.Store.Unit
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Sakkal Majalla", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(78, 261);
+            this.label4.Location = new System.Drawing.Point(85, 181);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(346, 13);
+            this.label4.Size = new System.Drawing.Size(436, 24);
             this.label4.TabIndex = 26;
             this.label4.Text = "كام جزء من الوحدة الكبري ، مثال الدستة تحتوى على 12 قعطة يكتب هنا الرقم فقط";
             // 
@@ -397,7 +397,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(539, 201);
+            this.label3.Location = new System.Drawing.Point(545, 148);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(178, 32);
             this.label3.TabIndex = 27;
@@ -420,7 +420,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.cbxLargeUnit.ItemHeight = 30;
             this.cbxLargeUnit.ItemsAppearance.Parent = this.cbxLargeUnit;
             this.cbxLargeUnit.ItemsAppearance.SelectedForeColor = System.Drawing.Color.Gray;
-            this.cbxLargeUnit.Location = new System.Drawing.Point(79, 94);
+            this.cbxLargeUnit.Location = new System.Drawing.Point(79, 67);
             this.cbxLargeUnit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbxLargeUnit.Name = "cbxLargeUnit";
             this.cbxLargeUnit.ShadowDecoration.Parent = this.cbxLargeUnit;
@@ -434,7 +434,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(535, 97);
+            this.label6.Location = new System.Drawing.Point(535, 69);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(188, 32);
             this.label6.TabIndex = 24;
@@ -464,7 +464,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.txtSearch.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconLeft")));
             this.txtSearch.IconLeftOffset = new System.Drawing.Point(9, 0);
             this.txtSearch.IconLeftSize = new System.Drawing.Size(32, 32);
-            this.txtSearch.Location = new System.Drawing.Point(12, 340);
+            this.txtSearch.Location = new System.Drawing.Point(79, 224);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
@@ -495,14 +495,14 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.txtName.ForeColor = System.Drawing.Color.Gray;
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtName.HoverState.Parent = this.txtName;
-            this.txtName.Location = new System.Drawing.Point(817, 83);
+            this.txtName.Location = new System.Drawing.Point(847, 62);
             this.txtName.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderText = "";
             this.txtName.SelectedText = "";
             this.txtName.ShadowDecoration.Parent = this.txtName;
-            this.txtName.Size = new System.Drawing.Size(542, 75);
+            this.txtName.Size = new System.Drawing.Size(504, 47);
             this.txtName.TabIndex = 17;
             // 
             // txtDescription
@@ -524,7 +524,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.txtDescription.ForeColor = System.Drawing.Color.Gray;
             this.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescription.HoverState.Parent = this.txtDescription;
-            this.txtDescription.Location = new System.Drawing.Point(817, 171);
+            this.txtDescription.Location = new System.Drawing.Point(839, 118);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
@@ -532,7 +532,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.txtDescription.PlaceholderText = "";
             this.txtDescription.SelectedText = "";
             this.txtDescription.ShadowDecoration.Parent = this.txtDescription;
-            this.txtDescription.Size = new System.Drawing.Size(542, 139);
+            this.txtDescription.Size = new System.Drawing.Size(512, 103);
             this.txtDescription.TabIndex = 18;
             // 
             // btnAdd
@@ -542,14 +542,14 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.btnAdd.CheckedState.Parent = this.btnAdd;
             this.btnAdd.CustomImages.Parent = this.btnAdd;
             this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Location = new System.Drawing.Point(1168, 340);
+            this.btnAdd.Location = new System.Drawing.Point(1189, 235);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
-            this.btnAdd.Size = new System.Drawing.Size(190, 78);
+            this.btnAdd.Size = new System.Drawing.Size(162, 46);
             this.btnAdd.TabIndex = 19;
             this.btnAdd.Text = "إضافة جديدة";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -561,14 +561,14 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.btnUpdate.CheckedState.Parent = this.btnUpdate;
             this.btnUpdate.CustomImages.Parent = this.btnUpdate;
             this.btnUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.HoverState.Parent = this.btnUpdate;
-            this.btnUpdate.Location = new System.Drawing.Point(934, 340);
+            this.btnUpdate.Location = new System.Drawing.Point(1021, 235);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
-            this.btnUpdate.Size = new System.Drawing.Size(190, 78);
+            this.btnUpdate.Size = new System.Drawing.Size(162, 46);
             this.btnUpdate.TabIndex = 20;
             this.btnUpdate.Text = "حفظ التعديلات";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -580,14 +580,14 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.btnDeleteByOne.CheckedState.Parent = this.btnDeleteByOne;
             this.btnDeleteByOne.CustomImages.Parent = this.btnDeleteByOne;
             this.btnDeleteByOne.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
-            this.btnDeleteByOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteByOne.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteByOne.ForeColor = System.Drawing.Color.White;
             this.btnDeleteByOne.HoverState.Parent = this.btnDeleteByOne;
-            this.btnDeleteByOne.Location = new System.Drawing.Point(690, 340);
+            this.btnDeleteByOne.Location = new System.Drawing.Point(853, 235);
             this.btnDeleteByOne.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDeleteByOne.Name = "btnDeleteByOne";
             this.btnDeleteByOne.ShadowDecoration.Parent = this.btnDeleteByOne;
-            this.btnDeleteByOne.Size = new System.Drawing.Size(190, 78);
+            this.btnDeleteByOne.Size = new System.Drawing.Size(162, 46);
             this.btnDeleteByOne.TabIndex = 21;
             this.btnDeleteByOne.Text = "أرشفة";
             this.btnDeleteByOne.Click += new System.EventHandler(this.btnDeleteByOne_Click);
@@ -597,7 +597,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(433, 354);
+            this.label7.Location = new System.Drawing.Point(500, 238);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(226, 32);
             this.label7.TabIndex = 23;
@@ -608,7 +608,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(1378, 225);
+            this.label8.Location = new System.Drawing.Point(1386, 148);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(117, 32);
             this.label8.TabIndex = 15;
@@ -619,7 +619,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.DimGray;
-            this.label10.Location = new System.Drawing.Point(1377, 97);
+            this.label10.Location = new System.Drawing.Point(1368, 69);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(113, 32);
             this.label10.TabIndex = 16;
@@ -634,7 +634,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ucSmallUnit";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Size = new System.Drawing.Size(1518, 1158);
+            this.Size = new System.Drawing.Size(1518, 863);
             this.tpArchieveLargeUnits.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedSmallUnit)).EndInit();
             this.dgvTabContainer.ResumeLayout(false);
