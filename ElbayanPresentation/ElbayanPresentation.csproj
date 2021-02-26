@@ -195,7 +195,9 @@
       <Name>ElbayanServices</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resources\ProductImage\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\addchartpane_16x16.png" />
   </ItemGroup>
