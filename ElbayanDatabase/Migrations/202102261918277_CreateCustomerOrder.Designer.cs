@@ -7,13 +7,13 @@ namespace ElbayanDatabase.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class CreateEmployeesModel : IMigrationMetadata
+    public sealed partial class CreateCustomerOrder : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateEmployeesModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateCustomerOrder));
         
         string IMigrationMetadata.Id
         {
-            get { return "202102251711089_CreateEmployeesModel"; }
+            get { return "202102261918277_CreateCustomerOrder"; }
         }
         
         string IMigrationMetadata.Source

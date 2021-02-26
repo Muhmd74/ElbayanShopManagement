@@ -106,7 +106,6 @@ namespace ElbayanServices.Repository.Products.SubCategory
                     CategoryName = d.Category.Name
                 }).ToList();
           
-                return model;
          
         }
 

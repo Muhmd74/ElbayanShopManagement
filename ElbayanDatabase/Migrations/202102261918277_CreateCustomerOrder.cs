@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CreateEmployeesModel : DbMigration
+    public partial class CreateCustomerOrder : DbMigration
     {
         public override void Up()
         {
@@ -59,6 +59,7 @@
                         Mobile = c.String(nullable: false),
                         Address = c.String(),
                         DateOfBirth = c.DateTime(nullable: false),
+                        Position = c.String(),
                         Identity = c.String(),
                         IdentityExpirationDate = c.DateTime(nullable: false),
                         PassportNumber = c.Int(nullable: false),
@@ -109,26 +110,6 @@
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.CashierDrawers", t => t.CashierDrawerId)
                 .Index(t => t.CashierDrawerId);
-            
-            CreateTable(
-                "dbo.POS",
-                c => new
-                    {
-                        Id = c.Guid(nullable: false),
-                        Name = c.String(),
-                    })
-                .PrimaryKey(t => t.Id);
-            
-            CreateTable(
-                "dbo.Sales",
-                c => new
-                    {
-                        Id = c.Guid(nullable: false),
-                        POSId = c.Guid(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.POS", t => t.POSId, cascadeDelete: true)
-                .Index(t => t.POSId);
             
             CreateTable(
                 "dbo.EmployeePermissions",
@@ -185,6 +166,9 @@
                 .ForeignKey("dbo.EmployeeSalaryActions", t => t.ActionSalaryId)
                 .Index(t => t.ActionSalaryId);
             
+            AddColumn("dbo.Orders", "EmployeeId", c => c.Guid(nullable: false));
+            CreateIndex("dbo.Orders", "EmployeeId");
+            AddForeignKey("dbo.Orders", "EmployeeId", "dbo.Employees", "Id", cascadeDelete: true);
             AddForeignKey("dbo.MemberRoles", "RoleId", "dbo.Roles", "Id");
         }
         
@@ -198,8 +182,8 @@
             DropForeignKey("dbo.EmployeePermissions", "EmployeeId", "dbo.Employees");
             DropForeignKey("dbo.EmployeePermissions", "RoleId", "dbo.Roles");
             DropForeignKey("dbo.CashierDrawers", "EmployeeId", "dbo.Employees");
-            DropForeignKey("dbo.Sales", "POSId", "dbo.POS");
             DropForeignKey("dbo.CashierDrawers", "PosId", "dbo.POS");
+            DropForeignKey("dbo.Orders", "EmployeeId", "dbo.Employees");
             DropForeignKey("dbo.DrawerTransactions", "CashierDrawerId", "dbo.CashierDrawers");
             DropForeignKey("dbo.DailyOffShifts", "CashierDrawerId", "dbo.CashierDrawers");
             DropForeignKey("dbo.Commissions", "EmployeeSalaryId", "dbo.EmployeeSalaries");
@@ -209,7 +193,7 @@
             DropIndex("dbo.EmployeeSalaryActions", new[] { "EmployeeId" });
             DropIndex("dbo.EmployeePermissions", new[] { "RoleId" });
             DropIndex("dbo.EmployeePermissions", new[] { "EmployeeId" });
-            DropIndex("dbo.Sales", new[] { "POSId" });
+            DropIndex("dbo.Orders", new[] { "EmployeeId" });
             DropIndex("dbo.DrawerTransactions", new[] { "CashierDrawerId" });
             DropIndex("dbo.DailyOffShifts", new[] { "CashierDrawerId" });
             DropIndex("dbo.CashierDrawers", new[] { "PosId" });
@@ -218,12 +202,11 @@
             DropIndex("dbo.Commissions", new[] { "EmployeeSalaryId" });
             DropIndex("dbo.EmployeeSalaries", new[] { "EmployeeId" });
             DropIndex("dbo.Allowances", new[] { "EmployeeSalaryId" });
+            DropColumn("dbo.Orders", "EmployeeId");
             DropTable("dbo.IncreasesSalaries");
             DropTable("dbo.DetectionsSalaries");
             DropTable("dbo.EmployeeSalaryActions");
             DropTable("dbo.EmployeePermissions");
-            DropTable("dbo.Sales");
-            DropTable("dbo.POS");
             DropTable("dbo.DrawerTransactions");
             DropTable("dbo.DailyOffShifts");
             DropTable("dbo.CashierDrawers");

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Data.Entity;
+using ElbayanDatabase.DataClasses.Customers;
+using ElbayanDatabase.DataClasses.Customers.Sales;
 using ElbayanDatabase.DataClasses.Employees.CashierDrawers;
 using ElbayanDatabase.DataClasses.Employees.EmployeeAccountant.EmployeeSalaryActions;
 using ElbayanDatabase.DataClasses.Employees.EmployeeAccountant.Salary;
@@ -41,6 +43,14 @@ namespace ElbayanDatabase.ConnectionTools
         public DbSet<EmployeeSalaryAction> EmployeeSalaryActions { get; set; }
         public DbSet<DetectionsSalary> DetectionsSalaries { get; set; }
         public DbSet<IncreasesSalary> IncreasesSalaries { get; set; }
+        public DbSet<CustomerType> CustomerTypes { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<POS> Poses { get; set; }
+        public DbSet<OrderProduct> OrderProducts { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<DeferredPayment> DeferredPayments { get; set; }
+        public DbSet<Building> Buildings { get; set; }
+
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -156,6 +166,46 @@ namespace ElbayanDatabase.ConnectionTools
                 .WithRequired(d => d.Employee)
                 .HasForeignKey(d => d.EmployeeId)
                 .WillCascadeOnDelete(true);
+            modelBuilder.Entity<CustomerType>()
+                .HasMany(d => d.Customers)
+                .WithRequired(d => d.CustomerType)
+                .HasForeignKey(d => d.CustomerTypeId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Customer>()
+                .HasMany(d => d.Orders)
+                .WithRequired(d => d.Customer)
+                .HasForeignKey(d => d.CustomerId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<POS>()
+                .HasMany(d => d.Orders)
+                .WithRequired(d => d.Pos)
+                .HasForeignKey(d => d.PosId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Building>()
+                .HasMany(d => d.Poses)
+                .WithRequired(d => d.Building)
+                .HasForeignKey(d => d.BuildingId)
+                .WillCascadeOnDelete(true);
+            modelBuilder.Entity<Order>()
+                .HasMany(d => d.DeferredPayments)
+                .WithRequired(d => d.Order)
+                .HasForeignKey(d => d.OrderId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Product>()
+                .HasMany(d => d.OrderProducts)
+                .WithRequired(d => d.Product)
+                .HasForeignKey(d => d.ProductId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Order>()
+                .HasMany(d => d.OrderProducts)
+                .WithRequired(d => d.Order)
+                .HasForeignKey(d => d.OrderId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Customer>()
+                .HasMany(d=>d.Orders)
+                .WithRequired(d=>d.Customer)
+                .HasForeignKey(d=>d.CustomerId)
+                .WillCascadeOnDelete(false);
 
 
 

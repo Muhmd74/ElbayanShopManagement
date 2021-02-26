@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Security.AccessControl;
+using ElbayanDatabase.DataClasses.Customers.Sales;
 using ElbayanDatabase.DataClasses.Employees.CashierDrawers;
 using ElbayanDatabase.DataClasses.Employees.EmployeeAccountant.EmployeeSalaryActions;
 using ElbayanDatabase.DataClasses.Employees.EmployeeAccountant.Salary;
@@ -37,7 +38,7 @@ namespace ElbayanDatabase.DataClasses.Employees.Employees
         public ICollection<EmployeeSalaryAction> EmployeeSalaryActions { get; set; }
         public ICollection<EmployeeSalary> EmployeeSalaries { get; set; }
         public ICollection<CashierDrawer> CashierDrawers { get; set; }
-        
+        public ICollection<Order> Orders { get; set; }
     }
 
     public enum TypeOfResidence

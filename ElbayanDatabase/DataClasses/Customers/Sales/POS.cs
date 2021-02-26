@@ -11,6 +11,8 @@ namespace ElbayanDatabase.DataClasses.Customers.Sales
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public ICollection<CashierDrawer> CashierDrawers { get; set; }
+        public Guid BuildingId { get; set; }
+        public Building Building { get; set; }
+        public ICollection<Order> Orders { get; set; }
     }
 }

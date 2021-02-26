@@ -4,6 +4,7 @@ using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ElbayanDatabase.DataClasses.Employees.Employees;
 
 namespace ElbayanDatabase.DataClasses.Customers.Sales
 {
@@ -21,6 +22,10 @@ namespace ElbayanDatabase.DataClasses.Customers.Sales
         public decimal Deferred { get; set; } //المتبقي
         public Guid PosId { get; set; }
         public POS Pos { get; set; }
+
+        public Guid EmployeeId { get; set; }
+
+        public Employee Employee { get; set; }
         //public Guid UserSignOrder { get; set; }
         public ICollection<DeferredPayment> DeferredPayments { get; set; }
         public ICollection<OrderProduct> OrderProducts { get; set; }

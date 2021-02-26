@@ -114,9 +114,9 @@
     <Compile Include="Migrations\202102202139266_EnhancementRelationInLargeUnitSmall.designer.cs">
       <DependentUpon>202102202139266_EnhancementRelationInLargeUnitSmall.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202102251711089_CreateEmployeesModel.cs" />
-    <Compile Include="Migrations\202102251711089_CreateEmployeesModel.designer.cs">
-      <DependentUpon>202102251711089_CreateEmployeesModel.cs</DependentUpon>
+    <Compile Include="Migrations\202102261918277_CreateCustomerOrder.cs" />
+    <Compile Include="Migrations\202102261918277_CreateCustomerOrder.designer.cs">
+      <DependentUpon>202102261918277_CreateCustomerOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -144,8 +144,8 @@
     <EmbeddedResource Include="Migrations\202102202139266_EnhancementRelationInLargeUnitSmall.resx">
       <DependentUpon>202102202139266_EnhancementRelationInLargeUnitSmall.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102251711089_CreateEmployeesModel.resx">
-      <DependentUpon>202102251711089_CreateEmployeesModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202102261918277_CreateCustomerOrder.resx">
+      <DependentUpon>202102261918277_CreateCustomerOrder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

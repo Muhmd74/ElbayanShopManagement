@@ -185,7 +185,6 @@ namespace ElbayanServices.Repository.Products.Product
                     IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name
 
                 }).ToList();
-            return Products;
         }
 
         public List<ProductDto> GetAll()
