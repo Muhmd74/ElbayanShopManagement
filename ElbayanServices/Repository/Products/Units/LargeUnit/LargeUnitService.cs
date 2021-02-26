@@ -57,7 +57,7 @@ namespace ElbayanServices.Repository.Products.Units.LargeUnit
 
         public List<LargeUnitDto> GetAllLargeUnit()
         {
-            var model = _context.LargeUnits.Where(d=>d.IsDeleted==false).Select(d => new LargeUnitDto()
+           return _context.LargeUnits.Where(d=>d.IsDeleted==false).Select(d => new LargeUnitDto()
             {
                 Id = d.Id,
                 Name = d.Name,
@@ -65,7 +65,6 @@ namespace ElbayanServices.Repository.Products.Units.LargeUnit
                 IsDeleted = d.IsDeleted,
                 Weight = d.Weight
             }).ToList();
-            return model;
         }
 
         public List<LargeUnitDto> GetAllLargeUnitDeleted()
