@@ -81,43 +81,13 @@ namespace ElbayaNPresentation.Views.Store.Unit
             //dgvSmallUnit.Columns[0].Visible = false;
 
         }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            if (txtName.Text != string.Empty)
-            {
-                if (cbxLargeUnit.SelectedItem != null)
-                {
-
-                    Presenter.OnClickbtnAdd();
-                    MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
-                    txtName.Clear();
-                    txtDescription.Clear();
-                    nudSmallUnitWeight.Value = 1.00m;
-                    cbxLargeUnit.Refresh();
-                    
-                    dgvSmallUnit.DataSource = Presenter.GetAllSmallUnit();
-                }
-                else
-                {
-                    MessageBox.Show("كرما أختر قيمة تصنيف رئيس", "تأكيد", MessageBoxButtons.OK);
-                    return;
-                }
-            }
-            else
-            {
-                MessageBox.Show("لا بد من إدخال اسم التصنيف", "تأكيد", MessageBoxButtons.OK);
-                return;
-            }
-        }
-
         private void dgvSmallUnit_DoubleClick(object sender, EventArgs e)
         {
             if (dgvSmallUnit.CurrentRow.Index != -1)
             {
                 btnAdd.Enabled = false;
                 txtName.Text = dgvSmallUnit.CurrentRow.Cells["dgvSmallUnitName"].Value.ToString();
-                txtDescription.Text = dgvSmallUnit.CurrentRow.Cells["dgvSmallUnitDescription"].Value.ToString();
+                txtName.Text = dgvSmallUnit.CurrentRow.Cells["dgvSmallUnitDescription"].Value.ToString();
                 nudSmallUnitWeight.Text = dgvSmallUnit.CurrentRow.Cells["dgvSmallUnitWeight"].Value.ToString();
                 SmallUnitID = new Guid(dgvSmallUnit.CurrentRow.Cells["dgvSmallUnitID"].Value.ToString());
                 LargeUnitID = new Guid(dgvSmallUnit.CurrentRow.Cells["dgvLargeUnitIDForSmallUnitActive"].Value.ToString());
@@ -126,33 +96,6 @@ namespace ElbayaNPresentation.Views.Store.Unit
                 cbxLargeUnit.Text = LargeUnitName;
             }
             }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            if (txtName.Text != string.Empty)
-            {
-                if (cbxLargeUnit.SelectedItem != null)
-                {
-                    Presenter.OnclickUpdate(SmallUnitID, LargeUnitID);
-                    MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
-                    btnAdd.Enabled = true;
-                    btnDeleteByOne.Enabled = true;
-                    cbxLargeUnit.Text = txtDescription.Text = txtName.Text = "";
-                    nudSmallUnitWeight.Value = 1.00m;
-                    dgvSmallUnit.DataSource = Presenter.GetAllSmallUnit();
-                }
-                else
-                {
-                    MessageBox.Show("كرما أختر قيمة تصنيف رئيس", "تأكيد", MessageBoxButtons.OK);
-                    return;
-                }
-            }
-            else
-            {
-                MessageBox.Show("لا بد من إدخال اسم التصنيف", "تأكيد", MessageBoxButtons.OK);
-                return;
-            }
-        }
 
         private void dgvTabContainer_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -181,7 +124,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
 
                 btnAdd.Enabled = false;
                 txtName.Text = dgvDeletedSmallUnit.CurrentRow.Cells["dgvSmallUnitNameDeleted"].Value.ToString();
-                txtDescription.Text = dgvDeletedSmallUnit.CurrentRow.Cells["dgvSmallUnitDescriptionDeleted"].Value.ToString();
+                txtName.Text = dgvDeletedSmallUnit.CurrentRow.Cells["dgvSmallUnitDescriptionDeleted"].Value.ToString();
                 nudSmallUnitWeight.Text = dgvDeletedSmallUnit.CurrentRow.Cells["dgvSmallUnitWeightDeleted"].Value.ToString();
                 SmallUnitID = new Guid(dgvDeletedSmallUnit.CurrentRow.Cells["dgvSmallUnitIDDeleted"].Value.ToString());
                 LargeUnitID = new Guid(dgvDeletedSmallUnit.CurrentRow.Cells["dgvLargeUnitIDForSmallUnitDeleted"].Value.ToString());
@@ -192,13 +135,74 @@ namespace ElbayaNPresentation.Views.Store.Unit
             }
         }
 
+        private void cbxLargeUnit_Click(object sender, EventArgs e)
+        {
+            PopulatecbxLargeUnit();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (txtName.Text != string.Empty)
+            {
+                if (cbxLargeUnit.SelectedItem != null)
+                {
+
+                    Presenter.OnClickbtnAdd();
+                    MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
+                    txtName.Clear();
+                    txtName.Clear();
+                    nudSmallUnitWeight.Value = 1.00m;
+                    cbxLargeUnit.Refresh();
+
+                    dgvSmallUnit.DataSource = Presenter.GetAllSmallUnit();
+                }
+                else
+                {
+                    MessageBox.Show("كرما أختر قيمة تصنيف رئيس", "تأكيد", MessageBoxButtons.OK);
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("لا بد من إدخال اسم التصنيف", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (txtName.Text != string.Empty)
+            {
+                if (cbxLargeUnit.SelectedItem != null)
+                {
+                    Presenter.OnclickUpdate(SmallUnitID, LargeUnitID);
+                    MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
+                    btnAdd.Enabled = true;
+                    btnDeleteByOne.Enabled = true;
+                    cbxLargeUnit.Text = txtName.Text = txtName.Text = "";
+                    nudSmallUnitWeight.Value = 1.00m;
+                    dgvSmallUnit.DataSource = Presenter.GetAllSmallUnit();
+                }
+                else
+                {
+                    MessageBox.Show("كرما أختر قيمة تصنيف رئيس", "تأكيد", MessageBoxButtons.OK);
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("لا بد من إدخال اسم التصنيف", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
+        }
+
         private void btnDeleteByOne_Click(object sender, EventArgs e)
         {
             if (txtName.Text != string.Empty)
             {
                 Presenter.onClickbtnDelete(SmallUnitID);
                 txtName.Clear();
-                txtDescription.Clear();
+                txtName.Clear();
                 nudSmallUnitWeight.Value = 1.00m;
                 if (dgvTabContainer.SelectedIndex == 1)
                 {
@@ -227,11 +231,6 @@ namespace ElbayaNPresentation.Views.Store.Unit
             {
                 dgvDeletedSmallUnit.DataSource = Presenter.FilterDataGridViewDeleted();
             }
-        }
-
-        private void cbxLargeUnit_Click(object sender, EventArgs e)
-        {
-            PopulatecbxLargeUnit();
         }
     }
 }

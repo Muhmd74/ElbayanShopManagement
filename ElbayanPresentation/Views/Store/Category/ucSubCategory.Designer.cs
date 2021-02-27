@@ -79,7 +79,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ActiveMainCategory.Controls.Add(this.tabPage3);
             this.ActiveMainCategory.Controls.Add(this.tabPage4);
-            this.ActiveMainCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ActiveMainCategory.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.ActiveMainCategory.ItemSize = new System.Drawing.Size(132, 59);
             this.ActiveMainCategory.Location = new System.Drawing.Point(0, 357);
             this.ActiveMainCategory.Name = "ActiveMainCategory";
@@ -94,6 +94,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.tabPage3.BackColor = System.Drawing.SystemColors.HotTrack;
             this.tabPage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.tabPage3.Controls.Add(this.dgvSubCategory);
+            this.tabPage3.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.tabPage3.ForeColor = System.Drawing.Color.White;
             this.tabPage3.Location = new System.Drawing.Point(4, 63);
             this.tabPage3.Name = "tabPage3";
@@ -110,7 +111,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.dgvSubCategory.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -180,14 +181,16 @@ namespace ElbayaNPresentation.Views.Store.Category
             // 
             // tabPage4
             // 
+            this.tabPage4.BackColor = System.Drawing.SystemColors.HotTrack;
             this.tabPage4.Controls.Add(this.dgvDeletedMainCategory);
+            this.tabPage4.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.tabPage4.ForeColor = System.Drawing.Color.White;
             this.tabPage4.Location = new System.Drawing.Point(4, 63);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(1522, 467);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "التصنفيات المؤرشفة";
-            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // dgvDeletedMainCategory
             // 
@@ -197,7 +200,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.dgvDeletedMainCategory.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -351,12 +354,12 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.cbxMainCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbxMainCategory.FormattingEnabled = true;
             this.cbxMainCategory.HoverState.Parent = this.cbxMainCategory;
-            this.cbxMainCategory.ItemHeight = 30;
+            this.cbxMainCategory.ItemHeight = 59;
             this.cbxMainCategory.ItemsAppearance.Parent = this.cbxMainCategory;
-            this.cbxMainCategory.Location = new System.Drawing.Point(159, 98);
+            this.cbxMainCategory.Location = new System.Drawing.Point(141, 81);
             this.cbxMainCategory.Name = "cbxMainCategory";
             this.cbxMainCategory.ShadowDecoration.Parent = this.cbxMainCategory;
-            this.cbxMainCategory.Size = new System.Drawing.Size(350, 36);
+            this.cbxMainCategory.Size = new System.Drawing.Size(368, 65);
             this.cbxMainCategory.TabIndex = 33;
             this.cbxMainCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.cbxMainCategory.Click += new System.EventHandler(this.cbxMainCategory_Click);
@@ -548,9 +551,9 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.label9.ForeColor = System.Drawing.Color.DimGray;
             this.label9.Location = new System.Drawing.Point(444, 286);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(208, 32);
+            this.label9.Size = new System.Drawing.Size(225, 32);
             this.label9.TabIndex = 23;
-            this.label9.Text = "بحث باسم أو وصف الوحدة";
+            this.label9.Text = "بحث باسم أو وصف التصنيف";
             // 
             // ucSubCategory
             // 

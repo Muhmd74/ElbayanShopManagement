@@ -73,7 +73,7 @@ namespace ElbayaNPresentation.Views.Store.Units
             DataGridViewStyle.StyleDatagridview(dgvLargeUnit);
 
         }
-
+ 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (txtName.Text != string.Empty)
@@ -136,7 +136,7 @@ namespace ElbayaNPresentation.Views.Store.Units
             }
         }
 
-        private void dgvLargeUnit_DoubleClick_1(object sender, EventArgs e)
+        private void dgvLargeUnit_DoubleClick(object sender, EventArgs e)
         {
             if (dgvLargeUnit.CurrentRow.Index != -1)
             {
@@ -150,7 +150,17 @@ namespace ElbayaNPresentation.Views.Store.Units
             }
         }
 
-        private void dgvTabContainer_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void dgvDeletedLargeUnit_DoubleClick(object sender, EventArgs e)
+        {
+            if (dgvDeletedLargeUnit.CurrentRow.Index != -1)
+            {
+                txtName.Text = dgvDeletedLargeUnit.CurrentRow.Cells["dgvLargeUnitDeletedName"].Value.ToString();
+                txtDescription.Text = dgvDeletedLargeUnit.CurrentRow.Cells["dgvLargeUnitDeletedName"].Value.ToString();
+                LargeUnitID = new Guid(dgvDeletedLargeUnit.CurrentRow.Cells["dgvLargeUnitDeletedID"].Value.ToString());
+            }
+        }
+
+        private void dgvTabContainer_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (dgvTabContainer.SelectedIndex == 0)
             {
@@ -176,21 +186,16 @@ namespace ElbayaNPresentation.Views.Store.Units
             }
         }
 
-        private void dgvDeletedLargeUnit_DoubleClick(object sender, EventArgs e)
-        {
-            if (dgvDeletedLargeUnit.CurrentRow.Index != -1)
-            {
-                txtName.Text = dgvDeletedLargeUnit.CurrentRow.Cells["dgvLargeUnitDeletedName"].Value.ToString();
-                txtDescription.Text = dgvDeletedLargeUnit.CurrentRow.Cells["dgvLargeUnitDeletedName"].Value.ToString();
-                LargeUnitID = new Guid(dgvDeletedLargeUnit.CurrentRow.Cells["dgvLargeUnitDeletedID"].Value.ToString());
-            }
-        }
-
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-
+            if (dgvTabContainer.SelectedIndex == 0)
+            {
+                dgvLargeUnit.DataSource = Presenter.FilterDataGridView().ToList();
+            }
+            else if (dgvTabContainer.SelectedIndex == 1)
+            {
+                dgvDeletedLargeUnit.DataSource = Presenter.FilterDataGridViewDeleted();
+            }
         }
-
-
     }
 }
