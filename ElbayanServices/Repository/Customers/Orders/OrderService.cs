@@ -27,6 +27,7 @@ namespace ElbayanServices.Repository.Customers.Orders
                 IsDeferred = model.IsDeferred,
                 Deferred = model.Deferred,
                 DateTime = model.DateTime,
+                OrderNumber = GenerateSequenceNumber()
             });
             _context.SaveChanges();
             if (order.IsDeferred)
@@ -39,7 +40,7 @@ namespace ElbayanServices.Repository.Customers.Orders
                     DeferredOfOrder = order.Deferred,
                     CollectingPaymentDate = DateTime.UtcNow,
                     DueDatePayingOff = model.DueDatePayingOff,
-                    TotalPayment = 0
+                    TotalPayment = 0,
                 });
                 _context.SaveChanges();
             }
@@ -62,7 +63,8 @@ namespace ElbayanServices.Repository.Customers.Orders
                             SubTotalPrice = orderProduct.SubTotalPrice,
                             TotalProductPrice = orderProduct.TotalProductPrice,
                             Vat =orderProduct.Vat,
-                            TotalPrice =orderProduct.TotalPrice
+                            TotalPrice =orderProduct.TotalPrice,
+                            
                         });
                         orderProductQuantity -= orderProduct.Quantity;
 
@@ -95,6 +97,16 @@ namespace ElbayanServices.Repository.Customers.Orders
               productDiscount = product.Discount,
               productVat = product.Vat
           };
+        }
+        public long GenerateSequenceNumber()
+        {
+            var lastNumber = _context.Orders.OrderByDescending(d=>d.DateTime).LastOrDefault()?.OrderNumber;
+            if (lastNumber >= 0)
+            {
+                return (long)(lastNumber + 1);
+            }
+
+            return 1;
         }
 
         public void Dispose()
