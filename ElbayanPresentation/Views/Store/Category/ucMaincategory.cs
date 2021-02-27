@@ -25,6 +25,8 @@ namespace ElbayaNPresentation.Views.Store.Category
             InitializeComponent();
             Presenter = new MainCategoryPresenter(this);
 
+            _instance = this;
+
             PopulateAllUnitDataGridView();
         }
         private Guid CatID;
