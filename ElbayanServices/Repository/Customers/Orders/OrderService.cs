@@ -9,6 +9,7 @@ namespace ElbayanServices.Repository.Customers.Orders
     public class OrderService : IOrder, IDisposable
     {
         private readonly ConnectionOption _context;
+        private int _orderProductQuantity;
 
         public OrderService(ConnectionOption context)
         { 
@@ -47,19 +48,25 @@ namespace ElbayanServices.Repository.Customers.Orders
             {
                 foreach (var orderProduct in model.OrderProductDto)
                 {
-                    var productOrder = _context.OrderProducts.Add(new OrderProduct()
+                   var orderProductQuantity = ProductQuantity(orderProduct.ProductId);
+                    if (orderProductQuantity>=orderProduct.Quantity)
                     {
-                        Discount = orderProduct.Discount,
-                        Name = orderProduct.ProductName,
-                        OrderId = order.Id,
-                        ProductId = orderProduct.ProductId,
-                        Quantity = orderProduct.Quantity,
-                        PriceSale = orderProduct.PriceSale,
-                        SubTotalPrice = orderProduct.SubTotalPrice,
-                        TotalProductPrice = orderProduct.TotalProductPrice,
-                        Vat =orderProduct.Vat,
-                        TotalPrice =orderProduct.TotalPrice
-                    });
+                        var productOrder = _context.OrderProducts.Add(new OrderProduct()
+                        {
+                            Discount = orderProduct.Discount,
+                            Name = orderProduct.ProductName,
+                            OrderId = order.Id,
+                            ProductId = orderProduct.ProductId,
+                            Quantity = orderProduct.Quantity,
+                            PriceSale = orderProduct.PriceSale,
+                            SubTotalPrice = orderProduct.SubTotalPrice,
+                            TotalProductPrice = orderProduct.TotalProductPrice,
+                            Vat =orderProduct.Vat,
+                            TotalPrice =orderProduct.TotalPrice
+                        });
+                        orderProductQuantity -= orderProduct.Quantity;
+
+                    }
                 }
                 _context.SaveChanges();
                 var orderTable = _context.Orders.FirstOrDefault(d => d.Id == order.Id);
@@ -68,14 +75,20 @@ namespace ElbayanServices.Repository.Customers.Orders
                 orderTable.TotalAfterDiscount = model.TotalAfterDiscount;
                 _context.SaveChanges();
 
-
             }
             return true;
         }
 
+        private int ProductQuantity(Guid productId)
+        {
+            return _context.Products.FirstOrDefault(d => d.Id == productId).TotalQuantity;
+
+
+        }
         public ProductPriceMovementDto GetProductPriceMovement(Guid productId)
         {
           var product = _context.Products.FirstOrDefault(d => d.Id == productId);
+
           return new ProductPriceMovementDto()
           {
               productDefaultSale = product.SaleDefaultPrice,
