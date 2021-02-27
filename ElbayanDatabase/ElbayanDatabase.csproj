@@ -63,11 +63,23 @@
     <Compile Include="ConnectionTools\ConnectionOption.cs" />
     <Compile Include="ConnectionTools\ConnectionString.cs" />
     <Compile Include="DataClasses\Customers\Customer.cs" />
+    <Compile Include="DataClasses\Customers\CustomerType.cs" />
+    <Compile Include="DataClasses\Customers\Sales\Building.cs" />
     <Compile Include="DataClasses\Customers\Sales\DeferredPayment.cs" />
     <Compile Include="DataClasses\Customers\Sales\Order.cs" />
-    <Compile Include="DataClasses\Customers\Sales\PaymentType.cs" />
+    <Compile Include="DataClasses\Customers\Sales\OrderProduct.cs" />
     <Compile Include="DataClasses\Customers\Sales\POS.cs" />
-    <Compile Include="DataClasses\Customers\Sales\Sale.cs" />
+    <Compile Include="DataClasses\Employees\CashierDrawers\CashierDrawer.cs" />
+    <Compile Include="DataClasses\Employees\CashierDrawers\DailyOffShift.cs" />
+    <Compile Include="DataClasses\Employees\CashierDrawers\DrawerTransaction.cs" />
+    <Compile Include="DataClasses\Employees\EmployeeAccountant\EmployeeSalaryActions\DetectionsSalary.cs" />
+    <Compile Include="DataClasses\Employees\EmployeeAccountant\EmployeeSalaryActions\EmployeeSalaryAction.cs" />
+    <Compile Include="DataClasses\Employees\EmployeeAccountant\EmployeeSalaryActions\IncreasesSalary.cs" />
+    <Compile Include="DataClasses\Employees\EmployeeAccountant\Salary\Allowance.cs" />
+    <Compile Include="DataClasses\Employees\EmployeeAccountant\Salary\Commission.cs" />
+    <Compile Include="DataClasses\Employees\EmployeeAccountant\Salary\EmployeeSalary.cs" />
+    <Compile Include="DataClasses\Employees\Employees\Employee.cs" />
+    <Compile Include="DataClasses\Employees\Employees\EmployeePermission.cs" />
     <Compile Include="DataClasses\Member\Member.cs" />
     <Compile Include="DataClasses\Member\MemberRole.cs" />
     <Compile Include="DataClasses\Member\Role.cs" />
@@ -78,6 +90,10 @@
     <Compile Include="DataClasses\Product\ProductStock.cs" />
     <Compile Include="DataClasses\Product\Unit\LargeUnit.cs" />
     <Compile Include="DataClasses\Product\Unit\SmallUnit.cs" />
+    <Compile Include="DataClasses\Suppliers\SupplierOrder\SupplierDeferredPayment.cs" />
+    <Compile Include="DataClasses\Suppliers\SupplierOrder\SupplierOrder.cs" />
+    <Compile Include="DataClasses\Suppliers\SupplierOrder\SupplierOrderProduct.cs" />
+    <Compile Include="DataClasses\Suppliers\Supplier\Supplier.cs" />
     <Compile Include="Migrations\202102121612417_InitialMigration.cs" />
     <Compile Include="Migrations\202102121612417_InitialMigration.designer.cs">
       <DependentUpon>202102121612417_InitialMigration.cs</DependentUpon>
@@ -102,9 +118,17 @@
     <Compile Include="Migrations\202102202139266_EnhancementRelationInLargeUnitSmall.designer.cs">
       <DependentUpon>202102202139266_EnhancementRelationInLargeUnitSmall.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202102261353073_CreateEnhancementProduct.cs" />
-    <Compile Include="Migrations\202102261353073_CreateEnhancementProduct.designer.cs">
-      <DependentUpon>202102261353073_CreateEnhancementProduct.cs</DependentUpon>
+    <Compile Include="Migrations\202102261918277_CreateCustomerOrder.cs" />
+    <Compile Include="Migrations\202102261918277_CreateCustomerOrder.designer.cs">
+      <DependentUpon>202102261918277_CreateCustomerOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102271229132_EnhancementOrder.cs" />
+    <Compile Include="Migrations\202102271229132_EnhancementOrder.designer.cs">
+      <DependentUpon>202102271229132_EnhancementOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102271953342_CreateSupplierDaatabase.cs" />
+    <Compile Include="Migrations\202102271953342_CreateSupplierDaatabase.designer.cs">
+      <DependentUpon>202102271953342_CreateSupplierDaatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -132,8 +156,14 @@
     <EmbeddedResource Include="Migrations\202102202139266_EnhancementRelationInLargeUnitSmall.resx">
       <DependentUpon>202102202139266_EnhancementRelationInLargeUnitSmall.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102261353073_CreateEnhancementProduct.resx">
-      <DependentUpon>202102261353073_CreateEnhancementProduct.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202102261918277_CreateCustomerOrder.resx">
+      <DependentUpon>202102261918277_CreateCustomerOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102271229132_EnhancementOrder.resx">
+      <DependentUpon>202102271229132_EnhancementOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102271953342_CreateSupplierDaatabase.resx">
+      <DependentUpon>202102271953342_CreateSupplierDaatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

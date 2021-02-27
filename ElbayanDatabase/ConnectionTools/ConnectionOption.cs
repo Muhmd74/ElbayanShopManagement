@@ -1,15 +1,17 @@
 ﻿using System;
-using System.CodeDom;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ElbayanDatabase.DataClasses.Customers;
+using ElbayanDatabase.DataClasses.Customers.Sales;
+using ElbayanDatabase.DataClasses.Employees.CashierDrawers;
+using ElbayanDatabase.DataClasses.Employees.EmployeeAccountant.EmployeeSalaryActions;
+using ElbayanDatabase.DataClasses.Employees.EmployeeAccountant.Salary;
+using ElbayanDatabase.DataClasses.Employees.Employees;
 using ElbayanDatabase.DataClasses.Member;
 using ElbayanDatabase.DataClasses.Product;
 using ElbayanDatabase.DataClasses.Product.ProductCategory;
 using ElbayanDatabase.DataClasses.Product.Unit;
+using ElbayanDatabase.DataClasses.Suppliers.Supplier;
+using ElbayanDatabase.DataClasses.Suppliers.SupplierOrder;
 
 namespace ElbayanDatabase.ConnectionTools
 {
@@ -31,14 +33,46 @@ namespace ElbayanDatabase.ConnectionTools
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductPrice> ProductPrices { get; set; }
         public DbSet<ProductStock> ProductStocks { get; set; }
+        //Employees
+        public DbSet<CashierDrawer> CashierDrawers { get; set; }
+        public DbSet<DailyOffShift> DailyOffShifts { get; set; }
+        public DbSet<DrawerTransaction> DrawerTransactions { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<EmployeePermission> EmployeePermissions { get; set; }
+        public DbSet<Allowance> Allowances { get; set; }
+        public DbSet<Commission> Commissions { get; set; }
+        public DbSet<EmployeeSalary> EmployeeSalaries { get; set; }
+        public DbSet<EmployeeSalaryAction> EmployeeSalaryActions { get; set; }
+        public DbSet<DetectionsSalary> DetectionsSalaries { get; set; }
+        public DbSet<IncreasesSalary> IncreasesSalaries { get; set; }
+        public DbSet<CustomerType> CustomerTypes { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<POS> Poses { get; set; }
+        public DbSet<OrderProduct> OrderProducts { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<DeferredPayment> DeferredPayments { get; set; }
+        public DbSet<Building> Buildings { get; set; }
+        public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<SupplierOrderProduct> SupplierOrderProducts { get; set; }
+        public DbSet<SupplierDeferredPayment> SupplierDeferredPayments { get; set; }
+        public DbSet<SupplierOrder> SupplierOrders { get; set; }
+
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Employee>().HasIndex(u => u.Email).IsUnique();
+
             modelBuilder.Entity<Role>()// Role : MemberRoles
                 .HasMany(d => d.MemberRoles)
                 .WithRequired(d => d.Role)
                 .HasForeignKey(d => d.RoleId)
-                .WillCascadeOnDelete(true);
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Role>()// Role : EmployeePermissions
+                .HasMany(d => d.EmployeePermissions)
+                .WithRequired(d => d.Role)
+                .HasForeignKey(d => d.RoleId)
+                .WillCascadeOnDelete(false);
             modelBuilder.Entity<Member>()//Member : MemberRole
                 .HasMany(d => d.MemberRoles)
                 .WithRequired(d => d.Member)
@@ -84,6 +118,128 @@ namespace ElbayanDatabase.ConnectionTools
                 .HasForeignKey(d => d.ProductId)
                 .WillCascadeOnDelete(true);
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<CashierDrawer>() //CashierDrawer : DailyOffShifts
+                .HasMany(d => d.DailyOffShifts)
+                .WithRequired(d => d.CashierDrawer)
+                .HasForeignKey(d => d.CashierDrawerId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<CashierDrawer>()//CashierDrawer : DailyOffShifts
+                .HasMany(d => d.DrawerTransactions)
+                .WithRequired(d => d.CashierDrawer)
+                .HasForeignKey(d => d.CashierDrawerId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<EmployeeSalaryAction>() //EmployeeSalaryAction : DetectionsSalaries
+                .HasMany(d => d.DetectionsSalaries)
+                .WithRequired(d => d.EmployeeSalaryAction)
+                .HasForeignKey(d => d.ActionSalaryId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<EmployeeSalaryAction>()//EmployeeSalaryAction : IncreasesSalaries
+                .HasMany(d => d.IncreasesSalaries)
+                .WithRequired(d => d.EmployeeSalaryAction)
+                .HasForeignKey(d => d.ActionSalaryId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<EmployeeSalary>() //EmployeeSalary : Allowances
+                .HasMany(d => d.Allowances)
+                .WithRequired(d => d.EmployeeSalary)
+                .HasForeignKey(d => d.EmployeeSalaryId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<EmployeeSalary>()//EmployeeSalary : Commissions
+                .HasMany(d => d.Commissions)
+                .WithRequired(d => d.EmployeeSalary)
+                .HasForeignKey(d => d.EmployeeSalaryId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Employee>()// Employee : CashierDrawers
+                .HasMany(d => d.CashierDrawers)
+                .WithRequired(d => d.Employee)
+                .HasForeignKey(d => d.EmployeeId)
+                .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<Employee>()// Employee : EmployeePermissions
+                .HasMany(d => d.EmployeePermissions)
+                .WithRequired(d => d.Employee)
+                .HasForeignKey(d => d.EmployeeId)
+                .WillCascadeOnDelete(true);
+            modelBuilder.Entity<Employee>()// Employee : EmployeeSalaries
+                .HasMany(d => d.EmployeeSalaries)
+                .WithRequired(d => d.Employee)
+                .HasForeignKey(d => d.EmployeeId)
+                .WillCascadeOnDelete(true);
+            modelBuilder.Entity<Employee>()// Employee : EmployeeSalaryActions
+                .HasMany(d => d.EmployeeSalaryActions)
+                .WithRequired(d => d.Employee)
+                .HasForeignKey(d => d.EmployeeId)
+                .WillCascadeOnDelete(true);
+            modelBuilder.Entity<CustomerType>()
+                .HasMany(d => d.Customers)
+                .WithRequired(d => d.CustomerType)
+                .HasForeignKey(d => d.CustomerTypeId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Customer>()
+                .HasMany(d => d.Orders)
+                .WithRequired(d => d.Customer)
+                .HasForeignKey(d => d.CustomerId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<POS>()
+                .HasMany(d => d.Orders)
+                .WithRequired(d => d.Pos)
+                .HasForeignKey(d => d.PosId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Building>()
+                .HasMany(d => d.Poses)
+                .WithRequired(d => d.Building)
+                .HasForeignKey(d => d.BuildingId)
+                .WillCascadeOnDelete(true);
+            modelBuilder.Entity<Order>()
+                .HasMany(d => d.DeferredPayments)
+                .WithRequired(d => d.Order)
+                .HasForeignKey(d => d.OrderId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Product>()
+                .HasMany(d => d.OrderProducts)
+                .WithRequired(d => d.Product)
+                .HasForeignKey(d => d.ProductId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Order>()
+                .HasMany(d => d.OrderProduct)
+                .WithRequired(d => d.Order)
+                .HasForeignKey(d => d.OrderId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Customer>()
+                .HasMany(d=>d.Orders)
+                .WithRequired(d=>d.Customer)
+                .HasForeignKey(d=>d.CustomerId)
+                .WillCascadeOnDelete(false); 
+            modelBuilder.Entity<SupplierOrder>()
+                .HasMany(d => d.SupplierDeferredPayments)
+                .WithRequired(d => d.SupplierOrder)
+                .HasForeignKey(d => d.SupplierOrderId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Supplier>()
+                .HasMany(d => d.SupplierOrders)
+                .WithRequired(d => d.Supplier)
+                .HasForeignKey(d => d.SupplierId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<CustomerType>()
+                .HasMany(d=>d.Suppliers)
+                .WithRequired(d=>d.CustomerType)
+                .HasForeignKey(d=>d.CustomerTypeId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<SupplierOrder>()
+                .HasMany(d => d.SupplierDeferredPayments)
+                .WithRequired(d => d.SupplierOrder)
+                .HasForeignKey(d => d.SupplierOrderId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<SupplierOrder>()
+                .HasMany(d => d.SupplierOrderProducts)
+                .WithRequired(d => d.SupplierOrder)
+                .HasForeignKey(d => d.SupplierOrderId)
+                .WillCascadeOnDelete(false);
+
+
+
         }
     }
 }

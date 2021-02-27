@@ -74,18 +74,18 @@ namespace ElbayanServices.Repository.Products.Category
 
         public List<CategoryDto> GetAll()
         {
-            return _context.Categories.Where(d=>d.IsDeleted==false).Select(d => new CategoryDto()
+           return _context.Categories.Where(d=>d.IsDeleted==false).Select(d => new CategoryDto()
             {
                 Id = d.Id,
                 Name = d.Name,
                 Description = d.Description
             }).ToList();
-           
+            
         }
         
         public List<CategoryDto> GetAllDeleted()
         {
-            return _context.Categories.Where(d=>d.IsDeleted).Select(d => new CategoryDto()
+           return _context.Categories.Where(d=>d.IsDeleted).Select(d => new CategoryDto()
             {
                 Id = d.Id,
                 Name = d.Name,

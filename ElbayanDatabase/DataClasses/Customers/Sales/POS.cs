@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ElbayanDatabase.DataClasses.Customers.Sales
 {
@@ -10,6 +7,8 @@ namespace ElbayanDatabase.DataClasses.Customers.Sales
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public ICollection<Sale> Sales { get; set; }
+        public Guid? BuildingId { get; set; }
+        public Building Building { get; set; }
+        public ICollection<Order> Orders { get; set; }
     }
 }

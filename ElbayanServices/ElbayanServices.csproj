@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,6 +33,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -60,9 +62,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Decrypt.cs" />
     <Compile Include="Common\DirectoryNames.cs" />
     <Compile Include="Common\StaticGenerator.cs" />
+    <Compile Include="Common\Encrypt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Customers\Building\BuildingService.cs" />
+    <Compile Include="Repository\Customers\Building\Dtos\BuildingDto.cs" />
+    <Compile Include="Repository\Customers\Building\IBuilding.cs" />
+    <Compile Include="Repository\Customers\Customers\CustomerService.cs" />
+    <Compile Include="Repository\Customers\Customers\Dtos\CustomerDetailsDto.cs" />
+    <Compile Include="Repository\Customers\Customers\Dtos\CustomerDetailsOrder.cs" />
+    <Compile Include="Repository\Customers\Customers\Dtos\CustomerDto.cs" />
+    <Compile Include="Repository\Customers\Customers\Dtos\DeferredPaymentsCustomerDto.cs" />
+    <Compile Include="Repository\Customers\Customers\ICustomer.cs" />
+    <Compile Include="Repository\Customers\CustomerTypes\CustomerTypeService.cs" />
+    <Compile Include="Repository\Customers\CustomerTypes\Dtos\CustomerTypesDto.cs" />
+    <Compile Include="Repository\Customers\CustomerTypes\ICustomerType.cs" />
+    <Compile Include="Repository\Customers\DeferredPayments\DeferredPaymentService.cs" />
+    <Compile Include="Repository\Customers\DeferredPayments\Dtos\DeferredPaymentDto.cs" />
+    <Compile Include="Repository\Customers\DeferredPayments\Dtos\OrderNameDto.cs" />
+    <Compile Include="Repository\Customers\DeferredPayments\IDeferredPayment.cs" />
+    <Compile Include="Repository\Customers\Orders\Dtos\OrderDto.cs" />
+    <Compile Include="Repository\Customers\Orders\Dtos\ProductPriceMovementDto.cs" />
+    <Compile Include="Repository\Customers\Orders\IOrder.cs" />
+    <Compile Include="Repository\Customers\Orders\OrderService.cs" />
+    <Compile Include="Repository\Customers\Poses\Dtos\BuildingNameDto.cs" />
+    <Compile Include="Repository\Customers\Poses\Dtos\PosDto.cs" />
+    <Compile Include="Repository\Customers\Poses\IPos.cs" />
+    <Compile Include="Repository\Customers\Poses\PosService.cs" />
+    <Compile Include="Repository\Customers\Suppliers\SupplierType\SupplierTypeService.cs" />
+    <Compile Include="Repository\Customers\Suppliers\SupplierType\Dtos\SupplierTypeDto.cs" />
+    <Compile Include="Repository\Customers\Suppliers\SupplierType\ISupplierType.cs" />
+    <Compile Include="Repository\Customers\Suppliers\Supplier\Dtos\SupplierDeferredDto.cs" />
+    <Compile Include="Repository\Customers\Suppliers\Supplier\Dtos\SupplierDto.cs" />
+    <Compile Include="Repository\Customers\Suppliers\Supplier\Dtos\SupplierNameDto.cs" />
+    <Compile Include="Repository\Customers\Suppliers\Supplier\ISupplier.cs" />
+    <Compile Include="Repository\Customers\Suppliers\Supplier\SupplierService.cs" />
+    <Compile Include="Repository\Employees\Employees\Dtos\EmployeeDto.cs" />
+    <Compile Include="Repository\Employees\Employees\Dtos\EmployeeNameDto.cs" />
+    <Compile Include="Repository\Employees\Employees\Dtos\LoginDto.cs" />
+    <Compile Include="Repository\Employees\Employees\EmployeeService.cs" />
+    <Compile Include="Repository\Employees\Employees\IEmployee.cs" />
     <Compile Include="Repository\Products\Category\CategoryService.cs" />
     <Compile Include="Repository\Products\Category\Dtos\CategoryDto.cs" />
     <Compile Include="Repository\Products\Category\ICategory.cs" />

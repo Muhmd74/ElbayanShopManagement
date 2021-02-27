@@ -90,6 +90,7 @@ namespace ElbayanServices.Repository.Products.SubCategory
                 CategoryId = d.CategoryId,
                 CategoryName = d.Category.Name
             }).ToList();
+            
         }
 
         public List<SubCategoryDto> GetAllIsDeleted()
@@ -104,6 +105,8 @@ namespace ElbayanServices.Repository.Products.SubCategory
                     CategoryId = d.CategoryId,
                     CategoryName = d.Category.Name
                 }).ToList();
+          
+         
         }
 
         public SubCategoryDto GetById(Guid id)
