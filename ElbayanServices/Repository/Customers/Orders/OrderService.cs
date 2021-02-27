@@ -2,6 +2,7 @@
 using System.Linq;
 using ElbayanDatabase.ConnectionTools;
 using ElbayanDatabase.DataClasses.Customers.Sales;
+using ElbayanServices.Common;
 using ElbayanServices.Repository.Customers.Orders.Dtos;
 
 namespace ElbayanServices.Repository.Customers.Orders
@@ -67,6 +68,7 @@ namespace ElbayanServices.Repository.Customers.Orders
                             
                         });
                         orderProductQuantity -= orderProduct.Quantity;
+                        ProductStock(orderProduct.ProductId, orderProduct.Quantity);
 
                     }
                 }
@@ -81,6 +83,14 @@ namespace ElbayanServices.Repository.Customers.Orders
             return true;
         }
 
+        private bool ProductStock(Guid productId,int quantity)
+        {
+            var productStock =
+            _context.ProductStocks.FirstOrDefault(d => d.ProductId == productId);
+            productStock.Stock -= quantity;
+            productStock.StockStatues = StaticGenerator.ProductStockStatues.Sale;
+            return true;
+        }
         private int ProductQuantity(Guid productId)
         {
             return _context.Products.FirstOrDefault(d => d.Id == productId).TotalQuantity;
