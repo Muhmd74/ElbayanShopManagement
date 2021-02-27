@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ElbayanDatabase.DataClasses.Suppliers.Supplier;
 
 namespace ElbayanDatabase.DataClasses.Customers
 {
@@ -7,6 +8,8 @@ namespace ElbayanDatabase.DataClasses.Customers
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
+        public bool IsSupplier { get; set; }
+        public ICollection<Supplier> Suppliers { get; set; }
         public ICollection<Customer> Customers { get; set; }
     }
 }

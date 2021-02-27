@@ -10,6 +10,8 @@ using ElbayanDatabase.DataClasses.Member;
 using ElbayanDatabase.DataClasses.Product;
 using ElbayanDatabase.DataClasses.Product.ProductCategory;
 using ElbayanDatabase.DataClasses.Product.Unit;
+using ElbayanDatabase.DataClasses.Suppliers.Supplier;
+using ElbayanDatabase.DataClasses.Suppliers.SupplierOrder;
 
 namespace ElbayanDatabase.ConnectionTools
 {
@@ -50,6 +52,10 @@ namespace ElbayanDatabase.ConnectionTools
         public DbSet<Order> Orders { get; set; }
         public DbSet<DeferredPayment> DeferredPayments { get; set; }
         public DbSet<Building> Buildings { get; set; }
+        public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<SupplierOrderProduct> SupplierOrderProducts { get; set; }
+        public DbSet<SupplierDeferredPayment> SupplierDeferredPayments { get; set; }
+        public DbSet<SupplierOrder> SupplierOrders { get; set; }
 
 
 
@@ -205,6 +211,31 @@ namespace ElbayanDatabase.ConnectionTools
                 .HasMany(d=>d.Orders)
                 .WithRequired(d=>d.Customer)
                 .HasForeignKey(d=>d.CustomerId)
+                .WillCascadeOnDelete(false); 
+            modelBuilder.Entity<SupplierOrder>()
+                .HasMany(d => d.SupplierDeferredPayments)
+                .WithRequired(d => d.SupplierOrder)
+                .HasForeignKey(d => d.SupplierOrderId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Supplier>()
+                .HasMany(d => d.SupplierOrders)
+                .WithRequired(d => d.Supplier)
+                .HasForeignKey(d => d.SupplierId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<CustomerType>()
+                .HasMany(d=>d.Suppliers)
+                .WithRequired(d=>d.CustomerType)
+                .HasForeignKey(d=>d.CustomerTypeId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<SupplierOrder>()
+                .HasMany(d => d.SupplierDeferredPayments)
+                .WithRequired(d => d.SupplierOrder)
+                .HasForeignKey(d => d.SupplierOrderId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<SupplierOrder>()
+                .HasMany(d => d.SupplierOrderProducts)
+                .WithRequired(d => d.SupplierOrder)
+                .HasForeignKey(d => d.SupplierOrderId)
                 .WillCascadeOnDelete(false);
 
 

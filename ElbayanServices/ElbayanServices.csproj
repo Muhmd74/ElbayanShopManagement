@@ -77,7 +77,7 @@
     <Compile Include="Repository\Customers\Customers\Dtos\DeferredPaymentsCustomerDto.cs" />
     <Compile Include="Repository\Customers\Customers\ICustomer.cs" />
     <Compile Include="Repository\Customers\CustomerTypes\CustomerTypeService.cs" />
-    <Compile Include="Repository\Customers\CustomerTypes\Dtos\CustomerTypeDto.cs" />
+    <Compile Include="Repository\Customers\CustomerTypes\Dtos\CustomerTypesDto.cs" />
     <Compile Include="Repository\Customers\CustomerTypes\ICustomerType.cs" />
     <Compile Include="Repository\Customers\DeferredPayments\DeferredPaymentService.cs" />
     <Compile Include="Repository\Customers\DeferredPayments\Dtos\DeferredPaymentDto.cs" />
@@ -91,6 +91,14 @@
     <Compile Include="Repository\Customers\Poses\Dtos\PosDto.cs" />
     <Compile Include="Repository\Customers\Poses\IPos.cs" />
     <Compile Include="Repository\Customers\Poses\PosService.cs" />
+    <Compile Include="Repository\Customers\Suppliers\SupplierType\SupplierTypeService.cs" />
+    <Compile Include="Repository\Customers\Suppliers\SupplierType\Dtos\SupplierTypeDto.cs" />
+    <Compile Include="Repository\Customers\Suppliers\SupplierType\ISupplierType.cs" />
+    <Compile Include="Repository\Customers\Suppliers\Supplier\Dtos\SupplierDeferredDto.cs" />
+    <Compile Include="Repository\Customers\Suppliers\Supplier\Dtos\SupplierDto.cs" />
+    <Compile Include="Repository\Customers\Suppliers\Supplier\Dtos\SupplierNameDto.cs" />
+    <Compile Include="Repository\Customers\Suppliers\Supplier\ISupplier.cs" />
+    <Compile Include="Repository\Customers\Suppliers\Supplier\SupplierService.cs" />
     <Compile Include="Repository\Employees\Employees\Dtos\EmployeeDto.cs" />
     <Compile Include="Repository\Employees\Employees\Dtos\EmployeeNameDto.cs" />
     <Compile Include="Repository\Employees\Employees\Dtos\LoginDto.cs" />

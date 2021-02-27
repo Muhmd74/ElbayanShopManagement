@@ -1,35 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ElbayanDatabase.ConnectionTools;
 using ElbayanDatabase.DataClasses.Customers;
-using ElbayanServices.Repository.Customers.CustomerTypes.Dtos;
+using ElbayanServices.Repository.Customers.Suppliers.SupplierType.Dtos;
 
-namespace ElbayanServices.Repository.Customers.CustomerTypes
+namespace ElbayanServices.Repository.Customers.Suppliers.SupplierType
 {
-   public class CustomerTypeService : ICustomerType , IDisposable
+   public class SupplierTypeService : ISupplierType, IDisposable
    {
        private readonly ConnectionOption _context;
 
-       public CustomerTypeService(ConnectionOption context)
+       public SupplierTypeService(ConnectionOption context)
        {
            _context = context;
        }
 
-       public bool Create(CustomerTypeDto model)
+       public bool Create(SupplierTypeDto model)
        {
            var type = _context.CustomerTypes.Add(new CustomerType()
            {
                Name = model.Name,
-               IsSupplier = false
+               IsSupplier = true
            });
            _context.SaveChanges();
            return true;
        }
 
-        public bool Update(CustomerTypeDto model)
+        public bool Update(SupplierTypeDto model)
         {
             var type = _context.CustomerTypes.FirstOrDefault(d => d.Id == model.Id);
             if (type!=null)
@@ -42,22 +40,22 @@ namespace ElbayanServices.Repository.Customers.CustomerTypes
             return false;
         }
 
-        public List<CustomerTypeDto> GetAll()
+        public List<SupplierTypeDto> GetAll()
         {
-            return _context.CustomerTypes.Where(d=>d.IsSupplier==false).Select(d => new CustomerTypeDto()
+            return _context.CustomerTypes.Where(d=>d.IsSupplier).Select(d => new SupplierTypeDto()
             {
                 Id = d.Id,
                 Name = d.Name
             }).ToList();
         }
 
-        public CustomerTypeDto GetById(Guid id)
+        public SupplierTypeDto GetById(Guid id)
         {
             var type = _context.CustomerTypes.FirstOrDefault(d => d.Id == id);
 
             if (type!=null)
             {
-                return new CustomerTypeDto
+                return new SupplierTypeDto
                 {
                     Id=type.Id,
                     Name=type.Name
@@ -69,8 +67,7 @@ namespace ElbayanServices.Repository.Customers.CustomerTypes
 
         public void Dispose()
         {
-_context.Dispose();
-
+            _context.Dispose();
         }
     }
 }

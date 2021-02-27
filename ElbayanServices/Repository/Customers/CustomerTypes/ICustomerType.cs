@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ElbayanServices.Repository.Customers.CustomerTypes.Dtos;
+using ElbayanServices.Repository.Customers.Suppliers.SupplierType.Dtos;
 
 namespace ElbayanServices.Repository.Customers.CustomerTypes
 {

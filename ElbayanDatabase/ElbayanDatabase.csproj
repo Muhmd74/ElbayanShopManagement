@@ -90,6 +90,10 @@
     <Compile Include="DataClasses\Product\ProductStock.cs" />
     <Compile Include="DataClasses\Product\Unit\LargeUnit.cs" />
     <Compile Include="DataClasses\Product\Unit\SmallUnit.cs" />
+    <Compile Include="DataClasses\Suppliers\SupplierOrder\SupplierDeferredPayment.cs" />
+    <Compile Include="DataClasses\Suppliers\SupplierOrder\SupplierOrder.cs" />
+    <Compile Include="DataClasses\Suppliers\SupplierOrder\SupplierOrderProduct.cs" />
+    <Compile Include="DataClasses\Suppliers\Supplier\Supplier.cs" />
     <Compile Include="Migrations\202102121612417_InitialMigration.cs" />
     <Compile Include="Migrations\202102121612417_InitialMigration.designer.cs">
       <DependentUpon>202102121612417_InitialMigration.cs</DependentUpon>
@@ -122,6 +126,10 @@
     <Compile Include="Migrations\202102271229132_EnhancementOrder.designer.cs">
       <DependentUpon>202102271229132_EnhancementOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102271953342_CreateSupplierDaatabase.cs" />
+    <Compile Include="Migrations\202102271953342_CreateSupplierDaatabase.designer.cs">
+      <DependentUpon>202102271953342_CreateSupplierDaatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -153,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102271229132_EnhancementOrder.resx">
       <DependentUpon>202102271229132_EnhancementOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102271953342_CreateSupplierDaatabase.resx">
+      <DependentUpon>202102271953342_CreateSupplierDaatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
