@@ -18,7 +18,7 @@ using DevExpress.XtraEditors;
 
 namespace ElbayaNPresentation
 {
-    public partial class frmMainBoard : DevExpress.XtraEditors.XtraForm
+    public partial class frmMainBoard : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         private static frmMainBoard _instance;
 
@@ -42,16 +42,18 @@ namespace ElbayaNPresentation
             this.WindowState = FormWindowState.Maximized;
         }
 
-        // Global Functionality:
-        private void guna2CircleButton1_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        //// Global Functionality:
+        //private void btnCloseForm_Click(object sender, EventArgs e)
+        //{
+        //    this.Close();
 
-        private void btnMinimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
+        //}
+
+        //private void btnMinimizeForm_Click(object sender, EventArgs e)
+        //{
+        //    this.WindowState = FormWindowState.Minimized;
+
+        //}
 
         // Calling ribbon Pages by side bar: 
         private void accordionControlElement21_Click(object sender, EventArgs e)
@@ -135,5 +137,7 @@ namespace ElbayaNPresentation
             }
             ucAllProductsView.Instance.BringToFront();
         }
+
+       
     }
 }

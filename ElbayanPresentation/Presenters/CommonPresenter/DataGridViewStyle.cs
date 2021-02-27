@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,15 +16,19 @@ namespace ElbayaNPresentation.Presenters.CommonPresenter
             dataGrid.BorderStyle = BorderStyle.None;
             dataGrid.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             dataGrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGrid.DefaultCellStyle.SelectionBackColor = Color.FromArgb(92, 184, 92);
-            dataGrid.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dataGrid.DefaultCellStyle.SelectionBackColor = Color.FromArgb(199, 198, 207);
+            dataGrid.DefaultCellStyle.SelectionForeColor = Color.Black;
             dataGrid.BackgroundColor = Color.FromArgb(247, 247, 247);
             dataGrid.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing; //optional
             dataGrid.EnableHeadersVisualStyles = false;
             dataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Droid Arabic Kufi", 10);
+            dataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Sakkal Majalla", 18, FontStyle.Bold);
             dataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 91, 150);
             dataGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGrid.RowTemplate.Height = 59;
+            dataGrid.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            dataGrid.RowsDefaultCellStyle.Font = new Font("Sakkal Majalla", 16, FontStyle.Bold);
+            dataGrid.GridColor = Color.Black;
         }
     }
 }
