@@ -67,7 +67,11 @@ namespace ElbayaNPresentation.Views.Store.Category
             cbxMainCategory.ValueMember = "Id";
             cbxMainCategory.SelectedValue = "Id";
         }
-
+         // Refresh CBX 
+        private void cbxMainCategory_Click(object sender, EventArgs e)
+        {
+            FillMaincategorycbx();
+        }
 
         private void dgvSubCategory_DoubleClick_1(object sender, EventArgs e)
         {
@@ -92,14 +96,20 @@ namespace ElbayaNPresentation.Views.Store.Category
                 btnAdd.Enabled = true;
                 btnUpdate.Enabled = true;
                 cbxMainCategory.Enabled = true;
+                btnDeleteByOne.Text = "الأرشفة";
+                cbxMainCategory.SelectedIndex = -1;
+                txtName.Text = txtDescription.Text = "";
             }
             else if(ActiveMainCategory.SelectedIndex == 1)
             {
                 DataGridViewStyle.StyleDatagridview(dgvDeletedMainCategory);
                 dgvDeletedMainCategory.DataSource = Presenter.GetAllDeletedSubCategory();
                 btnAdd.Enabled = false;
-                //btnUpdate.Enabled = false;
-                //cbxMainCategory.Enabled = false;
+                btnUpdate.Enabled = false;
+                cbxMainCategory.Enabled = false;
+                btnDeleteByOne.Text = "إستعادة الأرشفة";
+                cbxMainCategory.SelectedIndex = -1;
+                txtName.Text = txtDescription.Text = "";
             }
         }
 
@@ -118,7 +128,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             }
         }
 
-        private void btnAdd_Click_1(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             if (txtName.Text != string.Empty)
             {
@@ -147,7 +157,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             }
         }
 
-        private void btnUpdate_Click_1(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
             //if (MessageBox.Show("", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             //{
@@ -177,7 +187,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             //}
         }
 
-        private void btnDeleteByOne_Click_1(object sender, EventArgs e)
+        private void btnDeleteByOne_Click(object sender, EventArgs e)
         {
             if (txtName.Text != string.Empty)
             {
@@ -201,7 +211,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             }
         }
 
-        private void txtSearch_TextChanged(object sender, EventArgs e)
+        private void txtSearch_TextChanged_1(object sender, EventArgs e)
         {
             if (ActiveMainCategory.SelectedIndex == 0)
             {
@@ -211,11 +221,6 @@ namespace ElbayaNPresentation.Views.Store.Category
             {
                 dgvDeletedMainCategory.DataSource = Presenter.FilterDataGridViewDeleted();
             }
-        }
-
-        private void cbxMainCategory_Click(object sender, EventArgs e)
-        {
-            FillMaincategorycbx();
         }
     }
 }
