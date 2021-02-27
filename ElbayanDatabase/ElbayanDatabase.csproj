@@ -118,6 +118,10 @@
     <Compile Include="Migrations\202102261918277_CreateCustomerOrder.designer.cs">
       <DependentUpon>202102261918277_CreateCustomerOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102271229132_EnhancementOrder.cs" />
+    <Compile Include="Migrations\202102271229132_EnhancementOrder.designer.cs">
+      <DependentUpon>202102271229132_EnhancementOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -146,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102261918277_CreateCustomerOrder.resx">
       <DependentUpon>202102261918277_CreateCustomerOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102271229132_EnhancementOrder.resx">
+      <DependentUpon>202102271229132_EnhancementOrder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

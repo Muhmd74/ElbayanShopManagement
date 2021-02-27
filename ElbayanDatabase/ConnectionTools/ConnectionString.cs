@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.SqlClient;
 
 namespace ElbayanDatabase.ConnectionTools
 {
@@ -15,7 +10,7 @@ namespace ElbayanDatabase.ConnectionTools
         }
         private static string GetConnectionDetails()
         {
-            var buillder = new SqlConnectionStringBuilder()
+            var builder = new SqlConnectionStringBuilder()
             {
                 InitialCatalog = "ElBayan",
                 IntegratedSecurity = true,
@@ -23,7 +18,7 @@ namespace ElbayanDatabase.ConnectionTools
                 MultipleActiveResultSets = true,
                 ApplicationName = "Elbayan"
             };
-            return buillder.ConnectionString;
+            return builder.ConnectionString;
 
         }
     }

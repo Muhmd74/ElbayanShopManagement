@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ElbayanDatabase.ConnectionTools;
 using ElbayanServices.Common;
 using ElbayanServices.Repository.Products.Product.Dtos;
-using ElbayanServices.Repository.Products.Product.Validators;
 using ElbayanServices.Repository.Products.SubCategory.Dtos;
 using ElbayanServices.Repository.Products.Units.LargeUnit.Dtos;
 
@@ -27,7 +24,7 @@ namespace ElbayanServices.Repository.Products.Product
         public bool Add(ProductDto model)
         {
 
-                var result = _context.Products.Add(new ElbayanDatabase.DataClasses.Product.Product()
+                var result = _context.Products.Add(new ElbayanDatabase.DataClasses.Product.Product
                 {
                     Description = model.Description,
                     Name = model.Name,
