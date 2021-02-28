@@ -1,27 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using ElbayanDatabase.ConnectionTools;
 using ElbayanDatabase.DataClasses.Customers.Sales;
-using ElbayanServices.Repository.Customers.Orders.Dtos;
+using ElbayanDatabase.DataClasses.Suppliers.SupplierOrder;
+using ElbayanServices.Repository.Customers.Suppliers.SupplierOrder.Dtos;
 
-namespace ElbayanServices.Repository.Customers.Orders
+namespace ElbayanServices.Repository.Customers.Suppliers.SupplierOrder
 {
-    public class OrderService : IOrder, IDisposable
-    {
-        private readonly ConnectionOption _context;
+   public class SupplierOrderService:ISupplierOrder
+   {
+       private readonly ConnectionOption _context;
 
-        public OrderService(ConnectionOption context)
-        { 
-            _context = context;
-        }
+       public SupplierOrderService(ConnectionOption context)
+       {
+           _context = context;
+       }
 
-        public bool Create(OrderDto model)
-        {
-
-            var order = _context.Orders.Add(new Order
+       public bool CreateSupplierOrder(SupplierOrderDto model)
+       {
+            var order = _context.SupplierOrders.Add(new ElbayanDatabase.DataClasses.Suppliers.SupplierOrder.SupplierOrder
             {
-                PosId = model.PosId,
-                CustomerId = model.CustomerId,
+           
                 EmployeeId = model.EmployeeId,
                 IsDeferred = model.IsDeferred,
                 Deferred = model.Deferred,
@@ -31,11 +33,11 @@ namespace ElbayanServices.Repository.Customers.Orders
             _context.SaveChanges();
             if (order.IsDeferred)
             {
-                var payment = _context.DeferredPayments.Add(new DeferredPayment()
+                var payment = _context.SupplierDeferredPayments.Add(new SupplierDeferredPayment()
                 {
                     Balance = order.Deferred,
                     Payment = 0,
-                    OrderId = order.Id,
+                    SupplierOrderId = order.Id,
                     DeferredOfOrder = order.Deferred,
                     CollectingPaymentDate = DateTime.UtcNow,
                     DueDatePayingOff = model.DueDatePayingOff,
@@ -46,7 +48,7 @@ namespace ElbayanServices.Repository.Customers.Orders
 
             if (order != null)
             {
-                foreach (var orderProduct in model.OrderProductDto)
+                foreach (var orderProduct in model.SupplierOrderProducts)
                 {
                     var productOrder = _context.OrderProducts.Add(new OrderProduct()
                     {
@@ -58,12 +60,12 @@ namespace ElbayanServices.Repository.Customers.Orders
                         PriceSale = orderProduct.PriceSale,
                         SubTotalPrice = orderProduct.SubTotalPrice,
                         TotalProductPrice = orderProduct.TotalProductPrice,
-                        Vat =orderProduct.Vat,
-                        TotalPrice =orderProduct.TotalPrice
+                        Vat = orderProduct.Vat,
+                        TotalPrice = orderProduct.TotalPrice
                     });
                 }
                 _context.SaveChanges();
-                var orderTable = _context.Orders.FirstOrDefault(d => d.Id == order.Id);
+                var orderTable = _context.SupplierOrders.FirstOrDefault(d => d.Id == order.Id);
                 orderTable.TotalDiscount = model.TotalDiscount;
                 orderTable.SubTotalWithoutDiscount = model.SubTotalWithoutDiscount;
                 orderTable.TotalAfterDiscount = model.TotalAfterDiscount;
@@ -73,22 +75,5 @@ namespace ElbayanServices.Repository.Customers.Orders
             }
             return true;
         }
-
-        public ProductPriceMovementDto GetProductPriceMovement(Guid productId)
-        {
-          var product = _context.Products.FirstOrDefault(d => d.Id == productId);
-          return new ProductPriceMovementDto()
-          {
-              productDefaultSale = product.SaleDefaultPrice,
-              productDiscount = product.Discount,
-              productVat = product.Vat
-          };
-        }
-
-        public void Dispose()
-        {
-            _context.Dispose();
-
-        }
-    }
+   }
 }

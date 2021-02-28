@@ -91,6 +91,9 @@
     <Compile Include="Repository\Customers\Poses\Dtos\PosDto.cs" />
     <Compile Include="Repository\Customers\Poses\IPos.cs" />
     <Compile Include="Repository\Customers\Poses\PosService.cs" />
+    <Compile Include="Repository\Customers\Suppliers\SupplierOrder\Dtos\SupplierOrderDto.cs" />
+    <Compile Include="Repository\Customers\Suppliers\SupplierOrder\ISupplierOrder.cs" />
+    <Compile Include="Repository\Customers\Suppliers\SupplierOrder\SupplierOrderService.cs" />
     <Compile Include="Repository\Customers\Suppliers\SupplierType\SupplierTypeService.cs" />
     <Compile Include="Repository\Customers\Suppliers\SupplierType\Dtos\SupplierTypeDto.cs" />
     <Compile Include="Repository\Customers\Suppliers\SupplierType\ISupplierType.cs" />
