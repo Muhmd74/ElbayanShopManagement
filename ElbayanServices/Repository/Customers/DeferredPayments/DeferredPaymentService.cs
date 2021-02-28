@@ -22,19 +22,24 @@ namespace ElbayanServices.Repository.Customers.DeferredPayments
         {
             // ReSharper disable once PossibleNullReferenceException
             //Create this function In Order 
-            var deferredPayment = _context.Orders.FirstOrDefault(d => d.Id == model.OrderId&&d.IsDeferred).Deferred;
-            var payment = _context.DeferredPayments.Add(new DeferredPayment()
+            var deferredPayment = _context.Orders.FirstOrDefault(d => d.Id == model.OrderId&&d.IsDeferred);
+            if (deferredPayment!=null)
             {
-                Balance = model.Balance,
-                Payment = model.Payment,
-                OrderId = model.OrderId,
-                DeferredOfOrder = deferredPayment,
-                CollectingPaymentDate = DateTime.UtcNow,
-                DueDatePayingOff = model.DueDatePayingOff,
-                TotalPayment = model.TotalPayment
-            });
-            _context.SaveChanges();
-            return true;
+                var payment = _context.DeferredPayments.Add(new DeferredPayment()
+                {
+                    Balance = model.Balance,
+                    Payment = model.Payment,
+                    OrderId = model.OrderId,
+                    DeferredOfOrder = deferredPayment.Deferred,
+                    CollectingPaymentDate = DateTime.UtcNow,
+                    DueDatePayingOff = model.DueDatePayingOff,
+                    TotalPayment = model.TotalPayment
+                });
+                _context.SaveChanges();
+                return true;
+            }
+
+            return false;
         }
 
         public bool Update(SupplierDeferredPaymentDto model)
