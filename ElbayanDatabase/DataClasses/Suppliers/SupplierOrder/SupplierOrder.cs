@@ -19,7 +19,7 @@ namespace ElbayanDatabase.DataClasses.Suppliers.SupplierOrder
         public decimal TotalAfterDiscount { get; set; } // SubTotalWithoutDiscount - TotalDiscount
         public decimal Payment { get; set; }
         public bool IsDeferred { get; set; }
-        public int OrderNumber { get; set; }
+        public long OrderNumber { get; set; }
         public decimal Deferred { get; set; } //المتبقي
         public Guid EmployeeId { get; set; }
         public Employee Employee { get; set; }

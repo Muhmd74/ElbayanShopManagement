@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using ElbayanServices.Repository.Customers.DeferredPayments.Dtos;
 
-namespace ElbayanServices.Repository.Customers.DeferredPayments
+namespace ElbayanServices.Repository.Customers.Suppliers.SupplierDeferredPayments
 {
-    public interface IDeferredPayment
+    public interface ISupplierDeferredPayment
     {
         bool Create(SupplierDeferredPaymentDto model);
         bool Update(SupplierDeferredPaymentDto model);

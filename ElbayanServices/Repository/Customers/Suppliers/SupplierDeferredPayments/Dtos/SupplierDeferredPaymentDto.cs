@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Security.AccessControl;
 
-namespace ElbayanServices.Repository.Customers.DeferredPayments.Dtos
+namespace ElbayanServices.Repository.Customers.Suppliers.SupplierDeferredPayments.Dtos
 {
-  public  class DeferredPaymentDto
+  public  class SupplierDeferredPaymentDto
     {
         public Guid Id { get; set; }
         public Guid OrderId { get; set; }

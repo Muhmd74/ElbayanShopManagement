@@ -10,7 +10,6 @@ namespace ElbayanServices.Repository.Customers.Orders
     public class OrderService : IOrder, IDisposable
     {
         private readonly ConnectionOption _context;
-        private int _orderProductQuantity;
 
         public OrderService(ConnectionOption context)
         { 
@@ -28,7 +27,7 @@ namespace ElbayanServices.Repository.Customers.Orders
                 IsDeferred = model.IsDeferred,
                 Deferred = model.Deferred,
                 DateTime = model.DateTime,
-                Payment = model.Payment
+                Payment = model.Payment,
                 OrderNumber = GenerateSequenceNumber()
             });
             _context.SaveChanges();
@@ -104,9 +103,9 @@ namespace ElbayanServices.Repository.Customers.Orders
 
           return new ProductPriceMovementDto()
           {
-              productDefaultSale = product.SaleDefaultPrice,
-              productDiscount = product.Discount,
-              productVat = product.Vat
+              ProductDefaultSale = product.SaleDefaultPrice,
+              ProductDiscount = product.Discount,
+              ProductVat = product.Vat
           };
         }
         public long GenerateSequenceNumber()

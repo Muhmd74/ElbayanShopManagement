@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ElbayanDatabase.ConnectionTools;
 using ElbayanDatabase.DataClasses.Customers.Sales;
+using ElbayanDatabase.DataClasses.Suppliers.SupplierOrder;
 using ElbayanServices.Repository.Customers.DeferredPayments.Dtos;
 
-namespace ElbayanServices.Repository.Customers.DeferredPayments
+namespace ElbayanServices.Repository.Customers.Suppliers.SupplierDeferredPayments
 {
-    public class DeferredPaymentService:IDeferredPayment , IDisposable
+    public class SupplierDeferredPaymentService:ISupplierDeferredPayment , IDisposable
     {
         private readonly ConnectionOption _context;
 
-        public DeferredPaymentService(ConnectionOption context)
+        public SupplierDeferredPaymentService(ConnectionOption context)
         {
             _context = context;
         }
@@ -22,12 +21,12 @@ namespace ElbayanServices.Repository.Customers.DeferredPayments
         {
             // ReSharper disable once PossibleNullReferenceException
             //Create this function In Order 
-            var deferredPayment = _context.Orders.FirstOrDefault(d => d.Id == model.OrderId&&d.IsDeferred).Deferred;
-            var payment = _context.DeferredPayments.Add(new DeferredPayment()
+            var deferredPayment = _context.SupplierOrders.FirstOrDefault(d => d.Id == model.OrderId&&d.IsDeferred).Deferred;
+            var payment = _context.SupplierDeferredPayments.Add(new SupplierDeferredPayment()
             {
                 Balance = model.Balance,
                 Payment = model.Payment,
-                OrderId = model.OrderId,
+                SupplierOrderId = model.OrderId,
                 DeferredOfOrder = deferredPayment,
                 CollectingPaymentDate = DateTime.UtcNow,
                 DueDatePayingOff = model.DueDatePayingOff,
@@ -39,7 +38,7 @@ namespace ElbayanServices.Repository.Customers.DeferredPayments
 
         public bool Update(SupplierDeferredPaymentDto model)
         {
-            var deferredPayment = _context.DeferredPayments.FirstOrDefault(d => d.Id == model.Id);
+            var deferredPayment = _context.SupplierDeferredPayments.FirstOrDefault(d => d.Id == model.Id);
             if (deferredPayment!=null)
             {
                 deferredPayment.Payment = model.Payment;
@@ -57,7 +56,7 @@ namespace ElbayanServices.Repository.Customers.DeferredPayments
 
         public List<OrderNameDto> GetOrderName()
         {
-            return _context.Orders.Where(d=>d.IsDeferred).Select(d => new OrderNameDto()
+            return _context.SupplierOrders.Where(d=>d.IsDeferred).Select(d => new OrderNameDto()
             {
                 Id = d.Id,
                 OrderNumber = d.OrderNumber

@@ -8,9 +8,9 @@ namespace ElbayanServices.Repository.Customers.Orders.Dtos
 {
   public  class ProductPriceMovementDto
     {
-        public decimal productDefaultSale { get; set; }
-        public decimal productVat { get; set; }
-        public decimal productDiscount { get; set; }
+        public decimal ProductDefaultSale { get; set; }
+        public decimal ProductVat { get; set; }
+        public decimal ProductDiscount { get; set; }
        
     }
 }
