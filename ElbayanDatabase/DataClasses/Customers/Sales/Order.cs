@@ -16,7 +16,7 @@ namespace ElbayanDatabase.DataClasses.Customers.Sales
         public decimal TotalAfterDiscount { get; set; } // SubTotalWithoutDiscount - TotalDiscount
         public decimal Payment { get; set; }
         public bool IsDeferred { get; set; }
-        public int OrderNumber { get; set; }
+        public long OrderNumber { get; set; }
         public decimal Deferred { get; set; } //المتبقي
         public Guid PosId { get; set; }
         public POS Pos { get; set; }

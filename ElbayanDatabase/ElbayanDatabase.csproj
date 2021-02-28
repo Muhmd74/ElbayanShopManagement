@@ -130,6 +130,10 @@
     <Compile Include="Migrations\202102271953342_CreateSupplierDaatabase.designer.cs">
       <DependentUpon>202102271953342_CreateSupplierDaatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102272113120_EnhancementOrder1.cs" />
+    <Compile Include="Migrations\202102272113120_EnhancementOrder1.designer.cs">
+      <DependentUpon>202102272113120_EnhancementOrder1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -164,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102271953342_CreateSupplierDaatabase.resx">
       <DependentUpon>202102271953342_CreateSupplierDaatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102272113120_EnhancementOrder1.resx">
+      <DependentUpon>202102272113120_EnhancementOrder1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
