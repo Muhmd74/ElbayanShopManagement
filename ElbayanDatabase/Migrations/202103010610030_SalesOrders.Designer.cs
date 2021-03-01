@@ -7,13 +7,13 @@ namespace ElbayanDatabase.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class InitialMigration : IMigrationMetadata
+    public sealed partial class SalesOrders : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(SalesOrders));
         
         string IMigrationMetadata.Id
         {
-            get { return "202102121612417_InitialMigration"; }
+            get { return "202103010610030_SalesOrders"; }
         }
         
         string IMigrationMetadata.Source

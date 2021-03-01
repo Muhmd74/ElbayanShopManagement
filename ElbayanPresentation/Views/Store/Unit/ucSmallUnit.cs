@@ -87,7 +87,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
             {
                 btnAdd.Enabled = false;
                 txtName.Text = dgvSmallUnit.CurrentRow.Cells["dgvSmallUnitName"].Value.ToString();
-                txtName.Text = dgvSmallUnit.CurrentRow.Cells["dgvSmallUnitDescription"].Value.ToString();
+                txtDescription.Text = dgvSmallUnit.CurrentRow.Cells["dgvSmallUnitDescription"].Value.ToString();
                 nudSmallUnitWeight.Text = dgvSmallUnit.CurrentRow.Cells["dgvSmallUnitWeight"].Value.ToString();
                 SmallUnitID = new Guid(dgvSmallUnit.CurrentRow.Cells["dgvSmallUnitID"].Value.ToString());
                 LargeUnitID = new Guid(dgvSmallUnit.CurrentRow.Cells["dgvLargeUnitIDForSmallUnitActive"].Value.ToString());
@@ -95,7 +95,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
                 LargeUnitName = dgvSmallUnit.CurrentRow.Cells["dgvLargeUnitNameForSmallUnitActive"].Value.ToString();
                 cbxLargeUnit.Text = LargeUnitName;
             }
-            }
+        }
 
         private void dgvTabContainer_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -105,6 +105,8 @@ namespace ElbayaNPresentation.Views.Store.Unit
                 btnAdd.Enabled = true;
                 btnUpdate.Enabled = true;
                 cbxLargeUnit.Enabled = true;
+
+                btnDeleteByOne.Text = "الأرشفة";
             }
             else if (dgvTabContainer.SelectedIndex == 1)
             {
@@ -113,6 +115,8 @@ namespace ElbayaNPresentation.Views.Store.Unit
                 btnAdd.Enabled = false;
                 //btnUpdate.Enabled = false;
                 //cbxMainCategory.Enabled = false;
+                btnDeleteByOne.Text = "  إستعادة الأرشفة";
+
             }
         }
 
@@ -120,11 +124,9 @@ namespace ElbayaNPresentation.Views.Store.Unit
         {
             if (dgvDeletedSmallUnit.CurrentRow.Index != -1)
             {
-
-
                 btnAdd.Enabled = false;
                 txtName.Text = dgvDeletedSmallUnit.CurrentRow.Cells["dgvSmallUnitNameDeleted"].Value.ToString();
-                txtName.Text = dgvDeletedSmallUnit.CurrentRow.Cells["dgvSmallUnitDescriptionDeleted"].Value.ToString();
+                txtDescription.Text = dgvDeletedSmallUnit.CurrentRow.Cells["dgvSmallUnitDescriptionDeleted"].Value.ToString();
                 nudSmallUnitWeight.Text = dgvDeletedSmallUnit.CurrentRow.Cells["dgvSmallUnitWeightDeleted"].Value.ToString();
                 SmallUnitID = new Guid(dgvDeletedSmallUnit.CurrentRow.Cells["dgvSmallUnitIDDeleted"].Value.ToString());
                 LargeUnitID = new Guid(dgvDeletedSmallUnit.CurrentRow.Cells["dgvLargeUnitIDForSmallUnitDeleted"].Value.ToString());
@@ -179,7 +181,8 @@ namespace ElbayaNPresentation.Views.Store.Unit
                     MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
                     btnAdd.Enabled = true;
                     btnDeleteByOne.Enabled = true;
-                    cbxLargeUnit.Text = txtName.Text = txtName.Text = "";
+                    txtName.Text = txtDescription.Text = "";
+                    cbxLargeUnit.SelectedIndex = -1;
                     nudSmallUnitWeight.Value = 1.00m;
                     dgvSmallUnit.DataSource = Presenter.GetAllSmallUnit();
                 }
@@ -201,8 +204,8 @@ namespace ElbayaNPresentation.Views.Store.Unit
             if (txtName.Text != string.Empty)
             {
                 Presenter.onClickbtnDelete(SmallUnitID);
-                txtName.Clear();
-                txtName.Clear();
+                txtName.Text = txtDescription.Text = "";
+                cbxLargeUnit.SelectedIndex = -1;
                 nudSmallUnitWeight.Value = 1.00m;
                 if (dgvTabContainer.SelectedIndex == 1)
                 {

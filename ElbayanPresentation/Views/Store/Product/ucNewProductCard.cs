@@ -211,5 +211,7 @@ namespace ElbayaNPresentation.Views.Store.Product
         {
             txtCBCNumber.Text = Presenter.GenerateProductNumber().ToString();
         }
+
+        
     }
 }
