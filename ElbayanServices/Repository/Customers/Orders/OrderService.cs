@@ -116,7 +116,7 @@ namespace ElbayanServices.Repository.Customers.Orders
                 return (long)(lastNumber + 1);
             }
 
-            return 1;
+            return 0033340;
         }
 
         public void Dispose()

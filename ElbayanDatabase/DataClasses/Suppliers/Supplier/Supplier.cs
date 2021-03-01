@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using ElbayanDatabase.DataClasses.Customers;
 using ElbayanDatabase.DataClasses.Customers.Sales;
 
@@ -7,7 +9,10 @@ namespace ElbayanDatabase.DataClasses.Suppliers.Supplier
 {
    public class Supplier
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
+        [Required]
         public string Name { get; set; }
         public string Mobile { get; set; }
         public int IdNumber { get; set; }

@@ -52,11 +52,11 @@ namespace ElbayanServices.Repository.Customers.Suppliers.SupplierOrder
             {
                 foreach (var orderProduct in model.SupplierOrderProducts)
                 {
-                    var productOrder = _context.OrderProducts.Add(new OrderProduct()
+                    var productOrder = _context.SupplierOrderProducts.Add(new SupplierOrderProduct()
                     {
                         Discount = orderProduct.Discount,
                         Name = orderProduct.ProductName,
-                        OrderId = order.Id,
+                        SupplierOrderId = order.Id,
                         ProductId = orderProduct.ProductId,
                         Quantity = orderProduct.Quantity,
                         PriceSale = orderProduct.PriceSale,
@@ -103,7 +103,7 @@ namespace ElbayanServices.Repository.Customers.Suppliers.SupplierOrder
                return (long)(lastNumber + 1);
            }
 
-           return 1;
+           return 0022250;
        }
     }
 }

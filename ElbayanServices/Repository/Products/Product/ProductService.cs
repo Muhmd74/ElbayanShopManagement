@@ -28,12 +28,12 @@ namespace ElbayanServices.Repository.Products.Product
                 {
                     Description = model.Description,
                     Name = model.Name,
-                    BarCode = model.BarCode,
+                    BarCode = GenerateSequenceNumber(),
                     PurchaseDefaultPrice = model.PurchaseDefaultPrice,
                     IsExpired = model.IsExpired,
                     LargeUnitId = model.LargeUnitId,
                     LimitedDemand = model.LimitedDemand,
-                    ProductNumber = GeneratorRandomNumber(),
+                    ProductNumber = GenerateProductNumber(),
                     SmallUnitId = model.SmallUnitId,
                     SubCategoryId = model.SubCategoryId,
                     UCP = model.UCP,
@@ -337,6 +337,26 @@ namespace ElbayanServices.Repository.Products.Product
                     return number;
                 }
             }
+        }
+        public int GenerateProductNumber()
+        {
+            var lastNumber = _context.Products.OrderByDescending(d => d.DateTime).LastOrDefault()?.ProductNumber;
+            if (lastNumber >= 0)
+            {
+                return (int)(lastNumber + 1);
+            }
+
+            return 01;
+        }
+        public long GenerateSequenceNumber()
+        {
+            var lastNumber = _context.Products.OrderByDescending(d => d.DateTime).LastOrDefault()?.BarCode;
+            if (lastNumber >= 0)
+            {
+                return (long)(lastNumber + 1);
+            }
+
+            return 0001131;
         }
         public void Dispose()
         {
