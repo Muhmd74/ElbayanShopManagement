@@ -61,12 +61,14 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
                 IsUnitSale = _view.IsUnitSale,
                 LimitedDemand = _view.LimitedDemand,
                 IsExpired = _view.IsExpired,
-                //DateTime = _view.ExpireDateTime,
                 ImageUrl = _view.ImageUrl,
                 UCP =_view.UCP,
                 PurchaseDefaultPrice = _view.PurchaseDefaultPrice,
                 SaleDefaultPrice = _view.SaleDefaultPrice,
                 WholesalePrice = _view.WholesalePrice,
+                //IsMAinSalesUnit = _view.IsMainSaleUnit,
+                Vat = _view.VAT,
+                Discount =_view.Disccount
             });
         }
     }

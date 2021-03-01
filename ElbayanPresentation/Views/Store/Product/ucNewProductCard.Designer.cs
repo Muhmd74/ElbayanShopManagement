@@ -39,18 +39,16 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label22 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.guna2CustomRadioButton4 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.guna2CustomRadioButton3 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.label21 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnGenerateBarcode = new Guna.UI2.WinForms.Guna2Button();
             this.label16 = new System.Windows.Forms.Label();
-            this.txtPSNNumber = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtCBCNumber = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtPSNNumber = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtUCPNumber = new Guna.UI2.WinForms.Guna2TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -72,15 +70,18 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label5 = new System.Windows.Forms.Label();
             this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtLimitedDemand = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtQuantity = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnDeleteByOne = new Guna.UI2.WinForms.Guna2Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.guna2CustomRadioButton4 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.label21 = new System.Windows.Forms.Label();
             this.guna2GroupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDiscountPercent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudVATPercent)).BeginInit();
@@ -89,6 +90,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             ((System.ComponentModel.ISupportInitialize)(this.nudDefaultPurchasePrice)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2GroupBox4
@@ -103,18 +105,16 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox4.Controls.Add(this.label22);
             this.guna2GroupBox4.Controls.Add(this.label8);
             this.guna2GroupBox4.Controls.Add(this.label7);
-            this.guna2GroupBox4.Controls.Add(this.guna2CustomRadioButton4);
             this.guna2GroupBox4.Controls.Add(this.guna2CustomRadioButton3);
-            this.guna2GroupBox4.Controls.Add(this.label21);
             this.guna2GroupBox4.Controls.Add(this.label9);
             this.guna2GroupBox4.Controls.Add(this.label20);
             this.guna2GroupBox4.Controls.Add(this.label11);
             this.guna2GroupBox4.Controls.Add(this.label18);
             this.guna2GroupBox4.Controls.Add(this.label17);
-            this.guna2GroupBox4.Controls.Add(this.guna2Button1);
+            this.guna2GroupBox4.Controls.Add(this.btnGenerateBarcode);
             this.guna2GroupBox4.Controls.Add(this.label16);
-            this.guna2GroupBox4.Controls.Add(this.txtPSNNumber);
             this.guna2GroupBox4.Controls.Add(this.txtCBCNumber);
+            this.guna2GroupBox4.Controls.Add(this.txtPSNNumber);
             this.guna2GroupBox4.Controls.Add(this.txtUCPNumber);
             this.guna2GroupBox4.Controls.Add(this.label15);
             this.guna2GroupBox4.Controls.Add(this.label14);
@@ -132,15 +132,16 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox4.Controls.Add(this.label5);
             this.guna2GroupBox4.Controls.Add(this.txtDescription);
             this.guna2GroupBox4.Controls.Add(this.txtLimitedDemand);
-            this.guna2GroupBox4.Controls.Add(this.guna2TextBox2);
+            this.guna2GroupBox4.Controls.Add(this.txtQuantity);
             this.guna2GroupBox4.Controls.Add(this.txtName);
             this.guna2GroupBox4.Controls.Add(this.label2);
             this.guna2GroupBox4.Controls.Add(this.label24);
             this.guna2GroupBox4.Controls.Add(this.label26);
             this.guna2GroupBox4.Controls.Add(this.label1);
-            this.guna2GroupBox4.Controls.Add(this.guna2Button2);
+            this.guna2GroupBox4.Controls.Add(this.btnAdd);
             this.guna2GroupBox4.Controls.Add(this.btnUpdate);
             this.guna2GroupBox4.Controls.Add(this.btnDeleteByOne);
+            this.guna2GroupBox4.Controls.Add(this.groupBox2);
             this.guna2GroupBox4.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(173)))), ((int)(((byte)(78)))));
             this.guna2GroupBox4.CustomBorderThickness = new System.Windows.Forms.Padding(0, 45, 0, 0);
             this.guna2GroupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -157,7 +158,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             // nudDiscountPercent
             // 
             this.nudDiscountPercent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudDiscountPercent.Location = new System.Drawing.Point(467, 495);
+            this.nudDiscountPercent.Location = new System.Drawing.Point(467, 496);
             this.nudDiscountPercent.Name = "nudDiscountPercent";
             this.nudDiscountPercent.Size = new System.Drawing.Size(150, 40);
             this.nudDiscountPercent.TabIndex = 67;
@@ -235,25 +236,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label7.TabIndex = 76;
             this.label7.Text = "سعر الشراء الإفتراضي";
             // 
-            // guna2CustomRadioButton4
-            // 
-            this.guna2CustomRadioButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2CustomRadioButton4.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton4.CheckedState.BorderThickness = 0;
-            this.guna2CustomRadioButton4.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton4.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2CustomRadioButton4.CheckedState.Parent = this.guna2CustomRadioButton4;
-            this.guna2CustomRadioButton4.Location = new System.Drawing.Point(794, 509);
-            this.guna2CustomRadioButton4.Name = "guna2CustomRadioButton4";
-            this.guna2CustomRadioButton4.ShadowDecoration.Parent = this.guna2CustomRadioButton4;
-            this.guna2CustomRadioButton4.Size = new System.Drawing.Size(21, 19);
-            this.guna2CustomRadioButton4.TabIndex = 66;
-            this.guna2CustomRadioButton4.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CustomRadioButton4.UncheckedState.BorderThickness = 2;
-            this.guna2CustomRadioButton4.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton4.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton4.UncheckedState.Parent = this.guna2CustomRadioButton4;
-            // 
             // guna2CustomRadioButton3
             // 
             this.guna2CustomRadioButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -262,7 +244,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2CustomRadioButton3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2CustomRadioButton3.CheckedState.InnerColor = System.Drawing.Color.White;
             this.guna2CustomRadioButton3.CheckedState.Parent = this.guna2CustomRadioButton3;
-            this.guna2CustomRadioButton3.Location = new System.Drawing.Point(795, 449);
+            this.guna2CustomRadioButton3.Location = new System.Drawing.Point(811, 449);
             this.guna2CustomRadioButton3.Name = "guna2CustomRadioButton3";
             this.guna2CustomRadioButton3.ShadowDecoration.Parent = this.guna2CustomRadioButton3;
             this.guna2CustomRadioButton3.Size = new System.Drawing.Size(20, 19);
@@ -273,25 +255,13 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2CustomRadioButton3.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.guna2CustomRadioButton3.UncheckedState.Parent = this.guna2CustomRadioButton3;
             // 
-            // label21
-            // 
-            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label21.ForeColor = System.Drawing.Color.Gray;
-            this.label21.Location = new System.Drawing.Point(630, 504);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(158, 32);
-            this.label21.TabIndex = 68;
-            this.label21.Text = "المنتج له نسبة خصم";
-            // 
             // label9
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.Gray;
-            this.label9.Location = new System.Drawing.Point(658, 445);
+            this.label9.Location = new System.Drawing.Point(674, 445);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(140, 32);
             this.label9.TabIndex = 69;
@@ -346,26 +316,27 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label17.TabIndex = 52;
             this.label17.Text = "CBC";
             // 
-            // guna2Button1
+            // btnGenerateBarcode
             // 
-            this.guna2Button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button1.BorderRadius = 19;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.Silver;
-            this.guna2Button1.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2Button1.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2Button1.Location = new System.Drawing.Point(276, 141);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(60, 38);
-            this.guna2Button1.TabIndex = 57;
-            this.guna2Button1.TextOffset = new System.Drawing.Point(-15, 0);
+            this.btnGenerateBarcode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGenerateBarcode.BorderRadius = 19;
+            this.btnGenerateBarcode.CheckedState.Parent = this.btnGenerateBarcode;
+            this.btnGenerateBarcode.CustomImages.Parent = this.btnGenerateBarcode;
+            this.btnGenerateBarcode.FillColor = System.Drawing.Color.Silver;
+            this.btnGenerateBarcode.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerateBarcode.ForeColor = System.Drawing.Color.White;
+            this.btnGenerateBarcode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnGenerateBarcode.HoverState.Parent = this.btnGenerateBarcode;
+            this.btnGenerateBarcode.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerateBarcode.Image")));
+            this.btnGenerateBarcode.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnGenerateBarcode.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnGenerateBarcode.Location = new System.Drawing.Point(276, 141);
+            this.btnGenerateBarcode.Name = "btnGenerateBarcode";
+            this.btnGenerateBarcode.ShadowDecoration.Parent = this.btnGenerateBarcode;
+            this.btnGenerateBarcode.Size = new System.Drawing.Size(60, 38);
+            this.btnGenerateBarcode.TabIndex = 57;
+            this.btnGenerateBarcode.TextOffset = new System.Drawing.Point(-15, 0);
+            this.btnGenerateBarcode.Click += new System.EventHandler(this.btnGenerateBarcode_Click);
             // 
             // label16
             // 
@@ -378,6 +349,39 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label16.Size = new System.Drawing.Size(49, 32);
             this.label16.TabIndex = 53;
             this.label16.Text = "UCP";
+            // 
+            // txtCBCNumber
+            // 
+            this.txtCBCNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCBCNumber.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtCBCNumber.BorderRadius = 11;
+            this.txtCBCNumber.BorderThickness = 2;
+            this.txtCBCNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCBCNumber.DefaultText = "0";
+            this.txtCBCNumber.DisabledState.BorderColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtCBCNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.txtCBCNumber.DisabledState.ForeColor = System.Drawing.Color.Gray;
+            this.txtCBCNumber.DisabledState.Parent = this.txtCBCNumber;
+            this.txtCBCNumber.DisabledState.PlaceholderForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtCBCNumber.Enabled = false;
+            this.txtCBCNumber.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.txtCBCNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCBCNumber.FocusedState.Parent = this.txtCBCNumber;
+            this.txtCBCNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCBCNumber.ForeColor = System.Drawing.Color.Gray;
+            this.txtCBCNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCBCNumber.HoverState.Parent = this.txtCBCNumber;
+            this.txtCBCNumber.Location = new System.Drawing.Point(401, 143);
+            this.txtCBCNumber.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txtCBCNumber.Name = "txtCBCNumber";
+            this.txtCBCNumber.PasswordChar = '\0';
+            this.txtCBCNumber.PlaceholderText = "";
+            this.txtCBCNumber.SelectedText = "";
+            this.txtCBCNumber.SelectionStart = 1;
+            this.txtCBCNumber.ShadowDecoration.Parent = this.txtCBCNumber;
+            this.txtCBCNumber.Size = new System.Drawing.Size(243, 42);
+            this.txtCBCNumber.TabIndex = 60;
+            this.txtCBCNumber.TextOffset = new System.Drawing.Point(7, 0);
             // 
             // txtPSNNumber
             // 
@@ -404,43 +408,12 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.txtPSNNumber.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtPSNNumber.Name = "txtPSNNumber";
             this.txtPSNNumber.PasswordChar = '\0';
-            this.txtPSNNumber.PlaceholderText = "اكتب هنا اسم الصنف";
+            this.txtPSNNumber.PlaceholderText = "";
             this.txtPSNNumber.SelectedText = "";
             this.txtPSNNumber.ShadowDecoration.Parent = this.txtPSNNumber;
             this.txtPSNNumber.Size = new System.Drawing.Size(243, 42);
             this.txtPSNNumber.TabIndex = 60;
             this.txtPSNNumber.TextOffset = new System.Drawing.Point(7, 0);
-            // 
-            // txtCBCNumber
-            // 
-            this.txtCBCNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCBCNumber.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtCBCNumber.BorderRadius = 11;
-            this.txtCBCNumber.BorderThickness = 2;
-            this.txtCBCNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCBCNumber.DefaultText = "0";
-            this.txtCBCNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCBCNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCBCNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCBCNumber.DisabledState.Parent = this.txtCBCNumber;
-            this.txtCBCNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCBCNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCBCNumber.FocusedState.Parent = this.txtCBCNumber;
-            this.txtCBCNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCBCNumber.ForeColor = System.Drawing.Color.Gray;
-            this.txtCBCNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCBCNumber.HoverState.Parent = this.txtCBCNumber;
-            this.txtCBCNumber.Location = new System.Drawing.Point(401, 143);
-            this.txtCBCNumber.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.txtCBCNumber.Name = "txtCBCNumber";
-            this.txtCBCNumber.PasswordChar = '\0';
-            this.txtCBCNumber.PlaceholderText = "";
-            this.txtCBCNumber.SelectedText = "";
-            this.txtCBCNumber.SelectionStart = 1;
-            this.txtCBCNumber.ShadowDecoration.Parent = this.txtCBCNumber;
-            this.txtCBCNumber.Size = new System.Drawing.Size(244, 42);
-            this.txtCBCNumber.TabIndex = 59;
-            this.txtCBCNumber.TextOffset = new System.Drawing.Point(7, 0);
             // 
             // txtUCPNumber
             // 
@@ -472,6 +445,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.txtUCPNumber.Size = new System.Drawing.Size(247, 42);
             this.txtUCPNumber.TabIndex = 58;
             this.txtUCPNumber.TextOffset = new System.Drawing.Point(7, 0);
+            this.txtUCPNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUCPNumber_KeyPress);
             // 
             // label15
             // 
@@ -528,6 +502,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             // guna2CustomRadioButton1
             // 
             this.guna2CustomRadioButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2CustomRadioButton1.Checked = true;
             this.guna2CustomRadioButton1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2CustomRadioButton1.CheckedState.BorderThickness = 0;
             this.guna2CustomRadioButton1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -625,6 +600,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.btnUploadPicture.TabIndex = 44;
             this.btnUploadPicture.Text = "صورة المنتج";
             this.btnUploadPicture.TextOffset = new System.Drawing.Point(-15, 0);
+            this.btnUploadPicture.Click += new System.EventHandler(this.btnUploadPicture_Click);
             // 
             // rbIsExpiredProduct
             // 
@@ -826,39 +802,40 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.txtLimitedDemand.Size = new System.Drawing.Size(252, 45);
             this.txtLimitedDemand.TabIndex = 42;
             this.txtLimitedDemand.TextOffset = new System.Drawing.Point(7, 0);
+            this.txtLimitedDemand.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLimitedDemand_KeyPress);
             // 
-            // guna2TextBox2
+            // txtQuantity
             // 
-            this.guna2TextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2TextBox2.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.guna2TextBox2.BorderRadius = 11;
-            this.guna2TextBox2.BorderThickness = 2;
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "0";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox2.DisabledState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.Enabled = false;
-            this.guna2TextBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.FocusedState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox2.ForeColor = System.Drawing.Color.Gray;
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.HoverState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Location = new System.Drawing.Point(1056, 480);
-            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderText = "";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.SelectionStart = 1;
-            this.guna2TextBox2.ShadowDecoration.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Size = new System.Drawing.Size(252, 45);
-            this.guna2TextBox2.TabIndex = 32;
-            this.guna2TextBox2.TextOffset = new System.Drawing.Point(7, 0);
+            this.txtQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtQuantity.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtQuantity.BorderRadius = 11;
+            this.txtQuantity.BorderThickness = 2;
+            this.txtQuantity.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtQuantity.DefaultText = "0";
+            this.txtQuantity.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtQuantity.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.txtQuantity.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.txtQuantity.DisabledState.Parent = this.txtQuantity;
+            this.txtQuantity.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtQuantity.Enabled = false;
+            this.txtQuantity.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.txtQuantity.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtQuantity.FocusedState.Parent = this.txtQuantity;
+            this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantity.ForeColor = System.Drawing.Color.Gray;
+            this.txtQuantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtQuantity.HoverState.Parent = this.txtQuantity;
+            this.txtQuantity.Location = new System.Drawing.Point(1056, 480);
+            this.txtQuantity.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.PasswordChar = '\0';
+            this.txtQuantity.PlaceholderText = "";
+            this.txtQuantity.SelectedText = "";
+            this.txtQuantity.SelectionStart = 1;
+            this.txtQuantity.ShadowDecoration.Parent = this.txtQuantity;
+            this.txtQuantity.Size = new System.Drawing.Size(252, 45);
+            this.txtQuantity.TabIndex = 32;
+            this.txtQuantity.TextOffset = new System.Drawing.Point(7, 0);
             // 
             // txtName
             // 
@@ -938,23 +915,24 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label1.TabIndex = 38;
             this.label1.Text = "اسم الصنف";
             // 
-            // guna2Button2
+            // btnAdd
             // 
-            this.guna2Button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button2.BackColor = System.Drawing.Color.White;
-            this.guna2Button2.BorderRadius = 17;
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(598, 602);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(190, 62);
-            this.guna2Button2.TabIndex = 5;
-            this.guna2Button2.Text = "إضافة جديدة";
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.BackColor = System.Drawing.Color.White;
+            this.btnAdd.BorderRadius = 17;
+            this.btnAdd.CheckedState.Parent = this.btnAdd;
+            this.btnAdd.CustomImages.Parent = this.btnAdd;
+            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
+            this.btnAdd.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.HoverState.Parent = this.btnAdd;
+            this.btnAdd.Location = new System.Drawing.Point(598, 602);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
+            this.btnAdd.Size = new System.Drawing.Size(190, 62);
+            this.btnAdd.TabIndex = 5;
+            this.btnAdd.Text = "إضافة جديدة";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
@@ -973,6 +951,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.btnUpdate.Size = new System.Drawing.Size(190, 62);
             this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "حفظ التعديلات";
+            this.btnUpdate.Visible = false;
             // 
             // btnDeleteByOne
             // 
@@ -991,6 +970,50 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.btnDeleteByOne.Size = new System.Drawing.Size(190, 62);
             this.btnDeleteByOne.TabIndex = 6;
             this.btnDeleteByOne.Text = "أرشفة";
+            this.btnDeleteByOne.Visible = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.guna2CustomRadioButton4);
+            this.groupBox2.Controls.Add(this.label21);
+            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox2.Location = new System.Drawing.Point(639, 449);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 87);
+            this.groupBox2.TabIndex = 77;
+            this.groupBox2.TabStop = false;
+            // 
+            // guna2CustomRadioButton4
+            // 
+            this.guna2CustomRadioButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2CustomRadioButton4.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CustomRadioButton4.CheckedState.BorderThickness = 0;
+            this.guna2CustomRadioButton4.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CustomRadioButton4.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.guna2CustomRadioButton4.CheckedState.Parent = this.guna2CustomRadioButton4;
+            this.guna2CustomRadioButton4.Location = new System.Drawing.Point(172, 55);
+            this.guna2CustomRadioButton4.Name = "guna2CustomRadioButton4";
+            this.guna2CustomRadioButton4.ShadowDecoration.Parent = this.guna2CustomRadioButton4;
+            this.guna2CustomRadioButton4.Size = new System.Drawing.Size(21, 19);
+            this.guna2CustomRadioButton4.TabIndex = 69;
+            this.guna2CustomRadioButton4.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CustomRadioButton4.UncheckedState.BorderThickness = 2;
+            this.guna2CustomRadioButton4.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CustomRadioButton4.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.guna2CustomRadioButton4.UncheckedState.Parent = this.guna2CustomRadioButton4;
+            // 
+            // label21
+            // 
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label21.ForeColor = System.Drawing.Color.Gray;
+            this.label21.Location = new System.Drawing.Point(8, 50);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(158, 32);
+            this.label21.TabIndex = 70;
+            this.label21.Text = "المنتج له نسبة خصم";
             // 
             // ucNewProductCard
             // 
@@ -1013,13 +1036,15 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox4;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2Button btnUpdate;
         private Guna.UI2.WinForms.Guna2Button btnDeleteByOne;
         private System.Windows.Forms.NumericUpDown nudDiscountPercent;
@@ -1030,24 +1055,20 @@ namespace ElbayaNPresentation.Views.Store.Product
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private Guna.UI2.WinForms.Guna2CustomRadioButton guna2CustomRadioButton4;
         private Guna.UI2.WinForms.Guna2CustomRadioButton guna2CustomRadioButton3;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnGenerateBarcode;
         private System.Windows.Forms.Label label16;
         public Guna.UI2.WinForms.Guna2TextBox txtPSNNumber;
-        private Guna.UI2.WinForms.Guna2TextBox txtCBCNumber;
         public Guna.UI2.WinForms.Guna2TextBox txtUCPNumber;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox1;
-        private Guna.UI2.WinForms.Guna2CustomRadioButton guna2CustomRadioButton1;
         private Guna.UI2.WinForms.Guna2CustomRadioButton rbSmallUnitIsMainUnit;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label6;
@@ -1063,11 +1084,16 @@ namespace ElbayaNPresentation.Views.Store.Product
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2TextBox txtDescription;
         private Guna.UI2.WinForms.Guna2TextBox txtLimitedDemand;
-        public Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        public Guna.UI2.WinForms.Guna2TextBox txtQuantity;
         public Guna.UI2.WinForms.Guna2TextBox txtName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label1;
+        public Guna.UI2.WinForms.Guna2TextBox txtCBCNumber;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton guna2CustomRadioButton4;
+        private System.Windows.Forms.Label label21;
+        public Guna.UI2.WinForms.Guna2CustomRadioButton guna2CustomRadioButton1;
     }
 }

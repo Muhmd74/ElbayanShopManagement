@@ -20,6 +20,8 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
         decimal SaleDefaultPrice { get; set; }
         decimal WholesalePrice { get; set; }
         bool IsUnitSale { get; set; } //true ? LargeSale : SmallSale
+
+        //string IsMainSaleUnit { get; set; } // Cbx Text for sale unit name.
         Guid SubCategoryId { get; set; }
         SubCategoryDto SubCategory { get; set; }
         List<SubCategoryDto> SubCategories { get; set; }
@@ -33,6 +35,8 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
         SmallUnitDto SmallUnit { get; set; }
         List<SmallUnitDto> smallUnits { get; set; }
         int LimitedDemand { get; set; }
+        int Disccount { get; set; }
+        int VAT { get; set; }
 
         ProductPresnter Presenter { set; }
 
