@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ElbayanDatabase.DataClasses.Customers.Sales
+namespace ElbayanServices.Repository.Customers.Poses.Dtos
 {
-  public  class Sale
+   public class BuildingNameDto
     {
         public Guid Id { get; set; }
-        public Guid POSId { get; set; }
-        public POS Pos { get; set; }
+        public string Name { get; set; }
     }
 }
