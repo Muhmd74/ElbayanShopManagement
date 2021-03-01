@@ -193,6 +193,7 @@ namespace ElbayanServices.Repository.Products.Product
                 .OrderByDescending(d => d.DateTime)
                 .Select(d => new ProductDto()
                 {
+                    Id = d.Id,
                     Description = d.Description,
                     Name = d.Name,
                     BarCode = d.BarCode,
@@ -204,12 +205,13 @@ namespace ElbayanServices.Repository.Products.Product
                     SmallUnitId = d.SmallUnitId,
                     SubCategoryId = d.SubCategoryId,
                     UCP = d.UCP,
-                    Id = d.Id,
                     SmallUnitName = d.SmallUnit.Name,
                     LargeUnitName = d.LargeUnit.Name,
                     SubCategoryName = d.SubCategory.Name,
                     SaleDefaultPrice = d.SaleDefaultPrice,
                     WholesalePrice = d.WholesalePrice,
+                    Discount = d.Discount,
+                    Vat = d.Vat,
                     IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name
                 }).ToList();
            

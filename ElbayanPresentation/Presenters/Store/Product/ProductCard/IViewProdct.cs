@@ -29,11 +29,11 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
         DateTime ExpireDateTime { get; set; }
 
         Guid LargeUnitId { get; set; }
-        LargeUnitDto LargeUnit { get; set; }
-        List<LargeUnitDto> LargeUnits { get; set; }
+        LargeUnitNameDto LargeUnit { get; set; }
+        List<LargeUnitNameDto> LargeUnits { get; set; }
         Guid SmallUnitId { get; set; }
-        SmallUnitDto SmallUnit { get; set; }
-        List<SmallUnitDto> smallUnits { get; set; }
+        SmallUnitNameDto SmallUnit { get; set; }
+        List<SmallUnitNameDto> smallUnits { get; set; }
         int LimitedDemand { get; set; }
         int Disccount { get; set; }
         int VAT { get; set; }

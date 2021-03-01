@@ -38,7 +38,6 @@ namespace ElbayaNPresentation.Views.Store.Product
 
             PopulatecbxSubcategory();
             PopulatecbxLargeUnit();
-            PopulatecbxSmallUnit();
         }
 
         // Apply singlton pattern for form Instance
@@ -67,11 +66,11 @@ namespace ElbayaNPresentation.Views.Store.Product
         public bool IsExpired { get => rbIsExpiredProduct.Checked; set => rbIsExpiredProduct.Checked = value; }
         public DateTime ExpireDateTime { get; set; }
         public Guid LargeUnitId { get => new Guid (cbxLargeUnit.SelectedValue.ToString()); set => cbxLargeUnit.SelectedValue = value; }
-        public LargeUnitDto LargeUnit { get; set; }
-        public List<LargeUnitDto> LargeUnits { get; set; }
-        public Guid SmallUnitId { get => new Guid(cbxSmallUnit.SelectedValue.ToString()); set => cbxSmallUnit.SelectedValue = value; }
-        public SmallUnitDto SmallUnit { get; set; }
-        public List<SmallUnitDto> smallUnits { get; set; }
+        public LargeUnitNameDto LargeUnit { get; set; }
+        public List<LargeUnitNameDto> LargeUnits { get; set; }
+        public Guid SmallUnitId { get; set; }
+        public SmallUnitNameDto SmallUnit { get; set; }
+        public List<SmallUnitNameDto> smallUnits { get; set; }
         public int LimitedDemand { get => Convert.ToInt32(txtLimitedDemand.Text); set => Convert.ToInt32(txtLimitedDemand.Text); }
         public ProductPresnter Presenter { private get; set; }
         public List<SubCategoryDto> SubCategories { get; set; }
@@ -111,17 +110,28 @@ namespace ElbayaNPresentation.Views.Store.Product
         {
             cbxLargeUnit.DataSource = Presenter.FillcbxLargeUnit();
             cbxLargeUnit.DisplayMember = "Name";
-            cbxLargeUnit.ValueMember = "Id";
-            cbxLargeUnit.SelectedValue = "Id";
+            cbxLargeUnit.ValueMember = "LargeUnitId";
+            //cbxLargeUnit.SelectedValue = "LargeUnitId";
         }
-        private void PopulatecbxSmallUnit() 
+       
+        
+        private void cbxLargeUnit_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cbxSmallUnit.DataSource = Presenter.FillcbxSmallunit();
-            cbxSmallUnit.DisplayMember = "Name";
-            cbxSmallUnit.ValueMember = "Id";
-            cbxSmallUnit.SelectedValue = "Id";
+            if (cbxLargeUnit.SelectedValue != null)
+            {
+                Guid LargeUnitId = new Guid(cbxLargeUnit.SelectedValue.ToString());
+                cbxSmallUnit.DataSource = Presenter.FillcbxSmallunit(LargeUnitId);
+                cbxSmallUnit.DisplayMember = "Name";
+                cbxSmallUnit.ValueMember = "SmallUnitId";
+                cbxSmallUnit.SelectedValue = "SmallUnitId";
+            }
+            else
+            {
+                cbxSmallUnit.DataSource = null;
+            }
+
         }
-      
+
         // Validate text box for only numbers
         public void onlynumwithsinglepoint(object sender, KeyPressEventArgs e, Guna2TextBox textBox)
         {
@@ -221,6 +231,11 @@ namespace ElbayaNPresentation.Views.Store.Product
 
         private void AddProductAndCLearUsercontrol()
         {
+            if(cbxSmallUnit.SelectedItem != null)
+            {
+                SmallUnitId = new Guid (cbxSmallUnit.SelectedValue.ToString());
+            }
+            
             Presenter.OnCLickbtnAdd();
             txtName.Text = txtDescription.Text = "";
             txtLimitedDemand.Text = txtQuantity.Text = txtUCPNumber.Text
@@ -230,5 +245,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             cbxLargeUnit.SelectedIndex = cbxSmallUnit.SelectedIndex = cbxSubcategory.SelectedIndex = -1;
         }
 
-      }
+       
+    }
 }

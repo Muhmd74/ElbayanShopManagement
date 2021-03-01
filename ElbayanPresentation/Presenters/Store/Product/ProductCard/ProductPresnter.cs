@@ -33,13 +33,14 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
         {
             return     _view.SubCategories = subCategoryService.GetAll().ToList();                     
         }
-        public List<LargeUnitDto> FillcbxLargeUnit()
+        public List<LargeUnitNameDto> FillcbxLargeUnit()
         {
-            return _view.LargeUnits = largeUnitService.GetAllLargeUnit().ToList();
+            return _view.LargeUnits = productServices.GetAllLargeUnit().ToList();
         }
-        public List<SmallUnitDto> FillcbxSmallunit()
+        public List<SmallUnitNameDto> FillcbxSmallunit(Guid ID)
         {
-            return _view.smallUnits = smallUnitService.GetAllSmallUnit().ToList();
+            
+            return _view.smallUnits = productServices.GetAllSmallUnitByLargeUnit(ID).ToList();
         } 
 
         // Generate Rndom number 

@@ -36,11 +36,27 @@ namespace ElbayaNPresentation.Views.Store.Product
 
         public string SearchKeyword { get => txtSearch.Text; set => txtSearch.Text = value; }
         public List<ProductDto> products { get; set; }
-        public AllProductPresenter Presenter { private get;  set; }
+        public AllProductPresenter Presenter { get;  set; }
 
         public void PopulatedgvAllProduct()
         {
             dgvAllProduct.DataSource = Presenter.PopulatedgvAllproduct();
+            dgvAllProduct.AutoGenerateColumns = false;
+
+            // Organize DGV Columns:
+
+            dgvAllProduct.Columns["ProductName"].DisplayIndex = 0;
+            dgvAllProduct.Columns["ProductCategory"].DisplayIndex = 1;
+            dgvAllProduct.Columns["IsMainSaleUnit"].DisplayIndex = 2;
+            dgvAllProduct.Columns["UCPNumber"].DisplayIndex = 3;
+            dgvAllProduct.Columns["CBCNumber"].DisplayIndex = 4;
+            dgvAllProduct.Columns["PSNumber"].DisplayIndex = 5;
+            dgvAllProduct.Columns["PurchaseDefaultPrice"].DisplayIndex = 6;
+            dgvAllProduct.Columns["SaleDefaultPrice"].DisplayIndex = 7;
+            dgvAllProduct.Columns["WholesalePrice"].DisplayIndex = 8;
+            dgvAllProduct.Columns["Discount"].DisplayIndex = 9;
+            dgvAllProduct.Columns["VAT"].DisplayIndex = 10;
+
         }
 
         private void dgvAllProduct_DoubleClick(object sender, EventArgs e)
@@ -50,7 +66,8 @@ namespace ElbayaNPresentation.Views.Store.Product
                 frmMainBoard.Instance.gcContainer.Controls.Add(ucNewProductCard.Instance);
                 ucNewProductCard.Instance.Dock = DockStyle.Fill;
                 ucNewProductCard.Instance.BringToFront();
-                PopulateucNewProuct();
+                //PopulateucNewProuct();
+
             }
             ucNewProductCard.Instance.BringToFront();
         }

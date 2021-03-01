@@ -644,6 +644,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.cbxLargeUnit.ShadowDecoration.Parent = this.cbxLargeUnit;
             this.cbxLargeUnit.Size = new System.Drawing.Size(252, 45);
             this.cbxLargeUnit.TabIndex = 36;
+            this.cbxLargeUnit.SelectedIndexChanged += new System.EventHandler(this.cbxLargeUnit_SelectedIndexChanged);
             // 
             // cbxSubcategory
             // 

@@ -29,210 +29,66 @@ namespace ElbayaNPresentation.Views.Store.Product
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucAllProductsView));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucAllProductsView));
+            this.guna2GroupBox4 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.dgvTabContainer = new System.Windows.Forms.TabControl();
             this.tpActiveLargeUnits = new System.Windows.Forms.TabPage();
             this.dgvAllProduct = new System.Windows.Forms.DataGridView();
             this.tpArchieveLargeUnits = new System.Windows.Forms.TabPage();
             this.dgvDeletedLargeUnit = new System.Windows.Forms.DataGridView();
-            this.dgvLargeUnitDeletedID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvLargeUnitDeletedName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvLargeUnitDeletedDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDeleteByOne = new Guna.UI2.WinForms.Guna2Button();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsMainSaleUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UCPNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CBCNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PSNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PurchaseDefaultPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SaleDefaultPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WholesalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VAT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LimitedDemand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsEepired = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LargeUnitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SmallUnitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubCategoryId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LargeUnitId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SmallUnitId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsUnitSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ImageUrl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2GroupBox4.SuspendLayout();
             this.dgvTabContainer.SuspendLayout();
             this.tpActiveLargeUnits.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllProduct)).BeginInit();
             this.tpArchieveLargeUnits.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedLargeUnit)).BeginInit();
-            this.guna2GroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgvTabContainer
+            // guna2GroupBox4
             // 
-            this.dgvTabContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvTabContainer.Controls.Add(this.tpActiveLargeUnits);
-            this.dgvTabContainer.Controls.Add(this.tpArchieveLargeUnits);
-            this.dgvTabContainer.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvTabContainer.ItemSize = new System.Drawing.Size(132, 39);
-            this.dgvTabContainer.Location = new System.Drawing.Point(0, 127);
-            this.dgvTabContainer.Name = "dgvTabContainer";
-            this.dgvTabContainer.Padding = new System.Drawing.Point(6, 5);
-            this.dgvTabContainer.RightToLeftLayout = true;
-            this.dgvTabContainer.SelectedIndex = 0;
-            this.dgvTabContainer.Size = new System.Drawing.Size(1450, 702);
-            this.dgvTabContainer.TabIndex = 5;
-            // 
-            // tpActiveLargeUnits
-            // 
-            this.tpActiveLargeUnits.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.tpActiveLargeUnits.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.tpActiveLargeUnits.Controls.Add(this.dgvAllProduct);
-            this.tpActiveLargeUnits.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tpActiveLargeUnits.ForeColor = System.Drawing.Color.White;
-            this.tpActiveLargeUnits.Location = new System.Drawing.Point(4, 43);
-            this.tpActiveLargeUnits.Name = "tpActiveLargeUnits";
-            this.tpActiveLargeUnits.Padding = new System.Windows.Forms.Padding(3);
-            this.tpActiveLargeUnits.Size = new System.Drawing.Size(1442, 655);
-            this.tpActiveLargeUnits.TabIndex = 0;
-            this.tpActiveLargeUnits.Text = "قائمة الأصناف";
-            // 
-            // dgvAllProduct
-            // 
-            this.dgvAllProduct.AllowUserToAddRows = false;
-            this.dgvAllProduct.AllowUserToDeleteRows = false;
-            this.dgvAllProduct.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvAllProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvAllProduct.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAllProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvAllProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAllProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ProductName,
-            this.ProductNumber});
-            this.dgvAllProduct.Location = new System.Drawing.Point(3, 3);
-            this.dgvAllProduct.Name = "dgvAllProduct";
-            this.dgvAllProduct.ReadOnly = true;
-            this.dgvAllProduct.RowHeadersWidth = 51;
-            this.dgvAllProduct.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgvAllProduct.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            this.dgvAllProduct.RowTemplate.Height = 35;
-            this.dgvAllProduct.Size = new System.Drawing.Size(1436, 657);
-            this.dgvAllProduct.TabIndex = 0;
-            this.dgvAllProduct.DoubleClick += new System.EventHandler(this.dgvAllProduct_DoubleClick);
-            // 
-            // tpArchieveLargeUnits
-            // 
-            this.tpArchieveLargeUnits.Controls.Add(this.dgvDeletedLargeUnit);
-            this.tpArchieveLargeUnits.Location = new System.Drawing.Point(4, 43);
-            this.tpArchieveLargeUnits.Name = "tpArchieveLargeUnits";
-            this.tpArchieveLargeUnits.Padding = new System.Windows.Forms.Padding(3);
-            this.tpArchieveLargeUnits.Size = new System.Drawing.Size(1442, 655);
-            this.tpArchieveLargeUnits.TabIndex = 1;
-            this.tpArchieveLargeUnits.Text = "الأصناف المؤرشفة";
-            this.tpArchieveLargeUnits.UseVisualStyleBackColor = true;
-            // 
-            // dgvDeletedLargeUnit
-            // 
-            this.dgvDeletedLargeUnit.AllowUserToAddRows = false;
-            this.dgvDeletedLargeUnit.AllowUserToDeleteRows = false;
-            this.dgvDeletedLargeUnit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDeletedLargeUnit.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDeletedLargeUnit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDeletedLargeUnit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDeletedLargeUnit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgvLargeUnitDeletedID,
-            this.dgvLargeUnitDeletedName,
-            this.dgvLargeUnitDeletedDescription});
-            this.dgvDeletedLargeUnit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDeletedLargeUnit.Location = new System.Drawing.Point(3, 3);
-            this.dgvDeletedLargeUnit.Name = "dgvDeletedLargeUnit";
-            this.dgvDeletedLargeUnit.ReadOnly = true;
-            this.dgvDeletedLargeUnit.RowHeadersWidth = 51;
-            this.dgvDeletedLargeUnit.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgvDeletedLargeUnit.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            this.dgvDeletedLargeUnit.RowTemplate.Height = 35;
-            this.dgvDeletedLargeUnit.Size = new System.Drawing.Size(1436, 649);
-            this.dgvDeletedLargeUnit.TabIndex = 1;
-            // 
-            // dgvLargeUnitDeletedID
-            // 
-            this.dgvLargeUnitDeletedID.DataPropertyName = "Id";
-            this.dgvLargeUnitDeletedID.HeaderText = "الرقم المرجعي";
-            this.dgvLargeUnitDeletedID.MinimumWidth = 6;
-            this.dgvLargeUnitDeletedID.Name = "dgvLargeUnitDeletedID";
-            this.dgvLargeUnitDeletedID.ReadOnly = true;
-            this.dgvLargeUnitDeletedID.Visible = false;
-            // 
-            // dgvLargeUnitDeletedName
-            // 
-            this.dgvLargeUnitDeletedName.DataPropertyName = "Name";
-            this.dgvLargeUnitDeletedName.HeaderText = "اسم الوحدة";
-            this.dgvLargeUnitDeletedName.MinimumWidth = 6;
-            this.dgvLargeUnitDeletedName.Name = "dgvLargeUnitDeletedName";
-            this.dgvLargeUnitDeletedName.ReadOnly = true;
-            // 
-            // dgvLargeUnitDeletedDescription
-            // 
-            this.dgvLargeUnitDeletedDescription.DataPropertyName = "Description";
-            this.dgvLargeUnitDeletedDescription.HeaderText = "وصف الوحدة";
-            this.dgvLargeUnitDeletedDescription.MinimumWidth = 6;
-            this.dgvLargeUnitDeletedDescription.Name = "dgvLargeUnitDeletedDescription";
-            this.dgvLargeUnitDeletedDescription.ReadOnly = true;
-            // 
-            // guna2GroupBox1
-            // 
-            this.guna2GroupBox1.Controls.Add(this.btnUpdate);
-            this.guna2GroupBox1.Controls.Add(this.btnDeleteByOne);
-            this.guna2GroupBox1.Controls.Add(this.txtSearch);
-            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(117)))), ((int)(((byte)(216)))));
-            this.guna2GroupBox1.CustomBorderThickness = new System.Windows.Forms.Padding(0, 45, 0, 0);
-            this.guna2GroupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2GroupBox1.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
-            this.guna2GroupBox1.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(0, 0);
-            this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
-            this.guna2GroupBox1.Size = new System.Drawing.Size(1449, 121);
-            this.guna2GroupBox1.TabIndex = 6;
-            this.guna2GroupBox1.Text = "قائمة الأصناف المتوفرة بالمخزن";
-            this.guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdate.BorderRadius = 17;
-            this.btnUpdate.CheckedState.Parent = this.btnUpdate;
-            this.btnUpdate.CustomImages.Parent = this.btnUpdate;
-            this.btnUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
-            this.btnUpdate.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.HoverState.Parent = this.btnUpdate;
-            this.btnUpdate.Location = new System.Drawing.Point(818, 53);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
-            this.btnUpdate.Size = new System.Drawing.Size(190, 56);
-            this.btnUpdate.TabIndex = 16;
-            this.btnUpdate.Text = "حفظ التعديلات";
-            // 
-            // btnDeleteByOne
-            // 
-            this.btnDeleteByOne.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeleteByOne.BorderRadius = 17;
-            this.btnDeleteByOne.CheckedState.Parent = this.btnDeleteByOne;
-            this.btnDeleteByOne.CustomImages.Parent = this.btnDeleteByOne;
-            this.btnDeleteByOne.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
-            this.btnDeleteByOne.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteByOne.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteByOne.HoverState.Parent = this.btnDeleteByOne;
-            this.btnDeleteByOne.Location = new System.Drawing.Point(622, 52);
-            this.btnDeleteByOne.Name = "btnDeleteByOne";
-            this.btnDeleteByOne.ShadowDecoration.Parent = this.btnDeleteByOne;
-            this.btnDeleteByOne.Size = new System.Drawing.Size(190, 56);
-            this.btnDeleteByOne.TabIndex = 17;
-            this.btnDeleteByOne.Text = "أرشفة";
+            this.guna2GroupBox4.BackColor = System.Drawing.Color.White;
+            this.guna2GroupBox4.BorderRadius = 10;
+            this.guna2GroupBox4.Controls.Add(this.txtSearch);
+            this.guna2GroupBox4.Controls.Add(this.label9);
+            this.guna2GroupBox4.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(173)))), ((int)(((byte)(78)))));
+            this.guna2GroupBox4.CustomBorderThickness = new System.Windows.Forms.Padding(0, 45, 0, 0);
+            this.guna2GroupBox4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2GroupBox4.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GroupBox4.ForeColor = System.Drawing.Color.White;
+            this.guna2GroupBox4.Location = new System.Drawing.Point(0, 0);
+            this.guna2GroupBox4.Name = "guna2GroupBox4";
+            this.guna2GroupBox4.ShadowDecoration.Parent = this.guna2GroupBox4;
+            this.guna2GroupBox4.Size = new System.Drawing.Size(1518, 143);
+            this.guna2GroupBox4.TabIndex = 29;
+            this.guna2GroupBox4.Text = "قائمة الأصناف المتوفرة";
+            this.guna2GroupBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtSearch
             // 
@@ -251,76 +107,425 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.txtSearch.FillColor = System.Drawing.Color.PapayaWhip;
             this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.FocusedState.Parent = this.txtSearch;
-            this.txtSearch.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.Color.Gray;
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.HoverState.Parent = this.txtSearch;
-            this.txtSearch.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconLeft")));
             this.txtSearch.IconLeftOffset = new System.Drawing.Point(9, 0);
             this.txtSearch.IconLeftSize = new System.Drawing.Size(32, 32);
-            this.txtSearch.Location = new System.Drawing.Point(1017, 52);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
+            this.txtSearch.IconRightOffset = new System.Drawing.Point(10, 0);
+            this.txtSearch.IconRightSize = new System.Drawing.Size(35, 35);
+            this.txtSearch.Location = new System.Drawing.Point(775, 56);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "";
             this.txtSearch.SelectedText = "";
             this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
-            this.txtSearch.Size = new System.Drawing.Size(412, 57);
-            this.txtSearch.TabIndex = 15;
-            this.txtSearch.TextOffset = new System.Drawing.Point(15, 0);
+            this.txtSearch.Size = new System.Drawing.Size(412, 63);
+            this.txtSearch.TabIndex = 24;
+            this.txtSearch.TextOffset = new System.Drawing.Point(25, 0);
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.DimGray;
+            this.label9.Location = new System.Drawing.Point(1196, 74);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(319, 32);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "البحث عن الصنف بالاسم الباركود أو الرقم";
+            // 
+            // dgvTabContainer
+            // 
+            this.dgvTabContainer.Controls.Add(this.tpActiveLargeUnits);
+            this.dgvTabContainer.Controls.Add(this.tpArchieveLargeUnits);
+            this.dgvTabContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvTabContainer.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvTabContainer.ItemSize = new System.Drawing.Size(132, 59);
+            this.dgvTabContainer.Location = new System.Drawing.Point(0, 149);
+            this.dgvTabContainer.Name = "dgvTabContainer";
+            this.dgvTabContainer.Padding = new System.Drawing.Point(6, 5);
+            this.dgvTabContainer.RightToLeftLayout = true;
+            this.dgvTabContainer.SelectedIndex = 0;
+            this.dgvTabContainer.Size = new System.Drawing.Size(1518, 601);
+            this.dgvTabContainer.TabIndex = 30;
+            // 
+            // tpActiveLargeUnits
+            // 
+            this.tpActiveLargeUnits.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.tpActiveLargeUnits.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.tpActiveLargeUnits.Controls.Add(this.dgvAllProduct);
+            this.tpActiveLargeUnits.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tpActiveLargeUnits.ForeColor = System.Drawing.Color.White;
+            this.tpActiveLargeUnits.Location = new System.Drawing.Point(4, 63);
+            this.tpActiveLargeUnits.Name = "tpActiveLargeUnits";
+            this.tpActiveLargeUnits.Padding = new System.Windows.Forms.Padding(3);
+            this.tpActiveLargeUnits.Size = new System.Drawing.Size(1510, 534);
+            this.tpActiveLargeUnits.TabIndex = 0;
+            this.tpActiveLargeUnits.Text = "الوحدات النشطة";
+            // 
+            // dgvAllProduct
+            // 
+            this.dgvAllProduct.AllowUserToAddRows = false;
+            this.dgvAllProduct.AllowUserToDeleteRows = false;
+            this.dgvAllProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvAllProduct.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAllProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvAllProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAllProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProductName,
+            this.ProductCategory,
+            this.IsMainSaleUnit,
+            this.UCPNumber,
+            this.CBCNumber,
+            this.ProductId,
+            this.PSNumber,
+            this.PurchaseDefaultPrice,
+            this.SaleDefaultPrice,
+            this.WholesalePrice,
+            this.Discount,
+            this.VAT,
+            this.LimitedDemand,
+            this.IsEepired,
+            this.LargeUnitName,
+            this.SmallUnitName,
+            this.ProductDescription,
+            this.SubCategoryId,
+            this.LargeUnitId,
+            this.SmallUnitId,
+            this.IsUnitSale,
+            this.IsDeleted,
+            this.ImageUrl});
+            this.dgvAllProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAllProduct.Location = new System.Drawing.Point(3, 3);
+            this.dgvAllProduct.Name = "dgvAllProduct";
+            this.dgvAllProduct.ReadOnly = true;
+            this.dgvAllProduct.RowHeadersWidth = 51;
+            this.dgvAllProduct.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgvAllProduct.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.dgvAllProduct.RowTemplate.Height = 35;
+            this.dgvAllProduct.Size = new System.Drawing.Size(1504, 528);
+            this.dgvAllProduct.TabIndex = 0;
+            // 
+            // tpArchieveLargeUnits
+            // 
+            this.tpArchieveLargeUnits.BackColor = System.Drawing.Color.White;
+            this.tpArchieveLargeUnits.Controls.Add(this.dgvDeletedLargeUnit);
+            this.tpArchieveLargeUnits.Location = new System.Drawing.Point(4, 63);
+            this.tpArchieveLargeUnits.Name = "tpArchieveLargeUnits";
+            this.tpArchieveLargeUnits.Padding = new System.Windows.Forms.Padding(3);
+            this.tpArchieveLargeUnits.Size = new System.Drawing.Size(1510, 521);
+            this.tpArchieveLargeUnits.TabIndex = 1;
+            this.tpArchieveLargeUnits.Text = "الوحدات المؤرشفة";
+            // 
+            // dgvDeletedLargeUnit
+            // 
+            this.dgvDeletedLargeUnit.AllowUserToAddRows = false;
+            this.dgvDeletedLargeUnit.AllowUserToDeleteRows = false;
+            this.dgvDeletedLargeUnit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDeletedLargeUnit.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDeletedLargeUnit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDeletedLargeUnit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDeletedLargeUnit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDeletedLargeUnit.Location = new System.Drawing.Point(3, 3);
+            this.dgvDeletedLargeUnit.Name = "dgvDeletedLargeUnit";
+            this.dgvDeletedLargeUnit.ReadOnly = true;
+            this.dgvDeletedLargeUnit.RowHeadersWidth = 51;
+            this.dgvDeletedLargeUnit.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgvDeletedLargeUnit.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.dgvDeletedLargeUnit.RowTemplate.Height = 35;
+            this.dgvDeletedLargeUnit.Size = new System.Drawing.Size(1504, 515);
+            this.dgvDeletedLargeUnit.TabIndex = 1;
             // 
             // ProductName
             // 
             this.ProductName.DataPropertyName = "Name";
-            this.ProductName.HeaderText = "اسم المنتج";
+            this.ProductName.HeaderText = "اسم الصنف";
             this.ProductName.MinimumWidth = 6;
             this.ProductName.Name = "ProductName";
             this.ProductName.ReadOnly = true;
-            this.ProductName.Width = 117;
+            this.ProductName.Width = 134;
             // 
-            // ProductNumber
+            // ProductCategory
             // 
-            this.ProductNumber.DataPropertyName = "ProductNumber";
-            this.ProductNumber.HeaderText = "رقم المنتج";
-            this.ProductNumber.MinimumWidth = 6;
-            this.ProductNumber.Name = "ProductNumber";
-            this.ProductNumber.ReadOnly = true;
-            this.ProductNumber.Width = 111;
+            this.ProductCategory.DataPropertyName = "SubCategoryName";
+            this.ProductCategory.HeaderText = "التصنيف";
+            this.ProductCategory.MinimumWidth = 6;
+            this.ProductCategory.Name = "ProductCategory";
+            this.ProductCategory.ReadOnly = true;
+            this.ProductCategory.Width = 114;
+            // 
+            // IsMainSaleUnit
+            // 
+            this.IsMainSaleUnit.DataPropertyName = "IsMAinSalesUnit";
+            this.IsMainSaleUnit.HeaderText = "وحدة البيع الرئيسية";
+            this.IsMainSaleUnit.MinimumWidth = 6;
+            this.IsMainSaleUnit.Name = "IsMainSaleUnit";
+            this.IsMainSaleUnit.ReadOnly = true;
+            this.IsMainSaleUnit.Width = 189;
+            // 
+            // UCPNumber
+            // 
+            this.UCPNumber.DataPropertyName = "UCP";
+            this.UCPNumber.HeaderText = "رقم الباركود الدولي";
+            this.UCPNumber.MinimumWidth = 6;
+            this.UCPNumber.Name = "UCPNumber";
+            this.UCPNumber.ReadOnly = true;
+            this.UCPNumber.Width = 177;
+            // 
+            // CBCNumber
+            // 
+            this.CBCNumber.DataPropertyName = "BarCode";
+            this.CBCNumber.HeaderText = "رقم باركود الشركة";
+            this.CBCNumber.MinimumWidth = 6;
+            this.CBCNumber.Name = "CBCNumber";
+            this.CBCNumber.ReadOnly = true;
+            this.CBCNumber.Width = 171;
+            // 
+            // ProductId
+            // 
+            this.ProductId.DataPropertyName = "Id";
+            this.ProductId.HeaderText = "رقم المنتج المرجعي";
+            this.ProductId.MinimumWidth = 6;
+            this.ProductId.Name = "ProductId";
+            this.ProductId.ReadOnly = true;
+            this.ProductId.Visible = false;
+            this.ProductId.Width = 168;
+            // 
+            // PSNumber
+            // 
+            this.PSNumber.DataPropertyName = "ProductNumber";
+            this.PSNumber.HeaderText = "رقم مختصر للمنتج";
+            this.PSNumber.MinimumWidth = 6;
+            this.PSNumber.Name = "PSNumber";
+            this.PSNumber.ReadOnly = true;
+            this.PSNumber.Width = 177;
+            // 
+            // PurchaseDefaultPrice
+            // 
+            this.PurchaseDefaultPrice.DataPropertyName = "PurchaseDefaultPrice";
+            this.PurchaseDefaultPrice.HeaderText = "سعر الشراء الإفتراضي";
+            this.PurchaseDefaultPrice.MinimumWidth = 6;
+            this.PurchaseDefaultPrice.Name = "PurchaseDefaultPrice";
+            this.PurchaseDefaultPrice.ReadOnly = true;
+            this.PurchaseDefaultPrice.Width = 203;
+            // 
+            // SaleDefaultPrice
+            // 
+            this.SaleDefaultPrice.DataPropertyName = "SaleDefaultPrice";
+            this.SaleDefaultPrice.HeaderText = "سعر البيع الافتراضي";
+            this.SaleDefaultPrice.MinimumWidth = 6;
+            this.SaleDefaultPrice.Name = "SaleDefaultPrice";
+            this.SaleDefaultPrice.ReadOnly = true;
+            this.SaleDefaultPrice.Width = 192;
+            // 
+            // WholesalePrice
+            // 
+            this.WholesalePrice.DataPropertyName = "WholesalePrice";
+            this.WholesalePrice.HeaderText = "سعر البيع بالجملة";
+            this.WholesalePrice.MinimumWidth = 6;
+            this.WholesalePrice.Name = "WholesalePrice";
+            this.WholesalePrice.ReadOnly = true;
+            this.WholesalePrice.Width = 174;
+            // 
+            // Discount
+            // 
+            this.Discount.DataPropertyName = "Discount";
+            this.Discount.HeaderText = "الخصم الإفتراضي";
+            this.Discount.MinimumWidth = 6;
+            this.Discount.Name = "Discount";
+            this.Discount.ReadOnly = true;
+            this.Discount.Width = 174;
+            // 
+            // VAT
+            // 
+            this.VAT.DataPropertyName = "VAT";
+            this.VAT.HeaderText = "قيمة الضريبة";
+            this.VAT.MinimumWidth = 6;
+            this.VAT.Name = "VAT";
+            this.VAT.ReadOnly = true;
+            this.VAT.Width = 141;
+            // 
+            // LimitedDemand
+            // 
+            this.LimitedDemand.DataPropertyName = "LimitedDemand";
+            this.LimitedDemand.HeaderText = "حد الطلب للمنتج";
+            this.LimitedDemand.MinimumWidth = 6;
+            this.LimitedDemand.Name = "LimitedDemand";
+            this.LimitedDemand.ReadOnly = true;
+            this.LimitedDemand.Width = 170;
+            // 
+            // IsEepired
+            // 
+            this.IsEepired.DataPropertyName = "IsExpired";
+            this.IsEepired.HeaderText = "له تاريخ صلاحية";
+            this.IsEepired.MinimumWidth = 6;
+            this.IsEepired.Name = "IsEepired";
+            this.IsEepired.ReadOnly = true;
+            this.IsEepired.Width = 154;
+            // 
+            // LargeUnitName
+            // 
+            this.LargeUnitName.DataPropertyName = "LargeUnitName";
+            this.LargeUnitName.HeaderText = "وحدة البيع الرئيسة";
+            this.LargeUnitName.MinimumWidth = 6;
+            this.LargeUnitName.Name = "LargeUnitName";
+            this.LargeUnitName.ReadOnly = true;
+            this.LargeUnitName.Visible = false;
+            this.LargeUnitName.Width = 182;
+            // 
+            // SmallUnitName
+            // 
+            this.SmallUnitName.DataPropertyName = "SmallUnitName";
+            this.SmallUnitName.HeaderText = "وحدة البيع الفرعية";
+            this.SmallUnitName.MinimumWidth = 6;
+            this.SmallUnitName.Name = "SmallUnitName";
+            this.SmallUnitName.ReadOnly = true;
+            this.SmallUnitName.Visible = false;
+            this.SmallUnitName.Width = 183;
+            // 
+            // ProductDescription
+            // 
+            this.ProductDescription.DataPropertyName = "Description";
+            this.ProductDescription.HeaderText = "وصف الصنف";
+            this.ProductDescription.MinimumWidth = 6;
+            this.ProductDescription.Name = "ProductDescription";
+            this.ProductDescription.ReadOnly = true;
+            this.ProductDescription.Visible = false;
+            this.ProductDescription.Width = 147;
+            // 
+            // SubCategoryId
+            // 
+            this.SubCategoryId.DataPropertyName = "SubCategoryId";
+            this.SubCategoryId.HeaderText = "رقم التصنيف الفرحعي المرجعي";
+            this.SubCategoryId.MinimumWidth = 6;
+            this.SubCategoryId.Name = "SubCategoryId";
+            this.SubCategoryId.ReadOnly = true;
+            this.SubCategoryId.Visible = false;
+            this.SubCategoryId.Width = 264;
+            // 
+            // LargeUnitId
+            // 
+            this.LargeUnitId.DataPropertyName = "LargeUnitId";
+            this.LargeUnitId.HeaderText = "الرقم المرجعي للوحدة الكبري";
+            this.LargeUnitId.MinimumWidth = 6;
+            this.LargeUnitId.Name = "LargeUnitId";
+            this.LargeUnitId.ReadOnly = true;
+            this.LargeUnitId.Visible = false;
+            this.LargeUnitId.Width = 246;
+            // 
+            // SmallUnitId
+            // 
+            this.SmallUnitId.DataPropertyName = "SmallUnitId";
+            this.SmallUnitId.HeaderText = "الرقم المرجعي للوحة الصغرى";
+            this.SmallUnitId.MinimumWidth = 6;
+            this.SmallUnitId.Name = "SmallUnitId";
+            this.SmallUnitId.ReadOnly = true;
+            this.SmallUnitId.Visible = false;
+            this.SmallUnitId.Width = 250;
+            // 
+            // IsUnitSale
+            // 
+            this.IsUnitSale.DataPropertyName = "IsUnitSale";
+            this.IsUnitSale.HeaderText = "وحدة بيع";
+            this.IsUnitSale.MinimumWidth = 6;
+            this.IsUnitSale.Name = "IsUnitSale";
+            this.IsUnitSale.ReadOnly = true;
+            this.IsUnitSale.Visible = false;
+            this.IsUnitSale.Width = 109;
+            // 
+            // IsDeleted
+            // 
+            this.IsDeleted.DataPropertyName = "IsDeleted";
+            this.IsDeleted.HeaderText = "صنف مؤرشف";
+            this.IsDeleted.MinimumWidth = 6;
+            this.IsDeleted.Name = "IsDeleted";
+            this.IsDeleted.ReadOnly = true;
+            this.IsDeleted.Visible = false;
+            this.IsDeleted.Width = 147;
+            // 
+            // ImageUrl
+            // 
+            this.ImageUrl.DataPropertyName = "ImageUrl";
+            this.ImageUrl.HeaderText = "رابط ملف الصورة";
+            this.ImageUrl.MinimumWidth = 6;
+            this.ImageUrl.Name = "ImageUrl";
+            this.ImageUrl.ReadOnly = true;
+            this.ImageUrl.Visible = false;
+            this.ImageUrl.Width = 174;
             // 
             // ucAllProductsView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.Appearance.BackColor = System.Drawing.Color.White;
+            this.Appearance.Options.UseBackColor = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.guna2GroupBox1);
+            this.Controls.Add(this.guna2GroupBox4);
             this.Controls.Add(this.dgvTabContainer);
             this.Name = "ucAllProductsView";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Size = new System.Drawing.Size(1449, 829);
+            this.Size = new System.Drawing.Size(1518, 750);
+            this.guna2GroupBox4.ResumeLayout(false);
+            this.guna2GroupBox4.PerformLayout();
             this.dgvTabContainer.ResumeLayout(false);
             this.tpActiveLargeUnits.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllProduct)).EndInit();
             this.tpArchieveLargeUnits.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedLargeUnit)).EndInit();
-            this.guna2GroupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox4;
+        private Guna.UI2.WinForms.Guna2TextBox txtSearch;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TabControl dgvTabContainer;
         private System.Windows.Forms.TabPage tpActiveLargeUnits;
-        private System.Windows.Forms.DataGridView dgvAllProduct;
         private System.Windows.Forms.TabPage tpArchieveLargeUnits;
         private System.Windows.Forms.DataGridView dgvDeletedLargeUnit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvLargeUnitDeletedID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvLargeUnitDeletedName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvLargeUnitDeletedDescription;
-        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
-        private Guna.UI2.WinForms.Guna2TextBox txtSearch;
-        private Guna.UI2.WinForms.Guna2Button btnUpdate;
-        private Guna.UI2.WinForms.Guna2Button btnDeleteByOne;
+        public System.Windows.Forms.DataGridView dgvAllProduct;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductCategory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IsMainSaleUnit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UCPNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CBCNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PSNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PurchaseDefaultPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SaleDefaultPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WholesalePrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Discount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VAT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LimitedDemand;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IsEepired;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LargeUnitName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SmallUnitName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubCategoryId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LargeUnitId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SmallUnitId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IsUnitSale;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IsDeleted;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ImageUrl;
     }
 }
