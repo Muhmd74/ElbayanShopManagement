@@ -62,7 +62,8 @@ namespace ElbayaNPresentation.Views.Store.Product
         public decimal WholesalePrice { get => nudDefaultWholesalePrice.Value; set => nudDefaultWholesalePrice.Value = value; }
         public bool IsUnitSale { get; set; } = true;
         public Guid SubCategoryId { get => new Guid(cbxSubcategory.SelectedValue.ToString()); set => cbxSubcategory.SelectedValue = value; }
-        public SubCategoryDto SubCategory { get; set; }
+        public SubCategoryNameDto SubCategory { get; set; }
+        public List<SubCategoryNameDto> SubCategories { get; set; }
         public bool IsExpired { get => rbIsExpiredProduct.Checked; set => rbIsExpiredProduct.Checked = value; }
         public DateTime ExpireDateTime { get; set; }
         public Guid LargeUnitId { get => new Guid (cbxLargeUnit.SelectedValue.ToString()); set => cbxLargeUnit.SelectedValue = value; }
@@ -73,7 +74,6 @@ namespace ElbayaNPresentation.Views.Store.Product
         public List<SmallUnitNameDto> smallUnits { get; set; }
         public int LimitedDemand { get => Convert.ToInt32(txtLimitedDemand.Text); set => Convert.ToInt32(txtLimitedDemand.Text); }
         public ProductPresnter Presenter { private get; set; }
-        public List<SubCategoryDto> SubCategories { get; set; }
         public int Disccount { get => (Int32) nudDiscountPercent.Value; set => nudDiscountPercent.Value = value; }
         public int VAT { get => (Int32) nudVATPercent.Value; set => nudVATPercent.Value = value; }
 
@@ -111,15 +111,16 @@ namespace ElbayaNPresentation.Views.Store.Product
             cbxLargeUnit.DataSource = Presenter.FillcbxLargeUnit();
             cbxLargeUnit.DisplayMember = "Name";
             cbxLargeUnit.ValueMember = "LargeUnitId";
-            //cbxLargeUnit.SelectedValue = "LargeUnitId";
+            cbxLargeUnit.SelectedValue = "LargeUnitId";
         }
        
-        
+        // Populate Small unit Baesd on Large unit
         private void cbxLargeUnit_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbxLargeUnit.SelectedValue != null)
             {
-                Guid LargeUnitId = new Guid(cbxLargeUnit.SelectedValue.ToString());
+                Guid LargeUnitId;
+               bool AreGetLargeUnitId = Guid.TryParse(cbxLargeUnit.SelectedValue.ToString(), out LargeUnitId);
                 cbxSmallUnit.DataSource = Presenter.FillcbxSmallunit(LargeUnitId);
                 cbxSmallUnit.DisplayMember = "Name";
                 cbxSmallUnit.ValueMember = "SmallUnitId";
@@ -244,6 +245,8 @@ namespace ElbayaNPresentation.Views.Store.Product
                 = nudVATPercent.Value = nudDiscountPercent.Value = 0m;
             cbxLargeUnit.SelectedIndex = cbxSmallUnit.SelectedIndex = cbxSubcategory.SelectedIndex = -1;
         }
+
+        // Handle Update and Delete: 
 
        
     }

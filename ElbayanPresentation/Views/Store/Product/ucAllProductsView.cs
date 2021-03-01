@@ -78,5 +78,19 @@ namespace ElbayaNPresentation.Views.Store.Product
             ucNewProductCard.Instance.txtName.Text = dgvAllProduct.CurrentRow.Cells["ProductName"].Value.ToString();
             ucNewProductCard.Instance.txtPSNNumber.Text = dgvAllProduct.CurrentRow.Cells["ProductNumber"].Value.ToString();
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (dgvTabContainer.SelectedIndex == 0)
+            {
+                dgvAllProduct.DataSource = Presenter.FilterDataGridView().ToList();
+            }
+            else if (dgvTabContainer.SelectedIndex == 1)
+            {
+                //dgvAllDeletedProduct.DataSource = Presenter.FilterDataGridViewDeleted();
+            }
+        }
+
+      
     }
 }

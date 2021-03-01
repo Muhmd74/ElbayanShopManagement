@@ -23,8 +23,8 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
 
         //string IsMainSaleUnit { get; set; } // Cbx Text for sale unit name.
         Guid SubCategoryId { get; set; }
-        SubCategoryDto SubCategory { get; set; }
-        List<SubCategoryDto> SubCategories { get; set; }
+        SubCategoryNameDto SubCategory { get; set; }
+        List<SubCategoryNameDto> SubCategories { get; set; }
         bool IsExpired { get; set; }
         DateTime ExpireDateTime { get; set; }
 

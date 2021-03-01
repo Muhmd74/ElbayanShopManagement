@@ -20,18 +20,15 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
         private readonly IViewProdct _view;
 
         private readonly ProductService productServices = new ProductService(new ConnectionOption());
-        private readonly SubCategoryService subCategoryService = new SubCategoryService(new ConnectionOption());
-        private readonly LargeUnitService largeUnitService = new LargeUnitService(new ConnectionOption());
-        private readonly SmallService smallUnitService = new SmallService(new ConnectionOption());
-
+        
         public ProductPresnter(IViewProdct view)
         {
             _view = view;
         }
 
-        public List<SubCategoryDto> FillcbxSubcategory()
+        public List<SubCategoryNameDto> FillcbxSubcategory()
         {
-            return     _view.SubCategories = subCategoryService.GetAll().ToList();                     
+            return     _view.SubCategories = productServices.GetAllSubCategory().ToList();                     
         }
         public List<LargeUnitNameDto> FillcbxLargeUnit()
         {

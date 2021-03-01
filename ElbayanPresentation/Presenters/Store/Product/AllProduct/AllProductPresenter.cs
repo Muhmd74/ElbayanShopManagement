@@ -22,5 +22,14 @@ namespace ElbayaNPresentation.Presenters.Store.Product.AllProduct
         {
             return _view.products = productSerice.GetAll().ToList();
         }
+        public List<ProductDto> FilterDataGridView()
+        {
+            return _view.products = productSerice.GetAll().Where(
+                d => d.Name.Contains(_view.SearchKeyword) 
+                || d.UCP.ToString().Contains(_view.SearchKeyword)
+                || d.BarCode.ToString().Contains(_view.SearchKeyword)
+                || d.ProductNumber.ToString().Contains(_view.SearchKeyword)
+            ).ToList();
+        }
     }
 }
