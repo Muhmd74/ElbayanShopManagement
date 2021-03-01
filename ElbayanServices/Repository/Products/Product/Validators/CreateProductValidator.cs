@@ -20,8 +20,8 @@ namespace ElbayanServices.Repository.Products.Product.Validators
                 .NotEmpty().WithMessage("يجب ألا يكون الحقل فارغاً")
                 .NotNull().WithMessage("يجب ألا يكون الحقل فارغاً");
             //BarCode
-            RuleFor(d => d.BarCode)
-                .Must(ProductResolution.BarCodeIsUnique).WithMessage("الرمز الشريطي  موجود بالفعل");
+        //    RuleFor(d => d.BarCode)
+        //        .Must(ProductResolution.BarCodeIsUnique).WithMessage("الرمز الشريطي  موجود بالفعل");
         }
        
     }
