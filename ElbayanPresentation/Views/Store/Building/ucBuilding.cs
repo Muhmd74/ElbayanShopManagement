@@ -39,7 +39,7 @@ namespace ElbayaNPresentation.Views.Store.Building
         public Guna2TextBox BuildingName { get => txtName; set => txtName = value; }
         public Guna2TextBox BuildingDescription { get => txtDescription; set => txtDescription = value; }
         public Guna2TextBox BuildingAddress { get => txtAddress; set => txtAddress = value; }
-        public Guna2TextBox BuildingAddressPhoneNumber { get => txtPhoneNumber; set => txtPhoneNumber = value; }
+        public Guna2TextBox BuildingPhoneNumber { get => txtPhoneNumber; set => txtPhoneNumber = value; }
         public Guna2TextBox SearchtxtBox { get => txtSearch; set => txtSearch = value; }
         DataGridView IViewBuilding.dgvActiveObjects { get => dgvActiveObjects; set => dgvActiveObjects = value; }
         DataGridView IViewBuilding.dgvDeletedObjects { get => dgvDeletedObjects; set => dgvDeletedObjects = value; }
@@ -47,5 +47,10 @@ namespace ElbayaNPresentation.Views.Store.Building
         public Guna2Button btnAddObject { get => btnAdd; set => btnAdd = value; }
         public Guna2Button btnUpdateObject { get => btnUpdate; set => btnUpdate = value; }
         public Guna2Button btnDeleteObject { get => btnDeleteByOne; set => btnDeleteByOne = value; }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Presenter.CreateNewObject();
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace ElbayaNPresentation.Presenters.Store.Building
         Guna2TextBox BuildingName { get; set; }
         Guna2TextBox BuildingDescription { get; set; }
         Guna2TextBox BuildingAddress { get; set; }
-        Guna2TextBox BuildingAddressPhoneNumber { get; set; }
+        Guna2TextBox BuildingPhoneNumber { get; set; }
         Guna2TextBox SearchtxtBox { get; set; }
         DataGridView dgvActiveObjects { get; set; }
         DataGridView dgvDeletedObjects { get; set; }
