@@ -76,7 +76,7 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
 
         public long GenerateProductNumber()
         {
-           return  productServices.GeneratorRandomNumber();
+           return  productServices.GenerateProductNumber();
         }
        // CRUD Operations:
        // Create:: 

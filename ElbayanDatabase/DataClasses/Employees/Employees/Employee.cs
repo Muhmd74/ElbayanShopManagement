@@ -19,8 +19,10 @@ namespace ElbayanDatabase.DataClasses.Employees.Employees
         public string Name { get; set; }
         [Required]
         [MaxLength(450)]
+        [EmailAddress]
         public string Email { get; set; }
         [Required]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
 
         public bool IsActive { get; set; } = true;

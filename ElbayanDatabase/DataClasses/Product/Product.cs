@@ -15,7 +15,7 @@ namespace ElbayanDatabase.DataClasses.Product
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
         public int UCP { get; set; }
-        public int BarCode { get; set; }
+        public long BarCode { get; set; }
         [Required]
         public string Name { get; set; }
         public string ImageUrl { get; set; }
@@ -28,7 +28,7 @@ namespace ElbayanDatabase.DataClasses.Product
         public bool IsUnitSale { get; set; }//true ? LargeSale : SmallSale
         public Guid SubCategoryId { get; set; }
         public SubCategory SubCategory { get; set; }
-        public long ProductNumber { get; set; }
+        public int ProductNumber { get; set; }
 
         public bool IsExpired { get; set; } = false;
         public Guid LargeUnitId { get; set; }
@@ -37,8 +37,8 @@ namespace ElbayanDatabase.DataClasses.Product
         public Guid SmallUnitId { get; set; }
         public bool IsDeleted { get; set; }
         public int LimitedDemand { get; set; }
-        public int Vat { get; set; }
-        public int Discount { get; set; }
+        public decimal Vat { get; set; }
+        public decimal Discount { get; set; }
         public ICollection<ProductStock> ProductStocks { get; set; }
         public ICollection<ProductPrice> ProductPrices { get; set; }
         public ICollection<OrderProduct> OrderProducts { get; set; }
