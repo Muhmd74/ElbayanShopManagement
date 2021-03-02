@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using ElbayaNPresentation.Presenters.CommonPresenter;
 using ElbayaNPresentation.Presenters.Store.Building;
 using Guna.UI2.WinForms;
 using System;
@@ -51,6 +52,12 @@ namespace ElbayaNPresentation.Views.Store.Building
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Presenter.CreateNewObject();
+        }
+
+        private void txtPhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidateControls.ValidateTextBoxOnlyNumber(sender, e, txtPhoneNumber);
+            this.txtPhoneNumber.MaxLength = 14;
         }
     }
 }

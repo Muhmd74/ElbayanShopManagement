@@ -45,7 +45,7 @@ namespace ElbayaNPresentation.Presenters.Store.Building
          // 1- Create:
          public void CreateNewObject()
          {
-           if(_view.BuildingName.Text != "")
+            if(_view.BuildingName.Text != "")
            {
                 buildingService.Create(new BuildingDto
                 {
