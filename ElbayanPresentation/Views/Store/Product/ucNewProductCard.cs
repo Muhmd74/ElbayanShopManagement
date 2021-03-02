@@ -238,6 +238,8 @@ namespace ElbayaNPresentation.Views.Store.Product
                             ucAllProductsView.Instance.BringToFront();
                         }
                         ucAllProductsView.Instance.BringToFront();
+                        ucAllProductsView.Instance.dgvAllProduct.DataSource = ucAllProductsView.Instance.Presenter.PopulatedgvAllproduct();
+
                     }
                 }
                 else
@@ -262,6 +264,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             nudDefaultPurchasePrice.Value = nudDefaultSalePrice.Value = nudDefaultWholesalePrice.Value
                 = nudVATPercent.Value = nudDiscountPercent.Value = 0m;
             cbxLargeUnit.SelectedIndex = cbxSmallUnit.SelectedIndex = cbxSubcategory.SelectedIndex = -1;
+            pbProductImage.Image = null;
         }
 
 
