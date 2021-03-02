@@ -212,6 +212,7 @@ namespace ElbayanServices.Repository.Products.Product
                     WholesalePrice = d.WholesalePrice,
                     Discount = d.Discount,
                     Vat = d.Vat,
+                    ImageUrl = d.ImageUrl,
                     IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name
                 }).ToList();
            

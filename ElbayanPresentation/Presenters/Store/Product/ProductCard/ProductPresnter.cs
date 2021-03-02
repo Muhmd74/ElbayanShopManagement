@@ -17,11 +17,11 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
 {
     public class ProductPresnter
     {
-        private readonly IViewProdct _view;
+        private readonly IViewProdcut _view;
 
         private readonly ProductService productServices = new ProductService(new ConnectionOption());
         
-        public ProductPresnter(IViewProdct view)
+        public ProductPresnter(IViewProdcut view)
         {
             _view = view;
         }
@@ -50,20 +50,20 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
         {
             productServices.Add(new ProductDto
             {
-                Name = _view.ProudctName,
-                Description = _view.Description,
+                Name = _view.ProudctName.Text,
+                Description = _view.Description.Text,
                 BarCode = _view.BarCode,
                 SubCategoryId = _view.SubCategoryId,
-                LargeUnitId = _view.LargeUnitId,
+                LargeUnitId = new Guid(_view.LargeUnit.SelectedValue.ToString()),
                 SmallUnitId = _view.SmallUnitId,
                 IsUnitSale = _view.IsUnitSale,
-                LimitedDemand = _view.LimitedDemand,
+                LimitedDemand = Convert.ToInt32(_view.LimitedDemand.Text),
                 IsExpired = _view.IsExpired,
                 ImageUrl = _view.ImageUrl,
                 UCP =_view.UCP,
                 PurchaseDefaultPrice = _view.PurchaseDefaultPrice,
                 SaleDefaultPrice = _view.SaleDefaultPrice,
-                WholesalePrice = _view.WholesalePrice,
+                WholesalePrice = _view.WholesalePrice.Value,
                 //IsMAinSalesUnit = _view.IsMainSaleUnit,
                 Vat = _view.VAT,
                 Discount =_view.Disccount

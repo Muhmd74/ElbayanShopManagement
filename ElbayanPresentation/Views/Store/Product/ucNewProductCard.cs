@@ -17,7 +17,7 @@ using System.Windows.Forms;
 
 namespace ElbayaNPresentation.Views.Store.Product
 {
-    public partial class ucNewProductCard : DevExpress.XtraEditors.XtraUserControl, IViewProdct
+    public partial class ucNewProductCard : DevExpress.XtraEditors.XtraUserControl, IViewProdcut
     {
         public ucNewProductCard()
         {
@@ -55,11 +55,11 @@ namespace ElbayaNPresentation.Views.Store.Product
         public int UCP { get => Convert.ToInt32(txtUCPNumber.Text); set => Convert.ToInt32(txtUCPNumber.Text); }
         public int BarCode { get => Convert.ToInt32(txtCBCNumber.Text); set => Convert.ToInt32(txtCBCNumber.Text); }
         public string ImageUrl { get; set; }
-        public string ProudctName { get => txtName.Text; set => txtName.Text = value; }
-        public string Description { get => txtDescription.Text; set => txtDescription.Text = value; }
+        public Guna2TextBox ProudctName { get => txtName; set => txtName = value; }
+        public Guna2TextBox Description { get => txtDescription; set => txtDescription = value; }
         public decimal PurchaseDefaultPrice { get => nudDefaultPurchasePrice.Value; set => nudDefaultPurchasePrice.Value = value; }
         public decimal SaleDefaultPrice { get => nudDefaultSalePrice.Value; set => nudDefaultSalePrice.Value = value; }
-        public decimal WholesalePrice { get => nudDefaultWholesalePrice.Value; set => nudDefaultWholesalePrice.Value = value; }
+        public NumericUpDown WholesalePrice { get => nudDefaultWholesalePrice; set => nudDefaultWholesalePrice = value; }
         public bool IsUnitSale { get; set; } = true;
         public Guid SubCategoryId { get => new Guid(cbxSubcategory.SelectedValue.ToString()); set => cbxSubcategory.SelectedValue = value; }
         public SubCategoryNameDto SubCategory { get; set; }
@@ -67,12 +67,13 @@ namespace ElbayaNPresentation.Views.Store.Product
         public bool IsExpired { get => rbIsExpiredProduct.Checked; set => rbIsExpiredProduct.Checked = value; }
         public DateTime ExpireDateTime { get; set; }
         public Guid LargeUnitId { get => new Guid (cbxLargeUnit.SelectedValue.ToString()); set => cbxLargeUnit.SelectedValue = value; }
-        public LargeUnitNameDto LargeUnit { get; set; }
+        public Guna2ComboBox LargeUnit { get => cbxLargeUnit ; set => cbxLargeUnit.SelectedValue = value; } 
         public List<LargeUnitNameDto> LargeUnits { get; set; }
         public Guid SmallUnitId { get; set; }
         public SmallUnitNameDto SmallUnit { get; set; }
         public List<SmallUnitNameDto> smallUnits { get; set; }
-        public int LimitedDemand { get => Convert.ToInt32(txtLimitedDemand.Text); set => Convert.ToInt32(txtLimitedDemand.Text); }
+        public Guna2TextBox LimitedDemand { get => txtLimitedDemand; set => txtLimitedDemand = value; }
+        public Guna2TextBox ProductQuantity { get => txtQuantity; set => txtQuantity = value; }
         public ProductPresnter Presenter { private get; set; }
         public int Disccount { get => (Int32) nudDiscountPercent.Value; set => nudDiscountPercent.Value = value; }
         public int VAT { get => (Int32) nudVATPercent.Value; set => nudVATPercent.Value = value; }

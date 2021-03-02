@@ -31,5 +31,9 @@ namespace ElbayaNPresentation.Presenters.Store.Product.AllProduct
                 || d.ProductNumber.ToString().Contains(_view.SearchKeyword)
             ).ToList();
         }
+        public List<ProductDto> PopulatedgvDeletedAllproduct()
+        {
+            return _view.products = productSerice.GetAllProductDeleted().ToList();
+        }
     }
 }

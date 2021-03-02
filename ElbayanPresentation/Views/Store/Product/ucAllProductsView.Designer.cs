@@ -62,7 +62,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.IsDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ImageUrl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpArchieveLargeUnits = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvAllDeletedProduct = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,7 +91,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.tpActiveLargeUnits.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllProduct)).BeginInit();
             this.tpArchieveLargeUnits.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAllDeletedProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GroupBox4
@@ -176,6 +176,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dgvTabContainer.SelectedIndex = 0;
             this.dgvTabContainer.Size = new System.Drawing.Size(1518, 601);
             this.dgvTabContainer.TabIndex = 30;
+            this.dgvTabContainer.SelectedIndexChanged += new System.EventHandler(this.dgvTabContainer_SelectedIndexChanged);
             // 
             // tpActiveLargeUnits
             // 
@@ -241,6 +242,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dgvAllProduct.RowTemplate.Height = 35;
             this.dgvAllProduct.Size = new System.Drawing.Size(1504, 528);
             this.dgvAllProduct.TabIndex = 0;
+            this.dgvAllProduct.DoubleClick += new System.EventHandler(this.dgvAllProduct_DoubleClick_1);
             // 
             // ProductName
             // 
@@ -462,7 +464,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             // tpArchieveLargeUnits
             // 
             this.tpArchieveLargeUnits.BackColor = System.Drawing.Color.White;
-            this.tpArchieveLargeUnits.Controls.Add(this.dataGridView1);
+            this.tpArchieveLargeUnits.Controls.Add(this.dgvAllDeletedProduct);
             this.tpArchieveLargeUnits.Location = new System.Drawing.Point(4, 63);
             this.tpArchieveLargeUnits.Name = "tpArchieveLargeUnits";
             this.tpArchieveLargeUnits.Padding = new System.Windows.Forms.Padding(3);
@@ -470,12 +472,12 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.tpArchieveLargeUnits.TabIndex = 1;
             this.tpArchieveLargeUnits.Text = "الوحدات المؤرشفة";
             // 
-            // dataGridView1
+            // dgvAllDeletedProduct
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dgvAllDeletedProduct.AllowUserToAddRows = false;
+            this.dgvAllDeletedProduct.AllowUserToDeleteRows = false;
+            this.dgvAllDeletedProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvAllDeletedProduct.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -484,9 +486,9 @@ namespace ElbayaNPresentation.Views.Store.Product
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvAllDeletedProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvAllDeletedProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAllDeletedProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
@@ -510,16 +512,16 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn21,
             this.dataGridViewTextBoxColumn22,
             this.dataGridViewTextBoxColumn23});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dataGridView1.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            this.dataGridView1.RowTemplate.Height = 35;
-            this.dataGridView1.Size = new System.Drawing.Size(1504, 528);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvAllDeletedProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAllDeletedProduct.Location = new System.Drawing.Point(3, 3);
+            this.dgvAllDeletedProduct.Name = "dgvAllDeletedProduct";
+            this.dgvAllDeletedProduct.ReadOnly = true;
+            this.dgvAllDeletedProduct.RowHeadersWidth = 51;
+            this.dgvAllDeletedProduct.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgvAllDeletedProduct.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.dgvAllDeletedProduct.RowTemplate.Height = 35;
+            this.dgvAllDeletedProduct.Size = new System.Drawing.Size(1504, 528);
+            this.dgvAllDeletedProduct.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -755,7 +757,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.tpActiveLargeUnits.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllProduct)).EndInit();
             this.tpArchieveLargeUnits.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAllDeletedProduct)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -791,7 +793,7 @@ namespace ElbayaNPresentation.Views.Store.Product
         private System.Windows.Forms.DataGridViewTextBoxColumn IsUnitSale;
         private System.Windows.Forms.DataGridViewTextBoxColumn IsDeleted;
         private System.Windows.Forms.DataGridViewTextBoxColumn ImageUrl;
-        public System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView dgvAllDeletedProduct;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
