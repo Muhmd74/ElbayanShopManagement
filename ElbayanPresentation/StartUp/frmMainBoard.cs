@@ -15,6 +15,7 @@ using ElbayaNPresentation.Views.Store.Units;
 using ElbayaNPresentation.Views.Store.Unit;
 using ElbayaNPresentation.Views.Store.Product;
 using DevExpress.XtraEditors;
+using ElbayaNPresentation.Views.Store.Building;
 
 namespace ElbayaNPresentation
 {
@@ -138,6 +139,15 @@ namespace ElbayaNPresentation
             ucAllProductsView.Instance.BringToFront();
         }
 
-       
+        private void barBtnBuilding_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!gcContainer.Controls.Contains(ucBuilding.Instance))
+            {
+                gcContainer.Controls.Add(ucBuilding.Instance);
+                ucBuilding.Instance.Dock = DockStyle.Fill;
+                ucBuilding.Instance.BringToFront();
+            }
+            ucBuilding.Instance.BringToFront();
+        }
     }
 }

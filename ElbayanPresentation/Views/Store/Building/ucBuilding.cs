@@ -16,6 +16,18 @@ namespace ElbayaNPresentation.Views.Store.Building
         public ucBuilding()
         {
             InitializeComponent();
+            _instance = this;
+        }
+
+        private static ucBuilding _instance;
+        public static ucBuilding Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new ucBuilding();
+                return _instance;
+            }
         }
     }
 }
