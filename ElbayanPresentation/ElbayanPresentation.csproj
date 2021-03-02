@@ -85,6 +85,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Presenters\CommonPresenter\DataGridViewStyle.cs" />
+    <Compile Include="Presenters\Store\Building\BuildingPresenter.cs" />
+    <Compile Include="Presenters\Store\Building\IViewBuilding.cs" />
+    <Compile Include="Presenters\Store\Building\POS\IViewPOS.cs" />
+    <Compile Include="Presenters\Store\Building\POS\POSPresenter.cs" />
     <Compile Include="Presenters\Store\Category\MainCategory\MainCategoryPresenter.cs" />
     <Compile Include="Presenters\Store\Category\SubCategory\SubCategoryPresenter.cs" />
     <Compile Include="Presenters\Store\Product\AllProduct\AllProductPresenter.cs" />
@@ -110,6 +114,12 @@
     <Compile Include="Presenters\Store\Category\SubCategory\IViewSubCategory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Store\Building\ucBuilding.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Store\Building\ucBuilding.Designer.cs">
+      <DependentUpon>ucBuilding.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Store\Category\ucMaincategory.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -155,6 +165,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Store\Building\ucBuilding.resx">
+      <DependentUpon>ucBuilding.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Store\Category\ucMaincategory.resx">
       <DependentUpon>ucMaincategory.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +210,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\ProductImage\" />
+    <Folder Include="Views\Store\POS\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\addchartpane_16x16.png" />
