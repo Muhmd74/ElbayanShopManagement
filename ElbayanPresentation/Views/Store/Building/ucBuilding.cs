@@ -20,6 +20,9 @@ namespace ElbayaNPresentation.Views.Store.Building
             InitializeComponent();
             _instance = this;
             Presenter = new BuildingPresenter(this);
+
+            // Load Data:
+            Presenter.OnloadUCBuilding();
         }
 
         private static ucBuilding _instance;
