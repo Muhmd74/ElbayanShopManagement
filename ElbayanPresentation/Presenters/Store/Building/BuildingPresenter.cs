@@ -37,5 +37,7 @@ namespace ElbayaNPresentation.Presenters.Store.Building
         {
             // _view.dgvDeletedObjects.DataSource = buildingService.GetAllBuilding().ToList();
         }
+
+
     }
 }
