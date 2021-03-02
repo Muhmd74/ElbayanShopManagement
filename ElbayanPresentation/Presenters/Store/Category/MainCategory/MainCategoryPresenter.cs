@@ -23,8 +23,8 @@ namespace ElbayaNPresentation.Presenters.Store.Category.MainCategory
         public void OnClickAddButtonFuction()
         {
             Category.Add( new CategoryDto { 
-                Name = _view.MainCategoryName, 
-                Description = _view.MainCategoryDescription
+                Name = _view.MainCategoryName.Text, 
+                Description = _view.MainCategoryDescription.Text
             });
         }
         public List<CategoryDto> GetCategories()
@@ -49,8 +49,8 @@ namespace ElbayaNPresentation.Presenters.Store.Category.MainCategory
             Category.Update(new CategoryDto
             {
                 Id = ID,
-                Name = _view.MainCategoryName,
-                Description = _view.MainCategoryDescription
+                Name = _view.MainCategoryName.Text,
+                Description = _view.MainCategoryDescription.Text
             });
         }
         public void OnClickDelete(Guid ID)

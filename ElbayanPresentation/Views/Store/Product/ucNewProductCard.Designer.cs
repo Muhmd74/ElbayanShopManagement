@@ -53,8 +53,8 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.guna2CustomRadioButton1 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.gbMainUnit = new System.Windows.Forms.GroupBox();
+            this.rbLargeUnitIsMainUnit = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.rbSmallUnitIsMainUnit = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.label25 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -78,7 +78,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDeleteByOne = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.guna2CustomRadioButton4 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.label21 = new System.Windows.Forms.Label();
@@ -88,7 +87,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             ((System.ComponentModel.ISupportInitialize)(this.nudDefaultWholesalePrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDefaultSalePrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDefaultPurchasePrice)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.gbMainUnit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -119,7 +118,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox4.Controls.Add(this.label15);
             this.guna2GroupBox4.Controls.Add(this.label14);
             this.guna2GroupBox4.Controls.Add(this.label13);
-            this.guna2GroupBox4.Controls.Add(this.groupBox1);
+            this.guna2GroupBox4.Controls.Add(this.gbMainUnit);
             this.guna2GroupBox4.Controls.Add(this.pbProductImage);
             this.guna2GroupBox4.Controls.Add(this.btnUploadPicture);
             this.guna2GroupBox4.Controls.Add(this.rbIsExpiredProduct);
@@ -140,7 +139,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox4.Controls.Add(this.label1);
             this.guna2GroupBox4.Controls.Add(this.btnAdd);
             this.guna2GroupBox4.Controls.Add(this.btnUpdate);
-            this.guna2GroupBox4.Controls.Add(this.btnDeleteByOne);
             this.guna2GroupBox4.Controls.Add(this.groupBox2);
             this.guna2GroupBox4.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(173)))), ((int)(((byte)(78)))));
             this.guna2GroupBox4.CustomBorderThickness = new System.Windows.Forms.Padding(0, 45, 0, 0);
@@ -483,42 +481,42 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label13.TabIndex = 56;
             this.label13.Text = "رقم الباركود الدولي";
             // 
-            // groupBox1
+            // gbMainUnit
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.guna2CustomRadioButton1);
-            this.groupBox1.Controls.Add(this.rbSmallUnitIsMainUnit);
-            this.groupBox1.Controls.Add(this.label25);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Font = new System.Drawing.Font("Sakkal Majalla", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.Gray;
-            this.groupBox1.Location = new System.Drawing.Point(877, 273);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(170, 143);
-            this.groupBox1.TabIndex = 50;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "اختر وحدة البيع الرئيسية";
+            this.gbMainUnit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbMainUnit.Controls.Add(this.rbLargeUnitIsMainUnit);
+            this.gbMainUnit.Controls.Add(this.rbSmallUnitIsMainUnit);
+            this.gbMainUnit.Controls.Add(this.label25);
+            this.gbMainUnit.Controls.Add(this.label6);
+            this.gbMainUnit.Font = new System.Drawing.Font("Sakkal Majalla", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbMainUnit.ForeColor = System.Drawing.Color.Gray;
+            this.gbMainUnit.Location = new System.Drawing.Point(877, 273);
+            this.gbMainUnit.Name = "gbMainUnit";
+            this.gbMainUnit.Size = new System.Drawing.Size(170, 143);
+            this.gbMainUnit.TabIndex = 50;
+            this.gbMainUnit.TabStop = false;
+            this.gbMainUnit.Text = "اختر وحدة البيع الرئيسية";
             // 
-            // guna2CustomRadioButton1
+            // rbLargeUnitIsMainUnit
             // 
-            this.guna2CustomRadioButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2CustomRadioButton1.Checked = true;
-            this.guna2CustomRadioButton1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton1.CheckedState.BorderThickness = 0;
-            this.guna2CustomRadioButton1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton1.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2CustomRadioButton1.CheckedState.Parent = this.guna2CustomRadioButton1;
-            this.guna2CustomRadioButton1.Location = new System.Drawing.Point(143, 45);
-            this.guna2CustomRadioButton1.Name = "guna2CustomRadioButton1";
-            this.guna2CustomRadioButton1.ShadowDecoration.Parent = this.guna2CustomRadioButton1;
-            this.guna2CustomRadioButton1.Size = new System.Drawing.Size(20, 22);
-            this.guna2CustomRadioButton1.TabIndex = 7;
-            this.guna2CustomRadioButton1.TabStop = false;
-            this.guna2CustomRadioButton1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CustomRadioButton1.UncheckedState.BorderThickness = 2;
-            this.guna2CustomRadioButton1.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton1.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton1.UncheckedState.Parent = this.guna2CustomRadioButton1;
+            this.rbLargeUnitIsMainUnit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbLargeUnitIsMainUnit.Checked = true;
+            this.rbLargeUnitIsMainUnit.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbLargeUnitIsMainUnit.CheckedState.BorderThickness = 0;
+            this.rbLargeUnitIsMainUnit.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbLargeUnitIsMainUnit.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rbLargeUnitIsMainUnit.CheckedState.Parent = this.rbLargeUnitIsMainUnit;
+            this.rbLargeUnitIsMainUnit.Location = new System.Drawing.Point(143, 45);
+            this.rbLargeUnitIsMainUnit.Name = "rbLargeUnitIsMainUnit";
+            this.rbLargeUnitIsMainUnit.ShadowDecoration.Parent = this.rbLargeUnitIsMainUnit;
+            this.rbLargeUnitIsMainUnit.Size = new System.Drawing.Size(20, 22);
+            this.rbLargeUnitIsMainUnit.TabIndex = 7;
+            this.rbLargeUnitIsMainUnit.TabStop = false;
+            this.rbLargeUnitIsMainUnit.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rbLargeUnitIsMainUnit.UncheckedState.BorderThickness = 2;
+            this.rbLargeUnitIsMainUnit.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rbLargeUnitIsMainUnit.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rbLargeUnitIsMainUnit.UncheckedState.Parent = this.rbLargeUnitIsMainUnit;
             // 
             // rbSmallUnitIsMainUnit
             // 
@@ -953,25 +951,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "حفظ التعديلات";
             this.btnUpdate.Visible = false;
-            // 
-            // btnDeleteByOne
-            // 
-            this.btnDeleteByOne.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeleteByOne.BackColor = System.Drawing.Color.White;
-            this.btnDeleteByOne.BorderRadius = 17;
-            this.btnDeleteByOne.CheckedState.Parent = this.btnDeleteByOne;
-            this.btnDeleteByOne.CustomImages.Parent = this.btnDeleteByOne;
-            this.btnDeleteByOne.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
-            this.btnDeleteByOne.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteByOne.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteByOne.HoverState.Parent = this.btnDeleteByOne;
-            this.btnDeleteByOne.Location = new System.Drawing.Point(120, 602);
-            this.btnDeleteByOne.Name = "btnDeleteByOne";
-            this.btnDeleteByOne.ShadowDecoration.Parent = this.btnDeleteByOne;
-            this.btnDeleteByOne.Size = new System.Drawing.Size(190, 62);
-            this.btnDeleteByOne.TabIndex = 6;
-            this.btnDeleteByOne.Text = "أرشفة";
-            this.btnDeleteByOne.Visible = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // groupBox2
             // 
@@ -1034,8 +1014,8 @@ namespace ElbayaNPresentation.Views.Store.Product
             ((System.ComponentModel.ISupportInitialize)(this.nudDefaultWholesalePrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDefaultSalePrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDefaultPurchasePrice)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbMainUnit.ResumeLayout(false);
+            this.gbMainUnit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -1049,10 +1029,9 @@ namespace ElbayaNPresentation.Views.Store.Product
         public Guna.UI2.WinForms.Guna2TextBox txtQuantity;
         public Guna.UI2.WinForms.Guna2TextBox txtName;
         public Guna.UI2.WinForms.Guna2TextBox txtCBCNumber;
-        public Guna.UI2.WinForms.Guna2CustomRadioButton guna2CustomRadioButton1;
+        public Guna.UI2.WinForms.Guna2CustomRadioButton rbLargeUnitIsMainUnit;
         public Guna.UI2.WinForms.Guna2Button btnAdd;
         public Guna.UI2.WinForms.Guna2Button btnUpdate;
-        public Guna.UI2.WinForms.Guna2Button btnDeleteByOne;
         public Guna.UI2.WinForms.Guna2PictureBox pbProductImage;
         public Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox4;
         public System.Windows.Forms.NumericUpDown nudDiscountPercent;
@@ -1073,7 +1052,7 @@ namespace ElbayaNPresentation.Views.Store.Product
         public System.Windows.Forms.Label label15;
         public System.Windows.Forms.Label label14;
         public System.Windows.Forms.Label label13;
-        public System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.GroupBox gbMainUnit;
         public Guna.UI2.WinForms.Guna2CustomRadioButton rbSmallUnitIsMainUnit;
         public System.Windows.Forms.Label label25;
         public System.Windows.Forms.Label label6;

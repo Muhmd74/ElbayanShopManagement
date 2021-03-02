@@ -12,6 +12,7 @@ using ElbayaNPresentation.Presenters.Store.Category.MainCategory;
 using ElbayanServices.Repository.Products.Category.Dtos;
 using System.Runtime.InteropServices;
 using ElbayaNPresentation.Presenters.CommonPresenter;
+using Guna.UI2.WinForms;
 
 namespace ElbayaNPresentation.Views.Store.Category 
 {
@@ -42,8 +43,8 @@ namespace ElbayaNPresentation.Views.Store.Category
 
         public List<CategoryDto> MainCategory { get; set; }
         public MainCategoryPresenter Presenter { private get;  set; }
-        public string MainCategoryName { get => txtName.Text; set => txtName.Text = value; }
-        public string MainCategoryDescription { get => txtDescription.Text; set => txtDescription.Text = value; }
+        public Guna2TextBox MainCategoryName { get => txtName; set => txtName = value; }
+        public Guna2TextBox MainCategoryDescription { get => txtDescription; set => txtDescription = value; }
 
         public string SearchKeyword { get => txtSearch.Text; set => txtSearch.Text = value; }
 

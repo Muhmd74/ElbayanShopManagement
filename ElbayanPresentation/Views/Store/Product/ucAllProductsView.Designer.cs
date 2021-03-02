@@ -38,29 +38,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dgvTabContainer = new System.Windows.Forms.TabControl();
             this.tpActiveLargeUnits = new System.Windows.Forms.TabPage();
             this.dgvAllProduct = new System.Windows.Forms.DataGridView();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IsMainSaleUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UCPNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CBCNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PSNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PurchaseDefaultPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SaleDefaultPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WholesalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VAT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LimitedDemand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IsEepired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LargeUnitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SmallUnitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubCategoryId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LargeUnitId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SmallUnitId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IsUnitSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IsDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ImageUrl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpArchieveLargeUnits = new System.Windows.Forms.TabPage();
             this.dgvAllDeletedProduct = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,6 +63,29 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsMainSaleUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UCPNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CBCNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PSNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PurchaseDefaultPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SaleDefaultPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WholesalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VAT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LimitedDemand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsEepired = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LargeUnitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SmallUnitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubCategoryId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LargeUnitId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SmallUnitId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsUnitSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ImageUrl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2GroupBox4.SuspendLayout();
             this.dgvTabContainer.SuspendLayout();
             this.tpActiveLargeUnits.SuspendLayout();
@@ -243,223 +243,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dgvAllProduct.Size = new System.Drawing.Size(1504, 528);
             this.dgvAllProduct.TabIndex = 0;
             this.dgvAllProduct.DoubleClick += new System.EventHandler(this.dgvAllProduct_DoubleClick_1);
-            // 
-            // ProductName
-            // 
-            this.ProductName.DataPropertyName = "Name";
-            this.ProductName.HeaderText = "اسم الصنف";
-            this.ProductName.MinimumWidth = 6;
-            this.ProductName.Name = "ProductName";
-            this.ProductName.ReadOnly = true;
-            this.ProductName.Width = 134;
-            // 
-            // ProductCategory
-            // 
-            this.ProductCategory.DataPropertyName = "SubCategoryName";
-            this.ProductCategory.HeaderText = "التصنيف";
-            this.ProductCategory.MinimumWidth = 6;
-            this.ProductCategory.Name = "ProductCategory";
-            this.ProductCategory.ReadOnly = true;
-            this.ProductCategory.Width = 114;
-            // 
-            // IsMainSaleUnit
-            // 
-            this.IsMainSaleUnit.DataPropertyName = "IsMAinSalesUnit";
-            this.IsMainSaleUnit.HeaderText = "وحدة البيع الرئيسية";
-            this.IsMainSaleUnit.MinimumWidth = 6;
-            this.IsMainSaleUnit.Name = "IsMainSaleUnit";
-            this.IsMainSaleUnit.ReadOnly = true;
-            this.IsMainSaleUnit.Width = 189;
-            // 
-            // UCPNumber
-            // 
-            this.UCPNumber.DataPropertyName = "UCP";
-            this.UCPNumber.HeaderText = "رقم الباركود الدولي";
-            this.UCPNumber.MinimumWidth = 6;
-            this.UCPNumber.Name = "UCPNumber";
-            this.UCPNumber.ReadOnly = true;
-            this.UCPNumber.Width = 177;
-            // 
-            // CBCNumber
-            // 
-            this.CBCNumber.DataPropertyName = "BarCode";
-            this.CBCNumber.HeaderText = "رقم باركود الشركة";
-            this.CBCNumber.MinimumWidth = 6;
-            this.CBCNumber.Name = "CBCNumber";
-            this.CBCNumber.ReadOnly = true;
-            this.CBCNumber.Width = 171;
-            // 
-            // ProductId
-            // 
-            this.ProductId.DataPropertyName = "Id";
-            this.ProductId.HeaderText = "رقم المنتج المرجعي";
-            this.ProductId.MinimumWidth = 6;
-            this.ProductId.Name = "ProductId";
-            this.ProductId.ReadOnly = true;
-            this.ProductId.Visible = false;
-            this.ProductId.Width = 168;
-            // 
-            // PSNumber
-            // 
-            this.PSNumber.DataPropertyName = "ProductNumber";
-            this.PSNumber.HeaderText = "رقم مختصر للمنتج";
-            this.PSNumber.MinimumWidth = 6;
-            this.PSNumber.Name = "PSNumber";
-            this.PSNumber.ReadOnly = true;
-            this.PSNumber.Width = 177;
-            // 
-            // PurchaseDefaultPrice
-            // 
-            this.PurchaseDefaultPrice.DataPropertyName = "PurchaseDefaultPrice";
-            this.PurchaseDefaultPrice.HeaderText = "سعر الشراء الإفتراضي";
-            this.PurchaseDefaultPrice.MinimumWidth = 6;
-            this.PurchaseDefaultPrice.Name = "PurchaseDefaultPrice";
-            this.PurchaseDefaultPrice.ReadOnly = true;
-            this.PurchaseDefaultPrice.Width = 203;
-            // 
-            // SaleDefaultPrice
-            // 
-            this.SaleDefaultPrice.DataPropertyName = "SaleDefaultPrice";
-            this.SaleDefaultPrice.HeaderText = "سعر البيع الافتراضي";
-            this.SaleDefaultPrice.MinimumWidth = 6;
-            this.SaleDefaultPrice.Name = "SaleDefaultPrice";
-            this.SaleDefaultPrice.ReadOnly = true;
-            this.SaleDefaultPrice.Width = 192;
-            // 
-            // WholesalePrice
-            // 
-            this.WholesalePrice.DataPropertyName = "WholesalePrice";
-            this.WholesalePrice.HeaderText = "سعر البيع بالجملة";
-            this.WholesalePrice.MinimumWidth = 6;
-            this.WholesalePrice.Name = "WholesalePrice";
-            this.WholesalePrice.ReadOnly = true;
-            this.WholesalePrice.Width = 174;
-            // 
-            // Discount
-            // 
-            this.Discount.DataPropertyName = "Discount";
-            this.Discount.HeaderText = "الخصم الإفتراضي";
-            this.Discount.MinimumWidth = 6;
-            this.Discount.Name = "Discount";
-            this.Discount.ReadOnly = true;
-            this.Discount.Width = 174;
-            // 
-            // VAT
-            // 
-            this.VAT.DataPropertyName = "VAT";
-            this.VAT.HeaderText = "قيمة الضريبة";
-            this.VAT.MinimumWidth = 6;
-            this.VAT.Name = "VAT";
-            this.VAT.ReadOnly = true;
-            this.VAT.Width = 141;
-            // 
-            // LimitedDemand
-            // 
-            this.LimitedDemand.DataPropertyName = "LimitedDemand";
-            this.LimitedDemand.HeaderText = "حد الطلب للمنتج";
-            this.LimitedDemand.MinimumWidth = 6;
-            this.LimitedDemand.Name = "LimitedDemand";
-            this.LimitedDemand.ReadOnly = true;
-            this.LimitedDemand.Width = 170;
-            // 
-            // IsEepired
-            // 
-            this.IsEepired.DataPropertyName = "IsExpired";
-            this.IsEepired.HeaderText = "له تاريخ صلاحية";
-            this.IsEepired.MinimumWidth = 6;
-            this.IsEepired.Name = "IsEepired";
-            this.IsEepired.ReadOnly = true;
-            this.IsEepired.Width = 154;
-            // 
-            // LargeUnitName
-            // 
-            this.LargeUnitName.DataPropertyName = "LargeUnitName";
-            this.LargeUnitName.HeaderText = "وحدة البيع الرئيسة";
-            this.LargeUnitName.MinimumWidth = 6;
-            this.LargeUnitName.Name = "LargeUnitName";
-            this.LargeUnitName.ReadOnly = true;
-            this.LargeUnitName.Visible = false;
-            this.LargeUnitName.Width = 182;
-            // 
-            // SmallUnitName
-            // 
-            this.SmallUnitName.DataPropertyName = "SmallUnitName";
-            this.SmallUnitName.HeaderText = "وحدة البيع الفرعية";
-            this.SmallUnitName.MinimumWidth = 6;
-            this.SmallUnitName.Name = "SmallUnitName";
-            this.SmallUnitName.ReadOnly = true;
-            this.SmallUnitName.Visible = false;
-            this.SmallUnitName.Width = 183;
-            // 
-            // ProductDescription
-            // 
-            this.ProductDescription.DataPropertyName = "Description";
-            this.ProductDescription.HeaderText = "وصف الصنف";
-            this.ProductDescription.MinimumWidth = 6;
-            this.ProductDescription.Name = "ProductDescription";
-            this.ProductDescription.ReadOnly = true;
-            this.ProductDescription.Visible = false;
-            this.ProductDescription.Width = 147;
-            // 
-            // SubCategoryId
-            // 
-            this.SubCategoryId.DataPropertyName = "SubCategoryId";
-            this.SubCategoryId.HeaderText = "رقم التصنيف الفرحعي المرجعي";
-            this.SubCategoryId.MinimumWidth = 6;
-            this.SubCategoryId.Name = "SubCategoryId";
-            this.SubCategoryId.ReadOnly = true;
-            this.SubCategoryId.Visible = false;
-            this.SubCategoryId.Width = 264;
-            // 
-            // LargeUnitId
-            // 
-            this.LargeUnitId.DataPropertyName = "LargeUnitId";
-            this.LargeUnitId.HeaderText = "الرقم المرجعي للوحدة الكبري";
-            this.LargeUnitId.MinimumWidth = 6;
-            this.LargeUnitId.Name = "LargeUnitId";
-            this.LargeUnitId.ReadOnly = true;
-            this.LargeUnitId.Visible = false;
-            this.LargeUnitId.Width = 246;
-            // 
-            // SmallUnitId
-            // 
-            this.SmallUnitId.DataPropertyName = "SmallUnitId";
-            this.SmallUnitId.HeaderText = "الرقم المرجعي للوحة الصغرى";
-            this.SmallUnitId.MinimumWidth = 6;
-            this.SmallUnitId.Name = "SmallUnitId";
-            this.SmallUnitId.ReadOnly = true;
-            this.SmallUnitId.Visible = false;
-            this.SmallUnitId.Width = 250;
-            // 
-            // IsUnitSale
-            // 
-            this.IsUnitSale.DataPropertyName = "IsUnitSale";
-            this.IsUnitSale.HeaderText = "وحدة بيع";
-            this.IsUnitSale.MinimumWidth = 6;
-            this.IsUnitSale.Name = "IsUnitSale";
-            this.IsUnitSale.ReadOnly = true;
-            this.IsUnitSale.Visible = false;
-            this.IsUnitSale.Width = 109;
-            // 
-            // IsDeleted
-            // 
-            this.IsDeleted.DataPropertyName = "IsDeleted";
-            this.IsDeleted.HeaderText = "صنف مؤرشف";
-            this.IsDeleted.MinimumWidth = 6;
-            this.IsDeleted.Name = "IsDeleted";
-            this.IsDeleted.ReadOnly = true;
-            this.IsDeleted.Visible = false;
-            this.IsDeleted.Width = 147;
-            // 
-            // ImageUrl
-            // 
-            this.ImageUrl.DataPropertyName = "ImageUrl";
-            this.ImageUrl.HeaderText = "رابط ملف الصورة";
-            this.ImageUrl.MinimumWidth = 6;
-            this.ImageUrl.Name = "ImageUrl";
-            this.ImageUrl.ReadOnly = true;
-            this.ImageUrl.Visible = false;
-            this.ImageUrl.Width = 174;
             // 
             // tpArchieveLargeUnits
             // 
@@ -740,6 +523,224 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn23.Visible = false;
             this.dataGridViewTextBoxColumn23.Width = 174;
             // 
+            // ProductName
+            // 
+            this.ProductName.DataPropertyName = "Name";
+            this.ProductName.HeaderText = "اسم الصنف";
+            this.ProductName.MinimumWidth = 6;
+            this.ProductName.Name = "ProductName";
+            this.ProductName.ReadOnly = true;
+            this.ProductName.Width = 134;
+            // 
+            // ProductCategory
+            // 
+            this.ProductCategory.DataPropertyName = "SubCategoryName";
+            this.ProductCategory.HeaderText = "التصنيف";
+            this.ProductCategory.MinimumWidth = 6;
+            this.ProductCategory.Name = "ProductCategory";
+            this.ProductCategory.ReadOnly = true;
+            this.ProductCategory.Width = 114;
+            // 
+            // IsMainSaleUnit
+            // 
+            this.IsMainSaleUnit.DataPropertyName = "IsMAinSalesUnit";
+            this.IsMainSaleUnit.HeaderText = "وحدة البيع الرئيسية";
+            this.IsMainSaleUnit.MinimumWidth = 6;
+            this.IsMainSaleUnit.Name = "IsMainSaleUnit";
+            this.IsMainSaleUnit.ReadOnly = true;
+            this.IsMainSaleUnit.Width = 189;
+            // 
+            // UCPNumber
+            // 
+            this.UCPNumber.DataPropertyName = "UCP";
+            this.UCPNumber.HeaderText = "رقم الباركود الدولي";
+            this.UCPNumber.MinimumWidth = 6;
+            this.UCPNumber.Name = "UCPNumber";
+            this.UCPNumber.ReadOnly = true;
+            this.UCPNumber.Width = 177;
+            // 
+            // CBCNumber
+            // 
+            this.CBCNumber.DataPropertyName = "BarCode";
+            this.CBCNumber.HeaderText = "رقم باركود الشركة";
+            this.CBCNumber.MinimumWidth = 6;
+            this.CBCNumber.Name = "CBCNumber";
+            this.CBCNumber.ReadOnly = true;
+            this.CBCNumber.Width = 171;
+            // 
+            // ProductId
+            // 
+            this.ProductId.DataPropertyName = "Id";
+            this.ProductId.HeaderText = "رقم المنتج المرجعي";
+            this.ProductId.MinimumWidth = 6;
+            this.ProductId.Name = "ProductId";
+            this.ProductId.ReadOnly = true;
+            this.ProductId.Visible = false;
+            this.ProductId.Width = 168;
+            // 
+            // PSNumber
+            // 
+            this.PSNumber.DataPropertyName = "ProductNumber";
+            this.PSNumber.HeaderText = "رقم مختصر للمنتج";
+            this.PSNumber.MinimumWidth = 6;
+            this.PSNumber.Name = "PSNumber";
+            this.PSNumber.ReadOnly = true;
+            this.PSNumber.Width = 177;
+            // 
+            // PurchaseDefaultPrice
+            // 
+            this.PurchaseDefaultPrice.DataPropertyName = "PurchaseDefaultPrice";
+            this.PurchaseDefaultPrice.HeaderText = "سعر الشراء الإفتراضي";
+            this.PurchaseDefaultPrice.MinimumWidth = 6;
+            this.PurchaseDefaultPrice.Name = "PurchaseDefaultPrice";
+            this.PurchaseDefaultPrice.ReadOnly = true;
+            this.PurchaseDefaultPrice.Width = 203;
+            // 
+            // SaleDefaultPrice
+            // 
+            this.SaleDefaultPrice.DataPropertyName = "SaleDefaultPrice";
+            this.SaleDefaultPrice.HeaderText = "سعر البيع الافتراضي";
+            this.SaleDefaultPrice.MinimumWidth = 6;
+            this.SaleDefaultPrice.Name = "SaleDefaultPrice";
+            this.SaleDefaultPrice.ReadOnly = true;
+            this.SaleDefaultPrice.Width = 192;
+            // 
+            // WholesalePrice
+            // 
+            this.WholesalePrice.DataPropertyName = "WholesalePrice";
+            this.WholesalePrice.HeaderText = "سعر البيع بالجملة";
+            this.WholesalePrice.MinimumWidth = 6;
+            this.WholesalePrice.Name = "WholesalePrice";
+            this.WholesalePrice.ReadOnly = true;
+            this.WholesalePrice.Width = 174;
+            // 
+            // Discount
+            // 
+            this.Discount.DataPropertyName = "Discount";
+            this.Discount.HeaderText = "الخصم الإفتراضي";
+            this.Discount.MinimumWidth = 6;
+            this.Discount.Name = "Discount";
+            this.Discount.ReadOnly = true;
+            this.Discount.Width = 174;
+            // 
+            // VAT
+            // 
+            this.VAT.DataPropertyName = "VAT";
+            this.VAT.HeaderText = "قيمة الضريبة";
+            this.VAT.MinimumWidth = 6;
+            this.VAT.Name = "VAT";
+            this.VAT.ReadOnly = true;
+            this.VAT.Width = 141;
+            // 
+            // LimitedDemand
+            // 
+            this.LimitedDemand.DataPropertyName = "LimitedDemand";
+            this.LimitedDemand.HeaderText = "حد الطلب للمنتج";
+            this.LimitedDemand.MinimumWidth = 6;
+            this.LimitedDemand.Name = "LimitedDemand";
+            this.LimitedDemand.ReadOnly = true;
+            this.LimitedDemand.Width = 170;
+            // 
+            // IsEepired
+            // 
+            this.IsEepired.DataPropertyName = "IsExpired";
+            this.IsEepired.HeaderText = "له تاريخ صلاحية";
+            this.IsEepired.MinimumWidth = 6;
+            this.IsEepired.Name = "IsEepired";
+            this.IsEepired.ReadOnly = true;
+            this.IsEepired.Visible = false;
+            this.IsEepired.Width = 154;
+            // 
+            // LargeUnitName
+            // 
+            this.LargeUnitName.DataPropertyName = "LargeUnitName";
+            this.LargeUnitName.HeaderText = "وحدة البيع الرئيسة";
+            this.LargeUnitName.MinimumWidth = 6;
+            this.LargeUnitName.Name = "LargeUnitName";
+            this.LargeUnitName.ReadOnly = true;
+            this.LargeUnitName.Visible = false;
+            this.LargeUnitName.Width = 182;
+            // 
+            // SmallUnitName
+            // 
+            this.SmallUnitName.DataPropertyName = "SmallUnitName";
+            this.SmallUnitName.HeaderText = "وحدة البيع الفرعية";
+            this.SmallUnitName.MinimumWidth = 6;
+            this.SmallUnitName.Name = "SmallUnitName";
+            this.SmallUnitName.ReadOnly = true;
+            this.SmallUnitName.Visible = false;
+            this.SmallUnitName.Width = 183;
+            // 
+            // ProductDescription
+            // 
+            this.ProductDescription.DataPropertyName = "Description";
+            this.ProductDescription.HeaderText = "وصف الصنف";
+            this.ProductDescription.MinimumWidth = 6;
+            this.ProductDescription.Name = "ProductDescription";
+            this.ProductDescription.ReadOnly = true;
+            this.ProductDescription.Visible = false;
+            this.ProductDescription.Width = 147;
+            // 
+            // SubCategoryId
+            // 
+            this.SubCategoryId.DataPropertyName = "SubCategoryId";
+            this.SubCategoryId.HeaderText = "رقم التصنيف الفرحعي المرجعي";
+            this.SubCategoryId.MinimumWidth = 6;
+            this.SubCategoryId.Name = "SubCategoryId";
+            this.SubCategoryId.ReadOnly = true;
+            this.SubCategoryId.Visible = false;
+            this.SubCategoryId.Width = 264;
+            // 
+            // LargeUnitId
+            // 
+            this.LargeUnitId.DataPropertyName = "LargeUnitId";
+            this.LargeUnitId.HeaderText = "الرقم المرجعي للوحدة الكبري";
+            this.LargeUnitId.MinimumWidth = 6;
+            this.LargeUnitId.Name = "LargeUnitId";
+            this.LargeUnitId.ReadOnly = true;
+            this.LargeUnitId.Visible = false;
+            this.LargeUnitId.Width = 246;
+            // 
+            // SmallUnitId
+            // 
+            this.SmallUnitId.DataPropertyName = "SmallUnitId";
+            this.SmallUnitId.HeaderText = "الرقم المرجعي للوحة الصغرى";
+            this.SmallUnitId.MinimumWidth = 6;
+            this.SmallUnitId.Name = "SmallUnitId";
+            this.SmallUnitId.ReadOnly = true;
+            this.SmallUnitId.Visible = false;
+            this.SmallUnitId.Width = 250;
+            // 
+            // IsUnitSale
+            // 
+            this.IsUnitSale.DataPropertyName = "IsUnitSale";
+            this.IsUnitSale.HeaderText = "وحدة بيع";
+            this.IsUnitSale.MinimumWidth = 6;
+            this.IsUnitSale.Name = "IsUnitSale";
+            this.IsUnitSale.ReadOnly = true;
+            this.IsUnitSale.Visible = false;
+            this.IsUnitSale.Width = 109;
+            // 
+            // IsDeleted
+            // 
+            this.IsDeleted.DataPropertyName = "IsDeleted";
+            this.IsDeleted.HeaderText = "صنف مؤرشف";
+            this.IsDeleted.MinimumWidth = 6;
+            this.IsDeleted.Name = "IsDeleted";
+            this.IsDeleted.ReadOnly = true;
+            this.IsDeleted.Visible = false;
+            this.IsDeleted.Width = 147;
+            // 
+            // ImageUrl
+            // 
+            this.ImageUrl.DataPropertyName = "ImageUrl";
+            this.ImageUrl.HeaderText = "رابط ملف الصورة";
+            this.ImageUrl.MinimumWidth = 6;
+            this.ImageUrl.Name = "ImageUrl";
+            this.ImageUrl.ReadOnly = true;
+            this.ImageUrl.Visible = false;
+            this.ImageUrl.Width = 174;
+            // 
             // ucAllProductsView
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -770,29 +771,7 @@ namespace ElbayaNPresentation.Views.Store.Product
         private System.Windows.Forms.TabPage tpActiveLargeUnits;
         private System.Windows.Forms.TabPage tpArchieveLargeUnits;
         public System.Windows.Forms.DataGridView dgvAllProduct;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductCategory;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IsMainSaleUnit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UCPNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CBCNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PSNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PurchaseDefaultPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SaleDefaultPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn WholesalePrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Discount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VAT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LimitedDemand;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IsEepired;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LargeUnitName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SmallUnitName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductDescription;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SubCategoryId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LargeUnitId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SmallUnitId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IsUnitSale;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IsDeleted;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ImageUrl;
+
         public System.Windows.Forms.DataGridView dgvAllDeletedProduct;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -817,5 +796,28 @@ namespace ElbayaNPresentation.Views.Store.Product
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductCategory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IsMainSaleUnit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UCPNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CBCNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PSNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PurchaseDefaultPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SaleDefaultPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WholesalePrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Discount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VAT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LimitedDemand;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IsEepired;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LargeUnitName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SmallUnitName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubCategoryId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LargeUnitId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SmallUnitId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IsUnitSale;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IsDeleted;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ImageUrl;
     }
 }

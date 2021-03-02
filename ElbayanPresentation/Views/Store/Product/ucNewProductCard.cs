@@ -29,15 +29,7 @@ namespace ElbayaNPresentation.Views.Store.Product
 
             txtUCPNumber.Focus();
 
-            // hide Unmeric up down Arrows:
-            nudDefaultPurchasePrice.Controls[0].Visible = false;
-            nudDefaultSalePrice.Controls[0].Visible = false;
-            nudDefaultWholesalePrice.Controls[0].Visible = false;
-            nudDiscountPercent.Controls[0].Visible = false;
-            nudVATPercent.Controls[0].Visible = false;
-
-            PopulatecbxSubcategory();
-            PopulatecbxLargeUnit();
+            Presenter.ucNewProudctCard_Load();
         }
 
         // Apply singlton pattern for form Instance
@@ -52,31 +44,26 @@ namespace ElbayaNPresentation.Views.Store.Product
             }
         }
 
-        public int UCP { get => Convert.ToInt32(txtUCPNumber.Text); set => Convert.ToInt32(txtUCPNumber.Text); }
-        public int BarCode { get => Convert.ToInt32(txtCBCNumber.Text); set => Convert.ToInt32(txtCBCNumber.Text); }
-        public string ImageUrl { get; set; }
+        public Guid ProductId { get; set; }
+        public Guna2TextBox UCP { get => txtUCPNumber; set => txtUCPNumber = value; }
+        public Guna2TextBox BarCode { get => txtCBCNumber; set => txtCBCNumber = value; }
         public Guna2TextBox ProudctName { get => txtName; set => txtName = value; }
+        public Guna2TextBox PSNumber { get => txtPSNNumber; set => txtPSNNumber = value; }
+        public string ImageUrl { get; set; }
         public Guna2TextBox Description { get => txtDescription; set => txtDescription = value; }
-        public decimal PurchaseDefaultPrice { get => nudDefaultPurchasePrice.Value; set => nudDefaultPurchasePrice.Value = value; }
-        public decimal SaleDefaultPrice { get => nudDefaultSalePrice.Value; set => nudDefaultSalePrice.Value = value; }
+        public NumericUpDown PurchaseDefaultPrice { get => nudDefaultPurchasePrice; set => nudDefaultPurchasePrice = value; }
+        public NumericUpDown SaleDefaultPrice { get => nudDefaultSalePrice; set => nudDefaultSalePrice = value; }
         public NumericUpDown WholesalePrice { get => nudDefaultWholesalePrice; set => nudDefaultWholesalePrice = value; }
         public bool IsUnitSale { get; set; } = true;
-        public Guid SubCategoryId { get => new Guid(cbxSubcategory.SelectedValue.ToString()); set => cbxSubcategory.SelectedValue = value; }
-        public SubCategoryNameDto SubCategory { get; set; }
-        public List<SubCategoryNameDto> SubCategories { get; set; }
+        public Guna2ComboBox SubCategory { get => cbxSubcategory; set => cbxSubcategory.SelectedValue = value; }
         public bool IsExpired { get => rbIsExpiredProduct.Checked; set => rbIsExpiredProduct.Checked = value; }
-        public DateTime ExpireDateTime { get; set; }
-        public Guid LargeUnitId { get => new Guid (cbxLargeUnit.SelectedValue.ToString()); set => cbxLargeUnit.SelectedValue = value; }
         public Guna2ComboBox LargeUnit { get => cbxLargeUnit ; set => cbxLargeUnit.SelectedValue = value; } 
-        public List<LargeUnitNameDto> LargeUnits { get; set; }
-        public Guid SmallUnitId { get; set; }
-        public SmallUnitNameDto SmallUnit { get; set; }
-        public List<SmallUnitNameDto> smallUnits { get; set; }
+        public Guna2ComboBox SmallUnit { get => cbxSmallUnit; set => cbxSmallUnit.SelectedValue = value; }
         public Guna2TextBox LimitedDemand { get => txtLimitedDemand; set => txtLimitedDemand = value; }
         public Guna2TextBox ProductQuantity { get => txtQuantity; set => txtQuantity = value; }
         public ProductPresnter Presenter { private get; set; }
-        public int Disccount { get => (Int32) nudDiscountPercent.Value; set => nudDiscountPercent.Value = value; }
-        public int VAT { get => (Int32) nudVATPercent.Value; set => nudVATPercent.Value = value; }
+        public NumericUpDown Disccount { get => nudDiscountPercent; set => nudDiscountPercent = value; }
+        public NumericUpDown VAT { get => nudVATPercent; set => nudVATPercent = value; }
 
 
         // Handle Picture Uplode
@@ -100,51 +87,16 @@ namespace ElbayaNPresentation.Views.Store.Product
         }
 
         // Populate Commbo boxs.
-        private void PopulatecbxSubcategory()
-        {
-            cbxSubcategory.DataSource = Presenter.FillcbxSubcategory();
-            cbxSubcategory.DisplayMember = "Name";
-            cbxSubcategory.ValueMember = "Id";
-            cbxSubcategory.SelectedValue = "Id";
-        }
-        private void PopulatecbxLargeUnit()
-        {
-            cbxLargeUnit.DataSource = Presenter.FillcbxLargeUnit();
-            cbxLargeUnit.DisplayMember = "Name";
-            cbxLargeUnit.ValueMember = "LargeUnitId";
-            cbxLargeUnit.SelectedValue = "LargeUnitId";
-        }
-       
+              
         // Populate Small unit Baesd on Large unit
         private void cbxLargeUnit_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbxLargeUnit.SelectedValue != null)
-            {
-                Guid LargeUnitId;
-               bool AreGetLargeUnitId = Guid.TryParse(cbxLargeUnit.SelectedValue.ToString(), out LargeUnitId);
-                cbxSmallUnit.DataSource = Presenter.FillcbxSmallunit(LargeUnitId);
-                cbxSmallUnit.DisplayMember = "Name";
-                cbxSmallUnit.ValueMember = "SmallUnitId";
-                cbxSmallUnit.SelectedValue = "SmallUnitId";
-            }
-            else
-            {
-                cbxSmallUnit.DataSource = null;
-            }
+            Presenter.FillcbxSmallunit();
 
         }
 
         // Validate text box for only numbers
-        public void onlynumwithsinglepoint(object sender, KeyPressEventArgs e, Guna2TextBox textBox)
-        {
-            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
-            { e.Handled = true; }
-            if (e.KeyChar == '.' && textBox.Text.Contains("."))
-            {
-                e.Handled = true;
-            }
-            
-        }
+       
               
         private void btnGenerateBarcode_Click(object sender, EventArgs e)
         {
@@ -153,12 +105,14 @@ namespace ElbayaNPresentation.Views.Store.Product
 
         private void txtLimitedDemand_KeyPress(object sender, KeyPressEventArgs e)
         {
-            onlynumwithsinglepoint(sender, e, txtLimitedDemand);
+            Presenter.Onlynumwithsinglepoint(sender, e, txtLimitedDemand);
         }
 
         private void txtUCPNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
-            onlynumwithsinglepoint(sender, e, txtUCPNumber);
+            Presenter.Onlynumwithsinglepoint(sender, e, txtUCPNumber);
+            
+            // Read Barcod:
             if (e.KeyChar == 13)
             {
                 txtUCPNumber.Text = e.KeyChar.ToString();
@@ -182,13 +136,14 @@ namespace ElbayaNPresentation.Views.Store.Product
                         if (rbSmallUnitIsMainUnit.Checked)
                         {
                             IsUnitSale = false;
-                            AddProductAndCLearUsercontrol();
-
+                            Presenter.OnCLickbtnAdd();
+                            ClearUC();
                         }
                         else
                         {
                             IsUnitSale = true;
-                            AddProductAndCLearUsercontrol();
+                            Presenter.OnCLickbtnAdd();
+                            ClearUC();
                         }
                         return;
                     }          
@@ -197,13 +152,14 @@ namespace ElbayaNPresentation.Views.Store.Product
                         if (rbSmallUnitIsMainUnit.Checked)
                         {
                             IsUnitSale = false;
-                            AddProductAndCLearUsercontrol();
-
+                            Presenter.OnCLickbtnAdd();
+                            ClearUC();
                         }
                         else
                         {
                             IsUnitSale = true;
-                            AddProductAndCLearUsercontrol();
+                            Presenter.OnCLickbtnAdd();
+                            ClearUC();
                         }
 
                         // Navigate to AllProuductView:
@@ -231,14 +187,75 @@ namespace ElbayaNPresentation.Views.Store.Product
            
         }
 
-        private void AddProductAndCLearUsercontrol()
+       // Handle Update
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if(cbxSmallUnit.SelectedItem != null)
+            if (txtName.Text != string.Empty)
             {
-                SmallUnitId = new Guid (cbxSmallUnit.SelectedValue.ToString());
+                if (cbxSubcategory.SelectedItem != null)
+                {
+                    if (cbxSmallUnit.SelectedItem == null && cbxLargeUnit.SelectedItem == null)
+                    {
+                        MessageBox.Show("يجب اختيار الوحدة  الكبرى أو الوحدة الصغرى للمنتج ", "تأكيد", MessageBoxButtons.OK);
+                        return;
+                    }
+                    if (MessageBox.Show("تم الإضافة بنجاح هل ترغب في إضافة صنف أخر", "تأكيد", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        if (rbSmallUnitIsMainUnit.Checked)
+                        {
+                            IsUnitSale = false;
+                            Presenter.OnCLickbtnUpdate();
+                            ClearUC();
+                        }
+                        else
+                        {
+                            IsUnitSale = true;
+                            Presenter.OnCLickbtnUpdate();
+                            ClearUC();
+                        }
+                        return;
+                    }
+                    else
+                    {
+                        if (rbSmallUnitIsMainUnit.Checked)
+                        {
+                            IsUnitSale = false;
+                            Presenter.OnCLickbtnUpdate();
+                            ClearUC();
+                        }
+                        else
+                        {
+                            IsUnitSale = true;
+                            Presenter.OnCLickbtnUpdate();
+                            ClearUC();
+                        }
+
+                        // Navigate to AllProuductView:
+                        if (!frmMainBoard.Instance.gcContainer.Contains(ucAllProductsView.Instance))
+                        {
+                            frmMainBoard.Instance.Controls.Add(ucAllProductsView.Instance);
+                            ucAllProductsView.Instance.Dock = DockStyle.Fill;
+                            ucAllProductsView.Instance.BringToFront();
+                        }
+                        ucAllProductsView.Instance.BringToFront();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("يجب اختيار التصنيف الفرعي للمنتج", "تأكيد", MessageBoxButtons.OK);
+                    return;
+                }
             }
-            
-            Presenter.OnCLickbtnAdd();
+            else
+            {
+                MessageBox.Show("يجب أدخل اسم المنتج", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
+        }
+
+        // Clear User interface controlls:
+        private void ClearUC()
+        {
             txtName.Text = txtDescription.Text = "";
             txtLimitedDemand.Text = txtQuantity.Text = txtUCPNumber.Text
                 = txtCBCNumber.Text = txtPSNNumber.Text = "0";
@@ -247,8 +264,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             cbxLargeUnit.SelectedIndex = cbxSmallUnit.SelectedIndex = cbxSubcategory.SelectedIndex = -1;
         }
 
-        // Handle Update and Delete: 
 
-       
     }
 }

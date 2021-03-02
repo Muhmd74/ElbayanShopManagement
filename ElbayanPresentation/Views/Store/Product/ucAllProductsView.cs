@@ -47,7 +47,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             dgvAllProduct.AutoGenerateColumns = false;
 
             // Organize DGV Columns:
-
             dgvAllProduct.Columns["ProductName"].DisplayIndex = 0;
             dgvAllProduct.Columns["ProductCategory"].DisplayIndex = 1;
             dgvAllProduct.Columns["IsMainSaleUnit"].DisplayIndex = 2;
@@ -59,7 +58,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             dgvAllProduct.Columns["WholesalePrice"].DisplayIndex = 8;
             dgvAllProduct.Columns["Discount"].DisplayIndex = 9;
             dgvAllProduct.Columns["VAT"].DisplayIndex = 10;
-
         }
 
         private void dgvAllProduct_DoubleClick(object sender, EventArgs e)
@@ -124,14 +122,36 @@ namespace ElbayaNPresentation.Views.Store.Product
             ucNewProductCard.Instance.btnUpdate.Visible = true;
             ucNewProductCard.Instance.btnUpdate.Enabled = true;
 
-            ucNewProductCard.Instance.btnDeleteByOne.Enabled = true;
-            ucNewProductCard.Instance.btnDeleteByOne.Visible = true;
-
+            // Retrive Product Id:
+            ucNewProductCard.Instance.ProductId = new Guid(dgvAllProduct.CurrentRow.Cells["ProductId"].Value.ToString());
             // Fill controlls with data:
             ucNewProductCard.Instance.ProudctName.Text = dgvAllProduct.CurrentRow.Cells["ProductName"].Value.ToString();
             ucNewProductCard.Instance.Description.Text = dgvAllProduct.CurrentRow.Cells["ProductDescription"].Value.ToString();
-            ucNewProductCard.Instance.VAT = Convert.ToInt32(dgvAllProduct.CurrentRow.Cells["VAT"].Value);
+            ucNewProductCard.Instance.SubCategory.Text = dgvAllProduct.CurrentRow.Cells["ProductCategory"].Value.ToString();
             ucNewProductCard.Instance.LargeUnit.Text = dgvAllProduct.CurrentRow.Cells["LargeUnitName"].Value.ToString();
+            ucNewProductCard.Instance.SmallUnit.Text = dgvAllProduct.CurrentRow.Cells["SmallUnitName"].Value.ToString();
+            // Handle Is Main Unit load: 
+            var isMainUnit =  dgvAllProduct.CurrentRow.Cells["IsUnitSale"].Value; // needed to retrive isUniteSale in Get All>>>
+            if ((bool)isMainUnit == false)
+            {
+                ucNewProductCard.Instance.rbSmallUnitIsMainUnit.Checked = true;
+            } 
+            else
+            {
+                ucNewProductCard.Instance.rbLargeUnitIsMainUnit.Checked = true;
+            }
+
+            ucNewProductCard.Instance.txtLimitedDemand.Text = dgvAllProduct.CurrentRow.Cells["LimitedDemand"].Value.ToString();
+            //ucNewProductCard.Instance.txtQuantity.Text = dgvAllProduct.CurrentRow.Cells["LimitedDemand"].Value.ToString(); || needed to add...
+            ucNewProductCard.Instance.rbIsExpiredProduct.Checked = (bool) dgvAllProduct.CurrentRow.Cells["IsEepired"].Value;
+            ucNewProductCard.Instance.txtUCPNumber.Text = dgvAllProduct.CurrentRow.Cells["UCPNumber"].Value.ToString();
+            ucNewProductCard.Instance.txtCBCNumber.Text = dgvAllProduct.CurrentRow.Cells["CBCNumber"].Value.ToString();
+            ucNewProductCard.Instance.txtPSNNumber.Text = dgvAllProduct.CurrentRow.Cells["PSNumber"].Value.ToString();
+            ucNewProductCard.Instance.nudDefaultPurchasePrice.Value = (decimal) dgvAllProduct.CurrentRow.Cells["PurchaseDefaultPrice"].Value;
+            ucNewProductCard.Instance.nudDefaultSalePrice.Value = (decimal) dgvAllProduct.CurrentRow.Cells["SaleDefaultPrice"].Value;
+            ucNewProductCard.Instance.nudDefaultWholesalePrice.Value = (decimal) dgvAllProduct.CurrentRow.Cells["WholesalePrice"].Value;
+            ucNewProductCard.Instance.VAT.Value = Convert.ToInt32(dgvAllProduct.CurrentRow.Cells["VAT"].Value);
+            ucNewProductCard.Instance.Disccount.Value = Convert.ToInt32(dgvAllProduct.CurrentRow.Cells["Discount"].Value);
 
             // Handle Default Picture:
             string ImageUrl = Path.Combine(System.IO.Path.GetFullPath(@"..\..\"), @"Resources\ProductImage\", Path.GetFileName("Photos-icon.png"));
@@ -146,7 +166,7 @@ namespace ElbayaNPresentation.Views.Store.Product
                     ucNewProductCard.Instance.pbProductImage.Image = new Bitmap(ImageUrl);
                 }
 
-            ucNewProductCard.Instance.txtPSNNumber.Text = dgvAllProduct.CurrentRow.Cells["PSNumber"].Value.ToString();
+
         }
     }
 }

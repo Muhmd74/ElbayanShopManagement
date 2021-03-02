@@ -144,10 +144,9 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\ElbayanDatabase\ElbayanDatabase.csproj">
-      <Project>{439D51BE-FAB1-4DD8-A480-3316ED65B7A9}</Project>
+      <Project>{439d51be-fab1-4dd8-a480-3316ed65b7a9}</Project>
       <Name>ElbayanDatabase</Name>
     </ProjectReference>
   </ItemGroup>
