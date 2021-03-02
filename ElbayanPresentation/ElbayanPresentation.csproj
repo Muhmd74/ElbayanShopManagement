@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Presenters\CommonPresenter\DataGridViewStyle.cs" />
+    <Compile Include="Presenters\CommonPresenter\ValidateControls.cs" />
     <Compile Include="Presenters\Store\Building\BuildingPresenter.cs" />
     <Compile Include="Presenters\Store\Building\IViewBuilding.cs" />
     <Compile Include="Presenters\Store\Building\POS\IViewPOS.cs" />

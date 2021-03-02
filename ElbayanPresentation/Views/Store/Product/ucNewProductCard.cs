@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using ElbayaNPresentation.Presenters.CommonPresenter;
 using ElbayaNPresentation.Presenters.Store.Product.ProductCard;
 using ElbayanServices.Repository.Products.SubCategory.Dtos;
 using ElbayanServices.Repository.Products.Units.LargeUnit.Dtos;
@@ -105,12 +106,12 @@ namespace ElbayaNPresentation.Views.Store.Product
 
         private void txtLimitedDemand_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Presenter.Onlynumwithsinglepoint(sender, e, txtLimitedDemand);
+            ValidateControls.ValidateTextBoxOnlyNumber(sender, e, txtLimitedDemand);
         }
 
         private void txtUCPNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Presenter.Onlynumwithsinglepoint(sender, e, txtUCPNumber);
+            ValidateControls.ValidateTextBoxOnlyNumber(sender, e, txtUCPNumber);
             
             // Read Barcod:
             if (e.KeyChar == 13)
