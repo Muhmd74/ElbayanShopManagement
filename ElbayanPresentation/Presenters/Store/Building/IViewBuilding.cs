@@ -17,7 +17,13 @@ namespace ElbayaNPresentation.Presenters.Store.Building
         Guna2TextBox SearchtxtBox { get; set; }
         DataGridView dgvActiveObjects { get; set; }
         DataGridView dgvDeletedObjects { get; set; }
+        Guna2Button btnAddObject { get; set; }
+        Guna2Button btnUpdateObject { get; set; }
+        Guna2Button btnDeleteObject { get; set; }
+
         BuildingPresenter Presenter { get; set; }
+
+
 
     }
 }

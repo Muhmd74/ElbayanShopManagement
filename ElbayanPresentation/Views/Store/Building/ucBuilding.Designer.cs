@@ -149,7 +149,7 @@ namespace ElbayaNPresentation.Views.Store.Building
             this.txtDescription.SelectedText = "";
             this.txtDescription.ShadowDecoration.Parent = this.txtDescription;
             this.txtDescription.Size = new System.Drawing.Size(504, 87);
-            this.txtDescription.TabIndex = 31;
+            this.txtDescription.TabIndex = 3;
             // 
             // IsDeleted
             // 
@@ -176,7 +176,7 @@ namespace ElbayaNPresentation.Views.Store.Building
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
             this.btnAdd.Size = new System.Drawing.Size(163, 51);
-            this.btnAdd.TabIndex = 28;
+            this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "إضافة جديدة";
             // 
             // btnDeleteByOne
@@ -194,7 +194,7 @@ namespace ElbayaNPresentation.Views.Store.Building
             this.btnDeleteByOne.Name = "btnDeleteByOne";
             this.btnDeleteByOne.ShadowDecoration.Parent = this.btnDeleteByOne;
             this.btnDeleteByOne.Size = new System.Drawing.Size(163, 51);
-            this.btnDeleteByOne.TabIndex = 30;
+            this.btnDeleteByOne.TabIndex = 7;
             this.btnDeleteByOne.Text = "أرشفة";
             // 
             // txtSearch
@@ -231,7 +231,7 @@ namespace ElbayaNPresentation.Views.Store.Building
             this.txtSearch.SelectedText = "";
             this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
             this.txtSearch.Size = new System.Drawing.Size(480, 51);
-            this.txtSearch.TabIndex = 22;
+            this.txtSearch.TabIndex = 8;
             this.txtSearch.TextOffset = new System.Drawing.Point(25, 0);
             // 
             // dgvTabContainer
@@ -377,7 +377,7 @@ namespace ElbayaNPresentation.Views.Store.Building
             this.txtName.SelectedText = "";
             this.txtName.ShadowDecoration.Parent = this.txtName;
             this.txtName.Size = new System.Drawing.Size(504, 51);
-            this.txtName.TabIndex = 32;
+            this.txtName.TabIndex = 1;
             // 
             // btnUpdate
             // 
@@ -394,7 +394,7 @@ namespace ElbayaNPresentation.Views.Store.Building
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
             this.btnUpdate.Size = new System.Drawing.Size(163, 51);
-            this.btnUpdate.TabIndex = 29;
+            this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "حفظ التعديلات";
             // 
             // label1
@@ -519,7 +519,7 @@ namespace ElbayaNPresentation.Views.Store.Building
             this.txtAddress.SelectedText = "";
             this.txtAddress.ShadowDecoration.Parent = this.txtAddress;
             this.txtAddress.Size = new System.Drawing.Size(480, 51);
-            this.txtAddress.TabIndex = 32;
+            this.txtAddress.TabIndex = 2;
             // 
             // txtPhoneNumber
             // 
@@ -549,7 +549,7 @@ namespace ElbayaNPresentation.Views.Store.Building
             this.txtPhoneNumber.SelectedText = "";
             this.txtPhoneNumber.ShadowDecoration.Parent = this.txtPhoneNumber;
             this.txtPhoneNumber.Size = new System.Drawing.Size(480, 51);
-            this.txtPhoneNumber.TabIndex = 32;
+            this.txtPhoneNumber.TabIndex = 4;
             // 
             // label5
             // 

@@ -44,5 +44,8 @@ namespace ElbayaNPresentation.Views.Store.Building
         DataGridView IViewBuilding.dgvActiveObjects { get => dgvActiveObjects; set => dgvActiveObjects = value; }
         DataGridView IViewBuilding.dgvDeletedObjects { get => dgvDeletedObjects; set => dgvDeletedObjects = value; }
         public BuildingPresenter Presenter { get; set; }
+        public Guna2Button btnAddObject { get => btnAdd; set => btnAdd = value; }
+        public Guna2Button btnUpdateObject { get => btnUpdate; set => btnUpdate = value; }
+        public Guna2Button btnDeleteObject { get => btnDeleteByOne; set => btnDeleteByOne = value; }
     }
 }
