@@ -59,5 +59,10 @@ namespace ElbayaNPresentation.Views.Store.Building
             ValidateControls.ValidateTextBoxOnlyNumber(sender, e, txtPhoneNumber);
             this.txtPhoneNumber.MaxLength = 14;
         }
+
+        private void dgvActiveObjects_DoubleClick(object sender, EventArgs e)
+        {
+            Presenter.OnDoublClickdgvActiveObject();
+        }
     }
 }

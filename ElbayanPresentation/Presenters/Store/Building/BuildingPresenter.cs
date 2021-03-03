@@ -67,10 +67,20 @@ namespace ElbayaNPresentation.Presenters.Store.Building
             }
          }
 
+        // 2.2 Update -> Data Grid View Doble click Event 
+
+        public void OnDoublClickdgvActiveObject()
+        {
+            _view.BuildingName.Text =_view.dgvActiveObjects.CurrentRow.Cells["ActiveBuilingName"].Value.ToString();
+            _view.BuildingDescription.Text =_view.dgvActiveObjects.CurrentRow.Cells["ActiveBuildingDescription"].Value.ToString();
+            _view.BuildingAddress.Text =_view.dgvActiveObjects.CurrentRow.Cells["ActiveBuildingAddress"].Value.ToString();
+            _view.BuildingPhoneNumber.Text =_view.dgvActiveObjects.CurrentRow.Cells["ActiveBuildingPhoneNUmber"].Value.ToString();
+
+        }
         private void ClearUcControls()
         {
             _view.BuildingName.Text = _view.BuildingDescription.Text
-                = _view.BuildingAddress.Text = _view.BuildingPhoneNumber.Text = "";
+                = _view.BuildingAddress.Text = _view.BuildingPhoneNumber.Text = "ActiveBuilingName";
         }
     }
 }

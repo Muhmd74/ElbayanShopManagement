@@ -119,6 +119,7 @@ namespace ElbayaNPresentation.Views.Store.Building
             this.dgvActiveObjects.RowTemplate.Height = 35;
             this.dgvActiveObjects.Size = new System.Drawing.Size(1536, 333);
             this.dgvActiveObjects.TabIndex = 0;
+            this.dgvActiveObjects.DoubleClick += new System.EventHandler(this.dgvActiveObjects_DoubleClick);
             // 
             // ActiveBuildingId
             // 
@@ -413,7 +414,6 @@ namespace ElbayaNPresentation.Views.Store.Building
             this.txtPhoneNumber.HoverState.Parent = this.txtPhoneNumber;
             this.txtPhoneNumber.Location = new System.Drawing.Point(80, 157);
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.txtPhoneNumber.MaxLength = 14;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.PasswordChar = '\0';
             this.txtPhoneNumber.PlaceholderText = "";
@@ -662,6 +662,7 @@ namespace ElbayaNPresentation.Views.Store.Building
         private System.Windows.Forms.DataGridViewTextBoxColumn LargeUnitWeightDeleted;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvLargeUnitDeletedName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvLargeUnitDeletedID;
+
         private System.Windows.Forms.DataGridViewTextBoxColumn ActiveBuildingId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ActiveBuilingName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ActiveBuildingDescription;
