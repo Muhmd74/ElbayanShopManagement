@@ -11,6 +11,7 @@ namespace ElbayaNPresentation.Presenters.Store.Building
 {
     public interface IViewBuilding
     {
+       Guid BuildingId { get; set; }
         Guna2TextBox BuildingName { get; set; }
         Guna2TextBox BuildingDescription { get; set; }
         Guna2TextBox BuildingAddress { get; set; }

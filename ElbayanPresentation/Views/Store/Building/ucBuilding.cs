@@ -37,6 +37,7 @@ namespace ElbayaNPresentation.Views.Store.Building
             }
         }
 
+        public Guid BuildingId { get; set; }
         public Guna2TextBox BuildingName { get => txtName; set => txtName = value; }
         public Guna2TextBox BuildingDescription { get => txtDescription; set => txtDescription = value; }
         public Guna2TextBox BuildingAddress { get => txtAddress; set => txtAddress = value; }
@@ -63,6 +64,16 @@ namespace ElbayaNPresentation.Views.Store.Building
         private void dgvActiveObjects_DoubleClick(object sender, EventArgs e)
         {
             Presenter.OnDoublClickdgvActiveObject();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            Presenter.OnClickbtnUpdate();
+        }
+
+        private void btnDeleteByOne_Click(object sender, EventArgs e)
+        {
+            Presenter.OnClickbtnDelete();
         }
     }
 }

@@ -2,10 +2,7 @@
 using ElbayanServices.Repository.Customers.Building;
 using ElbayanServices.Repository.Customers.Building.Dtos;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ElbayaNPresentation.Presenters.Store.Building
@@ -28,6 +25,9 @@ namespace ElbayaNPresentation.Presenters.Store.Building
             // Load Data Grid:
             PopualteActiveObjects();
             PopulateDeletedObject();
+
+            _view.btnDeleteObject.Enabled = false;
+            _view.btnUpdateObject.Enabled = false;
         }
 
         // Populate All Builing objects in Data Grid View
@@ -71,16 +71,49 @@ namespace ElbayaNPresentation.Presenters.Store.Building
 
         public void OnDoublClickdgvActiveObject()
         {
+            _view.BuildingId = new Guid(_view.dgvActiveObjects.CurrentRow.Cells["ActiveBuildingId"].Value.ToString());
             _view.BuildingName.Text =_view.dgvActiveObjects.CurrentRow.Cells["ActiveBuilingName"].Value.ToString();
             _view.BuildingDescription.Text =_view.dgvActiveObjects.CurrentRow.Cells["ActiveBuildingDescription"].Value.ToString();
             _view.BuildingAddress.Text =_view.dgvActiveObjects.CurrentRow.Cells["ActiveBuildingAddress"].Value.ToString();
             _view.BuildingPhoneNumber.Text =_view.dgvActiveObjects.CurrentRow.Cells["ActiveBuildingPhoneNUmber"].Value.ToString();
 
+            // Disable Add new button:
+            _view.btnAddObject.Enabled = false;
+            _view.btnDeleteObject.Enabled = true;
+            _view.btnUpdateObject.Enabled = true;
+
         }
+        // 2.3 Update -> Implement Update active Objects:
+        public void OnClickbtnUpdate()
+        {
+            if (_view.BuildingName.Text != "")
+            {
+                buildingService.Update(new BuildingDto
+                {
+                    Id = _view.BuildingId,
+                    Name = _view.BuildingName.Text,
+                    Description = _view.BuildingDescription.Text,
+                    Address = _view.BuildingAddress.Text,
+                    PhoneNumber = _view.BuildingPhoneNumber.Text
+                });
+                ClearUcControls();
+                _view.btnAddObject.Enabled = true;
+                _view.btnDeleteObject.Enabled = false;
+                _view.btnUpdateObject.Enabled = false;
+                PopualteActiveObjects();
+                PopulateDeletedObject();
+            }
+            else
+            {
+                MessageBox.Show("كرما لا بد من إدخال حقل الإسم", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
+        }
+
         private void ClearUcControls()
         {
             _view.BuildingName.Text = _view.BuildingDescription.Text
-                = _view.BuildingAddress.Text = _view.BuildingPhoneNumber.Text = "ActiveBuilingName";
+                = _view.BuildingAddress.Text = _view.BuildingPhoneNumber.Text = "";
         }
     }
 }
