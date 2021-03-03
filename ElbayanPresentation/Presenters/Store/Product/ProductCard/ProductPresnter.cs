@@ -132,16 +132,7 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
         }
 
         // Validate Text box for only numbers:
-        public void Onlynumwithsinglepoint(object sender, KeyPressEventArgs e, Guna2TextBox textBox)
-        {
-            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
-            { e.Handled = true; }
-            if (e.KeyChar == '.' && textBox.Text.Contains("."))
-            {
-                e.Handled = true;
-            }
-
-        }
+       
    
     
     }

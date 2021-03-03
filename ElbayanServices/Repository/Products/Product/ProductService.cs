@@ -43,8 +43,8 @@ namespace ElbayanServices.Repository.Products.Product
                     WholesalePrice = model.WholesalePrice,
                     IsUnitSale = model.IsUnitSale,
                     ImageUrl = model.ImageUrl,
-                    Discount = model.Discount,
-                    Vat = model.Vat
+                    Discount = Convert.ToInt32(model.Discount),
+                    Vat = Convert.ToInt32(model.Vat)
                 });
                 _context.SaveChanges();
                 return true;
@@ -57,7 +57,7 @@ namespace ElbayanServices.Repository.Products.Product
                 if (result == null) return false;
                 result.Description = model.Description;
                 result.Name = model.Name;
-                result.BarCode = model.BarCode;
+                result.BarCode = Convert.ToInt32(model.BarCode);
                 result.PurchaseDefaultPrice = model.PurchaseDefaultPrice;
                 result.SaleDefaultPrice = model.SaleDefaultPrice;
                 result.WholesalePrice = model.WholesalePrice;
