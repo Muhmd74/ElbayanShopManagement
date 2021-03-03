@@ -14,7 +14,7 @@ namespace ElbayanServices.Repository.Products.Product
         bool MainSalesUnit(Guid id);
         List<ProductDto> GetAllProductDeleted();
         List<ProductDto> GetAll();
-        List<ProductDto> GetAllProductQuantityZero();
+        List<ProductDto> GetAllEqualZero();
         List<ProductDto> GetAllByCategory(Guid categoryId);
         List<SmallUnitNameDto> GetAllSmallUnitByLargeUnit(Guid largeUnitId);
         List<SmallUnitNameDto> GetAllSmallUnit();

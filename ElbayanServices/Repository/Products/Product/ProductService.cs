@@ -222,14 +222,15 @@ namespace ElbayanServices.Repository.Products.Product
            
         }
 
-        public List<ProductDto> GetAllProductQuantityZero()
+        public List<ProductDto> GetAllEqualZero()
         {
-            return _context.Products.Where(d => d.IsDeleted == false
-                                                &&d.TotalQuantity<=0
-                                                &&d.LargeUnit.IsDeleted==false
-                                                &&d.SmallUnit.IsDeleted==false
-                                                &&d.SubCategory.IsDeleted==false
-                                                )
+            return _context.Products.Where(d => d.IsDeleted == false 
+                &&d.TotalQuantity<=0
+                &&d.SmallUnit.IsDeleted==false
+                &&d.LargeUnit.IsDeleted==false
+                &&d.SubCategory.IsDeleted==false
+
+                )
                 .Include(d => d.SmallUnit)
                 .Include(d => d.LargeUnit)
                 .Include(d => d.SubCategory)
