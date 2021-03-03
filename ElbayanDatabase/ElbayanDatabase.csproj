@@ -94,6 +94,10 @@
     <Compile Include="DataClasses\Suppliers\SupplierOrder\SupplierOrder.cs" />
     <Compile Include="DataClasses\Suppliers\SupplierOrder\SupplierOrderProduct.cs" />
     <Compile Include="DataClasses\Suppliers\Supplier\Supplier.cs" />
+    <Compile Include="Migrations\202103031603215_InitialMigration.cs" />
+    <Compile Include="Migrations\202103031603215_InitialMigration.designer.cs">
+      <DependentUpon>202103031603215_InitialMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -101,7 +105,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202103031603215_InitialMigration.resx">
+      <DependentUpon>202103031603215_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
