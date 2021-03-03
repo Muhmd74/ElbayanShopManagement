@@ -8,6 +8,8 @@ namespace ElbayanServices.Repository.Customers.Building
 {
     public class BuildingService : IBuilding, IDisposable
     {
+
+
         private readonly ConnectionOption _context;
 
         public BuildingService(ConnectionOption context)
