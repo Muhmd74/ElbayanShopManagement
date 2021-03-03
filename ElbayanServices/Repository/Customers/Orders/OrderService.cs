@@ -110,7 +110,7 @@ namespace ElbayanServices.Repository.Customers.Orders
         }
         public long GenerateSequenceNumber()
         {
-            var lastNumber = _context.Orders.OrderByDescending(d=>d.DateTime).LastOrDefault()?.OrderNumber;
+            var lastNumber = _context.Orders.OrderByDescending(d=>d.OrderNumber).LastOrDefault()?.OrderNumber;
             if (lastNumber >= 0)
             {
                 return (long)(lastNumber + 1);

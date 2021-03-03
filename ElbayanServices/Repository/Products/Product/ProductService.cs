@@ -183,7 +183,13 @@ namespace ElbayanServices.Repository.Products.Product
 
         public List<ProductDto> GetAll()
         {
-            return _context.Products.Where(d => d.IsDeleted == false)
+            return _context.Products.Where(d => d.IsDeleted == false
+                                                && d.TotalQuantity > 0
+                                                && d.LargeUnit.IsDeleted == false
+                                                && d.SmallUnit.IsDeleted == false
+                                                && d.SubCategory.IsDeleted == false
+
+                )
                 .Include(d => d.SmallUnit)
                 .Include(d => d.LargeUnit)
                 .Include(d => d.SubCategory)
@@ -214,6 +220,45 @@ namespace ElbayanServices.Repository.Products.Product
                     IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name
                 }).ToList();
            
+        }
+
+        public List<ProductDto> GetAllProductQuantityZero()
+        {
+            return _context.Products.Where(d => d.IsDeleted == false
+                                                &&d.TotalQuantity<=0
+                                                &&d.LargeUnit.IsDeleted==false
+                                                &&d.SmallUnit.IsDeleted==false
+                                                &&d.SubCategory.IsDeleted==false
+                                                )
+                .Include(d => d.SmallUnit)
+                .Include(d => d.LargeUnit)
+                .Include(d => d.SubCategory)
+                .OrderByDescending(d => d.DateTime)
+                .Select(d => new ProductDto()
+                {
+                    Id = d.Id,
+                    Description = d.Description,
+                    Name = d.Name,
+                    BarCode = d.BarCode,
+                    PurchaseDefaultPrice = d.PurchaseDefaultPrice,
+                    IsExpired = d.IsExpired,
+                    LargeUnitId = d.LargeUnitId,
+                    LimitedDemand = d.LimitedDemand,
+                    ProductNumber = d.ProductNumber,
+                    SmallUnitId = d.SmallUnitId,
+                    SubCategoryId = d.SubCategoryId,
+                    UCP = d.UCP,
+                    SmallUnitName = d.SmallUnit.Name,
+                    LargeUnitName = d.LargeUnit.Name,
+                    SubCategoryName = d.SubCategory.Name,
+                    SaleDefaultPrice = d.SaleDefaultPrice,
+                    WholesalePrice = d.WholesalePrice,
+                    Discount = d.Discount,
+                    Vat = d.Vat,
+                    ImageUrl = d.ImageUrl,
+                    IsUnitSale = d.IsUnitSale,
+                    IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name
+                }).ToList();
         }
 
         public List<ProductDto> GetAllByCategory(Guid categoryId)
