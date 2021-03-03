@@ -94,9 +94,13 @@
     <Compile Include="DataClasses\Suppliers\SupplierOrder\SupplierOrder.cs" />
     <Compile Include="DataClasses\Suppliers\SupplierOrder\SupplierOrderProduct.cs" />
     <Compile Include="DataClasses\Suppliers\Supplier\Supplier.cs" />
-    <Compile Include="Migrations\202103030849179_ApplyBoolApproachforServices.cs" />
-    <Compile Include="Migrations\202103030849179_ApplyBoolApproachforServices.designer.cs">
-      <DependentUpon>202103030849179_ApplyBoolApproachforServices.cs</DependentUpon>
+    <Compile Include="Migrations\202103031603215_InitialMigration.cs" />
+    <Compile Include="Migrations\202103031603215_InitialMigration.designer.cs">
+      <DependentUpon>202103031603215_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103031612112_AddIsDeleteToBuilding.cs" />
+    <Compile Include="Migrations\202103031612112_AddIsDeleteToBuilding.designer.cs">
+      <DependentUpon>202103031612112_AddIsDeleteToBuilding.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,8 +110,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202103030849179_ApplyBoolApproachforServices.resx">
-      <DependentUpon>202103030849179_ApplyBoolApproachforServices.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202103031603215_InitialMigration.resx">
+      <DependentUpon>202103031603215_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103031612112_AddIsDeleteToBuilding.resx">
+      <DependentUpon>202103031612112_AddIsDeleteToBuilding.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

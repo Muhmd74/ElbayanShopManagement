@@ -13,6 +13,7 @@ namespace ElbayanServices.Repository.Customers.Building
         bool Update(BuildingDto model);
         BuildingDto GetById(Guid id);
         List<BuildingDto> GetAllBuilding();
-        bool Delete(Guid id);
+        List<BuildingDto> GetAllBuildingDeleted();
+        bool DeleteOrRestore(Guid id);
     }
 }

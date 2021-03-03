@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Security.AccessControl;
 using ElbayanDatabase.DataClasses.Employees.Employees;
 
@@ -7,6 +9,8 @@ namespace ElbayanDatabase.DataClasses.Customers.Sales
 {
    public class Order
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
         public DateTime DateTime { get; set; }
         public Guid CustomerId { get; set; }
