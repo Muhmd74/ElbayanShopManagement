@@ -94,6 +94,7 @@
     <Compile Include="DataClasses\Suppliers\SupplierOrder\SupplierOrder.cs" />
     <Compile Include="DataClasses\Suppliers\SupplierOrder\SupplierOrderProduct.cs" />
     <Compile Include="DataClasses\Suppliers\Supplier\Supplier.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
