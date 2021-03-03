@@ -119,12 +119,9 @@ namespace ElbayanServices.Repository.Products.Product
                     Name = d.Name
                 }).ToList();
 
-            if (model.Any())
-            {
-                return model;
-            }
 
-            return null;
+                return model;
+
         }
 
         public bool IsDeleted(Guid id)

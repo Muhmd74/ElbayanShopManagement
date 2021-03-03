@@ -24,7 +24,8 @@ namespace ElbayanServices.Repository.Customers.Building
                 Address = model.Address,
                 Description = model.Description,
                 Name = model.Name,
-                PhoneNumber = model.PhoneNumber
+                PhoneNumber = model.PhoneNumber,
+                IsDeleted = false
             });
             _context.SaveChanges();
             return true;
@@ -68,7 +69,18 @@ namespace ElbayanServices.Repository.Customers.Building
 
         public List<BuildingDto> GetAllBuilding()
         {
-            return _context.Buildings.Select(d => new BuildingDto()
+            return _context.Buildings.Where(d=>d.IsDeleted==false).Select(d => new BuildingDto()
+            {
+                Description = d.Description,
+                Address = d.Address,
+                Id = d.Id,
+                Name = d.Name,
+                PhoneNumber = d.PhoneNumber
+            }).ToList();
+        }
+        public List<BuildingDto> GetAllBuildingDeleted()
+        {
+            return _context.Buildings.Where(d => d.IsDeleted).Select(d => new BuildingDto()
             {
                 Description = d.Description,
                 Address = d.Address,
@@ -78,12 +90,13 @@ namespace ElbayanServices.Repository.Customers.Building
             }).ToList();
         }
 
-        public bool Delete(Guid id)
+        public bool DeleteOrRestore(Guid id)
         {
             var building = _context.Buildings.FirstOrDefault(d => d.Id == id);
             if (building!=null)
             {
-                _context.Buildings.Remove(building);
+                building.IsDeleted = !building.IsDeleted;
+                _context.SaveChanges();
                 return true;
             }
 

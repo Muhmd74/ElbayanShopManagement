@@ -57,7 +57,7 @@ namespace ElbayanServices.Repository.Customers.Poses
 
         public List<BuildingNameDto> GetBuilding()
         {
-            return _context.Buildings.Select(d => new BuildingNameDto()
+            return _context.Buildings.Where(d=>d.IsDeleted==false).Select(d => new BuildingNameDto()
             {
                 Id = d.Id,
                 Name = d.Name

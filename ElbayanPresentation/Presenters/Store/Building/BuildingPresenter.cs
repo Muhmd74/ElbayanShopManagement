@@ -38,7 +38,7 @@ namespace ElbayaNPresentation.Presenters.Store.Building
         }
         public void PopulateDeletedObject()
         {
-            // _view.dgvDeletedObjects.DataSource = buildingService.GetAllBuilding().ToList();
+            _view.dgvDeletedObjects.DataSource = buildingService.GetAllBuildingDeleted().ToList();
         }
 
          // CRUD Operation: 
@@ -57,6 +57,7 @@ namespace ElbayaNPresentation.Presenters.Store.Building
 
                 // Refresh DGV All Active Object:
                 PopualteActiveObjects();
+                PopulateDeletedObject();
                 ClearUcControls();
             }
             else
