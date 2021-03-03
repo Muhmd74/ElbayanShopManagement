@@ -47,6 +47,11 @@ namespace ElbayaNPresentation.Views.Store.Building
             this.dgvTabContainer = new System.Windows.Forms.TabControl();
             this.tpArchieveLargeUnits = new System.Windows.Forms.TabPage();
             this.dgvDeletedObjects = new System.Windows.Forms.DataGridView();
+            this.DeletedBuildingId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeletedObjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeletedObjectDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeletedObjectAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeletedObjectPhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvLargeUnitDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.LargeUnitWeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,12 +64,6 @@ namespace ElbayaNPresentation.Views.Store.Building
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.dgvLargeUnitID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvLargeUnitDeletedDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvLargeUnitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LargeUnitWeightDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvLargeUnitDeletedName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvLargeUnitDeletedID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpActiveLargeUnits.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActiveObjects)).BeginInit();
             this.dgvTabContainer.SuspendLayout();
@@ -292,6 +291,7 @@ namespace ElbayaNPresentation.Views.Store.Building
             this.dgvTabContainer.SelectedIndex = 0;
             this.dgvTabContainer.Size = new System.Drawing.Size(1550, 406);
             this.dgvTabContainer.TabIndex = 9;
+            this.dgvTabContainer.SelectedIndexChanged += new System.EventHandler(this.dgvTabContainer_SelectedIndexChanged);
             // 
             // tpArchieveLargeUnits
             // 
@@ -320,6 +320,12 @@ namespace ElbayaNPresentation.Views.Store.Building
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDeletedObjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDeletedObjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDeletedObjects.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DeletedBuildingId,
+            this.DeletedObjectName,
+            this.DeletedObjectDescription,
+            this.DeletedObjectAddress,
+            this.DeletedObjectPhoneNumber});
             this.dgvDeletedObjects.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDeletedObjects.Location = new System.Drawing.Point(3, 3);
             this.dgvDeletedObjects.Name = "dgvDeletedObjects";
@@ -330,6 +336,48 @@ namespace ElbayaNPresentation.Views.Store.Building
             this.dgvDeletedObjects.RowTemplate.Height = 35;
             this.dgvDeletedObjects.Size = new System.Drawing.Size(1536, 333);
             this.dgvDeletedObjects.TabIndex = 1;
+            this.dgvDeletedObjects.DoubleClick += new System.EventHandler(this.dgvDeletedObjects_DoubleClick);
+            // 
+            // DeletedBuildingId
+            // 
+            this.DeletedBuildingId.DataPropertyName = "Id";
+            this.DeletedBuildingId.HeaderText = "الرقم المرجعي";
+            this.DeletedBuildingId.MinimumWidth = 6;
+            this.DeletedBuildingId.Name = "DeletedBuildingId";
+            this.DeletedBuildingId.ReadOnly = true;
+            this.DeletedBuildingId.Visible = false;
+            // 
+            // DeletedObjectName
+            // 
+            this.DeletedObjectName.DataPropertyName = "Name";
+            this.DeletedObjectName.HeaderText = "اسم المخزن أو الفرع";
+            this.DeletedObjectName.MinimumWidth = 6;
+            this.DeletedObjectName.Name = "DeletedObjectName";
+            this.DeletedObjectName.ReadOnly = true;
+            // 
+            // DeletedObjectDescription
+            // 
+            this.DeletedObjectDescription.DataPropertyName = "Description";
+            this.DeletedObjectDescription.HeaderText = "وصف المكان أو المخزن";
+            this.DeletedObjectDescription.MinimumWidth = 6;
+            this.DeletedObjectDescription.Name = "DeletedObjectDescription";
+            this.DeletedObjectDescription.ReadOnly = true;
+            // 
+            // DeletedObjectAddress
+            // 
+            this.DeletedObjectAddress.DataPropertyName = "Address";
+            this.DeletedObjectAddress.HeaderText = "عنوان المكان أو المخزن";
+            this.DeletedObjectAddress.MinimumWidth = 6;
+            this.DeletedObjectAddress.Name = "DeletedObjectAddress";
+            this.DeletedObjectAddress.ReadOnly = true;
+            // 
+            // DeletedObjectPhoneNumber
+            // 
+            this.DeletedObjectPhoneNumber.DataPropertyName = "PhoneNumber";
+            this.DeletedObjectPhoneNumber.HeaderText = "رقم الهاتف للمخزن";
+            this.DeletedObjectPhoneNumber.MinimumWidth = 6;
+            this.DeletedObjectPhoneNumber.Name = "DeletedObjectPhoneNumber";
+            this.DeletedObjectPhoneNumber.ReadOnly = true;
             // 
             // dgvLargeUnitDescription
             // 
@@ -550,65 +598,6 @@ namespace ElbayaNPresentation.Views.Store.Building
             this.label9.TabIndex = 23;
             this.label9.Text = "بحث باسم أو  رقم التليفون";
             // 
-            // dgvLargeUnitID
-            // 
-            this.dgvLargeUnitID.DataPropertyName = "Id";
-            this.dgvLargeUnitID.HeaderText = "رقم الوحدة المرجعي";
-            this.dgvLargeUnitID.MaxInputLength = 50;
-            this.dgvLargeUnitID.MinimumWidth = 6;
-            this.dgvLargeUnitID.Name = "dgvLargeUnitID";
-            this.dgvLargeUnitID.ReadOnly = true;
-            this.dgvLargeUnitID.Visible = false;
-            this.dgvLargeUnitID.Width = 125;
-            // 
-            // dgvLargeUnitDeletedDescription
-            // 
-            this.dgvLargeUnitDeletedDescription.DataPropertyName = "Description";
-            this.dgvLargeUnitDeletedDescription.HeaderText = "وصف الوحدة";
-            this.dgvLargeUnitDeletedDescription.MinimumWidth = 6;
-            this.dgvLargeUnitDeletedDescription.Name = "dgvLargeUnitDeletedDescription";
-            this.dgvLargeUnitDeletedDescription.ReadOnly = true;
-            this.dgvLargeUnitDeletedDescription.Width = 125;
-            // 
-            // dgvLargeUnitName
-            // 
-            this.dgvLargeUnitName.DataPropertyName = "Name";
-            this.dgvLargeUnitName.HeaderText = "اسم الوحدة";
-            this.dgvLargeUnitName.MaxInputLength = 250;
-            this.dgvLargeUnitName.MinimumWidth = 6;
-            this.dgvLargeUnitName.Name = "dgvLargeUnitName";
-            this.dgvLargeUnitName.ReadOnly = true;
-            this.dgvLargeUnitName.Width = 125;
-            // 
-            // LargeUnitWeightDeleted
-            // 
-            this.LargeUnitWeightDeleted.DataPropertyName = "Weight";
-            this.LargeUnitWeightDeleted.HeaderText = "وزن الوحدة";
-            this.LargeUnitWeightDeleted.MinimumWidth = 6;
-            this.LargeUnitWeightDeleted.Name = "LargeUnitWeightDeleted";
-            this.LargeUnitWeightDeleted.ReadOnly = true;
-            this.LargeUnitWeightDeleted.Visible = false;
-            this.LargeUnitWeightDeleted.Width = 125;
-            // 
-            // dgvLargeUnitDeletedName
-            // 
-            this.dgvLargeUnitDeletedName.DataPropertyName = "Name";
-            this.dgvLargeUnitDeletedName.HeaderText = "اسم الوحدة";
-            this.dgvLargeUnitDeletedName.MinimumWidth = 6;
-            this.dgvLargeUnitDeletedName.Name = "dgvLargeUnitDeletedName";
-            this.dgvLargeUnitDeletedName.ReadOnly = true;
-            this.dgvLargeUnitDeletedName.Width = 125;
-            // 
-            // dgvLargeUnitDeletedID
-            // 
-            this.dgvLargeUnitDeletedID.DataPropertyName = "Id";
-            this.dgvLargeUnitDeletedID.HeaderText = "الرقم المرجعي";
-            this.dgvLargeUnitDeletedID.MinimumWidth = 6;
-            this.dgvLargeUnitDeletedID.Name = "dgvLargeUnitDeletedID";
-            this.dgvLargeUnitDeletedID.ReadOnly = true;
-            this.dgvLargeUnitDeletedID.Visible = false;
-            this.dgvLargeUnitDeletedID.Width = 125;
-            // 
             // ucBuilding
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -658,17 +647,15 @@ namespace ElbayaNPresentation.Views.Store.Building
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvLargeUnitID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvLargeUnitDeletedDescription;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvLargeUnitName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LargeUnitWeightDeleted;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvLargeUnitDeletedName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvLargeUnitDeletedID;
-
         private System.Windows.Forms.DataGridViewTextBoxColumn ActiveBuildingId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ActiveBuilingName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ActiveBuildingDescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn ActiveBuildingAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn ActiveBuildingPhoneNUmber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DeletedBuildingId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DeletedObjectName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DeletedObjectDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DeletedObjectAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DeletedObjectPhoneNumber;
     }
 }

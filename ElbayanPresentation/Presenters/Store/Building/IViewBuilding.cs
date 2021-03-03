@@ -11,7 +11,7 @@ namespace ElbayaNPresentation.Presenters.Store.Building
 {
     public interface IViewBuilding
     {
-       Guid BuildingId { get; set; }
+        Guid BuildingId { get; set; }
         Guna2TextBox BuildingName { get; set; }
         Guna2TextBox BuildingDescription { get; set; }
         Guna2TextBox BuildingAddress { get; set; }
@@ -22,7 +22,7 @@ namespace ElbayaNPresentation.Presenters.Store.Building
         Guna2Button btnAddObject { get; set; }
         Guna2Button btnUpdateObject { get; set; }
         Guna2Button btnDeleteObject { get; set; }
-
+        TabControl dgvContainer { get; set; } 
         BuildingPresenter Presenter { get; set; }
 
 

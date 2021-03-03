@@ -67,7 +67,7 @@ namespace ElbayaNPresentation.Presenters.Store.Building
             }
          }
 
-        // 2.2 Update -> Data Grid View Doble click Event 
+        // 2.2 Update -> Data Grid View Active object Double click Event 
 
         public void OnDoublClickdgvActiveObject()
         {
@@ -109,11 +109,66 @@ namespace ElbayaNPresentation.Presenters.Store.Building
                 return;
             }
         }
+      
+        public void OnClickbtnDelete()
+        {
+            if (_view.BuildingName.Text != "")
+            {
+                buildingService.DeleteOrRestore(_view.BuildingId);
+                ClearUcControls();
+                _view.btnAddObject.Enabled = true;
+                _view.btnDeleteObject.Enabled = false;
+                _view.btnUpdateObject.Enabled = false;
+                PopualteActiveObjects();
+                PopulateDeletedObject();
+            }
+            else
+            {
+                MessageBox.Show("كرما لا بد من إدخال حقل الإسم", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
+        }
 
+        // 2.4 Update -> Data Grid View Deleted Double click Event:
+        public void OnDoubleClickdgvDeletedObject()
+        {
+            _view.BuildingId = new Guid(_view.dgvDeletedObjects.CurrentRow.Cells["DeletedBuildingId"].Value.ToString());
+            _view.BuildingName.Text = _view.dgvDeletedObjects.CurrentRow.Cells["DeletedObjectName"].Value.ToString();
+            _view.BuildingDescription.Text = _view.dgvDeletedObjects.CurrentRow.Cells["DeletedObjectDescription"].Value.ToString();
+            _view.BuildingAddress.Text = _view.dgvDeletedObjects.CurrentRow.Cells["DeletedObjectAddress"].Value.ToString();
+            _view.BuildingPhoneNumber.Text = _view.dgvDeletedObjects.CurrentRow.Cells["DeletedObjectPhoneNumber"].Value.ToString();
+            // Disable Add new button:
+            _view.btnAddObject.Enabled = false;
+            _view.btnDeleteObject.Enabled = true;
+            _view.btnUpdateObject.Enabled = true;
+        }
+
+        // 2.5 Update -> Tab Control index change event
+
+        public void OnIndexChangedTabContainer()
+        {
+            if(_view.dgvContainer.SelectedIndex == 0)
+            {
+                _view.btnDeleteObject.Text = "أرشفة";
+                _view.btnAddObject.Enabled = true;
+                _view.btnDeleteObject.Enabled = false;
+                _view.btnUpdateObject.Enabled = false;
+                ClearUcControls();
+            }
+            else
+            {
+                _view.btnAddObject.Enabled = false;
+                _view.btnDeleteObject.Enabled = true;
+                _view.btnUpdateObject.Enabled = true;
+                _view.btnDeleteObject.Text = "إستعادة الأرشفة";
+                ClearUcControls();
+            }
+        }
         private void ClearUcControls()
         {
             _view.BuildingName.Text = _view.BuildingDescription.Text
                 = _view.BuildingAddress.Text = _view.BuildingPhoneNumber.Text = "";
         }
+   
     }
 }

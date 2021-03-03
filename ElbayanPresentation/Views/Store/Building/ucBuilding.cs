@@ -49,6 +49,7 @@ namespace ElbayaNPresentation.Views.Store.Building
         public Guna2Button btnAddObject { get => btnAdd; set => btnAdd = value; }
         public Guna2Button btnUpdateObject { get => btnUpdate; set => btnUpdate = value; }
         public Guna2Button btnDeleteObject { get => btnDeleteByOne; set => btnDeleteByOne = value; }
+        public TabControl dgvContainer { get => dgvTabContainer; set => dgvTabContainer = value; }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -74,6 +75,16 @@ namespace ElbayaNPresentation.Views.Store.Building
         private void btnDeleteByOne_Click(object sender, EventArgs e)
         {
             Presenter.OnClickbtnDelete();
+        }
+
+        private void dgvDeletedObjects_DoubleClick(object sender, EventArgs e)
+        {
+            Presenter.OnDoubleClickdgvDeletedObject();
+        }
+
+        private void dgvTabContainer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Presenter.OnIndexChangedTabContainer();
         }
     }
 }
