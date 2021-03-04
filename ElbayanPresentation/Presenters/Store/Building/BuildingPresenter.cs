@@ -170,5 +170,21 @@ namespace ElbayaNPresentation.Presenters.Store.Building
                 = _view.BuildingAddress.Text = _view.BuildingPhoneNumber.Text = "";
         }
    
+        // Search ->
+        public void OnTextChnagedtxtSearch()
+        {
+            if (_view.dgvContainer.SelectedIndex == 0)
+            {
+               _view.dgvActiveObjects.DataSource =  buildingService.GetAllBuilding().
+                    Where(d => d.Name.Contains(_view.SearchtxtBox.Text) 
+                    || d.PhoneNumber.Contains(_view.SearchtxtBox.Text)).ToList();
+            }
+            else
+            {
+                _view.dgvDeletedObjects.DataSource = buildingService.GetAllBuildingDeleted().
+                    Where(d => d.Name.Contains(_view.SearchtxtBox.Text) 
+                    || d.PhoneNumber.Contains(_view.SearchtxtBox.Text)).ToList();
+            }
+        }
     }
 }

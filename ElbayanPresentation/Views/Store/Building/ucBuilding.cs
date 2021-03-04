@@ -86,5 +86,10 @@ namespace ElbayaNPresentation.Views.Store.Building
         {
             Presenter.OnIndexChangedTabContainer();
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnTextChnagedtxtSearch();
+        }
     }
 }
