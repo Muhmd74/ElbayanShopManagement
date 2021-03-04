@@ -1,4 +1,6 @@
 ﻿using DevExpress.XtraEditors;
+using ElbayaNPresentation.Presenters.Store.Building.POS;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,11 +13,14 @@ using System.Windows.Forms;
 
 namespace ElbayaNPresentation.Views.Store.POSs
 {
-    public partial class ucPOSs : DevExpress.XtraEditors.XtraUserControl
+    public partial class ucPOSs : DevExpress.XtraEditors.XtraUserControl, IViewPOS
     {
         public ucPOSs()
         {
             InitializeComponent();
+            _instance = this;
+
+            Presenter = new POSPresenter(this);
         }
 
         private static ucPOSs _instance;
@@ -31,5 +36,19 @@ namespace ElbayaNPresentation.Views.Store.POSs
                 return _instance;
             }
         }
+
+        public Guid POSsId { get; set; }
+        public Guna2TextBox POSsgName { get => txtName; set => txtName = value; }
+        public Guna2TextBox POSsShortCode { get => txtPionShortCode; set => txtPionShortCode = value; }
+        public Guna2ComboBox Buidling { get => cbxBuilding; set => cbxBuilding = value; }
+        public Guna2TextBox SearchtxtBox { get => txtSearch; set => txtSearch = value; }
+        DataGridView IViewPOS.dgvActiveObjects { get => dgvActiveObjects; set => dgvActiveObjects = value; }
+        DataGridView IViewPOS.dgvDeletedObjects { get => dgvDeletedObjects; set => dgvDeletedObjects = value; }
+        public Guna2Button btnAddObject { get => btnAdd; set => btnAdd = value; }
+        public Guna2Button btnUpdateObject { get => btnUpdate; set => btnUpdate = value; }
+        public Guna2Button btnDeleteObject { get => btnDeleteByOne; set => btnDeleteByOne = value; }
+        public TabControl dgvContainer { get => dgvTabContainer; set => dgvTabContainer = value; }
+        public POSPresenter Presenter { get; set ; }
+ 
     }
 }

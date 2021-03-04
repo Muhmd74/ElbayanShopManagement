@@ -8,6 +8,12 @@ namespace ElbayaNPresentation.Presenters.Store.Building.POS
 {
     public class POSPresenter
     {
-        
+        private readonly IViewPOS _view;
+
+        public POSPresenter(IViewPOS view)
+        {
+            _view = view;
+        }
+
     }
 }
