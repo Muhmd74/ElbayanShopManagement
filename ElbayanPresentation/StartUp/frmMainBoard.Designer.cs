@@ -432,8 +432,8 @@ namespace ElbayaNPresentation
             // 
             this.barBtnBuilding.Caption = "الفروع والمخازن";
             this.barBtnBuilding.Id = 30;
-            this.barBtnBuilding.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.ImageOptions.Image")));
-            this.barBtnBuilding.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.ImageOptions.LargeImage")));
+            this.barBtnBuilding.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barBtnBuilding.ImageOptions.Image")));
+            this.barBtnBuilding.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barBtnBuilding.ImageOptions.LargeImage")));
             this.barBtnBuilding.ItemAppearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.barBtnBuilding.ItemAppearance.Disabled.Options.UseFont = true;
             this.barBtnBuilding.ItemAppearance.Disabled.Options.UseTextOptions = true;
@@ -458,8 +458,8 @@ namespace ElbayaNPresentation
             // 
             this.barBtnPOSs.Caption = "نقاط البيع";
             this.barBtnPOSs.Id = 31;
-            this.barBtnPOSs.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem13.ImageOptions.Image")));
-            this.barBtnPOSs.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem13.ImageOptions.LargeImage")));
+            this.barBtnPOSs.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barBtnPOSs.ImageOptions.Image")));
+            this.barBtnPOSs.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barBtnPOSs.ImageOptions.LargeImage")));
             this.barBtnPOSs.ItemAppearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.barBtnPOSs.ItemAppearance.Disabled.Options.UseFont = true;
             this.barBtnPOSs.ItemAppearance.Disabled.Options.UseTextOptions = true;
@@ -478,6 +478,7 @@ namespace ElbayaNPresentation
             this.barBtnPOSs.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.barBtnPOSs.Name = "barBtnPOSs";
             this.barBtnPOSs.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnPOSs.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnPOSs_ItemClick);
             // 
             // rpSettings
             // 

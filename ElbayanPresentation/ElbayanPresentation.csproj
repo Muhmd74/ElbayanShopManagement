@@ -133,6 +133,12 @@
     <Compile Include="Views\Store\Category\ucSubCategory.Designer.cs">
       <DependentUpon>ucSubCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Store\POSs\ucPOSs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Store\POSs\ucPOSs.Designer.cs">
+      <DependentUpon>ucPOSs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Store\Product\ucAllProductsView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     <EmbeddedResource Include="Views\Store\Category\ucSubCategory.resx">
       <DependentUpon>ucSubCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Store\POSs\ucPOSs.resx">
+      <DependentUpon>ucPOSs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Store\Product\ucAllProductsView.resx">
       <DependentUpon>ucAllProductsView.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,7 +220,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\ProductImage\" />
-    <Folder Include="Views\Store\POS\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\addchartpane_16x16.png" />
