@@ -86,6 +86,8 @@
   <ItemGroup>
     <Compile Include="Presenters\CommonPresenter\DataGridViewStyle.cs" />
     <Compile Include="Presenters\CommonPresenter\ValidateControls.cs" />
+    <Compile Include="Presenters\Purchases\Suppliers\SuppliersData\IViewSuppleirData.cs" />
+    <Compile Include="Presenters\Purchases\Suppliers\SuppliersData\PresenterSupplierData.cs" />
     <Compile Include="Presenters\Store\Building\BuildingPresenter.cs" />
     <Compile Include="Presenters\Store\Building\IViewBuilding.cs" />
     <Compile Include="Presenters\Store\Building\POS\IViewPOS.cs" />
@@ -220,6 +222,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\ProductImage\" />
+    <Folder Include="Views\Purchases\Suppliers\SupplierData\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\addchartpane_16x16.png" />
