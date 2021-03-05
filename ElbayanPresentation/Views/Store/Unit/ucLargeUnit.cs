@@ -69,7 +69,7 @@ namespace ElbayaNPresentation.Views.Store.Units
 
             /// Notes: columns[0] == Name
             //dgvLargeUnit.Columns[2].Visible = true;
-            dgvLargeUnit.Columns[3].Visible = false;
+            //dgvLargeUnit.Columns[3].Visible = false;
             DataGridViewStyle.StyleDatagridview(dgvLargeUnit);
 
         }

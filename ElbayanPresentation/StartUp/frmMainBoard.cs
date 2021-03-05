@@ -122,6 +122,7 @@ namespace ElbayaNPresentation
         {
             if (!gcContainer.Controls.Contains(ucNewProductCard.Instance))
             {
+                gcContainer.Controls.Clear();
                 gcContainer.Controls.Add(ucNewProductCard.Instance);
                 ucNewProductCard.Instance.Dock = DockStyle.Fill;
                 ucNewProductCard.Instance.BringToFront();

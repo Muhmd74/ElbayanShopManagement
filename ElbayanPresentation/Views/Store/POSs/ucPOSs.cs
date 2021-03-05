@@ -21,6 +21,7 @@ namespace ElbayaNPresentation.Views.Store.POSs
             _instance = this;
 
             Presenter = new POSPresenter(this);
+            Presenter.OnloadUC();
         }
 
         private static ucPOSs _instance;
@@ -38,7 +39,7 @@ namespace ElbayaNPresentation.Views.Store.POSs
         }
 
         public Guid POSsId { get; set; }
-        public Guna2TextBox POSsgName { get => txtName; set => txtName = value; }
+        public Guna2TextBox POSsName { get => txtName; set => txtName = value; }
         public Guna2TextBox POSsShortCode { get => txtPionShortCode; set => txtPionShortCode = value; }
         public Guna2ComboBox Buidling { get => cbxBuilding; set => cbxBuilding = value; }
         public Guna2TextBox SearchtxtBox { get => txtSearch; set => txtSearch = value; }
@@ -49,6 +50,30 @@ namespace ElbayaNPresentation.Views.Store.POSs
         public Guna2Button btnDeleteObject { get => btnDeleteByOne; set => btnDeleteByOne = value; }
         public TabControl dgvContainer { get => dgvTabContainer; set => dgvTabContainer = value; }
         public POSPresenter Presenter { get; set ; }
- 
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Presenter.OnClickbtnAdd();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            Presenter.OnClickbtnUpdate();
+        }
+
+        private void cbxBuilding_Click(object sender, EventArgs e)
+        {
+            Presenter.PopulatecbxBuilind();
+        }
+
+        private void dgvActiveObjects_DoubleClick(object sender, EventArgs e)
+        {
+            Presenter.OnDoublClickdgvActiveObject();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnTextChnagedtxtSearch();
+        }
     }
 }

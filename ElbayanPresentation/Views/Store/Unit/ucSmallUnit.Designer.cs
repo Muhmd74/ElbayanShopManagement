@@ -628,8 +628,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
             this.Appearance.Options.UseBackColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.dgvTabContainer);
             this.Name = "ucSmallUnit";

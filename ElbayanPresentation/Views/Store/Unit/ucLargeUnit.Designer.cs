@@ -35,27 +35,27 @@ namespace ElbayaNPresentation.Views.Store.Units
             this.dgvTabContainer = new System.Windows.Forms.TabControl();
             this.tpActiveLargeUnits = new System.Windows.Forms.TabPage();
             this.dgvLargeUnit = new System.Windows.Forms.DataGridView();
+            this.tpArchieveLargeUnits = new System.Windows.Forms.TabPage();
+            this.dgvDeletedLargeUnit = new System.Windows.Forms.DataGridView();
             this.dgvLargeUnitID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvLargeUnitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvLargeUnitDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LargeUnitWeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tpArchieveLargeUnits = new System.Windows.Forms.TabPage();
-            this.dgvDeletedLargeUnit = new System.Windows.Forms.DataGridView();
             this.dgvLargeUnitDeletedID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvLargeUnitDeletedName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvLargeUnitDeletedDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LargeUnitWeightDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.gbMainOperations = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnDeleteByOne = new Guna.UI2.WinForms.Guna2Button();
-            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
-            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
-            this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDeleteByOne = new Guna.UI2.WinForms.Guna2Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.dgvTabContainer.SuspendLayout();
             this.tpActiveLargeUnits.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLargeUnit)).BeginInit();
@@ -122,6 +122,45 @@ namespace ElbayaNPresentation.Views.Store.Units
             this.dgvLargeUnit.TabIndex = 0;
             this.dgvLargeUnit.DoubleClick += new System.EventHandler(this.dgvLargeUnit_DoubleClick);
             // 
+            // tpArchieveLargeUnits
+            // 
+            this.tpArchieveLargeUnits.BackColor = System.Drawing.Color.White;
+            this.tpArchieveLargeUnits.Controls.Add(this.dgvDeletedLargeUnit);
+            this.tpArchieveLargeUnits.Location = new System.Drawing.Point(4, 63);
+            this.tpArchieveLargeUnits.Name = "tpArchieveLargeUnits";
+            this.tpArchieveLargeUnits.Padding = new System.Windows.Forms.Padding(3);
+            this.tpArchieveLargeUnits.Size = new System.Drawing.Size(1542, 339);
+            this.tpArchieveLargeUnits.TabIndex = 1;
+            this.tpArchieveLargeUnits.Text = "الوحدات المؤرشفة";
+            // 
+            // dgvDeletedLargeUnit
+            // 
+            this.dgvDeletedLargeUnit.AllowUserToAddRows = false;
+            this.dgvDeletedLargeUnit.AllowUserToDeleteRows = false;
+            this.dgvDeletedLargeUnit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDeletedLargeUnit.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDeletedLargeUnit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDeletedLargeUnit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDeletedLargeUnit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDeletedLargeUnit.Location = new System.Drawing.Point(3, 3);
+            this.dgvDeletedLargeUnit.Name = "dgvDeletedLargeUnit";
+            this.dgvDeletedLargeUnit.ReadOnly = true;
+            this.dgvDeletedLargeUnit.RowHeadersWidth = 51;
+            this.dgvDeletedLargeUnit.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgvDeletedLargeUnit.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.dgvDeletedLargeUnit.RowTemplate.Height = 35;
+            this.dgvDeletedLargeUnit.Size = new System.Drawing.Size(1536, 333);
+            this.dgvDeletedLargeUnit.TabIndex = 1;
+            this.dgvDeletedLargeUnit.DoubleClick += new System.EventHandler(this.dgvDeletedLargeUnit_DoubleClick);
+            // 
             // dgvLargeUnitID
             // 
             this.dgvLargeUnitID.DataPropertyName = "Id";
@@ -172,45 +211,6 @@ namespace ElbayaNPresentation.Views.Store.Units
             this.LargeUnitWeight.ReadOnly = true;
             this.LargeUnitWeight.Visible = false;
             this.LargeUnitWeight.Width = 125;
-            // 
-            // tpArchieveLargeUnits
-            // 
-            this.tpArchieveLargeUnits.BackColor = System.Drawing.Color.White;
-            this.tpArchieveLargeUnits.Controls.Add(this.dgvDeletedLargeUnit);
-            this.tpArchieveLargeUnits.Location = new System.Drawing.Point(4, 63);
-            this.tpArchieveLargeUnits.Name = "tpArchieveLargeUnits";
-            this.tpArchieveLargeUnits.Padding = new System.Windows.Forms.Padding(3);
-            this.tpArchieveLargeUnits.Size = new System.Drawing.Size(1542, 339);
-            this.tpArchieveLargeUnits.TabIndex = 1;
-            this.tpArchieveLargeUnits.Text = "الوحدات المؤرشفة";
-            // 
-            // dgvDeletedLargeUnit
-            // 
-            this.dgvDeletedLargeUnit.AllowUserToAddRows = false;
-            this.dgvDeletedLargeUnit.AllowUserToDeleteRows = false;
-            this.dgvDeletedLargeUnit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDeletedLargeUnit.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDeletedLargeUnit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDeletedLargeUnit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDeletedLargeUnit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDeletedLargeUnit.Location = new System.Drawing.Point(3, 3);
-            this.dgvDeletedLargeUnit.Name = "dgvDeletedLargeUnit";
-            this.dgvDeletedLargeUnit.ReadOnly = true;
-            this.dgvDeletedLargeUnit.RowHeadersWidth = 51;
-            this.dgvDeletedLargeUnit.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgvDeletedLargeUnit.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            this.dgvDeletedLargeUnit.RowTemplate.Height = 35;
-            this.dgvDeletedLargeUnit.Size = new System.Drawing.Size(1536, 333);
-            this.dgvDeletedLargeUnit.TabIndex = 1;
-            this.dgvDeletedLargeUnit.DoubleClick += new System.EventHandler(this.dgvDeletedLargeUnit_DoubleClick);
             // 
             // dgvLargeUnitDeletedID
             // 
@@ -314,97 +314,35 @@ namespace ElbayaNPresentation.Views.Store.Units
             this.gbMainOperations.Text = "الوحدات الكبري";
             this.gbMainOperations.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label9
+            // txtName
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(465, 286);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(208, 32);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "بحث باسم أو وصف الوحدة";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(1392, 98);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 32);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "اسم الوحدة";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(1393, 200);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 32);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "وصف تعريفي";
-            // 
-            // btnDeleteByOne
-            // 
-            this.btnDeleteByOne.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeleteByOne.BackColor = System.Drawing.Color.White;
-            this.btnDeleteByOne.BorderRadius = 17;
-            this.btnDeleteByOne.CheckedState.Parent = this.btnDeleteByOne;
-            this.btnDeleteByOne.CustomImages.Parent = this.btnDeleteByOne;
-            this.btnDeleteByOne.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
-            this.btnDeleteByOne.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteByOne.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteByOne.HoverState.Parent = this.btnDeleteByOne;
-            this.btnDeleteByOne.Location = new System.Drawing.Point(711, 269);
-            this.btnDeleteByOne.Name = "btnDeleteByOne";
-            this.btnDeleteByOne.ShadowDecoration.Parent = this.btnDeleteByOne;
-            this.btnDeleteByOne.Size = new System.Drawing.Size(190, 62);
-            this.btnDeleteByOne.TabIndex = 30;
-            this.btnDeleteByOne.Text = "أرشفة";
-            this.btnDeleteByOne.Click += new System.EventHandler(this.btnDeleteByOne_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdate.BackColor = System.Drawing.Color.White;
-            this.btnUpdate.BorderRadius = 17;
-            this.btnUpdate.CheckedState.Parent = this.btnUpdate;
-            this.btnUpdate.CustomImages.Parent = this.btnUpdate;
-            this.btnUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
-            this.btnUpdate.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.HoverState.Parent = this.btnUpdate;
-            this.btnUpdate.Location = new System.Drawing.Point(955, 269);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
-            this.btnUpdate.Size = new System.Drawing.Size(190, 62);
-            this.btnUpdate.TabIndex = 29;
-            this.btnUpdate.Text = "حفظ التعديلات";
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.BackColor = System.Drawing.Color.White;
-            this.btnAdd.BorderRadius = 17;
-            this.btnAdd.CheckedState.Parent = this.btnAdd;
-            this.btnAdd.CustomImages.Parent = this.btnAdd;
-            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
-            this.btnAdd.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Location = new System.Drawing.Point(1189, 269);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
-            this.btnAdd.Size = new System.Drawing.Size(190, 62);
-            this.btnAdd.TabIndex = 28;
-            this.btnAdd.Text = "إضافة جديدة";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtName.BackColor = System.Drawing.Color.White;
+            this.txtName.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtName.BorderRadius = 17;
+            this.txtName.BorderThickness = 2;
+            this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtName.DefaultText = "";
+            this.txtName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtName.DisabledState.Parent = this.txtName;
+            this.txtName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtName.FocusedState.Parent = this.txtName;
+            this.txtName.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.ForeColor = System.Drawing.Color.Gray;
+            this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtName.HoverState.Parent = this.txtName;
+            this.txtName.Location = new System.Drawing.Point(832, 81);
+            this.txtName.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txtName.Name = "txtName";
+            this.txtName.PasswordChar = '\0';
+            this.txtName.PlaceholderText = "";
+            this.txtName.SelectedText = "";
+            this.txtName.ShadowDecoration.Parent = this.txtName;
+            this.txtName.Size = new System.Drawing.Size(542, 60);
+            this.txtName.TabIndex = 32;
             // 
             // txtDescription
             // 
@@ -437,42 +375,103 @@ namespace ElbayaNPresentation.Views.Store.Units
             this.txtDescription.Size = new System.Drawing.Size(542, 111);
             this.txtDescription.TabIndex = 31;
             // 
-            // txtName
+            // btnAdd
             // 
-            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtName.BackColor = System.Drawing.Color.White;
-            this.txtName.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtName.BorderRadius = 17;
-            this.txtName.BorderThickness = 2;
-            this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtName.DefaultText = "";
-            this.txtName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtName.DisabledState.Parent = this.txtName;
-            this.txtName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtName.FocusedState.Parent = this.txtName;
-            this.txtName.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.ForeColor = System.Drawing.Color.Gray;
-            this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtName.HoverState.Parent = this.txtName;
-            this.txtName.Location = new System.Drawing.Point(832, 81);
-            this.txtName.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.txtName.Name = "txtName";
-            this.txtName.PasswordChar = '\0';
-            this.txtName.PlaceholderText = "";
-            this.txtName.SelectedText = "";
-            this.txtName.ShadowDecoration.Parent = this.txtName;
-            this.txtName.Size = new System.Drawing.Size(542, 60);
-            this.txtName.TabIndex = 32;
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.BackColor = System.Drawing.Color.White;
+            this.btnAdd.BorderRadius = 17;
+            this.btnAdd.CheckedState.Parent = this.btnAdd;
+            this.btnAdd.CustomImages.Parent = this.btnAdd;
+            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
+            this.btnAdd.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.HoverState.Parent = this.btnAdd;
+            this.btnAdd.Location = new System.Drawing.Point(1189, 269);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
+            this.btnAdd.Size = new System.Drawing.Size(190, 62);
+            this.btnAdd.TabIndex = 28;
+            this.btnAdd.Text = "إضافة جديدة";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.BackColor = System.Drawing.Color.White;
+            this.btnUpdate.BorderRadius = 17;
+            this.btnUpdate.CheckedState.Parent = this.btnUpdate;
+            this.btnUpdate.CustomImages.Parent = this.btnUpdate;
+            this.btnUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
+            this.btnUpdate.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.HoverState.Parent = this.btnUpdate;
+            this.btnUpdate.Location = new System.Drawing.Point(955, 269);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
+            this.btnUpdate.Size = new System.Drawing.Size(190, 62);
+            this.btnUpdate.TabIndex = 29;
+            this.btnUpdate.Text = "حفظ التعديلات";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnDeleteByOne
+            // 
+            this.btnDeleteByOne.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeleteByOne.BackColor = System.Drawing.Color.White;
+            this.btnDeleteByOne.BorderRadius = 17;
+            this.btnDeleteByOne.CheckedState.Parent = this.btnDeleteByOne;
+            this.btnDeleteByOne.CustomImages.Parent = this.btnDeleteByOne;
+            this.btnDeleteByOne.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
+            this.btnDeleteByOne.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteByOne.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteByOne.HoverState.Parent = this.btnDeleteByOne;
+            this.btnDeleteByOne.Location = new System.Drawing.Point(711, 269);
+            this.btnDeleteByOne.Name = "btnDeleteByOne";
+            this.btnDeleteByOne.ShadowDecoration.Parent = this.btnDeleteByOne;
+            this.btnDeleteByOne.Size = new System.Drawing.Size(190, 62);
+            this.btnDeleteByOne.TabIndex = 30;
+            this.btnDeleteByOne.Text = "أرشفة";
+            this.btnDeleteByOne.Click += new System.EventHandler(this.btnDeleteByOne_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(1393, 200);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(109, 32);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "وصف تعريفي";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(1392, 98);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 32);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "اسم الوحدة";
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.DimGray;
+            this.label9.Location = new System.Drawing.Point(465, 286);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(208, 32);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "بحث باسم أو وصف الوحدة";
             // 
             // ucLargeUnits
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
             this.Appearance.Options.UseBackColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.Controls.Add(this.gbMainOperations);
             this.Controls.Add(this.dgvTabContainer);

@@ -30,8 +30,8 @@ namespace ElbayaNPresentation.Views.Store.POSs
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucPOSs));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,11 +49,11 @@ namespace ElbayaNPresentation.Views.Store.POSs
             this.dgvTabContainer = new System.Windows.Forms.TabControl();
             this.tpActiveLargeUnits = new System.Windows.Forms.TabPage();
             this.dgvActiveObjects = new System.Windows.Forms.DataGridView();
-            this.ActiveBuildingId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActiveBuilingName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActiveBuildingDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActiveBuildingAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActiveBuildingPhoneNUmber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActivePOSsId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActivePOSsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActiveShortCOde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActivePOSBuilding = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActiveBuilingId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbMainOperations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedObjects)).BeginInit();
@@ -110,6 +110,7 @@ namespace ElbayaNPresentation.Views.Store.POSs
             this.btnUpdate.Size = new System.Drawing.Size(163, 51);
             this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "حفظ التعديلات";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // label3
             // 
@@ -166,6 +167,7 @@ namespace ElbayaNPresentation.Views.Store.POSs
             // 
             // cbxBuilding
             // 
+            this.cbxBuilding.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.cbxBuilding.BackColor = System.Drawing.Color.Transparent;
             this.cbxBuilding.BorderColor = System.Drawing.Color.Gray;
             this.cbxBuilding.BorderRadius = 17;
@@ -185,6 +187,8 @@ namespace ElbayaNPresentation.Views.Store.POSs
             this.cbxBuilding.ShadowDecoration.Parent = this.cbxBuilding;
             this.cbxBuilding.Size = new System.Drawing.Size(480, 51);
             this.cbxBuilding.TabIndex = 28;
+            this.cbxBuilding.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cbxBuilding.Click += new System.EventHandler(this.cbxBuilding_Click);
             // 
             // txtPionShortCode
             // 
@@ -233,6 +237,7 @@ namespace ElbayaNPresentation.Views.Store.POSs
             this.btnAdd.Size = new System.Drawing.Size(163, 51);
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "إضافة جديدة";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDeleteByOne
             // 
@@ -314,6 +319,7 @@ namespace ElbayaNPresentation.Views.Store.POSs
             this.txtSearch.Size = new System.Drawing.Size(480, 51);
             this.txtSearch.TabIndex = 8;
             this.txtSearch.TextOffset = new System.Drawing.Point(25, 0);
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // dgvDeletedObjects
             // 
@@ -321,15 +327,15 @@ namespace ElbayaNPresentation.Views.Store.POSs
             this.dgvDeletedObjects.AllowUserToDeleteRows = false;
             this.dgvDeletedObjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDeletedObjects.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDeletedObjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDeletedObjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDeletedObjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDeletedObjects.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDeletedObjects.Location = new System.Drawing.Point(3, 3);
@@ -351,7 +357,7 @@ namespace ElbayaNPresentation.Views.Store.POSs
             this.tpArchieveLargeUnits.Padding = new System.Windows.Forms.Padding(3);
             this.tpArchieveLargeUnits.Size = new System.Drawing.Size(1542, 401);
             this.tpArchieveLargeUnits.TabIndex = 1;
-            this.tpArchieveLargeUnits.Text = "المخازن والفروع المؤرشفة";
+            this.tpArchieveLargeUnits.Text = " نقاط ومنافذ بيع مؤرشفة";
             // 
             // dgvTabContainer
             // 
@@ -380,7 +386,7 @@ namespace ElbayaNPresentation.Views.Store.POSs
             this.tpActiveLargeUnits.Padding = new System.Windows.Forms.Padding(3);
             this.tpActiveLargeUnits.Size = new System.Drawing.Size(1542, 401);
             this.tpActiveLargeUnits.TabIndex = 0;
-            this.tpActiveLargeUnits.Text = "المخازن والفروع النشطة";
+            this.tpActiveLargeUnits.Text = " نقاط ومنافذ بيع نشطة";
             // 
             // dgvActiveObjects
             // 
@@ -388,22 +394,22 @@ namespace ElbayaNPresentation.Views.Store.POSs
             this.dgvActiveObjects.AllowUserToDeleteRows = false;
             this.dgvActiveObjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvActiveObjects.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvActiveObjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvActiveObjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvActiveObjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvActiveObjects.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ActiveBuildingId,
-            this.ActiveBuilingName,
-            this.ActiveBuildingDescription,
-            this.ActiveBuildingAddress,
-            this.ActiveBuildingPhoneNUmber});
+            this.ActivePOSsId,
+            this.ActivePOSsName,
+            this.ActiveShortCOde,
+            this.ActivePOSBuilding,
+            this.ActiveBuilingId});
             this.dgvActiveObjects.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvActiveObjects.Location = new System.Drawing.Point(3, 3);
             this.dgvActiveObjects.Name = "dgvActiveObjects";
@@ -414,47 +420,48 @@ namespace ElbayaNPresentation.Views.Store.POSs
             this.dgvActiveObjects.RowTemplate.Height = 35;
             this.dgvActiveObjects.Size = new System.Drawing.Size(1536, 395);
             this.dgvActiveObjects.TabIndex = 0;
+            this.dgvActiveObjects.DoubleClick += new System.EventHandler(this.dgvActiveObjects_DoubleClick);
             // 
-            // ActiveBuildingId
+            // ActivePOSsId
             // 
-            this.ActiveBuildingId.DataPropertyName = "Id";
-            this.ActiveBuildingId.HeaderText = "الرقم المرجعي";
-            this.ActiveBuildingId.MinimumWidth = 6;
-            this.ActiveBuildingId.Name = "ActiveBuildingId";
-            this.ActiveBuildingId.ReadOnly = true;
-            this.ActiveBuildingId.Visible = false;
+            this.ActivePOSsId.DataPropertyName = "Id";
+            this.ActivePOSsId.HeaderText = "الرقم المرجعي";
+            this.ActivePOSsId.MinimumWidth = 6;
+            this.ActivePOSsId.Name = "ActivePOSsId";
+            this.ActivePOSsId.ReadOnly = true;
+            this.ActivePOSsId.Visible = false;
             // 
-            // ActiveBuilingName
+            // ActivePOSsName
             // 
-            this.ActiveBuilingName.DataPropertyName = "Name";
-            this.ActiveBuilingName.HeaderText = "اسم المخزن أو الفرع";
-            this.ActiveBuilingName.MinimumWidth = 6;
-            this.ActiveBuilingName.Name = "ActiveBuilingName";
-            this.ActiveBuilingName.ReadOnly = true;
+            this.ActivePOSsName.DataPropertyName = "Name";
+            this.ActivePOSsName.HeaderText = "اسم نقطة | منفذ بيع";
+            this.ActivePOSsName.MinimumWidth = 6;
+            this.ActivePOSsName.Name = "ActivePOSsName";
+            this.ActivePOSsName.ReadOnly = true;
             // 
-            // ActiveBuildingDescription
+            // ActiveShortCOde
             // 
-            this.ActiveBuildingDescription.DataPropertyName = "Description";
-            this.ActiveBuildingDescription.HeaderText = "وصف المكان";
-            this.ActiveBuildingDescription.MinimumWidth = 6;
-            this.ActiveBuildingDescription.Name = "ActiveBuildingDescription";
-            this.ActiveBuildingDescription.ReadOnly = true;
+            this.ActiveShortCOde.HeaderText = "الرمز المختصر لنقطة البيع";
+            this.ActiveShortCOde.MinimumWidth = 6;
+            this.ActiveShortCOde.Name = "ActiveShortCOde";
+            this.ActiveShortCOde.ReadOnly = true;
             // 
-            // ActiveBuildingAddress
+            // ActivePOSBuilding
             // 
-            this.ActiveBuildingAddress.DataPropertyName = "Address";
-            this.ActiveBuildingAddress.HeaderText = "عنوان المخزن أو الفرع";
-            this.ActiveBuildingAddress.MinimumWidth = 6;
-            this.ActiveBuildingAddress.Name = "ActiveBuildingAddress";
-            this.ActiveBuildingAddress.ReadOnly = true;
+            this.ActivePOSBuilding.DataPropertyName = "BuildingName";
+            this.ActivePOSBuilding.HeaderText = "المبني التابع له نقطة البيع";
+            this.ActivePOSBuilding.MinimumWidth = 6;
+            this.ActivePOSBuilding.Name = "ActivePOSBuilding";
+            this.ActivePOSBuilding.ReadOnly = true;
             // 
-            // ActiveBuildingPhoneNUmber
+            // ActiveBuilingId
             // 
-            this.ActiveBuildingPhoneNUmber.DataPropertyName = "PhoneNumber";
-            this.ActiveBuildingPhoneNUmber.HeaderText = "رقم الهاتف للمخزن أو الفرع";
-            this.ActiveBuildingPhoneNUmber.MinimumWidth = 6;
-            this.ActiveBuildingPhoneNUmber.Name = "ActiveBuildingPhoneNUmber";
-            this.ActiveBuildingPhoneNUmber.ReadOnly = true;
+            this.ActiveBuilingId.DataPropertyName = "BuildingId";
+            this.ActiveBuilingId.HeaderText = "الرقم المرجعي للمخزن التابع له نقطة البيع";
+            this.ActiveBuilingId.MinimumWidth = 6;
+            this.ActiveBuilingId.Name = "ActiveBuilingId";
+            this.ActiveBuilingId.ReadOnly = true;
+            this.ActiveBuilingId.Visible = false;
             // 
             // IsDeleted
             // 
@@ -470,8 +477,7 @@ namespace ElbayaNPresentation.Views.Store.POSs
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
             this.Appearance.Options.UseBackColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.gbMainOperations);
             this.Controls.Add(this.dgvTabContainer);
             this.Name = "ucPOSs";
@@ -503,14 +509,15 @@ namespace ElbayaNPresentation.Views.Store.POSs
         private System.Windows.Forms.TabControl dgvTabContainer;
         private System.Windows.Forms.TabPage tpActiveLargeUnits;
         private System.Windows.Forms.DataGridView dgvActiveObjects;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ActiveBuildingId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ActiveBuilingName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ActiveBuildingDescription;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ActiveBuildingAddress;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ActiveBuildingPhoneNUmber;
         private System.Windows.Forms.DataGridViewTextBoxColumn IsDeleted;
         private Guna.UI2.WinForms.Guna2TextBox txtPionShortCode;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2ComboBox cbxBuilding;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ActivePOSsId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ActivePOSsName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ActiveShortCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ActivePOSBuilding;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ActiveBuilingId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ActiveShortCOde;
     }
 }

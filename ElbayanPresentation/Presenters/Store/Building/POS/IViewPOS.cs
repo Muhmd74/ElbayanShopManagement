@@ -11,7 +11,7 @@ namespace ElbayaNPresentation.Presenters.Store.Building.POS
     public interface IViewPOS
     {
         Guid POSsId { get; set; }
-        Guna2TextBox POSsgName { get; set; }
+        Guna2TextBox POSsName { get; set; }
         Guna2TextBox POSsShortCode { get; set; }
         Guna2ComboBox Buidling { get; set; }
         Guna2TextBox SearchtxtBox { get; set; }
