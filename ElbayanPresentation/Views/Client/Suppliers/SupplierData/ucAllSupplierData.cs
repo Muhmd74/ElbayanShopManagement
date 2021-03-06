@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using ElbayaNPresentation.Presenters.Purchases.Suppliers.SuplliersData;
+using ElbayaNPresentation.Views.Client.Suppliers.SupplierData;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
         {
             InitializeComponent();
             Presenter = new PresenterSupplierData(this);
+            Presenter.OnLoadUC();
         }
         private static ucSupplierData _instance;
         public static ucSupplierData Instance
@@ -43,12 +45,20 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
         public Guna2TextBox TaxNumber { get => txtTAXNumber; set => txtTAXNumber = value; }
         public Guna2TextBox SearchtxtBox { get => txtSearch; set => txtSearch = value; }
         public NumericUpDown OpeningBalance { get => nudSupplierBalance; set => nudSupplierBalance = value; }
-        public DataGridView ActiveObjetc { get => dgvActiveObjects; set => dgvActiveObjects = value; }
+        public DataGridView ActiveObject { get => dgvActiveObjects; set => dgvActiveObjects = value; }
         public DataGridView DeletedObject { get => dgvDeletedObjects; set => dgvDeletedObjects = value; }
         public PresenterSupplierData Presenter { get; set; }
         public Guna2Button btnUpdateObject { get => btnUpdate; set => btnUpdate = value; }
         public Guna2Button btnDeleteObject { get => btnDeleteByOne; set => btnDeleteByOne = value; }
         public TabControl tabControl { get => dgvTabContainer; set => dgvTabContainer = value; }
         public Guna2Button btnAddNewObject { get => btnAdd; set => btnAdd = value; }
+        RadioButton IViewSuppleirData.IsActiveSupplier { get => rbIsActive; set => rbIsActive = value; }
+        public Guna2TextBox IDNumber { get => txtIDNumber; set => txtIDNumber = value; }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            //Presenter.OnbtnAddNewObject();
+            frmNewSupplier.Instance.Show();
+        }
     }
 }

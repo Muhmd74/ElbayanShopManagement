@@ -19,12 +19,13 @@ namespace ElbayaNPresentation.Presenters.Purchases.Suppliers.SuplliersData
         Guna2TextBox Description  { get; set; }
         Guna2ComboBox CustomerType { get; set; }
         Guna2TextBox Mobile { get; set; }
+        Guna2TextBox IDNumber { get; set; }
         Guna2TextBox TaxNumber { get; set; }
         Guna2TextBox SearchtxtBox { get; set; }
         NumericUpDown OpeningBalance { get; set; }
 
-
-        DataGridView ActiveObjetc { get; set; }
+        RadioButton IsActiveSupplier { get; set; }
+        DataGridView ActiveObject { get; set; }
         DataGridView DeletedObject { get; set; }
         TabControl tabControl { get; set; }
 

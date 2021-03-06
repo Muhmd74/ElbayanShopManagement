@@ -18,9 +18,9 @@ namespace ElbayaNPresentation.Presenters.Purchases.Suppliers.SuplliersData
         {
             _view = view;
         }
-        public void OnloadUCBuilding()
+        public void OnLoadUC()
         {
-            DataGridViewStyle.StyleDatagridview(_view.ActiveObjetc);
+            DataGridViewStyle.StyleDatagridview(_view.ActiveObject);
             DataGridViewStyle.StyleDatagridview(_view.DeletedObject);
 
             // Load Data Grid:
@@ -35,7 +35,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.Suppliers.SuplliersData
         // 2- Read:
         public void PopualteActiveObjects()
         {
-            _view.ActiveObjetc.DataSource = supplierService.GetAllSupplier().ToList();
+            _view.ActiveObject.DataSource = supplierService.GetAllSupplier().ToList();
         }
         public void PopulateDeletedObject()
         {
@@ -44,17 +44,23 @@ namespace ElbayaNPresentation.Presenters.Purchases.Suppliers.SuplliersData
 
         // CRUD Operation: 
         // 1- Create:
-        public void CreateNewObject()
+        public void OnbtnAddNewObject()
         {
             if (_view.SuppliersName.Text != "")
             {
                 supplierService.Create(new ElbayanServices.Repository.Customers.Suppliers.Supplier.Dtos.SupplierDto
                 {
+                    SupplierNumber = Convert.ToInt32(_view.SupplierNumber.Text),
                     Name = _view.SuppliersName.Text,
-                    Description = _view.Description.Text,
+                    FirmName = _view.FirmName.Text,
                     Address = _view.Address.Text,
-                    Mobile = _view.Mobile.Text
+                    CommercialRegister = _view.CommercialRegister.Text,
+                    TaxNumber = _view.TaxNumber.Text,
+                    Description = _view.Description.Text,
+                    Mobile = _view.Mobile.Text,
+                    OpeningBalance =Convert.ToInt32(_view.OpeningBalance.Text)
                 });
+
 
                 // Refresh DGV All Active Object:
                 PopualteActiveObjects();
@@ -176,7 +182,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.Suppliers.SuplliersData
         {
             if (_view.tabControl.SelectedIndex == 0)
             {
-                _view.ActiveObjetc.DataSource = supplierService.GetAllSupplier().
+                _view.ActiveObject.DataSource = supplierService.GetAllSupplier().
                      Where(d => d.Name.Contains(_view.SearchtxtBox.Text)
                      || d.SupplierNumber.ToString().Contains(_view.SearchtxtBox.Text)).ToList();
             }
@@ -187,5 +193,6 @@ namespace ElbayaNPresentation.Presenters.Purchases.Suppliers.SuplliersData
                     || d.SupplierNumber.ToString().Contains(_view.SearchtxtBox.Text)).ToList();
             }
         }
+
     }
 }

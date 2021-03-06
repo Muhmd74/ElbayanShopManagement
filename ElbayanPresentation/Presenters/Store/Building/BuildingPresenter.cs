@@ -72,16 +72,7 @@ namespace ElbayaNPresentation.Presenters.Store.Building
         public void OnDoublClickdgvActiveObject()
         {
             _view.BuildingId = new Guid(_view.dgvActiveObjects.CurrentRow.Cells["ActiveBuildingId"].Value.ToString());
-            _view.BuildingName.Text =_view.dgvActiveObjects.CurrentRow.Cells["ActiveBuilingName"].Value.ToString();
-            _view.BuildingDescription.Text =_view.dgvActiveObjects.CurrentRow.Cells["ActiveBuildingDescription"].Value.ToString();
-            _view.BuildingAddress.Text =_view.dgvActiveObjects.CurrentRow.Cells["ActiveBuildingAddress"].Value.ToString();
-            _view.BuildingPhoneNumber.Text =_view.dgvActiveObjects.CurrentRow.Cells["ActiveBuildingPhoneNUmber"].Value.ToString();
-
-            // Disable Add new button:
-            _view.btnAddObject.Enabled = false;
-            _view.btnDeleteObject.Enabled = true;
-            _view.btnUpdateObject.Enabled = true;
-
+            OnDoubleDvgGetById(_view.BuildingId);
         }
         // 2.3 Update -> Implement Update active Objects:
         public void OnClickbtnUpdate()
@@ -133,10 +124,16 @@ namespace ElbayaNPresentation.Presenters.Store.Building
         public void OnDoubleClickdgvDeletedObject()
         {
             _view.BuildingId = new Guid(_view.dgvDeletedObjects.CurrentRow.Cells["DeletedBuildingId"].Value.ToString());
-            _view.BuildingName.Text = _view.dgvDeletedObjects.CurrentRow.Cells["DeletedObjectName"].Value.ToString();
-            _view.BuildingDescription.Text = _view.dgvDeletedObjects.CurrentRow.Cells["DeletedObjectDescription"].Value.ToString();
-            _view.BuildingAddress.Text = _view.dgvDeletedObjects.CurrentRow.Cells["DeletedObjectAddress"].Value.ToString();
-            _view.BuildingPhoneNumber.Text = _view.dgvDeletedObjects.CurrentRow.Cells["DeletedObjectPhoneNumber"].Value.ToString();
+            OnDoubleDvgGetById(_view.BuildingId);
+        }
+        private void OnDoubleDvgGetById(Guid ID)
+        {
+            BuildingDto model = buildingService.GetById(ID);
+            _view.BuildingName.Text = model.Name;                    
+            _view.BuildingDescription.Text = model.Description;
+            _view.BuildingAddress.Text = model.Address;
+            _view.BuildingPhoneNumber.Text = model.PhoneNumber;
+           
             // Disable Add new button:
             _view.btnAddObject.Enabled = false;
             _view.btnDeleteObject.Enabled = true;
