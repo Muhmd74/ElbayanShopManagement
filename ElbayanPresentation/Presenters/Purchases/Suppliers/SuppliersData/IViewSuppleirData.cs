@@ -20,10 +20,18 @@ namespace ElbayaNPresentation.Presenters.Purchases.Suppliers.SuplliersData
         Guna2ComboBox CustomerType { get; set; }
         Guna2TextBox Mobile { get; set; }
         Guna2TextBox TaxNumber { get; set; }
+        Guna2TextBox SearchtxtBox { get; set; }
         NumericUpDown OpeningBalance { get; set; }
 
-        DataGrid ActiveObjetc { get; set; }
-        DataGrid DeletedObject { get; set; }
+
+        DataGridView ActiveObjetc { get; set; }
+        DataGridView DeletedObject { get; set; }
+        TabControl tabControl { get; set; }
+
+        Guna2Button btnAddNewObject { get; set; }
+        Guna2Button btnUpdateObject { get; set; }
+        Guna2Button btnDeleteObject { get; set; }
+
 
         PresenterSupplierData Presenter { get; set; }
 

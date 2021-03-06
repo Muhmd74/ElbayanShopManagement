@@ -17,6 +17,7 @@ using ElbayaNPresentation.Views.Store.Product;
 using DevExpress.XtraEditors;
 using ElbayaNPresentation.Views.Store.Building;
 using ElbayaNPresentation.Views.Store.POSs;
+using ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData;
 
 namespace ElbayaNPresentation
 {
@@ -161,6 +162,18 @@ namespace ElbayaNPresentation
                 ucPOSs.Instance.BringToFront();
             }
             ucPOSs.Instance.BringToFront();
+        }
+
+        private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!gcContainer.Controls.Contains(ucSupplierData.Instance))
+            {
+                gcContainer.Controls.Clear();
+                gcContainer.Controls.Add(ucSupplierData.Instance);
+                ucSupplierData.Instance.Dock = DockStyle.Fill;
+                ucSupplierData.Instance.BringToFront();
+            }
+            ucSupplierData.Instance.BringToFront();
         }
     }
 }
