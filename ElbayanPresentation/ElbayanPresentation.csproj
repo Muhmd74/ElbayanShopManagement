@@ -86,8 +86,10 @@
   <ItemGroup>
     <Compile Include="Presenters\CommonPresenter\DataGridViewStyle.cs" />
     <Compile Include="Presenters\CommonPresenter\ValidateControls.cs" />
-    <Compile Include="Presenters\Purchases\Suppliers\SuppliersData\IViewSuppleirData.cs" />
-    <Compile Include="Presenters\Purchases\Suppliers\SuppliersData\PresenterSupplierData.cs" />
+    <Compile Include="Presenters\Purchases\Supplier\NewSupplier\IViewNewSupplier.cs" />
+    <Compile Include="Presenters\Purchases\Supplier\NewSupplier\PresenterNewSupplier.cs" />
+    <Compile Include="Presenters\Purchases\Supplier\ِAllSuppliers\IViewAllSuppleirData.cs" />
+    <Compile Include="Presenters\Purchases\Supplier\ِAllSuppliers\PresenterAllSupplierData.cs" />
     <Compile Include="Presenters\Store\Building\BuildingPresenter.cs" />
     <Compile Include="Presenters\Store\Building\IViewBuilding.cs" />
     <Compile Include="Presenters\Store\Building\POS\IViewPOS.cs" />

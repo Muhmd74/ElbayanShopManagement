@@ -29,8 +29,8 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucSupplierData));
             this.LargeUnitWeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvLargeUnitDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +52,7 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
             this.IsDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedObjects)).BeginInit();
             this.tabDeletedObjects.SuspendLayout();
             this.dgvTabContainer.SuspendLayout();
@@ -131,15 +132,15 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
             this.dgvDeletedObjects.AllowUserToDeleteRows = false;
             this.dgvDeletedObjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDeletedObjects.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDeletedObjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDeletedObjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDeletedObjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDeletedObjects.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DeletedBuildingId,
@@ -155,7 +156,7 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
             this.dgvDeletedObjects.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvDeletedObjects.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.dgvDeletedObjects.RowTemplate.Height = 35;
-            this.dgvDeletedObjects.Size = new System.Drawing.Size(1536, 272);
+            this.dgvDeletedObjects.Size = new System.Drawing.Size(1536, 604);
             this.dgvDeletedObjects.TabIndex = 1;
             // 
             // tabDeletedObjects
@@ -165,7 +166,7 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
             this.tabDeletedObjects.Location = new System.Drawing.Point(4, 63);
             this.tabDeletedObjects.Name = "tabDeletedObjects";
             this.tabDeletedObjects.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDeletedObjects.Size = new System.Drawing.Size(1542, 278);
+            this.tabDeletedObjects.Size = new System.Drawing.Size(1542, 610);
             this.tabDeletedObjects.TabIndex = 1;
             this.tabDeletedObjects.Text = "قائمة الموردون المؤرشفة";
             // 
@@ -204,15 +205,15 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
             this.dgvActiveObjects.AllowUserToDeleteRows = false;
             this.dgvActiveObjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvActiveObjects.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvActiveObjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvActiveObjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvActiveObjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvActiveObjects.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ActiveSupplierId,
@@ -313,7 +314,7 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
             this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
             this.txtSearch.IconRightOffset = new System.Drawing.Point(10, 0);
             this.txtSearch.IconRightSize = new System.Drawing.Size(35, 35);
-            this.txtSearch.Location = new System.Drawing.Point(880, 23);
+            this.txtSearch.Location = new System.Drawing.Point(817, 13);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
@@ -330,17 +331,41 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(1379, 32);
+            this.label9.Location = new System.Drawing.Point(1306, 28);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(168, 25);
+            this.label9.Size = new System.Drawing.Size(241, 25);
             this.label9.TabIndex = 25;
-            this.label9.Text = "بحث باسم أو  رقم التليفون";
+            this.label9.Text = "بحث باسم أو  رقم التليفون أو رقم المورد";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnAdd.BackColor = System.Drawing.Color.White;
+            this.btnAdd.BorderRadius = 9;
+            this.btnAdd.CheckedState.Parent = this.btnAdd;
+            this.btnAdd.CustomImages.Parent = this.btnAdd;
+            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
+            this.btnAdd.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.HoverState.Parent = this.btnAdd;
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnAdd.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnAdd.Location = new System.Drawing.Point(16, 13);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
+            this.btnAdd.Size = new System.Drawing.Size(192, 51);
+            this.btnAdd.TabIndex = 28;
+            this.btnAdd.Text = "إضافة مورد جديد";
+            this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // ucSupplierData
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dgvTabContainer);
@@ -378,5 +403,6 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
         private System.Windows.Forms.DataGridViewTextBoxColumn ActiveBuildingPhoneNUmber;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private System.Windows.Forms.Label label9;
+        private Guna.UI2.WinForms.Guna2Button btnAdd;
     }
 }
