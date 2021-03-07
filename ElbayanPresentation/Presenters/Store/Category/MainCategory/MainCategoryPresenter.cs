@@ -1,4 +1,5 @@
 ﻿using ElbayanDatabase.ConnectionTools;
+using ElbayaNPresentation.Presenters.CommonPresenter;
 using ElbayanServices.Repository.Products.Category;
 using ElbayanServices.Repository.Products.Category.Dtos;
 using System;
@@ -6,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ElbayaNPresentation.Presenters.Store.Category.MainCategory
 {
@@ -19,31 +21,79 @@ namespace ElbayaNPresentation.Presenters.Store.Category.MainCategory
             _view = view;
         }
 
-
-        public void OnClickAddButtonFuction()
+        // 1. Create
+        public void OnClickbtnAdd()
         {
-            Category.Add( new CategoryDto { 
-                Name = _view.MainCategoryName.Text, 
-                Description = _view.MainCategoryDescription.Text
-            });
-        }
-        public List<CategoryDto> GetCategories()
-        {
-            if (Category.GetAll().Any())
+            if (_view.MainCategoryName.Text != string.Empty)
             {
-                _view.MainCategory = Category.GetAll();
-                return _view.MainCategory.ToList();
+                Category.Add(new CategoryDto
+                {
+                    Name = _view.MainCategoryName.Text,
+                    Description = _view.MainCategoryDescription.Text
+                });
+                MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
+                ClearControls();
+                PopulateDGV();
             }
             else
             {
-                return _view.MainCategory = null;
+                MessageBox.Show("لا بد من إدخال اسم التصنيف", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
+            
+        }
+        // 2. Read
+        public void OnLoad()
+        {
+            PopulateDGV();
+        }
+        private void PopulateDGV()
+        {
+            DataGridViewStyle.StyleDatagridview(_view.ActiveObjects);
+            DataGridViewStyle.StyleDatagridview(_view.DeletedObjects);
+
+            if (Category.GetAll().Any() || Category.GetAllDeleted().Any())
+            {
+                _view.ActiveObjects.DataSource = Category.GetAll().ToList();
+                _view.DeletedObjects.DataSource = Category.GetAllDeleted().ToList();
+            }
+            else
+            {
+                _view.ActiveObjects.DataSource = null;
+                _view.DeletedObjects.DataSource = null;
             }
         }
-        public List<CategoryDto> GetDeletedCategories()
+
+        // 3. Update
+        // - Get ByID
+        private void OnDoubleDvgGetById(Guid ID)
         {
-            _view.MainCategory = Category.GetAllDeleted();
-            return _view.MainCategory.ToList();
+            CategoryDto model = Category.GetById(ID);
+            _view.MainCategoryName.Text = model.Name;
+            _view.MainCategoryDescription.Text = model.Description;
+
+            // Disable Add new button:
+            _view.AddNewObject.Enabled = false;
+            _view.UpdateObject.Enabled = true;
+            _view.DeletedObjects.Enabled = true;
         }
+       public void OnDoubleClickdgvActiveObject()
+       {
+            if (_view.ActiveObjects.CurrentRow.Index != -1)
+            {
+                _view.ID = new Guid(_view.ActiveObjects.CurrentRow.Cells["MainCategoryID"].Value.ToString());
+                OnDoubleDvgGetById(_view.ID);
+            }
+       }
+        public void OnDoubleClickdgvDeletedObject()
+       {
+            if (_view.ActiveObjects.CurrentRow.Index != -1)
+            {
+                _view.ID = new Guid(_view.DeletedObjects.CurrentRow.Cells["CategoryID"].Value.ToString());
+                OnDoubleDvgGetById(_view.ID);
+            }
+       }
+
         public void OnCLickbtnUpdate(Guid ID)
         {
             Category.Update(new CategoryDto
@@ -58,15 +108,9 @@ namespace ElbayaNPresentation.Presenters.Store.Category.MainCategory
             Category.DeleteOrRestore(ID);
         }
 
-        public List<CategoryDto> FilterDataGridView()
+        private void ClearControls()
         {
-            _view.MainCategory = Category.GetAll().Where(x => x.Name.Contains(_view.SearchKeyword) || x.Description.Contains(_view.SearchKeyword)).ToList();
-            return _view.MainCategory.ToList();
-        }
-        public List<CategoryDto> FilterDataGridViewDeleted()
-        {
-            _view.MainCategory = Category.GetAllDeleted().Where(x => x.Name.Contains(_view.SearchKeyword) || x.Description.Contains(_view.SearchKeyword)).ToList();
-            return _view.MainCategory.ToList();
+            _view.MainCategoryName.Text = _view.MainCategoryDescription.Text = _view.SearchBox.Text = "";
         }
     }
 }

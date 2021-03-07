@@ -30,6 +30,7 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucSupplierData));
+            System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -39,7 +40,6 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
             this.label9 = new System.Windows.Forms.Label();
             this.dgvLargeUnitDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LargeUnitWeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tabDeletedObjects = new System.Windows.Forms.TabPage();
             this.dgvDeletedObjects = new System.Windows.Forms.DataGridView();
             this.DeletedObjectPhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,8 +55,9 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
             this.ActiveSupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActiveSupplierId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvTabContainer = new System.Windows.Forms.TabControl();
+            tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
             this.tabDeletedObjects.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedObjects)).BeginInit();
             this.tabActiveObjects.SuspendLayout();
@@ -68,20 +69,20 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dgvTabContainer, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.84252F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.15748F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.36745F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.63255F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1550, 762);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // btnAdd
             // 
-            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnAdd.BackColor = System.Drawing.Color.White;
             this.btnAdd.BorderRadius = 9;
             this.btnAdd.CheckedState.Parent = this.btnAdd;
@@ -93,7 +94,7 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnAdd.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnAdd.Location = new System.Drawing.Point(15, 9);
+            this.btnAdd.Location = new System.Drawing.Point(3, 12);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
             this.btnAdd.Size = new System.Drawing.Size(192, 51);
@@ -127,14 +128,14 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
             this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
             this.txtSearch.IconRightOffset = new System.Drawing.Point(10, 0);
             this.txtSearch.IconRightSize = new System.Drawing.Size(35, 35);
-            this.txtSearch.Location = new System.Drawing.Point(793, 8);
+            this.txtSearch.Location = new System.Drawing.Point(806, 8);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "";
             this.txtSearch.SelectedText = "";
             this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
-            this.txtSearch.Size = new System.Drawing.Size(480, 53);
+            this.txtSearch.Size = new System.Drawing.Size(480, 59);
             this.txtSearch.TabIndex = 30;
             this.txtSearch.TextOffset = new System.Drawing.Point(25, 0);
             // 
@@ -150,15 +151,17 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
             // 
             // label9
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(1282, 22);
+            this.label9.Location = new System.Drawing.Point(1300, 25);
             this.label9.Name = "label9";
+            this.label9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label9.Size = new System.Drawing.Size(241, 25);
             this.label9.TabIndex = 31;
             this.label9.Text = "بحث باسم أو  رقم التليفون أو رقم المورد";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // dgvLargeUnitDescription
             // 
@@ -182,20 +185,20 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.04539F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.95461F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 221F));
-            this.tableLayoutPanel2.Controls.Add(this.btnAdd, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label9, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.txtSearch, 1, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1544, 69);
-            this.tableLayoutPanel2.TabIndex = 33;
+            tableLayoutPanel2.ColumnCount = 3;
+            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.04943F));
+            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.95057F));
+            tableLayoutPanel2.Controls.Add(this.txtSearch, 1, 0);
+            tableLayoutPanel2.Controls.Add(this.label9, 0, 0);
+            tableLayoutPanel2.Controls.Add(this.btnAdd, 2, 0);
+            tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 1;
+            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel2.Size = new System.Drawing.Size(1544, 73);
+            tableLayoutPanel2.TabIndex = 33;
             // 
             // tabDeletedObjects
             // 
@@ -297,7 +300,7 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
             this.tabActiveObjects.Location = new System.Drawing.Point(4, 63);
             this.tabActiveObjects.Name = "tabActiveObjects";
             this.tabActiveObjects.Padding = new System.Windows.Forms.Padding(3);
-            this.tabActiveObjects.Size = new System.Drawing.Size(1536, 614);
+            this.tabActiveObjects.Size = new System.Drawing.Size(1536, 610);
             this.tabActiveObjects.TabIndex = 0;
             this.tabActiveObjects.Text = "قائمة الموردون النشطة";
             // 
@@ -331,7 +334,7 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
             this.dgvActiveObjects.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvActiveObjects.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.dgvActiveObjects.RowTemplate.Height = 35;
-            this.dgvActiveObjects.Size = new System.Drawing.Size(1530, 608);
+            this.dgvActiveObjects.Size = new System.Drawing.Size(1530, 604);
             this.dgvActiveObjects.TabIndex = 0;
             // 
             // ActiveBuildingPhoneNUmber
@@ -387,12 +390,12 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
             this.dgvTabContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTabContainer.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvTabContainer.ItemSize = new System.Drawing.Size(132, 59);
-            this.dgvTabContainer.Location = new System.Drawing.Point(3, 78);
+            this.dgvTabContainer.Location = new System.Drawing.Point(3, 82);
             this.dgvTabContainer.Name = "dgvTabContainer";
             this.dgvTabContainer.Padding = new System.Drawing.Point(6, 5);
             this.dgvTabContainer.RightToLeftLayout = true;
             this.dgvTabContainer.SelectedIndex = 0;
-            this.dgvTabContainer.Size = new System.Drawing.Size(1544, 681);
+            this.dgvTabContainer.Size = new System.Drawing.Size(1544, 677);
             this.dgvTabContainer.TabIndex = 29;
             // 
             // ucSupplierData
@@ -405,8 +408,8 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Size = new System.Drawing.Size(1550, 762);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel2.PerformLayout();
             this.tabDeletedObjects.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedObjects)).EndInit();
             this.tabActiveObjects.ResumeLayout(false);
@@ -419,7 +422,6 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
