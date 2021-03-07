@@ -72,20 +72,22 @@ namespace ElbayaNPresentation
             this.tabFormContentContainer1 = new DevExpress.XtraBars.TabFormContentContainer();
             this.tabFormPage1 = new DevExpress.XtraBars.TabFormPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.gcContainer = new System.Windows.Forms.Panel();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.gcContainer = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 1030);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 868);
             this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(14, 15, 14, 15);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1766, 32);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1440, 32);
             // 
             // ribbon
             // 
@@ -134,7 +136,7 @@ namespace ElbayaNPresentation
             this.ribbon.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowPageHeadersInFormCaption = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbon.Size = new System.Drawing.Size(1766, 229);
+            this.ribbon.Size = new System.Drawing.Size(1440, 229);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Above;
             // 
@@ -786,15 +788,6 @@ namespace ElbayaNPresentation
             // 
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             // 
-            // gcContainer
-            // 
-            this.gcContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcContainer.Font = new System.Drawing.Font("Arabic Typesetting", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gcContainer.Location = new System.Drawing.Point(0, 229);
-            this.gcContainer.Name = "gcContainer";
-            this.gcContainer.Size = new System.Drawing.Size(1766, 801);
-            this.gcContainer.TabIndex = 13;
-            // 
             // ribbonPageGroup2
             // 
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
@@ -833,13 +826,35 @@ namespace ElbayaNPresentation
             this.barButtonItem3.Name = "barButtonItem3";
             this.barButtonItem3.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.gcContainer, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 229);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1440, 639);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // gcContainer
+            // 
+            this.gcContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcContainer.Font = new System.Drawing.Font("Arabic Typesetting", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gcContainer.Location = new System.Drawing.Point(3, 3);
+            this.gcContainer.Name = "gcContainer";
+            this.gcContainer.Size = new System.Drawing.Size(1434, 633);
+            this.gcContainer.TabIndex = 14;
+            // 
             // frmMainBoard
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1766, 1062);
-            this.Controls.Add(this.gcContainer);
+            this.ClientSize = new System.Drawing.Size(1440, 900);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.tabFormContentContainer1);
             this.Controls.Add(this.ribbon);
@@ -849,6 +864,7 @@ namespace ElbayaNPresentation
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "frmMainBoard";
             this.Ribbon = this.ribbon;
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -857,6 +873,7 @@ namespace ElbayaNPresentation
             this.StatusBar = this.ribbonStatusBar;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -884,7 +901,6 @@ namespace ElbayaNPresentation
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        public System.Windows.Forms.Panel gcContainer;
         private DevExpress.XtraBars.Ribbon.RibbonPage rpSettings;
         private DevExpress.XtraBars.Ribbon.RibbonPage rpProcerement;
         private DevExpress.XtraBars.Ribbon.RibbonPage rpSales;
@@ -909,5 +925,7 @@ namespace ElbayaNPresentation
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        public System.Windows.Forms.Panel gcContainer;
     }
 }
