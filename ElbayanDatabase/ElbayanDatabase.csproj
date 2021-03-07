@@ -65,13 +65,12 @@
   <ItemGroup>
     <Compile Include="ConnectionTools\ConnectionOption.cs" />
     <Compile Include="ConnectionTools\ConnectionString.cs" />
-    <Compile Include="DataClasses\Customers\Customer.cs" />
-    <Compile Include="DataClasses\Customers\CustomerType.cs" />
-    <Compile Include="DataClasses\Customers\Sales\Building.cs" />
-    <Compile Include="DataClasses\Customers\Sales\DeferredPayment.cs" />
-    <Compile Include="DataClasses\Customers\Sales\Order.cs" />
-    <Compile Include="DataClasses\Customers\Sales\OrderProduct.cs" />
-    <Compile Include="DataClasses\Customers\Sales\POS.cs" />
+    <Compile Include="DataClasses\Clints\Clint.cs" />
+    <Compile Include="DataClasses\Clints\Sales\Building.cs" />
+    <Compile Include="DataClasses\Clints\Sales\DeferredPayment.cs" />
+    <Compile Include="DataClasses\Clints\Sales\Order.cs" />
+    <Compile Include="DataClasses\Clints\Sales\OrderProduct.cs" />
+    <Compile Include="DataClasses\Clints\Sales\POS.cs" />
     <Compile Include="DataClasses\Employees\CashierDrawers\CashierDrawer.cs" />
     <Compile Include="DataClasses\Employees\CashierDrawers\DailyOffShift.cs" />
     <Compile Include="DataClasses\Employees\CashierDrawers\DrawerTransaction.cs" />
@@ -93,13 +92,13 @@
     <Compile Include="DataClasses\Product\ProductStock.cs" />
     <Compile Include="DataClasses\Product\Unit\LargeUnit.cs" />
     <Compile Include="DataClasses\Product\Unit\SmallUnit.cs" />
-    <Compile Include="DataClasses\Suppliers\SupplierOrder\SupplierDeferredPayment.cs" />
-    <Compile Include="DataClasses\Suppliers\SupplierOrder\SupplierOrder.cs" />
-    <Compile Include="DataClasses\Suppliers\SupplierOrder\SupplierOrderProduct.cs" />
-    <Compile Include="DataClasses\Suppliers\Supplier\Supplier.cs" />
     <Compile Include="Migrations\202103062055378_InitialMigration.cs" />
     <Compile Include="Migrations\202103062055378_InitialMigration.designer.cs">
       <DependentUpon>202103062055378_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103071717461_CreateClintDatabase.cs" />
+    <Compile Include="Migrations\202103071717461_CreateClintDatabase.designer.cs">
+      <DependentUpon>202103071717461_CreateClintDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -111,6 +110,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202103062055378_InitialMigration.resx">
       <DependentUpon>202103062055378_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103071717461_CreateClintDatabase.resx">
+      <DependentUpon>202103071717461_CreateClintDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.Entity;
-using ElbayanDatabase.DataClasses.Customers;
-using ElbayanDatabase.DataClasses.Customers.Sales;
+using ElbayanDatabase.DataClasses.Clints;
+using ElbayanDatabase.DataClasses.Clints.Sales;
 using ElbayanDatabase.DataClasses.Employees.CashierDrawers;
 using ElbayanDatabase.DataClasses.Employees.EmployeeAccountant.EmployeeSalaryActions;
 using ElbayanDatabase.DataClasses.Employees.EmployeeAccountant.Salary;
@@ -10,8 +10,7 @@ using ElbayanDatabase.DataClasses.Member;
 using ElbayanDatabase.DataClasses.Product;
 using ElbayanDatabase.DataClasses.Product.ProductCategory;
 using ElbayanDatabase.DataClasses.Product.Unit;
-using ElbayanDatabase.DataClasses.Suppliers.Supplier;
-using ElbayanDatabase.DataClasses.Suppliers.SupplierOrder;
+
 
 namespace ElbayanDatabase.ConnectionTools
 {
@@ -45,18 +44,13 @@ namespace ElbayanDatabase.ConnectionTools
         public DbSet<EmployeeSalaryAction> EmployeeSalaryActions { get; set; }
         public DbSet<DetectionsSalary> DetectionsSalaries { get; set; }
         public DbSet<IncreasesSalary> IncreasesSalaries { get; set; }
-        public DbSet<CustomerType> CustomerTypes { get; set; }
-        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Clint> Clints { get; set; }
+
         public DbSet<POS> Poses { get; set; }
         public DbSet<OrderProduct> OrderProducts { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<DeferredPayment> DeferredPayments { get; set; }
         public DbSet<Building> Buildings { get; set; }
-        public DbSet<Supplier> Suppliers { get; set; }
-        public DbSet<SupplierOrderProduct> SupplierOrderProducts { get; set; }
-        public DbSet<SupplierDeferredPayment> SupplierDeferredPayments { get; set; }
-        public DbSet<SupplierOrder> SupplierOrders { get; set; }
-
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -172,15 +166,11 @@ namespace ElbayanDatabase.ConnectionTools
                 .WithRequired(d => d.Employee)
                 .HasForeignKey(d => d.EmployeeId)
                 .WillCascadeOnDelete(true);
-            modelBuilder.Entity<CustomerType>()
-                .HasMany(d => d.Customers)
-                .WithRequired(d => d.CustomerType)
-                .HasForeignKey(d => d.CustomerTypeId)
-                .WillCascadeOnDelete(false);
-            modelBuilder.Entity<Customer>()
+          
+            modelBuilder.Entity<Clint>()
                 .HasMany(d => d.Orders)
-                .WithRequired(d => d.Customer)
-                .HasForeignKey(d => d.CustomerId)
+                .WithRequired(d => d.Clint)
+                .HasForeignKey(d => d.ClintId)
                 .WillCascadeOnDelete(false);
             modelBuilder.Entity<POS>()
                 .HasMany(d => d.Orders)
@@ -207,39 +197,12 @@ namespace ElbayanDatabase.ConnectionTools
                 .WithRequired(d => d.Order)
                 .HasForeignKey(d => d.OrderId)
                 .WillCascadeOnDelete(false);
-            modelBuilder.Entity<Customer>()
+            modelBuilder.Entity<Clint>()
                 .HasMany(d=>d.Orders)
-                .WithRequired(d=>d.Customer)
-                .HasForeignKey(d=>d.CustomerId)
+                .WithRequired(d=>d.Clint)
+                .HasForeignKey(d=>d.ClintId)
                 .WillCascadeOnDelete(false); 
-            modelBuilder.Entity<SupplierOrder>()
-                .HasMany(d => d.SupplierDeferredPayments)
-                .WithRequired(d => d.SupplierOrder)
-                .HasForeignKey(d => d.SupplierOrderId)
-                .WillCascadeOnDelete(false);
-            modelBuilder.Entity<Supplier>()
-                .HasMany(d => d.SupplierOrders)
-                .WithRequired(d => d.Supplier)
-                .HasForeignKey(d => d.SupplierId)
-                .WillCascadeOnDelete(false);
-            modelBuilder.Entity<CustomerType>()
-                .HasMany(d=>d.Suppliers)
-                .WithRequired(d=>d.CustomerType)
-                .HasForeignKey(d=>d.CustomerTypeId)
-                .WillCascadeOnDelete(false);
-            modelBuilder.Entity<SupplierOrder>()
-                .HasMany(d => d.SupplierDeferredPayments)
-                .WithRequired(d => d.SupplierOrder)
-                .HasForeignKey(d => d.SupplierOrderId)
-                .WillCascadeOnDelete(false);
-            modelBuilder.Entity<SupplierOrder>()
-                .HasMany(d => d.SupplierOrderProducts)
-                .WithRequired(d => d.SupplierOrder)
-                .HasForeignKey(d => d.SupplierOrderId)
-                .WillCascadeOnDelete(false);
-
-
-
+           
         }
     }
 }

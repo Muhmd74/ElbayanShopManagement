@@ -67,45 +67,29 @@
     <Compile Include="Common\StaticGenerator.cs" />
     <Compile Include="Common\Encrypt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\Customers\Building\BuildingService.cs" />
-    <Compile Include="Repository\Customers\Building\Dtos\BuildingDto.cs" />
-    <Compile Include="Repository\Customers\Building\IBuilding.cs" />
-    <Compile Include="Repository\Customers\Customers\CustomerService.cs" />
-    <Compile Include="Repository\Customers\Customers\Dtos\CustomerDetailsDto.cs" />
-    <Compile Include="Repository\Customers\Customers\Dtos\CustomerDetailsOrder.cs" />
-    <Compile Include="Repository\Customers\Customers\Dtos\CustomerDto.cs" />
-    <Compile Include="Repository\Customers\Customers\Dtos\DeferredPaymentsCustomerDto.cs" />
-    <Compile Include="Repository\Customers\Customers\ICustomer.cs" />
-    <Compile Include="Repository\Customers\CustomerTypes\CustomerTypeService.cs" />
-    <Compile Include="Repository\Customers\CustomerTypes\Dtos\CustomerTypesDto.cs" />
-    <Compile Include="Repository\Customers\CustomerTypes\ICustomerType.cs" />
-    <Compile Include="Repository\Customers\DeferredPayments\DeferredPaymentService.cs" />
-    <Compile Include="Repository\Customers\DeferredPayments\Dtos\SupplierDeferredPaymentDto.cs" />
-    <Compile Include="Repository\Customers\DeferredPayments\Dtos\OrderNameDto.cs" />
-    <Compile Include="Repository\Customers\DeferredPayments\IDeferredPayment.cs" />
-    <Compile Include="Repository\Customers\Orders\Dtos\OrderDto.cs" />
-    <Compile Include="Repository\Customers\Orders\Dtos\ProductPriceMovementDto.cs" />
-    <Compile Include="Repository\Customers\Orders\IOrder.cs" />
-    <Compile Include="Repository\Customers\Orders\OrderService.cs" />
-    <Compile Include="Repository\Customers\Poses\Dtos\BuildingNameDto.cs" />
-    <Compile Include="Repository\Customers\Poses\Dtos\PosDto.cs" />
-    <Compile Include="Repository\Customers\Poses\IPos.cs" />
-    <Compile Include="Repository\Customers\Poses\PosService.cs" />
-    <Compile Include="Repository\Customers\Suppliers\SupplierDeferredPayments\SupplierDeferredPaymentService.cs" />
-    <Compile Include="Repository\Customers\Suppliers\SupplierDeferredPayments\Dtos\SupplierDeferredPaymentDto.cs" />
-    <Compile Include="Repository\Customers\Suppliers\SupplierDeferredPayments\Dtos\OrderNameDto.cs" />
-    <Compile Include="Repository\Customers\Suppliers\SupplierDeferredPayments\ISupplierDeferredPayment.cs" />
-    <Compile Include="Repository\Customers\Suppliers\SupplierOrder\Dtos\SupplierOrderDto.cs" />
-    <Compile Include="Repository\Customers\Suppliers\SupplierOrder\ISupplierOrder.cs" />
-    <Compile Include="Repository\Customers\Suppliers\SupplierOrder\SupplierOrderService.cs" />
-    <Compile Include="Repository\Customers\Suppliers\SupplierType\SupplierTypeService.cs" />
-    <Compile Include="Repository\Customers\Suppliers\SupplierType\Dtos\SupplierTypeDto.cs" />
-    <Compile Include="Repository\Customers\Suppliers\SupplierType\ISupplierType.cs" />
-    <Compile Include="Repository\Customers\Suppliers\Supplier\Dtos\SupplierDeferredDto.cs" />
-    <Compile Include="Repository\Customers\Suppliers\Supplier\Dtos\SupplierDto.cs" />
-    <Compile Include="Repository\Customers\Suppliers\Supplier\Dtos\SupplierNameDto.cs" />
-    <Compile Include="Repository\Customers\Suppliers\Supplier\ISupplier.cs" />
-    <Compile Include="Repository\Customers\Suppliers\Supplier\SupplierService.cs" />
+    <Compile Include="Repository\Clints\Building\BuildingService.cs" />
+    <Compile Include="Repository\Clints\Building\Dtos\BuildingDto.cs" />
+    <Compile Include="Repository\Clints\Building\IBuilding.cs" />
+    <Compile Include="Repository\Clints\Customer\Dtos\ClintDto.cs" />
+    <Compile Include="Repository\Clints\Customer\Dtos\CustomerNameDto.cs" />
+    <Compile Include="Repository\Clints\Customer\ICustomer.cs" />
+    <Compile Include="Repository\Clints\Customer\CustomerService.cs" />
+    <Compile Include="Repository\Clints\Supplier\Dtos\SupplierNameDto.cs" />
+    <Compile Include="Repository\Clints\Supplier\SupplierService.cs" />
+    <Compile Include="Repository\Clints\Supplier\Dtos\ClintDto.cs" />
+    <Compile Include="Repository\Clints\Supplier\ISupplier.cs" />
+    <Compile Include="Repository\Clints\DeferredPayments\DeferredPaymentService.cs" />
+    <Compile Include="Repository\Clints\DeferredPayments\Dtos\SupplierDeferredPaymentDto.cs" />
+    <Compile Include="Repository\Clints\DeferredPayments\Dtos\OrderNameDto.cs" />
+    <Compile Include="Repository\Clints\DeferredPayments\IDeferredPayment.cs" />
+    <Compile Include="Repository\Clints\Orders\Dtos\OrderDto.cs" />
+    <Compile Include="Repository\Clints\Orders\Dtos\ProductPriceMovementDto.cs" />
+    <Compile Include="Repository\Clints\Orders\IOrder.cs" />
+    <Compile Include="Repository\Clints\Orders\OrderService.cs" />
+    <Compile Include="Repository\Clints\Poses\Dtos\BuildingNameDto.cs" />
+    <Compile Include="Repository\Clints\Poses\Dtos\PosDto.cs" />
+    <Compile Include="Repository\Clints\Poses\IPos.cs" />
+    <Compile Include="Repository\Clints\Poses\PosService.cs" />
     <Compile Include="Repository\Employees\Employees\Dtos\EmployeeDto.cs" />
     <Compile Include="Repository\Employees\Employees\Dtos\EmployeeNameDto.cs" />
     <Compile Include="Repository\Employees\Employees\Dtos\LoginDto.cs" />
@@ -150,6 +134,7 @@
       <Name>ElbayanDatabase</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

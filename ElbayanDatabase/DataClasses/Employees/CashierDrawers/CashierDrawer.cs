@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Security.AccessControl;
-using ElbayanDatabase.DataClasses.Customers.Sales;
+using ElbayanDatabase.DataClasses.Clints.Sales;
 using ElbayanDatabase.DataClasses.Employees.Employees;
 
 namespace ElbayanDatabase.DataClasses.Employees.CashierDrawers

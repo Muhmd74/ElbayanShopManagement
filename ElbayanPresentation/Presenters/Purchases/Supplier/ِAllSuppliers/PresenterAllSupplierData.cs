@@ -1,14 +1,10 @@
-﻿using ElbayaNPresentation.Presenters.CommonPresenter;
+﻿using System.Linq;
+using ElbayaNPresentation.Presenters.CommonPresenter;
+using ElbayaNPresentation.Presenters.Purchases.Suppliers.SuplliersData;
 using ElbayaNPresentation.Views.Client.Suppliers.SupplierData;
-using ElbayanServices.Repository.Customers.Suppliers.Supplier;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using ElbayanServices.Repository.Clints.Supplier;
 
-namespace ElbayaNPresentation.Presenters.Purchases.Suppliers.SuplliersData
+namespace ElbayaNPresentation.Presenters.Purchases.Supplier._ِAllSuppliers
 {
     public class PresenterSupplierData
     {
@@ -53,13 +49,13 @@ namespace ElbayaNPresentation.Presenters.Purchases.Suppliers.SuplliersData
         {
             //if (_view.tabControl.SelectedIndex == 0)
             //{
-            //    _view.ActiveObject.DataSource = supplierService.GetAllSupplier().
+            //    _view.ActiveObject.DataSource = supplierService.GetAllCustomer().
             //         Where(d => d.Name.Contains(_view.SearchtxtBox.Text)
             //         || d.SupplierNumber.ToString().Contains(_view.SearchtxtBox.Text)).ToList();
             //}
             //else
             //{
-            //    _view.DeletedObject.DataSource = supplierService.GetAllSupplierNotActive().
+            //    _view.DeletedObject.DataSource = supplierService.GetAllCustomerNotActive().
             //        Where(d => d.Name.Contains(_view.SearchtxtBox.Text)
             //        || d.SupplierNumber.ToString().Contains(_view.SearchtxtBox.Text)).ToList();
             //}

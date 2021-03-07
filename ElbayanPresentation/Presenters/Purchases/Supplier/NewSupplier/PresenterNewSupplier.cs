@@ -37,7 +37,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.Suppliers.NewSupplier
         {
             //if (_view.SuppliersName.Text != "")
             //{
-            //    supplierService.Create(new ElbayanServices.Repository.Customers.Suppliers.Supplier.Dtos.SupplierDto
+            //    supplierService.Create(new ElbayanServices.Repository.Clints.Suppliers.Supplier.Dtos.SupplierDto
             //    {
             //        SupplierNumber = Convert.ToInt32(_view.SupplierNumber.Text),
             //        Name = _view.SuppliersName.Text,

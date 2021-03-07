@@ -1,9 +1,9 @@
 ﻿using ElbayaNPresentation.Presenters.CommonPresenter;
-using ElbayanServices.Repository.Customers.Building;
-using ElbayanServices.Repository.Customers.Building.Dtos;
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using ElbayanServices.Repository.Clints.Building;
+using ElbayanServices.Repository.Clints.Building.Dtos;
 
 namespace ElbayaNPresentation.Presenters.Store.Building
 {
