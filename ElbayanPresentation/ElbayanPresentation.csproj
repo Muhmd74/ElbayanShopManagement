@@ -185,7 +185,6 @@
     <Compile Include="Views\Store\Unit\ucSmallUnit.Designer.cs">
       <DependentUpon>ucSmallUnit.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="StartUp\frmMainBoard.resx">
       <DependentUpon>frmMainBoard.cs</DependentUpon>
     </EmbeddedResource>
