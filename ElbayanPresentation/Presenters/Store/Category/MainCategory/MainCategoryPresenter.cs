@@ -94,20 +94,74 @@ namespace ElbayaNPresentation.Presenters.Store.Category.MainCategory
             }
        }
 
-        public void OnCLickbtnUpdate(Guid ID)
+        public void OnCLickbtnUpdate()
         {
-            Category.Update(new CategoryDto
+            if (_view.MainCategoryName.Text != string.Empty)
             {
-                Id = ID,
-                Name = _view.MainCategoryName.Text,
-                Description = _view.MainCategoryDescription.Text
-            });
+                Category.Update(new CategoryDto
+                {
+                    Id = _view.ID,
+                    Name = _view.MainCategoryName.Text,
+                    Description = _view.MainCategoryDescription.Text
+                });
+                MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
+                ClearControls();
+                PopulateDGV();
+            }
+            else
+            {
+                MessageBox.Show("لا بد من تحديد صف من البيانات من خلال الضغط مرتين على الصف", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
         }
-        public void OnClickDelete(Guid ID)
+        // 4. Delete
+        public void OnClickDelete()
         {
-            Category.DeleteOrRestore(ID);
+            if (_view.MainCategoryName.Text != string.Empty)
+            {
+                Category.DeleteOrRestore(_view.ID);
+                ClearControls();
+                if (_view.dgvTabControl.SelectedIndex == 0)
+                {
+                    _view.ActiveObjects.DataSource = Category.GetAll().ToList();
+                }
+                else if(_view.dgvTabControl.SelectedIndex == 1)
+                {
+                    _view.DeletedObjects.DataSource = Category.GetAllDeleted().ToList();
+                }
+                MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("لا بد من تحديد صف من البيانات من خلال الضغط مرتين على الصف", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
+
         }
 
+
+        // --- Clear Work ----- +
+
+        public void OnSelectedIndexChangedTabContainer()
+        {
+            if (_view.dgvTabControl.SelectedIndex == 0)
+            {
+                _view.ActiveObjects.DataSource = Category.GetAll().ToList();
+               _view.AddNewObject.Enabled = true;
+                _view.DeletedObjects.Text = "أرشفة التصنيف";
+                _view.UpdateObject.Enabled = true;
+                ClearControls();
+            }
+            else if (_view.dgvTabControl.SelectedIndex == 1)
+            {
+                _view.DeletedObjects.DataSource = Category.GetAllDeleted().ToList();
+                _view.AddNewObject.Enabled = false;
+                _view.DeletedObjects.Text = "إستعادة التصنيف";
+                _view.UpdateObject.Enabled = true;
+                ClearControls();
+                //dgvDeletedMainCategory.DataSource = Presenter.GetDeletedCategories();
+            }
+        }
         private void ClearControls()
         {
             _view.MainCategoryName.Text = _view.MainCategoryDescription.Text = _view.SearchBox.Text = "";

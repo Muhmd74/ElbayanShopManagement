@@ -58,43 +58,12 @@ namespace ElbayaNPresentation.Views.Store.Category
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (txtName.Text != string.Empty)
-            {
-                Presenter.OnCLickbtnUpdate(ID);
-                MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
-                txtName.Clear();
-                txtDescription.Clear();
-                //dgvActiveObjects.DataSource = Presenter.GetCategories();
-            }
-            else
-            {
-                MessageBox.Show("لا بد من تحديد صف من البيانات من خلال الضغط مرتين على الصف", "تأكيد", MessageBoxButtons.OK);
-                return;
-            }
+            Presenter.OnCLickbtnUpdate();
         }
 
         private void btnDeleteByOne_Click_1(object sender, EventArgs e)
         {
-            if (txtName.Text != string.Empty)
-            {
-                Presenter.OnClickDelete(ID);
-                txtName.Clear();
-                txtDescription.Clear();
-                if (tabDGVContainer.SelectedIndex == 1)
-                {
-                    //dgvDeletedMainCategory.DataSource = Presenter.GetDeletedCategories();
-                }
-                else
-                {
-                    //dgvActiveObjects.DataSource = Presenter.GetCategories();
-                }
-                MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
-            }
-            else
-            {
-                MessageBox.Show("لا بد من تحديد صف من البيانات من خلال الضغط مرتين على الصف", "تأكيد", MessageBoxButtons.OK);
-                return;
-            }
+            Presenter.OnClickDelete();
         }
 
         private void txtSearch_TextChanged_1(object sender, EventArgs e)
@@ -111,24 +80,7 @@ namespace ElbayaNPresentation.Views.Store.Category
 
         private void ActiveMainCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tabDGVContainer.SelectedIndex == 0)
-            {
-                //dgvActiveObjects.DataSource = Presenter.GetCategories();
-                btnAdd.Enabled = true;
-                btnDeleteByOne.Text = "أرشفة التصنيف";
-                btnUpdate.Enabled = true;
-                txtDescription.Text = txtName.Text = txtSearch.Text = "";
-            }
-            else if (tabDGVContainer.SelectedIndex == 1)
-            {
-                //dgvDeletedMainCategory.DataSource = Presenter.GetDeletedCategories();
-                dgvDeletedObjects.Columns[0].Visible = false;
-                DataGridViewStyle.StyleDatagridview(dgvDeletedObjects);
-                btnAdd.Enabled = false;
-                btnDeleteByOne.Text = "إستعادة التصنيف";
-                btnUpdate.Enabled = false;
-                txtDescription.Text = txtName.Text = txtSearch.Text = "";
-            }
+            Presenter.OnSelectedIndexChangedTabContainer();
         }
 
         private void dgvMainCategory_DoubleClick(object sender, EventArgs e)
@@ -144,17 +96,11 @@ namespace ElbayaNPresentation.Views.Store.Category
         private void dgvDeletedMainCategory_DoubleClick_1(object sender, EventArgs e)
         {
             Presenter.OnDoubleClickdgvDeletedObject();
-            //if (dgvDeletedObjects.CurrentRow.Index != -1)
-            //{
-            //    txtName.Text = dgvDeletedObjects.CurrentRow.Cells["DeletedName"].Value.ToString();
-            //    txtDescription.Text = dgvDeletedObjects.CurrentRow.Cells["DeletedDescription"].Value.ToString();
-            //    ID = new Guid(dgvDeletedObjects.CurrentRow.Cells["CategoryID"].Value.ToString());
-            //}
         }
 
         private void dgvDeletedMainCategory_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            this.dgvActiveObjects.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
+            //this.dgvActiveObjects.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
 
         }
 
