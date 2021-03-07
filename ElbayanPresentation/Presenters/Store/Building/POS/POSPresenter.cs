@@ -1,13 +1,13 @@
 ﻿using ElbayanDatabase.ConnectionTools;
 using ElbayaNPresentation.Presenters.CommonPresenter;
-using ElbayanServices.Repository.Customers.Poses;
-using ElbayanServices.Repository.Customers.Poses.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ElbayanServices.Repository.Clints.Poses;
+using ElbayanServices.Repository.Clints.Poses.Dtos;
 
 namespace ElbayaNPresentation.Presenters.Store.Building.POS
 {
