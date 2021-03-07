@@ -47,15 +47,15 @@
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.ActiveMainCategory = new System.Windows.Forms.TabControl();
+            this.tabDGVContainer = new System.Windows.Forms.TabControl();
             this.tpActiveMainCategory = new System.Windows.Forms.TabPage();
-            this.dgvMainCategory = new System.Windows.Forms.DataGridView();
+            this.dgvActiveObjects = new System.Windows.Forms.DataGridView();
             this.MainCategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AutoNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpDeletedMainCategory = new System.Windows.Forms.TabPage();
-            this.dgvDeletedMainCategory = new System.Windows.Forms.DataGridView();
+            this.dgvDeletedObjects = new System.Windows.Forms.DataGridView();
             this.CategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SerialNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeletedName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,11 +65,11 @@
             this.panelControl1.SuspendLayout();
             this.gbMainOperations.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
-            this.ActiveMainCategory.SuspendLayout();
+            this.tabDGVContainer.SuspendLayout();
             this.tpActiveMainCategory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMainCategory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvActiveObjects)).BeginInit();
             this.tpDeletedMainCategory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedMainCategory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedObjects)).BeginInit();
             this.SuspendLayout();
             // 
             // errorProvider
@@ -91,7 +91,6 @@
             this.gbMainOperations.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbMainOperations.BackColor = System.Drawing.Color.White;
-            this.gbMainOperations.BorderRadius = 10;
             this.gbMainOperations.Controls.Add(this.txtName);
             this.gbMainOperations.Controls.Add(this.txtDescription);
             this.gbMainOperations.Controls.Add(this.btnAdd);
@@ -118,7 +117,7 @@
             this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtName.BackColor = System.Drawing.Color.White;
             this.txtName.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtName.BorderRadius = 17;
+            this.txtName.BorderRadius = 11;
             this.txtName.BorderThickness = 2;
             this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtName.DefaultText = "";
@@ -141,14 +140,14 @@
             this.txtName.SelectedText = "";
             this.txtName.ShadowDecoration.Parent = this.txtName;
             this.txtName.Size = new System.Drawing.Size(542, 60);
-            this.txtName.TabIndex = 32;
+            this.txtName.TabIndex = 1;
             // 
             // txtDescription
             // 
             this.txtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDescription.BackColor = System.Drawing.Color.White;
             this.txtDescription.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtDescription.BorderRadius = 17;
+            this.txtDescription.BorderRadius = 11;
             this.txtDescription.BorderThickness = 2;
             this.txtDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDescription.DefaultText = "";
@@ -171,14 +170,14 @@
             this.txtDescription.PlaceholderText = "";
             this.txtDescription.SelectedText = "";
             this.txtDescription.ShadowDecoration.Parent = this.txtDescription;
-            this.txtDescription.Size = new System.Drawing.Size(542, 111);
-            this.txtDescription.TabIndex = 31;
+            this.txtDescription.Size = new System.Drawing.Size(542, 94);
+            this.txtDescription.TabIndex = 2;
             // 
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.BackColor = System.Drawing.Color.White;
-            this.btnAdd.BorderRadius = 17;
+            this.btnAdd.BorderRadius = 11;
             this.btnAdd.CheckedState.Parent = this.btnAdd;
             this.btnAdd.CustomImages.Parent = this.btnAdd;
             this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
@@ -197,7 +196,7 @@
             // 
             this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdate.BackColor = System.Drawing.Color.White;
-            this.btnUpdate.BorderRadius = 17;
+            this.btnUpdate.BorderRadius = 11;
             this.btnUpdate.CheckedState.Parent = this.btnUpdate;
             this.btnUpdate.CustomImages.Parent = this.btnUpdate;
             this.btnUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
@@ -216,7 +215,7 @@
             // 
             this.btnDeleteByOne.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDeleteByOne.BackColor = System.Drawing.Color.White;
-            this.btnDeleteByOne.BorderRadius = 17;
+            this.btnDeleteByOne.BorderRadius = 11;
             this.btnDeleteByOne.CheckedState.Parent = this.btnDeleteByOne;
             this.btnDeleteByOne.CustomImages.Parent = this.btnDeleteByOne;
             this.btnDeleteByOne.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
@@ -289,7 +288,7 @@
             this.txtSearch.SelectedText = "";
             this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
             this.txtSearch.Size = new System.Drawing.Size(412, 63);
-            this.txtSearch.TabIndex = 22;
+            this.txtSearch.TabIndex = 4;
             this.txtSearch.TextOffset = new System.Drawing.Point(25, 0);
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged_1);
             // 
@@ -300,13 +299,13 @@
             this.label9.ForeColor = System.Drawing.Color.DimGray;
             this.label9.Location = new System.Drawing.Point(446, 286);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(225, 32);
+            this.label9.Size = new System.Drawing.Size(166, 32);
             this.label9.TabIndex = 23;
-            this.label9.Text = "بحث باسم أو وصف التصنيف";
+            this.label9.Text = "بحث باسم  التصنيف";
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Controls.Add(this.ActiveMainCategory);
+            this.guna2Panel1.Controls.Add(this.tabDGVContainer);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 360);
             this.guna2Panel1.Name = "guna2Panel1";
@@ -314,27 +313,27 @@
             this.guna2Panel1.Size = new System.Drawing.Size(1535, 437);
             this.guna2Panel1.TabIndex = 2;
             // 
-            // ActiveMainCategory
+            // tabDGVContainer
             // 
-            this.ActiveMainCategory.Controls.Add(this.tpActiveMainCategory);
-            this.ActiveMainCategory.Controls.Add(this.tpDeletedMainCategory);
-            this.ActiveMainCategory.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ActiveMainCategory.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ActiveMainCategory.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ActiveMainCategory.ItemSize = new System.Drawing.Size(132, 59);
-            this.ActiveMainCategory.Location = new System.Drawing.Point(0, 3);
-            this.ActiveMainCategory.Name = "ActiveMainCategory";
-            this.ActiveMainCategory.RightToLeftLayout = true;
-            this.ActiveMainCategory.SelectedIndex = 0;
-            this.ActiveMainCategory.Size = new System.Drawing.Size(1535, 434);
-            this.ActiveMainCategory.TabIndex = 4;
-            this.ActiveMainCategory.SelectedIndexChanged += new System.EventHandler(this.ActiveMainCategory_SelectedIndexChanged);
+            this.tabDGVContainer.Controls.Add(this.tpActiveMainCategory);
+            this.tabDGVContainer.Controls.Add(this.tpDeletedMainCategory);
+            this.tabDGVContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tabDGVContainer.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabDGVContainer.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.tabDGVContainer.ItemSize = new System.Drawing.Size(132, 59);
+            this.tabDGVContainer.Location = new System.Drawing.Point(0, 3);
+            this.tabDGVContainer.Name = "tabDGVContainer";
+            this.tabDGVContainer.RightToLeftLayout = true;
+            this.tabDGVContainer.SelectedIndex = 0;
+            this.tabDGVContainer.Size = new System.Drawing.Size(1535, 434);
+            this.tabDGVContainer.TabIndex = 4;
+            this.tabDGVContainer.SelectedIndexChanged += new System.EventHandler(this.ActiveMainCategory_SelectedIndexChanged);
             // 
             // tpActiveMainCategory
             // 
             this.tpActiveMainCategory.BackColor = System.Drawing.Color.White;
             this.tpActiveMainCategory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.tpActiveMainCategory.Controls.Add(this.dgvMainCategory);
+            this.tpActiveMainCategory.Controls.Add(this.dgvActiveObjects);
             this.tpActiveMainCategory.ForeColor = System.Drawing.Color.White;
             this.tpActiveMainCategory.Location = new System.Drawing.Point(4, 63);
             this.tpActiveMainCategory.Name = "tpActiveMainCategory";
@@ -343,14 +342,14 @@
             this.tpActiveMainCategory.TabIndex = 0;
             this.tpActiveMainCategory.Text = "التصنيفات النشطة";
             // 
-            // dgvMainCategory
+            // dgvActiveObjects
             // 
-            this.dgvMainCategory.AllowUserToAddRows = false;
-            this.dgvMainCategory.AllowUserToDeleteRows = false;
-            this.dgvMainCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMainCategory.BackgroundColor = System.Drawing.Color.White;
-            this.dgvMainCategory.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvMainCategory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical;
+            this.dgvActiveObjects.AllowUserToAddRows = false;
+            this.dgvActiveObjects.AllowUserToDeleteRows = false;
+            this.dgvActiveObjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvActiveObjects.BackgroundColor = System.Drawing.Color.White;
+            this.dgvActiveObjects.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvActiveObjects.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -359,9 +358,9 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMainCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvMainCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMainCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvActiveObjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvActiveObjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvActiveObjects.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MainCategoryID,
             this.AutoNumber,
             this.CategoryName,
@@ -374,21 +373,21 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMainCategory.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvMainCategory.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvMainCategory.Location = new System.Drawing.Point(3, 6);
-            this.dgvMainCategory.Name = "dgvMainCategory";
-            this.dgvMainCategory.ReadOnly = true;
-            this.dgvMainCategory.RowHeadersWidth = 59;
+            this.dgvActiveObjects.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvActiveObjects.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvActiveObjects.Location = new System.Drawing.Point(3, 6);
+            this.dgvActiveObjects.Name = "dgvActiveObjects";
+            this.dgvActiveObjects.ReadOnly = true;
+            this.dgvActiveObjects.RowHeadersWidth = 59;
             dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 6, 0, 6);
-            this.dgvMainCategory.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvMainCategory.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgvMainCategory.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 6, 0, 6);
-            this.dgvMainCategory.RowTemplate.Height = 35;
-            this.dgvMainCategory.Size = new System.Drawing.Size(1521, 358);
-            this.dgvMainCategory.TabIndex = 0;
-            this.dgvMainCategory.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvMainCategory_RowPostPaint);
-            this.dgvMainCategory.DoubleClick += new System.EventHandler(this.dgvMainCategory_DoubleClick_1);
+            this.dgvActiveObjects.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvActiveObjects.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgvActiveObjects.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 6, 0, 6);
+            this.dgvActiveObjects.RowTemplate.Height = 35;
+            this.dgvActiveObjects.Size = new System.Drawing.Size(1521, 358);
+            this.dgvActiveObjects.TabIndex = 0;
+            this.dgvActiveObjects.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvMainCategory_RowPostPaint);
+            this.dgvActiveObjects.DoubleClick += new System.EventHandler(this.dgvMainCategory_DoubleClick);
             // 
             // MainCategoryID
             // 
@@ -427,7 +426,7 @@
             // 
             // tpDeletedMainCategory
             // 
-            this.tpDeletedMainCategory.Controls.Add(this.dgvDeletedMainCategory);
+            this.tpDeletedMainCategory.Controls.Add(this.dgvDeletedObjects);
             this.tpDeletedMainCategory.Location = new System.Drawing.Point(4, 63);
             this.tpDeletedMainCategory.Name = "tpDeletedMainCategory";
             this.tpDeletedMainCategory.Padding = new System.Windows.Forms.Padding(3);
@@ -436,12 +435,12 @@
             this.tpDeletedMainCategory.Text = "التصنفيات المؤرشفة";
             this.tpDeletedMainCategory.UseVisualStyleBackColor = true;
             // 
-            // dgvDeletedMainCategory
+            // dgvDeletedObjects
             // 
-            this.dgvDeletedMainCategory.AllowUserToAddRows = false;
-            this.dgvDeletedMainCategory.AllowUserToDeleteRows = false;
-            this.dgvDeletedMainCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDeletedMainCategory.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDeletedObjects.AllowUserToAddRows = false;
+            this.dgvDeletedObjects.AllowUserToDeleteRows = false;
+            this.dgvDeletedObjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDeletedObjects.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HotTrack;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -450,25 +449,25 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDeletedMainCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvDeletedMainCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDeletedMainCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDeletedObjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvDeletedObjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDeletedObjects.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CategoryID,
             this.SerialNumber,
             this.DeletedName,
             this.DeletedDescription});
-            this.dgvDeletedMainCategory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDeletedMainCategory.Location = new System.Drawing.Point(3, 3);
-            this.dgvDeletedMainCategory.Name = "dgvDeletedMainCategory";
-            this.dgvDeletedMainCategory.ReadOnly = true;
-            this.dgvDeletedMainCategory.RowHeadersWidth = 51;
-            this.dgvDeletedMainCategory.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgvDeletedMainCategory.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            this.dgvDeletedMainCategory.RowTemplate.Height = 35;
-            this.dgvDeletedMainCategory.Size = new System.Drawing.Size(1521, 361);
-            this.dgvDeletedMainCategory.TabIndex = 1;
-            this.dgvDeletedMainCategory.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvDeletedMainCategory_RowPostPaint);
-            this.dgvDeletedMainCategory.DoubleClick += new System.EventHandler(this.dgvDeletedMainCategory_DoubleClick_1);
+            this.dgvDeletedObjects.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDeletedObjects.Location = new System.Drawing.Point(3, 3);
+            this.dgvDeletedObjects.Name = "dgvDeletedObjects";
+            this.dgvDeletedObjects.ReadOnly = true;
+            this.dgvDeletedObjects.RowHeadersWidth = 51;
+            this.dgvDeletedObjects.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgvDeletedObjects.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.dgvDeletedObjects.RowTemplate.Height = 35;
+            this.dgvDeletedObjects.Size = new System.Drawing.Size(1521, 361);
+            this.dgvDeletedObjects.TabIndex = 1;
+            this.dgvDeletedObjects.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvDeletedMainCategory_RowPostPaint);
+            this.dgvDeletedObjects.DoubleClick += new System.EventHandler(this.dgvDeletedMainCategory_DoubleClick_1);
             // 
             // CategoryID
             // 
@@ -519,11 +518,11 @@
             this.gbMainOperations.ResumeLayout(false);
             this.gbMainOperations.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
-            this.ActiveMainCategory.ResumeLayout(false);
+            this.tabDGVContainer.ResumeLayout(false);
             this.tpActiveMainCategory.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMainCategory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvActiveObjects)).EndInit();
             this.tpDeletedMainCategory.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedMainCategory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedObjects)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -542,11 +541,11 @@
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private System.Windows.Forms.TabControl ActiveMainCategory;
+        private System.Windows.Forms.TabControl tabDGVContainer;
         private System.Windows.Forms.TabPage tpActiveMainCategory;
-        public System.Windows.Forms.DataGridView dgvMainCategory;
+        public System.Windows.Forms.DataGridView dgvActiveObjects;
         private System.Windows.Forms.TabPage tpDeletedMainCategory;
-        private System.Windows.Forms.DataGridView dgvDeletedMainCategory;
+        private System.Windows.Forms.DataGridView dgvDeletedObjects;
         private System.Windows.Forms.DataGridViewTextBoxColumn MainCategoryID;
         private System.Windows.Forms.DataGridViewTextBoxColumn AutoNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn CategoryName;
