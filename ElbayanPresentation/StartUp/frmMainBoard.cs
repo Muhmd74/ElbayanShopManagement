@@ -144,13 +144,13 @@ namespace ElbayaNPresentation
 
         private void barBtnBuilding_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (!gcContainer.Controls.Contains(ucBuilding.Instance))
+            if (!gcContainer.Controls.Contains(ucBuildings.Instance))
             {
-                gcContainer.Controls.Add(ucBuilding.Instance);
-                ucBuilding.Instance.Dock = DockStyle.Fill;
-                ucBuilding.Instance.BringToFront();
+                gcContainer.Controls.Add(ucBuildings.Instance);
+                ucBuildings.Instance.Dock = DockStyle.Fill;
+                ucBuildings.Instance.BringToFront();
             }
-            ucBuilding.Instance.BringToFront();
+            ucBuildings.Instance.BringToFront();
         }
 
         private void barBtnPOSs_ItemClick(object sender, ItemClickEventArgs e)
