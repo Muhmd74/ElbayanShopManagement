@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using ElbayanDatabase.ConnectionTools;
 using ElbayanDatabase.DataClasses.Clints;
-using ElbayanServices.Repository.Clints.Supplier.Dtos;
+using ElbayanServices.Repository.Clints.Customer.Dtos;
+using ClintDto = ElbayanServices.Repository.Clints.Supplier.Dtos.ClintDto;
 
 namespace ElbayanServices.Repository.Clints.Customer
 {
@@ -71,9 +72,8 @@ namespace ElbayanServices.Repository.Clints.Customer
         public List<ClintDto> GetAllCustomer()
         {
             return _context.Clints
-                .Where(d=>d.IsSupplier==false
-                          &&d.IsCustomer
-                          &&d.IsActive)
+                .Where(d=>d.IsCustomer
+                            &&d.IsActive)
                 .Select(d => new ClintDto()
             {
                 Description = d.Description,
@@ -91,11 +91,22 @@ namespace ElbayanServices.Repository.Clints.Customer
                  FaxNumber = d.FaxNumber
             }).ToList();
         }
+
+        public List<CustomerNameDto> GetCustomerName()
+        {
+            return _context.Clints.Where(d => d.IsCustomer
+                                              && d.IsActive
+            ).Select(d => new CustomerNameDto()
+            {
+                Id = d.Id,
+                Name = d.Name
+            }).ToList();
+        }
+
         public List<ClintDto> GetAllCustomerNotActive()
         {
             return _context.Clints
-                .Where(d =>d.IsSupplier==false
-                           &&d.IsCustomer
+                .Where(d =>d.IsCustomer
                            && d.IsActive==false)
                 .Select(d => new ClintDto()
                 {

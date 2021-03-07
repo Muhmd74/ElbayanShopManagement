@@ -9,6 +9,7 @@ namespace ElbayanServices.Repository.Clints.Supplier
        // bool CreateSupplier(ClintDto model);
       //  bool UpdateSupplier(ClintDto model);
         List<ClintDto> GetAllSupplier();
+        List<SupplierNameDto> GetSupplierName();
         List<ClintDto> GetAllSupplierNotActive();
         ClintDto GetSupplierById( Guid id);
         bool ChangeActivity(Guid id);

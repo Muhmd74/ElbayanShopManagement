@@ -69,7 +69,6 @@ namespace ElbayanServices.Repository.Clints.Supplier
         {
             return _context.Clints
                 .Where(d=>d.IsSupplier
-                          &&d.IsCustomer==false
                           &&d.IsActive)
                 .Select(d => new ClintDto()
             {
@@ -88,11 +87,22 @@ namespace ElbayanServices.Repository.Clints.Supplier
                  FaxNumber = d.FaxNumber
             }).ToList();
         }
+
+        public List<SupplierNameDto> GetSupplierName()
+        {
+            return _context.Clints.Where(d => d.IsSupplier
+                                              && d.IsActive)
+                .Select(d => new SupplierNameDto()
+                {
+                    Id = d.Id,
+                    Name = d.Name
+                }).ToList();
+        }
+
         public List<ClintDto> GetAllSupplierNotActive()
         {
             return _context.Clints
                 .Where(d =>d.IsSupplier
-                           &&d.IsCustomer==false
                            && d.IsActive==false)
                 .Select(d => new ClintDto()
                 {
