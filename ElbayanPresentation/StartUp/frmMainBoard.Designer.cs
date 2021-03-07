@@ -81,11 +81,11 @@ namespace ElbayaNPresentation
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 1030);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 761);
             this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(14, 15, 14, 15);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1766, 32);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1393, 32);
             // 
             // ribbon
             // 
@@ -134,7 +134,7 @@ namespace ElbayaNPresentation
             this.ribbon.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowPageHeadersInFormCaption = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbon.Size = new System.Drawing.Size(1766, 229);
+            this.ribbon.Size = new System.Drawing.Size(1393, 229);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Above;
             // 
@@ -792,7 +792,7 @@ namespace ElbayaNPresentation
             this.gcContainer.Font = new System.Drawing.Font("Arabic Typesetting", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gcContainer.Location = new System.Drawing.Point(0, 229);
             this.gcContainer.Name = "gcContainer";
-            this.gcContainer.Size = new System.Drawing.Size(1766, 801);
+            this.gcContainer.Size = new System.Drawing.Size(1393, 532);
             this.gcContainer.TabIndex = 13;
             // 
             // ribbonPageGroup2
@@ -838,7 +838,7 @@ namespace ElbayaNPresentation
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1766, 1062);
+            this.ClientSize = new System.Drawing.Size(1393, 793);
             this.Controls.Add(this.gcContainer);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.tabFormContentContainer1);
