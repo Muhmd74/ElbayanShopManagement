@@ -139,7 +139,19 @@ namespace ElbayaNPresentation.Presenters.Store.Category.MainCategory
 
         }
 
+        // 5. Search 
 
+        public void OnTextChangedSearch()
+        {
+            if (_view.dgvTabControl.SelectedIndex == 0)
+            {
+                _view.ActiveObjects.DataSource = Category.GetAll().Where(d => d.Name.Contains(_view.SearchBox.Text)).ToList();
+            }
+            else if (_view.dgvTabControl.SelectedIndex == 1)
+            {
+                _view.DeletedObjects.DataSource = Category.GetAllDeleted().Where(d => d.Name.Contains(_view.SearchBox.Text)).ToList();
+            }
+        }
         // --- Clear Work ----- +
 
         public void OnSelectedIndexChangedTabContainer()
@@ -148,7 +160,7 @@ namespace ElbayaNPresentation.Presenters.Store.Category.MainCategory
             {
                 _view.ActiveObjects.DataSource = Category.GetAll().ToList();
                _view.AddNewObject.Enabled = true;
-                _view.DeletedObjects.Text = "أرشفة التصنيف";
+                _view.DeleteObject.Text = "أرشفة التصنيف";
                 _view.UpdateObject.Enabled = true;
                 ClearControls();
             }
@@ -156,10 +168,9 @@ namespace ElbayaNPresentation.Presenters.Store.Category.MainCategory
             {
                 _view.DeletedObjects.DataSource = Category.GetAllDeleted().ToList();
                 _view.AddNewObject.Enabled = false;
-                _view.DeletedObjects.Text = "إستعادة التصنيف";
+                _view.DeleteObject.Text = "إستعادة التصنيف";
                 _view.UpdateObject.Enabled = true;
                 ClearControls();
-                //dgvDeletedMainCategory.DataSource = Presenter.GetDeletedCategories();
             }
         }
         private void ClearControls()

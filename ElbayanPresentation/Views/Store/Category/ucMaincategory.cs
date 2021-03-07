@@ -68,14 +68,7 @@ namespace ElbayaNPresentation.Views.Store.Category
 
         private void txtSearch_TextChanged_1(object sender, EventArgs e)
         {
-            if (tabDGVContainer.SelectedIndex == 0)
-            {
-                //dgvActiveObjects.DataSource = Presenter.FilterDataGridView().ToList();
-            }
-            else if (tabDGVContainer.SelectedIndex == 1)
-            {
-                //dgvDeletedMainCategory.DataSource = Presenter.FilterDataGridViewDeleted();
-            }
+            Presenter.OnTextChangedSearch();
         }
 
         private void ActiveMainCategory_SelectedIndexChanged(object sender, EventArgs e)
@@ -100,8 +93,7 @@ namespace ElbayaNPresentation.Views.Store.Category
 
         private void dgvDeletedMainCategory_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            //this.dgvActiveObjects.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
-
+            this.dgvDeletedObjects.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
         }
 
         

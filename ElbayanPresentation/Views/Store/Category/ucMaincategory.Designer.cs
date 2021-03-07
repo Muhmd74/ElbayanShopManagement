@@ -299,9 +299,9 @@
             this.label9.ForeColor = System.Drawing.Color.DimGray;
             this.label9.Location = new System.Drawing.Point(446, 286);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(225, 32);
+            this.label9.Size = new System.Drawing.Size(166, 32);
             this.label9.TabIndex = 23;
-            this.label9.Text = "بحث باسم أو وصف التصنيف";
+            this.label9.Text = "بحث باسم  التصنيف";
             // 
             // guna2Panel1
             // 
