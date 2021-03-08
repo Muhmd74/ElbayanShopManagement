@@ -84,6 +84,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Presenters\Clients\IViewNewClient.cs" />
+    <Compile Include="Presenters\Clients\PresenterNewClient.cs" />
     <Compile Include="Presenters\CommonPresenter\DataGridViewStyle.cs" />
     <Compile Include="Presenters\CommonPresenter\ValidateControls.cs" />
     <Compile Include="Presenters\Purchases\Supplier\NewSupplier\IViewNewSupplier.cs" />
@@ -119,11 +121,11 @@
     <Compile Include="Presenters\Store\Category\SubCategory\IViewSubCategory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\Client\Suppliers\SupplierData\frmNewSupplier.cs">
+    <Compile Include="Views\Client\frmNewClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Client\Suppliers\SupplierData\frmNewSupplier.Designer.cs">
-      <DependentUpon>frmNewSupplier.cs</DependentUpon>
+    <Compile Include="Views\Client\frmNewClient.Designer.cs">
+      <DependentUpon>frmNewClient.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Client\Suppliers\SupplierData\ucAllSupplierData.cs">
       <SubType>UserControl</SubType>
@@ -194,8 +196,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Client\Suppliers\SupplierData\frmNewSupplier.resx">
-      <DependentUpon>frmNewSupplier.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Client\frmNewClient.resx">
+      <DependentUpon>frmNewClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Client\Suppliers\SupplierData\ucAllSupplierData.resx">
       <DependentUpon>ucAllSupplierData.cs</DependentUpon>
@@ -251,7 +253,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\ProductImage\" />
-    <Folder Include="Views\Client\CustomerType\" />
     <Folder Include="Views\Purchases\" />
   </ItemGroup>
   <ItemGroup>

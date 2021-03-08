@@ -10,26 +10,6 @@ namespace ElbayaNPresentation.Presenters.Purchases.Suppliers.NewSupplier
 {
     public interface IViewNewSupplier
     {
-        Guid ID { get; set; }
-        Guna2TextBox RefSupplierNumber { get; set; }
-        Guna2TextBox SuppliersName { get; set; }
-        Guna2TextBox IdentityNumber { get; set; }
-        Guna2TextBox Mobile { get; set; }
-        Guna2TextBox Fax { get; set; }
-        Guna2TextBox Email { get; set; }
-        Guna2TextBox FirmName { get; set; }
-        Guna2TextBox TradeLicense { get; set; }
-        Guna2TextBox TaxNumber { get; set; }
-        Guna2TextBox FirmPhoneNumber { get; set; }
-        Guna2TextBox Address { get; set; }
-        Guna2TextBox Note { get; set; }
-        CheckBox IsActive { get; set; }
-        NumericUpDown OpeningBalance { get; set; }
-        NumericUpDown CurrentBalance { get; set; }
-        Guna2Button AddNewObject { get; set; }
-        Guna2Button UpdateObject { get; set; }
-        Guna2Button DeleteObject { get; set; }
-        Guna2Button BackToUc { get; set; }
-        PresenterNewSupplier Presenter { get; set; }
+        
     }
 }

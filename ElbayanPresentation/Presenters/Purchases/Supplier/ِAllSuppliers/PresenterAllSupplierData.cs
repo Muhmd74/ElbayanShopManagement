@@ -39,7 +39,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.Supplier._ِAllSuppliers
 
         public void OnClickbtnAddNewObject()
         {
-            frmNewSupplier.Instance.ShowDialog();
+            //frmNewSupplier.Instance.ShowDialog();
         }
        
         // Search ->

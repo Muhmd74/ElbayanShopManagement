@@ -42,7 +42,7 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Presenter.OnClickbtnAddNewObject(); 
+            Presenter.OnClickbtnAddNewObject();
         }
     }
 }
