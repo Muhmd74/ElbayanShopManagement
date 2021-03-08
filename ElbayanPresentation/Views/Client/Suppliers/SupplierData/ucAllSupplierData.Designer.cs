@@ -29,78 +29,48 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucSupplierData));
             System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucSupplierData));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.IsDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
-            this.dgvLargeUnitDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LargeUnitWeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabDeletedObjects = new System.Windows.Forms.TabPage();
-            this.dgvDeletedObjects = new System.Windows.Forms.DataGridView();
-            this.DeletedObjectPhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DeletedObjectAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DeletedObjectDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DeletedObjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DeletedBuildingId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvTabContainer = new System.Windows.Forms.TabControl();
             this.tabActiveObjects = new System.Windows.Forms.TabPage();
             this.dgvActiveObjects = new System.Windows.Forms.DataGridView();
-            this.ActiveBuildingPhoneNUmber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActiveSupplierAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActiveSupplierDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActiveSupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActiveSupplierId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvTabContainer = new System.Windows.Forms.TabControl();
+            this.tabDeletedObjects = new System.Windows.Forms.TabPage();
+            this.dgvDeletedObjects = new System.Windows.Forms.DataGridView();
+            this.IsDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvLargeUnitDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LargeUnitWeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
             tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
-            this.tabDeletedObjects.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedObjects)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.dgvTabContainer.SuspendLayout();
             this.tabActiveObjects.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActiveObjects)).BeginInit();
-            this.dgvTabContainer.SuspendLayout();
+            this.tabDeletedObjects.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedObjects)).BeginInit();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // tableLayoutPanel2
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dgvTabContainer, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.36745F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.63255F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1550, 762);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnAdd.BackColor = System.Drawing.Color.White;
-            this.btnAdd.BorderRadius = 9;
-            this.btnAdd.CheckedState.Parent = this.btnAdd;
-            this.btnAdd.CustomImages.Parent = this.btnAdd;
-            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
-            this.btnAdd.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnAdd.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnAdd.Location = new System.Drawing.Point(3, 12);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
-            this.btnAdd.Size = new System.Drawing.Size(192, 51);
-            this.btnAdd.TabIndex = 32;
-            this.btnAdd.Text = "إضافة مورد جديد";
-            this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            tableLayoutPanel2.ColumnCount = 3;
+            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.18631F));
+            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.81369F));
+            tableLayoutPanel2.Controls.Add(this.txtSearch, 1, 0);
+            tableLayoutPanel2.Controls.Add(this.label9, 0, 0);
+            tableLayoutPanel2.Controls.Add(this.btnAdd, 2, 0);
+            tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 1;
+            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel2.Size = new System.Drawing.Size(1018, 80);
+            tableLayoutPanel2.TabIndex = 33;
             // 
             // txtSearch
             // 
@@ -119,7 +89,7 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
             this.txtSearch.FillColor = System.Drawing.Color.PapayaWhip;
             this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.FocusedState.Parent = this.txtSearch;
-            this.txtSearch.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Font = new System.Drawing.Font("Sakkal Majalla", 9F, System.Drawing.FontStyle.Bold);
             this.txtSearch.ForeColor = System.Drawing.Color.Gray;
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.HoverState.Parent = this.txtSearch;
@@ -128,16 +98,161 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
             this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
             this.txtSearch.IconRightOffset = new System.Drawing.Point(10, 0);
             this.txtSearch.IconRightSize = new System.Drawing.Size(35, 35);
-            this.txtSearch.Location = new System.Drawing.Point(806, 8);
+            this.txtSearch.Location = new System.Drawing.Point(390, 8);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "";
             this.txtSearch.SelectedText = "";
             this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
-            this.txtSearch.Size = new System.Drawing.Size(480, 59);
+            this.txtSearch.Size = new System.Drawing.Size(480, 64);
             this.txtSearch.TabIndex = 30;
             this.txtSearch.TextOffset = new System.Drawing.Point(25, 0);
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Sakkal Majalla", 9F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.Color.DimGray;
+            this.label9.Location = new System.Drawing.Point(879, 19);
+            this.label9.Name = "label9";
+            this.label9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label9.Size = new System.Drawing.Size(136, 42);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "بحث باسم أو  رقم التليفون أو رقم المورد";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnAdd.BackColor = System.Drawing.Color.White;
+            this.btnAdd.BorderRadius = 9;
+            this.btnAdd.CheckedState.Parent = this.btnAdd;
+            this.btnAdd.CustomImages.Parent = this.btnAdd;
+            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
+            this.btnAdd.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.HoverState.Parent = this.btnAdd;
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnAdd.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnAdd.Location = new System.Drawing.Point(3, 14);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
+            this.btnAdd.Size = new System.Drawing.Size(192, 51);
+            this.btnAdd.TabIndex = 32;
+            this.btnAdd.Text = "إضافة مورد جديد";
+            this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dgvTabContainer, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.19792F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.80209F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1024, 768);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // dgvTabContainer
+            // 
+            this.dgvTabContainer.Controls.Add(this.tabActiveObjects);
+            this.dgvTabContainer.Controls.Add(this.tabDeletedObjects);
+            this.dgvTabContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTabContainer.Font = new System.Drawing.Font("Sakkal Majalla", 11.8F, System.Drawing.FontStyle.Bold);
+            this.dgvTabContainer.ItemSize = new System.Drawing.Size(132, 59);
+            this.dgvTabContainer.Location = new System.Drawing.Point(3, 89);
+            this.dgvTabContainer.Name = "dgvTabContainer";
+            this.dgvTabContainer.Padding = new System.Drawing.Point(6, 5);
+            this.dgvTabContainer.RightToLeftLayout = true;
+            this.dgvTabContainer.SelectedIndex = 0;
+            this.dgvTabContainer.Size = new System.Drawing.Size(1018, 676);
+            this.dgvTabContainer.TabIndex = 29;
+            // 
+            // tabActiveObjects
+            // 
+            this.tabActiveObjects.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.tabActiveObjects.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.tabActiveObjects.Controls.Add(this.dgvActiveObjects);
+            this.tabActiveObjects.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabActiveObjects.ForeColor = System.Drawing.Color.White;
+            this.tabActiveObjects.Location = new System.Drawing.Point(4, 63);
+            this.tabActiveObjects.Name = "tabActiveObjects";
+            this.tabActiveObjects.Padding = new System.Windows.Forms.Padding(3);
+            this.tabActiveObjects.Size = new System.Drawing.Size(1010, 616);
+            this.tabActiveObjects.TabIndex = 0;
+            this.tabActiveObjects.Text = "قائمة الموردون النشطة";
+            // 
+            // dgvActiveObjects
+            // 
+            this.dgvActiveObjects.AllowUserToAddRows = false;
+            this.dgvActiveObjects.AllowUserToDeleteRows = false;
+            this.dgvActiveObjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvActiveObjects.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvActiveObjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvActiveObjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvActiveObjects.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvActiveObjects.Location = new System.Drawing.Point(3, 3);
+            this.dgvActiveObjects.Name = "dgvActiveObjects";
+            this.dgvActiveObjects.ReadOnly = true;
+            this.dgvActiveObjects.RowHeadersWidth = 51;
+            this.dgvActiveObjects.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgvActiveObjects.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.dgvActiveObjects.RowTemplate.Height = 35;
+            this.dgvActiveObjects.Size = new System.Drawing.Size(1004, 610);
+            this.dgvActiveObjects.TabIndex = 0;
+            // 
+            // tabDeletedObjects
+            // 
+            this.tabDeletedObjects.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.tabDeletedObjects.Controls.Add(this.dgvDeletedObjects);
+            this.tabDeletedObjects.Location = new System.Drawing.Point(4, 63);
+            this.tabDeletedObjects.Name = "tabDeletedObjects";
+            this.tabDeletedObjects.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDeletedObjects.Size = new System.Drawing.Size(1010, 609);
+            this.tabDeletedObjects.TabIndex = 1;
+            this.tabDeletedObjects.Text = "قائمة الموردون المؤرشفة";
+            // 
+            // dgvDeletedObjects
+            // 
+            this.dgvDeletedObjects.AllowUserToAddRows = false;
+            this.dgvDeletedObjects.AllowUserToDeleteRows = false;
+            this.dgvDeletedObjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvDeletedObjects.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sakkal Majalla", 11.8F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDeletedObjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDeletedObjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDeletedObjects.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDeletedObjects.Location = new System.Drawing.Point(3, 3);
+            this.dgvDeletedObjects.Name = "dgvDeletedObjects";
+            this.dgvDeletedObjects.ReadOnly = true;
+            this.dgvDeletedObjects.RowHeadersWidth = 51;
+            this.dgvDeletedObjects.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgvDeletedObjects.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.dgvDeletedObjects.RowTemplate.Height = 35;
+            this.dgvDeletedObjects.Size = new System.Drawing.Size(1004, 603);
+            this.dgvDeletedObjects.TabIndex = 1;
             // 
             // IsDeleted
             // 
@@ -148,20 +263,6 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
             this.IsDeleted.ReadOnly = true;
             this.IsDeleted.Visible = false;
             this.IsDeleted.Width = 125;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(1300, 25);
-            this.label9.Name = "label9";
-            this.label9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label9.Size = new System.Drawing.Size(241, 25);
-            this.label9.TabIndex = 31;
-            this.label9.Text = "بحث باسم أو  رقم التليفون أو رقم المورد";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // dgvLargeUnitDescription
             // 
@@ -183,221 +284,6 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
             this.LargeUnitWeight.Visible = false;
             this.LargeUnitWeight.Width = 125;
             // 
-            // tableLayoutPanel2
-            // 
-            tableLayoutPanel2.ColumnCount = 3;
-            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.04943F));
-            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.95057F));
-            tableLayoutPanel2.Controls.Add(this.txtSearch, 1, 0);
-            tableLayoutPanel2.Controls.Add(this.label9, 0, 0);
-            tableLayoutPanel2.Controls.Add(this.btnAdd, 2, 0);
-            tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 1;
-            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tableLayoutPanel2.Size = new System.Drawing.Size(1544, 73);
-            tableLayoutPanel2.TabIndex = 33;
-            // 
-            // tabDeletedObjects
-            // 
-            this.tabDeletedObjects.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.tabDeletedObjects.Controls.Add(this.dgvDeletedObjects);
-            this.tabDeletedObjects.Location = new System.Drawing.Point(4, 63);
-            this.tabDeletedObjects.Name = "tabDeletedObjects";
-            this.tabDeletedObjects.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDeletedObjects.Size = new System.Drawing.Size(1536, 318);
-            this.tabDeletedObjects.TabIndex = 1;
-            this.tabDeletedObjects.Text = "قائمة الموردون المؤرشفة";
-            // 
-            // dgvDeletedObjects
-            // 
-            this.dgvDeletedObjects.AllowUserToAddRows = false;
-            this.dgvDeletedObjects.AllowUserToDeleteRows = false;
-            this.dgvDeletedObjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvDeletedObjects.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDeletedObjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDeletedObjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDeletedObjects.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DeletedBuildingId,
-            this.DeletedObjectName,
-            this.DeletedObjectDescription,
-            this.DeletedObjectAddress,
-            this.DeletedObjectPhoneNumber});
-            this.dgvDeletedObjects.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDeletedObjects.Location = new System.Drawing.Point(3, 3);
-            this.dgvDeletedObjects.Name = "dgvDeletedObjects";
-            this.dgvDeletedObjects.ReadOnly = true;
-            this.dgvDeletedObjects.RowHeadersWidth = 51;
-            this.dgvDeletedObjects.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgvDeletedObjects.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            this.dgvDeletedObjects.RowTemplate.Height = 35;
-            this.dgvDeletedObjects.Size = new System.Drawing.Size(1530, 312);
-            this.dgvDeletedObjects.TabIndex = 1;
-            // 
-            // DeletedObjectPhoneNumber
-            // 
-            this.DeletedObjectPhoneNumber.DataPropertyName = "PhoneNumber";
-            this.DeletedObjectPhoneNumber.HeaderText = "رقم الهاتف للمخزن";
-            this.DeletedObjectPhoneNumber.MinimumWidth = 6;
-            this.DeletedObjectPhoneNumber.Name = "DeletedObjectPhoneNumber";
-            this.DeletedObjectPhoneNumber.ReadOnly = true;
-            this.DeletedObjectPhoneNumber.Width = 180;
-            // 
-            // DeletedObjectAddress
-            // 
-            this.DeletedObjectAddress.DataPropertyName = "Address";
-            this.DeletedObjectAddress.HeaderText = "عنوان المكان أو المخزن";
-            this.DeletedObjectAddress.MinimumWidth = 6;
-            this.DeletedObjectAddress.Name = "DeletedObjectAddress";
-            this.DeletedObjectAddress.ReadOnly = true;
-            this.DeletedObjectAddress.Width = 199;
-            // 
-            // DeletedObjectDescription
-            // 
-            this.DeletedObjectDescription.DataPropertyName = "Description";
-            this.DeletedObjectDescription.HeaderText = "وصف المكان أو المخزن";
-            this.DeletedObjectDescription.MinimumWidth = 6;
-            this.DeletedObjectDescription.Name = "DeletedObjectDescription";
-            this.DeletedObjectDescription.ReadOnly = true;
-            this.DeletedObjectDescription.Width = 197;
-            // 
-            // DeletedObjectName
-            // 
-            this.DeletedObjectName.DataPropertyName = "Name";
-            this.DeletedObjectName.HeaderText = "اسم المخزن أو الفرع";
-            this.DeletedObjectName.MinimumWidth = 6;
-            this.DeletedObjectName.Name = "DeletedObjectName";
-            this.DeletedObjectName.ReadOnly = true;
-            this.DeletedObjectName.Width = 183;
-            // 
-            // DeletedBuildingId
-            // 
-            this.DeletedBuildingId.DataPropertyName = "Id";
-            this.DeletedBuildingId.HeaderText = "الرقم المرجعي";
-            this.DeletedBuildingId.MinimumWidth = 6;
-            this.DeletedBuildingId.Name = "DeletedBuildingId";
-            this.DeletedBuildingId.ReadOnly = true;
-            this.DeletedBuildingId.Visible = false;
-            this.DeletedBuildingId.Width = 125;
-            // 
-            // tabActiveObjects
-            // 
-            this.tabActiveObjects.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.tabActiveObjects.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.tabActiveObjects.Controls.Add(this.dgvActiveObjects);
-            this.tabActiveObjects.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabActiveObjects.ForeColor = System.Drawing.Color.White;
-            this.tabActiveObjects.Location = new System.Drawing.Point(4, 63);
-            this.tabActiveObjects.Name = "tabActiveObjects";
-            this.tabActiveObjects.Padding = new System.Windows.Forms.Padding(3);
-            this.tabActiveObjects.Size = new System.Drawing.Size(1536, 610);
-            this.tabActiveObjects.TabIndex = 0;
-            this.tabActiveObjects.Text = "قائمة الموردون النشطة";
-            // 
-            // dgvActiveObjects
-            // 
-            this.dgvActiveObjects.AllowUserToAddRows = false;
-            this.dgvActiveObjects.AllowUserToDeleteRows = false;
-            this.dgvActiveObjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvActiveObjects.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvActiveObjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvActiveObjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvActiveObjects.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ActiveSupplierId,
-            this.ActiveSupplierName,
-            this.ActiveSupplierDescription,
-            this.ActiveSupplierAddress,
-            this.ActiveBuildingPhoneNUmber});
-            this.dgvActiveObjects.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvActiveObjects.Location = new System.Drawing.Point(3, 3);
-            this.dgvActiveObjects.Name = "dgvActiveObjects";
-            this.dgvActiveObjects.ReadOnly = true;
-            this.dgvActiveObjects.RowHeadersWidth = 51;
-            this.dgvActiveObjects.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgvActiveObjects.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            this.dgvActiveObjects.RowTemplate.Height = 35;
-            this.dgvActiveObjects.Size = new System.Drawing.Size(1530, 604);
-            this.dgvActiveObjects.TabIndex = 0;
-            // 
-            // ActiveBuildingPhoneNUmber
-            // 
-            this.ActiveBuildingPhoneNUmber.DataPropertyName = "Mobile";
-            this.ActiveBuildingPhoneNUmber.HeaderText = "رقم الهاتف ";
-            this.ActiveBuildingPhoneNUmber.MinimumWidth = 6;
-            this.ActiveBuildingPhoneNUmber.Name = "ActiveBuildingPhoneNUmber";
-            this.ActiveBuildingPhoneNUmber.ReadOnly = true;
-            this.ActiveBuildingPhoneNUmber.Width = 126;
-            // 
-            // ActiveSupplierAddress
-            // 
-            this.ActiveSupplierAddress.DataPropertyName = "Address";
-            this.ActiveSupplierAddress.HeaderText = "عنوان الشركة";
-            this.ActiveSupplierAddress.MinimumWidth = 6;
-            this.ActiveSupplierAddress.Name = "ActiveSupplierAddress";
-            this.ActiveSupplierAddress.ReadOnly = true;
-            this.ActiveSupplierAddress.Width = 145;
-            // 
-            // ActiveSupplierDescription
-            // 
-            this.ActiveSupplierDescription.DataPropertyName = "Description";
-            this.ActiveSupplierDescription.HeaderText = "وصف المورد";
-            this.ActiveSupplierDescription.MinimumWidth = 6;
-            this.ActiveSupplierDescription.Name = "ActiveSupplierDescription";
-            this.ActiveSupplierDescription.ReadOnly = true;
-            this.ActiveSupplierDescription.Width = 128;
-            // 
-            // ActiveSupplierName
-            // 
-            this.ActiveSupplierName.DataPropertyName = "Name";
-            this.ActiveSupplierName.HeaderText = "اسم المورد";
-            this.ActiveSupplierName.MinimumWidth = 6;
-            this.ActiveSupplierName.Name = "ActiveSupplierName";
-            this.ActiveSupplierName.ReadOnly = true;
-            this.ActiveSupplierName.Width = 115;
-            // 
-            // ActiveSupplierId
-            // 
-            this.ActiveSupplierId.DataPropertyName = "Id";
-            this.ActiveSupplierId.HeaderText = "الرقم المرجعي";
-            this.ActiveSupplierId.MinimumWidth = 6;
-            this.ActiveSupplierId.Name = "ActiveSupplierId";
-            this.ActiveSupplierId.ReadOnly = true;
-            this.ActiveSupplierId.Visible = false;
-            this.ActiveSupplierId.Width = 125;
-            // 
-            // dgvTabContainer
-            // 
-            this.dgvTabContainer.Controls.Add(this.tabActiveObjects);
-            this.dgvTabContainer.Controls.Add(this.tabDeletedObjects);
-            this.dgvTabContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTabContainer.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvTabContainer.ItemSize = new System.Drawing.Size(132, 59);
-            this.dgvTabContainer.Location = new System.Drawing.Point(3, 82);
-            this.dgvTabContainer.Name = "dgvTabContainer";
-            this.dgvTabContainer.Padding = new System.Drawing.Point(6, 5);
-            this.dgvTabContainer.RightToLeftLayout = true;
-            this.dgvTabContainer.SelectedIndex = 0;
-            this.dgvTabContainer.Size = new System.Drawing.Size(1544, 677);
-            this.dgvTabContainer.TabIndex = 29;
-            // 
             // ucSupplierData
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -406,15 +292,15 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ucSupplierData";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Size = new System.Drawing.Size(1550, 762);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.Size = new System.Drawing.Size(1024, 768);
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
-            this.tabDeletedObjects.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedObjects)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.dgvTabContainer.ResumeLayout(false);
             this.tabActiveObjects.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvActiveObjects)).EndInit();
-            this.dgvTabContainer.ResumeLayout(false);
+            this.tabDeletedObjects.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedObjects)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -428,18 +314,8 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
         private System.Windows.Forms.TabControl dgvTabContainer;
         private System.Windows.Forms.TabPage tabActiveObjects;
         private System.Windows.Forms.DataGridView dgvActiveObjects;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ActiveSupplierId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ActiveSupplierName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ActiveSupplierDescription;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ActiveSupplierAddress;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ActiveBuildingPhoneNUmber;
         private System.Windows.Forms.TabPage tabDeletedObjects;
         private System.Windows.Forms.DataGridView dgvDeletedObjects;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DeletedBuildingId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DeletedObjectName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DeletedObjectDescription;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DeletedObjectAddress;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DeletedObjectPhoneNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn IsDeleted;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvLargeUnitDescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn LargeUnitWeight;

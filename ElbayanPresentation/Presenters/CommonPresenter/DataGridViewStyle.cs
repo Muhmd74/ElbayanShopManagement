@@ -22,12 +22,12 @@ namespace ElbayaNPresentation.Presenters.CommonPresenter
             dataGrid.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing; //optional
             dataGrid.EnableHeadersVisualStyles = false;
             dataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Sakkal Majalla", 18, FontStyle.Bold);
+            dataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Sakkal Majalla", 11, FontStyle.Bold);
             dataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 91, 150);
             dataGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGrid.RowTemplate.Height = 59;
             dataGrid.CellBorderStyle = DataGridViewCellBorderStyle.Single;
-            dataGrid.RowsDefaultCellStyle.Font = new Font("Sakkal Majalla", 16, FontStyle.Bold);
+            dataGrid.RowsDefaultCellStyle.Font = new Font("Sakkal Majalla", 11, FontStyle.Bold);
             dataGrid.GridColor = Color.Black;
         }
     }

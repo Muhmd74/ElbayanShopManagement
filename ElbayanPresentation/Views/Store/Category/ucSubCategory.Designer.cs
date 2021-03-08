@@ -354,12 +354,12 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.cbxMainCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbxMainCategory.FormattingEnabled = true;
             this.cbxMainCategory.HoverState.Parent = this.cbxMainCategory;
-            this.cbxMainCategory.ItemHeight = 59;
+            this.cbxMainCategory.ItemHeight = 45;
             this.cbxMainCategory.ItemsAppearance.Parent = this.cbxMainCategory;
             this.cbxMainCategory.Location = new System.Drawing.Point(141, 81);
             this.cbxMainCategory.Name = "cbxMainCategory";
             this.cbxMainCategory.ShadowDecoration.Parent = this.cbxMainCategory;
-            this.cbxMainCategory.Size = new System.Drawing.Size(368, 65);
+            this.cbxMainCategory.Size = new System.Drawing.Size(368, 51);
             this.cbxMainCategory.TabIndex = 33;
             this.cbxMainCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.cbxMainCategory.Click += new System.EventHandler(this.cbxMainCategory_Click);
@@ -391,7 +391,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.txtName.PlaceholderText = "";
             this.txtName.SelectedText = "";
             this.txtName.ShadowDecoration.Parent = this.txtName;
-            this.txtName.Size = new System.Drawing.Size(542, 60);
+            this.txtName.Size = new System.Drawing.Size(542, 51);
             this.txtName.TabIndex = 32;
             // 
             // txtDescription
@@ -455,10 +455,10 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.btnUpdate.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.HoverState.Parent = this.btnUpdate;
-            this.btnUpdate.Location = new System.Drawing.Point(934, 269);
+            this.btnUpdate.Location = new System.Drawing.Point(917, 269);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
-            this.btnUpdate.Size = new System.Drawing.Size(190, 62);
+            this.btnUpdate.Size = new System.Drawing.Size(207, 62);
             this.btnUpdate.TabIndex = 29;
             this.btnUpdate.Text = "حفظ التعديلات";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -532,14 +532,14 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
             this.txtSearch.IconRightOffset = new System.Drawing.Point(10, 0);
             this.txtSearch.IconRightSize = new System.Drawing.Size(35, 35);
-            this.txtSearch.Location = new System.Drawing.Point(23, 266);
+            this.txtSearch.Location = new System.Drawing.Point(6, 285);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "";
             this.txtSearch.SelectedText = "";
             this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
-            this.txtSearch.Size = new System.Drawing.Size(412, 63);
+            this.txtSearch.Size = new System.Drawing.Size(376, 51);
             this.txtSearch.TabIndex = 22;
             this.txtSearch.TextOffset = new System.Drawing.Point(25, 0);
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged_1);
@@ -549,7 +549,7 @@ namespace ElbayaNPresentation.Views.Store.Category
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(444, 286);
+            this.label9.Location = new System.Drawing.Point(392, 289);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(225, 32);
             this.label9.TabIndex = 23;
