@@ -70,10 +70,12 @@
     <Compile Include="Repository\Clints\Building\BuildingService.cs" />
     <Compile Include="Repository\Clints\Building\Dtos\BuildingDto.cs" />
     <Compile Include="Repository\Clints\Building\IBuilding.cs" />
+    <Compile Include="Repository\Clints\Building\Validators\CreateBuildingValidator.cs" />
     <Compile Include="Repository\Clints\Customer\Dtos\ClintDto.cs" />
     <Compile Include="Repository\Clints\Customer\Dtos\CustomerNameDto.cs" />
     <Compile Include="Repository\Clints\Customer\ICustomer.cs" />
     <Compile Include="Repository\Clints\Customer\CustomerService.cs" />
+    <Compile Include="Repository\Clints\Poses\Validators\CreatePosValidator.cs" />
     <Compile Include="Repository\Clints\Supplier\Dtos\SupplierNameDto.cs" />
     <Compile Include="Repository\Clints\Supplier\SupplierService.cs" />
     <Compile Include="Repository\Clints\Supplier\Dtos\ClintDto.cs" />
@@ -90,11 +92,14 @@
     <Compile Include="Repository\Clints\Poses\Dtos\PosDto.cs" />
     <Compile Include="Repository\Clints\Poses\IPos.cs" />
     <Compile Include="Repository\Clints\Poses\PosService.cs" />
+    <Compile Include="Repository\Clints\Supplier\Validators\CreateSupplierValidators.cs" />
     <Compile Include="Repository\Employees\Employees\Dtos\EmployeeDto.cs" />
     <Compile Include="Repository\Employees\Employees\Dtos\EmployeeNameDto.cs" />
     <Compile Include="Repository\Employees\Employees\Dtos\LoginDto.cs" />
     <Compile Include="Repository\Employees\Employees\EmployeeService.cs" />
     <Compile Include="Repository\Employees\Employees\IEmployee.cs" />
+    <Compile Include="Repository\Employees\Employees\Validators\CreateEmployeeValidator.cs" />
+    <Compile Include="Repository\Employees\Employees\Validators\EmployeeResolution.cs" />
     <Compile Include="Repository\Products\Category\CategoryService.cs" />
     <Compile Include="Repository\Products\Category\Dtos\CategoryDto.cs" />
     <Compile Include="Repository\Products\Category\ICategory.cs" />
