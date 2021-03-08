@@ -167,14 +167,14 @@ namespace ElbayaNPresentation
 
         private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (!gcContainer.Controls.Contains(ucSupplierData.Instance))
+            if (!gcContainer.Controls.Contains(ucAllSupplier.Instance))
             {
                 gcContainer.Controls.Clear();
-                gcContainer.Controls.Add(ucSupplierData.Instance);
-                ucSupplierData.Instance.Dock = DockStyle.Fill;
-                ucSupplierData.Instance.BringToFront();
+                gcContainer.Controls.Add(ucAllSupplier.Instance);
+                ucAllSupplier.Instance.Dock = DockStyle.Fill;
+                ucAllSupplier.Instance.BringToFront();
             }
-            ucSupplierData.Instance.BringToFront();
+            ucAllSupplier.Instance.BringToFront();
 
         }
     }

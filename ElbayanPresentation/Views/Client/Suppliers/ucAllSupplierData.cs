@@ -14,21 +14,21 @@ using ElbayaNPresentation.Presenters.Purchases.Supplier._ِAllSuppliers;
 
 namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
 {
-    public partial class ucSupplierData : DevExpress.XtraEditors.XtraUserControl, IViewAllSuppleir
+    public partial class ucAllSupplier : DevExpress.XtraEditors.XtraUserControl, IViewAllSuppleir
     {
-        public ucSupplierData()
+        public ucAllSupplier()
         {
             InitializeComponent();
             Presenter = new PresenterSupplierData(this);
             Presenter.OnLoadUC();
         }
-        private static ucSupplierData _instance;
-        public static ucSupplierData Instance
+        private static ucAllSupplier _instance;
+        public static ucAllSupplier Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new ucSupplierData();
+                    _instance = new ucAllSupplier();
                 return _instance;
             }
         }

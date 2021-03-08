@@ -1,6 +1,5 @@
 ﻿using DevExpress.XtraEditors;
 using ElbayaNPresentation.Presenters.Clients;
-using ElbayaNPresentation.Presenters.Purchases.Suppliers.NewSupplier;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
@@ -22,10 +21,10 @@ namespace ElbayaNPresentation.Views.Client
             Presenter = new PresenterNewClient(this);
             _instance = this;
 
-            // Hanle Full screen Issues 
-            System.Drawing.Rectangle rect = Screen.GetWorkingArea(this);
-            this.MaximizedBounds = Screen.GetWorkingArea(this);
-            this.WindowState = FormWindowState.Normal;
+            //// Hanle Full screen Issues 
+            //System.Drawing.Rectangle rect = Screen.GetWorkingArea(this);
+            //this.MaximizedBounds = Screen.GetWorkingArea(this);
+            //this.WindowState = FormWindowState.Normal;
         }
       
         private static frmNewClient _instance;
@@ -61,6 +60,8 @@ namespace ElbayaNPresentation.Views.Client
         public Guna2Button BackToUc { get => btnBackToUc; set => btnBackToUc = value; }
         public PresenterNewClient Presenter { get; set; }
 
-        
+        public bool IsSupplier { get; set; } = true;
+        public bool IsCustomer { get; set; } = false;
+
     }
 }
