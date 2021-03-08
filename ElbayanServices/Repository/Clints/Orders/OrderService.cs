@@ -51,7 +51,7 @@ namespace ElbayanServices.Repository.Clints.Orders
             _context.SaveChanges();
             if (order.IsDeferred)
             {
-                CreateDeferredPayments(order.Deferred, order.ClintId, order.Id, model.DueDatePayingOff);
+                CreateDeferredPayments(order.Deferred, order.Id, model.DueDatePayingOff);
             }
 
             if (order != null)
@@ -95,7 +95,7 @@ namespace ElbayanServices.Repository.Clints.Orders
             _context.SaveChanges();
             if (order.IsDeferred)
             {
-                CreateDeferredPayments(order.Deferred, order.ClintId, order.Id, model.DueDatePayingOff);
+                CreateDeferredPayments(order.Deferred, order.Id, model.DueDatePayingOff);
 
             }
 
@@ -198,7 +198,7 @@ namespace ElbayanServices.Repository.Clints.Orders
 
             });
         }
-        private void CreateDeferredPayments(decimal deferred,Guid clintId, Guid orderId, DateTime dueDatePayingOff)
+        private void CreateDeferredPayments(decimal deferred, Guid orderId, DateTime dueDatePayingOff)
         {
             var payment = _context.DeferredPayments.Add(new DeferredPayment()
             {
@@ -209,7 +209,6 @@ namespace ElbayanServices.Repository.Clints.Orders
                 CollectingPaymentDate = DateTime.UtcNow,
                 DueDatePayingOff = dueDatePayingOff,
                 TotalPayment = 0,
-                ClintId = clintId
             });
             _context.SaveChanges();
         }

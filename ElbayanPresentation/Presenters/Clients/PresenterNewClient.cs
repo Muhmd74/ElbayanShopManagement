@@ -37,7 +37,7 @@ namespace ElbayaNPresentation.Presenters.Clients
                 FaxNumber = _view.Fax.Text,
                 IsSupplier = _view.IsSupplier,
                 IsCustomer = _view.IsCustomer,
-                Phone = _view.
+                //Phone = _view.
             });
         }
         

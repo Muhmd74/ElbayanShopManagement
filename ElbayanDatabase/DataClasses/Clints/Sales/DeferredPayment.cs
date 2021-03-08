@@ -17,7 +17,6 @@ namespace ElbayanDatabase.DataClasses.Clints.Sales
         public decimal Balance { get; set; }//  in add DeferredOfOrder in update Balance - Payment
         public DateTime DueDatePayingOff { get; set; }
         public DateTime CollectingPaymentDate { get; set; }
-        public Guid ClintId { get; set; }
 
     }
 }
