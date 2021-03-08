@@ -88,8 +88,6 @@
     <Compile Include="Presenters\Clients\PresenterNewClient.cs" />
     <Compile Include="Presenters\CommonPresenter\DataGridViewStyle.cs" />
     <Compile Include="Presenters\CommonPresenter\ValidateControls.cs" />
-    <Compile Include="Presenters\Purchases\Supplier\NewSupplier\IViewNewSupplier.cs" />
-    <Compile Include="Presenters\Purchases\Supplier\NewSupplier\PresenterNewSupplier.cs" />
     <Compile Include="Presenters\Purchases\Supplier\ِAllSuppliers\IViewAllSuppleirData.cs" />
     <Compile Include="Presenters\Purchases\Supplier\ِAllSuppliers\PresenterAllSupplierData.cs" />
     <Compile Include="Presenters\Store\Building\BuildingPresenter.cs" />
@@ -127,10 +125,10 @@
     <Compile Include="Views\Client\frmNewClient.Designer.cs">
       <DependentUpon>frmNewClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Client\Suppliers\SupplierData\ucAllSupplierData.cs">
+    <Compile Include="Views\Client\Suppliers\ucAllSupplierData.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Client\Suppliers\SupplierData\ucAllSupplierData.Designer.cs">
+    <Compile Include="Views\Client\Suppliers\ucAllSupplierData.Designer.cs">
       <DependentUpon>ucAllSupplierData.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Store\Building\ucBuilding.cs">
@@ -199,7 +197,7 @@
     <EmbeddedResource Include="Views\Client\frmNewClient.resx">
       <DependentUpon>frmNewClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Client\Suppliers\SupplierData\ucAllSupplierData.resx">
+    <EmbeddedResource Include="Views\Client\Suppliers\ucAllSupplierData.resx">
       <DependentUpon>ucAllSupplierData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Store\Building\ucBuilding.resx">

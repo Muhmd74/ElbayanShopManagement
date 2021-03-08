@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using ElbayaNPresentation.Presenters.CommonPresenter;
 using ElbayaNPresentation.Presenters.Purchases.Suppliers.SuplliersData;
-using ElbayaNPresentation.Views.Client.Suppliers.SupplierData;
 using ElbayanServices.Repository.Clints.Supplier;
+using ElbayaNPresentation.Views.Client;
 
 namespace ElbayaNPresentation.Presenters.Purchases.Supplier._ِAllSuppliers
 {
@@ -39,8 +39,9 @@ namespace ElbayaNPresentation.Presenters.Purchases.Supplier._ِAllSuppliers
 
         public void OnClickbtnAddNewObject()
         {
-            //frmNewSupplier.Instance.ShowDialog();
+            frmNewClient.Instance.ShowDialog();
         }
+
        
         // Search ->
         public void OnTextChnagedtxtSearch()

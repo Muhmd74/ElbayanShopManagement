@@ -12,11 +12,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ElbayaNPresentation.Views.Client.Suppliers.SupplierData
+namespace ElbayaNPresentation.Views.Client
 {
-    public partial class frmNewSupplier : DevExpress.XtraEditors.XtraForm, IViewNewClient
+    public partial class frmNewClient : DevExpress.XtraEditors.XtraForm, IViewNewClient
     {
-        public frmNewSupplier()
+        public frmNewClient()
         {
             InitializeComponent();
             Presenter = new PresenterNewClient(this);
@@ -28,13 +28,13 @@ namespace ElbayaNPresentation.Views.Client.Suppliers.SupplierData
             this.WindowState = FormWindowState.Normal;
         }
       
-        private static frmNewSupplier _instance;
-        public static frmNewSupplier Instance
+        private static frmNewClient _instance;
+        public static frmNewClient Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new frmNewSupplier();
+                    _instance = new frmNewClient();
                 return _instance;
             }
         }

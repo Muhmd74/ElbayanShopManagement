@@ -18,7 +18,7 @@ using DevExpress.XtraEditors;
 using ElbayaNPresentation.Views.Store.Building;
 using ElbayaNPresentation.Views.Store.POSs;
 using ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData;
-using ElbayaNPresentation.Views.Client.Suppliers.SupplierData;
+using ElbayaNPresentation.Views.Client;
 
 namespace ElbayaNPresentation
 {
