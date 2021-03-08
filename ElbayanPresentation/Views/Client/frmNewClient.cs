@@ -70,7 +70,7 @@ namespace ElbayaNPresentation.Views.Client
 
         private void btnBackToUc_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

@@ -23,7 +23,7 @@ namespace ElbayanServices.Repository.Clints.Customer
             {
                 Name = model.Name,
                 NationalIdentity = model.NationalIdentity,
-                IsActive = true,
+                IsActive = model.IsActive,
                 FirmName = model.FirmName,
                 Address = model.Address,
                 CommercialRegister = model.CommercialRegister,

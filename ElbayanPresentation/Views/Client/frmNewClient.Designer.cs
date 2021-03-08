@@ -173,7 +173,7 @@ namespace ElbayaNPresentation.Views.Client
             this.cbIsActive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbIsActive.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold);
             this.cbIsActive.ForeColor = System.Drawing.Color.DimGray;
-            this.cbIsActive.Location = new System.Drawing.Point(543, 517);
+            this.cbIsActive.Location = new System.Drawing.Point(543, 503);
             this.cbIsActive.Name = "cbIsActive";
             this.cbIsActive.Size = new System.Drawing.Size(109, 36);
             this.cbIsActive.TabIndex = 14;
