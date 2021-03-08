@@ -40,6 +40,11 @@ namespace ElbayanServices.Repository.Clints.DeferredPayments
             return false;
         }
 
+        public bool PayingDeferred(SupplierDeferredPaymentDto model)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool Update(SupplierDeferredPaymentDto model)
         {
             var deferredPayment = _context.DeferredPayments.FirstOrDefault(d => d.Id == model.Id);
