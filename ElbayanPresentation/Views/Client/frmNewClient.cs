@@ -67,5 +67,10 @@ namespace ElbayaNPresentation.Views.Client
         {
             Presenter.OnClickbtnAddNewOpect();
         }
+
+        private void btnBackToUc_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

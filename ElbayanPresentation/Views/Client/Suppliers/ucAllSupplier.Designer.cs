@@ -29,8 +29,8 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucAllSupplier));
             this.pActions = new System.Windows.Forms.Panel();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
@@ -97,7 +97,7 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 73);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1298, 541);
+            this.panel1.Size = new System.Drawing.Size(1298, 413);
             this.panel1.TabIndex = 1;
             // 
             // tabDGVContainer
@@ -108,10 +108,11 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.tabDGVContainer.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.tabDGVContainer.ItemSize = new System.Drawing.Size(132, 59);
             this.tabDGVContainer.Location = new System.Drawing.Point(0, 0);
+            this.tabDGVContainer.MinimumSize = new System.Drawing.Size(1298, 330);
             this.tabDGVContainer.Name = "tabDGVContainer";
             this.tabDGVContainer.RightToLeftLayout = true;
             this.tabDGVContainer.SelectedIndex = 0;
-            this.tabDGVContainer.Size = new System.Drawing.Size(1298, 525);
+            this.tabDGVContainer.Size = new System.Drawing.Size(1298, 401);
             this.tabDGVContainer.TabIndex = 10;
             // 
             // tabPage3
@@ -124,7 +125,7 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.tabPage3.Location = new System.Drawing.Point(4, 63);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1290, 458);
+            this.tabPage3.Size = new System.Drawing.Size(1290, 334);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "الموردون النشطون";
             // 
@@ -132,19 +133,20 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             // 
             this.dgvActiveObjects.AllowUserToAddRows = false;
             this.dgvActiveObjects.AllowUserToDeleteRows = false;
-            this.dgvActiveObjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvActiveObjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvActiveObjects.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvActiveObjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvActiveObjects.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvActiveObjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvActiveObjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvActiveObjects.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvActiveObjects.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvActiveObjects.Location = new System.Drawing.Point(3, 3);
             this.dgvActiveObjects.Name = "dgvActiveObjects";
             this.dgvActiveObjects.ReadOnly = true;
@@ -152,7 +154,7 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.dgvActiveObjects.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvActiveObjects.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.dgvActiveObjects.RowTemplate.Height = 35;
-            this.dgvActiveObjects.Size = new System.Drawing.Size(1284, 452);
+            this.dgvActiveObjects.Size = new System.Drawing.Size(1284, 323);
             this.dgvActiveObjects.TabIndex = 0;
             // 
             // tabPage4
@@ -164,7 +166,7 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.tabPage4.Location = new System.Drawing.Point(4, 63);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1290, 458);
+            this.tabPage4.Size = new System.Drawing.Size(1290, 373);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "الموردون غير النشطوين";
             // 
@@ -172,17 +174,17 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             // 
             this.dgvDeletedObjects.AllowUserToAddRows = false;
             this.dgvDeletedObjects.AllowUserToDeleteRows = false;
-            this.dgvDeletedObjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDeletedObjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDeletedObjects.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDeletedObjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDeletedObjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDeletedObjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDeletedObjects.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvSubCategoryDeletedID,
@@ -190,7 +192,7 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.dgvSubCategoryDeletedDescription,
             this.dgvSubCategoryDeletedManiCategoryID,
             this.dgvSubCategoryDeletedMainCategoryName});
-            this.dgvDeletedObjects.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDeletedObjects.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvDeletedObjects.Location = new System.Drawing.Point(3, 3);
             this.dgvDeletedObjects.Name = "dgvDeletedObjects";
             this.dgvDeletedObjects.ReadOnly = true;
@@ -198,7 +200,7 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.dgvDeletedObjects.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvDeletedObjects.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.dgvDeletedObjects.RowTemplate.Height = 35;
-            this.dgvDeletedObjects.Size = new System.Drawing.Size(1284, 452);
+            this.dgvDeletedObjects.Size = new System.Drawing.Size(1284, 329);
             this.dgvDeletedObjects.TabIndex = 1;
             // 
             // dgvSubCategoryDeletedID
@@ -209,6 +211,7 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.dgvSubCategoryDeletedID.Name = "dgvSubCategoryDeletedID";
             this.dgvSubCategoryDeletedID.ReadOnly = true;
             this.dgvSubCategoryDeletedID.Visible = false;
+            this.dgvSubCategoryDeletedID.Width = 150;
             // 
             // dgvSubCategoryDeletedName
             // 
@@ -217,6 +220,7 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.dgvSubCategoryDeletedName.MinimumWidth = 6;
             this.dgvSubCategoryDeletedName.Name = "dgvSubCategoryDeletedName";
             this.dgvSubCategoryDeletedName.ReadOnly = true;
+            this.dgvSubCategoryDeletedName.Width = 170;
             // 
             // dgvSubCategoryDeletedDescription
             // 
@@ -225,6 +229,7 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.dgvSubCategoryDeletedDescription.MinimumWidth = 6;
             this.dgvSubCategoryDeletedDescription.Name = "dgvSubCategoryDeletedDescription";
             this.dgvSubCategoryDeletedDescription.ReadOnly = true;
+            this.dgvSubCategoryDeletedDescription.Width = 186;
             // 
             // dgvSubCategoryDeletedManiCategoryID
             // 
@@ -234,6 +239,7 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.dgvSubCategoryDeletedManiCategoryID.Name = "dgvSubCategoryDeletedManiCategoryID";
             this.dgvSubCategoryDeletedManiCategoryID.ReadOnly = true;
             this.dgvSubCategoryDeletedManiCategoryID.Visible = false;
+            this.dgvSubCategoryDeletedManiCategoryID.Width = 150;
             // 
             // dgvSubCategoryDeletedMainCategoryName
             // 
@@ -242,6 +248,7 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.dgvSubCategoryDeletedMainCategoryName.MinimumWidth = 6;
             this.dgvSubCategoryDeletedMainCategoryName.Name = "dgvSubCategoryDeletedMainCategoryName";
             this.dgvSubCategoryDeletedMainCategoryName.ReadOnly = true;
+            this.dgvSubCategoryDeletedMainCategoryName.Width = 239;
             // 
             // txtSearch
             // 
@@ -269,14 +276,14 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
             this.txtSearch.IconRightOffset = new System.Drawing.Point(10, 0);
             this.txtSearch.IconRightSize = new System.Drawing.Size(35, 35);
-            this.txtSearch.Location = new System.Drawing.Point(756, 6);
+            this.txtSearch.Location = new System.Drawing.Point(674, 9);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "";
             this.txtSearch.SelectedText = "";
             this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
-            this.txtSearch.Size = new System.Drawing.Size(340, 55);
+            this.txtSearch.Size = new System.Drawing.Size(340, 52);
             this.txtSearch.TabIndex = 24;
             this.txtSearch.TextOffset = new System.Drawing.Point(25, 0);
             // 
@@ -286,7 +293,7 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Sakkal Majalla", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(1103, 19);
+            this.label9.Location = new System.Drawing.Point(1021, 22);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(192, 25);
             this.label9.TabIndex = 25;
@@ -300,7 +307,7 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.Controls.Add(this.pActions);
             this.Name = "ucAllSupplier";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Size = new System.Drawing.Size(1298, 613);
+            this.Size = new System.Drawing.Size(1298, 497);
             this.pActions.ResumeLayout(false);
             this.pActions.PerformLayout();
             this.panel1.ResumeLayout(false);
