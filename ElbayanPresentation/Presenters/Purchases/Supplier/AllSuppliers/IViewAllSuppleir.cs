@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ElbayaNPresentation.Presenters.Purchases.Supplier._ِAllSuppliers;
+using ElbayaNPresentation.Presenters.Purchases.Supplier.AllSuppliers;
 
-namespace ElbayaNPresentation.Presenters.Purchases.Suppliers.SuplliersData
-{
+namespace ElbayaNPresentation.Presenters.Purchases.Supplier.AllSuppliers
+{ 
     public interface IViewAllSuppleir
     {
         DataGridView ActiveObject { get; set; }

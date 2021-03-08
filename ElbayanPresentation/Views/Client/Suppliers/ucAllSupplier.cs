@@ -1,27 +1,20 @@
-﻿using DevExpress.XtraEditors;
-using ElbayaNPresentation.Presenters.Purchases.Suppliers.SuplliersData;
-using Guna.UI2.WinForms;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
-using ElbayaNPresentation.Presenters.Purchases.Supplier._ِAllSuppliers;
+using ElbayaNPresentation.Presenters.Purchases.Supplier.AllSuppliers;
+using Guna.UI2.WinForms;
 
-namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
+namespace ElbayaNPresentation.Views.Client.Suppliers
 {
-    public partial class ucAllSupplier : DevExpress.XtraEditors.XtraUserControl, IViewAllSuppleir
+    public partial class ucAllSupplier : UserControl, IViewAllSuppleir
     {
         public ucAllSupplier()
         {
             InitializeComponent();
+            _instance = this;
             Presenter = new PresenterSupplierData(this);
             Presenter.OnLoadUC();
         }
+
         private static ucAllSupplier _instance;
         public static ucAllSupplier Instance
         {
@@ -37,7 +30,7 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers.SupplierData
         public DataGridView DeletedObject { get => dgvDeletedObjects; set => dgvDeletedObjects = value; }
         public Guna2TextBox SearchtxtBox { get => txtSearch; set => txtSearch = value; }
         public Guna2Button AddNewObject { get => btnAdd; set => btnAdd = value; }
-        public TabControl TabControl { get => dgvTabContainer; set => dgvTabContainer = value; }
+        public TabControl TabControl { get => tabDGVContainer; set => tabDGVContainer = value; }
         public PresenterSupplierData Presenter { get; set; }
 
         private void btnAdd_Click(object sender, EventArgs e)

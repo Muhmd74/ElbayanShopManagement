@@ -61,7 +61,11 @@ namespace ElbayaNPresentation.Views.Client
         public PresenterNewClient Presenter { get; set; }
 
         public bool IsSupplier { get; set; } = true;
-        public bool IsCustomer { get; set; } = false;
+        public bool IsCustomer { get; set; } = true;
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Presenter.OnClickbtnAddNewOpect();
+        }
     }
 }
