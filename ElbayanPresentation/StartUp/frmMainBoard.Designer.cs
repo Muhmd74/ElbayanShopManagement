@@ -77,16 +77,26 @@ namespace ElbayaNPresentation
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
+            this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem19 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem20 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem21 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem22 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem23 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 761);
-            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(14, 15, 14, 15);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 814);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(24, 26, 24, 26);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1393, 32);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1729, 48);
             // 
             // ribbon
             // 
@@ -119,11 +129,19 @@ namespace ElbayaNPresentation
             this.barButtonItem14,
             this.barButtonItem15,
             this.barButtonItem16,
-            this.barButtonItem4});
+            this.barButtonItem4,
+            this.barButtonItem17,
+            this.barButtonItem18,
+            this.barButtonItem19,
+            this.barButtonItem20,
+            this.barButtonItem21,
+            this.barButtonItem22,
+            this.barButtonItem23});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.Margin = new System.Windows.Forms.Padding(14, 15, 14, 15);
-            this.ribbon.MaxItemId = 39;
+            this.ribbon.Margin = new System.Windows.Forms.Padding(24, 26, 24, 26);
+            this.ribbon.MaxItemId = 46;
             this.ribbon.Name = "ribbon";
+            this.ribbon.OptionsMenuMinWidth = 577;
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rpSettings,
             this.rpProductSetting,
@@ -135,7 +153,7 @@ namespace ElbayaNPresentation
             this.ribbon.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowPageHeadersInFormCaption = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbon.Size = new System.Drawing.Size(1393, 229);
+            this.ribbon.Size = new System.Drawing.Size(1729, 329);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Above;
             // 
@@ -743,6 +761,10 @@ namespace ElbayaNPresentation
             // 
             this.rpFinance.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
             this.rpFinance.Appearance.Options.UseFont = true;
+            this.rpFinance.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup13,
+            this.ribbonPageGroup14,
+            this.ribbonPageGroup15});
             this.rpFinance.Name = "rpFinance";
             this.rpFinance.Text = "المحاسبات والمالية";
             // 
@@ -774,7 +796,7 @@ namespace ElbayaNPresentation
             // tabFormContentContainer1
             // 
             this.tabFormContentContainer1.Location = new System.Drawing.Point(0, 0);
-            this.tabFormContentContainer1.Margin = new System.Windows.Forms.Padding(6);
+            this.tabFormContentContainer1.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.tabFormContentContainer1.Name = "tabFormContentContainer1";
             this.tabFormContentContainer1.Size = new System.Drawing.Size(0, 0);
             this.tabFormContentContainer1.TabIndex = 8;
@@ -791,9 +813,9 @@ namespace ElbayaNPresentation
             // 
             this.gcContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcContainer.Font = new System.Drawing.Font("Arabic Typesetting", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gcContainer.Location = new System.Drawing.Point(0, 229);
+            this.gcContainer.Location = new System.Drawing.Point(0, 329);
             this.gcContainer.Name = "gcContainer";
-            this.gcContainer.Size = new System.Drawing.Size(1393, 532);
+            this.gcContainer.Size = new System.Drawing.Size(1729, 485);
             this.gcContainer.TabIndex = 13;
             // 
             // ribbonPageGroup2
@@ -838,9 +860,80 @@ namespace ElbayaNPresentation
             // 
             this.splitterControl1.Location = new System.Drawing.Point(0, 229);
             this.splitterControl1.Name = "splitterControl1";
-            this.splitterControl1.Size = new System.Drawing.Size(12, 801);
+            this.splitterControl1.Size = new System.Drawing.Size(17, 801);
             this.splitterControl1.TabIndex = 16;
             this.splitterControl1.TabStop = false;
+            // 
+            // ribbonPageGroup13
+            // 
+            this.ribbonPageGroup13.ItemLinks.Add(this.barButtonItem17);
+            this.ribbonPageGroup13.ItemLinks.Add(this.barButtonItem18);
+            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
+            this.ribbonPageGroup13.Text = "إدارة الموظفين";
+            // 
+            // barButtonItem17
+            // 
+            this.barButtonItem17.Caption = "بيانات الموظفين";
+            this.barButtonItem17.Id = 39;
+            this.barButtonItem17.Name = "barButtonItem17";
+            this.barButtonItem17.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barButtonItem18
+            // 
+            this.barButtonItem18.Caption = "حسابات الموظفين";
+            this.barButtonItem18.Id = 40;
+            this.barButtonItem18.Name = "barButtonItem18";
+            this.barButtonItem18.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // ribbonPageGroup14
+            // 
+            this.ribbonPageGroup14.ItemLinks.Add(this.barButtonItem19);
+            this.ribbonPageGroup14.ItemLinks.Add(this.barButtonItem20);
+            this.ribbonPageGroup14.ItemLinks.Add(this.barButtonItem23);
+            this.ribbonPageGroup14.Name = "ribbonPageGroup14";
+            this.ribbonPageGroup14.Text = "الحزينة والبنك";
+            // 
+            // ribbonPageGroup15
+            // 
+            this.ribbonPageGroup15.ItemLinks.Add(this.barButtonItem21);
+            this.ribbonPageGroup15.ItemLinks.Add(this.barButtonItem22);
+            this.ribbonPageGroup15.Name = "ribbonPageGroup15";
+            this.ribbonPageGroup15.Text = "السندات والمصروفات";
+            // 
+            // barButtonItem19
+            // 
+            this.barButtonItem19.Caption = "الخزينة";
+            this.barButtonItem19.Id = 41;
+            this.barButtonItem19.Name = "barButtonItem19";
+            this.barButtonItem19.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barButtonItem20
+            // 
+            this.barButtonItem20.Caption = "المعاملات البنكية";
+            this.barButtonItem20.Id = 42;
+            this.barButtonItem20.Name = "barButtonItem20";
+            this.barButtonItem20.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barButtonItem21
+            // 
+            this.barButtonItem21.Caption = "المصروفات";
+            this.barButtonItem21.Id = 43;
+            this.barButtonItem21.Name = "barButtonItem21";
+            this.barButtonItem21.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barButtonItem22
+            // 
+            this.barButtonItem22.Caption = "سند صرف يدوي";
+            this.barButtonItem22.Id = 44;
+            this.barButtonItem22.Name = "barButtonItem22";
+            this.barButtonItem22.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barButtonItem23
+            // 
+            this.barButtonItem23.Caption = "سند قبض";
+            this.barButtonItem23.Id = 45;
+            this.barButtonItem23.Name = "barButtonItem23";
+            this.barButtonItem23.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
             // frmMainBoard
             // 
@@ -849,7 +942,7 @@ namespace ElbayaNPresentation
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1393, 793);
+            this.ClientSize = new System.Drawing.Size(1729, 862);
             this.Controls.Add(this.gcContainer);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.tabFormContentContainer1);
@@ -921,5 +1014,15 @@ namespace ElbayaNPresentation
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraEditors.SplitterControl splitterControl1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem17;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem18;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem19;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem20;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem21;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem22;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem23;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup13;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup15;
     }
 }

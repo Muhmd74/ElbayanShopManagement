@@ -88,6 +88,12 @@
     <Compile Include="Presenters\Clients\PresenterNewClient.cs" />
     <Compile Include="Presenters\CommonPresenter\DataGridViewStyle.cs" />
     <Compile Include="Presenters\CommonPresenter\ValidateControls.cs" />
+    <Compile Include="Presenters\Finance\Employee\IViewEmployee.cs" />
+    <Compile Include="Presenters\Finance\Expenses\HandReceipt\IViewHandReceipt.cs" />
+    <Compile Include="Presenters\Finance\Expenses\IViewExpenses.cs" />
+    <Compile Include="Presenters\Finance\TreasuryAndBank\Bank\IViewBank.cs" />
+    <Compile Include="Presenters\Finance\TreasuryAndBank\CatchReceipt\IViewCatchReceipt.cs" />
+    <Compile Include="Presenters\Finance\TreasuryAndBank\Treasury\IViewTreasury.cs" />
     <Compile Include="Presenters\Purchases\Supplier\AllSuppliers\IViewAllSuppleir.cs" />
     <Compile Include="Presenters\Purchases\Supplier\AllSuppliers\PresenterAllSupplierData.cs" />
     <Compile Include="Presenters\Store\Building\BuildingPresenter.cs" />
@@ -250,6 +256,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Presenters\Finance\Employee\EmployeeFinance\" />
     <Folder Include="Resources\ProductImage\" />
     <Folder Include="Views\Purchases\" />
   </ItemGroup>
