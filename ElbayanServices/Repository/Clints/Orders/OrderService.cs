@@ -208,7 +208,7 @@ namespace ElbayanServices.Repository.Clints.Orders
                 DeferredOfOrder = deferred,
                 CollectingPaymentDate = DateTime.UtcNow,
                 DueDatePayingOff = dueDatePayingOff,
-                TotalPayment = 0
+                TotalPayment = 0,
             });
             _context.SaveChanges();
         }
