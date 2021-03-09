@@ -18,6 +18,7 @@ using DevExpress.XtraEditors;
 using ElbayaNPresentation.Views.Store.Building;
 using ElbayaNPresentation.Views.Store.POSs;
 using ElbayaNPresentation.Views.Client.Suppliers;
+using ElbayaNPresentation.Views.Finance.Employee;
 
 namespace ElbayaNPresentation
 {
@@ -175,6 +176,11 @@ namespace ElbayaNPresentation
             }
             ucAllSupplier.Instance.BringToFront();
 
+        }
+
+        private void barButtonItem17_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmEmployeeDetails.Instance.ShowDialog();
         }
     }
 }

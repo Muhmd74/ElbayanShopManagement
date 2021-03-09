@@ -15,5 +15,10 @@ namespace ElbayaNPresentation.Presenters.Finance.Employee
         {
             _view = view;
         }
+
+
+        // CRUD:
+        // 1. Create
+
     }
 }

@@ -12,16 +12,16 @@ namespace ElbayaNPresentation.Presenters.Finance.Employee
     {
         PresenterEmployee Presenter { get; set; }
         Guid ID { get; set; }
-        Guna2TextBox Name { get; set; }
+        Guna2TextBox EmployeeName { get; set; }
         Guna2TextBox Email { get; set; }
         Guna2TextBox Password { get; set; }
         Guna2TextBox Mobile { get; set; }
         Guna2TextBox Address { get; set; }
         Guna2TextBox Identity { get; set; }
-        DateTimePicker DateOfBirth { get; set; }
-        DateTimePicker IdentityExpirationDate { get; set; }
+        Guna2DateTimePicker DateOfBirth { get; set; }
+        Guna2DateTimePicker IdentityExpirationDate { get; set; }
         Guna2TextBox PassportNumber { get; set; } // int
-        DateTimePicker PassportExpirationDate { get; set; }
+        Guna2DateTimePicker PassportExpirationDate { get; set; }
         Guna2TextBox ResidenceType { get; set; }
         Guna2TextBox Position { get; set; }
         CheckBox IsActive { get; set; }

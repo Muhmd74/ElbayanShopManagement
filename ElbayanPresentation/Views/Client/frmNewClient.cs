@@ -70,14 +70,14 @@ namespace ElbayaNPresentation.Views.Client
             Presenter.OnClickbtnAddNewOpect();
         }
 
-        private void btnBackToUc_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             Presenter.OnClickbtnUpdate();
+        }
+
+        private void btnBackToUc_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
