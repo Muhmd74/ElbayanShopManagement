@@ -21,6 +21,8 @@ namespace ElbayaNPresentation.Views.Client
             Presenter = new PresenterNewClient(this);
             _instance = this;
 
+            btnUpdate.Visible = false;
+
             //// Hanle Full screen Issues 
             //System.Drawing.Rectangle rect = Screen.GetWorkingArea(this);
             //this.MaximizedBounds = Screen.GetWorkingArea(this);
@@ -51,12 +53,12 @@ namespace ElbayaNPresentation.Views.Client
         public Guna2TextBox FirmPhoneNumber { get => txtFirmPhoneNumber; set => txtFirmPhoneNumber = value; }
         public Guna2TextBox Address { get => txtAddress; set => txtAddress = value; }
         public Guna2TextBox Note { get => txtNote; set => txtNote = value; }
-        CheckBox IViewNewClient.IsActive { get => cbIsActive; set => cbIsActive = value; }
+        public CheckBox IsActive { get => cbIsActive; set => cbIsActive = value; }
         public NumericUpDown OpeningBalance { get => nudOpeningBalance; set => nudOpeningBalance = value; }
         public NumericUpDown CurrentBalance { get => nudCurrentBalance; set => nudCurrentBalance = value; }
         public Guna2Button AddNewObject { get => btnAdd; set => btnAdd = value; }
         public Guna2Button UpdateObject { get => btnUpdate; set => btnUpdate = value; }
-        public Guna2Button DeleteObject { get => btnDeleteByOne; set => btnDeleteByOne = value; }
+        public Guna2Button DeleteObject { get; set; }
         public Guna2Button BackToUc { get => btnBackToUc; set => btnBackToUc = value; }
         public PresenterNewClient Presenter { get; set; }
 
@@ -71,6 +73,11 @@ namespace ElbayaNPresentation.Views.Client
         private void btnBackToUc_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            Presenter.OnClickbtnUpdate();
         }
     }
 }

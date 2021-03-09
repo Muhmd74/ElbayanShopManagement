@@ -29,18 +29,16 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucAllSupplier));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pActions = new System.Windows.Forms.Panel();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.tabDGVContainer = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dgvActiveObjects = new System.Windows.Forms.DataGridView();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.ActiveObjectId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActiveObjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActiveObjectNationalIdentity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,8 +56,9 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.ActiveObjectPhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActiveObjectIsSupplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActiveObjectIsCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dgvDeletedObjects = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NotActiveObjectId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,7 +76,6 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pActions.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.tabDGVContainer.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActiveObjects)).BeginInit();
@@ -93,8 +91,57 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.pActions.Dock = System.Windows.Forms.DockStyle.Top;
             this.pActions.Location = new System.Drawing.Point(0, 0);
             this.pActions.Name = "pActions";
-            this.pActions.Size = new System.Drawing.Size(1298, 73);
+            this.pActions.Size = new System.Drawing.Size(1531, 98);
             this.pActions.TabIndex = 0;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtSearch.BackColor = System.Drawing.Color.Transparent;
+            this.txtSearch.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtSearch.BorderRadius = 11;
+            this.txtSearch.BorderThickness = 2;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.DisabledState.Parent = this.txtSearch;
+            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.FillColor = System.Drawing.Color.PapayaWhip;
+            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.FocusedState.Parent = this.txtSearch;
+            this.txtSearch.Font = new System.Drawing.Font("Sakkal Majalla", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.Gray;
+            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.HoverState.Parent = this.txtSearch;
+            this.txtSearch.IconLeftOffset = new System.Drawing.Point(9, 0);
+            this.txtSearch.IconLeftSize = new System.Drawing.Size(32, 32);
+            this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
+            this.txtSearch.IconRightOffset = new System.Drawing.Point(10, 0);
+            this.txtSearch.IconRightSize = new System.Drawing.Size(35, 35);
+            this.txtSearch.Location = new System.Drawing.Point(950, 25);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.PlaceholderText = "";
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
+            this.txtSearch.Size = new System.Drawing.Size(303, 35);
+            this.txtSearch.TabIndex = 24;
+            this.txtSearch.TextOffset = new System.Drawing.Point(25, 0);
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label9.Font = new System.Drawing.Font("Sakkal Majalla", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.DimGray;
+            this.label9.Location = new System.Drawing.Point(1279, 28);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(228, 32);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "بحث باسم أو رقم مورد أو جوال";
             // 
             // btnAdd
             // 
@@ -110,39 +157,31 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnAdd.ImageSize = new System.Drawing.Size(31, 31);
-            this.btnAdd.Location = new System.Drawing.Point(19, 9);
-            this.btnAdd.MinimumSize = new System.Drawing.Size(151, 45);
+            this.btnAdd.Location = new System.Drawing.Point(16, 25);
+            this.btnAdd.MinimumSize = new System.Drawing.Size(135, 36);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
-            this.btnAdd.Size = new System.Drawing.Size(208, 52);
+            this.btnAdd.Size = new System.Drawing.Size(185, 51);
             this.btnAdd.TabIndex = 17;
             this.btnAdd.Text = "إضافة جديدة";
             this.btnAdd.TextOffset = new System.Drawing.Point(-15, 0);
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.tabDGVContainer);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 73);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1298, 413);
-            this.panel1.TabIndex = 1;
-            // 
             // tabDGVContainer
             // 
+            this.tabDGVContainer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabDGVContainer.Controls.Add(this.tabPage3);
             this.tabDGVContainer.Controls.Add(this.tabPage4);
-            this.tabDGVContainer.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabDGVContainer.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.tabDGVContainer.ItemSize = new System.Drawing.Size(132, 59);
-            this.tabDGVContainer.Location = new System.Drawing.Point(0, 0);
-            this.tabDGVContainer.MinimumSize = new System.Drawing.Size(1298, 330);
+            this.tabDGVContainer.Location = new System.Drawing.Point(0, 90);
+            this.tabDGVContainer.MinimumSize = new System.Drawing.Size(500, 264);
             this.tabDGVContainer.Name = "tabDGVContainer";
             this.tabDGVContainer.RightToLeftLayout = true;
             this.tabDGVContainer.SelectedIndex = 0;
-            this.tabDGVContainer.Size = new System.Drawing.Size(1298, 401);
-            this.tabDGVContainer.TabIndex = 10;
+            this.tabDGVContainer.Size = new System.Drawing.Size(1528, 387);
+            this.tabDGVContainer.TabIndex = 11;
             // 
             // tabPage3
             // 
@@ -154,7 +193,7 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.tabPage3.Location = new System.Drawing.Point(4, 63);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1290, 334);
+            this.tabPage3.Size = new System.Drawing.Size(1520, 320);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "الموردون النشطون";
             // 
@@ -162,6 +201,9 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             // 
             this.dgvActiveObjects.AllowUserToAddRows = false;
             this.dgvActiveObjects.AllowUserToDeleteRows = false;
+            this.dgvActiveObjects.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvActiveObjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvActiveObjects.BackgroundColor = System.Drawing.Color.White;
             this.dgvActiveObjects.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -193,7 +235,6 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.ActiveObjectPhoneNumber,
             this.ActiveObjectIsSupplier,
             this.ActiveObjectIsCustomer});
-            this.dgvActiveObjects.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvActiveObjects.Location = new System.Drawing.Point(3, 3);
             this.dgvActiveObjects.Name = "dgvActiveObjects";
             this.dgvActiveObjects.ReadOnly = true;
@@ -201,70 +242,9 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.dgvActiveObjects.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvActiveObjects.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.dgvActiveObjects.RowTemplate.Height = 35;
-            this.dgvActiveObjects.Size = new System.Drawing.Size(1284, 323);
+            this.dgvActiveObjects.Size = new System.Drawing.Size(1514, 313);
             this.dgvActiveObjects.TabIndex = 0;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.tabPage4.Controls.Add(this.dgvDeletedObjects);
-            this.tabPage4.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
-            this.tabPage4.ForeColor = System.Drawing.Color.White;
-            this.tabPage4.Location = new System.Drawing.Point(4, 63);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1290, 334);
-            this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "الموردون غير النشطوين";
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch.BackColor = System.Drawing.Color.Transparent;
-            this.txtSearch.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtSearch.BorderRadius = 11;
-            this.txtSearch.BorderThickness = 2;
-            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.DefaultText = "";
-            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.DisabledState.Parent = this.txtSearch;
-            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.FillColor = System.Drawing.Color.PapayaWhip;
-            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.FocusedState.Parent = this.txtSearch;
-            this.txtSearch.Font = new System.Drawing.Font("Sakkal Majalla", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.ForeColor = System.Drawing.Color.Gray;
-            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.HoverState.Parent = this.txtSearch;
-            this.txtSearch.IconLeftOffset = new System.Drawing.Point(9, 0);
-            this.txtSearch.IconLeftSize = new System.Drawing.Size(32, 32);
-            this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
-            this.txtSearch.IconRightOffset = new System.Drawing.Point(10, 0);
-            this.txtSearch.IconRightSize = new System.Drawing.Size(35, 35);
-            this.txtSearch.Location = new System.Drawing.Point(674, 9);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.PlaceholderText = "";
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
-            this.txtSearch.Size = new System.Drawing.Size(340, 52);
-            this.txtSearch.TabIndex = 24;
-            this.txtSearch.TextOffset = new System.Drawing.Point(25, 0);
-            // 
-            // label9
-            // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Sakkal Majalla", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(1021, 22);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(192, 25);
-            this.label9.TabIndex = 25;
-            this.label9.Text = "بحث باسم أو رقم مورد أو جوال";
+            this.dgvActiveObjects.DoubleClick += new System.EventHandler(this.dgvActiveObjects_DoubleClick);
             // 
             // ActiveObjectId
             // 
@@ -412,10 +392,26 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.ActiveObjectIsCustomer.ReadOnly = true;
             this.ActiveObjectIsCustomer.Visible = false;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.tabPage4.Controls.Add(this.dgvDeletedObjects);
+            this.tabPage4.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.tabPage4.ForeColor = System.Drawing.Color.White;
+            this.tabPage4.Location = new System.Drawing.Point(4, 63);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(1520, 320);
+            this.tabPage4.TabIndex = 1;
+            this.tabPage4.Text = "الموردون غير النشطوين";
+            // 
             // dgvDeletedObjects
             // 
             this.dgvDeletedObjects.AllowUserToAddRows = false;
             this.dgvDeletedObjects.AllowUserToDeleteRows = false;
+            this.dgvDeletedObjects.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDeletedObjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDeletedObjects.BackgroundColor = System.Drawing.Color.White;
             this.dgvDeletedObjects.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -430,7 +426,7 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.dgvDeletedObjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDeletedObjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDeletedObjects.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
+            this.NotActiveObjectId,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
@@ -447,7 +443,6 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.dataGridViewTextBoxColumn15,
             this.dataGridViewTextBoxColumn16,
             this.dataGridViewTextBoxColumn17});
-            this.dgvDeletedObjects.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvDeletedObjects.Location = new System.Drawing.Point(3, 3);
             this.dgvDeletedObjects.Name = "dgvDeletedObjects";
             this.dgvDeletedObjects.ReadOnly = true;
@@ -455,17 +450,18 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.dgvDeletedObjects.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvDeletedObjects.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.dgvDeletedObjects.RowTemplate.Height = 35;
-            this.dgvDeletedObjects.Size = new System.Drawing.Size(1284, 323);
+            this.dgvDeletedObjects.Size = new System.Drawing.Size(1511, 321);
             this.dgvDeletedObjects.TabIndex = 1;
+            this.dgvDeletedObjects.DoubleClick += new System.EventHandler(this.dgvDeletedObjects_DoubleClick);
             // 
-            // dataGridViewTextBoxColumn1
+            // NotActiveObjectId
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "الرقم المرجعي";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.NotActiveObjectId.DataPropertyName = "Id";
+            this.NotActiveObjectId.HeaderText = "الرقم المرجعي";
+            this.NotActiveObjectId.MinimumWidth = 8;
+            this.NotActiveObjectId.Name = "NotActiveObjectId";
+            this.NotActiveObjectId.ReadOnly = true;
+            this.NotActiveObjectId.Visible = false;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -606,16 +602,14 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             // 
             // ucAllSupplier
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.tabDGVContainer);
             this.Controls.Add(this.pActions);
             this.Name = "ucAllSupplier";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Size = new System.Drawing.Size(1298, 497);
+            this.Size = new System.Drawing.Size(1531, 497);
             this.pActions.ResumeLayout(false);
-            this.pActions.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.tabDGVContainer.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvActiveObjects)).EndInit();
@@ -629,13 +623,11 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
 
         private System.Windows.Forms.Panel pActions;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
-        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2TextBox txtSearch;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TabControl tabDGVContainer;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataGridView dgvActiveObjects;
-        private System.Windows.Forms.TabPage tabPage4;
-        private Guna.UI2.WinForms.Guna2TextBox txtSearch;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridViewTextBoxColumn ActiveObjectId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ActiveObjectName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ActiveObjectNationalIdentity;
@@ -653,8 +645,9 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
         private System.Windows.Forms.DataGridViewTextBoxColumn ActiveObjectPhoneNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn ActiveObjectIsSupplier;
         private System.Windows.Forms.DataGridViewTextBoxColumn ActiveObjectIsCustomer;
+        private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DataGridView dgvDeletedObjects;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NotActiveObjectId;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;

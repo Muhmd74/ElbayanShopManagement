@@ -53,7 +53,6 @@ namespace ElbayaNPresentation.Views.Client
             this.label5 = new System.Windows.Forms.Label();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnBackToUc = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDeleteByOne = new Guna.UI2.WinForms.Guna2Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -95,7 +94,6 @@ namespace ElbayaNPresentation.Views.Client
             this.gbMainOperations.Controls.Add(this.label5);
             this.gbMainOperations.Controls.Add(this.btnUpdate);
             this.gbMainOperations.Controls.Add(this.btnBackToUc);
-            this.gbMainOperations.Controls.Add(this.btnDeleteByOne);
             this.gbMainOperations.Controls.Add(this.label3);
             this.gbMainOperations.Controls.Add(this.label2);
             this.gbMainOperations.Controls.Add(this.label14);
@@ -114,7 +112,7 @@ namespace ElbayaNPresentation.Views.Client
             this.gbMainOperations.MinimumSize = new System.Drawing.Size(800, 600);
             this.gbMainOperations.Name = "gbMainOperations";
             this.gbMainOperations.ShadowDecoration.Parent = this.gbMainOperations;
-            this.gbMainOperations.Size = new System.Drawing.Size(1333, 795);
+            this.gbMainOperations.Size = new System.Drawing.Size(1357, 1264);
             this.gbMainOperations.TabIndex = 13;
             this.gbMainOperations.Text = "قاعدة باينات الموردين";
             this.gbMainOperations.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -140,7 +138,7 @@ namespace ElbayaNPresentation.Views.Client
             this.txtTAXNumber.ForeColor = System.Drawing.Color.Gray;
             this.txtTAXNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTAXNumber.HoverState.Parent = this.txtTAXNumber;
-            this.txtTAXNumber.Location = new System.Drawing.Point(220, 250);
+            this.txtTAXNumber.Location = new System.Drawing.Point(215, 283);
             this.txtTAXNumber.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtTAXNumber.MinimumSize = new System.Drawing.Size(0, 54);
             this.txtTAXNumber.Name = "txtTAXNumber";
@@ -158,9 +156,9 @@ namespace ElbayaNPresentation.Views.Client
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(507, 260);
+            this.label6.Location = new System.Drawing.Point(502, 293);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(115, 32);
+            this.label6.Size = new System.Drawing.Size(130, 35);
             this.label6.TabIndex = 32;
             this.label6.Text = "الرقم الضريبي";
             // 
@@ -173,9 +171,9 @@ namespace ElbayaNPresentation.Views.Client
             this.cbIsActive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbIsActive.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold);
             this.cbIsActive.ForeColor = System.Drawing.Color.DimGray;
-            this.cbIsActive.Location = new System.Drawing.Point(543, 503);
+            this.cbIsActive.Location = new System.Drawing.Point(523, 536);
             this.cbIsActive.Name = "cbIsActive";
-            this.cbIsActive.Size = new System.Drawing.Size(109, 36);
+            this.cbIsActive.Size = new System.Drawing.Size(124, 39);
             this.cbIsActive.TabIndex = 14;
             this.cbIsActive.Text = "مورد نشط";
             this.cbIsActive.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -186,9 +184,9 @@ namespace ElbayaNPresentation.Views.Client
             this.nudCurrentBalance.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.nudCurrentBalance.BackColor = System.Drawing.SystemColors.ControlLight;
             this.nudCurrentBalance.Enabled = false;
-            this.nudCurrentBalance.Location = new System.Drawing.Point(219, 580);
+            this.nudCurrentBalance.Location = new System.Drawing.Point(214, 613);
             this.nudCurrentBalance.Name = "nudCurrentBalance";
-            this.nudCurrentBalance.Size = new System.Drawing.Size(144, 46);
+            this.nudCurrentBalance.Size = new System.Drawing.Size(144, 52);
             this.nudCurrentBalance.TabIndex = 29;
             this.nudCurrentBalance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudCurrentBalance.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
@@ -197,9 +195,9 @@ namespace ElbayaNPresentation.Views.Client
             // 
             this.nudOpeningBalance.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.nudOpeningBalance.BackColor = System.Drawing.Color.White;
-            this.nudOpeningBalance.Location = new System.Drawing.Point(220, 501);
+            this.nudOpeningBalance.Location = new System.Drawing.Point(215, 534);
             this.nudOpeningBalance.Name = "nudOpeningBalance";
-            this.nudOpeningBalance.Size = new System.Drawing.Size(144, 46);
+            this.nudOpeningBalance.Size = new System.Drawing.Size(144, 52);
             this.nudOpeningBalance.TabIndex = 15;
             this.nudOpeningBalance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudOpeningBalance.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
@@ -225,7 +223,7 @@ namespace ElbayaNPresentation.Views.Client
             this.txtTradeLicense.ForeColor = System.Drawing.Color.Gray;
             this.txtTradeLicense.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTradeLicense.HoverState.Parent = this.txtTradeLicense;
-            this.txtTradeLicense.Location = new System.Drawing.Point(220, 167);
+            this.txtTradeLicense.Location = new System.Drawing.Point(215, 200);
             this.txtTradeLicense.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtTradeLicense.MinimumSize = new System.Drawing.Size(0, 54);
             this.txtTradeLicense.Name = "txtTradeLicense";
@@ -257,7 +255,7 @@ namespace ElbayaNPresentation.Views.Client
             this.txtRefNumber.ForeColor = System.Drawing.Color.Gray;
             this.txtRefNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtRefNumber.HoverState.Parent = this.txtRefNumber;
-            this.txtRefNumber.Location = new System.Drawing.Point(865, 86);
+            this.txtRefNumber.Location = new System.Drawing.Point(860, 119);
             this.txtRefNumber.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtRefNumber.MinimumSize = new System.Drawing.Size(0, 55);
             this.txtRefNumber.Name = "txtRefNumber";
@@ -290,7 +288,7 @@ namespace ElbayaNPresentation.Views.Client
             this.txtNote.ForeColor = System.Drawing.Color.Gray;
             this.txtNote.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNote.HoverState.Parent = this.txtNote;
-            this.txtNote.Location = new System.Drawing.Point(865, 482);
+            this.txtNote.Location = new System.Drawing.Point(860, 515);
             this.txtNote.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtNote.MinimumSize = new System.Drawing.Size(0, 55);
             this.txtNote.Multiline = true;
@@ -323,7 +321,7 @@ namespace ElbayaNPresentation.Views.Client
             this.txtAddress.ForeColor = System.Drawing.Color.Gray;
             this.txtAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAddress.HoverState.Parent = this.txtAddress;
-            this.txtAddress.Location = new System.Drawing.Point(220, 416);
+            this.txtAddress.Location = new System.Drawing.Point(215, 449);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtAddress.MinimumSize = new System.Drawing.Size(0, 54);
             this.txtAddress.Name = "txtAddress";
@@ -355,7 +353,7 @@ namespace ElbayaNPresentation.Views.Client
             this.txtFirmPhoneNumber.ForeColor = System.Drawing.Color.Gray;
             this.txtFirmPhoneNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFirmPhoneNumber.HoverState.Parent = this.txtFirmPhoneNumber;
-            this.txtFirmPhoneNumber.Location = new System.Drawing.Point(220, 333);
+            this.txtFirmPhoneNumber.Location = new System.Drawing.Point(215, 366);
             this.txtFirmPhoneNumber.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtFirmPhoneNumber.MinimumSize = new System.Drawing.Size(0, 54);
             this.txtFirmPhoneNumber.Name = "txtFirmPhoneNumber";
@@ -387,7 +385,7 @@ namespace ElbayaNPresentation.Views.Client
             this.txtFirmName.ForeColor = System.Drawing.Color.Gray;
             this.txtFirmName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFirmName.HoverState.Parent = this.txtFirmName;
-            this.txtFirmName.Location = new System.Drawing.Point(220, 84);
+            this.txtFirmName.Location = new System.Drawing.Point(215, 117);
             this.txtFirmName.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtFirmName.MinimumSize = new System.Drawing.Size(0, 54);
             this.txtFirmName.Name = "txtFirmName";
@@ -419,7 +417,7 @@ namespace ElbayaNPresentation.Views.Client
             this.txtEmail.ForeColor = System.Drawing.Color.Gray;
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmail.HoverState.Parent = this.txtEmail;
-            this.txtEmail.Location = new System.Drawing.Point(865, 417);
+            this.txtEmail.Location = new System.Drawing.Point(860, 450);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtEmail.MinimumSize = new System.Drawing.Size(0, 55);
             this.txtEmail.Name = "txtEmail";
@@ -451,7 +449,7 @@ namespace ElbayaNPresentation.Views.Client
             this.txtFax.ForeColor = System.Drawing.Color.Gray;
             this.txtFax.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFax.HoverState.Parent = this.txtFax;
-            this.txtFax.Location = new System.Drawing.Point(865, 352);
+            this.txtFax.Location = new System.Drawing.Point(860, 385);
             this.txtFax.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtFax.MinimumSize = new System.Drawing.Size(0, 55);
             this.txtFax.Name = "txtFax";
@@ -483,7 +481,7 @@ namespace ElbayaNPresentation.Views.Client
             this.txtMobile.ForeColor = System.Drawing.Color.Gray;
             this.txtMobile.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMobile.HoverState.Parent = this.txtMobile;
-            this.txtMobile.Location = new System.Drawing.Point(865, 281);
+            this.txtMobile.Location = new System.Drawing.Point(860, 314);
             this.txtMobile.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtMobile.MinimumSize = new System.Drawing.Size(0, 55);
             this.txtMobile.Name = "txtMobile";
@@ -515,7 +513,7 @@ namespace ElbayaNPresentation.Views.Client
             this.txtIDNumber.ForeColor = System.Drawing.Color.Gray;
             this.txtIDNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtIDNumber.HoverState.Parent = this.txtIDNumber;
-            this.txtIDNumber.Location = new System.Drawing.Point(865, 216);
+            this.txtIDNumber.Location = new System.Drawing.Point(860, 249);
             this.txtIDNumber.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtIDNumber.MinimumSize = new System.Drawing.Size(0, 55);
             this.txtIDNumber.Name = "txtIDNumber";
@@ -548,7 +546,7 @@ namespace ElbayaNPresentation.Views.Client
             this.txtName.ForeColor = System.Drawing.Color.Gray;
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtName.HoverState.Parent = this.txtName;
-            this.txtName.Location = new System.Drawing.Point(865, 151);
+            this.txtName.Location = new System.Drawing.Point(860, 184);
             this.txtName.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtName.MinimumSize = new System.Drawing.Size(0, 55);
             this.txtName.Name = "txtName";
@@ -570,7 +568,7 @@ namespace ElbayaNPresentation.Views.Client
             this.btnAdd.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Location = new System.Drawing.Point(1006, 687);
+            this.btnAdd.Location = new System.Drawing.Point(1001, 720);
             this.btnAdd.MinimumSize = new System.Drawing.Size(151, 45);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
@@ -586,9 +584,9 @@ namespace ElbayaNPresentation.Views.Client
             this.label15.BackColor = System.Drawing.Color.White;
             this.label15.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold);
             this.label15.ForeColor = System.Drawing.Color.DimGray;
-            this.label15.Location = new System.Drawing.Point(379, 586);
+            this.label15.Location = new System.Drawing.Point(374, 619);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(117, 32);
+            this.label15.Size = new System.Drawing.Size(129, 35);
             this.label15.TabIndex = 27;
             this.label15.Text = "الرصيد الحالي";
             // 
@@ -599,9 +597,9 @@ namespace ElbayaNPresentation.Views.Client
             this.label10.BackColor = System.Drawing.Color.White;
             this.label10.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold);
             this.label10.ForeColor = System.Drawing.Color.DimGray;
-            this.label10.Location = new System.Drawing.Point(380, 507);
+            this.label10.Location = new System.Drawing.Point(375, 540);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(139, 32);
+            this.label10.Size = new System.Drawing.Size(156, 35);
             this.label10.TabIndex = 27;
             this.label10.Text = "الرصيد الافتتاحي";
             // 
@@ -612,9 +610,9 @@ namespace ElbayaNPresentation.Views.Client
             this.label8.BackColor = System.Drawing.Color.White;
             this.label8.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(503, 176);
+            this.label8.Location = new System.Drawing.Point(498, 209);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(155, 32);
+            this.label8.Size = new System.Drawing.Size(176, 35);
             this.label8.TabIndex = 27;
             this.label8.Text = "رقم السجل التجاري";
             // 
@@ -625,9 +623,9 @@ namespace ElbayaNPresentation.Views.Client
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(1186, 87);
+            this.label5.Location = new System.Drawing.Point(1181, 120);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 32);
+            this.label5.Size = new System.Drawing.Size(91, 35);
             this.label5.TabIndex = 27;
             this.label5.Text = "رقم المورد";
             // 
@@ -642,13 +640,14 @@ namespace ElbayaNPresentation.Views.Client
             this.btnUpdate.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.HoverState.Parent = this.btnUpdate;
-            this.btnUpdate.Location = new System.Drawing.Point(827, 687);
+            this.btnUpdate.Location = new System.Drawing.Point(822, 720);
             this.btnUpdate.MinimumSize = new System.Drawing.Size(151, 45);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
             this.btnUpdate.Size = new System.Drawing.Size(151, 53);
             this.btnUpdate.TabIndex = 17;
             this.btnUpdate.Text = "حفظ التعديلات";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnBackToUc
             // 
@@ -660,7 +659,7 @@ namespace ElbayaNPresentation.Views.Client
             this.btnBackToUc.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackToUc.ForeColor = System.Drawing.Color.White;
             this.btnBackToUc.HoverState.Parent = this.btnBackToUc;
-            this.btnBackToUc.Location = new System.Drawing.Point(306, 687);
+            this.btnBackToUc.Location = new System.Drawing.Point(301, 720);
             this.btnBackToUc.MinimumSize = new System.Drawing.Size(151, 45);
             this.btnBackToUc.Name = "btnBackToUc";
             this.btnBackToUc.ShadowDecoration.Parent = this.btnBackToUc;
@@ -669,25 +668,6 @@ namespace ElbayaNPresentation.Views.Client
             this.btnBackToUc.Text = "رجوع";
             this.btnBackToUc.Click += new System.EventHandler(this.btnBackToUc_Click);
             // 
-            // btnDeleteByOne
-            // 
-            this.btnDeleteByOne.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnDeleteByOne.BackColor = System.Drawing.Color.White;
-            this.btnDeleteByOne.BorderRadius = 11;
-            this.btnDeleteByOne.CheckedState.Parent = this.btnDeleteByOne;
-            this.btnDeleteByOne.CustomImages.Parent = this.btnDeleteByOne;
-            this.btnDeleteByOne.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
-            this.btnDeleteByOne.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteByOne.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteByOne.HoverState.Parent = this.btnDeleteByOne;
-            this.btnDeleteByOne.Location = new System.Drawing.Point(652, 687);
-            this.btnDeleteByOne.MinimumSize = new System.Drawing.Size(151, 45);
-            this.btnDeleteByOne.Name = "btnDeleteByOne";
-            this.btnDeleteByOne.ShadowDecoration.Parent = this.btnDeleteByOne;
-            this.btnDeleteByOne.Size = new System.Drawing.Size(151, 53);
-            this.btnDeleteByOne.TabIndex = 18;
-            this.btnDeleteByOne.Text = "أرشفة";
-            // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -695,9 +675,9 @@ namespace ElbayaNPresentation.Views.Client
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(503, 434);
+            this.label3.Location = new System.Drawing.Point(498, 467);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 32);
+            this.label3.Size = new System.Drawing.Size(131, 35);
             this.label3.TabIndex = 27;
             this.label3.Text = "عنوان الشركة";
             // 
@@ -708,9 +688,9 @@ namespace ElbayaNPresentation.Views.Client
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(1190, 503);
+            this.label2.Location = new System.Drawing.Point(1185, 536);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 32);
+            this.label2.Size = new System.Drawing.Size(90, 35);
             this.label2.TabIndex = 26;
             this.label2.Text = "ملاحظات";
             // 
@@ -721,10 +701,10 @@ namespace ElbayaNPresentation.Views.Client
             this.label14.BackColor = System.Drawing.Color.White;
             this.label14.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.DimGray;
-            this.label14.Location = new System.Drawing.Point(1166, 420);
+            this.label14.Location = new System.Drawing.Point(1161, 453);
             this.label14.MinimumSize = new System.Drawing.Size(0, 55);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(128, 55);
+            this.label14.Size = new System.Drawing.Size(143, 55);
             this.label14.TabIndex = 27;
             this.label14.Text = "البريد الالكتروني";
             // 
@@ -735,9 +715,9 @@ namespace ElbayaNPresentation.Views.Client
             this.label13.BackColor = System.Drawing.Color.White;
             this.label13.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.DimGray;
-            this.label13.Location = new System.Drawing.Point(1174, 365);
+            this.label13.Location = new System.Drawing.Point(1169, 398);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(99, 32);
+            this.label13.Size = new System.Drawing.Size(113, 35);
             this.label13.TabIndex = 27;
             this.label13.Text = "رقم الفاكس";
             // 
@@ -748,9 +728,9 @@ namespace ElbayaNPresentation.Views.Client
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(507, 348);
+            this.label7.Location = new System.Drawing.Point(502, 381);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(120, 32);
+            this.label7.Size = new System.Drawing.Size(135, 35);
             this.label7.TabIndex = 27;
             this.label7.Text = "تليفون الشركة";
             // 
@@ -761,9 +741,9 @@ namespace ElbayaNPresentation.Views.Client
             this.label12.BackColor = System.Drawing.Color.White;
             this.label12.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.DimGray;
-            this.label12.Location = new System.Drawing.Point(1171, 299);
+            this.label12.Location = new System.Drawing.Point(1166, 332);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(95, 32);
+            this.label12.Size = new System.Drawing.Size(106, 35);
             this.label12.TabIndex = 27;
             this.label12.Text = "رقم الجوال";
             // 
@@ -774,9 +754,9 @@ namespace ElbayaNPresentation.Views.Client
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(507, 94);
+            this.label4.Location = new System.Drawing.Point(502, 127);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 32);
+            this.label4.Size = new System.Drawing.Size(114, 35);
             this.label4.TabIndex = 27;
             this.label4.Text = "اسم الشركة";
             // 
@@ -787,9 +767,9 @@ namespace ElbayaNPresentation.Views.Client
             this.label11.BackColor = System.Drawing.Color.White;
             this.label11.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DimGray;
-            this.label11.Location = new System.Drawing.Point(1174, 225);
+            this.label11.Location = new System.Drawing.Point(1169, 258);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(86, 32);
+            this.label11.Size = new System.Drawing.Size(98, 35);
             this.label11.TabIndex = 27;
             this.label11.Text = "رقم الهوية";
             // 
@@ -800,9 +780,9 @@ namespace ElbayaNPresentation.Views.Client
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(1179, 160);
+            this.label1.Location = new System.Drawing.Point(1174, 193);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 32);
+            this.label1.Size = new System.Drawing.Size(101, 35);
             this.label1.TabIndex = 27;
             this.label1.Text = "اسم المورد ";
             // 
@@ -814,7 +794,7 @@ namespace ElbayaNPresentation.Views.Client
             this.Appearance.Options.UseFont = true;
             this.Appearance.Options.UseForeColor = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1333, 807);
+            this.ClientSize = new System.Drawing.Size(1357, 831);
             this.ControlBox = false;
             this.Controls.Add(this.gbMainOperations);
             this.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -852,7 +832,6 @@ namespace ElbayaNPresentation.Views.Client
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2Button btnUpdate;
-        private Guna.UI2.WinForms.Guna2Button btnDeleteByOne;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;

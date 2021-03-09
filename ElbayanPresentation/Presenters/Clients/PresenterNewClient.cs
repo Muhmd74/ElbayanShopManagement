@@ -67,6 +67,52 @@ namespace ElbayaNPresentation.Presenters.Clients
                 Phone = _view.FirmPhoneNumber.Text
             });
         }
+       // 2. Update Current Object:
+       private void UpdateClient()
+        {
+            Client.UpdateCustomer(new ElbayanServices.Repository.Clints.Supplier.Dtos.ClintDto
+            {
+                Id = _view.ID,
+                Name = _view.SuppliersName.Text,
+                NationalIdentity = Convert.ToInt32(_view.IdentityNumber.Text),
+                IsActive = _view.IsActive.Checked,
+                FirmName = _view.FirmName.Text,
+                Address = _view.Address.Text,
+                CommercialRegister = _view.TradeLicense.Text,
+                ReferenceNumber = Convert.ToInt32(_view.RefSupplierNumber.Text),
+                Description = _view.Note.Text,
+                Mobile = _view.Mobile.Text,
+                TaxNumber = _view.TaxNumber.Text,
+                OpeningBalance = Convert.ToInt32(_view.OpeningBalance.Value),
+                FaxNumber = _view.Fax.Text,
+                IsSupplier = _view.IsSupplier,
+                IsCustomer = _view.IsCustomer,
+                Phone = _view.FirmPhoneNumber.Text
+            });
+        }
+       public void OnClickbtnUpdate()
+        {
+            if (!string.IsNullOrEmpty(_view.SuppliersName.Text) && !string.IsNullOrEmpty(_view.Mobile.Text))
+            {
+                if (MessageBox.Show("هل تود إضافة مورد جديد", "تأكيد", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    UpdateClient();
+                    ClearControls();
+                }
+                else
+                {
+                    UpdateClient();
+                    ClearControls();
+                    ucAllSupplier.Instance.Presenter.OnLoadUC();
+                    frmNewClient.Instance.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("إدخال اسم المورد ورقم جواله إلزامي", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
+        }
         private void ClearControls()
         {
             _view.SuppliersName.Text = _view.IdentityNumber.Text = _view.FirmName.Text =

@@ -140,7 +140,8 @@ namespace ElbayanServices.Repository.Clints.Supplier
                     OpeningBalance = customer.OpeningBalance,
                     TaxNumber = customer.TaxNumber,
                     Phone = customer.Phone,
-                    FaxNumber = customer.FaxNumber
+                    FaxNumber = customer.FaxNumber,
+                    IsActive = customer.IsActive
                 };
             }
 

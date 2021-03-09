@@ -37,5 +37,19 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
         {
             Presenter.OnClickbtnAddNewObject();
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnTextChnagedtxtSearch();
+        }
+        private void dgvActiveObjects_DoubleClick(object sender, EventArgs e)
+        {
+            Presenter.OnDoubleClickdgvActiveObject();
+        }
+        private void dgvDeletedObjects_DoubleClick(object sender, EventArgs e)
+        {
+            Presenter.OnDoubleClickdgvNotActiveObject();
+
+        }
     }
 }
