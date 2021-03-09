@@ -89,6 +89,7 @@
     <Compile Include="Presenters\CommonPresenter\DataGridViewStyle.cs" />
     <Compile Include="Presenters\CommonPresenter\ValidateControls.cs" />
     <Compile Include="Presenters\Finance\Employee\IViewEmployee.cs" />
+    <Compile Include="Presenters\Finance\Employee\PresenterEmployee.cs" />
     <Compile Include="Presenters\Finance\Expenses\HandReceipt\IViewHandReceipt.cs" />
     <Compile Include="Presenters\Finance\Expenses\IViewExpenses.cs" />
     <Compile Include="Presenters\Finance\TreasuryAndBank\Bank\IViewBank.cs" />
