@@ -150,12 +150,6 @@
     <Compile Include="Views\Store\Building\ucBuilding.Designer.cs">
       <DependentUpon>ucBuilding.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Store\Building\ucBuildings.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\Store\Building\ucBuildings.Designer.cs">
-      <DependentUpon>ucBuildings.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\Store\Category\ucMaincategory.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -218,9 +212,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Store\Building\ucBuilding.resx">
       <DependentUpon>ucBuilding.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Store\Building\ucBuildings.resx">
-      <DependentUpon>ucBuildings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Store\Category\ucMaincategory.resx">
       <DependentUpon>ucMaincategory.cs</DependentUpon>

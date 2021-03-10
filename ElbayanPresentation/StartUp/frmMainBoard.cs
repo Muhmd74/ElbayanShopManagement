@@ -44,6 +44,8 @@ namespace ElbayaNPresentation
             System.Drawing.Rectangle rect = Screen.GetWorkingArea(this);
             this.MaximizedBounds = Screen.GetWorkingArea(this);
             this.WindowState = FormWindowState.Maximized;
+            this.Location = new Point(0, 0);
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
         }
 
         //// Global Functionality:
@@ -145,13 +147,13 @@ namespace ElbayaNPresentation
 
         private void barBtnBuilding_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (!gcContainer.Controls.Contains(ucBuildings.Instance))
+            if (!gcContainer.Controls.Contains(ucBuilding.Instance))
             {
-                gcContainer.Controls.Add(ucBuildings.Instance);
-                ucBuildings.Instance.Dock = DockStyle.Fill;
-                ucBuildings.Instance.BringToFront();
+                gcContainer.Controls.Add(ucBuilding.Instance);
+                ucBuilding.Instance.Dock = DockStyle.Fill;
+                ucBuilding.Instance.BringToFront();
             }
-            ucBuildings.Instance.BringToFront();
+            ucBuilding.Instance.BringToFront();
         }
 
         private void barBtnPOSs_ItemClick(object sender, ItemClickEventArgs e)
