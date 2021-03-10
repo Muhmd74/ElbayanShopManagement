@@ -88,9 +88,9 @@ namespace ElbayaNPresentation.Presenters.Store.Category.MainCategory
        }
         public void OnDoubleClickdgvDeletedObject()
        {
-            if (_view.ActiveObjects.CurrentRow.Index != -1)
+            if (_view.DeletedObjects.CurrentRow.Index != -1)
             {
-                _view.ID = new Guid(_view.DeletedObjects.CurrentRow.Cells["CategoryID"].Value.ToString());
+                _view.ID = new Guid(_view.DeletedObjects.CurrentRow.Cells["CategoryDeletedID"].Value.ToString());
                 OnDoubleDvgGetById(_view.ID);
             }
        }

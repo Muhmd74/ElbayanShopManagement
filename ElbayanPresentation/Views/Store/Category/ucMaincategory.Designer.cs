@@ -45,16 +45,16 @@
             this.tabDGVContainer = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dgvActiveObjects = new System.Windows.Forms.DataGridView();
+            this.MainCategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AutoNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSubCategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSubcategoryDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dgvDeletedObjects = new System.Windows.Forms.DataGridView();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeletedDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MainCategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AutoNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvSubCategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvSubcategoryDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvSubCategoryDeletedID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoryDeletedID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AutoDeletedNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSubCategoryDeletedName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSubCategoryDeletedDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -365,6 +365,37 @@
             this.dgvActiveObjects.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvActiveObjects_RowPostPaint);
             this.dgvActiveObjects.DoubleClick += new System.EventHandler(this.dgvActiveObjects_DoubleClick);
             // 
+            // MainCategoryID
+            // 
+            this.MainCategoryID.DataPropertyName = "Id";
+            this.MainCategoryID.HeaderText = "رقم التصنيف المرجعي";
+            this.MainCategoryID.MinimumWidth = 6;
+            this.MainCategoryID.Name = "MainCategoryID";
+            this.MainCategoryID.ReadOnly = true;
+            this.MainCategoryID.Visible = false;
+            // 
+            // AutoNumber
+            // 
+            this.AutoNumber.HeaderText = "الرقم المسلسل";
+            this.AutoNumber.Name = "AutoNumber";
+            this.AutoNumber.ReadOnly = true;
+            // 
+            // dgvSubCategoryName
+            // 
+            this.dgvSubCategoryName.DataPropertyName = "Name";
+            this.dgvSubCategoryName.HeaderText = "اسم التصنيف";
+            this.dgvSubCategoryName.MinimumWidth = 6;
+            this.dgvSubCategoryName.Name = "dgvSubCategoryName";
+            this.dgvSubCategoryName.ReadOnly = true;
+            // 
+            // dgvSubcategoryDescription
+            // 
+            this.dgvSubcategoryDescription.DataPropertyName = "Description";
+            this.dgvSubcategoryDescription.HeaderText = "وصف التصنيف";
+            this.dgvSubcategoryDescription.MinimumWidth = 6;
+            this.dgvSubcategoryDescription.Name = "dgvSubcategoryDescription";
+            this.dgvSubcategoryDescription.ReadOnly = true;
+            // 
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.SystemColors.HotTrack;
@@ -395,7 +426,7 @@
             this.dgvDeletedObjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDeletedObjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDeletedObjects.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgvSubCategoryDeletedID,
+            this.CategoryDeletedID,
             this.AutoDeletedNumber,
             this.dgvSubCategoryDeletedName,
             this.dgvSubCategoryDeletedDescription});
@@ -440,45 +471,14 @@
             this.DeletedDescription.ReadOnly = true;
             this.DeletedDescription.Width = 125;
             // 
-            // MainCategoryID
+            // CategoryDeletedID
             // 
-            this.MainCategoryID.DataPropertyName = "Id";
-            this.MainCategoryID.HeaderText = "رقم التصنيف المرجعي";
-            this.MainCategoryID.MinimumWidth = 6;
-            this.MainCategoryID.Name = "MainCategoryID";
-            this.MainCategoryID.ReadOnly = true;
-            this.MainCategoryID.Visible = false;
-            // 
-            // AutoNumber
-            // 
-            this.AutoNumber.HeaderText = "الرقم المسلسل";
-            this.AutoNumber.Name = "AutoNumber";
-            this.AutoNumber.ReadOnly = true;
-            // 
-            // dgvSubCategoryName
-            // 
-            this.dgvSubCategoryName.DataPropertyName = "Name";
-            this.dgvSubCategoryName.HeaderText = "اسم التصنيف";
-            this.dgvSubCategoryName.MinimumWidth = 6;
-            this.dgvSubCategoryName.Name = "dgvSubCategoryName";
-            this.dgvSubCategoryName.ReadOnly = true;
-            // 
-            // dgvSubcategoryDescription
-            // 
-            this.dgvSubcategoryDescription.DataPropertyName = "Description";
-            this.dgvSubcategoryDescription.HeaderText = "وصف التصنيف";
-            this.dgvSubcategoryDescription.MinimumWidth = 6;
-            this.dgvSubcategoryDescription.Name = "dgvSubcategoryDescription";
-            this.dgvSubcategoryDescription.ReadOnly = true;
-            // 
-            // dgvSubCategoryDeletedID
-            // 
-            this.dgvSubCategoryDeletedID.DataPropertyName = "Id";
-            this.dgvSubCategoryDeletedID.HeaderText = "الرقم المرجعي";
-            this.dgvSubCategoryDeletedID.MinimumWidth = 6;
-            this.dgvSubCategoryDeletedID.Name = "dgvSubCategoryDeletedID";
-            this.dgvSubCategoryDeletedID.ReadOnly = true;
-            this.dgvSubCategoryDeletedID.Visible = false;
+            this.CategoryDeletedID.DataPropertyName = "Id";
+            this.CategoryDeletedID.HeaderText = "الرقم المرجعي";
+            this.CategoryDeletedID.MinimumWidth = 6;
+            this.CategoryDeletedID.Name = "CategoryDeletedID";
+            this.CategoryDeletedID.ReadOnly = true;
+            this.CategoryDeletedID.Visible = false;
             // 
             // AutoDeletedNumber
             // 
@@ -548,7 +548,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AutoNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvSubCategoryName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvSubcategoryDescription;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvSubCategoryDeletedID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CategoryDeletedID;
         private System.Windows.Forms.DataGridViewTextBoxColumn AutoDeletedNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvSubCategoryDeletedName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvSubCategoryDeletedDescription;
