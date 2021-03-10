@@ -75,5 +75,10 @@ namespace ElbayaNPresentation.Views.Store.POSs
         {
             Presenter.OnTextChnagedtxtSearch();
         }
+
+        private void btnDeleteByOne_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
