@@ -51,8 +51,10 @@ namespace ElbayaNPresentation.Views.Store.Category
         public Guna2Button DeleteObject { get => btnDeleteByOne; set => btnDeleteByOne = value; }
         public TabControl dgvTabControl { get => tabDGVContainer; set => tabDGVContainer = value; }
 
-        private void btnAdd_Click_1(object sender, EventArgs e)
-        { 
+
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
             Presenter.OnClickbtnAdd();
         }
 
@@ -60,42 +62,42 @@ namespace ElbayaNPresentation.Views.Store.Category
         {
             Presenter.OnCLickbtnUpdate();
         }
-
-        private void btnDeleteByOne_Click_1(object sender, EventArgs e)
-        {
-            Presenter.OnClickDelete();
-        }
-
-        private void txtSearch_TextChanged_1(object sender, EventArgs e)
+        private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             Presenter.OnTextChangedSearch();
         }
 
-        private void ActiveMainCategory_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Presenter.OnSelectedIndexChangedTabContainer();
-        }
-
-        private void dgvMainCategory_DoubleClick(object sender, EventArgs e)
+        private void dgvActiveObjects_DoubleClick(object sender, EventArgs e)
         {
             Presenter.OnDoubleClickdgvActiveObject();
+
         }
 
-        private void dgvMainCategory_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        private void dgvActiveObjects_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            this.dgvActiveObjects.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
+            this.dgvActiveObjects.Rows[e.RowIndex].Cells["AutoNumber"].Value = (e.RowIndex + 1).ToString();
         }
 
-        private void dgvDeletedMainCategory_DoubleClick_1(object sender, EventArgs e)
+        private void dgvDeletedObjects_DoubleClick(object sender, EventArgs e)
         {
             Presenter.OnDoubleClickdgvDeletedObject();
+
         }
 
-        private void dgvDeletedMainCategory_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        private void dgvDeletedObjects_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            this.dgvDeletedObjects.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
+            this.dgvDeletedObjects.Rows[e.RowIndex].Cells["AutoDeletedNumber"].Value = (e.RowIndex + 1).ToString();
         }
 
-        
+        private void tabDGVContainer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Presenter.OnSelectedIndexChangedTabContainer();
+
+        }
+
+        private void btnDeleteByOne_Click(object sender, EventArgs e)
+        {
+            Presenter.OnClickDelete();
+        }
     }
 }

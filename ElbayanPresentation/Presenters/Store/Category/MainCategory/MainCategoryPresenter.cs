@@ -46,11 +46,12 @@ namespace ElbayaNPresentation.Presenters.Store.Category.MainCategory
         public void OnLoad()
         {
             PopulateDGV();
+            DataGridViewStyle.StyleDatagridview(_view.ActiveObjects);
+            DataGridViewStyle.StyleDatagridview(_view.DeletedObjects);
+
         }
         private void PopulateDGV()
         {
-            DataGridViewStyle.StyleDatagridview(_view.ActiveObjects);
-            DataGridViewStyle.StyleDatagridview(_view.DeletedObjects);
 
             if (Category.GetAll().Any() || Category.GetAllDeleted().Any())
             {
