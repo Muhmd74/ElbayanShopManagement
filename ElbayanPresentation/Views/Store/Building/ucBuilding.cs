@@ -56,12 +56,6 @@ namespace ElbayaNPresentation.Views.Store.Building
             Presenter.CreateNewObject();
         }
 
-        private void txtPhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            ValidateControls.ValidateTextBoxOnlyNumber(sender, e, txtPhoneNumber);
-            this.txtPhoneNumber.MaxLength = 14;
-        }
-
         private void dgvActiveObjects_DoubleClick(object sender, EventArgs e)
         {
             Presenter.OnDoublClickdgvActiveObject();
@@ -91,5 +85,12 @@ namespace ElbayaNPresentation.Views.Store.Building
         {
             Presenter.OnTextChnagedtxtSearch();
         }
+
+        private void txtPhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidateControls.ValidateTextBoxOnlyNumber(sender, e, txtPhoneNumber);
+            this.txtPhoneNumber.MaxLength = 14;
+        }
+
     }
 }
