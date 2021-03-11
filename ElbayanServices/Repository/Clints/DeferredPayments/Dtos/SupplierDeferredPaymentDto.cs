@@ -7,7 +7,7 @@ namespace ElbayanServices.Repository.Clints.DeferredPayments.Dtos
     {
         public Guid Id { get; set; }
         public Guid ClintId { get; set; }
-        public Guid OrderId { get; set; }
+        public Guid? OrderId { get; set; }
         public decimal DeferredOfOrder { get; set; } //المتبقي
         public decimal Payment { get; set; }
         public decimal Balance { get; set; }//  in add DeferredOfOrder in update Balance - Payment

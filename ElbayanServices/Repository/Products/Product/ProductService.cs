@@ -44,7 +44,8 @@ namespace ElbayanServices.Repository.Products.Product
                     IsUnitSale = model.IsUnitSale,
                     ImageUrl = model.ImageUrl,
                     Discount = Convert.ToInt32(model.Discount),
-                    Vat = Convert.ToInt32(model.Vat)
+                    Vat = Convert.ToInt32(model.Vat),
+                    ClintId = model.ClintId
                 });
                 _context.SaveChanges();
                 return true;
@@ -66,6 +67,7 @@ namespace ElbayanServices.Repository.Products.Product
                 result.LimitedDemand = model.LimitedDemand;
                 result.SubCategoryId = model.SubCategoryId;
                 result.UCP = model.UCP;
+                result.ClintId = model.ClintId;
                 _context.SaveChanges();
                 return true;
         }
@@ -154,6 +156,7 @@ namespace ElbayanServices.Repository.Products.Product
             return _context.Products.Where(d => d.IsDeleted)
                 .Include(d => d.SmallUnit)
                 .Include(d => d.LargeUnit)
+                .Include(d=>d.Clint)
                 .Include(d => d.SubCategory)
                 .OrderByDescending(d => d.DateTime)
                 .Select(d => new ProductDto()
@@ -176,6 +179,8 @@ namespace ElbayanServices.Repository.Products.Product
                     SaleDefaultPrice = d.SaleDefaultPrice,
                     WholesalePrice = d.WholesalePrice,
                     ImageUrl = d.ImageUrl,
+                    ClintId = d.ClintId,
+                    ClintName = d.Clint.Name,
                     IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name
 
                 }).ToList();
@@ -191,6 +196,7 @@ namespace ElbayanServices.Repository.Products.Product
 
                 )
                 .Include(d => d.SmallUnit)
+                .Include(d=>d.Clint)
                 .Include(d => d.LargeUnit)
                 .Include(d => d.SubCategory)
                 .OrderByDescending(d => d.DateTime)
@@ -217,6 +223,8 @@ namespace ElbayanServices.Repository.Products.Product
                     Vat = d.Vat,
                     ImageUrl = d.ImageUrl,
                     IsUnitSale = d.IsUnitSale,
+                    ClintId = d.ClintId,
+                    ClintName = d.Clint.Name,
                     IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name
                 }).ToList();
            
@@ -256,6 +264,8 @@ namespace ElbayanServices.Repository.Products.Product
                     WholesalePrice = d.WholesalePrice,
                     Discount = d.Discount,
                     Vat = d.Vat,
+                    ClintId = d.ClintId,
+                    ClintName = d.Clint.Name,
                     ImageUrl = d.ImageUrl,
                     IsUnitSale = d.IsUnitSale,
                     IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name
@@ -272,6 +282,7 @@ namespace ElbayanServices.Repository.Products.Product
 
                 )
                 .Include(d => d.SmallUnit)
+                .Include(d=>d.Clint)
                 .Include(d => d.LargeUnit)
                 .Include(d => d.SubCategory)
                 .OrderByDescending(d => d.DateTime)
@@ -296,6 +307,8 @@ namespace ElbayanServices.Repository.Products.Product
                     WholesalePrice = d.WholesalePrice,
                     Discount = d.Discount,
                     Vat = d.Vat,
+                    ClintId = d.ClintId,
+                    ClintName = d.Clint.Name,
                     ImageUrl = d.ImageUrl,
                     IsUnitSale = d.IsUnitSale,
                     IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name
@@ -339,6 +352,7 @@ namespace ElbayanServices.Repository.Products.Product
             var model = _context.Products
                 .Include(d => d.SmallUnit)
                 .Include(d => d.LargeUnit)
+                .Include(d=>d.Clint)
                 .Include(d => d.SubCategory)
                 .FirstOrDefault(d => d.Id == id);
             if (model != null)
@@ -356,6 +370,8 @@ namespace ElbayanServices.Repository.Products.Product
                     LimitedDemand = model.LimitedDemand,
                     ProductNumber = model.ProductNumber,
                     SmallUnitId = model.SmallUnitId,
+                    ClintId = model.ClintId,
+                    ClintName = model.Clint.Name,
                     SmallUnitName = model.SmallUnit.Name,
                     SubCategoryId = model.SubCategoryId,
                     SubCategoryName = model.SubCategory.Name,
@@ -427,7 +443,7 @@ namespace ElbayanServices.Repository.Products.Product
         }
         public int GenerateProductNumber()
         {
-            var lastNumber = _context.Products.OrderByDescending(d => d.DateTime).LastOrDefault()?.ProductNumber;
+            var lastNumber = _context.Products.Max().ProductNumber;
             if (lastNumber >= 0)
             {
                 return (int)(lastNumber + 1);
@@ -437,7 +453,7 @@ namespace ElbayanServices.Repository.Products.Product
         }
         public long GenerateSequenceNumber()
         {
-            var lastNumber = _context.Products.OrderByDescending(d => d.DateTime).LastOrDefault()?.BarCode;
+            var lastNumber = _context.Products.Max().BarCode;
             if (lastNumber >= 0)
             {
                 return (long)(lastNumber + 1);

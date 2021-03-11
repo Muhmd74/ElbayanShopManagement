@@ -39,7 +39,8 @@ namespace ElbayanServices.Repository.Employees.Employees
                PassportNumber = model.PassportNumber,
                Password = model.Password.ToEncrypt(),
                ResidenceType = model.ResidenceType,
-               Position = model.Position
+               Position = model.Position,
+               Salary = model.Salary
            });
            _context.SaveChanges();
            return true;
@@ -58,6 +59,7 @@ namespace ElbayanServices.Repository.Employees.Employees
                 employee.Name = model.Name;
                 employee.ResidenceType = model.ResidenceType;
                 employee.Position = model.Position;
+                employee.Salary = model.Salary;
                 _context.SaveChanges();
                 return true;
             }
@@ -104,7 +106,8 @@ namespace ElbayanServices.Repository.Employees.Employees
                     ResidenceType = d.ResidenceType,
                     Name = d.Name,
                     Id = d.Id,
-                    Position = d.Position
+                    Position = d.Position,
+                    Salary = d.Salary
                 }).ToList();
         }
         public List<EmployeeDto> GetAllEmployeeNotActive()
@@ -123,7 +126,8 @@ namespace ElbayanServices.Repository.Employees.Employees
                    ResidenceType = d.ResidenceType,
                    Name = d.Name,
                    Id = d.Id,
-                   Position = d.Position
+                   Position = d.Position,
+                   Salary = d.Salary
 
                 }).ToList();
         }
@@ -146,7 +150,8 @@ namespace ElbayanServices.Repository.Employees.Employees
                     ResidenceType = employee.ResidenceType,
                     Name = employee.Name,
                     Id = employee.Id,
-                    Position = employee.Position
+                    Position = employee.Position,
+                    Salary = employee.Salary
 
                 };
             }

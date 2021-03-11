@@ -42,7 +42,20 @@ namespace ElbayanServices.Repository.Clints.DeferredPayments
 
         public bool PayingDeferred(SupplierDeferredPaymentDto model)
         {
-            throw new NotImplementedException();
+               
+                var payment = _context.DeferredPayments.Add(new DeferredPayment()
+                {
+                    Balance =- model.Balance,
+                    Payment = model.Payment,
+                    OrderId = model.OrderId,
+                    CollectingPaymentDate = DateTime.UtcNow,
+                    DueDatePayingOff = model.DueDatePayingOff,
+                    TotalPayment =+ model.TotalPayment ,
+                    ClintId = model.ClintId
+                });
+                _context.SaveChanges();
+                return true;
+          
         }
 
         public bool Update(SupplierDeferredPaymentDto model)
@@ -51,7 +64,7 @@ namespace ElbayanServices.Repository.Clints.DeferredPayments
             if (deferredPayment!=null)
             {
                 deferredPayment.Payment = model.Payment;
-                deferredPayment.Balance -= model.Payment;
+                deferredPayment.Balance = model.Balance;
                 deferredPayment.CollectingPaymentDate=DateTime.UtcNow;
                 deferredPayment.DueDatePayingOff = model.DueDatePayingOff;
                 deferredPayment.TotalPayment += model.Payment;
