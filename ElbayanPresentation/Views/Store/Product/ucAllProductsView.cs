@@ -3,6 +3,7 @@ using ElbayaNPresentation.Presenters.CommonPresenter;
 using ElbayaNPresentation.Presenters.Store.Product.AllProduct;
 using ElbayaNPresentation.Presenters.Store.Product.ProductCard;
 using ElbayanServices.Repository.Products.Product.Dtos;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,9 +37,10 @@ namespace ElbayaNPresentation.Views.Store.Product
             }
         }
 
-        public string SearchKeyword { get => txtSearch.Text; set => txtSearch.Text = value; }
-        public List<ProductDto> products { get; set; }
         public AllProductPresenter Presenter { get;  set; }
+        public Guna2TextBox SearchKeyword { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public DataGridView ActiveObject { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public DataGridView DeletedObject { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public void PopulatedgvAllProduct()
         {
@@ -123,7 +125,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             ucNewProductCard.Instance.btnUpdate.Enabled = true;
 
             // Retrive Product Id:
-            ucNewProductCard.Instance.ProductId = new Guid(dgvAllProduct.CurrentRow.Cells["ProductId"].Value.ToString());
+            ucNewProductCard.Instance.ID = new Guid(dgvAllProduct.CurrentRow.Cells["ProductId"].Value.ToString());
             // Fill controlls with data:
             ucNewProductCard.Instance.ProudctName.Text = dgvAllProduct.CurrentRow.Cells["ProductName"].Value.ToString();
             ucNewProductCard.Instance.Description.Text = dgvAllProduct.CurrentRow.Cells["ProductDescription"].Value.ToString();

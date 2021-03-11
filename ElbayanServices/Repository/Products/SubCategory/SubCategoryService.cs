@@ -27,7 +27,6 @@ namespace ElbayanServices.Repository.Products.SubCategory
                        Description = model.Description,
                        CategoryId = model.CategoryId,
                        IsDeleted = false,
-
                    });
                    _context.SaveChanges();
                    return new SubCategoryDto()
@@ -119,7 +118,7 @@ namespace ElbayanServices.Repository.Products.SubCategory
                     Name = result.Name,
                     Description = result.Description,
                     CategoryId = result.CategoryId,
-                    CategoryName = result.Category.Name,
+                    //CategoryName = result.Category.Name,
                     Id = result.Id
                 };
             }

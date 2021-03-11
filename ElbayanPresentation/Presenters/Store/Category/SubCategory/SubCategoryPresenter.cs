@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ElbayanServices.Repository.Products.Category.Dtos;
+using ElbayaNPresentation.Presenters.CommonPresenter;
+using System.Windows.Forms;
 
 namespace ElbayaNPresentation.Presenters.Store.Category.SubCategory
 {
@@ -24,53 +26,190 @@ namespace ElbayaNPresentation.Presenters.Store.Category.SubCategory
             _view = view;
         }
 
-        public List<CategoryDto> FillcbxMainCategory()
-        {
-             _view.MainCategory = MainCategory.GetAll();
-            return _view.MainCategory.ToList();
-        }
 
+        public void OnLoadUC()
+        {
+            FillcbxMainCategory();
+            DataGridViewStyle.StyleDatagridview(_view.ActiveObject);
+            DataGridViewStyle.StyleDatagridview(_view.DeletectObject);
+            PopulatedgvObject();
+
+
+        }
+        public void FillcbxMainCategory()
+        {
+            _view.MainCategory.DisplayMember = "Name";
+            _view.MainCategory.ValueMember = "Id";
+            _view.MainCategory.SelectedValue = "Id";
+            _view.MainCategory.DataSource = MainCategory.GetAll();
+
+        }
+        private void PopulatedgvObject()
+        {
+            if(subCategory.GetAll().Any()|| subCategory.GetAll().Any())
+            {
+                _view.ActiveObject.DataSource = subCategory.GetAll().ToList();
+                _view.DeletectObject.DataSource = subCategory.GetAllIsDeleted().ToList();
+            }
+            else
+            {
+                _view.ActiveObject.DataSource = null;
+                _view.DeletectObject.DataSource = null;
+            }
+        }
         public void OnClickbtnAdd()
         {
-            subCategory.Add(new SubCategoryDto {
-                CategoryId = new Guid (_view.CategoryId),
-                Name = _view.SubCategoryName,
-                Description = _view.SubCategoryDescription 
-            });
+            if (_view.SubCategoryName.Text != string.Empty)
+            {
+                if (_view.MainCategory.SelectedItem != null)
+                {
+                    subCategory.Add(new SubCategoryDto
+                    {
+                        Name = _view.SubCategoryName.Text,
+                        Description = _view.SubCategoryDescription.Text, 
+                        CategoryId = new Guid(_view.MainCategory.SelectedValue.ToString())
+                    });
+                    _view.ActiveObject.DataSource = subCategory.GetAll().ToList();
+                    ClearControls();
+                    MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("كرما أختر قيمة تصنيف رئيس", "تأكيد", MessageBoxButtons.OK);
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("لا بد من إدخال اسم التصنيف", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
+            
         }
-        public List<SubCategoryDto> GetAllSubCategory()
+        internal void OnTabSelectedIndexChande()
         {
-            _view.subCategories =  subCategory.GetAll();
-            return _view.subCategories.ToList();
+            if (_view.TabControlDGV.SelectedIndex == 0)
+            {
+                _view.ActiveObject.DataSource = subCategory.GetAll().ToList();
+                _view.AddObject.Enabled = true;
+                _view.UpdateObject.Enabled = true;
+                _view.MainCategory.Enabled = true;
+                _view.DeleteObject.Text = "الأرشفة";
+                ClearControls();
+            }
+            else if (_view.TabControlDGV .SelectedIndex == 1)
+            {
+                _view.DeletectObject.DataSource = subCategory.GetAllIsDeleted().ToList();
+                _view.AddObject.Enabled = false;
+                _view.UpdateObject.Enabled = false;
+                _view.MainCategory.Enabled = false;
+                _view.DeleteObject.Text = "إستعادة الأرشفة";
+                ClearControls();
+            }
         }
-        public List<SubCategoryDto> GetAllDeletedSubCategory()
+        public void OnClickbtnUpdate()
         {
-            _view.subCategories = subCategory.GetAllIsDeleted();
-            return _view.subCategories.ToList();
+            if (_view.SubCategoryName.Text != string.Empty)
+            {
+                if (_view.MainCategory.SelectedItem != null)
+                {
+                    subCategory.Update(new SubCategoryDto
+                    {
+                        Id = _view.ID,
+                        CategoryId = new Guid(_view.MainCategory.SelectedValue.ToString()),
+                        Name = _view.SubCategoryName.Text,
+                        Description = _view.SubCategoryDescription.Text,
+                    });
+                    _view.ActiveObject.DataSource = subCategory.GetAll().ToList();
+                    ClearControls();
+                    MessageBox.Show("تمت العملية  بناجاح", "تأكيد", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("كرما أختر قيمة تصنيف رئيس", "تأكيد", MessageBoxButtons.OK);
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("لا بد من إدخال اسم التصنيف", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
         }
-        public void OnClickbtnUpdate(Guid ID, Guid MainCateogrID)
+        public void OnDubleClickActiveObject()
         {
-            subCategory.Update(new SubCategoryDto {
-                CategoryId = MainCateogrID,
-                Name = _view.SubCategoryName,
-                Description = _view.SubCategoryDescription, 
-                Id = ID,
-            });
+            if (_view.ActiveObject.Rows.Count != 0)
+            {
+                _view.ID = new Guid(_view.ActiveObject.CurrentRow.Cells["dgvSubCategoryID"].Value.ToString());
+                _view.MainCategory.Text = _view.ActiveObject.CurrentRow.Cells["dgvMainCategoryName"].Value.ToString();
+                OnDuobleClickDGV(_view.ID);
+            }
         }
+        public void OnDubleClickDeletedObject()
+        {
+            if (_view.ActiveObject.Rows.Count != 0)
+            {
+                _view.ID = new Guid(_view.DeletectObject.CurrentRow.Cells["dgvSubCategoryDeletedID"].Value.ToString());
+                _view.MainCategory.Text = _view.DeletectObject.CurrentRow.Cells["dgvSubCategoryDeletedMainCategoryName"].Value.ToString();
+                OnDuobleClickDGV(_view.ID);
+            }
+        }
+        private void OnDuobleClickDGV(Guid ID)
+        {
+            var model = subCategory.GetById(ID);
+            _view.SubCategoryName.Text = model.Name;
+            _view.SubCategoryDescription.Text = model.Description;
+        }
+        public void onClickbtnDelete()
+        {
 
-        public void onClickbtnDelete(Guid ID)
-        {
-            subCategory.DeleteOrRestore(ID);
+            if (_view.SubCategoryName.Text != string.Empty)
+            {
+                if (_view.MainCategory.SelectedItem != null)
+                {
+                    if(_view.TabControlDGV.SelectedIndex == 0)
+                    {
+                         subCategory.DeleteOrRestore(_view.ID);
+                        _view.ActiveObject.DataSource = subCategory.GetAll().ToList();
+                    }
+                    else
+                    {
+                        subCategory.DeleteOrRestore(_view.ID);
+                        _view.DeletectObject.DataSource = subCategory.GetAllIsDeleted().ToList();
+                    }
+                    ClearControls();
+                    MessageBox.Show("تمت العملية  بناجاح", "تأكيد", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("كرما أختر قيمة تصنيف رئيس", "تأكيد", MessageBoxButtons.OK);
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("لا بد من إدخال اسم التصنيف", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
         }
-        public List<SubCategoryDto> FilterDataGridView()
+        private void ClearControls()
         {
-            _view.subCategories = subCategory.GetAll().Where(x => x.Name.Contains(_view.SearchKeyword) || x.Description.Contains(_view.SearchKeyword)).ToList();
-            return _view.subCategories.ToList();
+            _view.SubCategoryName.Clear();
+            _view.SubCategoryDescription.Clear();
+            _view.MainCategory.SelectedIndex = -1;
         }
-        public List<SubCategoryDto> FilterDataGridViewDeleted()
+        public void OnTextChangedSearch()
         {
-            _view.subCategories = subCategory.GetAllIsDeleted().Where(x => x.Name.Contains(_view.SearchKeyword) || x.Description.Contains(_view.SearchKeyword)).ToList();
-            return _view.subCategories.ToList();
+            //subCategory.GetByName(_view.SearchtxtBox.Text);
+            if(_view.TabControlDGV.SelectedIndex == 0)
+            {
+                _view.ActiveObject.DataSource = subCategory.GetAll().Where(d => d.Name.Contains(_view.SearchtxtBox.Text)).ToList();
+            }
+            else
+            {
+                _view.DeletectObject.DataSource = subCategory.GetAllIsDeleted().Where(d => d.Name.Contains(_view.SearchtxtBox.Text)).ToList();
+
+            }
         }
     }
 }

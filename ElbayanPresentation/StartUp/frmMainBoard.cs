@@ -124,14 +124,16 @@ namespace ElbayaNPresentation
 
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (!gcContainer.Controls.Contains(ucNewProductCard.Instance))
-            {
-                gcContainer.Controls.Clear();
-                gcContainer.Controls.Add(ucNewProductCard.Instance);
-                ucNewProductCard.Instance.Dock = DockStyle.Fill;
-                ucNewProductCard.Instance.BringToFront();
-            }
-            ucNewProductCard.Instance.BringToFront();
+            //if (!gcContainer.Controls.Contains(ucNewProductCard.Instance))
+            //{
+            //    gcContainer.Controls.Clear();
+            //    gcContainer.Controls.Add(ucNewProductCard.Instance);
+            //    ucNewProductCard.Instance.Dock = DockStyle.Fill;
+            //    ucNewProductCard.Instance.BringToFront();
+            //}
+            //ucNewProductCard.Instance.BringToFront();
+
+            frmNewProduct.Instance.ShowDialog();
         }
 
         private void barButtonItem2_ItemClick_1(object sender, ItemClickEventArgs e)

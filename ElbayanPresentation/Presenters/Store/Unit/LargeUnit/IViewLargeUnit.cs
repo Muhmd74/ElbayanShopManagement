@@ -1,21 +1,26 @@
 ﻿using ElbayanServices.Repository.Products.Units.LargeUnit.Dtos;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ElbayaNPresentation.Presenters.Store.Unit.LargeUnit
 {
     public interface IViewLargeUnit
     {
-        string LargeUnitName { get; set; }
-        string LargeUnitDescirption { get; set; }
-        Guid LargeUnitID { get; set; }
-        string SearchKeyword { get; set; }
-
-        List<LargeUnitDto> LargeUnit { get; set; }
-
-        LargeUnitPresenter Presenter { set; }
+        Guid ID { get; set; }
+        Guna2TextBox LargeUnitName { get; set; }
+        Guna2TextBox LargeUnitDescirption { get; set; }
+        Guna2TextBox SearchTextBox { get; set; }
+        DataGridView ActiveObject { get; set; }
+        DataGridView DeletedObject { get; set; }
+        Guna2Button UpdateObject { get; set; }
+        Guna2Button DeleteObject { get; set; }
+        Guna2Button AddObject { get; set; }
+        TabControl DGVTabControl { get; set; }
+        LargeUnitPresenter Presenter { get;  set; }
     }
 }

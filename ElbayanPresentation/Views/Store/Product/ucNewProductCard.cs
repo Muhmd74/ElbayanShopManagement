@@ -18,13 +18,13 @@ using System.Windows.Forms;
 
 namespace ElbayaNPresentation.Views.Store.Product
 {
-    public partial class ucNewProductCard : DevExpress.XtraEditors.XtraUserControl, IViewProdcut
+    public partial class ucNewProductCard : DevExpress.XtraEditors.XtraUserControl//, IViewNewProdcut
     {
         public ucNewProductCard()
         {
             InitializeComponent();
             
-            Presenter = new ProductPresnter(this);
+            //Presenter = new ProductPresnter(this);
 
             _instance = this;
 
@@ -45,7 +45,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             }
         }
 
-        public Guid ProductId { get; set; }
+        public Guid ID { get; set; }
         public Guna2TextBox UCP { get => txtUCPNumber; set => txtUCPNumber = value; }
         public Guna2TextBox BarCode { get => txtCBCNumber; set => txtCBCNumber = value; }
         public Guna2TextBox ProudctName { get => txtName; set => txtName = value; }
@@ -268,6 +268,9 @@ namespace ElbayaNPresentation.Views.Store.Product
             pbProductImage.Image = null;
         }
 
+        private void cbxSmallUnit_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

@@ -3,6 +3,7 @@ using ElbayaNPresentation.Presenters.CommonPresenter;
 using ElbayaNPresentation.Presenters.Store.Unit.SmallUnit;
 using ElbayanServices.Repository.Products.Units.LargeUnit.Dtos;
 using ElbayanServices.Repository.Products.Units.SmallUnit.Dtos;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,14 +22,7 @@ namespace ElbayaNPresentation.Views.Store.Unit
         {
             InitializeComponent();
             Presenter = new SmallUnitPresenter(this);
-
-            nudSmallUnitWeight.Controls[0].Visible = false;
-
-            PopulateAllUnitDataGridView();
-
-            PopulatecbxLargeUnit();
-
-          
+            Presenter.OnLoadUC();
         }
         private static ucSmallUnit _instance;
         public static ucSmallUnit Instance
@@ -41,199 +35,58 @@ namespace ElbayaNPresentation.Views.Store.Unit
             }
         }
 
-        public Guid SmallUnitID { get; set; }
-        public string Description { get => txtDescription.Text; set => txtDescription.Text = value; }
-        public string SmallUnitName { get => txtName.Text; set => txtName.Text = value; }
-        public decimal Weight { get => nudSmallUnitWeight.Value; set=> nudSmallUnitWeight.Value = value; }
-        public string SearchKeyword { get => txtSearch.Text; set => txtSearch.Text = value; }
-        public Guid LargeUnitID { get => new Guid (cbxLargeUnit.SelectedValue.ToString()); set => cbxLargeUnit.SelectedValue = value; }
-        public string LargeUnitName { get; set; }
-        public List<SmallUnitDto> SmallUnits { get; set; }
-        public List<LargeUnitDto> LargeUnit { get; set; }
-        public SmallUnitPresenter Presenter { private get; set; }
-
-        public void PopulatecbxLargeUnit()
-        {
-            // Pupulate Main category in combo box
-
-            cbxLargeUnit.DataSource = null;
-            cbxLargeUnit.Items.Clear();
-            cbxLargeUnit.DataSource = Presenter.FillcbxLargeUnit();
-            cbxLargeUnit.DisplayMember = "Name";
-            cbxLargeUnit.ValueMember = "Id";
-            cbxLargeUnit.SelectedValue = "Id";
-        }
-        public void PopulateAllUnitDataGridView()
-        {
-
-            if (Presenter.GetAllSmallUnit().Any())
-            {
-                dgvSmallUnit.DataSource = Presenter.GetAllSmallUnit();
-            }
-            else
-            {
-                dgvSmallUnit.DataSource = null;
-            }
-            dgvSmallUnit.AutoGenerateColumns =false;
-            DataGridViewStyle.StyleDatagridview(dgvSmallUnit);
-            //dgvSmallUnit.Columns[6].Visible = false;
-            //dgvSmallUnit.Columns[5].Visible = false;
-            //dgvSmallUnit.Columns[0].Visible = false;
-
-        }
-        private void dgvSmallUnit_DoubleClick(object sender, EventArgs e)
-        {
-            if (dgvSmallUnit.CurrentRow.Index != -1)
-            {
-                btnAdd.Enabled = false;
-                txtName.Text = dgvSmallUnit.CurrentRow.Cells["dgvSmallUnitName"].Value.ToString();
-                txtDescription.Text = dgvSmallUnit.CurrentRow.Cells["dgvSmallUnitDescription"].Value.ToString();
-                nudSmallUnitWeight.Text = dgvSmallUnit.CurrentRow.Cells["dgvSmallUnitWeight"].Value.ToString();
-                SmallUnitID = new Guid(dgvSmallUnit.CurrentRow.Cells["dgvSmallUnitID"].Value.ToString());
-                LargeUnitID = new Guid(dgvSmallUnit.CurrentRow.Cells["dgvLargeUnitIDForSmallUnitActive"].Value.ToString());
-                // dgvMainCategoryName
-                LargeUnitName = dgvSmallUnit.CurrentRow.Cells["dgvLargeUnitNameForSmallUnitActive"].Value.ToString();
-                cbxLargeUnit.Text = LargeUnitName;
-            }
-        }
-
-        private void dgvTabContainer_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (dgvTabContainer.SelectedIndex == 0)
-            {
-                dgvSmallUnit.DataSource = Presenter.GetAllSmallUnit();
-                btnAdd.Enabled = true;
-                btnUpdate.Enabled = true;
-                cbxLargeUnit.Enabled = true;
-
-                btnDeleteByOne.Text = "الأرشفة";
-            }
-            else if (dgvTabContainer.SelectedIndex == 1)
-            {
-                DataGridViewStyle.StyleDatagridview(dgvDeletedSmallUnit);
-                dgvDeletedSmallUnit.DataSource = Presenter.GetAllSmallUnitDeleted();
-                btnAdd.Enabled = false;
-                //btnUpdate.Enabled = false;
-                //cbxMainCategory.Enabled = false;
-                btnDeleteByOne.Text = "  إستعادة الأرشفة";
-
-            }
-        }
-
-        private void dgvDeletedSmallUnit_DoubleClick(object sender, EventArgs e)
-        {
-            if (dgvDeletedSmallUnit.CurrentRow.Index != -1)
-            {
-                btnAdd.Enabled = false;
-                txtName.Text = dgvDeletedSmallUnit.CurrentRow.Cells["dgvSmallUnitNameDeleted"].Value.ToString();
-                txtDescription.Text = dgvDeletedSmallUnit.CurrentRow.Cells["dgvSmallUnitDescriptionDeleted"].Value.ToString();
-                nudSmallUnitWeight.Text = dgvDeletedSmallUnit.CurrentRow.Cells["dgvSmallUnitWeightDeleted"].Value.ToString();
-                SmallUnitID = new Guid(dgvDeletedSmallUnit.CurrentRow.Cells["dgvSmallUnitIDDeleted"].Value.ToString());
-                LargeUnitID = new Guid(dgvDeletedSmallUnit.CurrentRow.Cells["dgvLargeUnitIDForSmallUnitDeleted"].Value.ToString());
-                // dgvMainCategoryName
-                LargeUnitName = dgvDeletedSmallUnit.CurrentRow.Cells["dgvLargeUnitNameForSmallUnitDeleted"].Value.ToString();
-                cbxLargeUnit.Text = LargeUnitName;
-
-            }
-        }
-
-        private void cbxLargeUnit_Click(object sender, EventArgs e)
-        {
-            PopulatecbxLargeUnit();
-        }
+        public Guid ID { get ; set; }
+        public Guna2TextBox SmallUnitName { get => txtName; set => txtName = value; }
+        public Guna2TextBox Description { get => txtDescription; set => txtDescription = value; }
+        public NumericUpDown Weight { get => nudSmallUnitWeight; set => nudSmallUnitWeight = value; }
+        public Guna2TextBox SearchKeyword { get => txtSearch; set => txtSearch = value; }
+        public Guna2ComboBox LargeUnit { get => cbxLargeUnit; set => cbxLargeUnit = value; }
+        public DataGridView ActiveObject { get => dgvSmallUnit; set => dgvSmallUnit = value; }
+        public DataGridView DeletedObject { get => dgvDeletedSmallUnit; set => dgvDeletedSmallUnit = value; }
+        public Guna2Button UpdateObject { get => btnUpdate; set => btnUpdate = value; }
+        public Guna2Button DeleteObject { get => btnDeleteByOne; set => btnDeleteByOne = value; }
+        public Guna2Button AddObject { get => btnAdd; set => btnAdd = value; }
+        public TabControl DGVTabControl { get => dgvTabContainer; set => dgvTabContainer = value; }
+        public SmallUnitPresenter Presenter { get; set; }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (txtName.Text != string.Empty)
-            {
-                if (cbxLargeUnit.SelectedItem != null)
-                {
-
-                    Presenter.OnClickbtnAdd();
-                    MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
-                    txtName.Clear();
-                    txtName.Clear();
-                    nudSmallUnitWeight.Value = 1.00m;
-                    cbxLargeUnit.Refresh();
-
-                    dgvSmallUnit.DataSource = Presenter.GetAllSmallUnit();
-                }
-                else
-                {
-                    MessageBox.Show("كرما أختر قيمة تصنيف رئيس", "تأكيد", MessageBoxButtons.OK);
-                    return;
-                }
-            }
-            else
-            {
-                MessageBox.Show("لا بد من إدخال اسم التصنيف", "تأكيد", MessageBoxButtons.OK);
-                return;
-            }
+            Presenter.OnClickbtnAdd();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (txtName.Text != string.Empty)
-            {
-                if (cbxLargeUnit.SelectedItem != null)
-                {
-                    Presenter.OnclickUpdate(SmallUnitID, LargeUnitID);
-                    MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
-                    btnAdd.Enabled = true;
-                    btnDeleteByOne.Enabled = true;
-                    txtName.Text = txtDescription.Text = "";
-                    cbxLargeUnit.SelectedIndex = -1;
-                    nudSmallUnitWeight.Value = 1.00m;
-                    dgvSmallUnit.DataSource = Presenter.GetAllSmallUnit();
-                }
-                else
-                {
-                    MessageBox.Show("كرما أختر قيمة تصنيف رئيس", "تأكيد", MessageBoxButtons.OK);
-                    return;
-                }
-            }
-            else
-            {
-                MessageBox.Show("لا بد من إدخال اسم التصنيف", "تأكيد", MessageBoxButtons.OK);
-                return;
-            }
+            Presenter.OnclickUpdate();
         }
 
         private void btnDeleteByOne_Click(object sender, EventArgs e)
         {
-            if (txtName.Text != string.Empty)
-            {
-                Presenter.onClickbtnDelete(SmallUnitID);
-                txtName.Text = txtDescription.Text = "";
-                cbxLargeUnit.SelectedIndex = -1;
-                nudSmallUnitWeight.Value = 1.00m;
-                if (dgvTabContainer.SelectedIndex == 1)
-                {
-                    dgvDeletedSmallUnit.DataSource = Presenter.GetAllSmallUnitDeleted();
-                }
-                else if (dgvTabContainer.SelectedIndex == 0)
-                {
-                    dgvSmallUnit.DataSource = Presenter.GetAllSmallUnit();
-                }
-                MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
-            }
-            else
-            {
-                MessageBox.Show("لا بد من تحديد صف من البيانات من خلال الضغط مرتين على الصف", "تأكيد", MessageBoxButtons.OK);
-                return;
-            }
+            Presenter.onClickbtnDelete();
+        }
+
+        private void dgvSmallUnit_DoubleClick(object sender, EventArgs e)
+        {
+            Presenter.OnDoubleClickActiveDGv();
+        }
+
+        private void dgvTabContainer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Presenter.OnSelectedIndexChangedTabContainer();
+        }
+
+        private void dgvDeletedSmallUnit_DoubleClick(object sender, EventArgs e)
+        {
+            Presenter.OnDoubleClickDeletedDGv();
+        }
+
+        private void cbxLargeUnit_Click(object sender, EventArgs e)
+        {
+            Presenter.PopulatecbxLargeUnit();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            if (dgvTabContainer.SelectedIndex == 0)
-            {
-                dgvSmallUnit.DataSource = Presenter.FilterDataGridView().ToList();
-            }
-            else if (dgvTabContainer.SelectedIndex == 1)
-            {
-                dgvDeletedSmallUnit.DataSource = Presenter.FilterDataGridViewDeleted();
-            }
+            Presenter.OnTextChangedSearch();
         }
     }
 }

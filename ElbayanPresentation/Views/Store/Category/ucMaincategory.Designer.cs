@@ -51,13 +51,13 @@
             this.dgvSubcategoryDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dgvDeletedObjects = new System.Windows.Forms.DataGridView();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DeletedDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CategoryDeletedID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AutoDeletedNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSubCategoryDeletedName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSubCategoryDeletedDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeletedDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.gbMainOperations.SuspendLayout();
             this.tabDGVContainer.SuspendLayout();
@@ -128,8 +128,9 @@
             this.txtDescription.ForeColor = System.Drawing.Color.Gray;
             this.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescription.HoverState.Parent = this.txtDescription;
-            this.txtDescription.Location = new System.Drawing.Point(115, 80);
+            this.txtDescription.Location = new System.Drawing.Point(115, 69);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.PasswordChar = '\0';
             this.txtDescription.PlaceholderText = "";
@@ -443,34 +444,6 @@
             this.dgvDeletedObjects.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvDeletedObjects_RowPostPaint);
             this.dgvDeletedObjects.DoubleClick += new System.EventHandler(this.dgvDeletedObjects_DoubleClick);
             // 
-            // Description
-            // 
-            this.Description.DataPropertyName = "Description";
-            this.Description.HeaderText = "وصف التصنيف";
-            this.Description.MinimumWidth = 6;
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            this.Description.Width = 125;
-            // 
-            // CategoryID
-            // 
-            this.CategoryID.DataPropertyName = "Id";
-            this.CategoryID.HeaderText = "الرقم المرجعي";
-            this.CategoryID.MinimumWidth = 6;
-            this.CategoryID.Name = "CategoryID";
-            this.CategoryID.ReadOnly = true;
-            this.CategoryID.Visible = false;
-            this.CategoryID.Width = 125;
-            // 
-            // DeletedDescription
-            // 
-            this.DeletedDescription.DataPropertyName = "Description";
-            this.DeletedDescription.HeaderText = "وصف التصنيف";
-            this.DeletedDescription.MinimumWidth = 6;
-            this.DeletedDescription.Name = "DeletedDescription";
-            this.DeletedDescription.ReadOnly = true;
-            this.DeletedDescription.Width = 125;
-            // 
             // CategoryDeletedID
             // 
             this.CategoryDeletedID.DataPropertyName = "Id";
@@ -501,6 +474,34 @@
             this.dgvSubCategoryDeletedDescription.MinimumWidth = 6;
             this.dgvSubCategoryDeletedDescription.Name = "dgvSubCategoryDeletedDescription";
             this.dgvSubCategoryDeletedDescription.ReadOnly = true;
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "Description";
+            this.Description.HeaderText = "وصف التصنيف";
+            this.Description.MinimumWidth = 6;
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            this.Description.Width = 125;
+            // 
+            // CategoryID
+            // 
+            this.CategoryID.DataPropertyName = "Id";
+            this.CategoryID.HeaderText = "الرقم المرجعي";
+            this.CategoryID.MinimumWidth = 6;
+            this.CategoryID.Name = "CategoryID";
+            this.CategoryID.ReadOnly = true;
+            this.CategoryID.Visible = false;
+            this.CategoryID.Width = 125;
+            // 
+            // DeletedDescription
+            // 
+            this.DeletedDescription.DataPropertyName = "Description";
+            this.DeletedDescription.HeaderText = "وصف التصنيف";
+            this.DeletedDescription.MinimumWidth = 6;
+            this.DeletedDescription.Name = "DeletedDescription";
+            this.DeletedDescription.ReadOnly = true;
+            this.DeletedDescription.Width = 125;
             // 
             // ucMaincategory
             // 
