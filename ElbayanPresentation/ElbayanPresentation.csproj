@@ -126,6 +126,12 @@
     <Compile Include="Presenters\Store\Category\SubCategory\IViewSubCategory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StartUp\ucMainBoard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StartUp\ucMainBoard.Designer.cs">
+      <DependentUpon>ucMainBoard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Client\frmNewClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartUp\ucMainBoard.resx">
+      <DependentUpon>ucMainBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Client\frmNewClient.resx">
       <DependentUpon>frmNewClient.cs</DependentUpon>
@@ -335,6 +344,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\snaptogglefieldhighlighting_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\92c10f63929abdc2d7c375f2c59b919a.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\online-virtual-sales.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer_rules.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
