@@ -42,8 +42,7 @@ namespace ElbayanDatabase.DataClasses.Product
         public ICollection<ProductStock> ProductStocks { get; set; }
         public ICollection<ProductPrice> ProductPrices { get; set; }
         public ICollection<OrderProduct> OrderProducts { get; set; }
-        public Guid ClintId { get; set; }
-        public Clint Clint { get; set; }
+
 
     }
 }

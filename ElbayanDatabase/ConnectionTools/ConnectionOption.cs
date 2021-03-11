@@ -200,11 +200,6 @@ namespace ElbayanDatabase.ConnectionTools
                 .HasForeignKey(d=>d.ClintId)
                 .WillCascadeOnDelete(false);
             modelBuilder.Entity<Clint>()
-                .HasMany(d => d.Products)
-                .WithRequired(d => d.Clint)
-                .HasForeignKey(d => d.ClintId)
-                .WillCascadeOnDelete(false);
-            modelBuilder.Entity<Clint>()
                 .HasMany(d => d.DeferredPayments)
                 .WithRequired(d => d.Clint)
                 .HasForeignKey(d => d.ClintId)

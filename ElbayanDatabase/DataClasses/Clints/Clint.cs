@@ -30,7 +30,6 @@ namespace ElbayanDatabase.DataClasses.Clints
         public int OpeningBalance { get; set; }
         public int ReferenceNumber { get; set; }
         public ICollection<Order> Orders { get; set; }
-        public ICollection<Product.Product> Products { get; set; }
         public ICollection<DeferredPayment> DeferredPayments { get; set; }
 
     }

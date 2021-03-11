@@ -20,56 +20,54 @@ namespace ElbayanServices.Repository.Products.Product
             _context = context;
         }
 
-       
+
         public bool Add(ProductDto model)
         {
 
-                var result = _context.Products.Add(new ElbayanDatabase.DataClasses.Product.Product
-                {
-                    Description = model.Description,
-                    Name = model.Name,
-                    BarCode = GenerateSequenceNumber(),
-                    PurchaseDefaultPrice = model.PurchaseDefaultPrice,
-                    IsExpired = model.IsExpired,
-                    LargeUnitId = model.LargeUnitId,
-                    LimitedDemand = model.LimitedDemand,
-                    ProductNumber = GenerateProductNumber(),
-                    SmallUnitId = model.SmallUnitId,
-                    SubCategoryId = model.SubCategoryId,
-                    UCP = model.UCP,
-                    IsDeleted = false,
-                    DateTime = DateTime.UtcNow,
-                    SaleDefaultPrice = model.SaleDefaultPrice,
-                    WholesalePrice = model.WholesalePrice,
-                    IsUnitSale = model.IsUnitSale,
-                    ImageUrl = model.ImageUrl,
-                    Discount = Convert.ToInt32(model.Discount),
-                    Vat = Convert.ToInt32(model.Vat),
-                    ClintId = model.ClintId
-                });
-                _context.SaveChanges();
-                return true;
+            var result = _context.Products.Add(new ElbayanDatabase.DataClasses.Product.Product
+            {
+                Description = model.Description,
+                Name = model.Name,
+                BarCode = GeneratorRandomNumber(),
+                PurchaseDefaultPrice = model.PurchaseDefaultPrice,
+                IsExpired = model.IsExpired,
+                LargeUnitId = model.LargeUnitId,
+                LimitedDemand = model.LimitedDemand,
+                ProductNumber = GenerateProductNumber(),
+                SmallUnitId = model.SmallUnitId,
+                SubCategoryId = model.SubCategoryId,
+                UCP = model.UCP,
+                IsDeleted = false,
+                DateTime = DateTime.UtcNow,
+                SaleDefaultPrice = model.SaleDefaultPrice,
+                WholesalePrice = model.WholesalePrice,
+                IsUnitSale = model.IsUnitSale,
+                ImageUrl = model.ImageUrl,
+                Discount = Convert.ToInt32(model.Discount),
+                Vat = Convert.ToInt32(model.Vat),
+            });
+            _context.SaveChanges();
+            return true;
         }
 
         public bool Update(ProductDto model)
         {
 
-                var result = _context.Products.FirstOrDefault(d => d.Id == model.Id);
-                if (result == null) return false;
-                result.Description = model.Description;
-                result.Name = model.Name;
-                result.BarCode = Convert.ToInt32(model.BarCode);
-                result.PurchaseDefaultPrice = model.PurchaseDefaultPrice;
-                result.SaleDefaultPrice = model.SaleDefaultPrice;
-                result.WholesalePrice = model.WholesalePrice;
-                result.LargeUnitId = model.LargeUnitId;
-                result.SmallUnitId = model.SmallUnitId;
-                result.LimitedDemand = model.LimitedDemand;
-                result.SubCategoryId = model.SubCategoryId;
-                result.UCP = model.UCP;
-                result.ClintId = model.ClintId;
-                _context.SaveChanges();
-                return true;
+            var result = _context.Products.FirstOrDefault(d => d.Id == model.Id);
+            if (result == null) return false;
+            result.Description = model.Description;
+            result.Name = model.Name;
+            result.BarCode = Convert.ToInt32(model.BarCode);
+            result.PurchaseDefaultPrice = model.PurchaseDefaultPrice;
+            result.SaleDefaultPrice = model.SaleDefaultPrice;
+            result.WholesalePrice = model.WholesalePrice;
+            result.LargeUnitId = model.LargeUnitId;
+            result.SmallUnitId = model.SmallUnitId;
+            result.LimitedDemand = model.LimitedDemand;
+            result.SubCategoryId = model.SubCategoryId;
+            result.UCP = model.UCP;
+            _context.SaveChanges();
+            return true;
         }
 
         public List<SmallUnitNameDto> GetAllSmallUnitByLargeUnit(Guid largeUnitId)
@@ -82,7 +80,7 @@ namespace ElbayanServices.Repository.Products.Product
                     SmallUnitId = d.Id,
                     Name = d.Name
                 }).ToList();
-           
+
 
             return model;
         }
@@ -90,7 +88,7 @@ namespace ElbayanServices.Repository.Products.Product
         public List<SmallUnitNameDto> GetAllSmallUnit()
         {
             var model = _context.SmallUnits.
-                Where(d =>d.IsDeleted == false)
+                Where(d => d.IsDeleted == false)
                 .Select(d => new SmallUnitNameDto()
                 {
                     SmallUnitId = d.Id,
@@ -102,7 +100,7 @@ namespace ElbayanServices.Repository.Products.Product
         public List<SubCategoryNameDto> GetAllSubCategory()
         {
             var model = _context.SubCategories.
-                Where(d => d.IsDeleted == false&&d.Category.IsDeleted==false)
+                Where(d => d.IsDeleted == false && d.Category.IsDeleted == false)
                 .Select(d => new SubCategoryNameDto()
                 {
                     Id = d.Id,
@@ -122,7 +120,7 @@ namespace ElbayanServices.Repository.Products.Product
                 }).ToList();
 
 
-                return model;
+            return model;
 
         }
 
@@ -156,7 +154,6 @@ namespace ElbayanServices.Repository.Products.Product
             return _context.Products.Where(d => d.IsDeleted)
                 .Include(d => d.SmallUnit)
                 .Include(d => d.LargeUnit)
-                .Include(d=>d.Clint)
                 .Include(d => d.SubCategory)
                 .OrderByDescending(d => d.DateTime)
                 .Select(d => new ProductDto()
@@ -179,8 +176,7 @@ namespace ElbayanServices.Repository.Products.Product
                     SaleDefaultPrice = d.SaleDefaultPrice,
                     WholesalePrice = d.WholesalePrice,
                     ImageUrl = d.ImageUrl,
-                    ClintId = d.ClintId,
-                    ClintName = d.Clint.Name,
+
                     IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name
 
                 }).ToList();
@@ -196,7 +192,6 @@ namespace ElbayanServices.Repository.Products.Product
 
                 )
                 .Include(d => d.SmallUnit)
-                .Include(d=>d.Clint)
                 .Include(d => d.LargeUnit)
                 .Include(d => d.SubCategory)
                 .OrderByDescending(d => d.DateTime)
@@ -223,20 +218,19 @@ namespace ElbayanServices.Repository.Products.Product
                     Vat = d.Vat,
                     ImageUrl = d.ImageUrl,
                     IsUnitSale = d.IsUnitSale,
-                    ClintId = d.ClintId,
-                    ClintName = d.Clint.Name,
+
                     IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name
                 }).ToList();
-           
+
         }
 
         public List<ProductDto> GetAllEqualZero()
         {
-            return _context.Products.Where(d => d.IsDeleted == false 
-                &&d.TotalQuantity<=0
-                &&d.SmallUnit.IsDeleted==false
-                &&d.LargeUnit.IsDeleted==false
-                &&d.SubCategory.IsDeleted==false
+            return _context.Products.Where(d => d.IsDeleted == false
+                && d.TotalQuantity <= 0
+                && d.SmallUnit.IsDeleted == false
+                && d.LargeUnit.IsDeleted == false
+                && d.SubCategory.IsDeleted == false
 
                 )
                 .Include(d => d.SmallUnit)
@@ -264,8 +258,7 @@ namespace ElbayanServices.Repository.Products.Product
                     WholesalePrice = d.WholesalePrice,
                     Discount = d.Discount,
                     Vat = d.Vat,
-                    ClintId = d.ClintId,
-                    ClintName = d.Clint.Name,
+
                     ImageUrl = d.ImageUrl,
                     IsUnitSale = d.IsUnitSale,
                     IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name
@@ -282,7 +275,6 @@ namespace ElbayanServices.Repository.Products.Product
 
                 )
                 .Include(d => d.SmallUnit)
-                .Include(d=>d.Clint)
                 .Include(d => d.LargeUnit)
                 .Include(d => d.SubCategory)
                 .OrderByDescending(d => d.DateTime)
@@ -307,8 +299,7 @@ namespace ElbayanServices.Repository.Products.Product
                     WholesalePrice = d.WholesalePrice,
                     Discount = d.Discount,
                     Vat = d.Vat,
-                    ClintId = d.ClintId,
-                    ClintName = d.Clint.Name,
+
                     ImageUrl = d.ImageUrl,
                     IsUnitSale = d.IsUnitSale,
                     IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name
@@ -318,8 +309,8 @@ namespace ElbayanServices.Repository.Products.Product
         public List<ProductDto> GetAllByCategory(Guid categoryId)
         {
             return _context.Products
-                .Where(d =>d.SubCategoryId==categoryId 
-                           &&d.IsDeleted == false)
+                .Where(d => d.SubCategoryId == categoryId
+                           && d.IsDeleted == false)
                 .Include(d => d.SmallUnit)
                 .Include(d => d.LargeUnit)
                 .Include(d => d.SubCategory)
@@ -345,14 +336,13 @@ namespace ElbayanServices.Repository.Products.Product
                     SaleDefaultPrice = d.SaleDefaultPrice,
                     IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name
                 }).ToList();
-         }
+        }
 
         public ProductDto GetById(Guid id)
         {
             var model = _context.Products
                 .Include(d => d.SmallUnit)
                 .Include(d => d.LargeUnit)
-                .Include(d=>d.Clint)
                 .Include(d => d.SubCategory)
                 .FirstOrDefault(d => d.Id == id);
             if (model != null)
@@ -370,8 +360,6 @@ namespace ElbayanServices.Repository.Products.Product
                     LimitedDemand = model.LimitedDemand,
                     ProductNumber = model.ProductNumber,
                     SmallUnitId = model.SmallUnitId,
-                    ClintId = model.ClintId,
-                    ClintName = model.Clint.Name,
                     SmallUnitName = model.SmallUnit.Name,
                     SubCategoryId = model.SubCategoryId,
                     SubCategoryName = model.SubCategory.Name,
@@ -392,7 +380,7 @@ namespace ElbayanServices.Repository.Products.Product
                 .Include(d => d.SmallUnit)
                 .Include(d => d.LargeUnit)
                 .Include(d => d.SubCategory)
-                .FirstOrDefault(d => d.Name == productName&&d.IsDeleted==false);
+                .FirstOrDefault(d => d.Name == productName && d.IsDeleted == false);
             if (model != null)
             {
                 return new ProductDto()
@@ -426,7 +414,7 @@ namespace ElbayanServices.Repository.Products.Product
                     ProductId = d.Id,
                     ProductName = d.Name
                 }).ToList();
-         
+
 
             return model;
         }
@@ -443,23 +431,23 @@ namespace ElbayanServices.Repository.Products.Product
         }
         public int GenerateProductNumber()
         {
-            var lastNumber = _context.Products.Max().ProductNumber;
+            var lastNumber = _context.Products.AsEnumerable().Select(d=>d.ProductNumber).SingleOrDefault();
             if (lastNumber >= 0)
             {
                 return (int)(lastNumber + 1);
             }
 
-            return 01;
+            return 1001;
         }
         public long GenerateSequenceNumber()
         {
-            var lastNumber = _context.Products.Max().BarCode;
+            var lastNumber = _context.Products.AsEnumerable().Select(d => d.ProductNumber).SingleOrDefault();
             if (lastNumber >= 0)
             {
                 return (long)(lastNumber + 1);
             }
 
-            return 0001131;
+            return 100131;
         }
         public void Dispose()
         {
