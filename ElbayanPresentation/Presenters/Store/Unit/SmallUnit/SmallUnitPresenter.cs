@@ -1,4 +1,5 @@
 ﻿using ElbayanDatabase.ConnectionTools;
+using ElbayaNPresentation.Presenters.CommonPresenter;
 using ElbayanServices.Repository.Products.Units.LargeUnit;
 using ElbayanServices.Repository.Products.Units.LargeUnit.Dtos;
 using ElbayanServices.Repository.Products.Units.SmallUnit;
@@ -8,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ElbayaNPresentation.Presenters.Store.Unit.SmallUnit
 {
@@ -24,59 +26,212 @@ namespace ElbayaNPresentation.Presenters.Store.Unit.SmallUnit
             _view = view;
         }
 
-        public List<LargeUnitDto> FillcbxLargeUnit()
+        public void OnLoadUC()
         {
-            _view.LargeUnit = largeUnitServices.GetAllLargeUnit();
-            return _view.LargeUnit.ToList();
+            DataGridViewStyle.StyleDatagridview(_view.ActiveObject);
+            DataGridViewStyle.StyleDatagridview(_view.DeletedObject);
+            PopulatecbxLargeUnit();
+            PopulateAllUnitDataGridView();
+            PopulateDeletedDGV();
+            _view.UpdateObject.Enabled = false;
+            _view.DeleteObject.Enabled = false;
+        }
+        public void PopulatecbxLargeUnit()
+        {
+            // Pupulate Main category in combo box
+
+            _view.LargeUnit.DataSource = null;
+            _view.LargeUnit.Items.Clear();
+            _view.LargeUnit.DataSource = largeUnitServices.GetAllLargeUnit().ToList();
+            _view.LargeUnit.DisplayMember = "Name";
+            _view.LargeUnit.ValueMember = "Id";
+            _view.LargeUnit.SelectedValue = "Id";
+        }
+        public void PopulateAllUnitDataGridView()
+        {
+            if (smallUnit.GetAllSmallUnit().Any())
+            {
+                _view.ActiveObject.DataSource = smallUnit.GetAllSmallUnit().ToList();
+            }
+            else
+            {
+                _view.ActiveObject.DataSource = null;
+            }
+            _view.ActiveObject.AutoGenerateColumns = false;
+        }
+        public void PopulateDeletedDGV()
+        {
+
+            if (smallUnit.GetAllSmallUnitDeleted().Any())
+            {
+                _view.DeletedObject.DataSource = smallUnit.GetAllSmallUnitDeleted().ToList();
+            }
+            else
+            {
+                _view.DeletedObject.DataSource = null;
+            }
+            _view.DeletedObject.AutoGenerateColumns = false;
         }
 
-        public List<SmallUnitDto> GetAllSmallUnit()
+        private void GetByID(Guid ID)
         {
-            _view.SmallUnits = smallUnit.GetAllSmallUnit();
-            return _view.SmallUnits.ToList();
+            var model = smallUnit.Get(ID);
+            _view.SmallUnitName.Text = model.Name;
+            _view.Description.Text = model.Description;
+            _view.Weight.Value = Convert.ToDecimal(model.Weight);
+            _view.LargeUnit.Text = model.LargeUnitName;
+
         }
-        public List<SmallUnitDto> GetAllSmallUnitDeleted()
+        public void OnDoubleClickActiveDGv()
         {
-            _view.SmallUnits = smallUnit.GetAllSmallUnitDeleted();
-            return _view.SmallUnits.ToList();
+            if (_view.ActiveObject.CurrentRow.Index != -1)
+            {
+                _view.ID = new Guid(_view.ActiveObject.CurrentRow.Cells["dgvSmallUnitID"].Value.ToString());
+                GetByID(_view.ID);
+                _view.AddObject.Enabled = false;
+                _view.UpdateObject.Enabled = true;
+                _view.DeleteObject.Enabled = true;
+            }
+        }
+
+        internal void OnDoubleClickDeletedDGv()
+        {
+            if (_view.DeletedObject.CurrentRow.Index != -1)
+            {
+                _view.ID = new Guid(_view.DeletedObject.CurrentRow.Cells["dgvSmallUnitIDDeleted"].Value.ToString());
+                GetByID(_view.ID);
+                _view.AddObject.Enabled = false;
+                _view.UpdateObject.Enabled = false;
+                _view.DeleteObject.Enabled = true;
+            }
+        }
+
+        internal void OnTextChangedSearch()
+        {
+            if (_view.DGVTabControl.SelectedIndex == 0)
+            {
+                _view.ActiveObject.DataSource = smallUnit.GetAllSmallUnit().Where(d => d.Name.Contains(_view.SearchKeyword.Text)).ToList();
+            }
+            else if (_view.DGVTabControl.SelectedIndex == 1)
+            {
+                _view.DeletedObject.DataSource = smallUnit.GetAllSmallUnitDeleted().Where(d => d.Name.Contains(_view.SearchKeyword.Text)).ToList();
+            }
+        }
+
+        internal void OnSelectedIndexChangedTabContainer()
+        {
+            if (_view.DGVTabControl.SelectedIndex == 0)
+            {
+                _view.ActiveObject.DataSource = smallUnit.GetAllSmallUnit().ToList();
+                _view.AddObject.Enabled = true;
+                _view.UpdateObject.Enabled = true;
+                _view.LargeUnit.Enabled = true;
+                _view.DeleteObject.Text = "الأرشفة";
+                ClearControls();
+            }
+            else if (_view.DGVTabControl.SelectedIndex == 1)
+            {
+                _view.DeletedObject.DataSource = smallUnit.GetAllSmallUnitDeleted();
+                _view.AddObject.Enabled = false;
+                _view.AddObject.Enabled = false;
+                _view.DeleteObject.Enabled = true;
+                _view.DeleteObject.Text = "  إستعادة الأرشفة";
+                ClearControls();
+            }
         }
 
         public void OnClickbtnAdd()
         {
-            smallUnit.Add(new SmallUnitDto
+            if (_view.SmallUnitName.Text != string.Empty)
             {
-                Name = _view.SmallUnitName,
-                Description = _view.Description,
-                Weight = _view.Weight.ToString(),
-                LargeUnitId = _view.LargeUnitID                
-            });
-        }
-        public void OnclickUpdate(Guid ID, Guid LargeUnitID)
-        {
-            smallUnit.Update( new SmallUnitDto
+                if (_view.LargeUnit.SelectedItem != null)
+                {
+                    smallUnit.Add(new SmallUnitDto
+                    {
+                        Name = _view.SmallUnitName.Text,
+                        Description = _view.Description.Text,
+                        Weight = _view.Weight.Value.ToString(),
+                        LargeUnitId = new Guid(_view.LargeUnit.SelectedValue.ToString())
+                    });
+                    ClearControls();
+                    PopulateAllUnitDataGridView();
+                    MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("كرما أختر قيمة وحدة رئيسة", "تأكيد", MessageBoxButtons.OK);
+                    return;
+                }
+            }
+            else
             {
-                Id = ID,
-                Name = _view.SmallUnitName,
-                Description = _view.Description,
-                LargeUnitId = LargeUnitID,
-                Weight = _view.Weight.ToString()
-            });
+                MessageBox.Show("لا بد من إدخال اسم الوحدة الصغرى", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
+
+        }
+        public void OnclickUpdate()
+        {
+            if (_view.SmallUnitName.Text != string.Empty)
+            {
+                if (_view.LargeUnit.SelectedItem != null)
+                {
+                    smallUnit.Update(new SmallUnitDto
+                    {
+                        Id = _view.ID,
+                        Name = _view.SmallUnitName.Text,
+                        Description = _view.Description.Text,
+                        LargeUnitId = new Guid(_view.LargeUnit.SelectedValue.ToString()),
+                        Weight = _view.Weight.Value.ToString()
+                    });
+                    ClearControls();
+                    PopulateAllUnitDataGridView();
+                    MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("كرما أختر قيمة تصنيف رئيس", "تأكيد", MessageBoxButtons.OK);
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("لا بد من إدخال اسم التصنيف", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
         }
 
-        public void onClickbtnDelete(Guid ID)
+
+        public void onClickbtnDelete()
         {
-            smallUnit.DeleteOrRestore(ID);
-            
+            if (_view.SmallUnitName.Text != string.Empty)
+            {
+                smallUnit.DeleteOrRestore(_view.ID);
+                ClearControls();
+                if (_view.DGVTabControl.SelectedIndex == 0)
+                {
+                    PopulateAllUnitDataGridView();
+                }
+                else if (_view.DGVTabControl.SelectedIndex == 1)
+                {
+                    PopulateDeletedDGV();
+                }
+                MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("لا بد من تحديد صف من البيانات من خلال الضغط مرتين على الصف", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
+
         }
 
-        public List<SmallUnitDto> FilterDataGridView()
+        private void ClearControls()
         {
-            return _view.SmallUnits = smallUnit.GetAllSmallUnit().Where(d => d.Name.Contains(_view.SearchKeyword) || d.LargeUnitName.Contains(_view.SearchKeyword)).ToList();
+            _view.SmallUnitName.Text = _view.Description.Text = _view.SearchKeyword.Text = string.Empty;
+            _view.Weight.Value = 1.0m;
+            _view.LargeUnit.SelectedIndex = -1;
         }
-        public List<SmallUnitDto> FilterDataGridViewDeleted()
-        {
-            return _view.SmallUnits = smallUnit.GetAllSmallUnitDeleted().Where(d => d.Name.Contains(_view.SearchKeyword) || d.LargeUnitName.Contains(_view.SearchKeyword)).ToList();
-        }
-
     }
+
 }

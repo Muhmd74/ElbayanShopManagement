@@ -26,6 +26,7 @@ namespace ElbayaNPresentation.Presenters.Store.Unit.LargeUnit
             DataGridViewStyle.StyleDatagridview(_view.ActiveObject);
             DataGridViewStyle.StyleDatagridview(_view.DeletedObject);
             PopulateAllUnitDataGridView();
+            PopulateAllDeletedUnit();
             _view.UpdateObject.Enabled = false;
             _view.DeleteObject.Enabled = false;
         }
