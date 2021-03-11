@@ -239,7 +239,7 @@ namespace ElbayaNPresentation.Views.Store.Product
                             ucAllProductsView.Instance.BringToFront();
                         }
                         ucAllProductsView.Instance.BringToFront();
-                        ucAllProductsView.Instance.dgvAllProduct.DataSource = ucAllProductsView.Instance.Presenter.PopulatedgvAllproduct();
+                        //ucAllProductsView.Instance.dgvAllProduct.DataSource = ucAllProductsView.Instance.Presenter.PopulatedgvAllproduct();
 
                     }
                 }

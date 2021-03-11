@@ -44,7 +44,7 @@ namespace ElbayaNPresentation.Views.Store.Product
 
         public void PopulatedgvAllProduct()
         {
-            dgvAllProduct.DataSource = Presenter.PopulatedgvAllproduct();
+            //dgvAllProduct.DataSource = Presenter.PopulatedgvAllproduct();
             DataGridViewStyle.StyleDatagridview(dgvAllProduct);
             dgvAllProduct.AutoGenerateColumns = false;
 
@@ -79,7 +79,7 @@ namespace ElbayaNPresentation.Views.Store.Product
         {
             if (dgvTabContainer.SelectedIndex == 0)
             {
-                dgvAllProduct.DataSource = Presenter.FilterDataGridView().ToList();
+                //dgvAllProduct.DataSource = Presenter.FilterDataGridView().ToList();
             }
             else if (dgvTabContainer.SelectedIndex == 1)
             {
@@ -91,12 +91,12 @@ namespace ElbayaNPresentation.Views.Store.Product
         {
             if (dgvTabContainer.SelectedIndex == 0)
             {
-                dgvAllProduct.DataSource = Presenter.PopulatedgvAllproduct();
+               // dgvAllProduct.DataSource = Presenter.PopulatedgvAllproduct();
             }
             else if (dgvTabContainer.SelectedIndex == 1)
             {
                 DataGridViewStyle.StyleDatagridview(dgvAllDeletedProduct);
-                dgvAllDeletedProduct.DataSource = Presenter.PopulatedgvDeletedAllproduct();
+                //dgvAllDeletedProduct.DataSource = Presenter.PopulatedgvDeletedAllproduct();
 
             }
         }
