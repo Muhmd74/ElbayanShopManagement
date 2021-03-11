@@ -104,6 +104,10 @@
     <Compile Include="Migrations\202103102024301_CreateNewRelation.designer.cs">
       <DependentUpon>202103102024301_CreateNewRelation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103112315062_DeleteClintProduct.cs" />
+    <Compile Include="Migrations\202103112315062_DeleteClintProduct.designer.cs">
+      <DependentUpon>202103112315062_DeleteClintProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -120,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103102024301_CreateNewRelation.resx">
       <DependentUpon>202103102024301_CreateNewRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103112315062_DeleteClintProduct.resx">
+      <DependentUpon>202103112315062_DeleteClintProduct.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
