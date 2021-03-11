@@ -105,19 +105,6 @@ namespace ElbayaNPresentation.Views.Store.Category
             //    return;
             //}
         }
-
-        private void txtSearch_TextChanged_1(object sender, EventArgs e)
-        {
-            //if (ActiveMainCategory.SelectedIndex == 0)
-            //{
-            //    dgvActiveObject.DataSource = Presenter.FilterDataGridView().ToList();
-            //}
-            //else if (ActiveMainCategory.SelectedIndex == 1)
-            //{
-            //    dgvDeletedObject.DataSource = Presenter.FilterDataGridViewDeleted();
-            //}
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Presenter.OnClickbtnAdd();

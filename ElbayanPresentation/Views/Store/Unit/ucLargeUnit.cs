@@ -2,6 +2,7 @@
 using ElbayaNPresentation.Presenters.CommonPresenter;
 using ElbayaNPresentation.Presenters.Store.Unit.LargeUnit;
 using ElbayanServices.Repository.Products.Units.LargeUnit.Dtos;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,14 +20,11 @@ namespace ElbayaNPresentation.Views.Store.Units
         public ucLargeUnits()
         {
             InitializeComponent();
-            
-            // 
+           
             Presenter = new LargeUnitPresenter(this);
+            _instance = this;
             // load Active Units list
-            PopulateAllUnitDataGridView();
-
-            btnUpdate.Enabled = false;
-            btnDeleteByOne.Enabled = false;
+            Presenter.OnLoadUC();
         }
 
         protected override void OnLoad(EventArgs e) 
@@ -45,157 +43,52 @@ namespace ElbayaNPresentation.Views.Store.Units
                 return _instance;
             }
         }
-        
 
-        // Implement IView Latge Unit.
-        public string LargeUnitName { get => txtName.Text; set => txtName.Text = value; }
-        public string LargeUnitDescirption { get => txtDescription.Text; set => txtDescription.Text = value; }
-        public string SearchKeyword { get => txtSearch.Text; set => txtSearch.Text = value; }
-        public Guid LargeUnitID { get; set; }
-        public List<LargeUnitDto> LargeUnit { get; set; }
-        public LargeUnitPresenter Presenter { private get;  set; }
-
-        public void PopulateAllUnitDataGridView()
-        {
-
-            if (Presenter.GetAllLargeUnit().Any())
-            {
-                dgvLargeUnit.DataSource = Presenter.GetAllLargeUnit();
-            }
-            else
-            {
-                dgvLargeUnit.DataSource = null;
-            }
-
-            /// Description: columns[0] == Name
-            //dgvLargeUnit.Columns[2].Visible = true;
-            //dgvLargeUnit.Columns[3].Visible = false;
-            DataGridViewStyle.StyleDatagridview(dgvLargeUnit);
-
-        }
+        public Guid ID { get; set; }
+        public Guna2TextBox LargeUnitName { get => txtName; set => txtName = value; }
+        public Guna2TextBox LargeUnitDescirption { get => txtDescription; set => txtDescription = value; }
+        public Guna2TextBox SearchTextBox { get => txtSearch; set => txtSearch = value; }
+        public DataGridView ActiveObject { get => dgvLargeUnit; set => dgvLargeUnit = value; }
+        public DataGridView DeletedObject { get => dgvDeletedLargeUnit; set => dgvDeletedLargeUnit = value; }
+        public Guna2Button UpdateObject { get => btnUpdate; set => btnUpdate = value; }
+        public Guna2Button DeleteObject { get => btnDeleteByOne; set => btnDeleteByOne = value; }
+        public Guna2Button AddObject { get => btnAdd; set => btnAdd = value; }
+        public TabControl DGVTabControl { get => dgvTabContainer; set => dgvTabContainer = value; }
+        public LargeUnitPresenter Presenter { get; set ; }
  
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (txtName.Text != string.Empty)
-            {
                 Presenter.AddNewUnit();
-                MessageBox.Show("تمت عملية الإضافة بنجاح", "تأكيد", MessageBoxButtons.OK);
-                txtName.Clear();
-                txtDescription.Clear();
-                dgvLargeUnit.DataSource = Presenter.GetAllLargeUnit();
-            }
-            else
-            {
-                MessageBox.Show("لا بد من إدخال اسم الوحدة", "تأكيد", MessageBoxButtons.OK);
-                return;
-            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (txtName.Text != string.Empty)
-            {
-                Presenter.OnClickUpdatebtn(LargeUnitID);
-                MessageBox.Show("تمت عملية الإضافة بناجاح", "تأكيد", MessageBoxButtons.OK);
-                txtName.Clear();
-                txtDescription.Clear();
-                dgvLargeUnit.DataSource = Presenter.GetAllLargeUnit();
-
-                btnAdd.Enabled = true;
-                btnUpdate.Enabled = false;
-                btnDeleteByOne.Enabled = false;
-            }
-            else
-            {
-                MessageBox.Show("لا بد من تحديد صف من البيانات من خلال الضغط مرتين على الصف", "تأكيد", MessageBoxButtons.OK);
-                return;
-            }
+            Presenter.OnClickUpdatebtn();
         }
 
         private void btnDeleteByOne_Click(object sender, EventArgs e)
         {
-            if (txtName.Text != string.Empty)
-            {
-                Presenter.DeletedOrRestore(LargeUnitID);
-                txtName.Clear();
-                txtDescription.Clear();
-                if (dgvTabContainer.SelectedIndex == 1)
-                {
-                    dgvDeletedLargeUnit.DataSource = Presenter.GetAllDeltetdUnits();
-                }
-                else
-                {
-                    dgvLargeUnit.DataSource = Presenter.GetAllLargeUnit();
-                }
-                MessageBox.Show("تمت العملية بنجاح", "تأكيد", MessageBoxButtons.OK);
-            }
-            else
-            {
-                MessageBox.Show("لا بد من تحديد صف من البيانات من خلال الضغط مرتين على الصف", "تأكيد", MessageBoxButtons.OK);
-                return;
-            }
+            Presenter.DeletedOrRestore();
         }
 
         private void dgvLargeUnit_DoubleClick(object sender, EventArgs e)
         {
-            if (dgvLargeUnit.CurrentRow.Index != -1)
-            {
-                txtName.Text = dgvLargeUnit.CurrentRow.Cells["dgvLargeUnitName"].Value.ToString();
-                txtDescription.Text = dgvLargeUnit.CurrentRow.Cells["dgvLargeUnitDescription"].Value.ToString();
-                LargeUnitID = new Guid(dgvLargeUnit.CurrentRow.Cells["dgvLargeUnitID"].Value.ToString());
-
-                btnAdd.Enabled = false;
-                btnUpdate.Enabled = true;
-                btnDeleteByOne.Enabled = true;
-            }
+            Presenter.OnDoubleClickActiveObjectDGV();
         }
 
         private void dgvDeletedLargeUnit_DoubleClick(object sender, EventArgs e)
         {
-            if (dgvDeletedLargeUnit.CurrentRow.Index != -1)
-            {
-                txtName.Text = dgvDeletedLargeUnit.CurrentRow.Cells["dgvLargeUnitDeletedName"].Value.ToString();
-                txtDescription.Text = dgvDeletedLargeUnit.CurrentRow.Cells["dgvLargeUnitDeletedName"].Value.ToString();
-                LargeUnitID = new Guid(dgvDeletedLargeUnit.CurrentRow.Cells["dgvLargeUnitDeletedID"].Value.ToString());
-            }
+            Presenter.OnDoubleClickDeletedObjectDGV();
         }
 
         private void dgvTabContainer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (dgvTabContainer.SelectedIndex == 0)
-            {
-                PopulateAllUnitDataGridView();
-
-                txtDescription.Text = txtName.Text = txtSearch.Text = string.Empty;
-                btnAdd.Enabled = true;
-                btnDeleteByOne.Text = "أرشفة الوحدة";
-                btnUpdate.Enabled = false;
-                btnDeleteByOne.Enabled = false;
-            }
-            else if (dgvTabContainer.SelectedIndex == 1)
-            {
-                dgvDeletedLargeUnit.DataSource = Presenter.GetAllDeltetdUnits();
-                dgvDeletedLargeUnit.Columns[2].Visible = false;
-                DataGridViewStyle.StyleDatagridview(dgvDeletedLargeUnit);
-
-                btnAdd.Enabled = false;
-                btnDeleteByOne.Text = "إستعادة الوحدة";
-                btnUpdate.Enabled = false;
-                btnDeleteByOne.Enabled = true;
-                txtDescription.Text = txtName.Text = txtSearch.Text = string.Empty;
-            }
+            Presenter.OnSelectedIndexChangedTabCOntrol();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            if (dgvTabContainer.SelectedIndex == 0)
-            {
-                dgvLargeUnit.DataSource = Presenter.FilterDataGridView().ToList();
-            }
-            else if (dgvTabContainer.SelectedIndex == 1)
-            {
-                dgvDeletedLargeUnit.DataSource = Presenter.FilterDataGridViewDeleted();
-            }
+            Presenter.OnTextChangedSearch();
         }
     }
 }
