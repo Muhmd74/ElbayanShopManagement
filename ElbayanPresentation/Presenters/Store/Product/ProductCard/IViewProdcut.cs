@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
 {
-    public interface IViewProdcut
+    public interface IViewNewProdcut
     {
-        Guid ProductId { get; set; }
+        Guid ID { get; set; }
         Guna2TextBox UCP { get; set; }
         Guna2TextBox BarCode { get; set; }
         Guna2TextBox ProudctName { get; set; }
@@ -24,7 +24,9 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
         NumericUpDown SaleDefaultPrice { get; set; }
         NumericUpDown WholesalePrice { get; set; }
         bool IsUnitSale { get; set; } //true ? LargeSale : SmallSale
-        //string IsMainSaleUnit { get; set; } // Cbx Text for sale unit name.
+        Guna2CustomRadioButton LargeUnitIsMainUnit { get; set; }
+        Guna2CustomRadioButton SmallUnitIsMainUnit { get; set; }
+        //string IsMainSaleUnit { get; set; } 
         Guna2ComboBox SubCategory { get; set; }
         bool IsExpired { get; set; }
         Guna2ComboBox LargeUnit { get; set; }
@@ -33,6 +35,10 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
         NumericUpDown Disccount { get; set; }
         NumericUpDown VAT { get; set; }
         Guna2TextBox ProductQuantity { get; set; }
+        Guna2Button AddObject { get; set; }
+        Guna2Button UploadProductPicture { get; set; }
+        Guna2Button UpdateObject { get; set; }
+        Guna2PictureBox ProductPicture { get; set; }
         ProductPresnter Presenter { set; }
 
     }

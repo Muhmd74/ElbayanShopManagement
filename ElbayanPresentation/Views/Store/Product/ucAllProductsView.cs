@@ -123,7 +123,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             ucNewProductCard.Instance.btnUpdate.Enabled = true;
 
             // Retrive Product Id:
-            ucNewProductCard.Instance.ProductId = new Guid(dgvAllProduct.CurrentRow.Cells["ProductId"].Value.ToString());
+            ucNewProductCard.Instance.ID = new Guid(dgvAllProduct.CurrentRow.Cells["ProductId"].Value.ToString());
             // Fill controlls with data:
             ucNewProductCard.Instance.ProudctName.Text = dgvAllProduct.CurrentRow.Cells["ProductName"].Value.ToString();
             ucNewProductCard.Instance.Description.Text = dgvAllProduct.CurrentRow.Cells["ProductDescription"].Value.ToString();
