@@ -32,6 +32,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucAllProductsView));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2GroupBox4 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -86,6 +87,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel1.SuspendLayout();
             this.guna2GroupBox4.SuspendLayout();
             this.dgvTabContainer.SuspendLayout();
             this.tpActiveLargeUnits.SuspendLayout();
@@ -94,22 +96,37 @@ namespace ElbayaNPresentation.Views.Store.Product
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllDeletedProduct)).BeginInit();
             this.SuspendLayout();
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.guna2GroupBox4, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dgvTabContainer, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.33334F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1024, 600);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
             // guna2GroupBox4
             // 
             this.guna2GroupBox4.BackColor = System.Drawing.Color.White;
-            this.guna2GroupBox4.BorderRadius = 10;
+            this.guna2GroupBox4.BorderRadius = 5;
             this.guna2GroupBox4.Controls.Add(this.txtSearch);
             this.guna2GroupBox4.Controls.Add(this.label9);
             this.guna2GroupBox4.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(173)))), ((int)(((byte)(78)))));
-            this.guna2GroupBox4.CustomBorderThickness = new System.Windows.Forms.Padding(0, 45, 0, 0);
+            this.guna2GroupBox4.CustomBorderThickness = new System.Windows.Forms.Padding(0, 35, 0, 0);
             this.guna2GroupBox4.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2GroupBox4.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox4.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox4.Location = new System.Drawing.Point(0, 0);
+            this.guna2GroupBox4.Location = new System.Drawing.Point(3, 3);
             this.guna2GroupBox4.Name = "guna2GroupBox4";
             this.guna2GroupBox4.ShadowDecoration.Parent = this.guna2GroupBox4;
-            this.guna2GroupBox4.Size = new System.Drawing.Size(1518, 143);
-            this.guna2GroupBox4.TabIndex = 29;
+            this.guna2GroupBox4.Size = new System.Drawing.Size(1018, 111);
+            this.guna2GroupBox4.TabIndex = 31;
             this.guna2GroupBox4.Text = "قائمة الأصناف المتوفرة";
             this.guna2GroupBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -139,26 +156,25 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
             this.txtSearch.IconRightOffset = new System.Drawing.Point(10, 0);
             this.txtSearch.IconRightSize = new System.Drawing.Size(35, 35);
-            this.txtSearch.Location = new System.Drawing.Point(775, 56);
+            this.txtSearch.Location = new System.Drawing.Point(457, 47);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "";
             this.txtSearch.SelectedText = "";
             this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
-            this.txtSearch.Size = new System.Drawing.Size(412, 63);
+            this.txtSearch.Size = new System.Drawing.Size(277, 39);
             this.txtSearch.TabIndex = 24;
             this.txtSearch.TextOffset = new System.Drawing.Point(25, 0);
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // label9
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(1196, 74);
+            this.label9.Location = new System.Drawing.Point(756, 54);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(319, 32);
+            this.label9.Size = new System.Drawing.Size(250, 25);
             this.label9.TabIndex = 25;
             this.label9.Text = "البحث عن الصنف بالاسم الباركود أو الرقم";
             // 
@@ -168,15 +184,14 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dgvTabContainer.Controls.Add(this.tpArchieveLargeUnits);
             this.dgvTabContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvTabContainer.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvTabContainer.ItemSize = new System.Drawing.Size(132, 59);
-            this.dgvTabContainer.Location = new System.Drawing.Point(0, 149);
+            this.dgvTabContainer.ItemSize = new System.Drawing.Size(132, 39);
+            this.dgvTabContainer.Location = new System.Drawing.Point(3, 125);
             this.dgvTabContainer.Name = "dgvTabContainer";
             this.dgvTabContainer.Padding = new System.Drawing.Point(6, 5);
             this.dgvTabContainer.RightToLeftLayout = true;
             this.dgvTabContainer.SelectedIndex = 0;
-            this.dgvTabContainer.Size = new System.Drawing.Size(1518, 601);
-            this.dgvTabContainer.TabIndex = 30;
-            this.dgvTabContainer.SelectedIndexChanged += new System.EventHandler(this.dgvTabContainer_SelectedIndexChanged);
+            this.dgvTabContainer.Size = new System.Drawing.Size(1018, 472);
+            this.dgvTabContainer.TabIndex = 32;
             // 
             // tpActiveLargeUnits
             // 
@@ -185,12 +200,12 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.tpActiveLargeUnits.Controls.Add(this.dgvAllProduct);
             this.tpActiveLargeUnits.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tpActiveLargeUnits.ForeColor = System.Drawing.Color.White;
-            this.tpActiveLargeUnits.Location = new System.Drawing.Point(4, 63);
+            this.tpActiveLargeUnits.Location = new System.Drawing.Point(4, 43);
             this.tpActiveLargeUnits.Name = "tpActiveLargeUnits";
             this.tpActiveLargeUnits.Padding = new System.Windows.Forms.Padding(3);
-            this.tpActiveLargeUnits.Size = new System.Drawing.Size(1510, 534);
+            this.tpActiveLargeUnits.Size = new System.Drawing.Size(1010, 425);
             this.tpActiveLargeUnits.TabIndex = 0;
-            this.tpActiveLargeUnits.Text = "الوحدات النشطة";
+            this.tpActiveLargeUnits.Text = "المنتجات النشطة";
             // 
             // dgvAllProduct
             // 
@@ -240,9 +255,8 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dgvAllProduct.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvAllProduct.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.dgvAllProduct.RowTemplate.Height = 35;
-            this.dgvAllProduct.Size = new System.Drawing.Size(1504, 528);
+            this.dgvAllProduct.Size = new System.Drawing.Size(1004, 419);
             this.dgvAllProduct.TabIndex = 0;
-            this.dgvAllProduct.DoubleClick += new System.EventHandler(this.dgvAllProduct_DoubleClick_1);
             // 
             // ProductName
             // 
@@ -251,7 +265,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.ProductName.MinimumWidth = 6;
             this.ProductName.Name = "ProductName";
             this.ProductName.ReadOnly = true;
-            this.ProductName.Width = 134;
+            this.ProductName.Width = 106;
             // 
             // ProductCategory
             // 
@@ -260,7 +274,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.ProductCategory.MinimumWidth = 6;
             this.ProductCategory.Name = "ProductCategory";
             this.ProductCategory.ReadOnly = true;
-            this.ProductCategory.Width = 114;
+            this.ProductCategory.Width = 90;
             // 
             // IsMainSaleUnit
             // 
@@ -269,7 +283,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.IsMainSaleUnit.MinimumWidth = 6;
             this.IsMainSaleUnit.Name = "IsMainSaleUnit";
             this.IsMainSaleUnit.ReadOnly = true;
-            this.IsMainSaleUnit.Width = 189;
+            this.IsMainSaleUnit.Width = 149;
             // 
             // UCPNumber
             // 
@@ -278,7 +292,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.UCPNumber.MinimumWidth = 6;
             this.UCPNumber.Name = "UCPNumber";
             this.UCPNumber.ReadOnly = true;
-            this.UCPNumber.Width = 177;
+            this.UCPNumber.Width = 143;
             // 
             // CBCNumber
             // 
@@ -287,7 +301,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.CBCNumber.MinimumWidth = 6;
             this.CBCNumber.Name = "CBCNumber";
             this.CBCNumber.ReadOnly = true;
-            this.CBCNumber.Width = 171;
+            this.CBCNumber.Width = 141;
             // 
             // ProductId
             // 
@@ -306,7 +320,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.PSNumber.MinimumWidth = 6;
             this.PSNumber.Name = "PSNumber";
             this.PSNumber.ReadOnly = true;
-            this.PSNumber.Width = 177;
+            this.PSNumber.Width = 141;
             // 
             // PurchaseDefaultPrice
             // 
@@ -315,7 +329,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.PurchaseDefaultPrice.MinimumWidth = 6;
             this.PurchaseDefaultPrice.Name = "PurchaseDefaultPrice";
             this.PurchaseDefaultPrice.ReadOnly = true;
-            this.PurchaseDefaultPrice.Width = 203;
+            this.PurchaseDefaultPrice.Width = 160;
             // 
             // SaleDefaultPrice
             // 
@@ -324,7 +338,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.SaleDefaultPrice.MinimumWidth = 6;
             this.SaleDefaultPrice.Name = "SaleDefaultPrice";
             this.SaleDefaultPrice.ReadOnly = true;
-            this.SaleDefaultPrice.Width = 192;
+            this.SaleDefaultPrice.Width = 150;
             // 
             // WholesalePrice
             // 
@@ -333,7 +347,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.WholesalePrice.MinimumWidth = 6;
             this.WholesalePrice.Name = "WholesalePrice";
             this.WholesalePrice.ReadOnly = true;
-            this.WholesalePrice.Width = 174;
+            this.WholesalePrice.Width = 138;
             // 
             // Discount
             // 
@@ -342,7 +356,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.Discount.MinimumWidth = 6;
             this.Discount.Name = "Discount";
             this.Discount.ReadOnly = true;
-            this.Discount.Width = 174;
+            this.Discount.Width = 135;
             // 
             // VAT
             // 
@@ -351,7 +365,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.VAT.MinimumWidth = 6;
             this.VAT.Name = "VAT";
             this.VAT.ReadOnly = true;
-            this.VAT.Width = 141;
+            this.VAT.Width = 114;
             // 
             // LimitedDemand
             // 
@@ -360,7 +374,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.LimitedDemand.MinimumWidth = 6;
             this.LimitedDemand.Name = "LimitedDemand";
             this.LimitedDemand.ReadOnly = true;
-            this.LimitedDemand.Width = 170;
+            this.LimitedDemand.Width = 133;
             // 
             // IsEepired
             // 
@@ -464,14 +478,14 @@ namespace ElbayaNPresentation.Views.Store.Product
             // 
             // tpArchieveLargeUnits
             // 
-            this.tpArchieveLargeUnits.BackColor = System.Drawing.Color.White;
+            this.tpArchieveLargeUnits.BackColor = System.Drawing.SystemColors.HotTrack;
             this.tpArchieveLargeUnits.Controls.Add(this.dgvAllDeletedProduct);
-            this.tpArchieveLargeUnits.Location = new System.Drawing.Point(4, 63);
+            this.tpArchieveLargeUnits.Location = new System.Drawing.Point(4, 43);
             this.tpArchieveLargeUnits.Name = "tpArchieveLargeUnits";
             this.tpArchieveLargeUnits.Padding = new System.Windows.Forms.Padding(3);
-            this.tpArchieveLargeUnits.Size = new System.Drawing.Size(1510, 534);
+            this.tpArchieveLargeUnits.Size = new System.Drawing.Size(1010, 425);
             this.tpArchieveLargeUnits.TabIndex = 1;
-            this.tpArchieveLargeUnits.Text = "الوحدات المؤرشفة";
+            this.tpArchieveLargeUnits.Text = "المنتجات المؤرشفة";
             // 
             // dgvAllDeletedProduct
             // 
@@ -521,7 +535,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dgvAllDeletedProduct.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvAllDeletedProduct.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.dgvAllDeletedProduct.RowTemplate.Height = 35;
-            this.dgvAllDeletedProduct.Size = new System.Drawing.Size(1504, 528);
+            this.dgvAllDeletedProduct.Size = new System.Drawing.Size(1004, 419);
             this.dgvAllDeletedProduct.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -531,7 +545,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 134;
+            this.dataGridViewTextBoxColumn1.Width = 106;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -540,7 +554,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 114;
+            this.dataGridViewTextBoxColumn2.Width = 90;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -549,7 +563,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 189;
+            this.dataGridViewTextBoxColumn3.Width = 149;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -558,7 +572,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 177;
+            this.dataGridViewTextBoxColumn4.Width = 143;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -567,7 +581,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 171;
+            this.dataGridViewTextBoxColumn5.Width = 141;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -586,7 +600,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 177;
+            this.dataGridViewTextBoxColumn7.Width = 141;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -595,7 +609,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 203;
+            this.dataGridViewTextBoxColumn8.Width = 160;
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -604,7 +618,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Width = 192;
+            this.dataGridViewTextBoxColumn9.Width = 150;
             // 
             // dataGridViewTextBoxColumn10
             // 
@@ -613,7 +627,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 174;
+            this.dataGridViewTextBoxColumn10.Width = 138;
             // 
             // dataGridViewTextBoxColumn11
             // 
@@ -622,7 +636,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Width = 174;
+            this.dataGridViewTextBoxColumn11.Width = 135;
             // 
             // dataGridViewTextBoxColumn12
             // 
@@ -631,7 +645,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            this.dataGridViewTextBoxColumn12.Width = 141;
+            this.dataGridViewTextBoxColumn12.Width = 114;
             // 
             // dataGridViewTextBoxColumn13
             // 
@@ -640,7 +654,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn13.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            this.dataGridViewTextBoxColumn13.Width = 170;
+            this.dataGridViewTextBoxColumn13.Width = 133;
             // 
             // dataGridViewTextBoxColumn14
             // 
@@ -649,7 +663,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn14.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            this.dataGridViewTextBoxColumn14.Width = 154;
+            this.dataGridViewTextBoxColumn14.Width = 127;
             // 
             // dataGridViewTextBoxColumn15
             // 
@@ -746,11 +760,11 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.Appearance.BackColor = System.Drawing.Color.White;
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Controls.Add(this.guna2GroupBox4);
-            this.Controls.Add(this.dgvTabContainer);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ucAllProductsView";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Size = new System.Drawing.Size(1518, 750);
+            this.Size = new System.Drawing.Size(1024, 600);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.guna2GroupBox4.ResumeLayout(false);
             this.guna2GroupBox4.PerformLayout();
             this.dgvTabContainer.ResumeLayout(false);
@@ -763,14 +777,38 @@ namespace ElbayaNPresentation.Views.Store.Product
         }
 
         #endregion
+
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox4;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TabControl dgvTabContainer;
         private System.Windows.Forms.TabPage tpActiveLargeUnits;
-        private System.Windows.Forms.TabPage tpArchieveLargeUnits;
         public System.Windows.Forms.DataGridView dgvAllProduct;
-
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductCategory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IsMainSaleUnit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UCPNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CBCNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PSNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PurchaseDefaultPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SaleDefaultPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WholesalePrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Discount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VAT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LimitedDemand;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IsEepired;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LargeUnitName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SmallUnitName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubCategoryId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LargeUnitId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SmallUnitId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IsUnitSale;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IsDeleted;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ImageUrl;
+        private System.Windows.Forms.TabPage tpArchieveLargeUnits;
         public System.Windows.Forms.DataGridView dgvAllDeletedProduct;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -795,28 +833,5 @@ namespace ElbayaNPresentation.Views.Store.Product
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductCategory;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IsMainSaleUnit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UCPNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CBCNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PSNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PurchaseDefaultPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SaleDefaultPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn WholesalePrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Discount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VAT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LimitedDemand;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IsEepired;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LargeUnitName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SmallUnitName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductDescription;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SubCategoryId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LargeUnitId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SmallUnitId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IsUnitSale;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IsDeleted;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ImageUrl;
     }
 }
