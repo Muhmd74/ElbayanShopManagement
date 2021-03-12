@@ -19,6 +19,7 @@ using ElbayaNPresentation.Views.Store.Building;
 using ElbayaNPresentation.Views.Store.POSs;
 using ElbayaNPresentation.Views.Client.Suppliers;
 using ElbayaNPresentation.Views.Finance.Employee;
+using ElbayaNPresentation.StartUp;
 
 namespace ElbayaNPresentation
 {
@@ -40,6 +41,9 @@ namespace ElbayaNPresentation
             InitializeComponent();
             _instance = this;
 
+            this.gcContainer.Controls.Add(ucMainBoard.Instance);
+            ucMainBoard.Instance.Dock = DockStyle.Fill;
+            ucMainBoard.Instance.BringToFront();
             // Hanle Full screen Issues 
             System.Drawing.Rectangle rect = Screen.GetWorkingArea(this);
             this.MaximizedBounds = Screen.GetWorkingArea(this);

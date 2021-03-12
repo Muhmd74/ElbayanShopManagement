@@ -59,5 +59,35 @@ namespace ElbayaNPresentation.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _92c10f63929abdc2d7c375f2c59b919a {
+            get {
+                object obj = ResourceManager.GetObject("92c10f63929abdc2d7c375f2c59b919a", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap customer_rules {
+            get {
+                object obj = ResourceManager.GetObject("customer_rules", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap online_virtual_sales {
+            get {
+                object obj = ResourceManager.GetObject("online-virtual-sales", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
