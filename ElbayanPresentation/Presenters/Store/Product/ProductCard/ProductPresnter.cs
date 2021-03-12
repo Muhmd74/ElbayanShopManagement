@@ -94,7 +94,6 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
         }
 
         // Generate Random number 
-
         public long GenerateProductNumber()
         {
             return productServices.GeneratorRandomNumber();
@@ -175,7 +174,7 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
                 SmallUnitId = new Guid(_view.SmallUnit.SelectedValue.ToString()),
                 IsUnitSale = _view.IsUnitSale,
                 LimitedDemand = Convert.ToInt32(_view.LimitedDemand.Text),
-                IsExpired = _view.IsExpired,
+                IsExpired = _view.IsExpired.Checked,
                 ImageUrl = _view.ImageUrl,
                 UCP = Convert.ToInt32(_view.UCP.Text),
                 PurchaseDefaultPrice = _view.PurchaseDefaultPrice.Value,
@@ -189,34 +188,98 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
         // Retrive Handled by ucAllProduct
 
         // Update::
+
         public void OnCLickbtnUpdate()
         {
-            productServices.Update( new ProductDto { 
-                Id = _view.ID,               
+            if (_view.ProudctName.Text != string.Empty)
+            {
+                if (_view.SubCategory.SelectedItem != null)
+                {
+                    if (_view.LargeUnit.SelectedItem == null && _view.SmallUnit.SelectedItem == null)
+                    {
+                        MessageBox.Show("يجب اختيار الوحدة  الكبرى أو الوحدة الصغرى للمنتج ", "تأكيد", MessageBoxButtons.OK);
+                        return;
+                    }
+                    //if (MessageBox.Show("تم الإضافة بنجاح هل ترغب في إضافة صنف أخر", "تأكيد", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    //{
+                        if (_view.SmallUnitIsMainUnit.Checked)
+                        {
+                            _view.IsUnitSale = false;
+                            UpdateObject();
+                            ClearControls();
+                        }
+                        else
+                        {
+                            UpdateObject();
+                            ClearControls();
+                        }
+                    //}
+                    //else
+                    //{
+                    //    if (_view.SmallUnitIsMainUnit.Checked)
+                    //    {
+                    //        _view.IsUnitSale = false;
+                    //        UpdateObject();
+                    //        ClearControls();
+                    //    }
+                    //    else
+                    //    {
+                    //        CreateObject();
+                    //        ClearControls();
+                    //    }
+
+                        // Navigate to AllProuductView:
+                        if (!frmMainBoard.Instance.gcContainer.Contains(ucAllProductsView.Instance))
+                        {
+                            frmMainBoard.Instance.Controls.Add(ucAllProductsView.Instance);
+                            ucAllProductsView.Instance.Dock = DockStyle.Fill;
+                            ucAllProductsView.Instance.BringToFront();
+                        ucAllProductsView.Instance.dgvAllProduct.Refresh();
+                        }
+                        ucAllProductsView.Instance.BringToFront();
+                    //}
+                }
+                else
+                {
+                    MessageBox.Show("يجب اختيار التصنيف الفرعي للمنتج", "تأكيد", MessageBoxButtons.OK);
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("يجب أدخل اسم المنتج", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
+        }
+
+        private void UpdateObject()
+        {
+            productServices.Update(new ProductDto
+            {
+                Id = _view.ID,
                 Name = _view.ProudctName.Text,
                 Description = _view.Description.Text,
-                SubCategoryId = new Guid (_view.SubCategory.SelectedValue.ToString()),
+                SubCategoryId = new Guid(_view.SubCategory.SelectedValue.ToString()),
                 LargeUnitId = new Guid(_view.LargeUnit.SelectedValue.ToString()),
                 SmallUnitId = new Guid(_view.SmallUnit.SelectedValue.ToString()),
                 IsUnitSale = _view.IsUnitSale,
                 LimitedDemand = Convert.ToInt32(_view.LimitedDemand.Text),
-               
+
                 UCP = Convert.ToInt32(_view.UCP.Text),
                 BarCode = Convert.ToInt32(_view.BarCode.Text),
                 ProductNumber = Convert.ToInt32(_view.PSNumber.Text),
-
+                IsExpired = _view.IsExpired.Checked,
                 PurchaseDefaultPrice = _view.PurchaseDefaultPrice.Value,
                 SaleDefaultPrice = _view.SaleDefaultPrice.Value,
                 WholesalePrice = _view.WholesalePrice.Value,
                 Discount = Convert.ToInt32(_view.Disccount.Value), // needed to be decimal
                 Vat = Convert.ToInt32(_view.VAT.Value),
                 ImageUrl = _view.ImageUrl,
-           });
+            });
         }
-
         // Validate Text box for only numbers:
 
-        private void ClearControls()
+        public void ClearControls()
         {
             _view.ProudctName.Text = _view.Description.Text = "";
             _view.LimitedDemand.Text = _view.UCP.Text
@@ -226,7 +289,5 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
             _view.SubCategory.SelectedIndex = _view.LargeUnit.SelectedIndex = _view.SmallUnit.SelectedIndex = -1;
             _view.ProductPicture.Image = null;
         }
-
-
     }
 }

@@ -55,7 +55,6 @@ namespace ElbayaNPresentation.Presenters.Store.Product.AllProduct
             frmNewProduct.Instance.txtName.Text = model.Name;
             frmNewProduct.Instance.txtDescription.Text = model.Description;
             frmNewProduct.Instance.txtLimitedDemand.Text = model.LimitedDemand.ToString();
-            //frmNewProduct.Instance.txtQuantity.Text = model.Quantity;
             frmNewProduct.Instance.txtUCPNumber.Text = model.UCP.ToString();
             frmNewProduct.Instance.txtCBCNumber.Text = model.BarCode.ToString();
             frmNewProduct.Instance.txtPSNNumber.Text = model.ProductNumber.ToString();
@@ -68,6 +67,7 @@ namespace ElbayaNPresentation.Presenters.Store.Product.AllProduct
             frmNewProduct.Instance.cbxLargeUnit.Text = model.LargeUnitName;
             frmNewProduct.Instance.cbxSmallUnit.Text = model.SmallUnitName;
             frmNewProduct.Instance.rbIsExpiredProduct.Checked = model.IsExpired;
+            frmNewProduct.Instance.txtQuantity.Text = model.TotalQuantity.ToString();
             
             if(model.IsUnitSale == true)
             {
@@ -90,7 +90,8 @@ namespace ElbayaNPresentation.Presenters.Store.Product.AllProduct
             {
                 frmNewProduct.Instance.pbProductImage.Image = null;
             }
-
+            frmNewProduct.Instance.btnUpdate.Visible = true;
+            frmNewProduct.Instance.btnUpdate.Enabled = true;
         }
 
     }

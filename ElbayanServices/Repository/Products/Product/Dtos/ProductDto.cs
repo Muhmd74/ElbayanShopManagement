@@ -26,5 +26,6 @@ namespace ElbayanServices.Repository.Products.Product.Dtos
         public decimal WholesalePrice { get; set; }
         public int LimitedDemand { get; set; }
         public bool IsUnitSale { get; set; }
+        public int TotalQuantity { get; set; }
     }
 }
