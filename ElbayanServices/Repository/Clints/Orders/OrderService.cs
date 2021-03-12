@@ -43,7 +43,7 @@ namespace ElbayanServices.Repository.Clints.Orders
                 Deferred = model.Deferred,
                 DateTime = model.DateTime,
                 Payment = model.Payment,
-                OrderNumber = GenerateSequenceNumber(),
+                OrderNumber = GenerateSequenceNumberSupplier(),
                 IsReturn = false,
                 OrderType = "فاتورة مبيعات"
 
@@ -99,7 +99,6 @@ namespace ElbayanServices.Repository.Clints.Orders
 
             }
 
-            if (order != null)
             {
                 foreach (var orderProduct in model.OrderProductDto)
                 {
@@ -262,13 +261,13 @@ namespace ElbayanServices.Repository.Clints.Orders
         }
         public long GenerateSequenceNumberSupplier()
         {
-            var lastNumber = _context.Orders.Max().OrderNumber;
+            var lastNumber = _context.Orders.AsEnumerable().Select(d=>d.OrderNumber).LastOrDefault();
             if (lastNumber >= 0)
             {
                 return (long)(lastNumber + 1);
             }
 
-            return 0022250;
+            return 201020;
         }
         public void Dispose()
         {
