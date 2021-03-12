@@ -45,6 +45,7 @@ namespace ElbayanServices.Repository.Products.Product
                 ImageUrl = model.ImageUrl,
                 Discount = Convert.ToInt32(model.Discount),
                 Vat = Convert.ToInt32(model.Vat),
+                
             });
             _context.SaveChanges();
             return true;
@@ -66,6 +67,7 @@ namespace ElbayanServices.Repository.Products.Product
             result.LimitedDemand = model.LimitedDemand;
             result.SubCategoryId = model.SubCategoryId;
             result.UCP = model.UCP;
+
             _context.SaveChanges();
             return true;
         }
@@ -176,8 +178,9 @@ namespace ElbayanServices.Repository.Products.Product
                     SaleDefaultPrice = d.SaleDefaultPrice,
                     WholesalePrice = d.WholesalePrice,
                     ImageUrl = d.ImageUrl,
-
-                    IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name
+                    IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name,
+                    Discount = d.Discount,
+                    Vat = d.Vat
 
                 }).ToList();
         }
@@ -218,7 +221,6 @@ namespace ElbayanServices.Repository.Products.Product
                     Vat = d.Vat,
                     ImageUrl = d.ImageUrl,
                     IsUnitSale = d.IsUnitSale,
-
                     IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name
                 }).ToList();
 
@@ -258,10 +260,9 @@ namespace ElbayanServices.Repository.Products.Product
                     WholesalePrice = d.WholesalePrice,
                     Discount = d.Discount,
                     Vat = d.Vat,
-
                     ImageUrl = d.ImageUrl,
                     IsUnitSale = d.IsUnitSale,
-                    IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name
+                    IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name,
                 }).ToList();
         }
 
@@ -299,10 +300,9 @@ namespace ElbayanServices.Repository.Products.Product
                     WholesalePrice = d.WholesalePrice,
                     Discount = d.Discount,
                     Vat = d.Vat,
-
                     ImageUrl = d.ImageUrl,
                     IsUnitSale = d.IsUnitSale,
-                    IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name
+                    IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name,
                 }).ToList();
         }
 
@@ -334,7 +334,10 @@ namespace ElbayanServices.Repository.Products.Product
                     SubCategoryName = d.SubCategory.Name,
                     WholesalePrice = d.WholesalePrice,
                     SaleDefaultPrice = d.SaleDefaultPrice,
-                    IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name
+                    IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name,
+                    Discount = d.Discount,
+                    ImageUrl = d.ImageUrl,
+                    Vat = d.Vat
                 }).ToList();
         }
 
@@ -380,7 +383,8 @@ namespace ElbayanServices.Repository.Products.Product
                 .Include(d => d.SmallUnit)
                 .Include(d => d.LargeUnit)
                 .Include(d => d.SubCategory)
-                .FirstOrDefault(d => d.Name == productName && d.IsDeleted == false);
+                .OrderByDescending(d=>d.DateTime)
+                .FirstOrDefault(d => d.Name.Contains(productName) && d.IsDeleted == false);
             if (model != null)
             {
                 return new ProductDto()
@@ -398,7 +402,14 @@ namespace ElbayanServices.Repository.Products.Product
                     SmallUnitName = model.SmallUnit.Name,
                     SubCategoryId = model.SubCategoryId,
                     SubCategoryName = model.SubCategory.Name,
-                    UCP = model.UCP
+                    UCP = model.UCP,
+                    Vat = model.Vat,
+                    Discount = model.Discount,
+                    ImageUrl = model.ImageUrl,
+                    PurchaseDefaultPrice = model.PurchaseDefaultPrice,
+                    SaleDefaultPrice = model.SaleDefaultPrice,
+                    WholesalePrice = model.WholesalePrice,
+                    IsMAinSalesUnit = model.IsUnitSale ? model.LargeUnit.Name : model.SmallUnit.Name,
                 };
             }
 
@@ -418,6 +429,28 @@ namespace ElbayanServices.Repository.Products.Product
 
             return model;
         }
+
+        public long GetBarcodeByProductName(string productName)
+        {
+            var product = _context.Products.FirstOrDefault(d => d.Name == productName);
+            if (product!=null)
+            {
+                return product.BarCode;
+            }
+
+            return 0;
+        }
+
+        public long GetBarcodeByProductNumber(int productNumber)
+        {
+            var product = _context.Products.FirstOrDefault(d => d.ProductNumber == productNumber);
+            if (product != null)
+            {
+                return product.BarCode;
+            }
+
+            return 0;
+        }
         public long GeneratorRandomNumber()
         {
             while (true)
@@ -431,8 +464,8 @@ namespace ElbayanServices.Repository.Products.Product
         }
         public int GenerateProductNumber()
         {
-            var lastNumber = _context.Products.AsEnumerable().Select(d=>d.ProductNumber).SingleOrDefault();
-            if (lastNumber >= 0)
+            var lastNumber = _context.Products.AsEnumerable().Select(d=>d.ProductNumber).LastOrDefault();
+            if (lastNumber > 0)
             {
                 return (int)(lastNumber + 1);
             }
@@ -442,7 +475,7 @@ namespace ElbayanServices.Repository.Products.Product
         public long GenerateSequenceNumber()
         {
             var lastNumber = _context.Products.AsEnumerable().Select(d => d.ProductNumber).SingleOrDefault();
-            if (lastNumber >= 0)
+            if (lastNumber >0)
             {
                 return (long)(lastNumber + 1);
             }

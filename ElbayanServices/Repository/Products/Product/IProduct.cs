@@ -24,5 +24,7 @@ namespace ElbayanServices.Repository.Products.Product
         ProductDto GetById(Guid id);
         ProductDto GetByName(string productName);
         List<ProductNameDto> GetAllProductName();
+        long GetBarcodeByProductName(string productName);
+        long GetBarcodeByProductNumber(int productNumber);
     }
 }
