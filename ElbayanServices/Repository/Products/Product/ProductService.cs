@@ -185,7 +185,7 @@ namespace ElbayanServices.Repository.Products.Product
         public List<ProductDto> GetAll()
         {
             return _context.Products.Where(d => d.IsDeleted == false
-                                                && d.TotalQuantity > 0
+                                                && d.TotalQuantity >= 0
                                                 && d.LargeUnit.IsDeleted == false
                                                 && d.SmallUnit.IsDeleted == false
                                                 && d.SubCategory.IsDeleted == false
@@ -218,7 +218,6 @@ namespace ElbayanServices.Repository.Products.Product
                     Vat = d.Vat,
                     ImageUrl = d.ImageUrl,
                     IsUnitSale = d.IsUnitSale,
-
                     IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name
                 }).ToList();
 

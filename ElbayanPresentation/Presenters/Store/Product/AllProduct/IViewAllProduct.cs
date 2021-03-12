@@ -11,6 +11,7 @@ namespace ElbayaNPresentation.Presenters.Store.Product.AllProduct
 {
     public interface IViewAllProduct
     {
+        Guid ID { get; set; }
         Guna2TextBox SearchKeyword { get; set; }
         DataGridView ActiveObject { get; set; }
         DataGridView DeletedObject { get; set; }

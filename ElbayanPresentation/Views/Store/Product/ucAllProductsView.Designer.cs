@@ -87,6 +87,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvLimitedDemand = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2GroupBox4.SuspendLayout();
             this.dgvTabContainer.SuspendLayout();
@@ -182,6 +183,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             // 
             this.dgvTabContainer.Controls.Add(this.tpActiveLargeUnits);
             this.dgvTabContainer.Controls.Add(this.tpArchieveLargeUnits);
+            this.dgvTabContainer.Controls.Add(this.dgvLimitedDemand);
             this.dgvTabContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvTabContainer.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvTabContainer.ItemSize = new System.Drawing.Size(132, 39);
@@ -257,6 +259,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dgvAllProduct.RowTemplate.Height = 35;
             this.dgvAllProduct.Size = new System.Drawing.Size(1004, 419);
             this.dgvAllProduct.TabIndex = 0;
+            this.dgvAllProduct.DoubleClick += new System.EventHandler(this.dgvAllProduct_DoubleClick_2);
             // 
             // ProductName
             // 
@@ -755,6 +758,15 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn23.Visible = false;
             this.dataGridViewTextBoxColumn23.Width = 174;
             // 
+            // dgvLimitedDemand
+            // 
+            this.dgvLimitedDemand.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.dgvLimitedDemand.Location = new System.Drawing.Point(4, 43);
+            this.dgvLimitedDemand.Name = "dgvLimitedDemand";
+            this.dgvLimitedDemand.Size = new System.Drawing.Size(1010, 425);
+            this.dgvLimitedDemand.TabIndex = 2;
+            this.dgvLimitedDemand.Text = "منتجات تحت حد الطلب | نواقص";
+            // 
             // ucAllProductsView
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -833,5 +845,6 @@ namespace ElbayaNPresentation.Views.Store.Product
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.TabPage dgvLimitedDemand;
     }
 }

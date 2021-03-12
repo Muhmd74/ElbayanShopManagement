@@ -24,7 +24,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             InitializeComponent();
             _instance = this;
             Presenter = new AllProductPresenter(this);
-            PopulatedgvAllProduct();
+            Presenter.OnLoadUC();
         }
         private static ucAllProductsView _instance;
         public static ucAllProductsView Instance
@@ -37,30 +37,13 @@ namespace ElbayaNPresentation.Views.Store.Product
             }
         }
 
+        public Guid ID { get; set; }
         public AllProductPresenter Presenter { get;  set; }
-        public Guna2TextBox SearchKeyword { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DataGridView ActiveObject { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DataGridView DeletedObject { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public Guna2TextBox SearchKeyword { get => txtSearch; set => txtSearch = value; }
+        public DataGridView ActiveObject { get => dgvAllProduct; set => dgvAllProduct = value; }
+        public DataGridView DeletedObject { get => dgvAllDeletedProduct; set => dgvAllDeletedProduct = value; }
 
-        public void PopulatedgvAllProduct()
-        {
-            //dgvAllProduct.DataSource = Presenter.PopulatedgvAllproduct();
-            DataGridViewStyle.StyleDatagridview(dgvAllProduct);
-            dgvAllProduct.AutoGenerateColumns = false;
-
-            // Organize DGV Columns:
-            dgvAllProduct.Columns["ProductName"].DisplayIndex = 0;
-            dgvAllProduct.Columns["ProductCategory"].DisplayIndex = 1;
-            dgvAllProduct.Columns["IsMainSaleUnit"].DisplayIndex = 2;
-            dgvAllProduct.Columns["UCPNumber"].DisplayIndex = 3;
-            dgvAllProduct.Columns["CBCNumber"].DisplayIndex = 4;
-            dgvAllProduct.Columns["PSNumber"].DisplayIndex = 5;
-            dgvAllProduct.Columns["PurchaseDefaultPrice"].DisplayIndex = 6;
-            dgvAllProduct.Columns["SaleDefaultPrice"].DisplayIndex = 7;
-            dgvAllProduct.Columns["WholesalePrice"].DisplayIndex = 8;
-            dgvAllProduct.Columns["Discount"].DisplayIndex = 9;
-            dgvAllProduct.Columns["VAT"].DisplayIndex = 10;
-        }
+       
 
         private void dgvAllProduct_DoubleClick(object sender, EventArgs e)
         {
@@ -69,7 +52,7 @@ namespace ElbayaNPresentation.Views.Store.Product
                 frmMainBoard.Instance.gcContainer.Controls.Add(ucNewProductCard.Instance);
                 ucNewProductCard.Instance.Dock = DockStyle.Fill;
                 ucNewProductCard.Instance.BringToFront();
-                //PopulateucNewProuct();
+                PopulateucNewProuct();
 
             }
             ucNewProductCard.Instance.BringToFront();
@@ -169,6 +152,12 @@ namespace ElbayaNPresentation.Views.Store.Product
                 }
 
 
+        }
+
+        private void dgvAllProduct_DoubleClick_2(object sender, EventArgs e)
+        {
+            Presenter.PopulatefrmNewProduct();
+            frmNewProduct.Instance.ShowDialog();
         }
     }
 }
