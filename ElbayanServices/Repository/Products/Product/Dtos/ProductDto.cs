@@ -28,5 +28,6 @@ namespace ElbayanServices.Repository.Products.Product.Dtos
         public bool IsUnitSale { get; set; }
         public Guid ClintId { get; set; }
         public string ClintName { get; set; }
+        public int TotalQuantity { get; set; }
     }
 }

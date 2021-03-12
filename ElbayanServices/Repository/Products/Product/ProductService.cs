@@ -45,7 +45,6 @@ namespace ElbayanServices.Repository.Products.Product
                 ImageUrl = model.ImageUrl,
                 Discount = Convert.ToInt32(model.Discount),
                 Vat = Convert.ToInt32(model.Vat),
-                
             });
             _context.SaveChanges();
             return true;
@@ -67,7 +66,7 @@ namespace ElbayanServices.Repository.Products.Product
             result.LimitedDemand = model.LimitedDemand;
             result.SubCategoryId = model.SubCategoryId;
             result.UCP = model.UCP;
-
+            
             _context.SaveChanges();
             return true;
         }
@@ -180,7 +179,8 @@ namespace ElbayanServices.Repository.Products.Product
                     ImageUrl = d.ImageUrl,
                     IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name,
                     Discount = d.Discount,
-                    Vat = d.Vat
+                    Vat = d.Vat,
+                    TotalQuantity = d.TotalQuantity
 
                 }).ToList();
         }
@@ -221,7 +221,9 @@ namespace ElbayanServices.Repository.Products.Product
                     Vat = d.Vat,
                     ImageUrl = d.ImageUrl,
                     IsUnitSale = d.IsUnitSale,
-                    IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name
+                    IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name,
+                    TotalQuantity = d.TotalQuantity
+
                 }).ToList();
 
         }
@@ -263,6 +265,8 @@ namespace ElbayanServices.Repository.Products.Product
                     ImageUrl = d.ImageUrl,
                     IsUnitSale = d.IsUnitSale,
                     IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name,
+                    TotalQuantity = d.TotalQuantity
+
                 }).ToList();
         }
 
@@ -303,6 +307,8 @@ namespace ElbayanServices.Repository.Products.Product
                     ImageUrl = d.ImageUrl,
                     IsUnitSale = d.IsUnitSale,
                     IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name,
+                    TotalQuantity = d.TotalQuantity
+
                 }).ToList();
         }
 
@@ -337,7 +343,9 @@ namespace ElbayanServices.Repository.Products.Product
                     IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name,
                     Discount = d.Discount,
                     ImageUrl = d.ImageUrl,
-                    Vat = d.Vat
+                    Vat = d.Vat,
+                    TotalQuantity = d.TotalQuantity
+
                 }).ToList();
         }
 
@@ -369,7 +377,9 @@ namespace ElbayanServices.Repository.Products.Product
                     UCP = model.UCP,
                     WholesalePrice = model.WholesalePrice,
                     SaleDefaultPrice = model.SaleDefaultPrice,
-                    IsMAinSalesUnit = model.IsUnitSale ? model.LargeUnit.Name : model.SmallUnit.Name
+                    IsMAinSalesUnit = model.IsUnitSale ? model.LargeUnit.Name : model.SmallUnit.Name,
+                    TotalQuantity = model.TotalQuantity
+
                 };
             }
 
