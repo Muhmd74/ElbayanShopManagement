@@ -93,6 +93,7 @@
     <Compile Include="Repository\Clints\Poses\IPos.cs" />
     <Compile Include="Repository\Clints\Poses\PosService.cs" />
     <Compile Include="Repository\Clints\Supplier\Validators\CreateSupplierValidators.cs" />
+    <Compile Include="Repository\Employees\EmployeePermession\Setting\UserSettingTemplate.cs" />
     <Compile Include="Repository\Employees\Employees\Dtos\EmployeeDto.cs" />
     <Compile Include="Repository\Employees\Employees\Dtos\EmployeeNameDto.cs" />
     <Compile Include="Repository\Employees\Employees\Dtos\LoginDto.cs" />
