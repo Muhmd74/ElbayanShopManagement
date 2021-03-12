@@ -22,7 +22,7 @@ namespace ElbayanServices.Repository.Products.Product
         List<SubCategoryNameDto> GetAllSubCategory();
         List<LargeUnitNameDto> GetAllLargeUnit();
         ProductDto GetById(Guid id);
-        List<ProductDto> GetByName(string productName);
+        List<ProductDto> GetByName(string productName,long? barcode,int? productNumber);
         List<ProductNameDto> GetAllProductName();
         long GetBarcodeByProductName(string productName);
         long GetBarcodeByProductNumber(int productNumber);
