@@ -369,6 +369,7 @@ namespace ElbayanServices.Repository.Products.Product
                     UCP = model.UCP,
                     WholesalePrice = model.WholesalePrice,
                     SaleDefaultPrice = model.SaleDefaultPrice,
+                    ImageUrl = model.ImageUrl,
                     IsMAinSalesUnit = model.IsUnitSale ? model.LargeUnit.Name : model.SmallUnit.Name
                 };
             }

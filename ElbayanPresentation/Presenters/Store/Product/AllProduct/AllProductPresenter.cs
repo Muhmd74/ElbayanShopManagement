@@ -4,6 +4,7 @@ using ElbayanServices.Repository.Products.Product;
 using ElbayanServices.Repository.Products.Product.Dtos;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -54,7 +55,7 @@ namespace ElbayaNPresentation.Presenters.Store.Product.AllProduct
             frmNewProduct.Instance.txtName.Text = model.Name;
             frmNewProduct.Instance.txtDescription.Text = model.Description;
             frmNewProduct.Instance.txtLimitedDemand.Text = model.LimitedDemand.ToString();
-            // frmNewProduct.Instance.txtQuantity.Text = model.Quantity;
+            //frmNewProduct.Instance.txtQuantity.Text = model.Quantity;
             frmNewProduct.Instance.txtUCPNumber.Text = model.UCP.ToString();
             frmNewProduct.Instance.txtCBCNumber.Text = model.BarCode.ToString();
             frmNewProduct.Instance.txtPSNNumber.Text = model.ProductNumber.ToString();
@@ -67,19 +68,28 @@ namespace ElbayaNPresentation.Presenters.Store.Product.AllProduct
             frmNewProduct.Instance.cbxLargeUnit.Text = model.LargeUnitName;
             frmNewProduct.Instance.cbxSmallUnit.Text = model.SmallUnitName;
             frmNewProduct.Instance.rbIsExpiredProduct.Checked = model.IsExpired;
-                       
-            //string ImageUrl = Path.Combine(System.IO.Path.GetFullPath(@"..\..\"), @"Resources\ProductImage\", Path.GetFileName("Photos-icon.png"));
+            
+            if(model.IsUnitSale == true)
+            {
+                frmNewProduct.Instance.rbLargeUnitIsMainUnit.Checked = true;
+                frmNewProduct.Instance.rbSmallUnitIsMainUnit.Checked = false;
+            }
+            else
+            {
+                frmNewProduct.Instance.rbLargeUnitIsMainUnit.Checked = false;
+                frmNewProduct.Instance.rbSmallUnitIsMainUnit.Checked = true;
+            }
 
-            //if (frmNewProduct.Instance.Acti.CurrentRow.Cells["ImageUrl"].Value != null)
-            //{
-            //    ImageUrl = dgvAllProduct.CurrentRow.Cells["ImageUrl"].Value.ToString();
-            //    ucNewProductCard.Instance.pbProductImage.Image = new Bitmap(ImageUrl);
-            //}
-            //else
-            //{
-            //    ucNewProductCard.Instance.pbProductImage.Image = new Bitmap(ImageUrl);
-            //}
-            //frmMainBoard.Instance.Visible = false;
+            string ImageUrl = model.ImageUrl;
+
+            if (!string.IsNullOrEmpty(ImageUrl))
+            {
+                frmNewProduct.Instance.pbProductImage.Image = new Bitmap(ImageUrl);
+            }
+            else
+            {
+                frmNewProduct.Instance.pbProductImage.Image = null;
+            }
 
         }
 

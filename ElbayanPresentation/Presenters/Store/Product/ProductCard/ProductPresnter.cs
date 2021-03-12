@@ -58,7 +58,7 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
 
             FillcbxLargeUnit();
             FillcbxSubcategory();
-            FillcbxSmallunit();
+            //FillcbxSmallunit();
         }
         public void FillcbxSubcategory()
         {
