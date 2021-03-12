@@ -56,6 +56,7 @@ namespace ElbayaNPresentation.Views.Store.Product
         public NumericUpDown VAT { get => nudVATPercent; set => nudVATPercent = value; }
         public Guna2Button AddObject { get => btnAdd; set => btnAdd = value; }
         public Guna2Button UploadProductPicture { get => btnUploadPicture; set => btnUploadPicture = value; }
+        public Guna2Button DeleteOrRestore { get => btnDeleteOrRestore; set => btnDeleteOrRestore = value; }
         public Guna2Button UpdateObject { get => btnUpdate; set => btnUpdate = value; }
         public Guna2PictureBox ProductPicture { get => pbProductImage; set => pbProductImage = value; }
         public Guna2CustomRadioButton LargeUnitIsMainUnit { get => rbLargeUnitIsMainUnit; set => rbLargeUnitIsMainUnit = value; }

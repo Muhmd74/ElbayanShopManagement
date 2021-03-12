@@ -46,6 +46,11 @@ namespace ElbayaNPresentation.Presenters.Store.Product.AllProduct
             _view.ActiveObject.Columns["VAT"].DisplayIndex = 10;
         }
 
+        internal void OnTextSearchChanged()
+        {
+            productSerice.GetAllProductName();
+        }
+
         public void PopulatefrmNewProduct()
         {
             _view.ID = new Guid(_view.ActiveObject.CurrentRow.Cells["ProductId"].Value.ToString());
@@ -91,7 +96,8 @@ namespace ElbayaNPresentation.Presenters.Store.Product.AllProduct
                 frmNewProduct.Instance.pbProductImage.Image = null;
             }
             frmNewProduct.Instance.btnUpdate.Visible = true;
-            frmNewProduct.Instance.btnUpdate.Enabled = true;
+            frmNewProduct.Instance.btnDeleteOrRestore.Visible = true;
+            //frmNewProduct.Instance.btnUpdate.Enabled = true;
         }
 
     }

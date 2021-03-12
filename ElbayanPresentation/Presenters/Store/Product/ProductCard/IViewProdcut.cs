@@ -37,6 +37,7 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
         Guna2TextBox ProductQuantity { get; set; }
         Guna2Button AddObject { get; set; }
         Guna2Button UploadProductPicture { get; set; }
+        Guna2Button DeleteOrRestore { get; set; }
         Guna2Button UpdateObject { get; set; }
         Guna2PictureBox ProductPicture { get; set; }
         ProductPresnter Presenter { set; }

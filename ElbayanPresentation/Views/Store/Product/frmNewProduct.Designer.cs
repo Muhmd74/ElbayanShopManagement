@@ -80,6 +80,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDeleteOrRestore = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2GroupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDiscountPercent)).BeginInit();
@@ -152,6 +153,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox4.Controls.Add(this.label1);
             this.guna2GroupBox4.Controls.Add(this.btnAdd);
             this.guna2GroupBox4.Controls.Add(this.btnClose);
+            this.guna2GroupBox4.Controls.Add(this.btnDeleteOrRestore);
             this.guna2GroupBox4.Controls.Add(this.btnUpdate);
             this.guna2GroupBox4.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(173)))), ((int)(((byte)(78)))));
             this.guna2GroupBox4.CustomBorderThickness = new System.Windows.Forms.Padding(0, 45, 0, 0);
@@ -932,14 +934,14 @@ namespace ElbayaNPresentation.Views.Store.Product
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.BackColor = System.Drawing.Color.White;
-            this.btnAdd.BorderRadius = 17;
+            this.btnAdd.BorderRadius = 9;
             this.btnAdd.CheckedState.Parent = this.btnAdd;
             this.btnAdd.CustomImages.Parent = this.btnAdd;
             this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
             this.btnAdd.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Location = new System.Drawing.Point(468, 479);
+            this.btnAdd.Location = new System.Drawing.Point(577, 479);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
             this.btnAdd.Size = new System.Drawing.Size(115, 39);
@@ -951,14 +953,14 @@ namespace ElbayaNPresentation.Views.Store.Product
             // 
             this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdate.BackColor = System.Drawing.Color.White;
-            this.btnUpdate.BorderRadius = 17;
+            this.btnUpdate.BorderRadius = 9;
             this.btnUpdate.CheckedState.Parent = this.btnUpdate;
             this.btnUpdate.CustomImages.Parent = this.btnUpdate;
             this.btnUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
             this.btnUpdate.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.HoverState.Parent = this.btnUpdate;
-            this.btnUpdate.Location = new System.Drawing.Point(331, 479);
+            this.btnUpdate.Location = new System.Drawing.Point(439, 479);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
             this.btnUpdate.Size = new System.Drawing.Size(115, 39);
@@ -971,7 +973,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.BackColor = System.Drawing.Color.White;
-            this.btnClose.BorderRadius = 17;
+            this.btnClose.BorderRadius = 9;
             this.btnClose.CheckedState.Parent = this.btnClose;
             this.btnClose.CustomImages.Parent = this.btnClose;
             this.btnClose.FillColor = System.Drawing.SystemColors.MenuHighlight;
@@ -985,6 +987,25 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "إغلاق";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnDeleteOrRestore
+            // 
+            this.btnDeleteOrRestore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeleteOrRestore.BackColor = System.Drawing.Color.White;
+            this.btnDeleteOrRestore.BorderRadius = 9;
+            this.btnDeleteOrRestore.CheckedState.Parent = this.btnDeleteOrRestore;
+            this.btnDeleteOrRestore.CustomImages.Parent = this.btnDeleteOrRestore;
+            this.btnDeleteOrRestore.FillColor = System.Drawing.Color.Salmon;
+            this.btnDeleteOrRestore.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteOrRestore.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteOrRestore.HoverState.Parent = this.btnDeleteOrRestore;
+            this.btnDeleteOrRestore.Location = new System.Drawing.Point(302, 479);
+            this.btnDeleteOrRestore.Name = "btnDeleteOrRestore";
+            this.btnDeleteOrRestore.ShadowDecoration.Parent = this.btnDeleteOrRestore;
+            this.btnDeleteOrRestore.Size = new System.Drawing.Size(115, 39);
+            this.btnDeleteOrRestore.TabIndex = 6;
+            this.btnDeleteOrRestore.Text = "الأرشفة أو استعادة";
+            this.btnDeleteOrRestore.Visible = false;
             // 
             // frmNewProduct
             // 
@@ -1069,5 +1090,6 @@ namespace ElbayaNPresentation.Views.Store.Product
         public System.Windows.Forms.Label label10;
         public System.Windows.Forms.NumericUpDown nudVATPercent;
         public Guna.UI2.WinForms.Guna2Button btnClose;
+        public Guna.UI2.WinForms.Guna2Button btnDeleteOrRestore;
     }
 }

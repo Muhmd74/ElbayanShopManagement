@@ -259,7 +259,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dgvAllProduct.RowTemplate.Height = 35;
             this.dgvAllProduct.Size = new System.Drawing.Size(1004, 419);
             this.dgvAllProduct.TabIndex = 0;
-            this.dgvAllProduct.DoubleClick += new System.EventHandler(this.dgvAllProduct_DoubleClick_2);
+            this.dgvAllProduct.DoubleClick += new System.EventHandler(this.dgvAllProduct_DoubleClick);
             // 
             // ProductName
             // 

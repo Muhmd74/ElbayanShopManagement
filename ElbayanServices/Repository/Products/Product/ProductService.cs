@@ -390,7 +390,6 @@ namespace ElbayanServices.Repository.Products.Product
 
         public List<ProductDto> GetByName(string productName)
         {
-
             return _context.Products
                 .Include(d => d.SmallUnit)
                 .Include(d => d.LargeUnit)
@@ -435,8 +434,6 @@ namespace ElbayanServices.Repository.Products.Product
                     ProductId = d.Id,
                     ProductName = d.Name
                 }).ToList();
-
-
             return model;
         }
 
