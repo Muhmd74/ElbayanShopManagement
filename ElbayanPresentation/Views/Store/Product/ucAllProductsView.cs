@@ -42,6 +42,8 @@ namespace ElbayaNPresentation.Views.Store.Product
         public Guna2TextBox SearchKeyword { get => txtSearch; set => txtSearch = value; }
         public DataGridView ActiveObject { get => dgvAllProduct; set => dgvAllProduct = value; }
         public DataGridView DeletedObject { get => dgvAllDeletedProduct; set => dgvAllDeletedProduct = value; }
+        public DataGridView ProductZeroQuantity { get => dgvProductZeroQuantity; set => dgvProductZeroQuantity = value; }
+        public DataGridView ProductLimitedDemand { get => dgvProductLimitedDemand; set => dgvProductLimitedDemand = value; }
         public TabControl TabContainer  { get => dgvTabContainer; set => dgvTabContainer = value; }
 
 

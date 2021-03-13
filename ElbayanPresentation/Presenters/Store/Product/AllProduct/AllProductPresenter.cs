@@ -26,8 +26,12 @@ namespace ElbayaNPresentation.Presenters.Store.Product.AllProduct
         {
             DataGridViewStyle.StyleDatagridview(_view.ActiveObject);
             DataGridViewStyle.StyleDatagridview(_view.DeletedObject);
+            DataGridViewStyle.StyleDatagridview(_view.ProductZeroQuantity);
+            DataGridViewStyle.StyleDatagridview(_view.ProductLimitedDemand);
             PopulatedgvAllProduct();
             PopulatedgvDeletedObject();
+            PopulatedgvZeroQuantity();
+            PopulatedgvLimitedDeman();
         }
         public void PopulatedgvAllProduct()
         {
@@ -50,24 +54,23 @@ namespace ElbayaNPresentation.Presenters.Store.Product.AllProduct
         {
             _view.DeletedObject.DataSource = productSerice.GetAllProductDeleted().ToList();
             _view.DeletedObject.AutoGenerateColumns = false;
-            //// Organize DGV Columns:
-            //_view.ActiveObject.Columns["ProductName"].DisplayIndex = 0;
-            //_view.ActiveObject.Columns["ProductCategory"].DisplayIndex = 1;
-            //_view.ActiveObject.Columns["IsMainSaleUnit"].DisplayIndex = 2;
-            //_view.ActiveObject.Columns["UCPNumber"].DisplayIndex = 3;
-            //_view.ActiveObject.Columns["CBCNumber"].DisplayIndex = 4;
-            //_view.ActiveObject.Columns["PSNumber"].DisplayIndex = 5;
-            //_view.ActiveObject.Columns["PurchaseDefaultPrice"].DisplayIndex = 6;
-            //_view.ActiveObject.Columns["SaleDefaultPrice"].DisplayIndex = 7;
-            //_view.ActiveObject.Columns["WholesalePrice"].DisplayIndex = 8;
-            //_view.ActiveObject.Columns["Discount"].DisplayIndex = 9;
-            //_view.ActiveObject.Columns["VAT"].DisplayIndex = 10;
+        }
+        public void PopulatedgvLimitedDeman()
+        {
+            _view.ProductLimitedDemand.DataSource = productSerice.GetProductsLimitedDemand().ToList();
+            _view.ProductLimitedDemand.AutoGenerateColumns = false;
+        }
+        public void PopulatedgvZeroQuantity()
+        {
+            _view.ProductZeroQuantity.DataSource = productSerice.GetAllEqualZero().ToList();
+            _view.ProductZeroQuantity.AutoGenerateColumns = false;
         }
         internal static long? BarecodeNumber(string BareCodeInupt)
         {
             long Barcode;
             return Int64.TryParse(BareCodeInupt, out Barcode) ? (long?)Barcode : null;
-        }internal static int? ProductNumber(string ProductNumberInupt)
+        }
+        internal static int? ProductNumber(string ProductNumberInupt)
         {
             int ProductNumber;
             return Int32.TryParse(ProductNumberInupt, out ProductNumber) ? (int?)ProductNumber : null;
