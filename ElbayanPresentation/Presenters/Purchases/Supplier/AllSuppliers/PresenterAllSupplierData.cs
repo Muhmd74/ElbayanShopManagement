@@ -38,6 +38,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.Supplier.AllSuppliers
             _view.DeletedObject.DataSource = supplierService.GetAllSupplierNotActive().ToList();
         }
 
+
         // 1 - Create 
         public void OnClickbtnAddNewObject()
         {
@@ -71,9 +72,23 @@ namespace ElbayaNPresentation.Presenters.Purchases.Supplier.AllSuppliers
             frmNewClient.Instance.OpeningBalance.Value = model.OpeningBalance;
             frmNewClient.Instance.Fax.Text = model.FaxNumber;
             frmNewClient.Instance.FirmPhoneNumber.Text = model.Phone;
+
             frmNewClient.Instance.UpdateObject.Visible = true;
             frmNewClient.Instance.ShowDialog();
         }
+
+        internal void OnSelectedIndexChanged_TabControl()
+        {
+            if(_view.TabControl.SelectedIndex == 0)
+            {
+                _view.ActiveObject.DataSource = supplierService.GetAllSupplier().ToList();
+            }
+            else if (_view.TabControl.SelectedIndex == 1)
+            {
+                _view.DeletedObject.DataSource = supplierService.GetAllSupplierNotActive().ToList();
+            }
+        }
+
         // Search ->
         public void OnTextChnagedtxtSearch()
         {

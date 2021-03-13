@@ -79,5 +79,11 @@ namespace ElbayaNPresentation.Views.Client
         {
             this.Close();
         }
+
+        private void cbIsActive_Click(object sender, EventArgs e)
+        {
+            Presenter.OnActiveChekedChanged();
+
+        }
     }
 }

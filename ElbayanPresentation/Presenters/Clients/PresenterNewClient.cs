@@ -113,6 +113,24 @@ namespace ElbayaNPresentation.Presenters.Clients
                 return;
             }
         }
+
+        internal void OnActiveChekedChanged()
+        {
+            if (_view.IsActive.Checked == false)
+            {
+                if (MessageBox.Show("هل تريد تحويل المورد إلى غير نشط", "تأكيد", MessageBoxButtons.YesNo) == DialogResult.Yes) 
+                {
+                    Client.ChangeActivity(_view.ID);
+                    ucAllSupplier.Instance.tabDGVContainer.SelectedIndex = 1;
+                    frmNewClient.Instance.Close();
+                }
+            }
+            else
+            {
+
+            }
+        }
+
         private void ClearControls()
         {
             _view.SuppliersName.Text = _view.IdentityNumber.Text = _view.FirmName.Text =

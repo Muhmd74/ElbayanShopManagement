@@ -51,5 +51,10 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             Presenter.OnDoubleClickdgvNotActiveObject();
 
         }
+
+        private void tabDGVContainer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Presenter.OnSelectedIndexChanged_TabControl();
+        }
     }
 }
