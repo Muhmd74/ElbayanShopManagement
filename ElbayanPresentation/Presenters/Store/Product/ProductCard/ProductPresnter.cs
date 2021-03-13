@@ -168,7 +168,41 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
 
         internal void OnClickDeletOrRestore()
         {
-            productServices.IsDeleted(_view.ID);
+            if (_view.ProudctName.Text != string.Empty)
+            {
+                if (_view.SubCategory.SelectedItem != null)
+                {
+                    if (_view.LargeUnit.SelectedItem == null && _view.SmallUnit.SelectedItem == null)
+                    {
+                        MessageBox.Show("يجب اختيار الوحدة  الكبرى أو الوحدة الصغرى للمنتج ", "تأكيد", MessageBoxButtons.OK);
+                        return;
+                    }
+                        _view.IsUnitSale = false;
+                        productServices.IsDeleted(_view.ID);
+                        ClearControls();
+                    // Navigate to AllProuductView:
+                    if (!frmMainBoard.Instance.gcContainer.Contains(ucAllProductsView.Instance))
+                    {
+                        frmMainBoard.Instance.Controls.Add(ucAllProductsView.Instance);
+                        ucAllProductsView.Instance.Dock = DockStyle.Fill;
+                        ucAllProductsView.Instance.BringToFront();
+                        ucAllProductsView.Instance.Presenter.PopulatedgvAllProduct();
+                    }
+                    ucAllProductsView.Instance.BringToFront();
+                    ucAllProductsView.Instance.Presenter.PopulatedgvAllProduct();
+                    ucAllProductsView.Instance.Presenter.PopulatedgvDeletedObject();
+                }
+                else
+                {
+                    MessageBox.Show("يجب اختيار التصنيف الفرعي للمنتج", "تأكيد", MessageBoxButtons.OK);
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("يجب أدخل اسم المنتج", "تأكيد", MessageBoxButtons.OK);
+                return;
+            }
         }
 
         private void CreateObject()

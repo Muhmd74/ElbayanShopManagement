@@ -63,15 +63,39 @@ namespace ElbayaNPresentation.Presenters.Store.Product.AllProduct
             //_view.ActiveObject.Columns["Discount"].DisplayIndex = 9;
             //_view.ActiveObject.Columns["VAT"].DisplayIndex = 10;
         }
+        internal static long? BarecodeNumber(string BareCodeInupt)
+        {
+            long Barcode;
+            return Int64.TryParse(BareCodeInupt, out Barcode) ? (long?)Barcode : null;
+        }internal static int? ProductNumber(string ProductNumberInupt)
+        {
+            int ProductNumber;
+            return Int32.TryParse(ProductNumberInupt, out ProductNumber) ? (int?)ProductNumber : null;
+        }
         internal void OnTextSearchChanged()
         {
-           _view.ActiveObject.DataSource =  productSerice.GetByName(_view.SearchKeyword.Text).ToList();
+            string productName = _view.SearchKeyword.Text;
+            long? Barcode = BarecodeNumber(_view.SearchKeyword.Text);
+            int? ProductNymber = ProductNumber(_view.SearchKeyword.Text);
+            _view.ActiveObject.DataSource =  productSerice.GetByName(productName, Barcode, ProductNymber).ToList();
         }
         public void PopulatefrmNewProduct()
         {
-            _view.ID = new Guid(_view.ActiveObject.CurrentRow.Cells["ProductId"].Value.ToString());
-            var model = productSerice.GetById(_view.ID);
+            if(_view.TabContainer.SelectedIndex == 0)
+            {
+                _view.ID = new Guid(_view.ActiveObject.CurrentRow.Cells["ProductId"].Value.ToString());
+            }
+            else if (_view.TabContainer.SelectedIndex == 1)
+            {
+                _view.ID = new Guid(_view.DeletedObject.CurrentRow.Cells["DeletedObjectID"].Value.ToString());
 
+            }
+            else if (_view.TabContainer.SelectedIndex == 2)
+            {
+                //_view.ID = new Guid(_view.ActiveObject.CurrentRow.Cells["ProductId"].Value.ToString());
+
+            }
+            var model = productSerice.GetById(_view.ID);
             frmNewProduct.Instance.ID = model.Id;
             frmNewProduct.Instance.txtName.Text = model.Name;
             frmNewProduct.Instance.txtDescription.Text = model.Description;

@@ -112,6 +112,7 @@ namespace ElbayaNPresentation.Views.Store.Product
         private void btnDeleteOrRestore_Click(object sender, EventArgs e)
         {
             Presenter.OnClickDeletOrRestore();
+            frmNewProduct.Instance.Close();
         }
     }
 }

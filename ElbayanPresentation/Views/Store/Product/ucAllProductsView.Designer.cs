@@ -30,8 +30,8 @@ namespace ElbayaNPresentation.Views.Store.Product
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucAllProductsView));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2GroupBox4 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
@@ -64,12 +64,13 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.ImageUrl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpArchieveLargeUnits = new System.Windows.Forms.TabPage();
             this.dgvAllDeletedProduct = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvLimitedDemand = new System.Windows.Forms.TabPage();
+            this.DeletedObjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeletedObjectID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,7 +88,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvLimitedDemand = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2GroupBox4.SuspendLayout();
             this.dgvTabContainer.SuspendLayout();
@@ -107,8 +107,8 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1024, 600);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -216,15 +216,15 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dgvAllProduct.AllowUserToDeleteRows = false;
             this.dgvAllProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvAllProduct.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAllProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAllProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAllProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAllProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ProductName,
@@ -497,23 +497,23 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dgvAllDeletedProduct.AllowUserToDeleteRows = false;
             this.dgvAllDeletedProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvAllDeletedProduct.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAllDeletedProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAllDeletedProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvAllDeletedProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAllDeletedProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
+            this.DeletedObjectName,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
+            this.DeletedObjectID,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
@@ -541,15 +541,25 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dgvAllDeletedProduct.RowTemplate.Height = 35;
             this.dgvAllDeletedProduct.Size = new System.Drawing.Size(1004, 419);
             this.dgvAllDeletedProduct.TabIndex = 1;
+            this.dgvAllDeletedProduct.DoubleClick += new System.EventHandler(this.dgvAllDeletedProduct_DoubleClick);
             // 
-            // dataGridViewTextBoxColumn1
+            // dgvLimitedDemand
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn1.HeaderText = "اسم الصنف";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 106;
+            this.dgvLimitedDemand.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.dgvLimitedDemand.Location = new System.Drawing.Point(4, 43);
+            this.dgvLimitedDemand.Name = "dgvLimitedDemand";
+            this.dgvLimitedDemand.Size = new System.Drawing.Size(1010, 425);
+            this.dgvLimitedDemand.TabIndex = 2;
+            this.dgvLimitedDemand.Text = "منتجات تحت حد الطلب | نواقص";
+            // 
+            // DeletedObjectName
+            // 
+            this.DeletedObjectName.DataPropertyName = "Name";
+            this.DeletedObjectName.HeaderText = "اسم الصنف";
+            this.DeletedObjectName.MinimumWidth = 6;
+            this.DeletedObjectName.Name = "DeletedObjectName";
+            this.DeletedObjectName.ReadOnly = true;
+            this.DeletedObjectName.Width = 106;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -587,15 +597,15 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 141;
             // 
-            // dataGridViewTextBoxColumn6
+            // DeletedObjectID
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn6.HeaderText = "رقم المنتج المرجعي";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Visible = false;
-            this.dataGridViewTextBoxColumn6.Width = 168;
+            this.DeletedObjectID.DataPropertyName = "Id";
+            this.DeletedObjectID.HeaderText = "رقم المنتج المرجعي";
+            this.DeletedObjectID.MinimumWidth = 6;
+            this.DeletedObjectID.Name = "DeletedObjectID";
+            this.DeletedObjectID.ReadOnly = true;
+            this.DeletedObjectID.Visible = false;
+            this.DeletedObjectID.Width = 133;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -677,7 +687,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             this.dataGridViewTextBoxColumn15.ReadOnly = true;
             this.dataGridViewTextBoxColumn15.Visible = false;
-            this.dataGridViewTextBoxColumn15.Width = 182;
+            this.dataGridViewTextBoxColumn15.Width = 144;
             // 
             // dataGridViewTextBoxColumn16
             // 
@@ -687,7 +697,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
             this.dataGridViewTextBoxColumn16.ReadOnly = true;
             this.dataGridViewTextBoxColumn16.Visible = false;
-            this.dataGridViewTextBoxColumn16.Width = 183;
+            this.dataGridViewTextBoxColumn16.Width = 145;
             // 
             // dataGridViewTextBoxColumn17
             // 
@@ -697,7 +707,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             this.dataGridViewTextBoxColumn17.ReadOnly = true;
             this.dataGridViewTextBoxColumn17.Visible = false;
-            this.dataGridViewTextBoxColumn17.Width = 147;
+            this.dataGridViewTextBoxColumn17.Width = 118;
             // 
             // dataGridViewTextBoxColumn18
             // 
@@ -707,7 +717,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
             this.dataGridViewTextBoxColumn18.ReadOnly = true;
             this.dataGridViewTextBoxColumn18.Visible = false;
-            this.dataGridViewTextBoxColumn18.Width = 264;
+            this.dataGridViewTextBoxColumn18.Width = 208;
             // 
             // dataGridViewTextBoxColumn19
             // 
@@ -717,7 +727,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
             this.dataGridViewTextBoxColumn19.ReadOnly = true;
             this.dataGridViewTextBoxColumn19.Visible = false;
-            this.dataGridViewTextBoxColumn19.Width = 246;
+            this.dataGridViewTextBoxColumn19.Width = 194;
             // 
             // dataGridViewTextBoxColumn20
             // 
@@ -727,7 +737,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
             this.dataGridViewTextBoxColumn20.ReadOnly = true;
             this.dataGridViewTextBoxColumn20.Visible = false;
-            this.dataGridViewTextBoxColumn20.Width = 250;
+            this.dataGridViewTextBoxColumn20.Width = 199;
             // 
             // dataGridViewTextBoxColumn21
             // 
@@ -737,7 +747,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
             this.dataGridViewTextBoxColumn21.ReadOnly = true;
             this.dataGridViewTextBoxColumn21.Visible = false;
-            this.dataGridViewTextBoxColumn21.Width = 109;
+            this.dataGridViewTextBoxColumn21.Width = 87;
             // 
             // dataGridViewTextBoxColumn22
             // 
@@ -747,7 +757,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
             this.dataGridViewTextBoxColumn22.ReadOnly = true;
             this.dataGridViewTextBoxColumn22.Visible = false;
-            this.dataGridViewTextBoxColumn22.Width = 147;
+            this.dataGridViewTextBoxColumn22.Width = 120;
             // 
             // dataGridViewTextBoxColumn23
             // 
@@ -757,16 +767,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
             this.dataGridViewTextBoxColumn23.ReadOnly = true;
             this.dataGridViewTextBoxColumn23.Visible = false;
-            this.dataGridViewTextBoxColumn23.Width = 174;
-            // 
-            // dgvLimitedDemand
-            // 
-            this.dgvLimitedDemand.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.dgvLimitedDemand.Location = new System.Drawing.Point(4, 43);
-            this.dgvLimitedDemand.Name = "dgvLimitedDemand";
-            this.dgvLimitedDemand.Size = new System.Drawing.Size(1010, 425);
-            this.dgvLimitedDemand.TabIndex = 2;
-            this.dgvLimitedDemand.Text = "منتجات تحت حد الطلب | نواقص";
+            this.dataGridViewTextBoxColumn23.Width = 141;
             // 
             // ucAllProductsView
             // 
@@ -823,12 +824,13 @@ namespace ElbayaNPresentation.Views.Store.Product
         private System.Windows.Forms.DataGridViewTextBoxColumn ImageUrl;
         private System.Windows.Forms.TabPage tpArchieveLargeUnits;
         public System.Windows.Forms.DataGridView dgvAllDeletedProduct;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.TabPage dgvLimitedDemand;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DeletedObjectName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DeletedObjectID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
@@ -846,6 +848,5 @@ namespace ElbayaNPresentation.Views.Store.Product
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
-        private System.Windows.Forms.TabPage dgvLimitedDemand;
     }
 }

@@ -42,6 +42,7 @@ namespace ElbayaNPresentation.Views.Store.Product
         public Guna2TextBox SearchKeyword { get => txtSearch; set => txtSearch = value; }
         public DataGridView ActiveObject { get => dgvAllProduct; set => dgvAllProduct = value; }
         public DataGridView DeletedObject { get => dgvAllDeletedProduct; set => dgvAllDeletedProduct = value; }
+        public TabControl TabContainer  { get => dgvTabContainer; set => dgvTabContainer = value; }
 
 
         private void dgvTabContainer_SelectedIndexChanged(object sender, EventArgs e)
@@ -69,5 +70,10 @@ namespace ElbayaNPresentation.Views.Store.Product
             Presenter.OnTextSearchChanged();
         }
 
+        private void dgvAllDeletedProduct_DoubleClick(object sender, EventArgs e)
+        {
+            Presenter.PopulatefrmNewProduct();
+            frmNewProduct.Instance.ShowDialog();
+        }
     }
 }

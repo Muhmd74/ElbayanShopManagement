@@ -15,6 +15,8 @@ namespace ElbayaNPresentation.Presenters.Store.Product.AllProduct
         Guna2TextBox SearchKeyword { get; set; }
         DataGridView ActiveObject { get; set; }
         DataGridView DeletedObject { get; set; }
+
+        TabControl TabContainer { get; set; }
         AllProductPresenter Presenter { set; }
     }
 }
