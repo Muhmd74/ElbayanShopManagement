@@ -27,6 +27,7 @@ namespace ElbayaNPresentation.Presenters.Store.Product.AllProduct
             DataGridViewStyle.StyleDatagridview(_view.ActiveObject);
             DataGridViewStyle.StyleDatagridview(_view.DeletedObject);
             PopulatedgvAllProduct();
+            PopulatedgvDeletedObject();
         }
         public void PopulatedgvAllProduct()
         {
@@ -45,12 +46,27 @@ namespace ElbayaNPresentation.Presenters.Store.Product.AllProduct
             _view.ActiveObject.Columns["Discount"].DisplayIndex = 9;
             _view.ActiveObject.Columns["VAT"].DisplayIndex = 10;
         }
-
+        public void PopulatedgvDeletedObject()
+        {
+            _view.DeletedObject.DataSource = productSerice.GetAllProductDeleted().ToList();
+            _view.DeletedObject.AutoGenerateColumns = false;
+            //// Organize DGV Columns:
+            //_view.ActiveObject.Columns["ProductName"].DisplayIndex = 0;
+            //_view.ActiveObject.Columns["ProductCategory"].DisplayIndex = 1;
+            //_view.ActiveObject.Columns["IsMainSaleUnit"].DisplayIndex = 2;
+            //_view.ActiveObject.Columns["UCPNumber"].DisplayIndex = 3;
+            //_view.ActiveObject.Columns["CBCNumber"].DisplayIndex = 4;
+            //_view.ActiveObject.Columns["PSNumber"].DisplayIndex = 5;
+            //_view.ActiveObject.Columns["PurchaseDefaultPrice"].DisplayIndex = 6;
+            //_view.ActiveObject.Columns["SaleDefaultPrice"].DisplayIndex = 7;
+            //_view.ActiveObject.Columns["WholesalePrice"].DisplayIndex = 8;
+            //_view.ActiveObject.Columns["Discount"].DisplayIndex = 9;
+            //_view.ActiveObject.Columns["VAT"].DisplayIndex = 10;
+        }
         internal void OnTextSearchChanged()
         {
-            productSerice.GetAllProductName();
+           _view.ActiveObject.DataSource =  productSerice.GetByName(_view.SearchKeyword.Text).ToList();
         }
-
         public void PopulatefrmNewProduct()
         {
             _view.ID = new Guid(_view.ActiveObject.CurrentRow.Cells["ProductId"].Value.ToString());
@@ -71,8 +87,10 @@ namespace ElbayaNPresentation.Presenters.Store.Product.AllProduct
             frmNewProduct.Instance.cbxSubcategory.Text = model.SubCategoryName;
             frmNewProduct.Instance.cbxLargeUnit.Text = model.LargeUnitName;
             frmNewProduct.Instance.cbxSmallUnit.Text = model.SmallUnitName;
-            frmNewProduct.Instance.rbIsExpiredProduct.Checked = model.IsExpired;
+            frmNewProduct.Instance.cbIsExpired.Checked = model.IsExpired;
             frmNewProduct.Instance.txtQuantity.Text = model.TotalQuantity.ToString();
+            frmNewProduct.Instance.cbIsDeleted.Visible = true;
+            frmNewProduct.Instance.cbIsDeleted.Checked = model.IsDeleted;
             
             if(model.IsUnitSale == true)
             {
@@ -97,8 +115,6 @@ namespace ElbayaNPresentation.Presenters.Store.Product.AllProduct
             }
             frmNewProduct.Instance.btnUpdate.Visible = true;
             frmNewProduct.Instance.btnDeleteOrRestore.Visible = true;
-            //frmNewProduct.Instance.btnUpdate.Enabled = true;
         }
-
     }
 }

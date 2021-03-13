@@ -27,5 +27,6 @@ namespace ElbayanServices.Repository.Products.Product.Dtos
         public int LimitedDemand { get; set; }
         public bool IsUnitSale { get; set; }
         public int TotalQuantity { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

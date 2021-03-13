@@ -381,7 +381,8 @@ namespace ElbayanServices.Repository.Products.Product
                     IsMAinSalesUnit = model.IsUnitSale ? model.LargeUnit.Name : model.SmallUnit.Name,
                     TotalQuantity = model.TotalQuantity,
                     Vat = model.Vat,
-                    Discount = model.Discount
+                    Discount = model.Discount,
+                    IsDeleted = model.IsDeleted
                 };
             }
 

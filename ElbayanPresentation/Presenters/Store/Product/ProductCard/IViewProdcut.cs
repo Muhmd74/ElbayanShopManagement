@@ -28,7 +28,8 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
         Guna2CustomRadioButton SmallUnitIsMainUnit { get; set; }
         //string IsMainSaleUnit { get; set; } 
         Guna2ComboBox SubCategory { get; set; }
-        Guna2CustomRadioButton IsExpired { get; set; }
+        CheckBox IsExpired { get; set; }
+        CheckBox IsDeleted { get; set; }
         Guna2ComboBox LargeUnit { get; set; }
         Guna2ComboBox SmallUnit { get; set; }
         Guna2TextBox LimitedDemand { get; set; }

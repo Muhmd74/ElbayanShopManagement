@@ -21,7 +21,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             InitializeComponent();
             _instance = this;
             Presenter = new ProductPresnter(this);
-            Presenter.ucNewProudctCard_Load();
+            Presenter.OnLoad();
         }
         private static frmNewProduct _instance;
         public static frmNewProduct Instance
@@ -46,7 +46,8 @@ namespace ElbayaNPresentation.Views.Store.Product
         public NumericUpDown WholesalePrice { get => nudDefaultWholesalePrice; set => nudDefaultWholesalePrice = value; }
         public bool IsUnitSale { get; set; } = true;
         public Guna2ComboBox SubCategory { get => cbxSubcategory; set => cbxSubcategory = value; }
-        public Guna2CustomRadioButton IsExpired { get => rbIsExpiredProduct; set => rbIsExpiredProduct = value; }
+        public CheckBox IsExpired { get => cbIsExpired; set => cbIsExpired = value; }
+        public CheckBox IsDeleted { get => cbIsDeleted; set => cbIsDeleted = value; }
         public Guna2ComboBox LargeUnit { get => cbxLargeUnit; set => cbxLargeUnit = value; }
         public Guna2ComboBox SmallUnit { get => cbxSmallUnit; set => cbxSmallUnit = value; }
         public Guna2TextBox LimitedDemand { get => txtLimitedDemand; set => txtLimitedDemand = value; }
@@ -106,6 +107,11 @@ namespace ElbayaNPresentation.Views.Store.Product
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnDeleteOrRestore_Click(object sender, EventArgs e)
+        {
+            Presenter.OnClickDeletOrRestore();
         }
     }
 }

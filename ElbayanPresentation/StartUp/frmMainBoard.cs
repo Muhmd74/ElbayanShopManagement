@@ -137,6 +137,7 @@ namespace ElbayaNPresentation
             }
             ucAllProductsView.Instance.BringToFront();
             frmNewProduct.Instance.Presenter.ClearControls();
+            frmNewProduct.Instance.Presenter.OnLoad();
             frmNewProduct.Instance.btnUpdate.Visible = false;
             frmNewProduct.Instance.btnDeleteOrRestore.Visible = false;
             frmNewProduct.Instance.ShowDialog();

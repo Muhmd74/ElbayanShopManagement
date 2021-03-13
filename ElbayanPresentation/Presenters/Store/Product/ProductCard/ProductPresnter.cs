@@ -47,7 +47,7 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
                 File.Copy(image.FileName, _view.ImageUrl);
             }
         }
-        public void ucNewProudctCard_Load()
+        public void OnLoad()
         {
             // hide Unmeric up down Arrows:
             _view.PurchaseDefaultPrice.Controls[0].Visible = false;
@@ -145,8 +145,11 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
                             frmMainBoard.Instance.Controls.Add(ucAllProductsView.Instance);
                             ucAllProductsView.Instance.Dock = DockStyle.Fill;
                             ucAllProductsView.Instance.BringToFront();
+                            ucAllProductsView.Instance.Presenter.PopulatedgvAllProduct();
                         }
                         ucAllProductsView.Instance.BringToFront();
+                        ucAllProductsView.Instance.Presenter.PopulatedgvAllProduct();
+                        frmNewProduct.Instance.Close();
                     }
                 }
                 else
@@ -162,6 +165,12 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
             }
 
         }
+
+        internal void OnClickDeletOrRestore()
+        {
+            productServices.IsDeleted(_view.ID);
+        }
+
         private void CreateObject()
         {
             productServices.Add(new ProductDto
@@ -275,6 +284,7 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
                 Discount = Convert.ToInt32(_view.Disccount.Value), // needed to be decimal
                 Vat = Convert.ToInt32(_view.VAT.Value),
                 ImageUrl = _view.ImageUrl,
+                
             });
         }
         // Validate Text box for only numbers:
