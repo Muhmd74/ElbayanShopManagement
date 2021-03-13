@@ -10,7 +10,7 @@ namespace ElbayanDatabase.DataClasses.Employees.Employees
     {
         public Guid Id { get; set; }
         public string PropertyName { get; set; }
-        public bool PropertyValue { get; set; }
+        public byte[] PropertyValue { get; set; }
         public Guid SettingProfileId { get; set; }
         public SettingProfile SettingProfile { get; set; }
     }

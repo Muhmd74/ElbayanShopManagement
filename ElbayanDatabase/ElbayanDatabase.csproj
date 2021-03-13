@@ -81,12 +81,14 @@
     <Compile Include="DataClasses\Employees\EmployeeAccountant\Salary\Commission.cs" />
     <Compile Include="DataClasses\Employees\EmployeeAccountant\Salary\EmployeeSalary.cs" />
     <Compile Include="DataClasses\Employees\Employees\Employee.cs" />
-    <Compile Include="DataClasses\Employees\Employees\EmployeePermission.cs" />
+    <Compile Include="DataClasses\Employees\Employees\EmployeeRole.cs" />
+    <Compile Include="DataClasses\Employees\Employees\RoleTemplate.cs" />
     <Compile Include="DataClasses\Employees\Employees\SettingProfile.cs" />
     <Compile Include="DataClasses\Employees\Employees\SettingProfileProperty.cs" />
+    <Compile Include="DataClasses\Employees\Employees\Template.cs" />
     <Compile Include="DataClasses\Member\Member.cs" />
     <Compile Include="DataClasses\Member\MemberRole.cs" />
-    <Compile Include="DataClasses\Member\Role.cs" />
+    <Compile Include="DataClasses\Employees\Employees\Role.cs" />
     <Compile Include="DataClasses\Product\ProductPrice.cs" />
     <Compile Include="DataClasses\Product\ProductCategory\Category.cs" />
     <Compile Include="DataClasses\Product\Product.cs" />
