@@ -1,8 +1,8 @@
 using System;
 
-namespace Optics.Utility.Repositories.Members.UserRole.Dtos
+namespace ElbayanServices.Repository.Authentications.Template.Dtos
 {
-    public class UserNameDto
+    public class TemplateResponseDto
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

@@ -4,10 +4,9 @@ using System.Data.Entity;
 using System.Linq;
 using ElbayanDatabase.ConnectionTools;
 using ElbayanDatabase.DataClasses.Employees.Employees;
-using ElbayanServices.Repository.Employees.Roles.Dtos.Request;
-using ElbayanServices.Repository.Employees.Roles.Dtos.Response;
+using ElbayanServices.Repository.Authentications.Roles.Dtos;
 
-namespace ElbayanServices.Repository.Employees.Roles
+namespace ElbayanServices.Repository.Authentications.Roles
 {
     public class RoleService : IRole, IDisposable
     {

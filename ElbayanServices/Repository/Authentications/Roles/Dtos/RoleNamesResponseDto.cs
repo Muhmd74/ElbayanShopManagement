@@ -1,8 +1,8 @@
 using System;
 
-namespace ElbayanServices.Repository.Employees.Template.Dtos
+namespace ElbayanServices.Repository.Authentications.Roles.Dtos
 {
-    public class TemplateRequestDto
+    public class RoleNamesResponseDto
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

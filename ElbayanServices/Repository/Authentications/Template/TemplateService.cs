@@ -1,11 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using ElbayanDatabase.ConnectionTools;
-using ElbayanServices.Repository.Employees.Template.Dtos;
+using ElbayanServices.Repository.Authentications.Template.Dtos;
 
-namespace ElbayanServices.Repository.Employees.Template
+namespace ElbayanServices.Repository.Authentications.Template
 {
     public class TemplateService : ITemplate, IDisposable
     {

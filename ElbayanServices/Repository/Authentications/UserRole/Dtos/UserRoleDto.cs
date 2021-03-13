@@ -1,6 +1,6 @@
 using System;
 
-namespace ElbayanServices.Repository.Employees.UserRole.Dtos
+namespace ElbayanServices.Repository.Authentications.UserRole.Dtos
 {
     public class UserRoleDto
     {

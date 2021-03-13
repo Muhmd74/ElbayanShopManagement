@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using ElbayanServices.Repository.Employees.Template.Dtos;
+using ElbayanServices.Repository.Authentications.Template.Dtos;
 
-namespace ElbayanServices.Repository.Employees.Template
+namespace ElbayanServices.Repository.Authentications.Template
 {
     public interface ITemplate
     {

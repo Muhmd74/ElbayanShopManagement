@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Optics.Utility.Repositories.Members.RoleTemplate.Dtos
+namespace ElbayanServices.Repository.Authentications.RoleTemplate.Dtos
 {
     public class RoleTemplateDto
     {

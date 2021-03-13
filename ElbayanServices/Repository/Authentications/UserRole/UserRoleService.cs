@@ -4,12 +4,11 @@ using System.Data.Entity;
 using System.Linq;
 using ElbayanDatabase.ConnectionTools;
 using ElbayanDatabase.DataClasses.Employees.Employees;
-using ElbayanServices.Repository.Employees.Roles.Dtos.Response;
-using ElbayanServices.Repository.Employees.Template;
-using ElbayanServices.Repository.Employees.UserRole.Dtos;
-using Optics.Utility.Repositories.Members.UserRole.Dtos;
+using ElbayanServices.Repository.Authentications.Roles.Dtos;
+using ElbayanServices.Repository.Authentications.Template;
+using ElbayanServices.Repository.Authentications.UserRole.Dtos;
 
-namespace ElbayanServices.Repository.Employees.UserRole
+namespace ElbayanServices.Repository.Authentications.UserRole
 {
     public class UserRoleService : IUserRole, IDisposable
     {

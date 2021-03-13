@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
-using ElbayanServices.Repository.Employees.Roles.Dtos.Request;
-using ElbayanServices.Repository.Employees.Roles.Dtos.Response;
+using ElbayanServices.Repository.Authentications.Roles.Dtos;
 
-namespace ElbayanServices.Repository.Employees.Roles
+namespace ElbayanServices.Repository.Authentications.Roles
 {
     public interface IRole
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace ElbayanServices.Repository.Employees.Roles.Dtos.Request
+namespace ElbayanServices.Repository.Authentications.Roles.Dtos
 {
     public class RoleRequestDto
     {
