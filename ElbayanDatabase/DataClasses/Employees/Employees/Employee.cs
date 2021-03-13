@@ -26,10 +26,10 @@ namespace ElbayanDatabase.DataClasses.Employees.Employees
         [MaxLength(450)]
         [Index(IsUnique = true)]
         public string UserName { get; set; }
-        [Required]
-        public string UserType { get; set; }
+        //[Required]
+        //public string UserType { get; set; }
 
-        public Guid? ScreenProfileId{ get; set; }
+        //public Guid? ScreenProfileId{ get; set; }
         
         [Required]
         [DataType(DataType.Password)]
@@ -42,8 +42,8 @@ namespace ElbayanDatabase.DataClasses.Employees.Employees
         public DateTime DateOfBirth { get; set; }
         public string Position { get; set; }
         public decimal Salary { get; set; }
-        public Guid SettingProfileId { get; set; }
-        public SettingProfile SettingProfile { get; set; }
+        //public Guid SettingProfileId { get; set; }
+        //public SettingProfile SettingProfile { get; set; }
         
         public string Identity { get; set; }
         public DateTime IdentityExpirationDate { get; set; }

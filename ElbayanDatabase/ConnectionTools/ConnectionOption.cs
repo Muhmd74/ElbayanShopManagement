@@ -166,7 +166,11 @@ namespace ElbayanDatabase.ConnectionTools
                 .HasForeignKey(d => d.EmployeeId)
                 .WillCascadeOnDelete(true);
 
-           
+            modelBuilder.Entity<Employee>()// Employee : Orders
+                .HasMany(d => d.Orders)
+                .WithRequired(d => d.Employee)
+                .HasForeignKey(d => d.EmployeeId)
+                .WillCascadeOnDelete(true);
             modelBuilder.Entity<Employee>()// Employee : EmployeeSalaries
                 .HasMany(d => d.EmployeeSalaries)
                 .WithRequired(d => d.Employee)
