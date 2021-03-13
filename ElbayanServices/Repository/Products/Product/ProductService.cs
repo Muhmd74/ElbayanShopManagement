@@ -389,41 +389,114 @@ namespace ElbayanServices.Repository.Products.Product
             return null;
         }
 
-        public List<ProductDto> GetByName(string productName)
+        public List<ProductDto> GetByName(string productName, long? barcode, int? productNumber)
         {
-            return _context.Products
-                .Include(d => d.SmallUnit)
-                .Include(d => d.LargeUnit)
-                .Include(d => d.SubCategory)
-                .OrderByDescending(d=>d.DateTime)
-                .Where(d => d.Name.Contains(productName) && d.IsDeleted == false)
-                .Select(d => new ProductDto()
-                {
-                    Description = d.Description,
-                    Name = d.Name,
-                    BarCode = d.BarCode,
-                    PurchaseDefaultPrice = d.PurchaseDefaultPrice,
-                    IsExpired = d.IsExpired,
-                    LargeUnitId = d.LargeUnitId,
-                    LimitedDemand = d.LimitedDemand,
-                    ProductNumber = d.ProductNumber,
-                    SmallUnitId = d.SmallUnitId,
-                    SubCategoryId = d.SubCategoryId,
-                    UCP = d.UCP,
-                    Id = d.Id,
-                    SmallUnitName = d.SmallUnit.Name,
-                    LargeUnitName = d.LargeUnit.Name,
-                    SubCategoryName = d.SubCategory.Name,
-                    WholesalePrice = d.WholesalePrice,
-                    SaleDefaultPrice = d.SaleDefaultPrice,
-                    IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name,
-                    Discount = d.Discount,
-                    ImageUrl = d.ImageUrl,
-                    Vat = d.Vat,
-                    TotalQuantity = d.TotalQuantity
+            if (productName!=null)
+            {
+                return _context.Products
+                    .Include(d => d.SmallUnit)
+                    .Include(d => d.LargeUnit)
+                    .Include(d => d.SubCategory)
+                    .OrderByDescending(d=>d.DateTime)
+                    .Where(d => d.Name.Contains(productName) && d.IsDeleted == false)
+                    .Select(d => new ProductDto()
+                    {
+                        Description = d.Description,
+                        Name = d.Name,
+                        BarCode = d.BarCode,
+                        PurchaseDefaultPrice = d.PurchaseDefaultPrice,
+                        IsExpired = d.IsExpired,
+                        LargeUnitId = d.LargeUnitId,
+                        LimitedDemand = d.LimitedDemand,
+                        ProductNumber = d.ProductNumber,
+                        SmallUnitId = d.SmallUnitId,
+                        SubCategoryId = d.SubCategoryId,
+                        UCP = d.UCP,
+                        Id = d.Id,
+                        SmallUnitName = d.SmallUnit.Name,
+                        LargeUnitName = d.LargeUnit.Name,
+                        SubCategoryName = d.SubCategory.Name,
+                        WholesalePrice = d.WholesalePrice,
+                        SaleDefaultPrice = d.SaleDefaultPrice,
+                        IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name,
+                        Discount = d.Discount,
+                        ImageUrl = d.ImageUrl,
+                        Vat = d.Vat,
+                        TotalQuantity = d.TotalQuantity
 
-                }).ToList();
+                    }).ToList();
+            }
+            if (barcode>0)
+            {
+                return _context.Products
+                    .Include(d => d.SmallUnit)
+                    .Include(d => d.LargeUnit)
+                    .Include(d => d.SubCategory)
+                    .OrderByDescending(d => d.DateTime)
+                    .Where(d => Convert.ToString(d.BarCode).Contains(Convert.ToString(barcode)) && d.IsDeleted == false)
+                    .Select(d => new ProductDto()
+                    {
+                        Description = d.Description,
+                        Name = d.Name,
+                        BarCode = d.BarCode,
+                        PurchaseDefaultPrice = d.PurchaseDefaultPrice,
+                        IsExpired = d.IsExpired,
+                        LargeUnitId = d.LargeUnitId,
+                        LimitedDemand = d.LimitedDemand,
+                        ProductNumber = d.ProductNumber,
+                        SmallUnitId = d.SmallUnitId,
+                        SubCategoryId = d.SubCategoryId,
+                        UCP = d.UCP,
+                        Id = d.Id,
+                        SmallUnitName = d.SmallUnit.Name,
+                        LargeUnitName = d.LargeUnit.Name,
+                        SubCategoryName = d.SubCategory.Name,
+                        WholesalePrice = d.WholesalePrice,
+                        SaleDefaultPrice = d.SaleDefaultPrice,
+                        IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name,
+                        Discount = d.Discount,
+                        ImageUrl = d.ImageUrl,
+                        Vat = d.Vat,
+                        TotalQuantity = d.TotalQuantity
 
+                    }).ToList();
+            }
+            if (productNumber > 0)
+            {
+                return _context.Products
+                    .Include(d => d.SmallUnit)
+                    .Include(d => d.LargeUnit)
+                    .Include(d => d.SubCategory)
+                    .OrderByDescending(d => d.DateTime)
+                    .Where(d => Convert.ToString(d.ProductNumber).Contains(Convert.ToString(productNumber)) && d.IsDeleted == false)
+                    .Select(d => new ProductDto()
+                    {
+                        Description = d.Description,
+                        Name = d.Name,
+                        BarCode = d.BarCode,
+                        PurchaseDefaultPrice = d.PurchaseDefaultPrice,
+                        IsExpired = d.IsExpired,
+                        LargeUnitId = d.LargeUnitId,
+                        LimitedDemand = d.LimitedDemand,
+                        ProductNumber = d.ProductNumber,
+                        SmallUnitId = d.SmallUnitId,
+                        SubCategoryId = d.SubCategoryId,
+                        UCP = d.UCP,
+                        Id = d.Id,
+                        SmallUnitName = d.SmallUnit.Name,
+                        LargeUnitName = d.LargeUnit.Name,
+                        SubCategoryName = d.SubCategory.Name,
+                        WholesalePrice = d.WholesalePrice,
+                        SaleDefaultPrice = d.SaleDefaultPrice,
+                        IsMAinSalesUnit = d.IsUnitSale ? d.LargeUnit.Name : d.SmallUnit.Name,
+                        Discount = d.Discount,
+                        ImageUrl = d.ImageUrl,
+                        Vat = d.Vat,
+                        TotalQuantity = d.TotalQuantity
+
+                    }).ToList();
+            }
+            return null;
         }
 
 
