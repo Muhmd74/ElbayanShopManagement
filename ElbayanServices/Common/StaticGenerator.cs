@@ -29,7 +29,8 @@ namespace ElbayanServices.Common
         {
             public const string Sale = "مبيعات";
             public const string Procurement = "المشتريات ";
-            public const string Returns = "مرتجعات";
+            public const string ReturnProcurement = " المشتريات ";
+            public const string ReturnsOrder = " مرتجع مبيعات";
             public const string Adjective = "تالف";
             public const string OpeningBalances = "أرصدة أفتتاحية";
            

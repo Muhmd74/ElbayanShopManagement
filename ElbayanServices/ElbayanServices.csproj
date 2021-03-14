@@ -75,6 +75,14 @@
     <Compile Include="Repository\Clints\Customer\Dtos\CustomerNameDto.cs" />
     <Compile Include="Repository\Clints\Customer\ICustomer.cs" />
     <Compile Include="Repository\Clints\Customer\CustomerService.cs" />
+    <Compile Include="Repository\Clints\OrderReturns\Dtos\OrderDto.cs" />
+    <Compile Include="Repository\Clints\OrderReturns\Dtos\ProductPriceMovementDto.cs" />
+    <Compile Include="Repository\Clints\OrderReturns\IOrderReturn.cs" />
+    <Compile Include="Repository\Clints\OrderReturns\OrderReturnService.cs" />
+    <Compile Include="Repository\Clints\OrderProcurement\Dtos\OrderDto.cs" />
+    <Compile Include="Repository\Clints\OrderProcurement\Dtos\ProductPriceMovementDto.cs" />
+    <Compile Include="Repository\Clints\OrderProcurement\IOrderProcurement.cs" />
+    <Compile Include="Repository\Clints\OrderProcurement\OrderProcurementService.cs" />
     <Compile Include="Repository\Clints\Poses\Validators\CreatePosValidator.cs" />
     <Compile Include="Repository\Clints\Supplier\Dtos\SupplierNameDto.cs" />
     <Compile Include="Repository\Clints\Supplier\SupplierService.cs" />
