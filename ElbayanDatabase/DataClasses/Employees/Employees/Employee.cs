@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Security.AccessControl;
+using ElbayanDatabase.DataClasses.Authentications;
 using ElbayanDatabase.DataClasses.Clints.Sales;
 using ElbayanDatabase.DataClasses.Employees.CashierDrawers;
 using ElbayanDatabase.DataClasses.Employees.EmployeeAccountant.EmployeeSalaryActions;
@@ -34,7 +35,6 @@ namespace ElbayanDatabase.DataClasses.Employees.Employees
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
-
         public bool IsActive { get; set; } = true;
         [Required]
         public string Mobile { get; set; }

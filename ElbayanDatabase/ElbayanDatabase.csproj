@@ -81,15 +81,16 @@
     <Compile Include="DataClasses\Employees\EmployeeAccountant\Salary\Commission.cs" />
     <Compile Include="DataClasses\Employees\EmployeeAccountant\Salary\EmployeeSalary.cs" />
     <Compile Include="DataClasses\Employees\Employees\Employee.cs" />
-    <Compile Include="DataClasses\Employees\Employees\EmployeeRole.cs" />
-    <Compile Include="DataClasses\Employees\Employees\RoleTemplate.cs" />
+    <Compile Include="DataClasses\Authentications\EmployeeRole.cs" />
+    <Compile Include="DataClasses\Authentications\RoleTemplate.cs" />
     <Compile Include="DataClasses\Employees\Employees\SettingProfile.cs" />
     <Compile Include="DataClasses\Employees\Employees\SettingProfileProperty.cs" />
-    <Compile Include="DataClasses\Employees\Employees\Template.cs" />
+    <Compile Include="DataClasses\Authentications\Template.cs" />
+    <Compile Include="DataClasses\Employees\Employees\Users.cs" />
     <Compile Include="DataClasses\Firms\Firm.cs" />
     <Compile Include="DataClasses\Member\Member.cs" />
     <Compile Include="DataClasses\Member\MemberRole.cs" />
-    <Compile Include="DataClasses\Employees\Employees\Role.cs" />
+    <Compile Include="DataClasses\Authentications\Role.cs" />
     <Compile Include="DataClasses\Product\ProductPrice.cs" />
     <Compile Include="DataClasses\Product\ProductCategory\Category.cs" />
     <Compile Include="DataClasses\Product\Product.cs" />
@@ -97,21 +98,9 @@
     <Compile Include="DataClasses\Product\ProductStock.cs" />
     <Compile Include="DataClasses\Product\Unit\LargeUnit.cs" />
     <Compile Include="DataClasses\Product\Unit\SmallUnit.cs" />
-    <Compile Include="Migrations\202103081006373_InitialMigration.cs" />
-    <Compile Include="Migrations\202103081006373_InitialMigration.designer.cs">
-      <DependentUpon>202103081006373_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202103082026281_CreateNewMigration.cs" />
-    <Compile Include="Migrations\202103082026281_CreateNewMigration.designer.cs">
-      <DependentUpon>202103082026281_CreateNewMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202103102024301_CreateNewRelation.cs" />
-    <Compile Include="Migrations\202103102024301_CreateNewRelation.designer.cs">
-      <DependentUpon>202103102024301_CreateNewRelation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202103112315062_DeleteClintProduct.cs" />
-    <Compile Include="Migrations\202103112315062_DeleteClintProduct.designer.cs">
-      <DependentUpon>202103112315062_DeleteClintProduct.cs</DependentUpon>
+    <Compile Include="Migrations\202103141854068_InitialCreate.cs" />
+    <Compile Include="Migrations\202103141854068_InitialCreate.designer.cs">
+      <DependentUpon>202103141854068_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -121,17 +110,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202103081006373_InitialMigration.resx">
-      <DependentUpon>202103081006373_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202103082026281_CreateNewMigration.resx">
-      <DependentUpon>202103082026281_CreateNewMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202103102024301_CreateNewRelation.resx">
-      <DependentUpon>202103102024301_CreateNewRelation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202103112315062_DeleteClintProduct.resx">
-      <DependentUpon>202103112315062_DeleteClintProduct.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202103141854068_InitialCreate.resx">
+      <DependentUpon>202103141854068_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

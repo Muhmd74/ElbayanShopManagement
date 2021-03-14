@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using ElbayanDatabase.ConnectionTools;
+using ElbayanDatabase.DataClasses.Authentications;
 using ElbayanDatabase.DataClasses.Employees.Employees;
 using ElbayanServices.Repository.Authentications.Roles.Dtos;
 using ElbayanServices.Repository.Authentications.RoleTemplate.Dtos;
@@ -62,7 +63,7 @@ namespace ElbayanServices.Repository.Authentications.RoleTemplate
         public bool Add(RoleTemplateDto model)
         {
 
-            var result = _context.RolesTemplates.Add(new ElbayanDatabase.DataClasses.Employees.Employees.RoleTemplate
+            var result = _context.RolesTemplates.Add(new ElbayanDatabase.DataClasses.Authentications.RoleTemplate
             {
                 RoleId = model.RoleId,
                 TemplateId = model.TemplateId

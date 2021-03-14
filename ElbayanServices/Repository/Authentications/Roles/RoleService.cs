@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using ElbayanDatabase.ConnectionTools;
+using ElbayanDatabase.DataClasses.Authentications;
 using ElbayanDatabase.DataClasses.Employees.Employees;
 using ElbayanServices.Repository.Authentications.Roles.Dtos;
 

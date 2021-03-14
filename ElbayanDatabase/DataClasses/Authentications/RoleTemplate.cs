@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ElbayanDatabase.DataClasses.Employees.Employees;
 
-namespace ElbayanDatabase.DataClasses.Employees.Employees
+namespace ElbayanDatabase.DataClasses.Authentications
 {
    public class RoleTemplate
     {

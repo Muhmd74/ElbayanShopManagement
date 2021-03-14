@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ElbayanDatabase.DataClasses.Employees.Employees
 {
-  public  class Users
+    public  class Users
     {
         public Guid Id { get; set; }
 
@@ -21,5 +17,6 @@ namespace ElbayanDatabase.DataClasses.Employees.Employees
 
         public Guid EmployeeId { get; set; }
         public Employee Employee { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

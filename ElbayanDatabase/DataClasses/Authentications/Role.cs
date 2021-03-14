@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using ElbayanDatabase.DataClasses.Member;
+using ElbayanDatabase.DataClasses.Employees.Employees;
 
-namespace ElbayanDatabase.DataClasses.Employees.Employees
+namespace ElbayanDatabase.DataClasses.Authentications
 {
    public class Role
     {

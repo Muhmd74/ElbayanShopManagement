@@ -119,6 +119,10 @@
     <Compile Include="Repository\Authentications\UserRole\Dtos\UserRoleDto.cs" />
     <Compile Include="Repository\Authentications\UserRole\IUserRole.cs" />
     <Compile Include="Repository\Authentications\UserRole\UserRoleService.cs" />
+    <Compile Include="Repository\Employees\Users\Dtos\GetAllUserDto.cs" />
+    <Compile Include="Repository\Employees\Users\IUser.cs" />
+    <Compile Include="Repository\Employees\Users\Dtos\UserDto.cs" />
+    <Compile Include="Repository\Employees\Users\UserService.cs" />
     <Compile Include="Repository\Firms\Dtos\FirmDto.cs" />
     <Compile Include="Repository\Firms\FirmService.cs" />
     <Compile Include="Repository\Firms\IFirm.cs" />

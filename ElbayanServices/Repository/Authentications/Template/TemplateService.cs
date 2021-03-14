@@ -49,7 +49,7 @@ namespace ElbayanServices.Repository.Authentications.Template
         public bool Add(TemplateRequestDto model)
         {
 
-            var template = _context.Templates.Add(new ElbayanDatabase.DataClasses.Employees.Employees.Template()
+            var template = _context.Templates.Add(new ElbayanDatabase.DataClasses.Authentications.Template()
             {
                 Name = model.Name,
 

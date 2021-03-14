@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.Entity;
+using ElbayanDatabase.DataClasses.Authentications;
 using ElbayanDatabase.DataClasses.Clints;
 using ElbayanDatabase.DataClasses.Clints.Sales;
 using ElbayanDatabase.DataClasses.Employees.CashierDrawers;

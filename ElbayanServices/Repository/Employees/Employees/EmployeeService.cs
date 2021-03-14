@@ -8,48 +8,53 @@ using ElbayanServices.Repository.Employees.Employees.Dtos;
 
 namespace ElbayanServices.Repository.Employees.Employees
 {
-   public class EmployeeService : IEmployee , IDisposable
-   {
-       private readonly ConnectionOption _context;
+    public class EmployeeService : IEmployee, IDisposable
+    {
+        private readonly ConnectionOption _context;
 
-       public EmployeeService(ConnectionOption context)
-       {
-           _context = context;
-       }
+        public EmployeeService(ConnectionOption context)
+        {
+            _context = context;
+        }
 
-       public Guid Login(LoginDto model)
-       {
-           var user = _context.Employees.FirstOrDefault(
-               d => d.Mobile == model.Mobile && d.Password.ToDecrypt() == model.Password);
-           return user.Id;
-       }
+        public Guid Login(LoginDto model)
+        {
+            var user = _context.Employees.FirstOrDefault(
+                d => d.UserName == model.UserName && d.Password.ToDecrypt() == model.Password);
+            if (user != null)
+            {
+                return user.Id;
+            }
+
+            return Guid.Empty;
+        }
         public bool CreateEmployee(EmployeeDto model)
-       {
-           var employee = _context.Employees.Add(new Employee()
-           {
-               Address = model.Address,
-               DateOfBirth = model.DateOfBirth.ToUniversalTime(),
-               Email = model.Email,
-               Identity = model.Identity,
-               IsActive = true,
-               Mobile = model.Mobile,
-               Name = model.Name,
-               IdentityExpirationDate = model.IdentityExpirationDate,
-               PassportExpirationDate = model.PassportExpirationDate,
-               PassportNumber = model.PassportNumber,
-               Password = model.Password.ToEncrypt(),
-               ResidenceType = model.ResidenceType,
-               Position = model.Position,
-               Salary = model.Salary
-           });
-           _context.SaveChanges();
-           return true;
-       }
+        {
+            var employee = _context.Employees.Add(new Employee()
+            {
+                Address = model.Address,
+                DateOfBirth = model.DateOfBirth.ToUniversalTime(),
+                Email = model.Email,
+                Identity = model.Identity,
+                IsActive = true,
+                Mobile = model.Mobile,
+                Name = model.Name,
+                IdentityExpirationDate = model.IdentityExpirationDate,
+                PassportExpirationDate = model.PassportExpirationDate,
+                PassportNumber = model.PassportNumber,
+                Password = model.Password.ToEncrypt(),
+                ResidenceType = model.ResidenceType,
+                Position = model.Position,
+                Salary = model.Salary
+            });
+            _context.SaveChanges();
+            return true;
+        }
 
         public bool UpdateEmployee(EmployeeDto model)
         {
             var employee = _context.Employees.FirstOrDefault(d => d.Id == model.Id);
-            if (employee!=null)
+            if (employee != null)
             {
                 employee.Address = model.Address;
                 employee.DateOfBirth = model.DateOfBirth;
@@ -70,7 +75,7 @@ namespace ElbayanServices.Repository.Employees.Employees
         public bool EnableOrDisable(Guid id)
         {
             var model = _context.Employees.FirstOrDefault(d => d.Id == id);
-            if (model!=null)
+            if (model != null)
             {
                 model.IsActive = !model.IsActive;
                 _context.SaveChanges();
@@ -112,22 +117,22 @@ namespace ElbayanServices.Repository.Employees.Employees
         }
         public List<EmployeeDto> GetAllEmployeeNotActive()
         {
-            return _context.Employees.Where(d => d.IsActive==false)
+            return _context.Employees.Where(d => d.IsActive == false)
                 .Select(d => new EmployeeDto()
                 {
-                   Address = d.Address,
-                   DateOfBirth = d.DateOfBirth.ToUniversalTime(),
-                   Email = d.Email,
-                   Identity = d.Identity,
-                   IdentityExpirationDate = d.IdentityExpirationDate,
-                   Mobile = d.Mobile,
-                   PassportNumber = d.PassportNumber,
-                   PassportExpirationDate = d.PassportExpirationDate,
-                   ResidenceType = d.ResidenceType,
-                   Name = d.Name,
-                   Id = d.Id,
-                   Position = d.Position,
-                   Salary = d.Salary
+                    Address = d.Address,
+                    DateOfBirth = d.DateOfBirth.ToUniversalTime(),
+                    Email = d.Email,
+                    Identity = d.Identity,
+                    IdentityExpirationDate = d.IdentityExpirationDate,
+                    Mobile = d.Mobile,
+                    PassportNumber = d.PassportNumber,
+                    PassportExpirationDate = d.PassportExpirationDate,
+                    ResidenceType = d.ResidenceType,
+                    Name = d.Name,
+                    Id = d.Id,
+                    Position = d.Position,
+                    Salary = d.Salary
 
                 }).ToList();
         }
@@ -163,10 +168,10 @@ namespace ElbayanServices.Repository.Employees.Employees
         {
             var oldPass = oldPassword.ToEncrypt();
             var newPass = newPassword.ToEncrypt();
-            var mode = _context.Employees.FirstOrDefault(d => d.Id ==employeeId);
+            var mode = _context.Employees.FirstOrDefault(d => d.Id == employeeId);
             if (mode != null)
             {
-                if (mode.Password==oldPass)
+                if (mode.Password == oldPass)
                 {
                     mode.Password = newPass;
                     _context.SaveChanges();
