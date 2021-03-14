@@ -82,7 +82,6 @@
     <Compile Include="DataClasses\Employees\EmployeeAccountant\Salary\EmployeeSalary.cs" />
     <Compile Include="DataClasses\Employees\Employees\Employee.cs" />
     <Compile Include="DataClasses\Employees\Employees\EmployeePermission.cs" />
-    <Compile Include="DataClasses\Firms\Firm.cs" />
     <Compile Include="DataClasses\Member\Member.cs" />
     <Compile Include="DataClasses\Member\MemberRole.cs" />
     <Compile Include="DataClasses\Member\Role.cs" />
