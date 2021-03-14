@@ -38,6 +38,7 @@ namespace ElbayanDatabase.ConnectionTools
         public DbSet<ProductPrice> ProductPrices { get; set; }
         public DbSet<ProductStock> ProductStocks { get; set; }
         //Employees
+        public DbSet<Users> Users { get; set; }
         public DbSet<CashierDrawer> CashierDrawers { get; set; }
         public DbSet<DailyOffShift> DailyOffShifts { get; set; }
         public DbSet<DrawerTransaction> DrawerTransactions { get; set; }
@@ -224,6 +225,8 @@ namespace ElbayanDatabase.ConnectionTools
                 .WithRequired(d => d.Clint)
                 .HasForeignKey(d => d.ClintId)
                 .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Employee>()
+                .HasRequired(d => d.Users);
         }
     }
 }
