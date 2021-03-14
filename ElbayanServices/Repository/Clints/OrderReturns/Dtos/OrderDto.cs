@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ElbayanServices.Repository.Clints.Orders.Dtos
+namespace ElbayanServices.Repository.Clints.OrderReturns.Dtos
 {
   public class OrderDto
     {
