@@ -6,6 +6,7 @@ using ElbayanDatabase.DataClasses.Employees.CashierDrawers;
 using ElbayanDatabase.DataClasses.Employees.EmployeeAccountant.EmployeeSalaryActions;
 using ElbayanDatabase.DataClasses.Employees.EmployeeAccountant.Salary;
 using ElbayanDatabase.DataClasses.Employees.Employees;
+using ElbayanDatabase.DataClasses.Firms;
 using ElbayanDatabase.DataClasses.Member;
 using ElbayanDatabase.DataClasses.Product;
 using ElbayanDatabase.DataClasses.Product.ProductCategory;
@@ -21,7 +22,8 @@ namespace ElbayanDatabase.ConnectionTools
         {
 
         }
-
+        
+        public DbSet<Firm> Firms { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<RoleTemplate> RolesTemplates { get; set; }
         public DbSet<Template> Templates { get; set; }
