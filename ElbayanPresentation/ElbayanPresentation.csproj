@@ -88,6 +88,8 @@
     <Compile Include="Presenters\Clients\PresenterNewClient.cs" />
     <Compile Include="Presenters\CommonPresenter\DataGridViewStyle.cs" />
     <Compile Include="Presenters\CommonPresenter\ValidateControls.cs" />
+    <Compile Include="Presenters\Finance\Employee\ALLEmployee\IViewAllEmployee.cs" />
+    <Compile Include="Presenters\Finance\Employee\ALLEmployee\PresenterAllEmployee.cs" />
     <Compile Include="Presenters\Finance\Employee\IViewEmployee.cs" />
     <Compile Include="Presenters\Finance\Employee\PresenterEmployee.cs" />
     <Compile Include="Presenters\Finance\Expenses\HandReceipt\IViewHandReceipt.cs" />
@@ -149,6 +151,12 @@
     </Compile>
     <Compile Include="Views\Finance\Employee\frmEmployeeDetails.Designer.cs">
       <DependentUpon>frmEmployeeDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Finance\Employee\ucAllEmployeeData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Finance\Employee\ucAllEmployeeData.Designer.cs">
+      <DependentUpon>ucAllEmployeeData.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Store\Building\ucBuilding.cs">
       <SubType>UserControl</SubType>
@@ -218,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Finance\Employee\frmEmployeeDetails.resx">
       <DependentUpon>frmEmployeeDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Finance\Employee\ucAllEmployeeData.resx">
+      <DependentUpon>ucAllEmployeeData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Store\Building\ucBuilding.resx">
       <DependentUpon>ucBuilding.cs</DependentUpon>

@@ -34,10 +34,11 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.txtEmployeeEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.txtEmployeeUserName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cbIsActive = new System.Windows.Forms.CheckBox();
             this.txtEmployeePassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtEmployeeUserName = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.dtpPassportExpirationDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dtpEmployeeIDExpirationDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dtpEmployeeDateOfBirth = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -58,9 +59,11 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.txtEmployeeSalary = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.txtEmployeeAddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
-            this.cbIsActive = new System.Windows.Forms.CheckBox();
+            this.btnAddObject = new Guna.UI2.WinForms.Guna2Button();
+            this.btnUpdateObject = new Guna.UI2.WinForms.Guna2Button();
+            this.btnBackToUc = new Guna.UI2.WinForms.Guna2Button();
+            this.txtEmployeeAddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -73,7 +76,7 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(1215, 82);
+            this.guna2Panel1.Size = new System.Drawing.Size(1010, 45);
             this.guna2Panel1.TabIndex = 2;
             // 
             // labelControl2
@@ -83,10 +86,10 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.labelControl2.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.labelControl2.Location = new System.Drawing.Point(419, 24);
+            this.labelControl2.Location = new System.Drawing.Point(426, 9);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(9);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(268, 35);
+            this.labelControl2.Size = new System.Drawing.Size(155, 22);
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "بيانات الموظفين العاملين بالشركة";
             // 
@@ -108,14 +111,14 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.txtEmployeeEmail.FocusedState.Parent = this.txtEmployeeEmail;
             this.txtEmployeeEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmployeeEmail.HoverState.Parent = this.txtEmployeeEmail;
-            this.txtEmployeeEmail.Location = new System.Drawing.Point(18, 35);
+            this.txtEmployeeEmail.Location = new System.Drawing.Point(32, 37);
             this.txtEmployeeEmail.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.txtEmployeeEmail.Name = "txtEmployeeEmail";
             this.txtEmployeeEmail.PasswordChar = '\0';
             this.txtEmployeeEmail.PlaceholderText = "";
             this.txtEmployeeEmail.SelectedText = "";
             this.txtEmployeeEmail.ShadowDecoration.Parent = this.txtEmployeeEmail;
-            this.txtEmployeeEmail.Size = new System.Drawing.Size(348, 55);
+            this.txtEmployeeEmail.Size = new System.Drawing.Size(284, 39);
             this.txtEmployeeEmail.TabIndex = 0;
             // 
             // labelControl3
@@ -123,10 +126,10 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(417, 50);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(16, 16, 16, 16);
+            this.labelControl3.Location = new System.Drawing.Point(366, 45);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(16);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(113, 32);
+            this.labelControl3.Size = new System.Drawing.Size(63, 20);
             this.labelControl3.TabIndex = 1;
             this.labelControl3.Text = "البريد الالكتروني";
             // 
@@ -139,52 +142,24 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.groupBox1.Controls.Add(this.labelControl7);
             this.groupBox1.Controls.Add(this.txtEmployeeEmail);
             this.groupBox1.Controls.Add(this.labelControl3);
-            this.groupBox1.Location = new System.Drawing.Point(654, 121);
+            this.groupBox1.Location = new System.Drawing.Point(451, 76);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(549, 299);
+            this.groupBox1.Size = new System.Drawing.Size(482, 226);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "بيانات الحساب";
             // 
-            // labelControl7
+            // cbIsActive
             // 
-            this.labelControl7.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(388, 126);
-            this.labelControl7.Margin = new System.Windows.Forms.Padding(28, 28, 28, 28);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(141, 32);
-            this.labelControl7.TabIndex = 1;
-            this.labelControl7.Text = "اسم المستخدم - EN";
-            // 
-            // txtEmployeeUserName
-            // 
-            this.txtEmployeeUserName.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtEmployeeUserName.BorderColor = System.Drawing.Color.Gray;
-            this.txtEmployeeUserName.BorderRadius = 11;
-            this.txtEmployeeUserName.BorderThickness = 2;
-            this.txtEmployeeUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEmployeeUserName.DefaultText = "";
-            this.txtEmployeeUserName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtEmployeeUserName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtEmployeeUserName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEmployeeUserName.DisabledState.Parent = this.txtEmployeeUserName;
-            this.txtEmployeeUserName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEmployeeUserName.FocusedState.BorderColor = System.Drawing.Color.Black;
-            this.txtEmployeeUserName.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(255)))), ((int)(((byte)(179)))));
-            this.txtEmployeeUserName.FocusedState.Parent = this.txtEmployeeUserName;
-            this.txtEmployeeUserName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmployeeUserName.HoverState.Parent = this.txtEmployeeUserName;
-            this.txtEmployeeUserName.Location = new System.Drawing.Point(18, 107);
-            this.txtEmployeeUserName.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
-            this.txtEmployeeUserName.Name = "txtEmployeeUserName";
-            this.txtEmployeeUserName.PasswordChar = '\0';
-            this.txtEmployeeUserName.PlaceholderText = "";
-            this.txtEmployeeUserName.SelectedText = "";
-            this.txtEmployeeUserName.ShadowDecoration.Parent = this.txtEmployeeUserName;
-            this.txtEmployeeUserName.Size = new System.Drawing.Size(348, 60);
-            this.txtEmployeeUserName.TabIndex = 0;
+            this.cbIsActive.AutoSize = true;
+            this.cbIsActive.Checked = true;
+            this.cbIsActive.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbIsActive.Location = new System.Drawing.Point(349, 192);
+            this.cbIsActive.Name = "cbIsActive";
+            this.cbIsActive.Size = new System.Drawing.Size(72, 21);
+            this.cbIsActive.TabIndex = 2;
+            this.cbIsActive.Text = "موظف نشط";
+            this.cbIsActive.UseVisualStyleBackColor = true;
             // 
             // txtEmployeePassword
             // 
@@ -204,7 +179,7 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.txtEmployeePassword.FocusedState.Parent = this.txtEmployeePassword;
             this.txtEmployeePassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmployeePassword.HoverState.Parent = this.txtEmployeePassword;
-            this.txtEmployeePassword.Location = new System.Drawing.Point(18, 178);
+            this.txtEmployeePassword.Location = new System.Drawing.Point(33, 142);
             this.txtEmployeePassword.Margin = new System.Windows.Forms.Padding(2, 10, 2, 10);
             this.txtEmployeePassword.Name = "txtEmployeePassword";
             this.txtEmployeePassword.PasswordChar = '*';
@@ -212,23 +187,63 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.txtEmployeePassword.SelectedText = "";
             this.txtEmployeePassword.ShadowDecoration.Parent = this.txtEmployeePassword;
             this.txtEmployeePassword.ShortcutsEnabled = false;
-            this.txtEmployeePassword.Size = new System.Drawing.Size(348, 56);
+            this.txtEmployeePassword.Size = new System.Drawing.Size(284, 39);
             this.txtEmployeePassword.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtEmployeePassword.TabIndex = 0;
             this.txtEmployeePassword.UseSystemPasswordChar = true;
             this.txtEmployeePassword.WordWrap = false;
+            // 
+            // txtEmployeeUserName
+            // 
+            this.txtEmployeeUserName.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtEmployeeUserName.BorderColor = System.Drawing.Color.Gray;
+            this.txtEmployeeUserName.BorderRadius = 11;
+            this.txtEmployeeUserName.BorderThickness = 2;
+            this.txtEmployeeUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEmployeeUserName.DefaultText = "";
+            this.txtEmployeeUserName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtEmployeeUserName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtEmployeeUserName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmployeeUserName.DisabledState.Parent = this.txtEmployeeUserName;
+            this.txtEmployeeUserName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmployeeUserName.FocusedState.BorderColor = System.Drawing.Color.Black;
+            this.txtEmployeeUserName.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(255)))), ((int)(((byte)(179)))));
+            this.txtEmployeeUserName.FocusedState.Parent = this.txtEmployeeUserName;
+            this.txtEmployeeUserName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmployeeUserName.HoverState.Parent = this.txtEmployeeUserName;
+            this.txtEmployeeUserName.Location = new System.Drawing.Point(32, 88);
+            this.txtEmployeeUserName.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
+            this.txtEmployeeUserName.Name = "txtEmployeeUserName";
+            this.txtEmployeeUserName.PasswordChar = '\0';
+            this.txtEmployeeUserName.PlaceholderText = "";
+            this.txtEmployeeUserName.SelectedText = "";
+            this.txtEmployeeUserName.ShadowDecoration.Parent = this.txtEmployeeUserName;
+            this.txtEmployeeUserName.Size = new System.Drawing.Size(284, 39);
+            this.txtEmployeeUserName.TabIndex = 0;
             // 
             // labelControl8
             // 
             this.labelControl8.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(417, 198);
-            this.labelControl8.Margin = new System.Windows.Forms.Padding(49, 49, 49, 49);
+            this.labelControl8.Location = new System.Drawing.Point(368, 151);
+            this.labelControl8.Margin = new System.Windows.Forms.Padding(49);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(74, 32);
+            this.labelControl8.Size = new System.Drawing.Size(43, 20);
             this.labelControl8.TabIndex = 1;
             this.labelControl8.Text = "كلمة السر";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Location = new System.Drawing.Point(349, 97);
+            this.labelControl7.Margin = new System.Windows.Forms.Padding(28);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(80, 20);
+            this.labelControl7.TabIndex = 1;
+            this.labelControl7.Text = "اسم المستخدم - EN";
             // 
             // dtpPassportExpirationDate
             // 
@@ -241,12 +256,12 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.dtpPassportExpirationDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.dtpPassportExpirationDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpPassportExpirationDate.HoverState.Parent = this.dtpPassportExpirationDate;
-            this.dtpPassportExpirationDate.Location = new System.Drawing.Point(210, 585);
+            this.dtpPassportExpirationDate.Location = new System.Drawing.Point(132, 454);
             this.dtpPassportExpirationDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpPassportExpirationDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpPassportExpirationDate.Name = "dtpPassportExpirationDate";
             this.dtpPassportExpirationDate.ShadowDecoration.Parent = this.dtpPassportExpirationDate;
-            this.dtpPassportExpirationDate.Size = new System.Drawing.Size(375, 49);
+            this.dtpPassportExpirationDate.Size = new System.Drawing.Size(284, 39);
             this.dtpPassportExpirationDate.TabIndex = 17;
             this.dtpPassportExpirationDate.Value = new System.DateTime(2021, 3, 9, 20, 56, 2, 454);
             // 
@@ -261,12 +276,12 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.dtpEmployeeIDExpirationDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.dtpEmployeeIDExpirationDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpEmployeeIDExpirationDate.HoverState.Parent = this.dtpEmployeeIDExpirationDate;
-            this.dtpEmployeeIDExpirationDate.Location = new System.Drawing.Point(204, 375);
+            this.dtpEmployeeIDExpirationDate.Location = new System.Drawing.Point(132, 287);
             this.dtpEmployeeIDExpirationDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpEmployeeIDExpirationDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpEmployeeIDExpirationDate.Name = "dtpEmployeeIDExpirationDate";
             this.dtpEmployeeIDExpirationDate.ShadowDecoration.Parent = this.dtpEmployeeIDExpirationDate;
-            this.dtpEmployeeIDExpirationDate.Size = new System.Drawing.Size(375, 45);
+            this.dtpEmployeeIDExpirationDate.Size = new System.Drawing.Size(284, 39);
             this.dtpEmployeeIDExpirationDate.TabIndex = 18;
             this.dtpEmployeeIDExpirationDate.Value = new System.DateTime(2021, 3, 9, 20, 56, 2, 454);
             // 
@@ -281,12 +296,12 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.dtpEmployeeDateOfBirth.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.dtpEmployeeDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpEmployeeDateOfBirth.HoverState.Parent = this.dtpEmployeeDateOfBirth;
-            this.dtpEmployeeDateOfBirth.Location = new System.Drawing.Point(204, 247);
+            this.dtpEmployeeDateOfBirth.Location = new System.Drawing.Point(134, 183);
             this.dtpEmployeeDateOfBirth.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpEmployeeDateOfBirth.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpEmployeeDateOfBirth.Name = "dtpEmployeeDateOfBirth";
             this.dtpEmployeeDateOfBirth.ShadowDecoration.Parent = this.dtpEmployeeDateOfBirth;
-            this.dtpEmployeeDateOfBirth.Size = new System.Drawing.Size(375, 48);
+            this.dtpEmployeeDateOfBirth.Size = new System.Drawing.Size(284, 39);
             this.dtpEmployeeDateOfBirth.TabIndex = 19;
             this.dtpEmployeeDateOfBirth.Value = new System.DateTime(2021, 3, 9, 21, 0, 10, 526);
             // 
@@ -295,10 +310,10 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.labelControl10.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(17, 585);
-            this.labelControl10.Margin = new System.Windows.Forms.Padding(150, 150, 150, 150);
+            this.labelControl10.Location = new System.Drawing.Point(28, 460);
+            this.labelControl10.Margin = new System.Windows.Forms.Padding(150);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(130, 32);
+            this.labelControl10.Size = new System.Drawing.Size(71, 20);
             this.labelControl10.TabIndex = 10;
             this.labelControl10.Text = "تارياخ انتهاء الجواز";
             // 
@@ -307,10 +322,10 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.labelControl11.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(27, 253);
-            this.labelControl11.Margin = new System.Windows.Forms.Padding(150, 150, 150, 150);
+            this.labelControl11.Location = new System.Drawing.Point(41, 192);
+            this.labelControl11.Margin = new System.Windows.Forms.Padding(150);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(78, 32);
+            this.labelControl11.Size = new System.Drawing.Size(44, 20);
             this.labelControl11.TabIndex = 11;
             this.labelControl11.Text = "تاريخ الميلاد";
             // 
@@ -319,10 +334,10 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.labelControl9.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(11, 377);
-            this.labelControl9.Margin = new System.Windows.Forms.Padding(86, 86, 86, 86);
+            this.labelControl9.Location = new System.Drawing.Point(30, 306);
+            this.labelControl9.Margin = new System.Windows.Forms.Padding(86);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(118, 32);
+            this.labelControl9.Size = new System.Drawing.Size(66, 20);
             this.labelControl9.TabIndex = 12;
             this.labelControl9.Text = "تاريخ إنتهاء الهوية";
             // 
@@ -331,10 +346,10 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.labelControl5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(17, 512);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(49, 49, 49, 49);
+            this.labelControl5.Location = new System.Drawing.Point(32, 421);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(49);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(112, 32);
+            this.labelControl5.Size = new System.Drawing.Size(63, 20);
             this.labelControl5.TabIndex = 13;
             this.labelControl5.Text = "رقم جواز السفر";
             // 
@@ -343,10 +358,10 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.labelControl6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(37, 185);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(49, 49, 49, 49);
+            this.labelControl6.Location = new System.Drawing.Point(42, 140);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(49);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(78, 32);
+            this.labelControl6.Size = new System.Drawing.Size(43, 20);
             this.labelControl6.TabIndex = 14;
             this.labelControl6.Text = "رقم الهاتف";
             // 
@@ -355,10 +370,10 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.labelControl4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(34, 316);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(28, 28, 28, 28);
+            this.labelControl4.Location = new System.Drawing.Point(43, 237);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(28);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(71, 32);
+            this.labelControl4.Size = new System.Drawing.Size(40, 20);
             this.labelControl4.TabIndex = 15;
             this.labelControl4.Text = "رقم الهوية";
             // 
@@ -367,10 +382,10 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(27, 121);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(16, 16, 16, 16);
+            this.labelControl1.Location = new System.Drawing.Point(38, 85);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(16);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(88, 32);
+            this.labelControl1.Size = new System.Drawing.Size(50, 20);
             this.labelControl1.TabIndex = 16;
             this.labelControl1.Text = "اسم الموظف";
             // 
@@ -392,14 +407,14 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.txtEmployeePassport.FocusedState.Parent = this.txtEmployeePassport;
             this.txtEmployeePassport.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmployeePassport.HoverState.Parent = this.txtEmployeePassport;
-            this.txtEmployeePassport.Location = new System.Drawing.Point(204, 507);
-            this.txtEmployeePassport.Margin = new System.Windows.Forms.Padding(2, 11, 2, 11);
+            this.txtEmployeePassport.Location = new System.Drawing.Point(134, 402);
+            this.txtEmployeePassport.Margin = new System.Windows.Forms.Padding(2, 10, 2, 10);
             this.txtEmployeePassport.Name = "txtEmployeePassport";
             this.txtEmployeePassport.PasswordChar = '\0';
             this.txtEmployeePassport.PlaceholderText = "";
             this.txtEmployeePassport.SelectedText = "";
             this.txtEmployeePassport.ShadowDecoration.Parent = this.txtEmployeePassport;
-            this.txtEmployeePassport.Size = new System.Drawing.Size(375, 56);
+            this.txtEmployeePassport.Size = new System.Drawing.Size(284, 39);
             this.txtEmployeePassport.TabIndex = 6;
             // 
             // txtEmployeeNationalIdentity
@@ -420,14 +435,14 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.txtEmployeeNationalIdentity.FocusedState.Parent = this.txtEmployeeNationalIdentity;
             this.txtEmployeeNationalIdentity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmployeeNationalIdentity.HoverState.Parent = this.txtEmployeeNationalIdentity;
-            this.txtEmployeeNationalIdentity.Location = new System.Drawing.Point(204, 308);
+            this.txtEmployeeNationalIdentity.Location = new System.Drawing.Point(134, 235);
             this.txtEmployeeNationalIdentity.Margin = new System.Windows.Forms.Padding(2, 10, 2, 10);
             this.txtEmployeeNationalIdentity.Name = "txtEmployeeNationalIdentity";
             this.txtEmployeeNationalIdentity.PasswordChar = '\0';
             this.txtEmployeeNationalIdentity.PlaceholderText = "";
             this.txtEmployeeNationalIdentity.SelectedText = "";
             this.txtEmployeeNationalIdentity.ShadowDecoration.Parent = this.txtEmployeeNationalIdentity;
-            this.txtEmployeeNationalIdentity.Size = new System.Drawing.Size(375, 54);
+            this.txtEmployeeNationalIdentity.Size = new System.Drawing.Size(284, 39);
             this.txtEmployeeNationalIdentity.TabIndex = 7;
             // 
             // txtEmployeeMobile
@@ -448,14 +463,14 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.txtEmployeeMobile.FocusedState.Parent = this.txtEmployeeMobile;
             this.txtEmployeeMobile.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmployeeMobile.HoverState.Parent = this.txtEmployeeMobile;
-            this.txtEmployeeMobile.Location = new System.Drawing.Point(204, 180);
+            this.txtEmployeeMobile.Location = new System.Drawing.Point(134, 132);
             this.txtEmployeeMobile.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
             this.txtEmployeeMobile.Name = "txtEmployeeMobile";
             this.txtEmployeeMobile.PasswordChar = '\0';
             this.txtEmployeeMobile.PlaceholderText = "";
             this.txtEmployeeMobile.SelectedText = "";
             this.txtEmployeeMobile.ShadowDecoration.Parent = this.txtEmployeeMobile;
-            this.txtEmployeeMobile.Size = new System.Drawing.Size(375, 55);
+            this.txtEmployeeMobile.Size = new System.Drawing.Size(284, 39);
             this.txtEmployeeMobile.TabIndex = 8;
             // 
             // txtEmployeeName
@@ -476,14 +491,14 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.txtEmployeeName.FocusedState.Parent = this.txtEmployeeName;
             this.txtEmployeeName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmployeeName.HoverState.Parent = this.txtEmployeeName;
-            this.txtEmployeeName.Location = new System.Drawing.Point(204, 109);
+            this.txtEmployeeName.Location = new System.Drawing.Point(132, 76);
             this.txtEmployeeName.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.txtEmployeeName.Name = "txtEmployeeName";
             this.txtEmployeeName.PasswordChar = '\0';
             this.txtEmployeeName.PlaceholderText = "";
             this.txtEmployeeName.SelectedText = "";
             this.txtEmployeeName.ShadowDecoration.Parent = this.txtEmployeeName;
-            this.txtEmployeeName.Size = new System.Drawing.Size(375, 54);
+            this.txtEmployeeName.Size = new System.Drawing.Size(284, 39);
             this.txtEmployeeName.TabIndex = 9;
             // 
             // txtEmployeeResidenceType
@@ -504,14 +519,14 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.txtEmployeeResidenceType.FocusedState.Parent = this.txtEmployeeResidenceType;
             this.txtEmployeeResidenceType.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmployeeResidenceType.HoverState.Parent = this.txtEmployeeResidenceType;
-            this.txtEmployeeResidenceType.Location = new System.Drawing.Point(251, 435);
+            this.txtEmployeeResidenceType.Location = new System.Drawing.Point(134, 341);
             this.txtEmployeeResidenceType.Margin = new System.Windows.Forms.Padding(2, 12, 2, 12);
             this.txtEmployeeResidenceType.Name = "txtEmployeeResidenceType";
             this.txtEmployeeResidenceType.PasswordChar = '\0';
             this.txtEmployeeResidenceType.PlaceholderText = "";
             this.txtEmployeeResidenceType.SelectedText = "";
             this.txtEmployeeResidenceType.ShadowDecoration.Parent = this.txtEmployeeResidenceType;
-            this.txtEmployeeResidenceType.Size = new System.Drawing.Size(328, 57);
+            this.txtEmployeeResidenceType.Size = new System.Drawing.Size(284, 39);
             this.txtEmployeeResidenceType.TabIndex = 6;
             // 
             // labelControl12
@@ -519,10 +534,10 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.labelControl12.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(17, 448);
-            this.labelControl12.Margin = new System.Windows.Forms.Padding(86, 86, 86, 86);
+            this.labelControl12.Location = new System.Drawing.Point(8, 359);
+            this.labelControl12.Margin = new System.Windows.Forms.Padding(86);
             this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(197, 32);
+            this.labelControl12.Size = new System.Drawing.Size(110, 20);
             this.labelControl12.TabIndex = 13;
             this.labelControl12.Text = "نوع الإقامة (مقيم \\ مواطن)";
             // 
@@ -544,14 +559,14 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.txtEmployeePosition.FocusedState.Parent = this.txtEmployeePosition;
             this.txtEmployeePosition.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmployeePosition.HoverState.Parent = this.txtEmployeePosition;
-            this.txtEmployeePosition.Location = new System.Drawing.Point(837, 435);
+            this.txtEmployeePosition.Location = new System.Drawing.Point(592, 317);
             this.txtEmployeePosition.Margin = new System.Windows.Forms.Padding(2, 12, 2, 12);
             this.txtEmployeePosition.Name = "txtEmployeePosition";
             this.txtEmployeePosition.PasswordChar = '\0';
             this.txtEmployeePosition.PlaceholderText = "";
             this.txtEmployeePosition.SelectedText = "";
             this.txtEmployeePosition.ShadowDecoration.Parent = this.txtEmployeePosition;
-            this.txtEmployeePosition.Size = new System.Drawing.Size(366, 57);
+            this.txtEmployeePosition.Size = new System.Drawing.Size(284, 39);
             this.txtEmployeePosition.TabIndex = 6;
             // 
             // labelControl13
@@ -559,10 +574,10 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.labelControl13.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl13.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.Location = new System.Drawing.Point(696, 448);
-            this.labelControl13.Margin = new System.Windows.Forms.Padding(86, 86, 86, 86);
+            this.labelControl13.Location = new System.Drawing.Point(505, 323);
+            this.labelControl13.Margin = new System.Windows.Forms.Padding(86);
             this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(119, 32);
+            this.labelControl13.Size = new System.Drawing.Size(67, 20);
             this.labelControl13.TabIndex = 13;
             this.labelControl13.Text = "المنصب الوظيفي";
             // 
@@ -584,14 +599,14 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.txtEmployeeSalary.FocusedState.Parent = this.txtEmployeeSalary;
             this.txtEmployeeSalary.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmployeeSalary.HoverState.Parent = this.txtEmployeeSalary;
-            this.txtEmployeeSalary.Location = new System.Drawing.Point(837, 507);
+            this.txtEmployeeSalary.Location = new System.Drawing.Point(592, 366);
             this.txtEmployeeSalary.Margin = new System.Windows.Forms.Padding(2, 13, 2, 13);
             this.txtEmployeeSalary.Name = "txtEmployeeSalary";
             this.txtEmployeeSalary.PasswordChar = '\0';
             this.txtEmployeeSalary.PlaceholderText = "";
             this.txtEmployeeSalary.SelectedText = "";
             this.txtEmployeeSalary.ShadowDecoration.Parent = this.txtEmployeeSalary;
-            this.txtEmployeeSalary.Size = new System.Drawing.Size(366, 56);
+            this.txtEmployeeSalary.Size = new System.Drawing.Size(284, 39);
             this.txtEmployeeSalary.TabIndex = 6;
             // 
             // labelControl14
@@ -599,12 +614,81 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.labelControl14.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl14.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl14.Appearance.Options.UseFont = true;
-            this.labelControl14.Location = new System.Drawing.Point(712, 512);
-            this.labelControl14.Margin = new System.Windows.Forms.Padding(150, 150, 150, 150);
+            this.labelControl14.Location = new System.Drawing.Point(504, 385);
+            this.labelControl14.Margin = new System.Windows.Forms.Padding(150);
             this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(94, 32);
+            this.labelControl14.Size = new System.Drawing.Size(53, 20);
             this.labelControl14.TabIndex = 13;
             this.labelControl14.Text = "إجمالي المرتب";
+            // 
+            // labelControl15
+            // 
+            this.labelControl15.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelControl15.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl15.Appearance.Options.UseFont = true;
+            this.labelControl15.Location = new System.Drawing.Point(509, 454);
+            this.labelControl15.Margin = new System.Windows.Forms.Padding(262);
+            this.labelControl15.Name = "labelControl15";
+            this.labelControl15.Size = new System.Drawing.Size(56, 20);
+            this.labelControl15.TabIndex = 13;
+            this.labelControl15.Text = "عنوان الإقامة";
+            // 
+            // btnAddObject
+            // 
+            this.btnAddObject.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnAddObject.BackColor = System.Drawing.Color.White;
+            this.btnAddObject.BorderRadius = 11;
+            this.btnAddObject.CheckedState.Parent = this.btnAddObject;
+            this.btnAddObject.CustomImages.Parent = this.btnAddObject;
+            this.btnAddObject.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
+            this.btnAddObject.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddObject.ForeColor = System.Drawing.Color.White;
+            this.btnAddObject.HoverState.Parent = this.btnAddObject;
+            this.btnAddObject.Location = new System.Drawing.Point(88, 539);
+            this.btnAddObject.Name = "btnAddObject";
+            this.btnAddObject.ShadowDecoration.Parent = this.btnAddObject;
+            this.btnAddObject.Size = new System.Drawing.Size(151, 39);
+            this.btnAddObject.TabIndex = 82;
+            this.btnAddObject.Text = "إضافة جديدة";
+            this.btnAddObject.Click += new System.EventHandler(this.btnAddObject_Click);
+            // 
+            // btnUpdateObject
+            // 
+            this.btnUpdateObject.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnUpdateObject.BackColor = System.Drawing.Color.White;
+            this.btnUpdateObject.BorderRadius = 11;
+            this.btnUpdateObject.CheckedState.Parent = this.btnUpdateObject;
+            this.btnUpdateObject.CustomImages.Parent = this.btnUpdateObject;
+            this.btnUpdateObject.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
+            this.btnUpdateObject.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateObject.ForeColor = System.Drawing.Color.White;
+            this.btnUpdateObject.HoverState.Parent = this.btnUpdateObject;
+            this.btnUpdateObject.Location = new System.Drawing.Point(265, 539);
+            this.btnUpdateObject.Name = "btnUpdateObject";
+            this.btnUpdateObject.ShadowDecoration.Parent = this.btnUpdateObject;
+            this.btnUpdateObject.Size = new System.Drawing.Size(151, 39);
+            this.btnUpdateObject.TabIndex = 83;
+            this.btnUpdateObject.Text = "حفظ التعديلات";
+            this.btnUpdateObject.Visible = false;
+            this.btnUpdateObject.Click += new System.EventHandler(this.btnUpdateObject_Click);
+            // 
+            // btnBackToUc
+            // 
+            this.btnBackToUc.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnBackToUc.BackColor = System.Drawing.Color.White;
+            this.btnBackToUc.BorderRadius = 11;
+            this.btnBackToUc.CheckedState.Parent = this.btnBackToUc;
+            this.btnBackToUc.CustomImages.Parent = this.btnBackToUc;
+            this.btnBackToUc.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToUc.ForeColor = System.Drawing.Color.White;
+            this.btnBackToUc.HoverState.Parent = this.btnBackToUc;
+            this.btnBackToUc.Location = new System.Drawing.Point(688, 539);
+            this.btnBackToUc.Name = "btnBackToUc";
+            this.btnBackToUc.ShadowDecoration.Parent = this.btnBackToUc;
+            this.btnBackToUc.Size = new System.Drawing.Size(151, 39);
+            this.btnBackToUc.TabIndex = 84;
+            this.btnBackToUc.Text = "رجوع";
+            this.btnBackToUc.Click += new System.EventHandler(this.btnBackToUc_Click);
             // 
             // txtEmployeeAddress
             // 
@@ -624,47 +708,25 @@ namespace ElbayaNPresentation.Views.Finance.Employee
             this.txtEmployeeAddress.FocusedState.Parent = this.txtEmployeeAddress;
             this.txtEmployeeAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmployeeAddress.HoverState.Parent = this.txtEmployeeAddress;
-            this.txtEmployeeAddress.Location = new System.Drawing.Point(837, 578);
-            this.txtEmployeeAddress.Margin = new System.Windows.Forms.Padding(2, 14, 2, 14);
-            this.txtEmployeeAddress.Multiline = true;
+            this.txtEmployeeAddress.Location = new System.Drawing.Point(592, 421);
+            this.txtEmployeeAddress.Margin = new System.Windows.Forms.Padding(2, 17, 2, 17);
             this.txtEmployeeAddress.Name = "txtEmployeeAddress";
             this.txtEmployeeAddress.PasswordChar = '\0';
             this.txtEmployeeAddress.PlaceholderText = "";
             this.txtEmployeeAddress.SelectedText = "";
             this.txtEmployeeAddress.ShadowDecoration.Parent = this.txtEmployeeAddress;
-            this.txtEmployeeAddress.Size = new System.Drawing.Size(366, 108);
+            this.txtEmployeeAddress.Size = new System.Drawing.Size(284, 98);
             this.txtEmployeeAddress.TabIndex = 6;
-            // 
-            // labelControl15
-            // 
-            this.labelControl15.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.labelControl15.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl15.Appearance.Options.UseFont = true;
-            this.labelControl15.Location = new System.Drawing.Point(712, 611);
-            this.labelControl15.Margin = new System.Windows.Forms.Padding(262, 262, 262, 262);
-            this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(100, 32);
-            this.labelControl15.TabIndex = 13;
-            this.labelControl15.Text = "عنوان الإقامة";
-            // 
-            // cbIsActive
-            // 
-            this.cbIsActive.AutoSize = true;
-            this.cbIsActive.Checked = true;
-            this.cbIsActive.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbIsActive.Location = new System.Drawing.Point(375, 257);
-            this.cbIsActive.Name = "cbIsActive";
-            this.cbIsActive.Size = new System.Drawing.Size(118, 30);
-            this.cbIsActive.TabIndex = 2;
-            this.cbIsActive.Text = "موظف نشط";
-            this.cbIsActive.UseVisualStyleBackColor = true;
             // 
             // frmEmployeeDetails
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1215, 792);
+            this.ClientSize = new System.Drawing.Size(1010, 617);
             this.ControlBox = false;
+            this.Controls.Add(this.btnAddObject);
+            this.Controls.Add(this.btnUpdateObject);
+            this.Controls.Add(this.btnBackToUc);
             this.Controls.Add(this.dtpPassportExpirationDate);
             this.Controls.Add(this.dtpEmployeeIDExpirationDate);
             this.Controls.Add(this.dtpEmployeeDateOfBirth);
@@ -706,37 +768,41 @@ namespace ElbayaNPresentation.Views.Finance.Employee
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private Guna.UI2.WinForms.Guna2TextBox txtEmployeeEmail;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private Guna.UI2.WinForms.Guna2TextBox txtEmployeePassword;
-        private Guna.UI2.WinForms.Guna2TextBox txtEmployeeUserName;
-        private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.LabelControl labelControl7;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpPassportExpirationDate;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpEmployeeIDExpirationDate;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpEmployeeDateOfBirth;
-        private DevExpress.XtraEditors.LabelControl labelControl10;
-        private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private Guna.UI2.WinForms.Guna2TextBox txtEmployeePassport;
-        private Guna.UI2.WinForms.Guna2TextBox txtEmployeeNationalIdentity;
-        private Guna.UI2.WinForms.Guna2TextBox txtEmployeeMobile;
-        private Guna.UI2.WinForms.Guna2TextBox txtEmployeeName;
-        private Guna.UI2.WinForms.Guna2TextBox txtEmployeeResidenceType;
-        private DevExpress.XtraEditors.LabelControl labelControl12;
-        private Guna.UI2.WinForms.Guna2TextBox txtEmployeePosition;
-        private DevExpress.XtraEditors.LabelControl labelControl13;
-        private Guna.UI2.WinForms.Guna2TextBox txtEmployeeSalary;
-        private DevExpress.XtraEditors.LabelControl labelControl14;
-        private Guna.UI2.WinForms.Guna2TextBox txtEmployeeAddress;
-        private DevExpress.XtraEditors.LabelControl labelControl15;
-        private System.Windows.Forms.CheckBox cbIsActive;
+
+        internal Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        internal DevExpress.XtraEditors.LabelControl labelControl2;
+        internal Guna.UI2.WinForms.Guna2TextBox txtEmployeeEmail;
+        internal DevExpress.XtraEditors.LabelControl labelControl3;
+        internal System.Windows.Forms.GroupBox groupBox1;
+        internal Guna.UI2.WinForms.Guna2TextBox txtEmployeePassword;
+        internal Guna.UI2.WinForms.Guna2TextBox txtEmployeeUserName;
+        internal DevExpress.XtraEditors.LabelControl labelControl8;
+        internal DevExpress.XtraEditors.LabelControl labelControl7;
+        internal Guna.UI2.WinForms.Guna2DateTimePicker dtpPassportExpirationDate;
+        internal Guna.UI2.WinForms.Guna2DateTimePicker dtpEmployeeIDExpirationDate;
+        internal Guna.UI2.WinForms.Guna2DateTimePicker dtpEmployeeDateOfBirth;
+        internal DevExpress.XtraEditors.LabelControl labelControl10;
+        internal DevExpress.XtraEditors.LabelControl labelControl11;
+        internal DevExpress.XtraEditors.LabelControl labelControl9;
+        internal DevExpress.XtraEditors.LabelControl labelControl5;
+        internal DevExpress.XtraEditors.LabelControl labelControl6;
+        internal DevExpress.XtraEditors.LabelControl labelControl4;
+        internal DevExpress.XtraEditors.LabelControl labelControl1;
+        internal Guna.UI2.WinForms.Guna2TextBox txtEmployeePassport;
+        internal Guna.UI2.WinForms.Guna2TextBox txtEmployeeNationalIdentity;
+        internal Guna.UI2.WinForms.Guna2TextBox txtEmployeeMobile;
+        internal Guna.UI2.WinForms.Guna2TextBox txtEmployeeName;
+        internal Guna.UI2.WinForms.Guna2TextBox txtEmployeeResidenceType;
+        internal DevExpress.XtraEditors.LabelControl labelControl12;
+        internal Guna.UI2.WinForms.Guna2TextBox txtEmployeePosition;
+        internal DevExpress.XtraEditors.LabelControl labelControl13;
+        internal Guna.UI2.WinForms.Guna2TextBox txtEmployeeSalary;
+        internal DevExpress.XtraEditors.LabelControl labelControl14;
+        internal DevExpress.XtraEditors.LabelControl labelControl15;
+        internal System.Windows.Forms.CheckBox cbIsActive;
+        internal Guna.UI2.WinForms.Guna2Button btnAddObject;
+        internal Guna.UI2.WinForms.Guna2Button btnUpdateObject;
+        internal Guna.UI2.WinForms.Guna2Button btnBackToUc;
+        internal Guna.UI2.WinForms.Guna2TextBox txtEmployeeAddress;
     }
 }

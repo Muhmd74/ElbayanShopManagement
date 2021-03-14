@@ -191,7 +191,14 @@ namespace ElbayaNPresentation
 
         private void barButtonItem17_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmEmployeeDetails.Instance.ShowDialog();
+            if (!gcContainer.Controls.Contains(ucAllEmployeeData.Instance))
+            {
+                gcContainer.Controls.Clear();
+                gcContainer.Controls.Add(ucAllEmployeeData.Instance);
+                ucAllEmployeeData.Instance.Dock = DockStyle.Fill;
+                ucAllEmployeeData.Instance.BringToFront();
+            }
+            ucAllEmployeeData.Instance.BringToFront();
         }
     }
 }

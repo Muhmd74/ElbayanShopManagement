@@ -24,6 +24,11 @@ namespace ElbayaNPresentation.Presenters.Finance.Employee
         Guna2DateTimePicker PassportExpirationDate { get; set; }
         Guna2TextBox ResidenceType { get; set; }
         Guna2TextBox Position { get; set; }
+        Guna2TextBox Salary { get; set; }
         CheckBox IsActive { get; set; }
+        Guna2Button AddObject { get; set; }
+        Guna2Button UpdateObject { get; set; }
+
+        
     }
 }

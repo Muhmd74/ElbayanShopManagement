@@ -60,6 +60,7 @@ namespace ElbayanServices.Repository.Employees.Employees
                 employee.ResidenceType = model.ResidenceType;
                 employee.Position = model.Position;
                 employee.Salary = model.Salary;
+                employee.Id = model.Id;
                 _context.SaveChanges();
                 return true;
             }
@@ -92,11 +93,11 @@ namespace ElbayanServices.Repository.Employees.Employees
 
         public List<EmployeeDto> GetAllEmployee()
         {
-            return _context.Employees.Where(d => d.IsActive == false)
+            return _context.Employees.Where(d => d.IsActive != false)
                 .Select(d => new EmployeeDto()
                 {
                     Address = d.Address,
-                    DateOfBirth = d.DateOfBirth.ToUniversalTime(),
+                    DateOfBirth = d.DateOfBirth,
                     Email = d.Email,
                     Identity = d.Identity,
                     IdentityExpirationDate = d.IdentityExpirationDate,

@@ -18,6 +18,8 @@ namespace ElbayaNPresentation.Views.Finance.Employee
         {
             InitializeComponent();
             _instance = this;
+            txtEmployeeName.Select();
+            Presenter = new PresenterEmployee(this);
         }
         private static frmEmployeeDetails _instance;
         public static frmEmployeeDetails Instance
@@ -44,7 +46,24 @@ namespace ElbayaNPresentation.Views.Finance.Employee
         public Guna2DateTimePicker PassportExpirationDate { get => dtpPassportExpirationDate; set => dtpPassportExpirationDate = value; }
         public Guna2TextBox ResidenceType { get => txtEmployeeResidenceType; set => txtEmployeeResidenceType = value; }
         public Guna2TextBox Position { get => txtEmployeePosition; set => txtEmployeePosition = value; }
+        public Guna2TextBox Salary { get => txtEmployeeSalary; set => txtEmployeeSalary = value; }
         public CheckBox IsActive { get => cbIsActive; set => cbIsActive = value; }
-      
+        public Guna2Button AddObject { get => btnAddObject; set => btnAddObject = value; }
+        public Guna2Button UpdateObject { get => btnUpdateObject; set => btnUpdateObject = value; }
+
+        private void btnBackToUc_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAddObject_Click(object sender, EventArgs e)
+        {
+            Presenter.CreateObject();
+        }
+
+        private void btnUpdateObject_Click(object sender, EventArgs e)
+        {
+            Presenter.UpdateObject();
+        }
     }
 }
