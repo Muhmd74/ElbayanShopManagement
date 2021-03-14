@@ -9,13 +9,12 @@ namespace ElbayanServices.Repository.Clints.Orders.Dtos
         public DateTime DateTime { get; set; }
         public DateTime DueDatePayingOff { get; set; }
         public Guid ClintId { get; set; }
-        public Guid ProductOrderId { get; set; }
         public decimal SubTotalWithoutDiscount { get; set; }// sum all  TotalPrice
         public decimal TotalDiscount { get; set; }
         public decimal TotalAfterDiscount { get; set; } // SubTotalWithoutDiscount - TotalDiscount
         public decimal Payment { get; set; }
         public bool IsDeferred { get; set; }
-        public int OrderNumber { get; set; }
+        public decimal PaymentPerMonth { get; set; } // القسط الشهري
         public decimal Deferred { get; set; } //المتبقي
         public Guid PosId { get; set; }
         public Guid EmployeeId { get; set; }

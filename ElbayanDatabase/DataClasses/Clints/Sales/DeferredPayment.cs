@@ -13,6 +13,7 @@ namespace ElbayanDatabase.DataClasses.Clints.Sales
         public Order Order { get; set; }
         public decimal DeferredOfOrder { get; set; } //المتبقي
         public decimal Payment { get; set; }
+        public decimal PaymentPerMonth { get; set; }
         public decimal TotalPayment { get; set; }
         public decimal Balance { get; set; }//  in add DeferredOfOrder in update Balance - Payment
         public DateTime DueDatePayingOff { get; set; }

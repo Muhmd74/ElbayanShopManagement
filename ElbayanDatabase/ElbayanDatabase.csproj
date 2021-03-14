@@ -82,6 +82,7 @@
     <Compile Include="DataClasses\Employees\EmployeeAccountant\Salary\EmployeeSalary.cs" />
     <Compile Include="DataClasses\Employees\Employees\Employee.cs" />
     <Compile Include="DataClasses\Employees\Employees\EmployeePermission.cs" />
+    <Compile Include="DataClasses\Firms\Firm.cs" />
     <Compile Include="DataClasses\Member\Member.cs" />
     <Compile Include="DataClasses\Member\MemberRole.cs" />
     <Compile Include="DataClasses\Member\Role.cs" />
@@ -129,6 +130,7 @@
       <DependentUpon>202103112315062_DeleteClintProduct.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
