@@ -77,49 +77,7 @@ namespace ElbayanServices.Repository.Clints.Orders
             }
             return true;
         }
-
-        public bool CreateCustomerReturnOrder(OrderDto model)
-        {
-            var order = _context.Orders.Add(new Order()
-            {
-
-                EmployeeId = model.EmployeeId,
-                IsDeferred = model.IsDeferred,
-                Deferred = model.Deferred,
-                DateTime = model.DateTime,
-                Payment = model.Payment,
-                OrderNumber = GenerateSequenceNumberSupplier(),
-                IsReturn = true,
-                OrderType = "فاتورة مرتجع مبيعات"
-            });
-            _context.SaveChanges();
-            if (order.IsDeferred)
-            {
-                CreateDeferredPayments(model.ClintId,order.Deferred, order.Id, model.DueDatePayingOff,model.PaymentPerMonth);
-
-            }
-
-            {
-                foreach (var orderProduct in model.OrderProductDto)
-                {
-                    CreateProductOrder(orderProduct, order.Id);
-
-                    SupplierProductQuantity(orderProduct.ProductId, orderProduct.Quantity);
-                    SupplierProductStock(orderProduct.ProductId, orderProduct.Quantity);
-                }
-                _context.SaveChanges();
-                var orderTable = _context.Orders.FirstOrDefault(d => d.Id == order.Id);
-                orderTable.TotalDiscount = model.TotalDiscount;
-                orderTable.SubTotalWithoutDiscount = model.SubTotalWithoutDiscount;
-                orderTable.TotalAfterDiscount = model.TotalAfterDiscount;
-                _context.SaveChanges();
-
-
-            }
-            return true;
-        }
-      
-
+        
         private void CreateProductOrder(OrderProductDto model,Guid orderId)
         {
             var productOrder = _context.OrderProducts.Add(new OrderProduct()
@@ -168,38 +126,18 @@ namespace ElbayanServices.Repository.Clints.Orders
 
 
         }
+
         public long GenerateSequenceNumber()
         {
             var lastNumber = _context.Orders.Max().OrderNumber;
             if (lastNumber >= 0)
             {
-                return (long)(lastNumber + 1);
+                return (long) (lastNumber + 1);
             }
 
             return 0033340;
         }
-        //Supplier
-        private int SupplierProductQuantity(Guid productId, int quantity)
-        {
 
-            var productQuantity = _context.Products.FirstOrDefault(d => d.Id == productId).TotalQuantity;
-            productQuantity += quantity;
-            return productQuantity;
-
-        }
-        private bool SupplierProductStock(Guid productId, int quantity)
-        {
-            var productStock =
-                _context.ProductStocks.FirstOrDefault(d => d.ProductId == productId);
-            if (productStock != null)
-            {
-                productStock.Stock += quantity;
-                productStock.StockStatues = StaticGenerator.ProductStockStatues.Procurement;
-                return true;
-            }
-
-            return false;
-        }
         public long GenerateSequenceNumberSupplier()
         {
             var lastNumber = _context.Orders.AsEnumerable().Select(d=>d.OrderNumber).LastOrDefault();
