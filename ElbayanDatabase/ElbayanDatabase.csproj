@@ -108,6 +108,10 @@
     <Compile Include="Migrations\202103112315062_DeleteClintProduct.designer.cs">
       <DependentUpon>202103112315062_DeleteClintProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103142221236_Update-Deferred.cs" />
+    <Compile Include="Migrations\202103142221236_Update-Deferred.designer.cs">
+      <DependentUpon>202103142221236_Update-Deferred.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -127,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103112315062_DeleteClintProduct.resx">
       <DependentUpon>202103112315062_DeleteClintProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103142221236_Update-Deferred.resx">
+      <DependentUpon>202103142221236_Update-Deferred.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

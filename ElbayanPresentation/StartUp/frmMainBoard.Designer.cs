@@ -92,11 +92,11 @@ namespace ElbayaNPresentation
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 814);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 762);
             this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(42, 46, 42, 46);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1729, 48);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1386, 26);
             // 
             // ribbon
             // 
@@ -153,7 +153,7 @@ namespace ElbayaNPresentation
             this.ribbon.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowPageHeadersInFormCaption = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbon.Size = new System.Drawing.Size(1729, 329);
+            this.ribbon.Size = new System.Drawing.Size(1386, 183);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Above;
             // 
@@ -579,6 +579,7 @@ namespace ElbayaNPresentation
             this.barButtonItem14.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.barButtonItem14.Name = "barButtonItem14";
             this.barButtonItem14.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItem14.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem14_ItemClick);
             // 
             // barButtonItem15
             // 
@@ -868,7 +869,7 @@ namespace ElbayaNPresentation
             // tabFormContentContainer1
             // 
             this.tabFormContentContainer1.Location = new System.Drawing.Point(0, 0);
-            this.tabFormContentContainer1.Margin = new System.Windows.Forms.Padding(18, 18, 18, 18);
+            this.tabFormContentContainer1.Margin = new System.Windows.Forms.Padding(18);
             this.tabFormContentContainer1.Name = "tabFormContentContainer1";
             this.tabFormContentContainer1.Size = new System.Drawing.Size(0, 0);
             this.tabFormContentContainer1.TabIndex = 8;
@@ -885,9 +886,9 @@ namespace ElbayaNPresentation
             // 
             this.gcContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcContainer.Font = new System.Drawing.Font("Arabic Typesetting", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gcContainer.Location = new System.Drawing.Point(0, 329);
+            this.gcContainer.Location = new System.Drawing.Point(0, 183);
             this.gcContainer.Name = "gcContainer";
-            this.gcContainer.Size = new System.Drawing.Size(1729, 485);
+            this.gcContainer.Size = new System.Drawing.Size(1386, 579);
             this.gcContainer.TabIndex = 13;
             // 
             // ribbonPageGroup2
@@ -932,7 +933,7 @@ namespace ElbayaNPresentation
             // 
             this.splitterControl1.Location = new System.Drawing.Point(0, 229);
             this.splitterControl1.Name = "splitterControl1";
-            this.splitterControl1.Size = new System.Drawing.Size(17, 801);
+            this.splitterControl1.Size = new System.Drawing.Size(10, 801);
             this.splitterControl1.TabIndex = 16;
             this.splitterControl1.TabStop = false;
             // 
@@ -943,7 +944,7 @@ namespace ElbayaNPresentation
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1729, 862);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.gcContainer);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.tabFormContentContainer1);

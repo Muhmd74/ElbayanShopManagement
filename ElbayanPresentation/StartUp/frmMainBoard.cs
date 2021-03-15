@@ -20,6 +20,7 @@ using ElbayaNPresentation.Views.Store.POSs;
 using ElbayaNPresentation.Views.Client.Suppliers;
 using ElbayaNPresentation.Views.Finance.Employee;
 using ElbayaNPresentation.StartUp;
+using ElbayaNPresentation.Views.Purchases.Procurement;
 
 namespace ElbayaNPresentation
 {
@@ -199,6 +200,11 @@ namespace ElbayaNPresentation
                 ucAllEmployeeData.Instance.BringToFront();
             }
             ucAllEmployeeData.Instance.BringToFront();
+        }
+
+        private void barButtonItem14_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmProcurementOrder.Intance.ShowDialog();
         }
     }
 }

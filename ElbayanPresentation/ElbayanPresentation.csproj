@@ -97,6 +97,8 @@
     <Compile Include="Presenters\Finance\TreasuryAndBank\Bank\IViewBank.cs" />
     <Compile Include="Presenters\Finance\TreasuryAndBank\CatchReceipt\IViewCatchReceipt.cs" />
     <Compile Include="Presenters\Finance\TreasuryAndBank\Treasury\IViewTreasury.cs" />
+    <Compile Include="Presenters\Purchases\ProcurementOrder\IViewProcurementOrder.cs" />
+    <Compile Include="Presenters\Purchases\ProcurementOrder\PresenterProcurementOrder.cs" />
     <Compile Include="Presenters\Purchases\Supplier\AllSuppliers\IViewAllSuppleir.cs" />
     <Compile Include="Presenters\Purchases\Supplier\AllSuppliers\PresenterAllSupplierData.cs" />
     <Compile Include="Presenters\Store\Building\BuildingPresenter.cs" />
@@ -157,6 +159,12 @@
     </Compile>
     <Compile Include="Views\Finance\Employee\ucAllEmployeeData.Designer.cs">
       <DependentUpon>ucAllEmployeeData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Purchases\Procurement\frmProcurementOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Purchases\Procurement\frmProcurementOrder.Designer.cs">
+      <DependentUpon>frmProcurementOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Store\Building\ucBuilding.cs">
       <SubType>UserControl</SubType>
@@ -230,6 +238,9 @@
     <EmbeddedResource Include="Views\Finance\Employee\ucAllEmployeeData.resx">
       <DependentUpon>ucAllEmployeeData.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Purchases\Procurement\frmProcurementOrder.resx">
+      <DependentUpon>frmProcurementOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Store\Building\ucBuilding.resx">
       <DependentUpon>ucBuilding.cs</DependentUpon>
     </EmbeddedResource>
@@ -279,7 +290,6 @@
   <ItemGroup>
     <Folder Include="Presenters\Finance\Employee\EmployeeFinance\" />
     <Folder Include="Resources\ProductImage\" />
-    <Folder Include="Views\Purchases\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\addchartpane_16x16.png" />
