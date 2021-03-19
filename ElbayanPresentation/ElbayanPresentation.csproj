@@ -87,6 +87,7 @@
     <Compile Include="Presenters\Clients\IViewNewClient.cs" />
     <Compile Include="Presenters\Clients\PresenterNewClient.cs" />
     <Compile Include="Presenters\CommonPresenter\DataGridViewStyle.cs" />
+    <Compile Include="Presenters\CommonPresenter\NullableNumber.cs" />
     <Compile Include="Presenters\CommonPresenter\ValidateControls.cs" />
     <Compile Include="Presenters\Finance\Employee\ALLEmployee\IViewAllEmployee.cs" />
     <Compile Include="Presenters\Finance\Employee\ALLEmployee\PresenterAllEmployee.cs" />

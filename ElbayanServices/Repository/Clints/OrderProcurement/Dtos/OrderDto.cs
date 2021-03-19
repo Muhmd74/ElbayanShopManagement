@@ -11,6 +11,7 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement.Dtos
         public Guid ClintId { get; set; }
         public decimal SubTotalWithoutDiscount { get; set; }// sum all  TotalPrice
         public decimal TotalDiscount { get; set; }
+        public long OrderNumber { get; set; }
         public decimal TotalAfterDiscount { get; set; } // SubTotalWithoutDiscount - TotalDiscount
         public decimal Payment { get; set; }
         public bool IsDeferred { get; set; }

@@ -521,6 +521,46 @@ namespace ElbayanServices.Repository.Products.Product
 
             return 0;
         }
+        public ProductDto GetProductByBarcodeOrProductNumber(long? barcode, int? productNumber, int? UCP)
+        {
+            //var product = _context.Products.FirstOrDefault(d => d.BarCode == barcode || d.ProductNumber == productNumber);
+            var model = _context.Products
+                .Include(d => d.SmallUnit)
+                .Include(d => d.LargeUnit)
+                .Include(d => d.SubCategory)
+                .FirstOrDefault(d => d.BarCode == barcode || d.ProductNumber == productNumber || d.UCP == UCP);
+            if (model != null)
+            {
+                return new ProductDto()
+                {
+                    Description = model.Description,
+                    Name = model.Name,
+                    BarCode = model.BarCode,
+                    PurchaseDefaultPrice = model.PurchaseDefaultPrice,
+                    IsExpired = model.IsExpired,
+                    LargeUnitName = model.LargeUnit.Name,
+                    LargeUnitId = model.LargeUnitId,
+                    Id = model.Id,
+                    LimitedDemand = model.LimitedDemand,
+                    ProductNumber = model.ProductNumber,
+                    SmallUnitId = model.SmallUnitId,
+                    SmallUnitName = model.SmallUnit.Name,
+                    SubCategoryId = model.SubCategoryId,
+                    SubCategoryName = model.SubCategory.Name,
+                    UCP = model.UCP,
+                    WholesalePrice = model.WholesalePrice,
+                    SaleDefaultPrice = model.SaleDefaultPrice,
+                    ImageUrl = model.ImageUrl,
+                    IsMAinSalesUnit = model.IsUnitSale ? model.LargeUnit.Name : model.SmallUnit.Name,
+                    TotalQuantity = model.TotalQuantity,
+                    Vat = model.Vat,
+                    Discount = model.Discount,
+                    IsDeleted = model.IsDeleted
+                };
+            }
+
+            return null;
+        }
 
         public long GetBarcodeByProductNumber(int productNumber)
         {

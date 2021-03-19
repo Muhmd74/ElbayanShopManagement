@@ -16,7 +16,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
         Guna2TextBox OrderNumber { get; set; }
         Guna2TextBox BareCode { get; set; }
         Guna2TextBox TotalOrder { get; set; }
-        Guna2TextBox TotalProductInOrder { get; set; }
+        Guna2TextBox ItemCounts { get; set; }
         SimpleButton NewSupplier { get; set; }
         SimpleButton NewProduct { get; set; }
         SimpleButton DeleteProductFromOrder { get; set; }
@@ -26,7 +26,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
         System.Windows.Forms.ComboBox Products { get; set; }
         RadioButton IsDeferred { get; set; }
         RadioButton IsCash { get; set; }
-        LabelControl UserNam { get; set; }
+        LabelControl UserName { get; set; }
         DataGridView OrderProduct { get; set; }
     }
 }

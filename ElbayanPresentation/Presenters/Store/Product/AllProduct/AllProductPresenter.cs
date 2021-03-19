@@ -65,21 +65,11 @@ namespace ElbayaNPresentation.Presenters.Store.Product.AllProduct
             _view.ProductZeroQuantity.DataSource = productSerice.GetAllEqualZero().ToList();
             _view.ProductZeroQuantity.AutoGenerateColumns = false;
         }
-        internal static long? BarecodeNumber(string BareCodeInupt)
-        {
-            long Barcode;
-            return Int64.TryParse(BareCodeInupt, out Barcode) ? (long?)Barcode : null;
-        }
-        internal static int? ProductNumber(string ProductNumberInupt)
-        {
-            int ProductNumber;
-            return Int32.TryParse(ProductNumberInupt, out ProductNumber) ? (int?)ProductNumber : null;
-        }
-        internal void OnTextSearchChanged()
+         internal void OnTextSearchChanged()
         {
             string productName = _view.SearchKeyword.Text;
-            long? Barcode = BarecodeNumber(_view.SearchKeyword.Text);
-            int? ProductNymber = ProductNumber(_view.SearchKeyword.Text);
+            long? Barcode = NullableNumber.BarecodeNumber(_view.SearchKeyword.Text);
+            int? ProductNymber = NullableNumber.ProductNumber(_view.SearchKeyword.Text);
             _view.ActiveObject.DataSource =  productSerice.GetByName(productName, Barcode, ProductNymber).ToList();
         }
         public void PopulatefrmNewProduct()

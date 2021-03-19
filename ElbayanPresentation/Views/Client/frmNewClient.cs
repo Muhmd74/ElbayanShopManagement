@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using ElbayaNPresentation.Presenters.Clients;
+using ElbayaNPresentation.Views.Purchases.Procurement;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
@@ -84,6 +85,11 @@ namespace ElbayaNPresentation.Views.Client
         {
             Presenter.OnActiveChekedChanged();
 
+        }
+
+        private void frmNewClient_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            frmProcurementOrder.Intance.Presenter.OnLoad();
         }
     }
 }

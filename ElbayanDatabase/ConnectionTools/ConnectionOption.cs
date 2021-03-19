@@ -103,7 +103,7 @@ namespace ElbayanDatabase.ConnectionTools
                 .WithRequired(d => d.Product)
                 .HasForeignKey(d => d.ProductId)
                 .WillCascadeOnDelete(true);
-            modelBuilder.Entity<Product>()//Product : ProductStocks
+            modelBuilder.Entity<Product>()// Product : ProductStocks
                 .HasMany(d => d.ProductStocks)
                 .WithRequired(d => d.Product)
                 .HasForeignKey(d => d.ProductId)
@@ -181,6 +181,11 @@ namespace ElbayanDatabase.ConnectionTools
                 .WillCascadeOnDelete(true);
             modelBuilder.Entity<Order>()
                 .HasMany(d => d.DeferredPayments)
+                .WithRequired(d => d.Order)
+                .HasForeignKey(d => d.OrderId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Order>()
+                .HasMany(d => d.ProductStocks)
                 .WithRequired(d => d.Order)
                 .HasForeignKey(d => d.OrderId)
                 .WillCascadeOnDelete(false);

@@ -29,7 +29,6 @@ namespace ElbayanDatabase.DataClasses.Product
         public Guid SubCategoryId { get; set; }
         public SubCategory SubCategory { get; set; }
         public int ProductNumber { get; set; }
-
         public bool IsExpired { get; set; } = false;
         public Guid LargeUnitId { get; set; }
         public LargeUnit LargeUnit { get; set; }

@@ -4,7 +4,8 @@ using ElbayanDatabase.ConnectionTools;
 using ElbayanDatabase.DataClasses.Clints.Sales;
 using ElbayanDatabase.DataClasses.Product;
 using ElbayanServices.Common;
-using ElbayanServices.Repository.Clints.Orders.Dtos;
+using ElbayanServices.Repository.Clints.OrderProcurement.Dtos;
+//using ElbayanServices.Repository.Clints.Orders.Dtos;
 
 namespace ElbayanServices.Repository.Clints.OrderProcurement
 {
@@ -20,23 +21,24 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
         {
             var order = _context.Orders.Add(new Order()
             {
-
                 EmployeeId = model.EmployeeId,
                 IsDeferred = model.IsDeferred,
                 Deferred = model.Deferred,
                 DateTime = model.DateTime,
                 Payment = model.Payment,
-                OrderNumber = GenerateSequenceNumberSupplier(),
+                OrderNumber = model.OrderNumber,
                 IsReturn = false,
                 OrderType = "فاتورة مشتريات",
                 ClintId = model.ClintId,
+                TotalDiscount = model.TotalDiscount,
+                SubTotalWithoutDiscount = model.SubTotalWithoutDiscount,
+                TotalAfterDiscount = model.TotalAfterDiscount,
                 PosId = model.PosId
             });
             _context.SaveChanges();
             if (order.IsDeferred)
             {
                 CreateDeferredPayments(model.ClintId, order.Deferred, order.Id, model.DueDatePayingOff, model.PaymentPerMonth);
-
             }
 
             if (order != null)
@@ -48,15 +50,9 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
                     //اضافة الكميه الي المنتج في جدول المنتجات 
                     SupplierProductQuantity(orderProduct.ProductId, orderProduct.Quantity);
                     //اضافة الكميه الجديده الي جدول حركة المنتج 
-                    SupplierProductStock(orderProduct.ProductId, orderProduct.Quantity);
+                    SupplierProductStock(orderProduct.ProductId, orderProduct.Quantity, orderProduct.OrderId);
+                    _context.SaveChanges();
                 }
-                _context.SaveChanges();
-                var orderTable = _context.Orders.FirstOrDefault(d => d.Id == order.Id);
-                orderTable.TotalDiscount = model.TotalDiscount;
-                orderTable.SubTotalWithoutDiscount = model.SubTotalWithoutDiscount;
-                orderTable.TotalAfterDiscount = model.TotalAfterDiscount;
-                _context.SaveChanges();
-
 
             }
             return true;
@@ -94,38 +90,39 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
             });
             _context.SaveChanges();
         }
-        
-        private bool SupplierProductStock(Guid productId, int quantity)
+        private void SupplierProductStock(Guid productId, int quantity, Guid orderID)
         {
-            var product = _context.ProductStocks.FirstOrDefault(d => d.ProductId == productId);
-            if (product!=null)
-            {
-                _context.ProductStocks.Add(new ProductStock()
+            //var product = _context.ProductStocks.FirstOrDefault(d => d.ProductId == productId);
+            //if (product!=null)
+            //{
+                var product = _context.ProductStocks.Add(new ProductStock()
                 {
                     ProductId = productId,
+                    OrderId = orderID,
                     Stock = quantity,
                     StockStatues = StaticGenerator.ProductStockStatues.Procurement
                 });
-                _context.SaveChanges();
-                return true;
-            }
-            _context.ProductStocks.Add(new ProductStock()
-            {
-                ProductId = productId,
-                Stock = quantity,
-                StockStatues = StaticGenerator.ProductStockStatues.OpeningBalances
-            });
+            _context.SaveChanges();
+            //return true;
+            //}
+            //else
+            //{
+            //    _context.ProductStocks.Add(new ProductStock()
+            //    {
+            //        ProductId = productId,
+            //        Stock = quantity,
+            //        StockStatues = StaticGenerator.ProductStockStatues.OpeningBalances
+            //    }); 
+            //}
+            //return true;
+        }
+        private bool SupplierProductQuantity(Guid productId, int quantity)
+        {
+            var productQuantity = _context.Products.FirstOrDefault(d => d.Id == productId).TotalQuantity;
+            productQuantity = productQuantity + quantity;
+            _context.Products.FirstOrDefault(d => d.Id == productId).TotalQuantity = productQuantity;
             _context.SaveChanges();
             return true;
-        }
-
-
-        private int SupplierProductQuantity(Guid productId, int quantity)
-        {
-
-            var productQuantity = _context.Products.FirstOrDefault(d => d.Id == productId).TotalQuantity;
-            productQuantity += quantity;
-            return productQuantity;
 
         }
         public long GenerateSequenceNumberSupplier()

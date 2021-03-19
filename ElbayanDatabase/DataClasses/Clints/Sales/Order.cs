@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using ElbayanDatabase.DataClasses.Employees.Employees;
+using ElbayanDatabase.DataClasses.Product;
 
 namespace ElbayanDatabase.DataClasses.Clints.Sales
 {
@@ -29,6 +30,7 @@ namespace ElbayanDatabase.DataClasses.Clints.Sales
         public Employee Employee { get; set; }
         public ICollection<DeferredPayment> DeferredPayments { get; set; }
         public ICollection<OrderProduct> OrderProduct { get; set; }
+        public ICollection<ProductStock> ProductStocks { get; set; }
 
 
     }

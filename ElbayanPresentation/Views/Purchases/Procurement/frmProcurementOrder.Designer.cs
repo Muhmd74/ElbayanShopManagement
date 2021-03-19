@@ -32,8 +32,16 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcurementOrder));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.cbxActiveProduct = new System.Windows.Forms.ComboBox();
+            this.cbxSupplier = new System.Windows.Forms.ComboBox();
+            this.btnDeletedProductFromOrder = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAddNewSupplier = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAddNewProduct = new DevExpress.XtraEditors.SimpleButton();
             this.txtProductBarcode = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.lblF2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -41,25 +49,20 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.txtOrderNumber = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.dtpOrderDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.btnAddNewProduct = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDeletedProductFromOrder = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.lblUserName = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.rbDeferredOrder = new System.Windows.Forms.RadioButton();
-            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.dtpDefrredDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.rbCashOrder = new System.Windows.Forms.RadioButton();
-            this.btnAddNewSupplier = new DevExpress.XtraEditors.SimpleButton();
-            this.txtTotalProduOrder = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtTotalOrder = new Guna.UI2.WinForms.Guna2TextBox();
+            this.rbDeferredOrder = new System.Windows.Forms.RadioButton();
+            this.dtpDefrredDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpOrderDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.lblUserName = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.lblDeferredDate = new DevExpress.XtraEditors.LabelControl();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.txtTotalOrder = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtItemCounts = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvOrderProduct = new System.Windows.Forms.DataGridView();
+            this.OrderProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PSNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,8 +70,6 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.PriceIncVat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbxSupplier = new System.Windows.Forms.ComboBox();
-            this.cbxActiveProduct = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -121,6 +122,66 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.groupControl1.Size = new System.Drawing.Size(1018, 94);
             this.groupControl1.TabIndex = 0;
             // 
+            // cbxActiveProduct
+            // 
+            this.cbxActiveProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxActiveProduct.DropDownHeight = 115;
+            this.cbxActiveProduct.Font = new System.Drawing.Font("Sakkal Majalla", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxActiveProduct.IntegralHeight = false;
+            this.cbxActiveProduct.ItemHeight = 25;
+            this.cbxActiveProduct.Location = new System.Drawing.Point(383, 51);
+            this.cbxActiveProduct.Name = "cbxActiveProduct";
+            this.cbxActiveProduct.Size = new System.Drawing.Size(222, 33);
+            this.cbxActiveProduct.TabIndex = 13;
+            this.cbxActiveProduct.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbxActiveProduct_KeyDown);
+            this.cbxActiveProduct.Validating += new System.ComponentModel.CancelEventHandler(this.cbxActiveProduct_Validating);
+            // 
+            // cbxSupplier
+            // 
+            this.cbxSupplier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxSupplier.DropDownHeight = 100;
+            this.cbxSupplier.Font = new System.Drawing.Font("Sakkal Majalla", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxSupplier.IntegralHeight = false;
+            this.cbxSupplier.ItemHeight = 25;
+            this.cbxSupplier.Location = new System.Drawing.Point(383, 10);
+            this.cbxSupplier.Name = "cbxSupplier";
+            this.cbxSupplier.Size = new System.Drawing.Size(222, 33);
+            this.cbxSupplier.TabIndex = 13;
+            this.cbxSupplier.Validating += new System.ComponentModel.CancelEventHandler(this.cbxSupplier_Validating);
+            // 
+            // btnDeletedProductFromOrder
+            // 
+            this.btnDeletedProductFromOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeletedProductFromOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDeletedProductFromOrder.ImageOptions.Image")));
+            this.btnDeletedProductFromOrder.Location = new System.Drawing.Point(260, 51);
+            this.btnDeletedProductFromOrder.Name = "btnDeletedProductFromOrder";
+            this.btnDeletedProductFromOrder.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnDeletedProductFromOrder.Size = new System.Drawing.Size(38, 36);
+            this.btnDeletedProductFromOrder.TabIndex = 12;
+            this.btnDeletedProductFromOrder.Click += new System.EventHandler(this.btnDeletedProductFromOrder_Click);
+            // 
+            // btnAddNewSupplier
+            // 
+            this.btnAddNewSupplier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddNewSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewSupplier.ImageOptions.Image")));
+            this.btnAddNewSupplier.Location = new System.Drawing.Point(330, 11);
+            this.btnAddNewSupplier.Name = "btnAddNewSupplier";
+            this.btnAddNewSupplier.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnAddNewSupplier.Size = new System.Drawing.Size(38, 36);
+            this.btnAddNewSupplier.TabIndex = 12;
+            this.btnAddNewSupplier.Click += new System.EventHandler(this.btnAddNewSupplier_Click);
+            // 
+            // btnAddNewProduct
+            // 
+            this.btnAddNewProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddNewProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewProduct.ImageOptions.Image")));
+            this.btnAddNewProduct.Location = new System.Drawing.Point(330, 51);
+            this.btnAddNewProduct.Name = "btnAddNewProduct";
+            this.btnAddNewProduct.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnAddNewProduct.Size = new System.Drawing.Size(38, 36);
+            this.btnAddNewProduct.TabIndex = 12;
+            this.btnAddNewProduct.Click += new System.EventHandler(this.btnAddNewProduct_Click);
+            // 
             // txtProductBarcode
             // 
             this.txtProductBarcode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -148,6 +209,8 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.txtProductBarcode.ShadowDecoration.Parent = this.txtProductBarcode;
             this.txtProductBarcode.Size = new System.Drawing.Size(182, 39);
             this.txtProductBarcode.TabIndex = 10;
+            this.txtProductBarcode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtProductBarcode_KeyDown);
+            this.txtProductBarcode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductBarcode_KeyPress);
             // 
             // labelControl5
             // 
@@ -159,6 +222,42 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.labelControl5.Size = new System.Drawing.Size(43, 22);
             this.labelControl5.TabIndex = 0;
             this.labelControl5.Text = "أختر منتج";
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl10.Location = new System.Drawing.Point(60, 57);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(136, 27);
+            this.labelControl10.TabIndex = 0;
+            this.labelControl10.Text = "لتعديل كمية صنف F11";
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl9.Location = new System.Drawing.Point(51, 16);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(145, 27);
+            this.labelControl9.TabIndex = 0;
+            this.labelControl9.Text = "لحفظ ودغع الفاتورة F12";
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl8.Location = new System.Drawing.Point(212, 56);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(42, 27);
+            this.labelControl8.TabIndex = 0;
+            this.labelControl8.Text = "Delete";
             // 
             // lblF2
             // 
@@ -222,6 +321,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.txtOrderNumber.FocusedState.BorderColor = System.Drawing.Color.Black;
             this.txtOrderNumber.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(255)))), ((int)(((byte)(179)))));
             this.txtOrderNumber.FocusedState.Parent = this.txtOrderNumber;
+            this.txtOrderNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOrderNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtOrderNumber.HoverState.Parent = this.txtOrderNumber;
             this.txtOrderNumber.Location = new System.Drawing.Point(777, 8);
@@ -233,6 +333,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.txtOrderNumber.ShadowDecoration.Parent = this.txtOrderNumber;
             this.txtOrderNumber.Size = new System.Drawing.Size(155, 39);
             this.txtOrderNumber.TabIndex = 10;
+            this.txtOrderNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // labelControl1
             // 
@@ -254,12 +355,12 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.groupControl2.Controls.Add(this.dtpOrderDate);
             this.groupControl2.Controls.Add(this.lblUserName);
             this.groupControl2.Controls.Add(this.labelControl11);
-            this.groupControl2.Controls.Add(this.labelControl14);
+            this.groupControl2.Controls.Add(this.lblDeferredDate);
             this.groupControl2.Controls.Add(this.labelControl15);
             this.groupControl2.Controls.Add(this.labelControl13);
             this.groupControl2.Controls.Add(this.labelControl7);
             this.groupControl2.Controls.Add(this.txtTotalOrder);
-            this.groupControl2.Controls.Add(this.txtTotalProduOrder);
+            this.groupControl2.Controls.Add(this.txtItemCounts);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(3, 430);
             this.groupControl2.Name = "groupControl2";
@@ -267,129 +368,19 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "groupControl2";
             // 
-            // dtpOrderDate
+            // rbCashOrder
             // 
-            this.dtpOrderDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpOrderDate.BorderColor = System.Drawing.Color.DimGray;
-            this.dtpOrderDate.BorderRadius = 9;
-            this.dtpOrderDate.CheckedState.BorderColor = System.Drawing.Color.Black;
-            this.dtpOrderDate.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(255)))), ((int)(((byte)(179)))));
-            this.dtpOrderDate.CheckedState.ForeColor = System.Drawing.Color.Black;
-            this.dtpOrderDate.CheckedState.Parent = this.dtpOrderDate;
-            this.dtpOrderDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.dtpOrderDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpOrderDate.HoverState.Parent = this.dtpOrderDate;
-            this.dtpOrderDate.Location = new System.Drawing.Point(788, 9);
-            this.dtpOrderDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpOrderDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpOrderDate.Name = "dtpOrderDate";
-            this.dtpOrderDate.ShadowDecoration.Parent = this.dtpOrderDate;
-            this.dtpOrderDate.Size = new System.Drawing.Size(129, 32);
-            this.dtpOrderDate.TabIndex = 21;
-            this.dtpOrderDate.Value = new System.DateTime(2021, 3, 9, 21, 0, 10, 526);
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.labelControl7.Location = new System.Drawing.Point(935, 13);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(75, 25);
-            this.labelControl7.TabIndex = 0;
-            this.labelControl7.Text = "تاريخ الفاتورة";
-            // 
-            // btnAddNewProduct
-            // 
-            this.btnAddNewProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddNewProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnAddNewProduct.Location = new System.Drawing.Point(330, 51);
-            this.btnAddNewProduct.Name = "btnAddNewProduct";
-            this.btnAddNewProduct.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnAddNewProduct.Size = new System.Drawing.Size(38, 36);
-            this.btnAddNewProduct.TabIndex = 12;
-            // 
-            // btnDeletedProductFromOrder
-            // 
-            this.btnDeletedProductFromOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeletedProductFromOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.btnDeletedProductFromOrder.Location = new System.Drawing.Point(260, 51);
-            this.btnDeletedProductFromOrder.Name = "btnDeletedProductFromOrder";
-            this.btnDeletedProductFromOrder.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnDeletedProductFromOrder.Size = new System.Drawing.Size(38, 36);
-            this.btnDeletedProductFromOrder.TabIndex = 12;
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl8.Location = new System.Drawing.Point(212, 56);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(42, 27);
-            this.labelControl8.TabIndex = 0;
-            this.labelControl8.Text = "Delete";
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl9.Location = new System.Drawing.Point(51, 16);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(145, 27);
-            this.labelControl9.TabIndex = 0;
-            this.labelControl9.Text = "لحفظ ودغع الفاتورة F12";
-            // 
-            // labelControl10
-            // 
-            this.labelControl10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl10.Location = new System.Drawing.Point(60, 57);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(136, 27);
-            this.labelControl10.TabIndex = 0;
-            this.labelControl10.Text = "لتعديل كمية صنف F11";
-            // 
-            // labelControl11
-            // 
-            this.labelControl11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl11.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.labelControl11.Location = new System.Drawing.Point(927, 48);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(79, 25);
-            this.labelControl11.TabIndex = 0;
-            this.labelControl11.Text = "اسم المستحدم";
-            // 
-            // lblUserName
-            // 
-            this.lblUserName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblUserName.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.Appearance.Options.UseFont = true;
-            this.lblUserName.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.lblUserName.Location = new System.Drawing.Point(808, 48);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(101, 25);
-            this.lblUserName.TabIndex = 0;
-            this.lblUserName.Text = "Employee.Name";
-            // 
-            // labelControl13
-            // 
-            this.labelControl13.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.labelControl13.Location = new System.Drawing.Point(260, 13);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(79, 25);
-            this.labelControl13.TabIndex = 0;
-            this.labelControl13.Text = "عدد الأصناف ";
+            this.rbCashOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbCashOrder.AutoSize = true;
+            this.rbCashOrder.Checked = true;
+            this.rbCashOrder.Font = new System.Drawing.Font("Sakkal Majalla", 14.25F, System.Drawing.FontStyle.Bold);
+            this.rbCashOrder.Location = new System.Drawing.Point(632, 48);
+            this.rbCashOrder.Name = "rbCashOrder";
+            this.rbCashOrder.Size = new System.Drawing.Size(128, 29);
+            this.rbCashOrder.TabIndex = 22;
+            this.rbCashOrder.TabStop = true;
+            this.rbCashOrder.Text = "دفع الفاتورة كاش";
+            this.rbCashOrder.UseVisualStyleBackColor = true;
             // 
             // rbDeferredOrder
             // 
@@ -400,22 +391,9 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.rbDeferredOrder.Name = "rbDeferredOrder";
             this.rbDeferredOrder.Size = new System.Drawing.Size(127, 29);
             this.rbDeferredOrder.TabIndex = 22;
-            this.rbDeferredOrder.TabStop = true;
             this.rbDeferredOrder.Text = "دفع الفاتورة أجل";
             this.rbDeferredOrder.UseVisualStyleBackColor = true;
-            // 
-            // labelControl14
-            // 
-            this.labelControl14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl14.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl14.Appearance.Options.UseFont = true;
-            this.labelControl14.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.labelControl14.Location = new System.Drawing.Point(534, 13);
-            this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(91, 25);
-            this.labelControl14.TabIndex = 0;
-            this.labelControl14.Text = "تاريخ الاستحقاق";
-            this.labelControl14.Visible = false;
+            this.rbDeferredOrder.CheckedChanged += new System.EventHandler(this.rbDeferredOrder_CheckedChanged);
             // 
             // dtpDefrredDate
             // 
@@ -440,56 +418,97 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.dtpDefrredDate.Value = new System.DateTime(2021, 3, 9, 21, 0, 10, 526);
             this.dtpDefrredDate.Visible = false;
             // 
-            // rbCashOrder
+            // dtpOrderDate
             // 
-            this.rbCashOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rbCashOrder.AutoSize = true;
-            this.rbCashOrder.Font = new System.Drawing.Font("Sakkal Majalla", 14.25F, System.Drawing.FontStyle.Bold);
-            this.rbCashOrder.Location = new System.Drawing.Point(632, 48);
-            this.rbCashOrder.Name = "rbCashOrder";
-            this.rbCashOrder.Size = new System.Drawing.Size(128, 29);
-            this.rbCashOrder.TabIndex = 22;
-            this.rbCashOrder.TabStop = true;
-            this.rbCashOrder.Text = "دفع الفاتورة كاش";
-            this.rbCashOrder.UseVisualStyleBackColor = true;
+            this.dtpOrderDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpOrderDate.BorderColor = System.Drawing.Color.DimGray;
+            this.dtpOrderDate.BorderRadius = 9;
+            this.dtpOrderDate.CheckedState.BorderColor = System.Drawing.Color.Black;
+            this.dtpOrderDate.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(255)))), ((int)(((byte)(179)))));
+            this.dtpOrderDate.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.dtpOrderDate.CheckedState.Parent = this.dtpOrderDate;
+            this.dtpOrderDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.dtpOrderDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpOrderDate.HoverState.Parent = this.dtpOrderDate;
+            this.dtpOrderDate.Location = new System.Drawing.Point(788, 9);
+            this.dtpOrderDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpOrderDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpOrderDate.Name = "dtpOrderDate";
+            this.dtpOrderDate.ShadowDecoration.Parent = this.dtpOrderDate;
+            this.dtpOrderDate.Size = new System.Drawing.Size(129, 32);
+            this.dtpOrderDate.TabIndex = 21;
+            this.dtpOrderDate.Value = new System.DateTime(2021, 3, 9, 21, 0, 10, 526);
             // 
-            // btnAddNewSupplier
+            // lblUserName
             // 
-            this.btnAddNewSupplier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddNewSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.btnAddNewSupplier.Location = new System.Drawing.Point(330, 11);
-            this.btnAddNewSupplier.Name = "btnAddNewSupplier";
-            this.btnAddNewSupplier.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnAddNewSupplier.Size = new System.Drawing.Size(38, 36);
-            this.btnAddNewSupplier.TabIndex = 12;
-            this.btnAddNewSupplier.Click += new System.EventHandler(this.btnAddNewSupplier_Click);
+            this.lblUserName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblUserName.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.Appearance.Options.UseFont = true;
+            this.lblUserName.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.lblUserName.Location = new System.Drawing.Point(808, 48);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(101, 25);
+            this.lblUserName.TabIndex = 0;
+            this.lblUserName.Text = "Employee.Name";
             // 
-            // txtTotalProduOrder
+            // labelControl11
             // 
-            this.txtTotalProduOrder.BorderColor = System.Drawing.Color.Gray;
-            this.txtTotalProduOrder.BorderRadius = 9;
-            this.txtTotalProduOrder.BorderThickness = 2;
-            this.txtTotalProduOrder.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTotalProduOrder.DefaultText = "";
-            this.txtTotalProduOrder.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTotalProduOrder.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTotalProduOrder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTotalProduOrder.DisabledState.Parent = this.txtTotalProduOrder;
-            this.txtTotalProduOrder.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTotalProduOrder.FocusedState.BorderColor = System.Drawing.Color.Black;
-            this.txtTotalProduOrder.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(255)))), ((int)(((byte)(179)))));
-            this.txtTotalProduOrder.FocusedState.Parent = this.txtTotalProduOrder;
-            this.txtTotalProduOrder.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTotalProduOrder.HoverState.Parent = this.txtTotalProduOrder;
-            this.txtTotalProduOrder.Location = new System.Drawing.Point(97, 8);
-            this.txtTotalProduOrder.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
-            this.txtTotalProduOrder.Name = "txtTotalProduOrder";
-            this.txtTotalProduOrder.PasswordChar = '\0';
-            this.txtTotalProduOrder.PlaceholderText = "";
-            this.txtTotalProduOrder.SelectedText = "";
-            this.txtTotalProduOrder.ShadowDecoration.Parent = this.txtTotalProduOrder;
-            this.txtTotalProduOrder.Size = new System.Drawing.Size(122, 35);
-            this.txtTotalProduOrder.TabIndex = 10;
+            this.labelControl11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl11.Appearance.Options.UseFont = true;
+            this.labelControl11.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.labelControl11.Location = new System.Drawing.Point(927, 48);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(79, 25);
+            this.labelControl11.TabIndex = 0;
+            this.labelControl11.Text = "اسم المستحدم";
+            // 
+            // lblDeferredDate
+            // 
+            this.lblDeferredDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDeferredDate.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeferredDate.Appearance.Options.UseFont = true;
+            this.lblDeferredDate.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.lblDeferredDate.Location = new System.Drawing.Point(534, 13);
+            this.lblDeferredDate.Name = "lblDeferredDate";
+            this.lblDeferredDate.Size = new System.Drawing.Size(91, 25);
+            this.lblDeferredDate.TabIndex = 0;
+            this.lblDeferredDate.Text = "تاريخ الاستحقاق";
+            this.lblDeferredDate.Visible = false;
+            // 
+            // labelControl15
+            // 
+            this.labelControl15.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl15.Appearance.Options.UseFont = true;
+            this.labelControl15.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.labelControl15.Location = new System.Drawing.Point(260, 58);
+            this.labelControl15.Name = "labelControl15";
+            this.labelControl15.Size = new System.Drawing.Size(88, 25);
+            this.labelControl15.TabIndex = 0;
+            this.labelControl15.Text = "مجموع الفاتورة";
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl13.Appearance.Options.UseFont = true;
+            this.labelControl13.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.labelControl13.Location = new System.Drawing.Point(260, 13);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(79, 25);
+            this.labelControl13.TabIndex = 0;
+            this.labelControl13.Text = "عدد الأصناف ";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.labelControl7.Location = new System.Drawing.Point(935, 13);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(75, 25);
+            this.labelControl7.TabIndex = 0;
+            this.labelControl7.Text = "تاريخ الفاتورة";
             // 
             // txtTotalOrder
             // 
@@ -523,16 +542,38 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.txtTotalOrder.TabIndex = 10;
             this.txtTotalOrder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // labelControl15
+            // txtItemCounts
             // 
-            this.labelControl15.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl15.Appearance.Options.UseFont = true;
-            this.labelControl15.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.labelControl15.Location = new System.Drawing.Point(260, 58);
-            this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(88, 25);
-            this.labelControl15.TabIndex = 0;
-            this.labelControl15.Text = "مجموع الفاتورة";
+            this.txtItemCounts.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtItemCounts.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtItemCounts.BorderColor = System.Drawing.Color.Gray;
+            this.txtItemCounts.BorderRadius = 9;
+            this.txtItemCounts.BorderThickness = 2;
+            this.txtItemCounts.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtItemCounts.DefaultText = "";
+            this.txtItemCounts.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtItemCounts.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtItemCounts.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.txtItemCounts.DisabledState.Parent = this.txtItemCounts;
+            this.txtItemCounts.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtItemCounts.Enabled = false;
+            this.txtItemCounts.FocusedState.BorderColor = System.Drawing.Color.Black;
+            this.txtItemCounts.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(255)))), ((int)(((byte)(179)))));
+            this.txtItemCounts.FocusedState.Parent = this.txtItemCounts;
+            this.txtItemCounts.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtItemCounts.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtItemCounts.HoverState.Parent = this.txtItemCounts;
+            this.txtItemCounts.Location = new System.Drawing.Point(110, 8);
+            this.txtItemCounts.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
+            this.txtItemCounts.Name = "txtItemCounts";
+            this.txtItemCounts.PasswordChar = '\0';
+            this.txtItemCounts.PlaceholderText = "";
+            this.txtItemCounts.ReadOnly = true;
+            this.txtItemCounts.SelectedText = "";
+            this.txtItemCounts.ShadowDecoration.Parent = this.txtItemCounts;
+            this.txtItemCounts.Size = new System.Drawing.Size(107, 35);
+            this.txtItemCounts.TabIndex = 10;
+            this.txtItemCounts.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dgvOrderProduct
             // 
@@ -542,6 +583,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.dgvOrderProduct.BackgroundColor = System.Drawing.Color.White;
             this.dgvOrderProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrderProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.OrderProductId,
             this.PSNumber,
             this.ProductName,
             this.Unit,
@@ -553,8 +595,18 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.dgvOrderProduct.Location = new System.Drawing.Point(3, 103);
             this.dgvOrderProduct.Name = "dgvOrderProduct";
             this.dgvOrderProduct.ReadOnly = true;
+            this.dgvOrderProduct.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.LemonChiffon;
+            this.dgvOrderProduct.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvOrderProduct.Size = new System.Drawing.Size(1018, 321);
             this.dgvOrderProduct.TabIndex = 2;
+            // 
+            // OrderProductId
+            // 
+            this.OrderProductId.DataPropertyName = "Id";
+            this.OrderProductId.HeaderText = "رقم مرجعي المنتج";
+            this.OrderProductId.Name = "OrderProductId";
+            this.OrderProductId.ReadOnly = true;
+            this.OrderProductId.Visible = false;
             // 
             // PSNumber
             // 
@@ -598,32 +650,6 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.Subtotal.Name = "Subtotal";
             this.Subtotal.ReadOnly = true;
             // 
-            // cbxSupplier
-            // 
-            this.cbxSupplier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxSupplier.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cbxSupplier.DropDownHeight = 100;
-            this.cbxSupplier.Font = new System.Drawing.Font("Sakkal Majalla", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxSupplier.IntegralHeight = false;
-            this.cbxSupplier.ItemHeight = 25;
-            this.cbxSupplier.Location = new System.Drawing.Point(383, 10);
-            this.cbxSupplier.Name = "cbxSupplier";
-            this.cbxSupplier.Size = new System.Drawing.Size(222, 33);
-            this.cbxSupplier.TabIndex = 13;
-            // 
-            // cbxActiveProduct
-            // 
-            this.cbxActiveProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxActiveProduct.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cbxActiveProduct.DropDownHeight = 100;
-            this.cbxActiveProduct.Font = new System.Drawing.Font("Sakkal Majalla", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxActiveProduct.IntegralHeight = false;
-            this.cbxActiveProduct.ItemHeight = 25;
-            this.cbxActiveProduct.Location = new System.Drawing.Point(383, 51);
-            this.cbxActiveProduct.Name = "cbxActiveProduct";
-            this.cbxActiveProduct.Size = new System.Drawing.Size(222, 33);
-            this.cbxActiveProduct.TabIndex = 13;
-            // 
             // frmProcurementOrder
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -636,6 +662,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -644,7 +671,8 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "فاتورة مشتريات";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmProcurementOrder_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmProcurementOrder_KeyDown);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
@@ -682,13 +710,16 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         internal Guna.UI2.WinForms.Guna2DateTimePicker dtpDefrredDate;
         private DevExpress.XtraEditors.LabelControl lblUserName;
         private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.LabelControl labelControl14;
+        private DevExpress.XtraEditors.LabelControl lblDeferredDate;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.SimpleButton btnAddNewSupplier;
         private DevExpress.XtraEditors.LabelControl labelControl15;
         internal Guna.UI2.WinForms.Guna2TextBox txtTotalOrder;
-        internal Guna.UI2.WinForms.Guna2TextBox txtTotalProduOrder;
+        internal Guna.UI2.WinForms.Guna2TextBox txtItemCounts;
         private System.Windows.Forms.DataGridView dgvOrderProduct;
+        internal System.Windows.Forms.ComboBox cbxSupplier;
+        internal System.Windows.Forms.ComboBox cbxActiveProduct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderProductId;
         private System.Windows.Forms.DataGridViewTextBoxColumn PSNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Unit;
@@ -696,7 +727,5 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         private System.Windows.Forms.DataGridViewTextBoxColumn PriceIncVat;
         private System.Windows.Forms.DataGridViewTextBoxColumn Discount;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
-        internal System.Windows.Forms.ComboBox cbxActiveProduct;
-        internal System.Windows.Forms.ComboBox cbxSupplier;
     }
 }

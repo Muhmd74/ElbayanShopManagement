@@ -728,7 +728,7 @@ namespace ElbayaNPresentation.Views.Client
             this.Appearance.Options.UseFont = true;
             this.Appearance.Options.UseForeColor = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1072, 618);
+            this.ClientSize = new System.Drawing.Size(1088, 634);
             this.ControlBox = false;
             this.Controls.Add(this.txtTAXNumber);
             this.Controls.Add(this.label6);
@@ -772,6 +772,7 @@ namespace ElbayaNPresentation.Views.Client
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "إصافة بيانات مورد جديد";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmNewClient_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.nudCurrentBalance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOpeningBalance)).EndInit();
             this.ResumeLayout(false);
