@@ -716,7 +716,6 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         private DevExpress.XtraEditors.LabelControl labelControl15;
         internal Guna.UI2.WinForms.Guna2TextBox txtTotalOrder;
         internal Guna.UI2.WinForms.Guna2TextBox txtItemCounts;
-        private System.Windows.Forms.DataGridView dgvOrderProduct;
         internal System.Windows.Forms.ComboBox cbxSupplier;
         internal System.Windows.Forms.ComboBox cbxActiveProduct;
         private System.Windows.Forms.DataGridViewTextBoxColumn OrderProductId;
@@ -727,5 +726,6 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         private System.Windows.Forms.DataGridViewTextBoxColumn PriceIncVat;
         private System.Windows.Forms.DataGridViewTextBoxColumn Discount;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
+        public System.Windows.Forms.DataGridView dgvOrderProduct;
     }
 }

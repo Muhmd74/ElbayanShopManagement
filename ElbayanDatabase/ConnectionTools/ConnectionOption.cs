@@ -185,7 +185,7 @@ namespace ElbayanDatabase.ConnectionTools
                 .HasForeignKey(d => d.OrderId)
                 .WillCascadeOnDelete(false);
             modelBuilder.Entity<Order>()
-                .HasMany(d => d.ProductStocks)
+                .HasMany(d => d.ProductStock)
                 .WithRequired(d => d.Order)
                 .HasForeignKey(d => d.OrderId)
                 .WillCascadeOnDelete(false);

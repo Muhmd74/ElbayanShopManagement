@@ -30,7 +30,7 @@ namespace ElbayanDatabase.DataClasses.Clints.Sales
         public Employee Employee { get; set; }
         public ICollection<DeferredPayment> DeferredPayments { get; set; }
         public ICollection<OrderProduct> OrderProduct { get; set; }
-        public ICollection<ProductStock> ProductStocks { get; set; }
+        public ICollection<ProductStock> ProductStock { get; set; }
 
 
     }

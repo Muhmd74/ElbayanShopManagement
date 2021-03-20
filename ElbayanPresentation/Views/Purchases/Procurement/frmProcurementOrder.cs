@@ -118,7 +118,9 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         {
             if(e.KeyCode == Keys.F12)
             {
-                Presenter.CreateSupplierOrder();
+                //Presenter.CreateSupplierOrder();
+                frmEditQuantity.Intance.ShowDialog();
+
             }
         }
     }

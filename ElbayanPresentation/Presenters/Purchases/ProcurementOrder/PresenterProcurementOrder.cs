@@ -30,7 +30,6 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
             PopulateSuppliers();
             PopulateProducts();
             _view.OrderNumber.Text = orderProcuremnt.GenerateSequenceNumberSupplier().ToString();
-
         }
 
         private void PopulateProducts()
@@ -54,19 +53,17 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
             _view.Suppliers.SelectedValue = "Id";
             var model = Supplier.GetAllSupplier();
             _view.Suppliers.DataSource = model;
-            _view.Suppliers.Text = "أختر مورد";
+            _view.Suppliers.SelectedIndex = -1;
         }
-
         internal void NewSupplier_OnCLick()
         {
             frmNewClient.Instance.ShowDialog();
         }
-
         internal void CreateSupplierOrder()
         {
             if(_view.OrderProduct.Rows.Count >= 1)
             {
-                if(_view.Suppliers.Items.Count >= 1)
+                if(_view.Suppliers.SelectedIndex == -1)
                 {
                 try
                 {
@@ -90,7 +87,9 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
                         ClearControl();
                     
                 }
-                catch (Exception) { }
+                catch (Exception e) {
+                        MessageBox.Show(e.InnerException.Message);
+                    }
                 }
                 else
                 {
@@ -160,6 +159,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
                 decimal Subtotal = SubtotalQuantity - (model.PurchaseDefaultPrice * (model.Discount / 100));
                 _view.OrderProduct.Rows[index].Cells["Subtotal"].Value = Subtotal;
                 ClaculateTotalOrderAmount();
+                SelectLastRow();
             }
             
         }
@@ -174,6 +174,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
                     _view.TotalOrder.Text = "0.0";
                 }
                 ClaculateTotalOrderAmount();
+                SelectLastRow();
             }
         }
         internal void AddProductToDGVbtn()
@@ -203,6 +204,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
             decimal Subtotal = SubtotalQuantity - (model.PurchaseDefaultPrice * (model.Discount / 100));
             _view.OrderProduct.Rows[index].Cells["Subtotal"].Value = Subtotal;
             ClaculateTotalOrderAmount();
+            SelectLastRow();
         }
         internal void ClaculateTotalOrderAmount()
         {
@@ -234,6 +236,19 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
             _view.OrderProduct.Rows.Clear();
 
         }
-
+        private void SelectLastRow()
+        {
+            if(_view.OrderProduct.Rows.Count >= 1)
+            {
+                _view.OrderProduct.ClearSelection();
+                int nRowIndex = _view.OrderProduct.Rows.Count - 1;
+                _view.OrderProduct.Rows[nRowIndex].Selected = true;
+                _view.OrderProduct.FirstDisplayedScrollingRowIndex = nRowIndex;
+            }
+            else
+            {
+                MessageBox.Show("لم يعد هنا صفوف منتجات");
+            }
+        }
     }
 }

@@ -100,6 +100,8 @@
     <Compile Include="Presenters\Finance\TreasuryAndBank\Treasury\IViewTreasury.cs" />
     <Compile Include="Presenters\Purchases\ProcurementOrder\IViewProcurementOrder.cs" />
     <Compile Include="Presenters\Purchases\ProcurementOrder\PresenterProcurementOrder.cs" />
+    <Compile Include="Presenters\Purchases\QuantityEditForm\IViewQuantityEdit.cs" />
+    <Compile Include="Presenters\Purchases\QuantityEditForm\PresenterQuantityEdit.cs" />
     <Compile Include="Presenters\Purchases\Supplier\AllSuppliers\IViewAllSuppleir.cs" />
     <Compile Include="Presenters\Purchases\Supplier\AllSuppliers\PresenterAllSupplierData.cs" />
     <Compile Include="Presenters\Store\Building\BuildingPresenter.cs" />
@@ -160,6 +162,12 @@
     </Compile>
     <Compile Include="Views\Finance\Employee\ucAllEmployeeData.Designer.cs">
       <DependentUpon>ucAllEmployeeData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Purchases\EditQuantity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Purchases\EditQuantity.Designer.cs">
+      <DependentUpon>EditQuantity.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Purchases\Procurement\frmProcurementOrder.cs">
       <SubType>Form</SubType>
@@ -238,6 +246,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Finance\Employee\ucAllEmployeeData.resx">
       <DependentUpon>ucAllEmployeeData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Purchases\EditQuantity.resx">
+      <DependentUpon>EditQuantity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Purchases\Procurement\frmProcurementOrder.resx">
       <DependentUpon>frmProcurementOrder.cs</DependentUpon>

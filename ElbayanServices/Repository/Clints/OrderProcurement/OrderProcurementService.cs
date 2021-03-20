@@ -50,7 +50,7 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
                     //اضافة الكميه الي المنتج في جدول المنتجات 
                     SupplierProductQuantity(orderProduct.ProductId, orderProduct.Quantity);
                     //اضافة الكميه الجديده الي جدول حركة المنتج 
-                    SupplierProductStock(orderProduct.ProductId, orderProduct.Quantity, orderProduct.OrderId);
+                    //SupplierProductStock(orderProduct.ProductId, orderProduct.Quantity, order.Id);
                     _context.SaveChanges();
                 }
 
@@ -102,7 +102,7 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
                     Stock = quantity,
                     StockStatues = StaticGenerator.ProductStockStatues.Procurement
                 });
-            _context.SaveChanges();
+            
             //return true;
             //}
             //else
