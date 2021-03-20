@@ -43,14 +43,17 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
 
             if (order != null)
             {
+              
                 foreach (var orderProduct in model.OrderProductDto)
                 {
-                    //اضافة كميه جديد الي المنتج
-                    CreateProductOrder(orderProduct, order.Id);
+                    var productPriceOnce = orderProduct.PriceSale / orderProduct.Quantity;
+                  //اضافة كميه جديد الي المنتج
+                  CreateProductOrder(orderProduct, order.Id);
                     //اضافة الكميه الي المنتج في جدول المنتجات 
                     SupplierProductQuantity(orderProduct.ProductId, orderProduct.Quantity);
                     //اضافة الكميه الجديده الي جدول حركة المنتج 
                     //SupplierProductStock(orderProduct.ProductId, orderProduct.Quantity, order.Id);
+                    SupplierProductPrice(orderProduct.ProductId, productPriceOnce, orderProduct.Discount, orderProduct.Vat);
                     _context.SaveChanges();
                 }
 
@@ -90,31 +93,31 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
             });
             _context.SaveChanges();
         }
-        private void SupplierProductStock(Guid productId, int quantity, Guid orderID)
+        private void SupplierProductStock(Guid productId, int quantity, Guid orderId)
         {
-            //var product = _context.ProductStocks.FirstOrDefault(d => d.ProductId == productId);
-            //if (product!=null)
-            //{
                 var product = _context.ProductStocks.Add(new ProductStock()
                 {
                     ProductId = productId,
-                    OrderId = orderID,
+                    OrderId = orderId,
                     Stock = quantity,
-                    StockStatues = StaticGenerator.ProductStockStatues.Procurement
+                    StockStatues = StaticGenerator.ProductStockStatues.Procurement,
+                    Id = Guid.NewGuid()
                 });
-            
-            //return true;
-            //}
-            //else
-            //{
-            //    _context.ProductStocks.Add(new ProductStock()
-            //    {
-            //        ProductId = productId,
-            //        Stock = quantity,
-            //        StockStatues = StaticGenerator.ProductStockStatues.OpeningBalances
-            //    }); 
-            //}
-            //return true;
+        }
+
+        private void SupplierProductPrice(Guid productId, decimal price, decimal discount , int vat)
+        {
+            var product = _context.ProductPrices.Add(new ProductPrice()
+            {
+                ProductId = productId,
+                DateTime = DateTime.UtcNow,
+                Discount = discount,
+                Vat = vat,
+                ProcPrice = price,
+                Id = Guid.NewGuid()
+                
+            });
+
         }
         private bool SupplierProductQuantity(Guid productId, int quantity)
         {
