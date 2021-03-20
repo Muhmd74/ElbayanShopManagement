@@ -23,14 +23,10 @@ namespace ElbayaNPresentation.Views.Purchases
             _intance = this;
             Presenter = new PresenterQuantityEdit(this);
             txtQuantity.Select();
-            Presenter.ClearControls();
             Presenter.OnLoad();
-
-            
         }
         private static frmEditQuantity _intance;
         public static frmEditQuantity Intance { get { if (_intance == null) _intance = new frmEditQuantity(); return _intance; } }
-
         public Guid ID { get; set; }
         public PresenterQuantityEdit Presenter { get; set; }
         public Guna2TextBox Quantity { get => txtQuantity; set => txtQuantity = value; }
@@ -46,6 +42,7 @@ namespace ElbayaNPresentation.Views.Purchases
         private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidateControls.ValidateTextBoxOnlyNumber(sender, e, txtQuantity);
+            this.txtQuantity.MaxLength = 12;
         }
         private void txtQuantity_Leave(object sender, EventArgs e)
         {
@@ -65,12 +62,38 @@ namespace ElbayaNPresentation.Views.Purchases
         }
         private void frmEditQuantity_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.F10)
+            if (e.KeyCode == Keys.F10)
             {
                 txtQuantity_Leave(null, null);
                 this.Close();
                 frmProcurementOrder.Intance.Presenter.ClaculateTotalOrderAmount();
             }
+        }
+        private void txtQuantity_Enter(object sender, EventArgs e)
+        {
+            this.txtQuantity.SelectAll();
+        }
+        private void txtDefaultPrice_Enter(object sender, EventArgs e)
+        {
+            this.txtDefaultPrice.SelectAll();
+        }
+        private void txtDefaultPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidateControls.ValidateTextBoxOnlyNumber(sender, e, txtDefaultPrice);
+            this.txtDefaultPrice.MaxLength = 9;
+        }
+        private void txtDiscount_Enter(object sender, EventArgs e)
+        {
+            this.txtDiscount.SelectAll();
+        }
+        private void txtDiscount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidateControls.ValidateTextBoxOnlyNumber(sender, e, txtDiscount);
+            this.txtDiscount.MaxLength = 4;
+        }
+        private void txtDefaultPrice_Leave_1(object sender, EventArgs e)
+        {
+            Presenter.CalulateQuanity();
         }
     }
 }

@@ -29,14 +29,14 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcurementOrder));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.cbxActiveProduct = new System.Windows.Forms.ComboBox();
             this.cbxSupplier = new System.Windows.Forms.ComboBox();
-            this.btnDeletedProductFromOrder = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAddNewSupplier = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAddNewProduct = new DevExpress.XtraEditors.SimpleButton();
             this.txtProductBarcode = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
@@ -70,6 +70,9 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.PriceIncVat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDeletedProductFromOrder = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAddNewSupplier = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAddNewProduct = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -149,44 +152,11 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.cbxSupplier.TabIndex = 13;
             this.cbxSupplier.Validating += new System.ComponentModel.CancelEventHandler(this.cbxSupplier_Validating);
             // 
-            // btnDeletedProductFromOrder
-            // 
-            this.btnDeletedProductFromOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeletedProductFromOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDeletedProductFromOrder.ImageOptions.Image")));
-            this.btnDeletedProductFromOrder.Location = new System.Drawing.Point(260, 51);
-            this.btnDeletedProductFromOrder.Name = "btnDeletedProductFromOrder";
-            this.btnDeletedProductFromOrder.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnDeletedProductFromOrder.Size = new System.Drawing.Size(38, 36);
-            this.btnDeletedProductFromOrder.TabIndex = 12;
-            this.btnDeletedProductFromOrder.Click += new System.EventHandler(this.btnDeletedProductFromOrder_Click);
-            // 
-            // btnAddNewSupplier
-            // 
-            this.btnAddNewSupplier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddNewSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewSupplier.ImageOptions.Image")));
-            this.btnAddNewSupplier.Location = new System.Drawing.Point(330, 11);
-            this.btnAddNewSupplier.Name = "btnAddNewSupplier";
-            this.btnAddNewSupplier.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnAddNewSupplier.Size = new System.Drawing.Size(38, 36);
-            this.btnAddNewSupplier.TabIndex = 12;
-            this.btnAddNewSupplier.Click += new System.EventHandler(this.btnAddNewSupplier_Click);
-            // 
-            // btnAddNewProduct
-            // 
-            this.btnAddNewProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddNewProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewProduct.ImageOptions.Image")));
-            this.btnAddNewProduct.Location = new System.Drawing.Point(330, 51);
-            this.btnAddNewProduct.Name = "btnAddNewProduct";
-            this.btnAddNewProduct.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnAddNewProduct.Size = new System.Drawing.Size(38, 36);
-            this.btnAddNewProduct.TabIndex = 12;
-            this.btnAddNewProduct.Click += new System.EventHandler(this.btnAddNewProduct_Click);
-            // 
             // txtProductBarcode
             // 
             this.txtProductBarcode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtProductBarcode.BorderColor = System.Drawing.Color.Gray;
-            this.txtProductBarcode.BorderRadius = 9;
+            this.txtProductBarcode.BorderRadius = 5;
             this.txtProductBarcode.BorderThickness = 2;
             this.txtProductBarcode.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtProductBarcode.DefaultText = "";
@@ -200,14 +170,14 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.txtProductBarcode.FocusedState.Parent = this.txtProductBarcode;
             this.txtProductBarcode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtProductBarcode.HoverState.Parent = this.txtProductBarcode;
-            this.txtProductBarcode.Location = new System.Drawing.Point(750, 51);
-            this.txtProductBarcode.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
+            this.txtProductBarcode.Location = new System.Drawing.Point(751, 49);
+            this.txtProductBarcode.Margin = new System.Windows.Forms.Padding(7, 12, 7, 12);
             this.txtProductBarcode.Name = "txtProductBarcode";
             this.txtProductBarcode.PasswordChar = '\0';
             this.txtProductBarcode.PlaceholderText = "";
             this.txtProductBarcode.SelectedText = "";
             this.txtProductBarcode.ShadowDecoration.Parent = this.txtProductBarcode;
-            this.txtProductBarcode.Size = new System.Drawing.Size(182, 39);
+            this.txtProductBarcode.Size = new System.Drawing.Size(181, 39);
             this.txtProductBarcode.TabIndex = 10;
             this.txtProductBarcode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtProductBarcode_KeyDown);
             this.txtProductBarcode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductBarcode_KeyPress);
@@ -309,7 +279,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             // 
             this.txtOrderNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtOrderNumber.BorderColor = System.Drawing.Color.Gray;
-            this.txtOrderNumber.BorderRadius = 9;
+            this.txtOrderNumber.BorderRadius = 5;
             this.txtOrderNumber.BorderThickness = 2;
             this.txtOrderNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtOrderNumber.DefaultText = "";
@@ -324,7 +294,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.txtOrderNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOrderNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtOrderNumber.HoverState.Parent = this.txtOrderNumber;
-            this.txtOrderNumber.Location = new System.Drawing.Point(777, 8);
+            this.txtOrderNumber.Location = new System.Drawing.Point(777, 4);
             this.txtOrderNumber.Margin = new System.Windows.Forms.Padding(5, 9, 5, 9);
             this.txtOrderNumber.Name = "txtOrderNumber";
             this.txtOrderNumber.PasswordChar = '\0';
@@ -581,6 +551,14 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.dgvOrderProduct.AllowUserToDeleteRows = false;
             this.dgvOrderProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOrderProduct.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrderProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvOrderProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrderProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.OrderProductId,
@@ -591,14 +569,31 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.PriceIncVat,
             this.Discount,
             this.Subtotal});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOrderProduct.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvOrderProduct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvOrderProduct.Location = new System.Drawing.Point(3, 103);
             this.dgvOrderProduct.Name = "dgvOrderProduct";
             this.dgvOrderProduct.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrderProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvOrderProduct.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.LemonChiffon;
             this.dgvOrderProduct.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvOrderProduct.Size = new System.Drawing.Size(1018, 321);
             this.dgvOrderProduct.TabIndex = 2;
+            this.dgvOrderProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderProduct_CellContentClick);
             // 
             // OrderProductId
             // 
@@ -649,6 +644,39 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.Subtotal.HeaderText = "الإجمالي";
             this.Subtotal.Name = "Subtotal";
             this.Subtotal.ReadOnly = true;
+            // 
+            // btnDeletedProductFromOrder
+            // 
+            this.btnDeletedProductFromOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeletedProductFromOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDeletedProductFromOrder.ImageOptions.Image")));
+            this.btnDeletedProductFromOrder.Location = new System.Drawing.Point(260, 51);
+            this.btnDeletedProductFromOrder.Name = "btnDeletedProductFromOrder";
+            this.btnDeletedProductFromOrder.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnDeletedProductFromOrder.Size = new System.Drawing.Size(38, 36);
+            this.btnDeletedProductFromOrder.TabIndex = 12;
+            this.btnDeletedProductFromOrder.Click += new System.EventHandler(this.btnDeletedProductFromOrder_Click);
+            // 
+            // btnAddNewSupplier
+            // 
+            this.btnAddNewSupplier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddNewSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewSupplier.ImageOptions.Image")));
+            this.btnAddNewSupplier.Location = new System.Drawing.Point(330, 11);
+            this.btnAddNewSupplier.Name = "btnAddNewSupplier";
+            this.btnAddNewSupplier.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnAddNewSupplier.Size = new System.Drawing.Size(38, 36);
+            this.btnAddNewSupplier.TabIndex = 12;
+            this.btnAddNewSupplier.Click += new System.EventHandler(this.btnAddNewSupplier_Click);
+            // 
+            // btnAddNewProduct
+            // 
+            this.btnAddNewProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddNewProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewProduct.ImageOptions.Image")));
+            this.btnAddNewProduct.Location = new System.Drawing.Point(330, 51);
+            this.btnAddNewProduct.Name = "btnAddNewProduct";
+            this.btnAddNewProduct.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnAddNewProduct.Size = new System.Drawing.Size(38, 36);
+            this.btnAddNewProduct.TabIndex = 12;
+            this.btnAddNewProduct.Click += new System.EventHandler(this.btnAddNewProduct_Click);
             // 
             // frmProcurementOrder
             // 
@@ -718,6 +746,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         internal Guna.UI2.WinForms.Guna2TextBox txtItemCounts;
         internal System.Windows.Forms.ComboBox cbxSupplier;
         internal System.Windows.Forms.ComboBox cbxActiveProduct;
+        public System.Windows.Forms.DataGridView dgvOrderProduct;
         private System.Windows.Forms.DataGridViewTextBoxColumn OrderProductId;
         private System.Windows.Forms.DataGridViewTextBoxColumn PSNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
@@ -726,6 +755,5 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         private System.Windows.Forms.DataGridViewTextBoxColumn PriceIncVat;
         private System.Windows.Forms.DataGridViewTextBoxColumn Discount;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
-        public System.Windows.Forms.DataGridView dgvOrderProduct;
     }
 }

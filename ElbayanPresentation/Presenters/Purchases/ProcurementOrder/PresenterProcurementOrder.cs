@@ -1,5 +1,6 @@
 ﻿using ElbayaNPresentation.Presenters.CommonPresenter;
 using ElbayaNPresentation.Views.Client;
+using ElbayaNPresentation.Views.Purchases;
 using ElbayanServices.Repository.Clints.OrderProcurement;
 using ElbayanServices.Repository.Clints.OrderProcurement.Dtos;
 using ElbayanServices.Repository.Clints.Supplier;
@@ -24,14 +25,12 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
         {
             _view = view;
         }
-
         internal void OnLoad()
         {
             PopulateSuppliers();
             PopulateProducts();
             _view.OrderNumber.Text = orderProcuremnt.GenerateSequenceNumberSupplier().ToString();
         }
-
         private void PopulateProducts()
         {
             _view.Products.DisplayMember = "Name";
@@ -45,7 +44,6 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
             //_view.Products.AutoCompleteCustomSource = new AutoCompleteStringCollection();
 
         }
-
         private void PopulateSuppliers()
         {
             _view.Suppliers.DisplayMember = "Name";
@@ -63,7 +61,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
         {
             if(_view.OrderProduct.Rows.Count >= 1)
             {
-                if(_view.Suppliers.SelectedIndex == -1)
+                if(_view.Suppliers.SelectedIndex != -1)
                 {
                 try
                 {
@@ -86,10 +84,8 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
                         MessageBox.Show("DONE");
                         ClearControl();
                     
-                }
-                catch (Exception e) {
-                        MessageBox.Show(e.InnerException.Message);
-                    }
+                }catch (Exception e) {//MessageBox.Show(e.InnerException.Message);
+                                      }
                 }
                 else
                 {
@@ -126,6 +122,40 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
             return orderProducts;
 
 
+        }
+        internal void PopulateQualityEdit()
+        {
+            frmEditQuantity.Intance.txtQuantity.SelectAll();
+            frmEditQuantity.Intance.txtQuantity.Select();
+            //int index = _view.OrderProduct.SelectedRows[0].Index;
+            var model = Product.GetById(new Guid(_view.OrderProduct.CurrentRow.Cells["OrderProductId"].Value.ToString()));
+
+            frmEditQuantity.Intance.Quantity.Text = _view.OrderProduct.CurrentRow.Cells["Qunatity"].Value.ToString();
+            frmEditQuantity.Intance.DefaultPrice.Text = model.PurchaseDefaultPrice.ToString();
+            frmEditQuantity.Intance.Discount.Text = model.Discount.ToString();
+            frmEditQuantity.Intance.Subtotal.Text = Math.Round((Convert.ToDecimal(frmEditQuantity.Intance.Quantity.Text) 
+                * Convert.ToDecimal(frmEditQuantity.Intance.DefaultPrice.Text)), 2).ToString();
+
+            // Calulate Discount = Subtotal - (SubTotal * (Discount / 100))
+            decimal discount = (Convert.ToDecimal(frmEditQuantity.Intance.Subtotal.Text) 
+                * (Convert.ToDecimal(frmEditQuantity.Intance.Discount.Text) / 100));
+           frmEditQuantity.Intance.TotalProductPrice.Text = Math.Round((Convert.ToDecimal(frmEditQuantity.Intance.Subtotal.Text) - discount), 3).ToString();
+
+            // Calulate VAT => TotalProductPrice + (TotalProductPrice * (Product VAT))
+            decimal productVAT = Convert.ToDecimal(frmEditQuantity.Intance.TotalProductPrice.Text) * (model.Vat / 100);
+            frmEditQuantity.Intance.Vat = model.Vat;
+            if (model.Vat > 0)
+            {
+                frmEditQuantity.Intance.IsVatIncluded.Checked = true;
+                frmEditQuantity.Intance.VatValue.Text = Math.Round(productVAT, 2).ToString();
+                frmEditQuantity.Intance.TotalWithVat.Text = Math.Round((Convert.ToDecimal(frmEditQuantity.Intance.TotalProductPrice.Text) + productVAT), 3).ToString();
+            }
+            else
+            {
+                frmEditQuantity.Intance.IsVatIncluded.Checked = false;
+                frmEditQuantity.Intance.TotalWithVat.Text = Math.Round(Convert.ToDecimal(frmEditQuantity.Intance.TotalProductPrice.Text), 3).ToString();
+                frmEditQuantity.Intance.VatValue.Text = string.Empty;
+            }
         }
         internal void AddProductToDGV()
         {

@@ -24,10 +24,11 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         private static frmProcurementOrder _intsance;
         public static frmProcurementOrder Intance
         {
-            get {
+            get
+            {
                 if (_intsance == null)
                     _intsance = new frmProcurementOrder();
-                        return _intsance;
+                return _intsance;
             }
         }
 
@@ -54,7 +55,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         }
         private void txtProductBarcode_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter || e.KeyCode == Keys.F1)
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.F1)
             {
                 Presenter.AddProductToDGV();
             }
@@ -82,7 +83,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         }
         private void cbxActiveProduct_Validating(object sender, CancelEventArgs e)
         {
-            if(this.cbxActiveProduct.SelectedIndex == -1)
+            if (this.cbxActiveProduct.SelectedIndex == -1)
             {
                 MessageBox.Show("يجب اختيار اسم منتج صحيح");
                 return;
@@ -90,7 +91,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         }
         private void cbxSupplier_Validating(object sender, CancelEventArgs e)
         {
-            if(this.cbxSupplier.SelectedIndex == -1)
+            if (this.cbxSupplier.SelectedIndex == -1)
             {
                 MessageBox.Show("يجب إختيار اسم مورد صحيح");
                 return;
@@ -116,12 +117,39 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         }
         private void frmProcurementOrder_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.F12)
+            if (e.KeyCode == Keys.F12)
             {
-                //Presenter.CreateSupplierOrder();
-                frmEditQuantity.Intance.ShowDialog();
+                if (dgvOrderProduct.Rows.Count >= 1)
+                {
+                    Presenter.CreateSupplierOrder();
+                    //frmEditQuantity.Intance.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("لا بد من إضافة منتجات أولا للفاتورة");
+                    return;
+                }
+
+            }  
+            if (e.KeyCode == Keys.F11)
+            {
+                if (dgvOrderProduct.Rows.Count >= 1)
+                {
+                    Presenter.PopulateQualityEdit();
+                    frmEditQuantity.Intance.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("لا بد من إضافة منتجات أولا للفاتورة");
+                    return;
+                }
 
             }
+        }
+
+        private void dgvOrderProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmProcurementOrder_KeyDown(null, null);
         }
     }
 }

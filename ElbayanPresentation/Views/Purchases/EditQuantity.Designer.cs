@@ -32,7 +32,6 @@ namespace ElbayaNPresentation.Views.Purchases
             this.txtQuantity = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.lblCurrencySubtotal = new DevExpress.XtraEditors.LabelControl();
-            this.txtDefaultPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtDiscount = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSubtotal = new Guna.UI2.WinForms.Guna2TextBox();
@@ -48,6 +47,7 @@ namespace ElbayaNPresentation.Views.Purchases
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.lblVatValue = new System.Windows.Forms.Label();
+            this.txtDefaultPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.SuspendLayout();
             // 
             // txtQuantity
@@ -79,6 +79,7 @@ namespace ElbayaNPresentation.Views.Purchases
             this.txtQuantity.Size = new System.Drawing.Size(169, 39);
             this.txtQuantity.TabIndex = 12;
             this.txtQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtQuantity.Enter += new System.EventHandler(this.txtQuantity_Enter);
             this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantity_KeyPress);
             this.txtQuantity.Leave += new System.EventHandler(this.txtQuantity_Leave);
             // 
@@ -103,37 +104,6 @@ namespace ElbayaNPresentation.Views.Purchases
             this.lblCurrencySubtotal.Size = new System.Drawing.Size(56, 22);
             this.lblCurrencySubtotal.TabIndex = 11;
             this.lblCurrencySubtotal.Text = "سعر الشراء";
-            // 
-            // txtDefaultPrice
-            // 
-            this.txtDefaultPrice.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtDefaultPrice.BorderColor = System.Drawing.Color.Gray;
-            this.txtDefaultPrice.BorderRadius = 5;
-            this.txtDefaultPrice.BorderThickness = 2;
-            this.txtDefaultPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDefaultPrice.DefaultText = "";
-            this.txtDefaultPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtDefaultPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtDefaultPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDefaultPrice.DisabledState.Parent = this.txtDefaultPrice;
-            this.txtDefaultPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDefaultPrice.FocusedState.BorderColor = System.Drawing.Color.Black;
-            this.txtDefaultPrice.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(255)))), ((int)(((byte)(179)))));
-            this.txtDefaultPrice.FocusedState.Parent = this.txtDefaultPrice;
-            this.txtDefaultPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDefaultPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDefaultPrice.HoverState.Parent = this.txtDefaultPrice;
-            this.txtDefaultPrice.Location = new System.Drawing.Point(149, 61);
-            this.txtDefaultPrice.Margin = new System.Windows.Forms.Padding(8, 14, 8, 14);
-            this.txtDefaultPrice.Name = "txtDefaultPrice";
-            this.txtDefaultPrice.PasswordChar = '\0';
-            this.txtDefaultPrice.PlaceholderText = "";
-            this.txtDefaultPrice.SelectedText = "";
-            this.txtDefaultPrice.ShadowDecoration.Parent = this.txtDefaultPrice;
-            this.txtDefaultPrice.Size = new System.Drawing.Size(169, 39);
-            this.txtDefaultPrice.TabIndex = 2;
-            this.txtDefaultPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtDefaultPrice.Leave += new System.EventHandler(this.txtDefaultPrice_Leave);
             // 
             // labelControl3
             // 
@@ -175,6 +145,8 @@ namespace ElbayaNPresentation.Views.Purchases
             this.txtDiscount.Size = new System.Drawing.Size(151, 39);
             this.txtDiscount.TabIndex = 3;
             this.txtDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDiscount.Enter += new System.EventHandler(this.txtDiscount_Enter);
+            this.txtDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiscount_KeyPress);
             this.txtDiscount.Leave += new System.EventHandler(this.txtDiscount_Leave);
             // 
             // txtSubtotal
@@ -185,8 +157,8 @@ namespace ElbayaNPresentation.Views.Purchases
             this.txtSubtotal.BorderThickness = 2;
             this.txtSubtotal.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSubtotal.DefaultText = "";
-            this.txtSubtotal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtSubtotal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.txtSubtotal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSubtotal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtSubtotal.DisabledState.ForeColor = System.Drawing.Color.Black;
             this.txtSubtotal.DisabledState.Parent = this.txtSubtotal;
             this.txtSubtotal.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -262,9 +234,10 @@ namespace ElbayaNPresentation.Views.Purchases
             this.txtTotalProductPrice.DefaultText = "";
             this.txtTotalProductPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtTotalProductPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTotalProductPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTotalProductPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTotalProductPrice.DisabledState.Parent = this.txtTotalProductPrice;
             this.txtTotalProductPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTotalProductPrice.Enabled = false;
             this.txtTotalProductPrice.FocusedState.BorderColor = System.Drawing.Color.Black;
             this.txtTotalProductPrice.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(255)))), ((int)(((byte)(179)))));
             this.txtTotalProductPrice.FocusedState.Parent = this.txtTotalProductPrice;
@@ -327,9 +300,10 @@ namespace ElbayaNPresentation.Views.Purchases
             this.txtTotalPrice.DefaultText = "";
             this.txtTotalPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtTotalPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTotalPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTotalPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTotalPrice.DisabledState.Parent = this.txtTotalPrice;
             this.txtTotalPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTotalPrice.Enabled = false;
             this.txtTotalPrice.FocusedState.BorderColor = System.Drawing.Color.Black;
             this.txtTotalPrice.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(255)))), ((int)(((byte)(179)))));
             this.txtTotalPrice.FocusedState.Parent = this.txtTotalPrice;
@@ -384,15 +358,49 @@ namespace ElbayaNPresentation.Views.Purchases
             this.lblVatValue.Size = new System.Drawing.Size(0, 15);
             this.lblVatValue.TabIndex = 16;
             // 
+            // txtDefaultPrice
+            // 
+            this.txtDefaultPrice.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtDefaultPrice.BorderColor = System.Drawing.Color.Gray;
+            this.txtDefaultPrice.BorderRadius = 5;
+            this.txtDefaultPrice.BorderThickness = 2;
+            this.txtDefaultPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDefaultPrice.DefaultText = "";
+            this.txtDefaultPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDefaultPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDefaultPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDefaultPrice.DisabledState.Parent = this.txtDefaultPrice;
+            this.txtDefaultPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDefaultPrice.FocusedState.BorderColor = System.Drawing.Color.Black;
+            this.txtDefaultPrice.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(255)))), ((int)(((byte)(179)))));
+            this.txtDefaultPrice.FocusedState.Parent = this.txtDefaultPrice;
+            this.txtDefaultPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDefaultPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDefaultPrice.HoverState.Parent = this.txtDefaultPrice;
+            this.txtDefaultPrice.Location = new System.Drawing.Point(149, 60);
+            this.txtDefaultPrice.Margin = new System.Windows.Forms.Padding(9, 16, 9, 16);
+            this.txtDefaultPrice.Name = "txtDefaultPrice";
+            this.txtDefaultPrice.PasswordChar = '\0';
+            this.txtDefaultPrice.PlaceholderText = "";
+            this.txtDefaultPrice.SelectedText = "";
+            this.txtDefaultPrice.ShadowDecoration.Parent = this.txtDefaultPrice;
+            this.txtDefaultPrice.Size = new System.Drawing.Size(151, 39);
+            this.txtDefaultPrice.TabIndex = 2;
+            this.txtDefaultPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDefaultPrice.Enter += new System.EventHandler(this.txtDefaultPrice_Enter);
+            this.txtDefaultPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDefaultPrice_KeyPress);
+            this.txtDefaultPrice.Leave += new System.EventHandler(this.txtDefaultPrice_Leave_1);
+            // 
             // frmEditQuantity
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(464, 489);
+            this.ClientSize = new System.Drawing.Size(512, 537);
             this.ControlBox = false;
             this.Controls.Add(this.lblVatValue);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.cbIncludeVAT);
             this.Controls.Add(this.txtTotalPrice);
+            this.Controls.Add(this.txtDefaultPrice);
             this.Controls.Add(this.txtTotalProductPrice);
             this.Controls.Add(this.txtSubtotal);
             this.Controls.Add(this.txtDiscount);
@@ -404,7 +412,6 @@ namespace ElbayaNPresentation.Views.Purchases
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.labelControl3);
-            this.Controls.Add(this.txtDefaultPrice);
             this.Controls.Add(this.lblCurrencySubtotal);
             this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.labelControl2);
@@ -426,7 +433,6 @@ namespace ElbayaNPresentation.Views.Purchases
         internal Guna.UI2.WinForms.Guna2TextBox txtQuantity;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl lblCurrencySubtotal;
-        internal Guna.UI2.WinForms.Guna2TextBox txtDefaultPrice;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         internal Guna.UI2.WinForms.Guna2TextBox txtDiscount;
         internal Guna.UI2.WinForms.Guna2TextBox txtSubtotal;
@@ -442,5 +448,6 @@ namespace ElbayaNPresentation.Views.Purchases
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private System.Windows.Forms.Label lblVatValue;
+        internal Guna.UI2.WinForms.Guna2TextBox txtDefaultPrice;
     }
 }
