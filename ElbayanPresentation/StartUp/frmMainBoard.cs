@@ -204,7 +204,9 @@ namespace ElbayaNPresentation
 
         private void barButtonItem14_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmProcurementOrder.Intance.ShowDialog();
+            //frmProcurementOrder.Intance.ShowDialog();  
+            frmOrderPurchase.Intance.ShowDialog();
+
         }
     }
 }

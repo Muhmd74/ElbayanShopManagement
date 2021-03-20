@@ -146,7 +146,6 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
 
             }
         }
-
         private void dgvOrderProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             frmProcurementOrder_KeyDown(null, null);

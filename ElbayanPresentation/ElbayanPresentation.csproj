@@ -65,6 +65,15 @@
     <Reference Include="Guna.UI2">
       <HintPath>C:\Users\Mohamed Ali\Downloads\Images\Guna UI Framework Ultimate v2.0.0.1 Lib-Master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
     </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.ComponentModel.Primitives, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -169,6 +178,12 @@
     <Compile Include="Views\Purchases\EditQuantity.Designer.cs">
       <DependentUpon>EditQuantity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Purchases\Procurement\frmOrderPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Purchases\Procurement\frmOrderPurchase.Designer.cs">
+      <DependentUpon>frmOrderPurchase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Purchases\Procurement\frmProcurementOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Purchases\EditQuantity.resx">
       <DependentUpon>EditQuantity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Purchases\Procurement\frmOrderPurchase.resx">
+      <DependentUpon>frmOrderPurchase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Purchases\Procurement\frmProcurementOrder.resx">
       <DependentUpon>frmProcurementOrder.cs</DependentUpon>
