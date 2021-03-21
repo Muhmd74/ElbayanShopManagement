@@ -9,7 +9,7 @@ using ElbayanServices.Repository.Clints.OrderProcurement.Dtos;
 
 namespace ElbayanServices.Repository.Clints.OrderProcurement
 {
-    public class OrderProcurementService
+    public class OrderProcurementService 
     {
         private readonly ConnectionOption _context;
 
@@ -137,6 +137,16 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
             }
 
             return 201020;
+        }
+        public decimal GetLastProductPrice(Guid productId)
+        {
+            var product = _context.ProductPrices.OrderByDescending(d => d.DateTime).FirstOrDefault(d => d.Id == productId);
+            if (product != null)
+            {
+                return product.ProcPrice;
+            }
+
+            return 0;
         }
     }
 }
