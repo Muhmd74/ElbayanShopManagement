@@ -43,16 +43,16 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
 
             if (order != null)
             {
-              
+
                 foreach (var orderProduct in model.OrderProductDto)
                 {
                     var productPriceOnce = orderProduct.PriceSale / orderProduct.Quantity;
-                  //اضافة كميه جديد الي المنتج
-                  CreateProductOrder(orderProduct, order.Id);
+                    //اضافة كميه جديد الي المنتج
+                    CreateProductOrder(orderProduct, order.Id);
                     //اضافة الكميه الي المنتج في جدول المنتجات 
                     SupplierProductQuantity(orderProduct.ProductId, orderProduct.Quantity);
                     //اضافة الكميه الجديده الي جدول حركة المنتج 
-                    //SupplierProductStock(orderProduct.ProductId, orderProduct.Quantity, order.Id);
+                    SupplierProductStock(orderProduct.ProductId, orderProduct.Quantity, order.Id);
                     SupplierProductPrice(orderProduct.ProductId, productPriceOnce, orderProduct.Discount, orderProduct.Vat);
                     _context.SaveChanges();
                 }
@@ -77,7 +77,7 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
 
             });
         }
-        private void CreateDeferredPayments(Guid clintId, decimal deferred, Guid orderId, DateTime dueDatePayingOff, decimal paymentPerMonth)
+        internal void CreateDeferredPayments(Guid clintId, decimal deferred, Guid orderId, DateTime dueDatePayingOff, decimal paymentPerMonth)
         {
             var payment = _context.DeferredPayments.Add(new DeferredPayment
             {
@@ -85,7 +85,7 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
                 Payment = 0,
                 OrderId = orderId,
                 DeferredOfOrder = deferred,
-                CollectingPaymentDate = DateTime.UtcNow,
+                CollectingPaymentDate = DateTime.Now,
                 DueDatePayingOff = dueDatePayingOff,
                 TotalPayment = 0,
                 ClintId = clintId,
@@ -95,27 +95,26 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
         }
         private void SupplierProductStock(Guid productId, int quantity, Guid orderId)
         {
-                var product = _context.ProductStocks.Add(new ProductStock()
-                {
-                    ProductId = productId,
-                    OrderId = orderId,
-                    Stock = quantity,
-                    StockStatues = StaticGenerator.ProductStockStatues.Procurement,
-                    Id = Guid.NewGuid()
-                });
+            var product = _context.ProductStocks.Add(new ProductStock()
+            {
+                ProductId = productId,
+                OrderId = orderId,
+                Stock = quantity,
+                StockStatues = StaticGenerator.ProductStockStatues.Procurement,
+                Id = Guid.NewGuid()
+            });
         }
 
-        private void SupplierProductPrice(Guid productId, decimal price, decimal discount , int vat)
+        private void SupplierProductPrice(Guid productId, decimal price, decimal discount, int vat)
         {
             var product = _context.ProductPrices.Add(new ProductPrice()
             {
                 ProductId = productId,
-                DateTime = DateTime.UtcNow,
+                DateTime = DateTime.Now,
                 Discount = discount,
                 Vat = vat,
                 ProcPrice = price,
                 Id = Guid.NewGuid()
-                
             });
 
         }

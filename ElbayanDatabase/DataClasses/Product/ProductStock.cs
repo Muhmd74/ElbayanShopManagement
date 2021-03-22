@@ -7,8 +7,8 @@ namespace ElbayanDatabase.DataClasses.Product
 {
   public  class ProductStock
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //[Key]
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
         public Guid ProductId { get; set; }
         public Product Product { get; set; }

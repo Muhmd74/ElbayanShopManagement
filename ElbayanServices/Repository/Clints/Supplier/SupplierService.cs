@@ -7,38 +7,38 @@ using ElbayanServices.Repository.Clints.Supplier.Dtos;
 
 namespace ElbayanServices.Repository.Clints.Supplier
 {
-   public class SupplierService : ISupplier , IDisposable
-   {
-       private readonly ConnectionOption _context;
+    public class SupplierService : ISupplier, IDisposable
+    {
+        private readonly ConnectionOption _context;
 
-       public SupplierService(ConnectionOption context)
-       {
-           _context = context;
-       }
+        public SupplierService(ConnectionOption context)
+        {
+            _context = context;
+        }
 
-      // public bool CreateSupplier(ClintDto model)
-       //{
-       //    var customer = _context.Clints.Add(new Clint()
-       //    {
-       //        Name = model.Name,
-       //        NationalIdentity = model.NationalIdentity,
-       //        IsActive = true,
-       //        FirmName = model.FirmName,
-       //        Address = model.Address,
-       //        CommercialRegister = model.CommercialRegister,
-       //        ReferenceNumber = model.ReferenceNumber,
-       //        Description = model.Description,
-       //        Mobile = model.Mobile,
-       //        TaxNumber = model.TaxNumber,
-       //        OpeningBalance = model.OpeningBalance,
-       //        FaxNumber = model.FaxNumber,
-       //        IsSupplier = true,
-       //        Phone = model.Phone,
+        // public bool CreateSupplier(ClintDto model)
+        //{
+        //    var customer = _context.Clints.Add(new Clint()
+        //    {
+        //        Name = model.Name,
+        //        NationalIdentity = model.NationalIdentity,
+        //        IsActive = true,
+        //        FirmName = model.FirmName,
+        //        Address = model.Address,
+        //        CommercialRegister = model.CommercialRegister,
+        //        ReferenceNumber = model.ReferenceNumber,
+        //        Description = model.Description,
+        //        Mobile = model.Mobile,
+        //        TaxNumber = model.TaxNumber,
+        //        OpeningBalance = model.OpeningBalance,
+        //        FaxNumber = model.FaxNumber,
+        //        IsSupplier = true,
+        //        Phone = model.Phone,
 
-       //    });
-       //    _context.SaveChanges();
-       //    return true;
-       //}
+        //    });
+        //    _context.SaveChanges();
+        //    return true;
+        //}
 
         //public bool UpdateSupplier(ClintDto model)
         //{
@@ -59,7 +59,7 @@ namespace ElbayanServices.Repository.Clints.Supplier
         //        clint.Phone = model.Phone;
         //        _context.SaveChanges();
         //        return true;
-                
+
         //    }
 
         //    return false;
@@ -68,24 +68,24 @@ namespace ElbayanServices.Repository.Clints.Supplier
         public List<ClintDto> GetAllSupplier()
         {
             return _context.Clints
-                .Where(d=>d.IsSupplier
-                          &&d.IsActive)
+                .Where(d => d.IsSupplier
+                          && d.IsActive)
                 .Select(d => new ClintDto()
-            {
-                Description = d.Description,
-                FirmName = d.FirmName,
-                Address = d.Address,
-                CommercialRegister = d.CommercialRegister,
-                Id = d.Id,
-                 NationalIdentity = d.NationalIdentity,
-                 Mobile = d.Mobile,
-                 Name = d.Name,
-                 OpeningBalance = d.OpeningBalance,
-                 TaxNumber = d.TaxNumber,
-                 Phone = d.Phone,
-                 ReferenceNumber = d.ReferenceNumber,
-                 FaxNumber = d.FaxNumber
-            }).ToList();
+                {
+                    Description = d.Description,
+                    FirmName = d.FirmName,
+                    Address = d.Address,
+                    CommercialRegister = d.CommercialRegister,
+                    Id = d.Id,
+                    NationalIdentity = d.NationalIdentity,
+                    Mobile = d.Mobile,
+                    Name = d.Name,
+                    OpeningBalance = d.OpeningBalance,
+                    TaxNumber = d.TaxNumber,
+                    Phone = d.Phone,
+                    ReferenceNumber = d.ReferenceNumber,
+                    FaxNumber = d.FaxNumber
+                }).ToList();
         }
 
         public List<SupplierNameDto> GetSupplierName()
@@ -102,8 +102,8 @@ namespace ElbayanServices.Repository.Clints.Supplier
         public List<ClintDto> GetAllSupplierNotActive()
         {
             return _context.Clints
-                .Where(d =>d.IsSupplier
-                           && d.IsActive==false)
+                .Where(d => d.IsSupplier
+                           && d.IsActive == false)
                 .Select(d => new ClintDto()
                 {
                     Description = d.Description,
@@ -123,8 +123,8 @@ namespace ElbayanServices.Repository.Clints.Supplier
         }
         public ClintDto GetSupplierById(Guid id)
         {
-            var customer = _context.Clints.FirstOrDefault(d => d.IsSupplier&&d.Id == id);
-            if (customer!=null)
+            var customer = _context.Clints.FirstOrDefault(d => d.IsSupplier && d.Id == id);
+            if (customer != null)
             {
                 return new ClintDto()
                 {
@@ -152,7 +152,7 @@ namespace ElbayanServices.Repository.Clints.Supplier
         public bool ChangeActivity(Guid id)
         {
             var clint = _context.Clints.FirstOrDefault(d => d.Id == id);
-            if (clint!=null)
+            if (clint != null)
             {
                 clint.IsActive = !clint.IsActive;
                 _context.SaveChanges();
@@ -162,7 +162,7 @@ namespace ElbayanServices.Repository.Clints.Supplier
             return false;
         }
 
-       
+
 
         public void Dispose()
         {

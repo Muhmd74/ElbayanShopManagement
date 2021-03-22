@@ -21,6 +21,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.QuantityEditForm
         Guna2TextBox TotalWithVat { get; set; }
         CheckBox IsVatIncluded { get; set; }
         Label VatValue { get; set; }
+        Label DiscountValue { get; set; }
         Guna2Button SaveQuantityt { get; set; }
     }
 }

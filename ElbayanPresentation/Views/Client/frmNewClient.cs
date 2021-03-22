@@ -89,7 +89,7 @@ namespace ElbayaNPresentation.Views.Client
 
         private void frmNewClient_FormClosing(object sender, FormClosingEventArgs e)
         {
-            frmProcurementOrder.Intance.Presenter.OnLoad();
+            frmOrderPurchase.Intance.Presenter.OnLoad();
         }
     }
 }

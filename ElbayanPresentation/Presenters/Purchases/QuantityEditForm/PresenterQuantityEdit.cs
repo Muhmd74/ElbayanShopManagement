@@ -42,23 +42,22 @@ namespace ElbayaNPresentation.Presenters.Purchases.QuantityEditForm
                 _view.Subtotal.Text = Math.Round((Convert.ToDecimal(_view.Quantity.Text) * Convert.ToDecimal(_view.DefaultPrice.Text)), 3).ToString();
 
                 // Calulate Discount = Subtotal - (SubTotal * (Discount / 100))
-
-                decimal discount = (Convert.ToDecimal(_view.Subtotal.Text) * (Convert.ToDecimal(_view.Discount.Text) / 100));
-                _view.TotalProductPrice.Text = Math.Round((Convert.ToDecimal(_view.Subtotal.Text) - discount), 3).ToString();
-
+                decimal discountValue = (Convert.ToDecimal(_view.Discount.Text) / 100);
+                decimal discount = Math.Round(Convert.ToDecimal(_view.Subtotal.Text) * discountValue, 2);
+                _view.TotalProductPrice.Text = Math.Round((Convert.ToDecimal(_view.Subtotal.Text) - discount), 2).ToString();
                 // Calulate VAT => TotalProductPrice + (TotalProductPrice * (Product VAT))
                 decimal productVAT = Convert.ToDecimal(_view.Subtotal.Text) * (_view.Vat / 100);
-
+                _view.DiscountValue.Text = Math.Round((Convert.ToDecimal(_view.Subtotal.Text) * discountValue), 2).ToString();
                 if (_view.Vat > 0)
                 {
                     _view.IsVatIncluded.Checked = true;
                     _view.VatValue.Text = Math.Round(productVAT, 3).ToString();
-                    _view.TotalWithVat.Text = Math.Round((Convert.ToDecimal(_view.TotalProductPrice.Text) + productVAT), 3).ToString();
+                    _view.TotalWithVat.Text = Math.Round((Convert.ToDecimal(_view.TotalProductPrice.Text) + productVAT), 2).ToString();
                 }
                 else
                 {
-                    _view.IsVatIncluded.Checked = true;
-                    _view.TotalWithVat.Text = Math.Round(Convert.ToDecimal(_view.TotalProductPrice.Text), 3).ToString();
+                    _view.IsVatIncluded.Checked = false;
+                    _view.TotalWithVat.Text = Math.Round(Convert.ToDecimal(_view.TotalProductPrice.Text), 2).ToString();
                 }
             }
             else
@@ -71,16 +70,18 @@ namespace ElbayaNPresentation.Presenters.Purchases.QuantityEditForm
         }
         internal void PopulateOrderProductUpdatedQuantity()
         {
-            //int index = frmProcurementOrder.Intance.OrderProduct.SelectedRows[0].Index;
+            int index = frmOrderPurchase.Intance.OrderProduct.SelectedRows[0].Index;
 
             try
             {
-                frmProcurementOrder.Intance.OrderProduct.CurrentRow.Cells["Qunatity"].Value = _view.Quantity.Text;
-                frmProcurementOrder.Intance.OrderProduct.CurrentRow.Cells["PriceIncVat"].Value = _view.TotalProductPrice.Text;
-                frmProcurementOrder.Intance.OrderProduct.CurrentRow.Cells["Discount"].Value = _view.Discount.Text;
-                frmProcurementOrder.Intance.OrderProduct.CurrentRow.Cells["Subtotal"].Value = _view.TotalWithVat.Text;
+                frmOrderPurchase.Intance.OrderProduct.Rows[index].Cells["Qunatity"].Value = _view.Quantity.Text;
+                frmOrderPurchase.Intance.OrderProduct.Rows[index].Cells["PriceTOQuantity"].Value = _view.DefaultPrice.Text;
+                frmOrderPurchase.Intance.OrderProduct.Rows[index].Cells["Discount"].Value = _view.DiscountValue.Text;
+                frmOrderPurchase.Intance.OrderProduct.Rows[index].Cells["VATValue"].Value = _view.VatValue.Text;
+                frmOrderPurchase.Intance.OrderProduct.Rows[index].Cells["Subtotal"].Value = _view.TotalWithVat.Text;
             }
             catch (Exception) { }
+            frmOrderPurchase.Intance.Presenter.ClaculateTotalOrderAmount();
         }
     }
 }

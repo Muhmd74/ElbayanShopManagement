@@ -180,15 +180,15 @@ namespace ElbayanDatabase.ConnectionTools
                 .HasForeignKey(d => d.BuildingId)
                 .WillCascadeOnDelete(true);
             modelBuilder.Entity<Order>()
-                .HasMany(d => d.DeferredPayments)
+                .HasMany(d => d.DeferredPayment)
                 .WithRequired(d => d.Order)
                 .HasForeignKey(d => d.OrderId)
                 .WillCascadeOnDelete(false);
-            modelBuilder.Entity<Order>()
-                .HasMany(d => d.ProductStock)
-                .WithRequired(d => d.Order)
-                .HasForeignKey(d => d.OrderId)
-                .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<Order>()
+            //    .HasMany(d => d.ProductStock)
+            //    .WithRequired(d => d.Order)
+            //    .HasForeignKey(d => d.OrderId)
+            //    .WillCascadeOnDelete(false);
             modelBuilder.Entity<Product>()
                 .HasMany(d => d.OrderProducts)
                 .WithRequired(d => d.Product)

@@ -13,13 +13,13 @@ using System.Windows.Forms;
 
 namespace ElbayaNPresentation.Views.Purchases.Procurement
 {
-    public partial class frmProcurementOrder : DevExpress.XtraEditors.XtraForm, IViewProcurementOrder
+    public partial class frmProcurementOrder : DevExpress.XtraEditors.XtraForm//, IViewProcurementOrder
     {
         public frmProcurementOrder()
         {
             InitializeComponent();
             _intsance = this;
-            Presenter = new PresenterProcurementOrder(this);
+            //Presenter = new PresenterProcurementOrder(this);
         }
         private static frmProcurementOrder _intsance;
         public static frmProcurementOrder Intance
@@ -135,8 +135,8 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             {
                 if (dgvOrderProduct.Rows.Count >= 1)
                 {
-                    Presenter.PopulateQualityEdit();
-                    frmEditQuantity.Intance.ShowDialog();
+                    //Presenter.PopulateQualityEdit();
+                    frmEditQuantity.Instance.ShowDialog();
                 }
                 else
                 {

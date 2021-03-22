@@ -15,18 +15,26 @@ using System.Windows.Forms;
 
 namespace ElbayaNPresentation.Views.Purchases
 {
-    public partial class frmEditQuantity : DevExpress.XtraEditors.XtraForm, IViewQuantityEdit
+    public partial class frmEditQuantity : MetroFramework.Forms.MetroForm, IViewQuantityEdit
     {
         public frmEditQuantity()
         {
             InitializeComponent();
-            _intance = this;
+            _instance = this;
             Presenter = new PresenterQuantityEdit(this);
             txtQuantity.Select();
             Presenter.OnLoad();
         }
-        private static frmEditQuantity _intance;
-        public static frmEditQuantity Intance { get { if (_intance == null) _intance = new frmEditQuantity(); return _intance; } }
+        private static frmEditQuantity _instance;
+        public static frmEditQuantity Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new frmEditQuantity();
+                return _instance;
+            }
+        }
         public Guid ID { get; set; }
         public PresenterQuantityEdit Presenter { get; set; }
         public Guna2TextBox Quantity { get => txtQuantity; set => txtQuantity = value; }
@@ -38,6 +46,7 @@ namespace ElbayaNPresentation.Views.Purchases
         public CheckBox IsVatIncluded { get => cbIncludeVAT; set => cbIncludeVAT = value; }
         public Guna2Button SaveQuantityt { get => btnSave; set => btnSave = value; }
         public Label VatValue { get => lblVatValue; set => lblVatValue = value; }
+        public Label DiscountValue { get => lblDiscountValue; set => lblDiscountValue = value; }
         public decimal Vat { get; set; }
         private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -58,15 +67,17 @@ namespace ElbayaNPresentation.Views.Purchases
         }
         private void frmEditQuantity_FormClosing(object sender, FormClosingEventArgs e)
         {
+            this.Hide();
+            e.Cancel = true;
             Presenter.PopulateOrderProductUpdatedQuantity();
         }
         private void frmEditQuantity_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F10)
+            if (e.KeyCode == Keys.Enter)
             {
                 txtQuantity_Leave(null, null);
                 this.Close();
-                frmProcurementOrder.Intance.Presenter.ClaculateTotalOrderAmount();
+                frmOrderPurchase.Intance.Presenter.ClaculateTotalOrderAmount();
             }
         }
         private void txtQuantity_Enter(object sender, EventArgs e)

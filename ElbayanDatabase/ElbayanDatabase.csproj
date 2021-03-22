@@ -120,6 +120,14 @@
     <Compile Include="Migrations\202103190131501_AddOrderIdToProductStocks.designer.cs">
       <DependentUpon>202103190131501_AddOrderIdToProductStocks.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103220555135_DeleteOrderIdFromProductSTock.cs" />
+    <Compile Include="Migrations\202103220555135_DeleteOrderIdFromProductSTock.designer.cs">
+      <DependentUpon>202103220555135_DeleteOrderIdFromProductSTock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103220634477_UpdateProductStockDtoDeleteKey.cs" />
+    <Compile Include="Migrations\202103220634477_UpdateProductStockDtoDeleteKey.designer.cs">
+      <DependentUpon>202103220634477_UpdateProductStockDtoDeleteKey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -148,6 +156,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103190131501_AddOrderIdToProductStocks.resx">
       <DependentUpon>202103190131501_AddOrderIdToProductStocks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103220555135_DeleteOrderIdFromProductSTock.resx">
+      <DependentUpon>202103220555135_DeleteOrderIdFromProductSTock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103220634477_UpdateProductStockDtoDeleteKey.resx">
+      <DependentUpon>202103220634477_UpdateProductStockDtoDeleteKey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

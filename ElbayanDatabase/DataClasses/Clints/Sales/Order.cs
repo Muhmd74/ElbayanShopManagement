@@ -28,7 +28,7 @@ namespace ElbayanDatabase.DataClasses.Clints.Sales
         public POS Pos { get; set; }
         public Guid EmployeeId { get; set; }
         public Employee Employee { get; set; }
-        public ICollection<DeferredPayment> DeferredPayments { get; set; }
+        public ICollection<DeferredPayment> DeferredPayment { get; set; }
         public ICollection<OrderProduct> OrderProduct { get; set; }
         public ICollection<ProductStock> ProductStock { get; set; }
 
