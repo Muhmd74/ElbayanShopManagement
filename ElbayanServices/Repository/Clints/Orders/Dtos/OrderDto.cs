@@ -5,24 +5,25 @@ namespace ElbayanServices.Repository.Clints.Orders.Dtos
 {
   public class OrderDto
     {
-        public Guid Id { get; set; }
-        public DateTime DateTime { get; set; }
-        public DateTime DueDatePayingOff { get; set; }
-        public Guid ClintId { get; set; }
-        public decimal SubTotalWithoutDiscount { get; set; }// sum all  TotalPrice
-        public decimal TotalDiscount { get; set; }
-        public decimal TotalAfterDiscount { get; set; } // SubTotalWithoutDiscount - TotalDiscount
-        public decimal Payment { get; set; }
-        public bool IsDeferred { get; set; }
-        public decimal PaymentPerMonth { get; set; } // القسط الشهري
-        public decimal Deferred { get; set; } //المتبقي
-        public Guid PosId { get; set; }
-        public Guid EmployeeId { get; set; }
+      public Guid Id { get; set; }
+      public DateTime DateTime { get; set; }
+      public DateTime DueDatePayingOff { get; set; }
+      public Guid ClintId { get; set; }
+      public decimal SubTotalWithoutDiscount { get; set; }// sum all  TotalPrice
+      public decimal TotalDiscount { get; set; }
+      public long OrderNumber { get; set; }
+      public decimal TotalAfterDiscount { get; set; } // SubTotalWithoutDiscount - TotalDiscount
+      public decimal Payment { get; set; }
+      public bool IsDeferred { get; set; }
+      public decimal PaymentPerMonth { get; set; } // القسط الشهري
+      public decimal Deferred { get; set; } //المتبقي
+      public Guid PosId { get; set; }
+      public Guid EmployeeId { get; set; }
 
-        //OrderProduct
-        public List<OrderProductDto> OrderProductDto { get; set; }
+      //OrderProduct
+      public List<OrderProductDto> OrderProductDto { get; set; }
 
-    }
+  }
 
   public class OrderProductDto
   {
@@ -36,5 +37,6 @@ namespace ElbayanServices.Repository.Clints.Orders.Dtos
       public int Vat { get; set; } // price * vat in Product /100 
       public decimal TotalPrice { get; set; } // TotalProductPrice + vat
       public Guid OrderId { get; set; }
-    }
+  }
 }
+

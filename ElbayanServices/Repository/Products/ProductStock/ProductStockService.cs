@@ -23,8 +23,7 @@ namespace ElbayanServices.Repository.Products.ProductStock
            var productStock = _context.ProductStocks.Add(new ElbayanDatabase.DataClasses.Product.ProductStock
            {
                Stock = model.Stock,
-               ProductId = model.ProductId,
-               StockStatues = StaticGenerator.ProductStockStatues.OpeningBalances
+               ProductId = model.ProductId
            });
            _context.SaveChanges();
            var productQuantity = _context.Products.FirstOrDefault(d => d.Id == model.ProductId);

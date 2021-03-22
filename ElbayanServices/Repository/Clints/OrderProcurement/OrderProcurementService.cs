@@ -3,13 +3,12 @@ using System.Linq;
 using ElbayanDatabase.ConnectionTools;
 using ElbayanDatabase.DataClasses.Clints.Sales;
 using ElbayanDatabase.DataClasses.Product;
-using ElbayanServices.Common;
 using ElbayanServices.Repository.Clints.OrderProcurement.Dtos;
 //using ElbayanServices.Repository.Clints.Orders.Dtos;
 
 namespace ElbayanServices.Repository.Clints.OrderProcurement
 {
-    public class OrderProcurementService 
+    public class OrderProcurementService
     {
         private readonly ConnectionOption _context;
 
@@ -26,9 +25,9 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
                 Deferred = model.Deferred,
                 DateTime = model.DateTime,
                 Payment = model.Payment,
-                OrderNumber = model.OrderNumber,
+                OrderNumber = GenerateSequenceNumberSupplier(),
                 IsReturn = false,
-                OrderType = "فاتورة مشتريات",
+                OrderType = "مشتريات",
                 ClintId = model.ClintId,
                 TotalDiscount = model.TotalDiscount,
                 SubTotalWithoutDiscount = model.SubTotalWithoutDiscount,
@@ -85,7 +84,7 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
                 Payment = 0,
                 OrderId = orderId,
                 DeferredOfOrder = deferred,
-                CollectingPaymentDate = DateTime.Now,
+                CollectingPaymentDate = DateTime.UtcNow,
                 DueDatePayingOff = dueDatePayingOff,
                 TotalPayment = 0,
                 ClintId = clintId,
@@ -100,8 +99,8 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
                 ProductId = productId,
                 OrderId = orderId,
                 Stock = quantity,
-                StockStatues = StaticGenerator.ProductStockStatues.Procurement,
-                Id = Guid.NewGuid()
+                Id = Guid.NewGuid(),
+                DateTime = DateTime.UtcNow,
             });
         }
 
@@ -110,19 +109,22 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
             var product = _context.ProductPrices.Add(new ProductPrice()
             {
                 ProductId = productId,
-                DateTime = DateTime.Now,
+                DateTime = DateTime.UtcNow,
                 Discount = discount,
                 Vat = vat,
                 ProcPrice = price,
-                Id = Guid.NewGuid()
+                Id = Guid.NewGuid(),
+                ProcessType = "مشتريات"
             });
 
         }
         private bool SupplierProductQuantity(Guid productId, int quantity)
         {
-            var productQuantity = _context.Products.FirstOrDefault(d => d.Id == productId).TotalQuantity;
+            var product = _context.Products.FirstOrDefault(d => d.Id == productId);
+
+            var productQuantity = product.TotalQuantity;
             productQuantity = productQuantity + quantity;
-            _context.Products.FirstOrDefault(d => d.Id == productId).TotalQuantity = productQuantity;
+            product.TotalQuantity = productQuantity;
             _context.SaveChanges();
             return true;
 
@@ -139,7 +141,8 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
         }
         public decimal GetLastProductPrice(Guid productId)
         {
-            var product = _context.ProductPrices.OrderByDescending(d => d.DateTime).FirstOrDefault(d => d.Id == productId);
+            var product = _context.ProductPrices.OrderByDescending(d => d.DateTime)
+                .FirstOrDefault(d => d.ProcessType== "مشتريات" && d.Id == productId);
             if (product != null)
             {
                 return product.ProcPrice;

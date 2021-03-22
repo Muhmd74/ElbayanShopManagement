@@ -60,7 +60,6 @@ namespace ElbayanServices.Repository.Employees.Employees
                 employee.ResidenceType = model.ResidenceType;
                 employee.Position = model.Position;
                 employee.Salary = model.Salary;
-                employee.Id = model.Id;
                 _context.SaveChanges();
                 return true;
             }

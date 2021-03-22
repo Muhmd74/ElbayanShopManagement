@@ -117,7 +117,6 @@ namespace ElbayanServices.Repository.Clints.OrderReturns
             {
                 ProductId = productId,
                 Stock = quantity,
-                StockStatues = StaticGenerator.ProductStockStatues.ReturnsOrder
             });
             _context.SaveChanges();
             return true;
