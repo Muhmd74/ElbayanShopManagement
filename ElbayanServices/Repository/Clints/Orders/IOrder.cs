@@ -7,5 +7,7 @@ namespace ElbayanServices.Repository.Clints.Orders
     {
         bool CreateCustomerOrder(OrderDto model);
         ProductPriceMovementDto GetProductPriceMovement(Guid productId);
+        decimal GetLastProductPrice(Guid productId);
+
     }
 }

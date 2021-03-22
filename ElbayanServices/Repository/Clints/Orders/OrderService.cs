@@ -31,6 +31,18 @@ namespace ElbayanServices.Repository.Clints.Orders
 
             return null;
         }
+
+        public decimal GetLastProductPrice(Guid productId)
+        {
+            var product = _context.ProductPrices.OrderByDescending(d=>d.DateTime).FirstOrDefault(d => d.Id == productId);
+            if (product!=null)
+            {
+                return product.ProcPrice;
+            }
+
+            return 0;
+        }
+
         public bool CreateCustomerOrder(OrderDto model)
         {
 
