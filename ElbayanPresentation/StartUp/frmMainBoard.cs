@@ -204,12 +204,23 @@ namespace ElbayaNPresentation
 
         private void barButtonItem14_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //frmProcurementOrder.Intance.ShowDialog();  
-            //frmOrderPurchase.Intance.ShowDialog();
-
             frmOrderPurchase frm = new frmOrderPurchase();
             frm.ShowDialog();
+        }
 
+        private void barButtonItem8_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!this.gcContainer.Controls.Contains(frm_ProductStock.Instance))
+            {
+                frm_ProductStock.Instance.TopLevel = false;
+                frm_ProductStock.Instance.TopMost = false;
+                this.gcContainer.Controls.Add(frm_ProductStock.Instance);
+                frm_ProductStock.Instance.Dock = DockStyle.Fill;
+                frm_ProductStock.Instance.BringToFront();
+                frm_ProductStock.Instance.Show();
+            }
+            frm_ProductStock.Instance.BringToFront();
+            frm_ProductStock.Instance.Show();
         }
     }
 }

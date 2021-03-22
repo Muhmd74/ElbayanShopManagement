@@ -37,5 +37,6 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
         CheckBox IsDeferred { get; set; }
         Guna2TextBox UserName { get; set; }
         DataGridView OrderProduct { get; set; }
+        int RowIndex { get; set; }
     }
 }

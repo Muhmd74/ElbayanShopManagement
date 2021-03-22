@@ -207,6 +207,12 @@
     <Compile Include="Views\Purchases\Procurement\frmProcurementOrder.Designer.cs">
       <DependentUpon>frmProcurementOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Purchases\Procurement\PurchasesOffers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Purchases\Procurement\PurchasesOffers.Designer.cs">
+      <DependentUpon>PurchasesOffers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Store\Building\ucBuilding.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -236,6 +242,12 @@
     </Compile>
     <Compile Include="Views\Store\Product\frmNewProduct.Designer.cs">
       <DependentUpon>frmNewProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Store\Product\frm_ProductStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Store\Product\frm_ProductStock.Designer.cs">
+      <DependentUpon>frm_ProductStock.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Store\Product\ucAllProductsView.cs">
       <SubType>UserControl</SubType>
@@ -305,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Store\Product\frmNewProduct.resx">
       <DependentUpon>frmNewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Store\Product\frm_ProductStock.resx">
+      <DependentUpon>frm_ProductStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Store\Product\ucAllProductsView.resx">
       <DependentUpon>ucAllProductsView.cs</DependentUpon>

@@ -85,7 +85,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
                             SubTotalWithoutDiscount = Convert.ToDecimal(_view.TotalOrderWithoutDiscount.Text),
                             TotalAfterDiscount = Convert.ToDecimal(_view.TotalOrderWithDiscount.Text),
                             PosId = new Guid("90cd83b1-cf81-eb11-84c2-80a5899d8326"),
-                            
+
                         });
                         MessageBox.Show("DONE");
                         ClearControl();
@@ -123,7 +123,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
                     OrderId = _view.ID,
                     Quantity = Convert.ToInt32(_view.OrderProduct.Rows[i].Cells["Qunatity"].Value),
                     TotalPrice = (Convert.ToInt32(_view.OrderProduct.Rows[i].Cells["Qunatity"].Value) *
-                                     Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["PriceTOQuantity"].Value)) 
+                                     Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["PriceTOQuantity"].Value))
                                      + Convert.ToInt32(_view.OrderProduct.Rows[i].Cells["VATValue"].Value),
                     TotalProductPrice = Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["Subtotal"].Value),
                     Vat = Convert.ToInt32(_view.OrderProduct.Rows[i].Cells["VATValue"].Value)
@@ -134,12 +134,13 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
 
 
         }
-        internal void PopulateQualityEdit(int index)
+        internal void PopulateQualityEdit()
         {
             frmEditQuantity.Instance.txtQuantity.SelectAll();
             frmEditQuantity.Instance.txtQuantity.Select();
-            var model = Product.GetById(new Guid(_view.OrderProduct.Rows[index].Cells["OrderProductId"].Value.ToString()));
-            frmEditQuantity.Instance.Quantity.Text = _view.OrderProduct.Rows[index].Cells["Qunatity"].Value.ToString();
+            //int index = _view.OrderProduct.CurrentRow.Index;
+            var model = Product.GetById(new Guid(_view.OrderProduct.CurrentRow.Cells["OrderProductId"].Value.ToString()));
+            frmEditQuantity.Instance.Quantity.Text = "1";
             frmEditQuantity.Instance.DefaultPrice.Text = model.PurchaseDefaultPrice.ToString();
             frmEditQuantity.Instance.Discount.Text = model.Discount.ToString();
             frmEditQuantity.Instance.Subtotal.Text = Math.Round((Convert.ToDecimal(frmEditQuantity.Instance.Quantity.Text)
@@ -165,7 +166,6 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
                 frmEditQuantity.Instance.TotalWithVat.Text = Math.Round(Convert.ToDecimal(frmEditQuantity.Instance.TotalProductPrice.Text), 3).ToString();
                 frmEditQuantity.Instance.VatValue.Text = "0.0";
             }
-            frmEditQuantity.Instance.ShowDialog();
         }
         internal void AddProductToDGV()
         {
@@ -218,14 +218,17 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
         {
             if (_view.OrderProduct.Rows.Count >= 1)
             {
-                int currentRow = _view.OrderProduct.SelectedRows[0].Index;
-                _view.OrderProduct.Rows.RemoveAt(currentRow);
-                if (_view.OrderProduct.Rows.Count <= 0)
+                if(_view.OrderProduct.SelectedRows.Count > 0)
                 {
-                    _view.Paid.Text = "0.0";
+                    int currentRow = _view.OrderProduct.SelectedRows[0].Index;
+                    _view.OrderProduct.Rows.RemoveAt(currentRow);
+                    if (_view.OrderProduct.Rows.Count <= 0)
+                    {
+                        _view.Paid.Text = "0.0";
+                    }
+                    ClaculateTotalOrderAmount();
+                    SelectLastRow();
                 }
-                ClaculateTotalOrderAmount();
-                SelectLastRow();
             }
         }
         internal void AddProductToDGVbtn()
@@ -241,37 +244,48 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
                 return;
             }
             var model = Product.GetById(new Guid(_view.Products.SelectedValue.ToString()));
-            var index = _view.OrderProduct.Rows.Add();
-            _view.OrderProduct.Rows[index].Cells["OrderProductId"].Value = model.Id.ToString();
-            _view.OrderProduct.Rows[index].Cells["PSNumber"].Value = model.ProductNumber;
-            _view.OrderProduct.Rows[index].Cells["ProductName"].Value = model.Name;
-            _view.OrderProduct.Rows[index].Cells["Unit"].Value = model.IsMAinSalesUnit;
-            _view.OrderProduct.Rows[index].Cells["Qunatity"].Value = 1;
-            decimal PriceIncludeVAT = Convert.ToDecimal(model.PurchaseDefaultPrice + (model.PurchaseDefaultPrice * (model.Vat / 100)));
-            _view.OrderProduct.Rows[index].Cells["PriceIncVat"].Value = PriceIncludeVAT;
-            _view.OrderProduct.Rows[index].Cells["Discount"].Value = model.Discount;
-            decimal SubtotalQuantity = Convert.ToDecimal(_view.OrderProduct.Rows[index].Cells["Qunatity"].Value)
-                * Convert.ToDecimal(_view.OrderProduct.Rows[index].Cells["PriceIncVat"].Value);
-            decimal Subtotal = SubtotalQuantity - (model.PurchaseDefaultPrice * (model.Discount / 100));
-            _view.OrderProduct.Rows[index].Cells["Subtotal"].Value = Subtotal;
-            ClaculateTotalOrderAmount();
-            SelectLastRow();
+            if (model != null)
+            {
+                var index = _view.OrderProduct.Rows.Add();
+                _view.OrderProduct.Rows[index].Cells["OrderProductId"].Value = model.Id.ToString();
+                _view.OrderProduct.Rows[index].Cells["PSNumber"].Value = model.ProductNumber;
+                _view.OrderProduct.Rows[index].Cells["ProductName"].Value = model.Name;
+                _view.OrderProduct.Rows[index].Cells["Unit"].Value = model.IsMAinSalesUnit;
+                // Quantity
+                _view.OrderProduct.Rows[index].Cells["Qunatity"].Value = 1;
+
+                // Calualte VAT Value (Default Price + (Default Price * (Model.VAT / 100)))
+                decimal VATValue = model.Vat / 100; // convert Percent To Value
+                // Calulate Price Include VAT => Quantity * Price Include VAT
+                decimal ProductPrice = model.PurchaseDefaultPrice * Convert.ToDecimal(_view.OrderProduct.Rows[index].Cells["Qunatity"].Value);
+                _view.OrderProduct.Rows[index].Cells["PriceTOQuantity"].Value = Math.Round(ProductPrice, 2);
+                decimal CalulateVATValue = Math.Round(ProductPrice * VATValue, 2);
+                _view.OrderProduct.Rows[index].Cells["VATValue"].Value = CalulateVATValue;
+                // Discount
+                decimal DiscountValue = model.Discount / 100; // Get discount Value ex. 12% => 0.12
+                // Calulate Product Discoun => ProductPrice - (Product Price * Discunt Value)
+                decimal ProductDiscount = ProductPrice * DiscountValue;
+                _view.OrderProduct.Rows[index].Cells["Discount"].Value = Math.Round(ProductDiscount, 2);
+                _view.OrderProduct.Rows[index].Cells["Subtotal"].Value = Math.Round((ProductPrice + CalulateVATValue) - ProductDiscount, 2);
+                ClaculateTotalOrderAmount();
+                SelectLastRow();
+            }
         }
         internal void ClaculateTotalOrderAmount()
         {
             try
             {
-                
+
                 decimal TotalOrderWithoutDiscount = 0;
                 decimal TotalOrderDiscount = 0;
                 decimal TotalOrderWithDiscount = 0;
                 decimal TotalVATValue = 0;
                 for (int i = 0; i <= _view.OrderProduct.Rows.Count - 1; i++)
                 {
-                    decimal PriceIncludeVAT = Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["PriceTOQuantity"].Value) 
+                    decimal PriceIncludeVAT = Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["PriceTOQuantity"].Value)
                         * Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["Qunatity"].Value)
                         + Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["VATValue"].Value);
-                    TotalOrderWithoutDiscount += PriceIncludeVAT ;
+                    TotalOrderWithoutDiscount += PriceIncludeVAT;
                     TotalOrderDiscount += Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["Discount"].Value);
                     TotalOrderWithDiscount += Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["Subtotal"].Value);
                     TotalVATValue += Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["VATValue"].Value);
@@ -303,7 +317,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
                 _view.TotalOrderWithoutDiscount.Text = _view.TotalOrderWithoutVAT.Text = _view.TotalOrderVAT.Text =
                 _view.Paid.Text = _view.Deferred.Text = "0.0";
         }
-        private void SelectLastRow()
+        internal void SelectLastRow()
         {
             if (_view.OrderProduct.Rows.Count >= 1)
             {
