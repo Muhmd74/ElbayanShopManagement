@@ -52,7 +52,7 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
                     //اضافة الكميه الي المنتج في جدول المنتجات 
                     SupplierProductQuantity(orderProduct.ProductId, orderProduct.Quantity);
                     //اضافة الكميه الجديده الي جدول حركة المنتج 
-                    SupplierProductStock(orderProduct.ProductId, orderProduct.Quantity, order.Id);
+                    //SupplierProductStock(orderProduct.ProductId, orderProduct.Quantity, order.Id);
                     SupplierProductPrice(orderProduct.ProductId, productPriceOnce, orderProduct.Discount, orderProduct.Vat);
                     _context.SaveChanges();
                 }

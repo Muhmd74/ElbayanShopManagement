@@ -30,8 +30,8 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrderPurchase));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtpOrderDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -49,6 +49,17 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.dgvOrderProduct = new System.Windows.Forms.DataGridView();
+            this.OrderProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PSNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qunatity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PriceTOQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VATValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbxActiveProduct = new System.Windows.Forms.ComboBox();
             this.btnAddNewProductDGV = new Guna.UI2.WinForms.Guna2Button();
             this.btnDeletedProductFromOrder = new Guna.UI2.WinForms.Guna2Button();
@@ -87,17 +98,6 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.dgvOrderProduct = new System.Windows.Forms.DataGridView();
-            this.OrderProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PSNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qunatity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PriceTOQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VATValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -106,6 +106,8 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.groupBox3.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -113,8 +115,6 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.groupBox8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // separatorControl1
@@ -370,6 +370,126 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "أصناف الفاتورة";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.dgvOrderProduct);
+            this.groupBox8.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox8.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox8.Location = new System.Drawing.Point(3, 68);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(974, 264);
+            this.groupBox8.TabIndex = 11;
+            this.groupBox8.TabStop = false;
+            // 
+            // dgvOrderProduct
+            // 
+            this.dgvOrderProduct.AllowUserToAddRows = false;
+            this.dgvOrderProduct.AllowUserToDeleteRows = false;
+            this.dgvOrderProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvOrderProduct.BackgroundColor = System.Drawing.Color.White;
+            this.dgvOrderProduct.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvOrderProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrderProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.OrderProductId,
+            this.PSNumber,
+            this.ProductName,
+            this.Unit,
+            this.Qunatity,
+            this.PriceTOQuantity,
+            this.VATValue,
+            this.Discount,
+            this.Subtotal});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(171)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOrderProduct.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvOrderProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvOrderProduct.Location = new System.Drawing.Point(3, 24);
+            this.dgvOrderProduct.Name = "dgvOrderProduct";
+            this.dgvOrderProduct.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.OldLace;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrderProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvOrderProduct.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.LemonChiffon;
+            this.dgvOrderProduct.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F);
+            this.dgvOrderProduct.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgvOrderProduct.RowTemplate.Height = 29;
+            this.dgvOrderProduct.Size = new System.Drawing.Size(968, 237);
+            this.dgvOrderProduct.TabIndex = 12;
+            // 
+            // OrderProductId
+            // 
+            this.OrderProductId.DataPropertyName = "Id";
+            this.OrderProductId.HeaderText = "رقم مرجعي المنتج";
+            this.OrderProductId.Name = "OrderProductId";
+            this.OrderProductId.ReadOnly = true;
+            this.OrderProductId.Visible = false;
+            // 
+            // PSNumber
+            // 
+            this.PSNumber.FillWeight = 81.21827F;
+            this.PSNumber.HeaderText = "رقم المنتج";
+            this.PSNumber.Name = "PSNumber";
+            this.PSNumber.ReadOnly = true;
+            // 
+            // ProductName
+            // 
+            this.ProductName.FillWeight = 147.0976F;
+            this.ProductName.HeaderText = "اسم المنتج";
+            this.ProductName.Name = "ProductName";
+            this.ProductName.ReadOnly = true;
+            // 
+            // Unit
+            // 
+            this.Unit.FillWeight = 58.1288F;
+            this.Unit.HeaderText = "الوحدة";
+            this.Unit.Name = "Unit";
+            this.Unit.ReadOnly = true;
+            // 
+            // Qunatity
+            // 
+            this.Qunatity.FillWeight = 58.16371F;
+            this.Qunatity.HeaderText = "الكمية";
+            this.Qunatity.Name = "Qunatity";
+            this.Qunatity.ReadOnly = true;
+            // 
+            // PriceTOQuantity
+            // 
+            this.PriceTOQuantity.FillWeight = 96.86215F;
+            this.PriceTOQuantity.HeaderText = "سعر الشراء";
+            this.PriceTOQuantity.Name = "PriceTOQuantity";
+            this.PriceTOQuantity.ReadOnly = true;
+            // 
+            // VATValue
+            // 
+            this.VATValue.FillWeight = 116.5403F;
+            this.VATValue.HeaderText = "قيمة الضريبة";
+            this.VATValue.Name = "VATValue";
+            this.VATValue.ReadOnly = true;
+            // 
+            // Discount
+            // 
+            this.Discount.FillWeight = 120.9946F;
+            this.Discount.HeaderText = "الخصم";
+            this.Discount.Name = "Discount";
+            this.Discount.ReadOnly = true;
+            // 
+            // Subtotal
+            // 
+            this.Subtotal.FillWeight = 120.9946F;
+            this.Subtotal.HeaderText = "الإجمالي";
+            this.Subtotal.Name = "Subtotal";
+            this.Subtotal.ReadOnly = true;
             // 
             // cbxActiveProduct
             // 
@@ -872,6 +992,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.btnBackTo.Size = new System.Drawing.Size(178, 39);
             this.btnBackTo.TabIndex = 10;
             this.btnBackTo.Text = "رجوع للقائمة السابقة";
+            this.btnBackTo.Click += new System.EventHandler(this.btnBackTo_Click);
             // 
             // btnNewOrder
             // 
@@ -888,6 +1009,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.btnNewOrder.Size = new System.Drawing.Size(178, 39);
             this.btnNewOrder.TabIndex = 10;
             this.btnNewOrder.Text = "فاتورة جديدة";
+            this.btnNewOrder.Click += new System.EventHandler(this.btnNewOrder_Click);
             // 
             // btnPrintOrder
             // 
@@ -1023,126 +1145,6 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.pictureBox4.TabIndex = 1;
             this.pictureBox4.TabStop = false;
             // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.dgvOrderProduct);
-            this.groupBox8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox8.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox8.Location = new System.Drawing.Point(3, 68);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(974, 264);
-            this.groupBox8.TabIndex = 11;
-            this.groupBox8.TabStop = false;
-            // 
-            // dgvOrderProduct
-            // 
-            this.dgvOrderProduct.AllowUserToAddRows = false;
-            this.dgvOrderProduct.AllowUserToDeleteRows = false;
-            this.dgvOrderProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvOrderProduct.BackgroundColor = System.Drawing.Color.White;
-            this.dgvOrderProduct.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dgvOrderProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrderProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.OrderProductId,
-            this.PSNumber,
-            this.ProductName,
-            this.Unit,
-            this.Qunatity,
-            this.PriceTOQuantity,
-            this.VATValue,
-            this.Discount,
-            this.Subtotal});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(171)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOrderProduct.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvOrderProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvOrderProduct.Location = new System.Drawing.Point(3, 24);
-            this.dgvOrderProduct.Name = "dgvOrderProduct";
-            this.dgvOrderProduct.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.OldLace;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrderProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvOrderProduct.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.LemonChiffon;
-            this.dgvOrderProduct.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F);
-            this.dgvOrderProduct.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgvOrderProduct.RowTemplate.Height = 29;
-            this.dgvOrderProduct.Size = new System.Drawing.Size(968, 237);
-            this.dgvOrderProduct.TabIndex = 12;
-            // 
-            // OrderProductId
-            // 
-            this.OrderProductId.DataPropertyName = "Id";
-            this.OrderProductId.HeaderText = "رقم مرجعي المنتج";
-            this.OrderProductId.Name = "OrderProductId";
-            this.OrderProductId.ReadOnly = true;
-            this.OrderProductId.Visible = false;
-            // 
-            // PSNumber
-            // 
-            this.PSNumber.FillWeight = 81.21827F;
-            this.PSNumber.HeaderText = "رقم المنتج";
-            this.PSNumber.Name = "PSNumber";
-            this.PSNumber.ReadOnly = true;
-            // 
-            // ProductName
-            // 
-            this.ProductName.FillWeight = 147.0976F;
-            this.ProductName.HeaderText = "اسم المنتج";
-            this.ProductName.Name = "ProductName";
-            this.ProductName.ReadOnly = true;
-            // 
-            // Unit
-            // 
-            this.Unit.FillWeight = 58.1288F;
-            this.Unit.HeaderText = "الوحدة";
-            this.Unit.Name = "Unit";
-            this.Unit.ReadOnly = true;
-            // 
-            // Qunatity
-            // 
-            this.Qunatity.FillWeight = 58.16371F;
-            this.Qunatity.HeaderText = "الكمية";
-            this.Qunatity.Name = "Qunatity";
-            this.Qunatity.ReadOnly = true;
-            // 
-            // PriceTOQuantity
-            // 
-            this.PriceTOQuantity.FillWeight = 96.86215F;
-            this.PriceTOQuantity.HeaderText = "سعر الشراء";
-            this.PriceTOQuantity.Name = "PriceTOQuantity";
-            this.PriceTOQuantity.ReadOnly = true;
-            // 
-            // VATValue
-            // 
-            this.VATValue.FillWeight = 116.5403F;
-            this.VATValue.HeaderText = "قيمة الضريبة";
-            this.VATValue.Name = "VATValue";
-            this.VATValue.ReadOnly = true;
-            // 
-            // Discount
-            // 
-            this.Discount.FillWeight = 120.9946F;
-            this.Discount.HeaderText = "الخصم";
-            this.Discount.Name = "Discount";
-            this.Discount.ReadOnly = true;
-            // 
-            // Subtotal
-            // 
-            this.Subtotal.FillWeight = 120.9946F;
-            this.Subtotal.HeaderText = "الإجمالي";
-            this.Subtotal.Name = "Subtotal";
-            this.Subtotal.ReadOnly = true;
-            // 
             // frmOrderPurchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1181,6 +1183,8 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -1191,8 +1195,6 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.groupBox8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderProduct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

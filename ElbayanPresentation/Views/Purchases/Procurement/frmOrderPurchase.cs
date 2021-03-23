@@ -61,6 +61,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         public CheckBox IsDeferred { get => cbIsDeferred; set => cbIsDeferred = value; }
         public Guna2TextBox UserName { get => txtUserName; set => txtUserName = value; }
         public DataGridView OrderProduct { get => dgvOrderProduct; set => dgvOrderProduct = value; }
+        public int RowIndex { get; set; }
 
         // Supplier Populate
         private void btnAddNewSupplier_Click(object sender, EventArgs e)
@@ -110,7 +111,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         }
         private void frmOrderPurchase_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F12)
+            if (e.KeyCode == Keys.F10)
             {
                 if (dgvOrderProduct.Rows.Count >= 1)
                 {
@@ -128,8 +129,17 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             {
                 if (dgvOrderProduct.Rows.Count >= 1)
                 {
-                    int index = OrderProduct.SelectedRows[0].Index;
-                    Presenter.PopulateQualityEdit(index);
+                    if(dgvOrderProduct.SelectedRows.Count > 0)
+                    {
+                        //RowIndex = dgvOrderProduct.SelectedRows[0].Index;
+                        Presenter.PopulateQualityEdit();
+                        frmEditQuantity.Instance.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("لا بد من تحديد صف كامل للتعديل عليه");
+                        return;
+                    }
 
                 }
                 else
@@ -138,12 +148,33 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
                     return;
                 }
             }
+            if(e.KeyCode == Keys.F2)
+            {
+                Presenter.AddProductToDGVbtn();
+            }
         }
 
         private void btnUpdateProudctQuantity_Click(object sender, EventArgs e)
         {
-            int index = OrderProduct.SelectedRows[0].Index;
-            Presenter.PopulateQualityEdit(index);
+            if (dgvOrderProduct.Rows.Count >= 1)
+            {
+                if (dgvOrderProduct.SelectedRows.Count > 0)
+                {
+                    Presenter.PopulateQualityEdit();
+                    frmEditQuantity.Instance.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("لا بد من تحديد صف كامل للتعديل عليه");
+                    return;
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("لا بد من إضافة منتجات أولا للفاتورة");
+                return;
+            }
         }
 
         private void txtPaid_TextChanged(object sender, EventArgs e)
@@ -154,6 +185,16 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         private void btnSaveOrder_Click(object sender, EventArgs e)
         {
             Presenter.CreateSupplierOrder();
+        }
+
+        private void btnBackTo_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnNewOrder_Click(object sender, EventArgs e)
+        {
+            Presenter.ClearControl();
         }
     }
 }

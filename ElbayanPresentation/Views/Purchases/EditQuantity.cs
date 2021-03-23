@@ -106,5 +106,11 @@ namespace ElbayaNPresentation.Views.Purchases
         {
             Presenter.CalulateQuanity();
         }
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            txtQuantity_Leave(null, null);
+            this.Close();
+            frmOrderPurchase.Intance.Presenter.ClaculateTotalOrderAmount();
+        }
     }
 }
