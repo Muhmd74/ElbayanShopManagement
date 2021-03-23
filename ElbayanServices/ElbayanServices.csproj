@@ -112,6 +112,7 @@
     <Compile Include="Repository\Products\Category\Dtos\CategoryDto.cs" />
     <Compile Include="Repository\Products\Category\ICategory.cs" />
     <Compile Include="Repository\Products\Category\Validators\CreateCategoryValidator.cs" />
+    <Compile Include="Repository\Products\ProductStock\Dtos\ProductStockDetails.cs" />
     <Compile Include="Repository\Products\ProductStock\Dtos\ProductStockDto.cs" />
     <Compile Include="Repository\Products\ProductStock\IProductStock.cs" />
     <Compile Include="Repository\Products\ProductStock\ProductStockService.cs" />
