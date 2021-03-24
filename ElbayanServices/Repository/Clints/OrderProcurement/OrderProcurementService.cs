@@ -25,7 +25,7 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
                 Deferred = model.Deferred,
                 DateTime = model.DateTime,
                 Payment = model.Payment,
-                OrderNumber = GenerateSequenceNumberSupplier(),
+                OrderNumber = model.OrderNumber,
                 IsReturn = false,
                 OrderType = "مشتريات",
                 ClintId = model.ClintId,
@@ -51,7 +51,7 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
                     //اضافة الكميه الي المنتج في جدول المنتجات 
                     SupplierProductQuantity(orderProduct.ProductId, orderProduct.Quantity);
                     //اضافة الكميه الجديده الي جدول حركة المنتج 
-                    //SupplierProductStock(orderProduct.ProductId, orderProduct.Quantity, order.Id);
+                    SupplierProductStock(orderProduct.ProductId, orderProduct.Quantity, order.Id);
                     SupplierProductPrice(orderProduct.ProductId, productPriceOnce, orderProduct.Discount, orderProduct.Vat);
                     _context.SaveChanges();
                 }
@@ -84,7 +84,7 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
                 Payment = 0,
                 OrderId = orderId,
                 DeferredOfOrder = deferred,
-                CollectingPaymentDate = DateTime.UtcNow,
+                CollectingPaymentDate = DateTime.Now,
                 DueDatePayingOff = dueDatePayingOff,
                 TotalPayment = 0,
                 ClintId = clintId,
@@ -109,7 +109,7 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
             var product = _context.ProductPrices.Add(new ProductPrice()
             {
                 ProductId = productId,
-                DateTime = DateTime.UtcNow,
+                DateTime = DateTime.Now,
                 Discount = discount,
                 Vat = vat,
                 ProcPrice = price,

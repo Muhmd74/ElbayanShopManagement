@@ -91,7 +91,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
                         ClearControl();
 
                     }
-                    catch (Exception e)
+                    catch (Exception)
                     {//MessageBox.Show(e.InnerException.Message);
                     }
                 }

@@ -62,7 +62,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         public Guna2TextBox UserName { get => txtUserName; set => txtUserName = value; }
         public DataGridView OrderProduct { get => dgvOrderProduct; set => dgvOrderProduct = value; }
         public int RowIndex { get; set; }
-
+        
         // Supplier Populate
         private void btnAddNewSupplier_Click(object sender, EventArgs e)
         {
@@ -82,6 +82,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
                 return;
             }
         }
+        
         // Product Populate
         private void cbxActiveProduct_Validating(object sender, CancelEventArgs e)
         {
@@ -116,14 +117,12 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
                 if (dgvOrderProduct.Rows.Count >= 1)
                 {
                     Presenter.CreateSupplierOrder();
-                    //frmEditQuantity.Intance.ShowDialog();
                 }
                 else
                 {
                     MessageBox.Show("لا بد من إضافة منتجات أولا للفاتورة");
                     return;
                 }
-
             }
             if (e.KeyCode == Keys.F11)
             {
@@ -153,7 +152,6 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
                 Presenter.AddProductToDGVbtn();
             }
         }
-
         private void btnUpdateProudctQuantity_Click(object sender, EventArgs e)
         {
             if (dgvOrderProduct.Rows.Count >= 1)
@@ -176,22 +174,18 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
                 return;
             }
         }
-
         private void txtPaid_TextChanged(object sender, EventArgs e)
         {
             Presenter.ClaculateTotalOrderAmount();
         }
-
         private void btnSaveOrder_Click(object sender, EventArgs e)
         {
             Presenter.CreateSupplierOrder();
         }
-
         private void btnBackTo_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btnNewOrder_Click(object sender, EventArgs e)
         {
             Presenter.ClearControl();
