@@ -1,4 +1,5 @@
 ﻿//using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
 using ElbayaNPresentation.Presenters.Purchases.ProcurementOrder;
 using Guna.UI2.WinForms;
 using System;
@@ -186,6 +187,12 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
                     return;
                 }
             }
+        }
+
+        private void btnPrintOrder_Click(object sender, EventArgs e)
+        {
+            //ReportPrintTool printTools = new ReportPrintTool(Presenter.PrintReport());
+            //printTools.ShowPreview();
         }
     }
 }

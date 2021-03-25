@@ -1,5 +1,7 @@
-﻿using ElbayanDatabase.ConnectionTools;
+﻿using DevExpress.XtraReports.UI;
+using ElbayanDatabase.ConnectionTools;
 using ElbayaNPresentation.Presenters.CommonPresenter;
+using ElbayaNPresentation.Reports;
 using ElbayaNPresentation.Views.Client;
 using ElbayaNPresentation.Views.Purchases;
 using ElbayanServices.Repository.Clints.OrderProcurement;
@@ -331,6 +333,17 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
         {
             var model = Supplier.GetSupplierById(new Guid(_view.Suppliers.SelectedValue.ToString()));
             _view.SupplierMobile.Text = model.Mobile.ToString();
+        }
+        internal XtraReport PrintReport()
+        {
+            rptOrderPurchase rpt = new rptOrderPurchase() { 
+                Parameters = { }, 
+
+            };
+            var product = Product.GetById(new Guid("d918755e-d682-eb11-84c2-80a5899d8326"));
+            rpt.DataSource = product;
+            rpt.xtcorderNUmber.Value = product.Name;
+            return rpt;
         }
     }
 }

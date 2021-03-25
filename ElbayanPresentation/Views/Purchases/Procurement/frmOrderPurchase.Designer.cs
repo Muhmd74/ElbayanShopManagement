@@ -1057,6 +1057,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.btnPrintOrder.Size = new System.Drawing.Size(178, 39);
             this.btnPrintOrder.TabIndex = 10;
             this.btnPrintOrder.Text = "طباعة  الفاتورة | F12";
+            this.btnPrintOrder.Click += new System.EventHandler(this.btnPrintOrder_Click);
             // 
             // btnUpdateProudctQuantity
             // 
