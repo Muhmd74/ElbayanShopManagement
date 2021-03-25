@@ -62,7 +62,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         public Guna2TextBox UserName { get => txtUserName; set => txtUserName = value; }
         public DataGridView OrderProduct { get => dgvOrderProduct; set => dgvOrderProduct = value; }
         public int RowIndex { get; set; }
-        
+
         // Supplier Populate
         private void btnAddNewSupplier_Click(object sender, EventArgs e)
         {
@@ -82,7 +82,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
                 return;
             }
         }
-        
+
         // Product Populate
         private void cbxActiveProduct_Validating(object sender, CancelEventArgs e)
         {
@@ -114,21 +114,13 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         {
             if (e.KeyCode == Keys.F10)
             {
-                if (dgvOrderProduct.Rows.Count >= 1)
-                {
-                    Presenter.CreateSupplierOrder();
-                }
-                else
-                {
-                    MessageBox.Show("لا بد من إضافة منتجات أولا للفاتورة");
-                    return;
-                }
+                Presenter.CreateSupplierOrder();
             }
             if (e.KeyCode == Keys.F11)
             {
                 if (dgvOrderProduct.Rows.Count >= 1)
                 {
-                    if(dgvOrderProduct.SelectedRows.Count > 0)
+                    if (dgvOrderProduct.SelectedRows.Count > 0)
                     {
                         //RowIndex = dgvOrderProduct.SelectedRows[0].Index;
                         Presenter.PopulateQualityEdit();
@@ -147,7 +139,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
                     return;
                 }
             }
-            if(e.KeyCode == Keys.F2)
+            if (e.KeyCode == Keys.F2)
             {
                 Presenter.AddProductToDGVbtn();
             }

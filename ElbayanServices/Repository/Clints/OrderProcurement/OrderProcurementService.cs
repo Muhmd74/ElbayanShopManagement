@@ -42,7 +42,6 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
 
             if (order != null)
             {
-
                 foreach (var orderProduct in model.OrderProductDto)
                 {
                     var productPriceOnce = orderProduct.PriceSale / orderProduct.Quantity;
@@ -55,7 +54,6 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
                     SupplierProductPrice(orderProduct.ProductId, productPriceOnce, orderProduct.Discount, orderProduct.Vat);
                     _context.SaveChanges();
                 }
-
             }
             return true;
         }
@@ -103,7 +101,6 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
                 DateTime = DateTime.UtcNow,
             });
         }
-
         private void SupplierProductPrice(Guid productId, decimal price, decimal discount, int vat)
         {
             var product = _context.ProductPrices.Add(new ProductPrice()
@@ -141,8 +138,8 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
         }
         public decimal GetLastProductPrice(Guid productId)
         {
-            var product = _context.ProductPrices.OrderByDescending(d => d.DateTime)
-                .FirstOrDefault(d => d.ProcessType== "مشتريات" && d.Id == productId);
+            var product = _context.ProductPrices.OrderBy(d => d.DateTime)
+                .FirstOrDefault(d => d.ProcessType== "مشتريات" && d.ProductId == productId);
             if (product != null)
             {
                 return product.ProcPrice;

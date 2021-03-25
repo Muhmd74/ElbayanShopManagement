@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace ElbayaNPresentation.Views.Purchases
 {
-    public partial class frmEditQuantity : MetroFramework.Forms.MetroForm, IViewQuantityEdit
+    public partial class frmEditQuantity : XtraForm, IViewQuantityEdit
     {
         public frmEditQuantity()
         {
@@ -46,7 +46,7 @@ namespace ElbayaNPresentation.Views.Purchases
         public CheckBox IsVatIncluded { get => cbIncludeVAT; set => cbIncludeVAT = value; }
         public Guna2Button SaveQuantityt { get => btnSave; set => btnSave = value; }
         public Label VatValue { get => lblVatValue; set => lblVatValue = value; }
-        public Label DiscountValue { get => lblDiscountValue; set => lblDiscountValue = value; }
+        public Guna2TextBox DiscountValue { get => txtDiscountValue; set => txtDiscountValue = value; }
         public decimal Vat { get; set; }
         private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -67,17 +67,18 @@ namespace ElbayaNPresentation.Views.Purchases
         }
         private void frmEditQuantity_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Presenter.PopulateOrderProductUpdatedQuantity();
             this.Hide();
             e.Cancel = true;
-            Presenter.PopulateOrderProductUpdatedQuantity();
         }
         private void frmEditQuantity_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 txtQuantity_Leave(null, null);
-                this.Close();
                 frmOrderPurchase.Intance.Presenter.ClaculateTotalOrderAmount();
+                this.Close();
+
             }
         }
         private void txtQuantity_Enter(object sender, EventArgs e)

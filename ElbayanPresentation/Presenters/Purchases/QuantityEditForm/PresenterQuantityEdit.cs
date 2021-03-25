@@ -70,17 +70,14 @@ namespace ElbayaNPresentation.Presenters.Purchases.QuantityEditForm
         internal void PopulateOrderProductUpdatedQuantity()
         {
             int index = frmOrderPurchase.Intance.OrderProduct.SelectedRows[0].Index;
-            try
-            {
-                frmOrderPurchase.Intance.dgvOrderProduct.Rows[index].Cells["Qunatity"].Value = _view.Quantity.Text;
-                frmOrderPurchase.Intance.dgvOrderProduct.Rows[index].Cells["PriceTOQuantity"].Value = _view.DefaultPrice.Text;
-                frmOrderPurchase.Intance.dgvOrderProduct.Rows[index].Cells["Discount"].Value = _view.DiscountValue.Text;
-                frmOrderPurchase.Intance.dgvOrderProduct.Rows[index].Cells["VATValue"].Value = _view.VatValue.Text;
-                frmOrderPurchase.Intance.dgvOrderProduct.Rows[index].Cells["Subtotal"].Value = _view.TotalWithVat.Text;
-                frmOrderPurchase.Intance.Presenter.ClaculateTotalOrderAmount();
-                frmOrderPurchase.Intance.Presenter.SelectLastRow();
-            }
-            catch (Exception) { }
+            frmOrderPurchase.Intance.dgvOrderProduct.Rows[index].Cells["Qunatity"].Value = _view.Quantity.Text;
+            frmOrderPurchase.Intance.dgvOrderProduct.Rows[index].Cells["PriceTOQuantity"].Value = _view.DefaultPrice.Text;
+            frmOrderPurchase.Intance.dgvOrderProduct.Rows[index].Cells["Discount"].Value = _view.DiscountValue.Text;
+            frmOrderPurchase.Intance.dgvOrderProduct.Rows[index].Cells["VATValue"].Value = _view.VatValue.Text;
+            frmOrderPurchase.Intance.dgvOrderProduct.Rows[index].Cells["Subtotal"].Value = _view.TotalWithVat.Text;
+            
+            frmOrderPurchase.Intance.Presenter.ClaculateTotalOrderAmount();
+            frmOrderPurchase.Intance.Presenter.SelectLastRow();
         }
     }
 }

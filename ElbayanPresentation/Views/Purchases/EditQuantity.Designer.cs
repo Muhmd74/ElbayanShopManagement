@@ -48,9 +48,9 @@ namespace ElbayaNPresentation.Views.Purchases
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.lblVatValue = new System.Windows.Forms.Label();
             this.txtDefaultPrice = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblDiscountValue = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtDiscountValue = new Guna.UI2.WinForms.Guna2TextBox();
             this.SuspendLayout();
             // 
             // txtQuantity
@@ -396,17 +396,6 @@ namespace ElbayaNPresentation.Views.Purchases
             this.txtDefaultPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDefaultPrice_KeyPress);
             this.txtDefaultPrice.Leave += new System.EventHandler(this.txtDefaultPrice_Leave_1);
             // 
-            // lblDiscountValue
-            // 
-            this.lblDiscountValue.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblDiscountValue.AutoSize = true;
-            this.lblDiscountValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblDiscountValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(170)))), ((int)(((byte)(224)))));
-            this.lblDiscountValue.Location = new System.Drawing.Point(332, 239);
-            this.lblDiscountValue.Name = "lblDiscountValue";
-            this.lblDiscountValue.Size = new System.Drawing.Size(0, 21);
-            this.lblDiscountValue.TabIndex = 16;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -424,11 +413,43 @@ namespace ElbayaNPresentation.Views.Purchases
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(170)))), ((int)(((byte)(224)))));
-            this.label2.Location = new System.Drawing.Point(378, 239);
+            this.label2.Location = new System.Drawing.Point(413, 239);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 21);
             this.label2.TabIndex = 16;
             this.label2.Text = "ريال سعودي";
+            // 
+            // txtDiscountValue
+            // 
+            this.txtDiscountValue.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtDiscountValue.BorderColor = System.Drawing.Color.Gray;
+            this.txtDiscountValue.BorderRadius = 5;
+            this.txtDiscountValue.BorderThickness = 2;
+            this.txtDiscountValue.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDiscountValue.DefaultText = "";
+            this.txtDiscountValue.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDiscountValue.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDiscountValue.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtDiscountValue.DisabledState.Parent = this.txtDiscountValue;
+            this.txtDiscountValue.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDiscountValue.FocusedState.BorderColor = System.Drawing.Color.Black;
+            this.txtDiscountValue.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(255)))), ((int)(((byte)(179)))));
+            this.txtDiscountValue.FocusedState.Parent = this.txtDiscountValue;
+            this.txtDiscountValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiscountValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(170)))), ((int)(((byte)(224)))));
+            this.txtDiscountValue.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDiscountValue.HoverState.Parent = this.txtDiscountValue;
+            this.txtDiscountValue.Location = new System.Drawing.Point(338, 230);
+            this.txtDiscountValue.Margin = new System.Windows.Forms.Padding(9, 16, 9, 16);
+            this.txtDiscountValue.Name = "txtDiscountValue";
+            this.txtDiscountValue.PasswordChar = '\0';
+            this.txtDiscountValue.PlaceholderText = "";
+            this.txtDiscountValue.SelectedText = "";
+            this.txtDiscountValue.ShadowDecoration.Parent = this.txtDiscountValue;
+            this.txtDiscountValue.Size = new System.Drawing.Size(63, 39);
+            this.txtDiscountValue.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtDiscountValue.TabIndex = 4;
+            this.txtDiscountValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // frmEditQuantity
             // 
@@ -437,12 +458,12 @@ namespace ElbayaNPresentation.Views.Purchases
             this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblDiscountValue);
             this.Controls.Add(this.lblVatValue);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.cbIncludeVAT);
             this.Controls.Add(this.txtTotalPrice);
             this.Controls.Add(this.txtDefaultPrice);
+            this.Controls.Add(this.txtDiscountValue);
             this.Controls.Add(this.txtTotalProductPrice);
             this.Controls.Add(this.txtSubtotal);
             this.Controls.Add(this.txtDiscount);
@@ -460,9 +481,9 @@ namespace ElbayaNPresentation.Views.Purchases
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Movable = false;
+            //this.Movable = false;
             this.Name = "frmEditQuantity";
-            this.Resizable = false;
+            //this.Resizable = false;
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmEditQuantity_FormClosing);
@@ -493,8 +514,8 @@ namespace ElbayaNPresentation.Views.Purchases
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private System.Windows.Forms.Label lblVatValue;
         internal Guna.UI2.WinForms.Guna2TextBox txtDefaultPrice;
-        private System.Windows.Forms.Label lblDiscountValue;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        internal Guna.UI2.WinForms.Guna2TextBox txtDiscountValue;
     }
 }
