@@ -117,18 +117,16 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
                 {
                     ProductId = new Guid(_view.OrderProduct.Rows[i].Cells["OrderProductId"].Value.ToString()),
                     ProductName = _view.OrderProduct.Rows[i].Cells["ProductName"].Value.ToString(),
-                    //Discount = Decimal.Parse(_view.OrderProduct.Rows[i].Cells["Discount"].Value.ToString(), System.Globalization.NumberStyles.Any),  
                     Discount = Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["Discount"].Value.ToString()),
                     PriceSale = Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["PriceTOQuantity"].Value.ToString()),
                     Quantity = Convert.ToInt32(_view.OrderProduct.Rows[i].Cells["Qunatity"].Value),
                     SubTotalPrice = Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["Qunatity"].Value.ToString()) *
                                      Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["PriceTOQuantity"].Value.ToString()),
-                    //OrderId = _view.ID,
                     TotalPrice = (Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["Qunatity"].Value.ToString()) *
                                      Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["PriceTOQuantity"].Value.ToString()))
                                      + Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["VATValue"].Value.ToString()),
-                    TotalProductPrice = Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["Subtotal"].Value.ToString()),
-                    Vat = int.Parse(_view.OrderProduct.Rows[i].Cells["VATValue"].Value.ToString(), System.Globalization.NumberStyles.Any)
+                    TotalProductPrice = Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["Subtotal"].Value),
+                    Vat = (int) _view.OrderProduct.Rows[i].Cells["VATValue"].Value
                 };
                 orderProducts.Add(orderProduct);
             }
@@ -140,27 +138,28 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
         {
             frmEditQuantity.Instance.txtQuantity.SelectAll();
             frmEditQuantity.Instance.txtQuantity.Select();
-            //int index = _view.OrderProduct.CurrentRow.Index;
-            var model = Product.GetById(new Guid(_view.OrderProduct.CurrentRow.Cells["OrderProductId"].Value.ToString()));
+            int index = _view.OrderProduct.SelectedRows[0].Index;
             frmEditQuantity.Instance.Quantity.Text = "1";
-            frmEditQuantity.Instance.DefaultPrice.Text = model.PurchaseDefaultPrice.ToString();
-            frmEditQuantity.Instance.Discount.Text = model.Discount.ToString();
+            frmEditQuantity.Instance.DefaultPrice.Text = _view.OrderProduct.Rows[index].Cells["LastPurchasePrice"].Value.ToString();
+            frmEditQuantity.Instance.Discount.Text = _view.OrderProduct.Rows[index].Cells["DiscountPercent"].Value.ToString();
+          
             frmEditQuantity.Instance.Subtotal.Text = Math.Round((Convert.ToDecimal(frmEditQuantity.Instance.Quantity.Text)
                 * Convert.ToDecimal(frmEditQuantity.Instance.DefaultPrice.Text)), 2).ToString();
-
             // Calulate Discount = Subtotal - (SubTotal * (Discount / 100))
             decimal discount = (Convert.ToDecimal(frmEditQuantity.Instance.Subtotal.Text)
                 * (Convert.ToDecimal(frmEditQuantity.Instance.Discount.Text) / 100));
             frmEditQuantity.Instance.TotalProductPrice.Text = Math.Round((Convert.ToDecimal(frmEditQuantity.Instance.Subtotal.Text) - discount), 3).ToString();
-
             // Calulate VAT => TotalProductPrice + (TotalProductPrice * (Product VAT))
-            decimal productVAT = Convert.ToDecimal(frmEditQuantity.Instance.TotalProductPrice.Text) * (model.Vat / 100);
-            frmEditQuantity.Instance.Vat = model.Vat;
-            if (model.Vat > 0)
+            decimal VATPercent = Convert.ToDecimal(_view.OrderProduct.Rows[index].Cells["VATPercent"].Value);
+
+            
+            if (VATPercent > 0)
             {
                 frmEditQuantity.Instance.IsVatIncluded.Checked = true;
+                decimal productVAT = Convert.ToDecimal(frmEditQuantity.Instance.TotalProductPrice.Text) * (VATPercent / 100);
                 frmEditQuantity.Instance.VatValue.Text = Math.Round(productVAT, 2).ToString();
-                frmEditQuantity.Instance.TotalWithVat.Text = Math.Round((Convert.ToDecimal(frmEditQuantity.Instance.TotalProductPrice.Text) + productVAT), 3).ToString();
+                frmEditQuantity.Instance.Vat = VATPercent / 100;
+                frmEditQuantity.Instance.TotalWithVat.Text = Math.Round((Convert.ToDecimal(frmEditQuantity.Instance.TotalProductPrice.Text) + productVAT), 2).ToString();
             }
             else
             {
@@ -225,14 +224,16 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
         }
         private void GetProduct(ProductDto model)
         {
-            decimal LastPurchasePrice = orderProcuremnt.GetLastProductPrice(model.Id);
             if (model != null)
             {
+                decimal LastPurchasePrice = orderProcuremnt.GetLastProductPrice(model.Id);
                 var index = _view.OrderProduct.Rows.Add();
                 _view.OrderProduct.Rows[index].Cells["OrderProductId"].Value = model.Id.ToString();
                 _view.OrderProduct.Rows[index].Cells["PSNumber"].Value = model.ProductNumber;
                 _view.OrderProduct.Rows[index].Cells["ProductName"].Value = model.Name;
                 _view.OrderProduct.Rows[index].Cells["Unit"].Value = model.IsMAinSalesUnit;
+                _view.OrderProduct.Rows[index].Cells["LastPurchasePrice"].Value = LastPurchasePrice;
+
                 // Quantity
                 _view.OrderProduct.Rows[index].Cells["Qunatity"].Value = 1;
 
@@ -244,13 +245,23 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
                 // Calulate Product Discoun => ProductPrice - (Product Price * Discunt Value)
                 decimal ProductDiscount = ProductPrice * DiscountValue;
                 _view.OrderProduct.Rows[index].Cells["Discount"].Value = Math.Round(ProductDiscount, 2);
+                _view.OrderProduct.Rows[index].Cells["DiscountPercent"].Value = Math.Round(model.Discount, 2);
                
                 // Calualte VAT Value (Default Price + (Default Price * (Model.VAT / 100)))
-                decimal VATValue = model.Vat / 100; // convert Percent To Value
-                // Calulate Price Include VAT => Quantity * Price Include VAT
-                decimal CalulateVATValue = Math.Round(ProductPrice * VATValue, 2);
-                _view.OrderProduct.Rows[index].Cells["VATValue"].Value = CalulateVATValue;
-                _view.OrderProduct.Rows[index].Cells["Subtotal"].Value = Math.Round((ProductPrice - ProductDiscount ) + CalulateVATValue, 2);
+                if(model.Vat > 0)
+                {
+                    decimal VATValue = model.Vat / 100; // convert Percent To Value
+                    _view.OrderProduct.Rows[index].Cells["VATPercent"].Value = model.Vat;
+                    decimal CalulateVATValue = Math.Round(ProductPrice * VATValue, 2);
+                    _view.OrderProduct.Rows[index].Cells["VATValue"].Value = CalulateVATValue;
+                    _view.OrderProduct.Rows[index].Cells["Subtotal"].Value = Math.Round((ProductPrice - ProductDiscount) + CalulateVATValue, 2);
+                }
+                else
+                {
+                    _view.OrderProduct.Rows[index].Cells["VATPercent"].Value = model.Vat;
+                    _view.OrderProduct.Rows[index].Cells["VATValue"].Value = "0.0";
+                    _view.OrderProduct.Rows[index].Cells["Subtotal"].Value = Math.Round((ProductPrice - ProductDiscount), 2);
+                }
                 ClaculateTotalOrderAmount();
                 SelectLastRow();
             }

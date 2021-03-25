@@ -72,29 +72,21 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         {
             Presenter.OnSelectedValueChanged_SupplierMobile();
         }
-        private void cbxSupplier_Validating(object sender, CancelEventArgs e)
+        private void cbxSupplier_Leave(object sender, EventArgs e)
         {
-            if (this.cbxSupplier.SelectedIndex == -1)
+            if(this.cbxSupplier.Text != string.Empty)
             {
-                MessageBox.Show("يجب اختيار اسم مورد صحيح");
-                this.cbxSupplier.SelectAll();
-                //this.cbxSupplier.Focus();
-                return;
+                if (this.cbxSupplier.SelectedIndex == -1)
+                {
+                    MessageBox.Show("يجب اختيار اسم مورد صحيح");
+                    this.cbxSupplier.SelectAll();
+                    this.cbxSupplier.Select();
+                    return;
+                }
             }
+            
         }
-
         // Product Populate
-        private void cbxActiveProduct_Validating(object sender, CancelEventArgs e)
-        {
-            if (this.cbxActiveProduct.SelectedIndex == -1)
-            {
-                MessageBox.Show("يجب اختيار اسم منتج صحيح");
-                this.cbxActiveProduct.SelectAll();
-                this.txtProductBarcode.Focus();
-                return;
-            }
-
-        }
         private void txtProductBarcode_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.F1)
@@ -181,6 +173,19 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         private void btnNewOrder_Click(object sender, EventArgs e)
         {
             Presenter.ClearControl();
+        }
+        private void cbxActiveProduct_Leave(object sender, EventArgs e)
+        {
+            if (this.cbxActiveProduct.Text != string.Empty)
+            {
+                if (this.cbxActiveProduct.SelectedIndex == -1)
+                {
+                    MessageBox.Show("يجب اختيار اسم منتج صحيح");
+                    this.cbxActiveProduct.SelectAll();
+                    this.cbxActiveProduct.Select();
+                    return;
+                }
+            }
         }
     }
 }

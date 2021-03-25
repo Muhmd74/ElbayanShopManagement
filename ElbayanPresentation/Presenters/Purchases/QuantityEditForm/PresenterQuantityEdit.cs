@@ -42,16 +42,17 @@ namespace ElbayaNPresentation.Presenters.Purchases.QuantityEditForm
                 _view.Subtotal.Text = Math.Round((Convert.ToDecimal(_view.Quantity.Text) * Convert.ToDecimal(_view.DefaultPrice.Text)), 3).ToString();
 
                 // Calulate Discount = Subtotal - (SubTotal * (Discount / 100))
+
                 decimal discountValue = (Convert.ToDecimal(_view.Discount.Text) / 100);
                 decimal discount = Math.Round(Convert.ToDecimal(_view.Subtotal.Text) * discountValue, 2);
                 _view.DiscountValue.Text = Math.Round(discount, 2).ToString();
-                _view.TotalProductPrice.Text = Math.Round((Convert.ToDecimal(_view.Subtotal.Text) - discount), 2).ToString();
+
+                _view.TotalProductPrice.Text = Math.Round((Convert.ToDecimal(_view.Subtotal.Text) - Convert.ToDecimal(_view.DiscountValue.Text)), 2).ToString();
                 // Calulate VAT => TotalProductPrice + (TotalProductPrice * (Product VAT))
-                if (_view.Vat > 0)
+                if (Convert.ToDecimal(_view.VatValue.Text) > 0)
                 {
-                    _view.IsVatIncluded.Checked = true;
-                    decimal productVAT = Convert.ToDecimal(_view.TotalProductPrice.Text) * (_view.Vat / 100);
-                    _view.VatValue.Text = Math.Round(productVAT, 3).ToString();
+                    decimal productVAT = Convert.ToDecimal(_view.TotalProductPrice.Text) * _view.Vat;
+                    _view.VatValue.Text = Math.Round(productVAT, 2).ToString();
                     _view.TotalWithVat.Text = Math.Round((Convert.ToDecimal(_view.TotalProductPrice.Text) + productVAT), 2).ToString();
                 }
                 else
@@ -73,7 +74,10 @@ namespace ElbayaNPresentation.Presenters.Purchases.QuantityEditForm
             frmOrderPurchase.Intance.dgvOrderProduct.Rows[index].Cells["Qunatity"].Value = _view.Quantity.Text;
             frmOrderPurchase.Intance.dgvOrderProduct.Rows[index].Cells["PriceTOQuantity"].Value = _view.DefaultPrice.Text;
             frmOrderPurchase.Intance.dgvOrderProduct.Rows[index].Cells["Discount"].Value = _view.DiscountValue.Text;
-            frmOrderPurchase.Intance.dgvOrderProduct.Rows[index].Cells["VATValue"].Value = _view.VatValue.Text;
+            //frmOrderPurchase.Intance.dgvOrderProduct.Rows[index].Cells["VATValue"].Value = _view.VatValue.Text;
+            decimal VatValuetxt = Convert.ToDecimal(_view.VatValue.Text);
+            int VATValue = Convert.ToInt32(VatValuetxt);
+            frmOrderPurchase.Intance.dgvOrderProduct.Rows[index].Cells["VATValue"].Value = VATValue;
             frmOrderPurchase.Intance.dgvOrderProduct.Rows[index].Cells["Subtotal"].Value = _view.TotalWithVat.Text;
             
             frmOrderPurchase.Intance.Presenter.ClaculateTotalOrderAmount();

@@ -45,7 +45,7 @@ namespace ElbayaNPresentation.Views.Purchases
         public Guna2TextBox TotalWithVat { get => txtTotalPrice; set => txtTotalPrice = value; }
         public CheckBox IsVatIncluded { get => cbIncludeVAT; set => cbIncludeVAT = value; }
         public Guna2Button SaveQuantityt { get => btnSave; set => btnSave = value; }
-        public Label VatValue { get => lblVatValue; set => lblVatValue = value; }
+        public Guna2TextBox VatValue { get => txtVatValue; set => txtVatValue = value; }
         public Guna2TextBox DiscountValue { get => txtDiscountValue; set => txtDiscountValue = value; }
         public decimal Vat { get; set; }
         private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)

@@ -20,7 +20,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.QuantityEditForm
         Guna2TextBox TotalProductPrice { get; set; }
         Guna2TextBox TotalWithVat { get; set; }
         CheckBox IsVatIncluded { get; set; }
-        Label VatValue { get; set; }
+        Guna2TextBox VatValue { get; set; }
         Guna2TextBox DiscountValue { get; set; }
         Guna2Button SaveQuantityt { get; set; }
 

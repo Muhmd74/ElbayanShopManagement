@@ -49,18 +49,21 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cbxActiveProduct = new System.Windows.Forms.ComboBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.dgvOrderProduct = new System.Windows.Forms.DataGridView();
             this.OrderProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastPurchasePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PSNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Qunatity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PriceTOQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VATValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiscountPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VATValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VATPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbxActiveProduct = new System.Windows.Forms.ComboBox();
             this.btnAddNewProductDGV = new Guna.UI2.WinForms.Guna2Button();
             this.btnDeletedProductFromOrder = new Guna.UI2.WinForms.Guna2Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -256,14 +259,16 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             // 
             this.cbxSupplier.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbxSupplier.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxSupplier.DropDownHeight = 150;
             this.cbxSupplier.FormattingEnabled = true;
+            this.cbxSupplier.IntegralHeight = false;
             this.cbxSupplier.ItemHeight = 31;
             this.cbxSupplier.Location = new System.Drawing.Point(57, 28);
             this.cbxSupplier.Name = "cbxSupplier";
             this.cbxSupplier.Size = new System.Drawing.Size(277, 39);
             this.cbxSupplier.TabIndex = 10;
             this.cbxSupplier.SelectionChangeCommitted += new System.EventHandler(this.cbxSupplier_SelectionChangeCommitted);
-            this.cbxSupplier.Validating += new System.ComponentModel.CancelEventHandler(this.cbxSupplier_Validating);
+            this.cbxSupplier.Leave += new System.EventHandler(this.cbxSupplier_Leave);
             // 
             // btnAddNewSupplier
             // 
@@ -354,8 +359,8 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.groupBox8);
             this.groupBox3.Controls.Add(this.cbxActiveProduct);
+            this.groupBox3.Controls.Add(this.groupBox8);
             this.groupBox3.Controls.Add(this.btnAddNewProductDGV);
             this.groupBox3.Controls.Add(this.btnDeletedProductFromOrder);
             this.groupBox3.Controls.Add(this.label7);
@@ -370,6 +375,20 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "أصناف الفاتورة";
+            // 
+            // cbxActiveProduct
+            // 
+            this.cbxActiveProduct.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbxActiveProduct.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxActiveProduct.DropDownHeight = 150;
+            this.cbxActiveProduct.FormattingEnabled = true;
+            this.cbxActiveProduct.IntegralHeight = false;
+            this.cbxActiveProduct.ItemHeight = 31;
+            this.cbxActiveProduct.Location = new System.Drawing.Point(275, 25);
+            this.cbxActiveProduct.Name = "cbxActiveProduct";
+            this.cbxActiveProduct.Size = new System.Drawing.Size(205, 39);
+            this.cbxActiveProduct.TabIndex = 10;
+            this.cbxActiveProduct.Leave += new System.EventHandler(this.cbxActiveProduct_Leave);
             // 
             // groupBox8
             // 
@@ -392,13 +411,16 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.dgvOrderProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrderProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.OrderProductId,
+            this.LastPurchasePrice,
             this.PSNumber,
             this.ProductName,
             this.Unit,
             this.Qunatity,
             this.PriceTOQuantity,
-            this.VATValue,
             this.Discount,
+            this.DiscountPercent,
+            this.VATValue,
+            this.VATPercent,
             this.Subtotal});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
@@ -435,6 +457,13 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.OrderProductId.ReadOnly = true;
             this.OrderProductId.Visible = false;
             // 
+            // LastPurchasePrice
+            // 
+            this.LastPurchasePrice.HeaderText = "أخر سعر شراء";
+            this.LastPurchasePrice.Name = "LastPurchasePrice";
+            this.LastPurchasePrice.ReadOnly = true;
+            this.LastPurchasePrice.Visible = false;
+            // 
             // PSNumber
             // 
             this.PSNumber.FillWeight = 81.21827F;
@@ -470,6 +499,20 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.PriceTOQuantity.Name = "PriceTOQuantity";
             this.PriceTOQuantity.ReadOnly = true;
             // 
+            // Discount
+            // 
+            this.Discount.FillWeight = 120.9946F;
+            this.Discount.HeaderText = "قيمة الخصم";
+            this.Discount.Name = "Discount";
+            this.Discount.ReadOnly = true;
+            // 
+            // DiscountPercent
+            // 
+            this.DiscountPercent.HeaderText = "نسبة الخصم";
+            this.DiscountPercent.Name = "DiscountPercent";
+            this.DiscountPercent.ReadOnly = true;
+            this.DiscountPercent.Visible = false;
+            // 
             // VATValue
             // 
             this.VATValue.FillWeight = 116.5403F;
@@ -477,12 +520,12 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.VATValue.Name = "VATValue";
             this.VATValue.ReadOnly = true;
             // 
-            // Discount
+            // VATPercent
             // 
-            this.Discount.FillWeight = 120.9946F;
-            this.Discount.HeaderText = "الخصم";
-            this.Discount.Name = "Discount";
-            this.Discount.ReadOnly = true;
+            this.VATPercent.HeaderText = "نسبة الضريبة";
+            this.VATPercent.Name = "VATPercent";
+            this.VATPercent.ReadOnly = true;
+            this.VATPercent.Visible = false;
             // 
             // Subtotal
             // 
@@ -490,18 +533,6 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.Subtotal.HeaderText = "الإجمالي";
             this.Subtotal.Name = "Subtotal";
             this.Subtotal.ReadOnly = true;
-            // 
-            // cbxActiveProduct
-            // 
-            this.cbxActiveProduct.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cbxActiveProduct.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbxActiveProduct.FormattingEnabled = true;
-            this.cbxActiveProduct.Location = new System.Drawing.Point(287, 23);
-            this.cbxActiveProduct.Name = "cbxActiveProduct";
-            this.cbxActiveProduct.Size = new System.Drawing.Size(182, 39);
-            this.cbxActiveProduct.TabIndex = 10;
-            this.cbxActiveProduct.Text = "أختر منتج";
-            this.cbxActiveProduct.Validating += new System.ComponentModel.CancelEventHandler(this.cbxActiveProduct_Validating);
             // 
             // btnAddNewProductDGV
             // 
@@ -542,7 +573,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(475, 28);
+            this.label7.Location = new System.Drawing.Point(486, 30);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 25);
             this.label7.TabIndex = 4;
@@ -1256,17 +1287,20 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         private System.Windows.Forms.PictureBox pictureBox7;
         private Guna.UI2.WinForms.Guna2Button btnAddNewSupplier;
         private System.Windows.Forms.ComboBox cbxSupplier;
-        private System.Windows.Forms.ComboBox cbxActiveProduct;
         private System.Windows.Forms.GroupBox groupBox8;
         public System.Windows.Forms.DataGridView dgvOrderProduct;
+        private System.Windows.Forms.ComboBox cbxActiveProduct;
         private System.Windows.Forms.DataGridViewTextBoxColumn OrderProductId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LastPurchasePrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn PSNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Unit;
         private System.Windows.Forms.DataGridViewTextBoxColumn Qunatity;
         private System.Windows.Forms.DataGridViewTextBoxColumn PriceTOQuantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VATValue;
         private System.Windows.Forms.DataGridViewTextBoxColumn Discount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiscountPercent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VATValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VATPercent;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
     }
 }

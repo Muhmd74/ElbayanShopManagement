@@ -46,11 +46,11 @@ namespace ElbayaNPresentation.Views.Purchases
             this.txtTotalPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.lblVatValue = new System.Windows.Forms.Label();
             this.txtDefaultPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDiscountValue = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtVatValue = new Guna.UI2.WinForms.Guna2TextBox();
             this.SuspendLayout();
             // 
             // txtQuantity
@@ -72,7 +72,7 @@ namespace ElbayaNPresentation.Views.Purchases
             this.txtQuantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtQuantity.HoverState.Parent = this.txtQuantity;
-            this.txtQuantity.Location = new System.Drawing.Point(154, 88);
+            this.txtQuantity.Location = new System.Drawing.Point(138, 80);
             this.txtQuantity.Margin = new System.Windows.Forms.Padding(7, 12, 7, 12);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.PasswordChar = '\0';
@@ -80,7 +80,7 @@ namespace ElbayaNPresentation.Views.Purchases
             this.txtQuantity.SelectedText = "";
             this.txtQuantity.ShadowDecoration.Parent = this.txtQuantity;
             this.txtQuantity.Size = new System.Drawing.Size(169, 39);
-            this.txtQuantity.TabIndex = 12;
+            this.txtQuantity.TabIndex = 1;
             this.txtQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtQuantity.Enter += new System.EventHandler(this.txtQuantity_Enter);
             this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantity_KeyPress);
@@ -91,7 +91,7 @@ namespace ElbayaNPresentation.Views.Purchases
             this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(61, 100);
+            this.labelControl2.Location = new System.Drawing.Point(45, 92);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(31, 22);
             this.labelControl2.TabIndex = 11;
@@ -102,7 +102,7 @@ namespace ElbayaNPresentation.Views.Purchases
             this.lblCurrencySubtotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblCurrencySubtotal.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurrencySubtotal.Appearance.Options.UseFont = true;
-            this.lblCurrencySubtotal.Location = new System.Drawing.Point(38, 146);
+            this.lblCurrencySubtotal.Location = new System.Drawing.Point(22, 138);
             this.lblCurrencySubtotal.Name = "lblCurrencySubtotal";
             this.lblCurrencySubtotal.Size = new System.Drawing.Size(56, 22);
             this.lblCurrencySubtotal.TabIndex = 11;
@@ -113,7 +113,7 @@ namespace ElbayaNPresentation.Views.Purchases
             this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(41, 242);
+            this.labelControl3.Location = new System.Drawing.Point(25, 234);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(53, 22);
             this.labelControl3.TabIndex = 11;
@@ -138,7 +138,7 @@ namespace ElbayaNPresentation.Views.Purchases
             this.txtDiscount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiscount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDiscount.HoverState.Parent = this.txtDiscount;
-            this.txtDiscount.Location = new System.Drawing.Point(154, 232);
+            this.txtDiscount.Location = new System.Drawing.Point(138, 224);
             this.txtDiscount.Margin = new System.Windows.Forms.Padding(9, 16, 9, 16);
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.PasswordChar = '\0';
@@ -172,7 +172,7 @@ namespace ElbayaNPresentation.Views.Purchases
             this.txtSubtotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSubtotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSubtotal.HoverState.Parent = this.txtSubtotal;
-            this.txtSubtotal.Location = new System.Drawing.Point(154, 182);
+            this.txtSubtotal.Location = new System.Drawing.Point(138, 174);
             this.txtSubtotal.Margin = new System.Windows.Forms.Padding(10, 18, 10, 18);
             this.txtSubtotal.Name = "txtSubtotal";
             this.txtSubtotal.PasswordChar = '\0';
@@ -188,7 +188,7 @@ namespace ElbayaNPresentation.Views.Purchases
             this.labelControl4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(340, 188);
+            this.labelControl4.Location = new System.Drawing.Point(324, 180);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(60, 22);
             this.labelControl4.TabIndex = 11;
@@ -199,7 +199,7 @@ namespace ElbayaNPresentation.Views.Purchases
             this.labelControl5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(41, 191);
+            this.labelControl5.Location = new System.Drawing.Point(25, 183);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(63, 22);
             this.labelControl5.TabIndex = 11;
@@ -210,7 +210,7 @@ namespace ElbayaNPresentation.Views.Purchases
             this.lblCurrencyPrice.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblCurrencyPrice.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurrencyPrice.Appearance.Options.UseFont = true;
-            this.lblCurrencyPrice.Location = new System.Drawing.Point(340, 141);
+            this.lblCurrencyPrice.Location = new System.Drawing.Point(324, 133);
             this.lblCurrencyPrice.Name = "lblCurrencyPrice";
             this.lblCurrencyPrice.Size = new System.Drawing.Size(60, 22);
             this.lblCurrencyPrice.TabIndex = 11;
@@ -221,7 +221,7 @@ namespace ElbayaNPresentation.Views.Purchases
             this.labelControl7.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(313, 237);
+            this.labelControl7.Location = new System.Drawing.Point(297, 229);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(13, 26);
             this.labelControl7.TabIndex = 11;
@@ -247,7 +247,7 @@ namespace ElbayaNPresentation.Views.Purchases
             this.txtTotalProductPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalProductPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotalProductPrice.HoverState.Parent = this.txtTotalProductPrice;
-            this.txtTotalProductPrice.Location = new System.Drawing.Point(154, 282);
+            this.txtTotalProductPrice.Location = new System.Drawing.Point(138, 274);
             this.txtTotalProductPrice.Margin = new System.Windows.Forms.Padding(9, 16, 9, 16);
             this.txtTotalProductPrice.Name = "txtTotalProductPrice";
             this.txtTotalProductPrice.PasswordChar = '\0';
@@ -263,7 +263,7 @@ namespace ElbayaNPresentation.Views.Purchases
             this.labelControl8.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(38, 290);
+            this.labelControl8.Location = new System.Drawing.Point(22, 282);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(93, 22);
             this.labelControl8.TabIndex = 11;
@@ -275,7 +275,7 @@ namespace ElbayaNPresentation.Views.Purchases
             this.cbIncludeVAT.AutoSize = true;
             this.cbIncludeVAT.Enabled = false;
             this.cbIncludeVAT.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbIncludeVAT.Location = new System.Drawing.Point(42, 338);
+            this.cbIncludeVAT.Location = new System.Drawing.Point(26, 330);
             this.cbIncludeVAT.Name = "cbIncludeVAT";
             this.cbIncludeVAT.Size = new System.Drawing.Size(152, 19);
             this.cbIncludeVAT.TabIndex = 5;
@@ -287,7 +287,7 @@ namespace ElbayaNPresentation.Views.Purchases
             this.labelControl9.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(38, 384);
+            this.labelControl9.Location = new System.Drawing.Point(22, 376);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(94, 22);
             this.labelControl9.TabIndex = 11;
@@ -313,7 +313,7 @@ namespace ElbayaNPresentation.Views.Purchases
             this.txtTotalPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotalPrice.HoverState.Parent = this.txtTotalPrice;
-            this.txtTotalPrice.Location = new System.Drawing.Point(143, 376);
+            this.txtTotalPrice.Location = new System.Drawing.Point(127, 368);
             this.txtTotalPrice.Margin = new System.Windows.Forms.Padding(9, 16, 9, 16);
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.PasswordChar = '\0';
@@ -334,7 +334,7 @@ namespace ElbayaNPresentation.Views.Purchases
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.HoverState.Parent = this.btnSave;
-            this.btnSave.Location = new System.Drawing.Point(42, 446);
+            this.btnSave.Location = new System.Drawing.Point(26, 438);
             this.btnSave.Name = "btnSave";
             this.btnSave.ShadowDecoration.Parent = this.btnSave;
             this.btnSave.Size = new System.Drawing.Size(180, 45);
@@ -347,21 +347,11 @@ namespace ElbayaNPresentation.Views.Purchases
             this.labelControl10.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(279, 455);
+            this.labelControl10.Location = new System.Drawing.Point(263, 447);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(137, 26);
             this.labelControl10.TabIndex = 11;
             this.labelControl10.Text = " لإدراج الكمية  | Enter ";
-            // 
-            // lblVatValue
-            // 
-            this.lblVatValue.AutoSize = true;
-            this.lblVatValue.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblVatValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblVatValue.Location = new System.Drawing.Point(223, 339);
-            this.lblVatValue.Name = "lblVatValue";
-            this.lblVatValue.Size = new System.Drawing.Size(0, 15);
-            this.lblVatValue.TabIndex = 16;
             // 
             // txtDefaultPrice
             // 
@@ -382,7 +372,7 @@ namespace ElbayaNPresentation.Views.Purchases
             this.txtDefaultPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDefaultPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDefaultPrice.HoverState.Parent = this.txtDefaultPrice;
-            this.txtDefaultPrice.Location = new System.Drawing.Point(154, 134);
+            this.txtDefaultPrice.Location = new System.Drawing.Point(138, 126);
             this.txtDefaultPrice.Margin = new System.Windows.Forms.Padding(9, 16, 9, 16);
             this.txtDefaultPrice.Name = "txtDefaultPrice";
             this.txtDefaultPrice.PasswordChar = '\0';
@@ -413,7 +403,7 @@ namespace ElbayaNPresentation.Views.Purchases
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(170)))), ((int)(((byte)(224)))));
-            this.label2.Location = new System.Drawing.Point(413, 239);
+            this.label2.Location = new System.Drawing.Point(397, 231);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 21);
             this.label2.TabIndex = 16;
@@ -432,6 +422,7 @@ namespace ElbayaNPresentation.Views.Purchases
             this.txtDiscountValue.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtDiscountValue.DisabledState.Parent = this.txtDiscountValue;
             this.txtDiscountValue.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDiscountValue.Enabled = false;
             this.txtDiscountValue.FocusedState.BorderColor = System.Drawing.Color.Black;
             this.txtDiscountValue.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(255)))), ((int)(((byte)(179)))));
             this.txtDiscountValue.FocusedState.Parent = this.txtDiscountValue;
@@ -439,7 +430,7 @@ namespace ElbayaNPresentation.Views.Purchases
             this.txtDiscountValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(170)))), ((int)(((byte)(224)))));
             this.txtDiscountValue.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDiscountValue.HoverState.Parent = this.txtDiscountValue;
-            this.txtDiscountValue.Location = new System.Drawing.Point(338, 230);
+            this.txtDiscountValue.Location = new System.Drawing.Point(322, 222);
             this.txtDiscountValue.Margin = new System.Windows.Forms.Padding(9, 16, 9, 16);
             this.txtDiscountValue.Name = "txtDiscountValue";
             this.txtDiscountValue.PasswordChar = '\0';
@@ -451,14 +442,47 @@ namespace ElbayaNPresentation.Views.Purchases
             this.txtDiscountValue.TabIndex = 4;
             this.txtDiscountValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // txtVatValue
+            // 
+            this.txtVatValue.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtVatValue.BorderColor = System.Drawing.Color.Gray;
+            this.txtVatValue.BorderRadius = 5;
+            this.txtVatValue.BorderThickness = 2;
+            this.txtVatValue.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtVatValue.DefaultText = "";
+            this.txtVatValue.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtVatValue.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtVatValue.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtVatValue.DisabledState.Parent = this.txtVatValue;
+            this.txtVatValue.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtVatValue.Enabled = false;
+            this.txtVatValue.FocusedState.BorderColor = System.Drawing.Color.Black;
+            this.txtVatValue.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(255)))), ((int)(((byte)(179)))));
+            this.txtVatValue.FocusedState.Parent = this.txtVatValue;
+            this.txtVatValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVatValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(170)))), ((int)(((byte)(224)))));
+            this.txtVatValue.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtVatValue.HoverState.Parent = this.txtVatValue;
+            this.txtVatValue.Location = new System.Drawing.Point(190, 320);
+            this.txtVatValue.Margin = new System.Windows.Forms.Padding(9, 16, 9, 16);
+            this.txtVatValue.Name = "txtVatValue";
+            this.txtVatValue.PasswordChar = '\0';
+            this.txtVatValue.PlaceholderText = "";
+            this.txtVatValue.SelectedText = "";
+            this.txtVatValue.ShadowDecoration.Parent = this.txtVatValue;
+            this.txtVatValue.Size = new System.Drawing.Size(63, 39);
+            this.txtVatValue.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtVatValue.TabIndex = 18;
+            this.txtVatValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // frmEditQuantity
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(528, 553);
             this.ControlBox = false;
+            this.Controls.Add(this.txtVatValue);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblVatValue);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.cbIncludeVAT);
             this.Controls.Add(this.txtTotalPrice);
@@ -481,9 +505,7 @@ namespace ElbayaNPresentation.Views.Purchases
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            //this.Movable = false;
             this.Name = "frmEditQuantity";
-            //this.Resizable = false;
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmEditQuantity_FormClosing);
@@ -512,10 +534,10 @@ namespace ElbayaNPresentation.Views.Purchases
         internal Guna.UI2.WinForms.Guna2TextBox txtTotalPrice;
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private DevExpress.XtraEditors.LabelControl labelControl10;
-        private System.Windows.Forms.Label lblVatValue;
         internal Guna.UI2.WinForms.Guna2TextBox txtDefaultPrice;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         internal Guna.UI2.WinForms.Guna2TextBox txtDiscountValue;
+        internal Guna.UI2.WinForms.Guna2TextBox txtVatValue;
     }
 }
