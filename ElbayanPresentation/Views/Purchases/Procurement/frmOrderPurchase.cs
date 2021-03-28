@@ -193,6 +193,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         {
             //ReportPrintTool printTools = new ReportPrintTool(Presenter.PrintReport());
             //printTools.ShowPreview();
+            Presenter.PrintReport();
         }
     }
 }

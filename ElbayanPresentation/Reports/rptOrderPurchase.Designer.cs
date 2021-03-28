@@ -37,10 +37,9 @@ namespace ElbayaNPresentation.Reports
             this.xrTable1 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell2 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xtcorderNUmber = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xtcorderNumber = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow2 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell4 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell3 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow3 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell6 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell5 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -82,11 +81,11 @@ namespace ElbayaNPresentation.Reports
             this.xrTableCell42 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell49 = new DevExpress.XtraReports.UI.XRTableCell();
             this.DetailReport = new DevExpress.XtraReports.UI.DetailReportBand();
-            this.Detail1 = new DevExpress.XtraReports.UI.DetailBand();
+            this.deOrderDetails = new DevExpress.XtraReports.UI.DetailBand();
             this.xrTable4 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow14 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell30 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell31 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xtcOrderProductName = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell32 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell33 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell36 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -100,6 +99,7 @@ namespace ElbayaNPresentation.Reports
             this.xrTableCell27 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell35 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell28 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell3 = new DevExpress.XtraReports.UI.XRTableCell();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
@@ -161,7 +161,7 @@ namespace ElbayaNPresentation.Reports
             // 
             this.xrTableRow1.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
             this.xrTableCell2,
-            this.xtcorderNUmber});
+            this.xtcorderNumber});
             this.xrTableRow1.Dpi = 254F;
             this.xrTableRow1.Name = "xrTableRow1";
             this.xrTableRow1.Weight = 1D;
@@ -180,15 +180,14 @@ namespace ElbayaNPresentation.Reports
             this.xrTableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             this.xrTableCell2.Weight = 1.4016868981753503D;
             // 
-            // xtcorderNUmber
+            // xtcorderNumber
             // 
-            this.xtcorderNUmber.BackColor = System.Drawing.Color.White;
-            this.xtcorderNUmber.Dpi = 254F;
-            this.xtcorderNUmber.Multiline = true;
-            this.xtcorderNUmber.Name = "xtcorderNUmber";
-            this.xtcorderNUmber.StylePriority.UseBackColor = false;
-            this.xtcorderNUmber.Text = "#######";
-            this.xtcorderNUmber.Weight = 2.6700851783385793D;
+            this.xtcorderNumber.BackColor = System.Drawing.Color.White;
+            this.xtcorderNumber.CanGrow = false;
+            this.xtcorderNumber.Dpi = 254F;
+            this.xtcorderNumber.Name = "xtcorderNumber";
+            this.xtcorderNumber.StylePriority.UseBackColor = false;
+            this.xtcorderNumber.Weight = 2.6700851783385793D;
             // 
             // xrTableRow2
             // 
@@ -212,17 +211,6 @@ namespace ElbayaNPresentation.Reports
             this.xrTableCell4.Text = "تاريخ الفاتورة :";
             this.xrTableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             this.xrTableCell4.Weight = 1.4016868981753503D;
-            // 
-            // xrTableCell3
-            // 
-            this.xrTableCell3.BackColor = System.Drawing.Color.White;
-            this.xrTableCell3.Dpi = 254F;
-            this.xrTableCell3.Multiline = true;
-            this.xrTableCell3.Name = "xrTableCell3";
-            this.xrTableCell3.StylePriority.UseBackColor = false;
-            this.xrTableCell3.Text = "######";
-            this.xrTableCell3.TextFormatString = "{0:ddd dd/MM/yyyy hh:mm:tt}";
-            this.xrTableCell3.Weight = 2.6700851783385793D;
             // 
             // xrTableRow3
             // 
@@ -713,20 +701,20 @@ namespace ElbayaNPresentation.Reports
             // DetailReport
             // 
             this.DetailReport.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
-            this.Detail1,
+            this.deOrderDetails,
             this.GroupHeader1});
             this.DetailReport.Dpi = 254F;
             this.DetailReport.Level = 0;
             this.DetailReport.Name = "DetailReport";
             // 
-            // Detail1
+            // deOrderDetails
             // 
-            this.Detail1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.deOrderDetails.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable4});
-            this.Detail1.Dpi = 254F;
-            this.Detail1.HeightF = 64.0246F;
-            this.Detail1.HierarchyPrintOptions.Indent = 50.8F;
-            this.Detail1.Name = "Detail1";
+            this.deOrderDetails.Dpi = 254F;
+            this.deOrderDetails.HeightF = 64.0246F;
+            this.deOrderDetails.HierarchyPrintOptions.Indent = 50.8F;
+            this.deOrderDetails.Name = "deOrderDetails";
             // 
             // xrTable4
             // 
@@ -749,7 +737,7 @@ namespace ElbayaNPresentation.Reports
             // 
             this.xrTableRow14.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
             this.xrTableCell30,
-            this.xrTableCell31,
+            this.xtcOrderProductName,
             this.xrTableCell32,
             this.xrTableCell33,
             this.xrTableCell36,
@@ -774,23 +762,23 @@ namespace ElbayaNPresentation.Reports
             this.xrTableCell30.Text = "م.";
             this.xrTableCell30.Weight = 0.51889265081539815D;
             // 
-            // xrTableCell31
+            // xtcOrderProductName
             // 
-            this.xrTableCell31.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Double;
-            this.xrTableCell31.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            this.xtcOrderProductName.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Double;
+            this.xtcOrderProductName.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell31.Dpi = 254F;
-            this.xrTableCell31.Font = new System.Drawing.Font("Droid Arabic Kufi", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrTableCell31.Multiline = true;
-            this.xrTableCell31.Name = "xrTableCell31";
-            this.xrTableCell31.StylePriority.UseBorderDashStyle = false;
-            this.xrTableCell31.StylePriority.UseBorders = false;
-            this.xrTableCell31.StylePriority.UseFont = false;
-            this.xrTableCell31.StylePriority.UseTextAlignment = false;
-            this.xrTableCell31.Text = "اسم الصنف";
-            this.xrTableCell31.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            this.xrTableCell31.Weight = 2.3905354033488089D;
+            this.xtcOrderProductName.Dpi = 254F;
+            this.xtcOrderProductName.Font = new System.Drawing.Font("Droid Arabic Kufi", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xtcOrderProductName.Multiline = true;
+            this.xtcOrderProductName.Name = "xtcOrderProductName";
+            this.xtcOrderProductName.StylePriority.UseBorderDashStyle = false;
+            this.xtcOrderProductName.StylePriority.UseBorders = false;
+            this.xtcOrderProductName.StylePriority.UseFont = false;
+            this.xtcOrderProductName.StylePriority.UseTextAlignment = false;
+            this.xtcOrderProductName.Text = "اسم الصنف";
+            this.xtcOrderProductName.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.xtcOrderProductName.Weight = 2.3905354033488089D;
             // 
             // xrTableCell32
             // 
@@ -977,6 +965,16 @@ namespace ElbayaNPresentation.Reports
             this.xrTableCell28.Text = "الإجمالي";
             this.xrTableCell28.Weight = 1.5047411238171975D;
             // 
+            // xrTableCell3
+            // 
+            this.xrTableCell3.BackColor = System.Drawing.Color.White;
+            this.xrTableCell3.Dpi = 254F;
+            this.xrTableCell3.Multiline = true;
+            this.xrTableCell3.Name = "xrTableCell3";
+            this.xrTableCell3.StylePriority.UseBackColor = false;
+            this.xrTableCell3.TextFormatString = "{0:ddd dd/MM/yyyy hh:mm:tt}";
+            this.xrTableCell3.Weight = 2.6700851783385793D;
+            // 
             // rptOrderPurchase
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -1021,7 +1019,6 @@ namespace ElbayaNPresentation.Reports
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell2;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow2;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell4;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell3;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow3;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell6;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell5;
@@ -1049,12 +1046,11 @@ namespace ElbayaNPresentation.Reports
         private DevExpress.XtraReports.UI.XRLine xrLine2;
         private DevExpress.XtraReports.UI.XRLine xrLine1;
         private DevExpress.XtraReports.UI.DetailReportBand DetailReport;
-        private DevExpress.XtraReports.UI.DetailBand Detail1;
         private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader1;
         private DevExpress.XtraReports.UI.XRTable xrTable4;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow14;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell30;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell31;
+        private DevExpress.XtraReports.UI.XRTableCell xtcOrderProductName;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell32;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell33;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell34;
@@ -1076,6 +1072,8 @@ namespace ElbayaNPresentation.Reports
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell49;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell36;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell35;
-        public DevExpress.XtraReports.UI.XRTableCell xtcorderNUmber;
+        public DevExpress.XtraReports.UI.XRTableCell xtcorderNumber;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell3;
+        public DevExpress.XtraReports.UI.DetailBand deOrderDetails;
     }
 }

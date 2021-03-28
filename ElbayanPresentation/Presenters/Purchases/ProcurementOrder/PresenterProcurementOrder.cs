@@ -334,16 +334,20 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
             var model = Supplier.GetSupplierById(new Guid(_view.Suppliers.SelectedValue.ToString()));
             _view.SupplierMobile.Text = model.Mobile.ToString();
         }
-        internal XtraReport PrintReport()
+       
+        internal void PrintReport()
         {
-            rptOrderPurchase rpt = new rptOrderPurchase() { 
-                Parameters = { }, 
+            //rptOrderPurchase.PrintOrder(Product.GetAll());
 
-            };
-            var product = Product.GetById(new Guid("d918755e-d682-eb11-84c2-80a5899d8326"));
-            rpt.DataSource = product;
-            rpt.xtcorderNUmber.Value = product.Name;
-            return rpt;
+            rptOrderPurchase rpt = new rptOrderPurchase();
+           
+            var ds = Product.GetAll();
+            var pr = Product.GetById(new Guid("d918755e-d682-eb11-84c2-80a5899d8326"));
+            rpt.DataSource = pr;
+            rpt.DataMember = null;
+            rpt.xtcorderNumber.DataBindings.Add("Text", pr, "UCP");
+            
+            rpt.ShowPreview();
         }
     }
 }
