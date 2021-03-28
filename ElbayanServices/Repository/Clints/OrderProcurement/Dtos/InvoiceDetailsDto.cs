@@ -25,11 +25,11 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement.Dtos
         public decimal? Payment { get; set; }
         public decimal? DeferredPrice { get; set; }
         public string OrderCode { get; set; }
-        public List<ProductInvoiceDto> Products { get; set; }
+        public List<ProductDto> Products { get; set; }
         public int? Phone { get; set; }
     }
 
-   public class ProductInvoiceDto
+   public class ProductDto
    {
        public string ProductName { get; set; }
        public string UnitName { get; set; }

@@ -187,7 +187,7 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
                     PosName = order.Pos.Name,
                     ProductCount = order.OrderProduct.Count,
                     TotalVat = order.OrderProduct.Sum(d => d.Vat),
-                    Products = productOrder.Select(d => new ProductInvoiceDto
+                    Products = productOrder.Select(d => new ProductDto
                     {
                         Quantity = d.Quantity,
                         ProductName = d.Name,
