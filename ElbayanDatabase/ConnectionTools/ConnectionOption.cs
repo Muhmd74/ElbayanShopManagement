@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Data.Entity;
+using ElbayanDatabase.DataClasses.Authentications;
 using ElbayanDatabase.DataClasses.Clints;
 using ElbayanDatabase.DataClasses.Clints.Sales;
 using ElbayanDatabase.DataClasses.Employees.CashierDrawers;
 using ElbayanDatabase.DataClasses.Employees.EmployeeAccountant.EmployeeSalaryActions;
 using ElbayanDatabase.DataClasses.Employees.EmployeeAccountant.Salary;
 using ElbayanDatabase.DataClasses.Employees.Employees;
+using ElbayanDatabase.DataClasses.Firms;
 using ElbayanDatabase.DataClasses.Member;
 using ElbayanDatabase.DataClasses.Product;
 using ElbayanDatabase.DataClasses.Product.ProductCategory;
@@ -21,8 +23,12 @@ namespace ElbayanDatabase.ConnectionTools
         {
 
         }
-
+        
+        public DbSet<Firm> Firms { get; set; }
         public DbSet<Role> Roles { get; set; }
+        public DbSet<RoleTemplate> RolesTemplates { get; set; }
+        public DbSet<Template> Templates { get; set; }
+        public DbSet<EmployeeRole> EmployeeRoles { get; set; }
         public DbSet<MemberRole> MemberRoles { get; set; }
         public DbSet<Member> Members { get; set; }
         public DbSet<Category> Categories { get; set; }
@@ -33,11 +39,11 @@ namespace ElbayanDatabase.ConnectionTools
         public DbSet<ProductPrice> ProductPrices { get; set; }
         public DbSet<ProductStock> ProductStocks { get; set; }
         //Employees
+        public DbSet<Users> Users { get; set; }
         public DbSet<CashierDrawer> CashierDrawers { get; set; }
         public DbSet<DailyOffShift> DailyOffShifts { get; set; }
         public DbSet<DrawerTransaction> DrawerTransactions { get; set; }
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<EmployeePermission> EmployeePermissions { get; set; }
         public DbSet<Allowance> Allowances { get; set; }
         public DbSet<Commission> Commissions { get; set; }
         public DbSet<EmployeeSalary> EmployeeSalaries { get; set; }
@@ -57,21 +63,37 @@ namespace ElbayanDatabase.ConnectionTools
         {
             modelBuilder.Entity<Employee>().HasIndex(u => u.Email).IsUnique();
 
-            modelBuilder.Entity<Role>()// Role : MemberRoles
-                .HasMany(d => d.MemberRoles)
+            #region Roles
+
+            modelBuilder.Entity<Role>()// Role : RolesTemplates
+                .HasMany(d => d.RolesTemplates)
                 .WithRequired(d => d.Role)
                 .HasForeignKey(d => d.RoleId)
                 .WillCascadeOnDelete(false);
-            modelBuilder.Entity<Role>()// Role : EmployeePermissions
-                .HasMany(d => d.EmployeePermissions)
-                .WithRequired(d => d.Role)
-                .HasForeignKey(d => d.RoleId)
+            modelBuilder.Entity<Template>()// Template : RolesTemplates
+                .HasMany(d => d.RolesTemplates)
+                .WithRequired(d => d.Template)
+                .HasForeignKey(d => d.TemplateId)
                 .WillCascadeOnDelete(false);
             modelBuilder.Entity<Member>()//Member : MemberRole
                 .HasMany(d => d.MemberRoles)
                 .WithRequired(d => d.Member)
                 .HasForeignKey(d => d.MemberId)
                 .WillCascadeOnDelete(true);
+            modelBuilder.Entity<Employee>()// Employee : EmployeeRoles
+                .HasMany(d => d.EmployeeRoles)
+                .WithRequired(d => d.Employee)
+                .HasForeignKey(d => d.EmployeeId)
+                .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<Role>()// Role : EmployeeRoles
+                .HasMany(d => d.EmployeeRoles)
+                .WithRequired(d => d.Role)
+                .HasForeignKey(d => d.RoleId)
+                .WillCascadeOnDelete(true);
+
+            #endregion
+
             //Product
             modelBuilder.Entity<Category>()//Category : SubCategory
                 .HasMany(d => d.SubCategories)
@@ -148,8 +170,8 @@ namespace ElbayanDatabase.ConnectionTools
                 .HasForeignKey(d => d.EmployeeId)
                 .WillCascadeOnDelete(true);
 
-            modelBuilder.Entity<Employee>()// Employee : EmployeePermissions
-                .HasMany(d => d.EmployeePermissions)
+            modelBuilder.Entity<Employee>()// Employee : Orders
+                .HasMany(d => d.Orders)
                 .WithRequired(d => d.Employee)
                 .HasForeignKey(d => d.EmployeeId)
                 .WillCascadeOnDelete(true);
@@ -209,6 +231,8 @@ namespace ElbayanDatabase.ConnectionTools
                 .WithRequired(d => d.Clint)
                 .HasForeignKey(d => d.ClintId)
                 .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Employee>()
+                .HasRequired(d => d.Users);
         }
     }
 }

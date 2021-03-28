@@ -10,6 +10,7 @@ namespace ElbayanServices.Repository.Employees.Employees
     public interface IEmployee
     {
         Guid Login(LoginDto model);
+
         bool CreateEmployee(EmployeeDto model);
         bool UpdateEmployee(EmployeeDto model);
         bool EnableOrDisable(Guid id);

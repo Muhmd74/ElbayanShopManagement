@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,6 +27,22 @@ namespace ElbayanServices.Common
             } while (ulongRand > ulong.MaxValue - ((ulong.MaxValue % uRange) + 1) % uRange);
 
             return (long)(ulongRand % uRange) + min;
+        }
+
+        public static T FromByteArray<T>(byte[] data)
+        {
+            if (data==null)
+            {
+                return default(T);
+            }
+            BinaryFormatter formatter = new BinaryFormatter();
+            using MemoryStream stream = new MemoryStream(data);
+            return (T) formatter.Deserialize(stream);
+        }
+
+        public static string GetLineNumber([CallerMemberName] string callerName= "")
+        {
+            return callerName;
         }
         public static class ProductStockStatues
         {
