@@ -110,6 +110,7 @@
     <Compile Include="Presenters\Clients\PresenterNewClient.cs" />
     <Compile Include="Presenters\CommonPresenter\DataGridViewStyle.cs" />
     <Compile Include="Presenters\CommonPresenter\NullableNumber.cs" />
+    <Compile Include="Presenters\CommonPresenter\PopulateActiveProduct.cs" />
     <Compile Include="Presenters\CommonPresenter\ValidateControls.cs" />
     <Compile Include="Presenters\Finance\Employee\ALLEmployee\IViewAllEmployee.cs" />
     <Compile Include="Presenters\Finance\Employee\ALLEmployee\PresenterAllEmployee.cs" />
@@ -136,6 +137,8 @@
     <Compile Include="Presenters\Store\Product\AllProduct\IViewAllProduct.cs" />
     <Compile Include="Presenters\Store\Product\ProductCard\IViewProdcut.cs" />
     <Compile Include="Presenters\Store\Product\ProductCard\ProductPresnter.cs" />
+    <Compile Include="Presenters\Store\Product\ProductStock\IViewProductStoc.cs" />
+    <Compile Include="Presenters\Store\Product\ProductStock\PresenterProductStock.cs" />
     <Compile Include="Presenters\Store\Unit\LargeUnit\IViewLargeUnit.cs" />
     <Compile Include="Presenters\Store\Unit\LargeUnit\LargeUnitPresenter.cs" />
     <Compile Include="Presenters\Store\Unit\SmallUnit\IViewSmallUnit.cs" />
