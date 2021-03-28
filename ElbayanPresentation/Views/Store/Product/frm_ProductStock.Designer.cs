@@ -29,11 +29,11 @@ namespace ElbayaNPresentation.Views.Store.Product
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ProductStock));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvOrderProduct = new System.Windows.Forms.DataGridView();
+            this.dgvSearchResult = new System.Windows.Forms.DataGridView();
             this.OrderProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PSNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,32 +44,32 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.OrderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnAddNewProductDGV = new Guna.UI2.WinForms.Guna2Button();
+            this.dtpEndDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dtpStartDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbxOrderType = new System.Windows.Forms.ComboBox();
+            this.cbxActiveProduct = new System.Windows.Forms.ComboBox();
+            this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtProductBarcode = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.cbxActiveProduct = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dtpOrderDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dgvOrderProduct);
+            this.groupBox1.Controls.Add(this.dgvSearchResult);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(20, 140);
@@ -78,15 +78,15 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
-            // dgvOrderProduct
+            // dgvSearchResult
             // 
-            this.dgvOrderProduct.AllowUserToAddRows = false;
-            this.dgvOrderProduct.AllowUserToDeleteRows = false;
-            this.dgvOrderProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvOrderProduct.BackgroundColor = System.Drawing.Color.White;
-            this.dgvOrderProduct.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dgvOrderProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrderProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvSearchResult.AllowUserToAddRows = false;
+            this.dgvSearchResult.AllowUserToDeleteRows = false;
+            this.dgvSearchResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSearchResult.BackgroundColor = System.Drawing.Color.White;
+            this.dgvSearchResult.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvSearchResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSearchResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.OrderProductId,
             this.PSNumber,
             this.ProductName,
@@ -96,32 +96,32 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.ClientName,
             this.OrderNumber,
             this.StockDateTime});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(171)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOrderProduct.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvOrderProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvOrderProduct.Location = new System.Drawing.Point(3, 26);
-            this.dgvOrderProduct.Name = "dgvOrderProduct";
-            this.dgvOrderProduct.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.OldLace;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrderProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvOrderProduct.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.LemonChiffon;
-            this.dgvOrderProduct.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F);
-            this.dgvOrderProduct.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgvOrderProduct.RowTemplate.Height = 29;
-            this.dgvOrderProduct.Size = new System.Drawing.Size(938, 357);
-            this.dgvOrderProduct.TabIndex = 13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(171)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSearchResult.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvSearchResult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSearchResult.Location = new System.Drawing.Point(3, 26);
+            this.dgvSearchResult.Name = "dgvSearchResult";
+            this.dgvSearchResult.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.OldLace;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSearchResult.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvSearchResult.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.LemonChiffon;
+            this.dgvSearchResult.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F);
+            this.dgvSearchResult.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgvSearchResult.RowTemplate.Height = 29;
+            this.dgvSearchResult.Size = new System.Drawing.Size(938, 357);
+            this.dgvSearchResult.TabIndex = 13;
             // 
             // OrderProductId
             // 
@@ -190,13 +190,13 @@ namespace ElbayaNPresentation.Views.Store.Product
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.guna2DateTimePicker1);
+            this.groupBox2.Controls.Add(this.dtpEndDate);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.dtpOrderDate);
+            this.groupBox2.Controls.Add(this.dtpStartDate);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.cbxOrderType);
             this.groupBox2.Controls.Add(this.cbxActiveProduct);
-            this.groupBox2.Controls.Add(this.btnAddNewProductDGV);
+            this.groupBox2.Controls.Add(this.btnSearch);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.txtProductBarcode);
@@ -211,54 +211,128 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "الفلترة والبحث";
             // 
-            // groupBox3
+            // dtpEndDate
             // 
-            this.groupBox3.Controls.Add(this.pictureBox1);
-            this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(171)))), ((int)(((byte)(215)))));
-            this.groupBox3.Location = new System.Drawing.Point(20, 28);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(196, 77);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
+            this.dtpEndDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpEndDate.BorderRadius = 5;
+            this.dtpEndDate.BorderThickness = 1;
+            this.dtpEndDate.CheckedState.Parent = this.dtpEndDate;
+            this.dtpEndDate.FillColor = System.Drawing.Color.White;
+            this.dtpEndDate.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpEndDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEndDate.HoverState.Parent = this.dtpEndDate;
+            this.dtpEndDate.Location = new System.Drawing.Point(47, 69);
+            this.dtpEndDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpEndDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpEndDate.Name = "dtpEndDate";
+            this.dtpEndDate.ShadowDecoration.Parent = this.dtpEndDate;
+            this.dtpEndDate.Size = new System.Drawing.Size(170, 31);
+            this.dtpEndDate.TabIndex = 17;
+            this.dtpEndDate.Value = new System.DateTime(2021, 3, 21, 0, 19, 36, 36);
             // 
-            // pictureBox1
+            // label5
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(165, 32);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 28);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(223, 73);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 22);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "إلى تاريخ : ";
             // 
-            // label2
+            // dtpStartDate
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Droid Arabic Kufi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(153, 28);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "متابعة حركة المنتج";
+            this.dtpStartDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpStartDate.BorderRadius = 5;
+            this.dtpStartDate.BorderThickness = 1;
+            this.dtpStartDate.CheckedState.Parent = this.dtpStartDate;
+            this.dtpStartDate.FillColor = System.Drawing.Color.White;
+            this.dtpStartDate.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpStartDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpStartDate.HoverState.Parent = this.dtpStartDate;
+            this.dtpStartDate.Location = new System.Drawing.Point(293, 69);
+            this.dtpStartDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpStartDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpStartDate.Name = "dtpStartDate";
+            this.dtpStartDate.ShadowDecoration.Parent = this.dtpStartDate;
+            this.dtpStartDate.Size = new System.Drawing.Size(170, 31);
+            this.dtpStartDate.TabIndex = 17;
+            this.dtpStartDate.Value = new System.DateTime(2021, 3, 21, 0, 19, 36, 36);
             // 
-            // btnAddNewProductDGV
+            // label4
             // 
-            this.btnAddNewProductDGV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddNewProductDGV.BorderRadius = 5;
-            this.btnAddNewProductDGV.CheckedState.Parent = this.btnAddNewProductDGV;
-            this.btnAddNewProductDGV.CustomImages.Parent = this.btnAddNewProductDGV;
-            this.btnAddNewProductDGV.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(171)))), ((int)(((byte)(215)))));
-            this.btnAddNewProductDGV.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnAddNewProductDGV.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAddNewProductDGV.HoverState.Parent = this.btnAddNewProductDGV;
-            this.btnAddNewProductDGV.Location = new System.Drawing.Point(6, 24);
-            this.btnAddNewProductDGV.Name = "btnAddNewProductDGV";
-            this.btnAddNewProductDGV.ShadowDecoration.Parent = this.btnAddNewProductDGV;
-            this.btnAddNewProductDGV.Size = new System.Drawing.Size(105, 35);
-            this.btnAddNewProductDGV.TabIndex = 14;
-            this.btnAddNewProductDGV.Text = "بحث | F3";
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(469, 73);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 22);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "من تاريخ : ";
+            // 
+            // cbxOrderType
+            // 
+            this.cbxOrderType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxOrderType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbxOrderType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxOrderType.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxOrderType.FormattingEnabled = true;
+            this.cbxOrderType.Items.AddRange(new object[] {
+            "مشتريات",
+            "مبيعات",
+            "مرتجع شراء",
+            "مرتجع مبيعات",
+            "أرصدة افتتاحية"});
+            this.cbxOrderType.Location = new System.Drawing.Point(539, 70);
+            this.cbxOrderType.Name = "cbxOrderType";
+            this.cbxOrderType.Size = new System.Drawing.Size(100, 30);
+            this.cbxOrderType.TabIndex = 15;
+            // 
+            // cbxActiveProduct
+            // 
+            this.cbxActiveProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxActiveProduct.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbxActiveProduct.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxActiveProduct.FormattingEnabled = true;
+            this.cbxActiveProduct.Location = new System.Drawing.Point(142, 24);
+            this.cbxActiveProduct.Name = "cbxActiveProduct";
+            this.cbxActiveProduct.Size = new System.Drawing.Size(188, 33);
+            this.cbxActiveProduct.TabIndex = 15;
+            this.cbxActiveProduct.Text = "أختر منتج";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BorderRadius = 5;
+            this.btnSearch.CheckedState.Parent = this.btnSearch;
+            this.btnSearch.CustomImages.Parent = this.btnSearch;
+            this.btnSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(171)))), ((int)(((byte)(215)))));
+            this.btnSearch.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSearch.HoverState.Parent = this.btnSearch;
+            this.btnSearch.Location = new System.Drawing.Point(6, 24);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.ShadowDecoration.Parent = this.btnSearch;
+            this.btnSearch.Size = new System.Drawing.Size(105, 35);
+            this.btnSearch.TabIndex = 14;
+            this.btnSearch.Text = "بحث | F3";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(645, 74);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 22);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "اختر نوع العلمية";
             // 
             // label7
             // 
@@ -293,14 +367,14 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.txtProductBarcode.ForeColor = System.Drawing.Color.Black;
             this.txtProductBarcode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtProductBarcode.HoverState.Parent = this.txtProductBarcode;
-            this.txtProductBarcode.Location = new System.Drawing.Point(428, 24);
+            this.txtProductBarcode.Location = new System.Drawing.Point(423, 24);
             this.txtProductBarcode.Margin = new System.Windows.Forms.Padding(20, 22, 20, 22);
             this.txtProductBarcode.Name = "txtProductBarcode";
             this.txtProductBarcode.PasswordChar = '\0';
             this.txtProductBarcode.PlaceholderText = "";
             this.txtProductBarcode.SelectedText = "";
             this.txtProductBarcode.ShadowDecoration.Parent = this.txtProductBarcode;
-            this.txtProductBarcode.Size = new System.Drawing.Size(177, 35);
+            this.txtProductBarcode.Size = new System.Drawing.Size(182, 35);
             this.txtProductBarcode.TabIndex = 13;
             this.txtProductBarcode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -327,106 +401,37 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.pictureBox3.TabIndex = 11;
             this.pictureBox3.TabStop = false;
             // 
-            // cbxActiveProduct
+            // groupBox3
             // 
-            this.cbxActiveProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxActiveProduct.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cbxActiveProduct.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbxActiveProduct.FormattingEnabled = true;
-            this.cbxActiveProduct.Location = new System.Drawing.Point(142, 24);
-            this.cbxActiveProduct.Name = "cbxActiveProduct";
-            this.cbxActiveProduct.Size = new System.Drawing.Size(188, 33);
-            this.cbxActiveProduct.TabIndex = 15;
-            this.cbxActiveProduct.Text = "أختر منتج";
+            this.groupBox3.Controls.Add(this.pictureBox1);
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(171)))), ((int)(((byte)(215)))));
+            this.groupBox3.Location = new System.Drawing.Point(20, 30);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(196, 77);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
             // 
-            // label1
+            // pictureBox1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(645, 74);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 22);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "اختر نوع العلمية";
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(165, 32);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 28);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
-            // comboBox1
+            // label2
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(539, 70);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 30);
-            this.comboBox1.TabIndex = 15;
-            this.comboBox1.Text = "مشتريات";
-            // 
-            // dtpOrderDate
-            // 
-            this.dtpOrderDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpOrderDate.BorderRadius = 5;
-            this.dtpOrderDate.BorderThickness = 1;
-            this.dtpOrderDate.CheckedState.Parent = this.dtpOrderDate;
-            this.dtpOrderDate.FillColor = System.Drawing.Color.White;
-            this.dtpOrderDate.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpOrderDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dtpOrderDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpOrderDate.HoverState.Parent = this.dtpOrderDate;
-            this.dtpOrderDate.Location = new System.Drawing.Point(252, 70);
-            this.dtpOrderDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpOrderDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpOrderDate.Name = "dtpOrderDate";
-            this.dtpOrderDate.ShadowDecoration.Parent = this.dtpOrderDate;
-            this.dtpOrderDate.Size = new System.Drawing.Size(170, 31);
-            this.dtpOrderDate.TabIndex = 17;
-            this.dtpOrderDate.Value = new System.DateTime(2021, 3, 21, 0, 19, 36, 36);
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(428, 74);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 22);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "من تاريخ : ";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(182, 74);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 22);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "إلى تاريخ : ";
-            // 
-            // guna2DateTimePicker1
-            // 
-            this.guna2DateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2DateTimePicker1.BorderRadius = 5;
-            this.guna2DateTimePicker1.BorderThickness = 1;
-            this.guna2DateTimePicker1.CheckedState.Parent = this.guna2DateTimePicker1;
-            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DateTimePicker1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.guna2DateTimePicker1.HoverState.Parent = this.guna2DateTimePicker1;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(6, 70);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.ShadowDecoration.Parent = this.guna2DateTimePicker1;
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(170, 31);
-            this.guna2DateTimePicker1.TabIndex = 17;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2021, 3, 21, 0, 19, 36, 36);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Droid Arabic Kufi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(153, 28);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "متابعة حركة المنتج";
             // 
             // frm_ProductStock
             // 
@@ -447,20 +452,20 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.Theme = MetroFramework.MetroThemeStyle.Default;
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.GroupBox groupBox1;
-        public System.Windows.Forms.DataGridView dgvOrderProduct;
+        public System.Windows.Forms.DataGridView dgvSearchResult;
         private System.Windows.Forms.DataGridViewTextBoxColumn OrderProductId;
         private System.Windows.Forms.DataGridViewTextBoxColumn PSNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
@@ -474,17 +479,17 @@ namespace ElbayaNPresentation.Views.Store.Product
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2Button btnAddNewProductDGV;
+        private Guna.UI2.WinForms.Guna2Button btnSearch;
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2TextBox txtProductBarcode;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxOrderType;
         private System.Windows.Forms.ComboBox cbxActiveProduct;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpOrderDate;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpStartDate;
         private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpEndDate;
         private System.Windows.Forms.Label label5;
     }
 }

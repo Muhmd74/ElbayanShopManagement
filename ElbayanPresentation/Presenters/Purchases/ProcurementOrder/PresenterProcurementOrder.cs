@@ -1,5 +1,7 @@
-﻿using ElbayanDatabase.ConnectionTools;
+﻿using DevExpress.XtraReports.UI;
+using ElbayanDatabase.ConnectionTools;
 using ElbayaNPresentation.Presenters.CommonPresenter;
+using ElbayaNPresentation.Reports;
 using ElbayaNPresentation.Views.Client;
 using ElbayaNPresentation.Views.Purchases;
 using ElbayanServices.Repository.Clints.OrderProcurement;
@@ -32,7 +34,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
         internal void OnLoad()
         {
             PopulateSuppliers();
-            PopulateProducts();
+            PopulateActiveProduct.PopulateProducts(_view.Products); 
             PopulateUser();
             _view.OrderNumber.Text = orderProcuremnt.GenerateSequenceNumberSupplier().ToString();
         }
@@ -40,14 +42,6 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
         {
             var user = User.GetById(new Guid("7b706e91-4784-eb11-84c2-80a5899d8326"));
             _view.UserName.Text = user.Name;
-        }
-        private void PopulateProducts()
-        {
-            _view.Products.DisplayMember = "Name";
-            _view.Products.ValueMember = "Id";
-            _view.Products.SelectedValue = "Id";
-            _view.Products.DataSource = Product.GetAll();
-            _view.Products.SelectedIndex = -1;
         }
         private void PopulateSuppliers()
         {
@@ -331,6 +325,21 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
         {
             var model = Supplier.GetSupplierById(new Guid(_view.Suppliers.SelectedValue.ToString()));
             _view.SupplierMobile.Text = model.Mobile.ToString();
+        }
+       
+        internal void PrintReport()
+        {
+            //rptOrderPurchase.PrintOrder(Product.GetAll());
+
+            rptOrderPurchase rpt = new rptOrderPurchase();
+           
+            //var ds = Product.GetAll();
+            //var pr = Product.GetById(new Guid("d918755e-d682-eb11-84c2-80a5899d8326"));
+            //rpt.DataSource = pr;
+            //rpt.DataMember = null;
+            //rpt.xtcorderNumber.DataBindings.Add("Text", pr, "UCP");
+            
+            rpt.ShowPreview();
         }
     }
 }
