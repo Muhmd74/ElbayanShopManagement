@@ -99,7 +99,7 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
                 OrderId = orderId,
                 Stock = quantity,
                 Id = Guid.NewGuid(),
-                DateTime = DateTime.UtcNow,
+                DateTime = DateTime.Now,
             });
         }
         private void SupplierProductPrice(Guid productId, decimal price, decimal discount, int vat)
@@ -175,7 +175,7 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
                     Phone = firm.Phone,
 
                     OrderNumber = order.OrderNumber,
-                    DateTime = order.DateTime.ToUniversalTime(),
+                    DateTime = order.DateTime,
                     OrderType = order.OrderType,
                     TotalAfterDiscount = order.TotalAfterDiscount,
                     DeferredPrice = order.Deferred,
@@ -187,7 +187,7 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
                     PosName = order.Pos.Name,
                     ProductCount = order.OrderProduct.Count,
                     TotalVat = order.OrderProduct.Sum(d => d.Vat),
-                    Products = productOrder.Select(d => new ProductDto
+                    Products = productOrder.Select(d => new ProductInvoiceDto
                     {
                         Quantity = d.Quantity,
                         ProductName = d.Name,

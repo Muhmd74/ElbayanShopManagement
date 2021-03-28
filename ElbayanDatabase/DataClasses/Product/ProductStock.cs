@@ -14,6 +14,8 @@ namespace ElbayanDatabase.DataClasses.Product
         public Product Product { get; set; }
         public DateTime DateTime { get; set; }
         public int Stock { get; set; }
+        public string StockStatues { get; set; }
+
         public Guid OrderId { get; set; }
         public Order Order { get; set; }
     }
