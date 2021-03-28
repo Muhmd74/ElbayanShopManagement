@@ -102,6 +102,10 @@
     <Compile Include="Migrations\202103271838443_InitialMigration.designer.cs">
       <DependentUpon>202103271838443_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103281956564_EnhancemntFirmData.cs" />
+    <Compile Include="Migrations\202103281956564_EnhancemntFirmData.designer.cs">
+      <DependentUpon>202103281956564_EnhancemntFirmData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -112,6 +116,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202103271838443_InitialMigration.resx">
       <DependentUpon>202103271838443_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103281956564_EnhancemntFirmData.resx">
+      <DependentUpon>202103281956564_EnhancemntFirmData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

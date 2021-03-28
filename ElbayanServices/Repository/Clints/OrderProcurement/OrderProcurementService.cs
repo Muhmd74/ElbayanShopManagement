@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using ElbayanDatabase.ConnectionTools;
 using ElbayanDatabase.DataClasses.Clints.Sales;
@@ -8,7 +9,7 @@ using ElbayanServices.Repository.Clints.OrderProcurement.Dtos;
 
 namespace ElbayanServices.Repository.Clints.OrderProcurement
 {
-    public class OrderProcurementService
+    public class OrderProcurementService : IOrderProcurement
     {
         private readonly ConnectionOption _context;
 
@@ -139,13 +140,65 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
         public decimal GetLastProductPrice(Guid productId)
         {
             var product = _context.ProductPrices.OrderBy(d => d.DateTime)
-                .FirstOrDefault(d => d.ProcessType== "مشتريات" && d.ProductId == productId);
+                .FirstOrDefault(d => d.ProcessType == "مشتريات" && d.ProductId == productId);
             if (product != null)
             {
                 return product.ProcPrice;
             }
 
             return 0;
+        }
+
+        public InvoiceDetailsDto PrintInvoice(Guid orderId)
+        {
+            var order = _context.Orders
+                .Include(d => d.Clint)
+                .Include(d => d.Employee)
+                .Include(d => d.Pos)
+                .Include(d => d.OrderProduct)
+                .FirstOrDefault(d => d.Id == orderId);
+
+            var productOrder = _context.OrderProducts
+                .Include(d => d.Product.SmallUnit)
+                .Include(d => d.Product.LargeUnit)
+                .Where(d => d.OrderId == orderId);
+            var firm = _context.Firms.FirstOrDefault();
+            if (order != null)
+            {
+                return new InvoiceDetailsDto()
+                {
+
+                    FirmName = firm.Name,
+                    LogoInvoice = firm.LogoInvoice,
+                    MessageInvoice = firm.MessageInvoice,
+                    Mobile = firm.Mobile,
+                    Phone = firm.Phone,
+
+                    OrderNumber = order.OrderNumber,
+                    DateTime = order.DateTime.ToUniversalTime(),
+                    OrderType = order.OrderType,
+                    TotalAfterDiscount = order.TotalAfterDiscount,
+                    DeferredPrice = order.Deferred,
+                    Payment = order.Payment,
+                    TotalDiscount = order.TotalDiscount,
+
+                    ClintName = order.Clint.Name,
+                    EmployeeName = order.Employee.Name,
+                    PosName = order.Pos.Name,
+                    ProductCount = order.OrderProduct.Count,
+                    TotalVat = order.OrderProduct.Sum(d => d.Vat),
+                    Products = productOrder.Select(d => new ProductDto
+                    {
+                        Quantity = d.Quantity,
+                        ProductName = d.Name,
+                        TotalProductPrice = d.TotalProductPrice,
+                        UnitName = d.Product.IsUnitSale ? d.Product.LargeUnit.Name : d.Product.SmallUnit.Name,
+                        Price = d.PriceSale
+                    }).ToList()
+                };
+            }
+
+            return null;
         }
     }
 }
