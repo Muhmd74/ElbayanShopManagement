@@ -98,33 +98,9 @@
     <Compile Include="DataClasses\Product\ProductStock.cs" />
     <Compile Include="DataClasses\Product\Unit\LargeUnit.cs" />
     <Compile Include="DataClasses\Product\Unit\SmallUnit.cs" />
-    <Compile Include="Migrations\202103141854068_InitialCreate.cs" />
-    <Compile Include="Migrations\202103141854068_InitialCreate.designer.cs">
-      <DependentUpon>202103141854068_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202103142221236_Update-Deferred.cs" />
-    <Compile Include="Migrations\202103142221236_Update-Deferred.designer.cs">
-      <DependentUpon>202103142221236_Update-Deferred.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202103190115126_AddKeyToOrderStocks.cs" />
-    <Compile Include="Migrations\202103190115126_AddKeyToOrderStocks.designer.cs">
-      <DependentUpon>202103190115126_AddKeyToOrderStocks.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202103190131501_AddOrderIdToProductStocks.cs" />
-    <Compile Include="Migrations\202103190131501_AddOrderIdToProductStocks.designer.cs">
-      <DependentUpon>202103190131501_AddOrderIdToProductStocks.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202103220555135_DeleteOrderIdFromProductSTock.cs" />
-    <Compile Include="Migrations\202103220555135_DeleteOrderIdFromProductSTock.designer.cs">
-      <DependentUpon>202103220555135_DeleteOrderIdFromProductSTock.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202103220634477_UpdateProductStockDtoDeleteKey.cs" />
-    <Compile Include="Migrations\202103220634477_UpdateProductStockDtoDeleteKey.designer.cs">
-      <DependentUpon>202103220634477_UpdateProductStockDtoDeleteKey.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202103221835060_AddDateTimeToProductPrice.cs" />
-    <Compile Include="Migrations\202103221835060_AddDateTimeToProductPrice.designer.cs">
-      <DependentUpon>202103221835060_AddDateTimeToProductPrice.cs</DependentUpon>
+    <Compile Include="Migrations\202103271838443_InitialMigration.cs" />
+    <Compile Include="Migrations\202103271838443_InitialMigration.designer.cs">
+      <DependentUpon>202103271838443_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -134,29 +110,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202103141854068_InitialCreate.resx">
-      <DependentUpon>202103141854068_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202103142221236_Update-Deferred.resx">
-      <DependentUpon>202103142221236_Update-Deferred.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202103190115126_AddKeyToOrderStocks.resx">
-      <DependentUpon>202103190115126_AddKeyToOrderStocks.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202103190131501_AddOrderIdToProductStocks.resx">
-      <DependentUpon>202103190131501_AddOrderIdToProductStocks.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202103220555135_DeleteOrderIdFromProductSTock.resx">
-      <DependentUpon>202103220555135_DeleteOrderIdFromProductSTock.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202103220634477_UpdateProductStockDtoDeleteKey.resx">
-      <DependentUpon>202103220634477_UpdateProductStockDtoDeleteKey.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202103221835060_AddDateTimeToProductPrice.resx">
-      <DependentUpon>202103221835060_AddDateTimeToProductPrice.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202103271838443_InitialMigration.resx">
+      <DependentUpon>202103271838443_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class InitialMigration : DbMigration
     {
         public override void Up()
         {
@@ -198,6 +198,7 @@
                         OrderId = c.Guid(nullable: false),
                         DeferredOfOrder = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Payment = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        PaymentPerMonth = c.Decimal(nullable: false, precision: 18, scale: 2),
                         TotalPayment = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Balance = c.Decimal(nullable: false, precision: 18, scale: 2),
                         DueDatePayingOff = c.DateTime(nullable: false),
@@ -301,6 +302,7 @@
                         ProductId = c.Guid(nullable: false),
                         DateTime = c.DateTime(nullable: false),
                         ProcPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        ProcessType = c.String(),
                         Vat = c.Int(nullable: false),
                         Sale = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Discount = c.Decimal(nullable: false, precision: 18, scale: 2),
@@ -316,12 +318,15 @@
                     {
                         Id = c.Guid(nullable: false),
                         ProductId = c.Guid(nullable: false),
-                        StockStatues = c.String(),
+                        DateTime = c.DateTime(nullable: false),
                         Stock = c.Int(nullable: false),
+                        OrderId = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Orders", t => t.OrderId, cascadeDelete: true)
                 .ForeignKey("dbo.Products", t => t.ProductId, cascadeDelete: true)
-                .Index(t => t.ProductId);
+                .Index(t => t.ProductId)
+                .Index(t => t.OrderId);
             
             CreateTable(
                 "dbo.SubCategories",
@@ -447,6 +452,7 @@
                         UserName = c.String(nullable: false, maxLength: 250),
                         Password = c.String(nullable: false),
                         EmployeeId = c.Guid(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .Index(t => t.UserName, unique: true);
@@ -520,6 +526,7 @@
             DropForeignKey("dbo.Products", "SubCategoryId", "dbo.SubCategories");
             DropForeignKey("dbo.SubCategories", "CategoryId", "dbo.Categories");
             DropForeignKey("dbo.ProductStocks", "ProductId", "dbo.Products");
+            DropForeignKey("dbo.ProductStocks", "OrderId", "dbo.Orders");
             DropForeignKey("dbo.ProductPrices", "ProductId", "dbo.Products");
             DropForeignKey("dbo.OrderProducts", "ProductId", "dbo.Products");
             DropForeignKey("dbo.SmallUnits", "LargeUnitId", "dbo.LargeUnits");
@@ -546,6 +553,7 @@
             DropIndex("dbo.EmployeeRoles", new[] { "RoleId" });
             DropIndex("dbo.EmployeeRoles", new[] { "EmployeeId" });
             DropIndex("dbo.SubCategories", new[] { "CategoryId" });
+            DropIndex("dbo.ProductStocks", new[] { "OrderId" });
             DropIndex("dbo.ProductStocks", new[] { "ProductId" });
             DropIndex("dbo.ProductPrices", new[] { "ProductId" });
             DropIndex("dbo.SmallUnits", new[] { "LargeUnitId" });
