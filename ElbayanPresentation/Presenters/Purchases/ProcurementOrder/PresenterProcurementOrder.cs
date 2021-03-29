@@ -216,7 +216,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
             var model = Product.GetById(new Guid(_view.Products.SelectedValue.ToString()));
             GetProduct(model);
         }
-        private void GetProduct(ProductDto model)
+        private void GetProduct(ElbayanServices.Repository.Products.Product.Dtos.ProductDto model)
         {
             if (model != null)
             {

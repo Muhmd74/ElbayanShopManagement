@@ -127,6 +127,8 @@
     <Compile Include="Presenters\Purchases\QuantityEditForm\PresenterQuantityEdit.cs" />
     <Compile Include="Presenters\Purchases\Supplier\AllSuppliers\IViewAllSuppleir.cs" />
     <Compile Include="Presenters\Purchases\Supplier\AllSuppliers\PresenterAllSupplierData.cs" />
+    <Compile Include="Presenters\Setting\FirmDetial\IViewFirmDetail.cs" />
+    <Compile Include="Presenters\Setting\FirmDetial\PresenterFirmDetail.cs" />
     <Compile Include="Presenters\Store\Building\BuildingPresenter.cs" />
     <Compile Include="Presenters\Store\Building\IViewBuilding.cs" />
     <Compile Include="Presenters\Store\Building\POS\IViewPOS.cs" />
@@ -218,6 +220,12 @@
     <Compile Include="Views\Purchases\Procurement\PurchasesOffers.Designer.cs">
       <DependentUpon>PurchasesOffers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Settings\Firm\frmFirmDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Settings\Firm\frmFirmDetail.Designer.cs">
+      <DependentUpon>frmFirmDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Store\Building\ucBuilding.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -307,6 +315,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Purchases\Procurement\frmProcurementOrder.resx">
       <DependentUpon>frmProcurementOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Settings\Firm\frmFirmDetail.resx">
+      <DependentUpon>frmFirmDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Store\Building\ucBuilding.resx">
       <DependentUpon>ucBuilding.cs</DependentUpon>
