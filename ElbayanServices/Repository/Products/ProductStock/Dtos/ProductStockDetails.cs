@@ -17,5 +17,6 @@ namespace ElbayanServices.Repository.Products.ProductStock.Dtos
         public int Quantity { get; set; }
         public long BarCode { get; set; }
         public int ProductNumber { get; set; }
+        public string StockStatues { get; set; }
     }
 }
