@@ -21,6 +21,7 @@ using ElbayaNPresentation.Views.Client.Suppliers;
 using ElbayaNPresentation.Views.Finance.Employee;
 using ElbayaNPresentation.StartUp;
 using ElbayaNPresentation.Views.Purchases.Procurement;
+using ElbayaNPresentation.Views.Settings.Firm;
 
 namespace ElbayaNPresentation
 {
@@ -221,6 +222,22 @@ namespace ElbayaNPresentation
             }
             frm_ProductStock.Instance.BringToFront();
             frm_ProductStock.Instance.Show();
+        }
+
+        private void barButtonItem24_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!this.gcContainer.Controls.Contains(frmFirmDetail.Instance))
+            {
+                frmFirmDetail.Instance.TopLevel = false;
+                frmFirmDetail.Instance.TopMost = false;
+                //frmFirmDetail.Instance.Owner = this;
+                this.gcContainer.Controls.Add(frmFirmDetail.Instance);
+                frmFirmDetail.Instance.Dock = DockStyle.Fill;
+                frmFirmDetail.Instance.BringToFront();
+                frmFirmDetail.Instance.Show();
+            }
+            frmFirmDetail.Instance.BringToFront();
+            frmFirmDetail.Instance.Show();
         }
     }
 }

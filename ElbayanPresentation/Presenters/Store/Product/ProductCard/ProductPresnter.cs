@@ -1,4 +1,5 @@
 ﻿using ElbayanDatabase.ConnectionTools;
+using ElbayaNPresentation.Presenters.CommonPresenter;
 using ElbayaNPresentation.Views.Store.Product;
 using ElbayanServices.Repository.Products.Product;
 using ElbayanServices.Repository.Products.Product.Dtos;
@@ -23,15 +24,22 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
     public class ProductPresnter
     {
         private readonly IViewNewProdcut _view;
-
         private readonly ProductService productServices = new ProductService(new ConnectionOption());
-        
+
         public ProductPresnter(IViewNewProdcut view)
         {
             _view = view;
+            InitiatFormEvents();
         }
-
-        public void UploadPicture()
+        void InitiatFormEvents()
+        {
+            _view.AddObject.Click += new EventHandler(OnCLickbtnAdd);
+            _view.UpdateObject.Click += new EventHandler(OnCLickbtnUpdate);
+            _view.UploadProductPicture.Click += new EventHandler(UploadPicture);
+            _view.UCP.KeyPress += new KeyPressEventHandler(validateTextForNumeric);
+            _view.LimitedDemand.KeyPress += new KeyPressEventHandler(validateTextForNumeric);
+        }
+        public void UploadPicture(object sender, EventArgs e)
         {
             OpenFileDialog image = new OpenFileDialog();
             image.Filter = "ملفات الصور (*.jpg; *.jpeg; *.gif; *.png; *.bmp;) | *.jpg; *.jpeg; *.gif; *.png; *.bmp;";
@@ -47,18 +55,26 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
                 File.Copy(image.FileName, _view.ImageUrl);
             }
         }
+
         public void OnLoad()
         {
-            // hide Unmeric up down Arrows:
+            //// hide Unmeric up down Arrows:
             _view.PurchaseDefaultPrice.Controls[0].Visible = false;
             _view.SaleDefaultPrice.Controls[0].Visible = false;
             _view.WholesalePrice.Controls[0].Visible = false;
             _view.VAT.Controls[0].Visible = false;
             _view.Disccount.Controls[0].Visible = false;
 
+            // Populate combobox
             FillcbxLargeUnit();
             FillcbxSubcategory();
             //FillcbxSmallunit();
+
+            // Populate Products Numbers:
+            // 1- Product Number (PSN)
+            _view.PSNumber.Text = productServices.GenerateProductNumber().ToString();
+            // 2- Product Company Barcode
+            _view.BarCode.Text = productServices.GeneratorRandomNumber().ToString();
         }
         public void FillcbxSubcategory()
         {
@@ -90,17 +106,21 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
             {
                 _view.SmallUnit.DataSource = null;
             }
-          
-        }
 
+        }
         // Generate Random number 
         public long GenerateProductNumber()
         {
             return productServices.GeneratorRandomNumber();
         }
-       // CRUD Operations:
-       // Create:: 
-        public void OnCLickbtnAdd()
+        // CRUD Operations:
+        // Create:: 
+        void validateTextForNumeric(object sender, KeyPressEventArgs e)
+        {
+            ValidateControls.ValidateTextBoxOnlyNumber(sender, e, _view.LimitedDemand);
+            ValidateControls.ValidateTextBoxOnlyNumber(sender, e, _view.UCP);
+        }
+        public void OnCLickbtnAdd(object sender, EventArgs e)
         {
             if (_view.ProudctName.Text != string.Empty)
             {
@@ -124,6 +144,7 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
                             CreateObject();
                             ClearControls();
                         }
+                        ucAllProductsView.Instance.ActiveObject.DataSource = productServices.GetAll();
                     }
                     else
                     {
@@ -138,17 +159,8 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
                             CreateObject();
                             ClearControls();
                         }
-
                         // Navigate to AllProuductView:
-                        if (!frmMainBoard.Instance.gcContainer.Contains(ucAllProductsView.Instance))
-                        {
-                            frmMainBoard.Instance.Controls.Add(ucAllProductsView.Instance);
-                            ucAllProductsView.Instance.Dock = DockStyle.Fill;
-                            ucAllProductsView.Instance.BringToFront();
-                            ucAllProductsView.Instance.Presenter.PopulatedgvAllProduct();
-                        }
-                        ucAllProductsView.Instance.BringToFront();
-                        ucAllProductsView.Instance.Presenter.PopulatedgvAllProduct();
+                        ucAllProductsView.Instance.ActiveObject.DataSource = productServices.GetAll();
                         frmNewProduct.Instance.Close();
                     }
                 }
@@ -165,32 +177,31 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
             }
 
         }
-
         internal void OnClickDeletOrRestore()
         {
             if (_view.ProudctName.Text != string.Empty)
             {
                 if (_view.SubCategory.SelectedItem != null)
                 {
-                    if (_view.LargeUnit.SelectedItem == null && _view.SmallUnit.SelectedItem == null)
+                    if (_view.IsDeleted.Checked)
                     {
-                        MessageBox.Show("يجب اختيار الوحدة  الكبرى أو الوحدة الصغرى للمنتج ", "تأكيد", MessageBoxButtons.OK);
-                        return;
-                    }
-                        _view.IsUnitSale = false;
+                        if (_view.LargeUnit.SelectedItem == null && _view.SmallUnit.SelectedItem == null)
+                        {
+                            MessageBox.Show("يجب اختيار الوحدة  الكبرى أو الوحدة الصغرى للمنتج ", "تأكيد", MessageBoxButtons.OK);
+                            return;
+                        }
                         productServices.IsDeleted(_view.ID);
                         ClearControls();
-                    // Navigate to AllProuductView:
-                    if (!frmMainBoard.Instance.gcContainer.Contains(ucAllProductsView.Instance))
-                    {
-                        frmMainBoard.Instance.Controls.Add(ucAllProductsView.Instance);
-                        ucAllProductsView.Instance.Dock = DockStyle.Fill;
-                        ucAllProductsView.Instance.BringToFront();
                         ucAllProductsView.Instance.Presenter.PopulatedgvAllProduct();
+                        ucAllProductsView.Instance.Presenter.PopulatedgvDeletedObject();
+                        MessageBox.Show("تم أرشفة المنتج بنجاح", "تأكيد", MessageBoxButtons.OK);
+                        frmNewProduct.Instance.Close();
                     }
-                    ucAllProductsView.Instance.BringToFront();
-                    ucAllProductsView.Instance.Presenter.PopulatedgvAllProduct();
-                    ucAllProductsView.Instance.Presenter.PopulatedgvDeletedObject();
+                    else
+                    {
+                        MessageBox.Show("يجب اختيار الصنف مؤرشف", "تأكيد", MessageBoxButtons.OK);
+                        return;
+                    }
                 }
                 else
                 {
@@ -204,14 +215,15 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
                 return;
             }
         }
-
         private void CreateObject()
         {
             productServices.Add(new ProductDto
             {
                 Name = _view.ProudctName.Text,
                 Description = _view.Description.Text,
-                BarCode = Convert.ToInt32(_view.BarCode.Text),
+                BarCode = long.Parse(_view.BarCode.Text),
+                UCP = long.Parse(_view.UCP.Text),
+                ProductNumber = Convert.ToInt32(_view.PSNumber.Text),
                 SubCategoryId = new Guid(_view.SubCategory.SelectedValue.ToString()),
                 LargeUnitId = new Guid(_view.LargeUnit.SelectedValue.ToString()),
                 SmallUnitId = new Guid(_view.SmallUnit.SelectedValue.ToString()),
@@ -219,7 +231,6 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
                 LimitedDemand = Convert.ToInt32(_view.LimitedDemand.Text),
                 IsExpired = _view.IsExpired.Checked,
                 ImageUrl = _view.ImageUrl,
-                UCP = Convert.ToInt32(_view.UCP.Text),
                 PurchaseDefaultPrice = _view.PurchaseDefaultPrice.Value,
                 SaleDefaultPrice = _view.SaleDefaultPrice.Value,
                 WholesalePrice = _view.WholesalePrice.Value,
@@ -228,11 +239,10 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
                 Discount = Convert.ToInt32(_view.Disccount.Text)
             });
         }
+
         // Retrive Handled by ucAllProduct
-
         // Update::
-
-        public void OnCLickbtnUpdate()
+        public void OnCLickbtnUpdate(object sender, EventArgs e)
         {
             if (_view.ProudctName.Text != string.Empty)
             {
@@ -243,44 +253,19 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
                         MessageBox.Show("يجب اختيار الوحدة  الكبرى أو الوحدة الصغرى للمنتج ", "تأكيد", MessageBoxButtons.OK);
                         return;
                     }
-                    //if (MessageBox.Show("تم الإضافة بنجاح هل ترغب في إضافة صنف أخر", "تأكيد", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    //{
-                        if (_view.SmallUnitIsMainUnit.Checked)
-                        {
-                            _view.IsUnitSale = false;
-                            UpdateObject();
-                            ClearControls();
-                        }
-                        else
-                        {
-                            UpdateObject();
-                            ClearControls();
-                        }
-                    //}
-                    //else
-                    //{
-                    //    if (_view.SmallUnitIsMainUnit.Checked)
-                    //    {
-                    //        _view.IsUnitSale = false;
-                    //        UpdateObject();
-                    //        ClearControls();
-                    //    }
-                    //    else
-                    //    {
-                    //        CreateObject();
-                    //        ClearControls();
-                    //    }
-
-                        // Navigate to AllProuductView:
-                        if (!frmMainBoard.Instance.gcContainer.Contains(ucAllProductsView.Instance))
-                        {
-                            frmMainBoard.Instance.Controls.Add(ucAllProductsView.Instance);
-                            ucAllProductsView.Instance.Dock = DockStyle.Fill;
-                            ucAllProductsView.Instance.BringToFront();
-                        ucAllProductsView.Instance.dgvAllProduct.Refresh();
-                        }
-                        ucAllProductsView.Instance.BringToFront();
-                    //}
+                    if (_view.SmallUnitIsMainUnit.Checked)
+                    {
+                        _view.IsUnitSale = false;
+                        UpdateObject();
+                        ClearControls();
+                    }
+                    else
+                    {
+                        UpdateObject();
+                        ClearControls();
+                    }
+                    ucAllProductsView.Instance.ActiveObject.DataSource = productServices.GetAll();
+                    frmNewProduct.Instance.Close();
                 }
                 else
                 {
@@ -294,7 +279,6 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
                 return;
             }
         }
-
         private void UpdateObject()
         {
             productServices.Update(new ProductDto
@@ -307,27 +291,25 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
                 SmallUnitId = new Guid(_view.SmallUnit.SelectedValue.ToString()),
                 IsUnitSale = _view.IsUnitSale,
                 LimitedDemand = Convert.ToInt32(_view.LimitedDemand.Text),
-
-                UCP = Convert.ToInt32(_view.UCP.Text),
-                BarCode = Convert.ToInt32(_view.BarCode.Text),
+                UCP = long.Parse(_view.UCP.Text),
+                BarCode = long.Parse(_view.BarCode.Text),
                 ProductNumber = Convert.ToInt32(_view.PSNumber.Text),
                 IsExpired = _view.IsExpired.Checked,
                 PurchaseDefaultPrice = _view.PurchaseDefaultPrice.Value,
                 SaleDefaultPrice = _view.SaleDefaultPrice.Value,
                 WholesalePrice = _view.WholesalePrice.Value,
-                Discount = Convert.ToInt32(_view.Disccount.Value), // needed to be decimal
+                Discount = Convert.ToInt32(_view.Disccount.Value),
                 Vat = Convert.ToInt32(_view.VAT.Value),
                 ImageUrl = _view.ImageUrl,
-                
             });
         }
         // Validate Text box for only numbers:
-
         public void ClearControls()
         {
             _view.ProudctName.Text = _view.Description.Text = "";
-            _view.LimitedDemand.Text = _view.UCP.Text
-                = _view.BarCode.Text = _view.PSNumber.Text = "0";
+            _view.LimitedDemand.Text = _view.UCP.Text = "0";
+            _view.BarCode.Text = productServices.GeneratorRandomNumber().ToString();
+            _view.PSNumber.Text = productServices.GenerateProductNumber().ToString();
             _view.PurchaseDefaultPrice.Value = _view.SaleDefaultPrice.Value = _view.WholesalePrice.Value
                 = _view.VAT.Value = _view.Disccount.Value = 0m;
             _view.SubCategory.SelectedIndex = _view.LargeUnit.SelectedIndex = _view.SmallUnit.SelectedIndex = -1;

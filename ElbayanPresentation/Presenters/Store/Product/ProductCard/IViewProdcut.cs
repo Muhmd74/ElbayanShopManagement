@@ -13,6 +13,7 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductCard
 {
     public interface IViewNewProdcut
     {
+        
         Guid ID { get; set; }
         Guna2TextBox UCP { get; set; }
         Guna2TextBox BarCode { get; set; }

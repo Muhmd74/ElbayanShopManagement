@@ -231,8 +231,8 @@ namespace ElbayanDatabase.ConnectionTools
                 .WithRequired(d => d.Clint)
                 .HasForeignKey(d => d.ClintId)
                 .WillCascadeOnDelete(false);
-            modelBuilder.Entity<Employee>()
-                .HasRequired(d => d.Users);
+            //modelBuilder.Entity<Employee>()
+            //    .HasRequired(d => d.Users);
         }
     }
 }

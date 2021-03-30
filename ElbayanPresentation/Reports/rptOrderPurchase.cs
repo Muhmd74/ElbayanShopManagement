@@ -1,5 +1,5 @@
 ﻿using DevExpress.XtraReports.UI;
-using ElbayanServices.Repository.Products.Product;
+using ElbayanServices.Repository.Clints.OrderProcurement;
 using System;
 using System.Collections;
 using System.ComponentModel;
@@ -13,15 +13,27 @@ namespace ElbayaNPresentation.Reports
         {
             InitializeComponent();
         }
-        private readonly ProductService Product = new ProductService(new ElbayanDatabase.ConnectionTools.ConnectionOption());
         public static void PrintOrder(object ds)
         {
             rptOrderPurchase rpt = new rptOrderPurchase();
             rpt.DataSource = ds;
-            rpt.DetailReport.DataSource = ds;
-            rpt.DetailReport.DataMember = "";
-
+            rpt.DetailReport.DataSource = rpt.DataSource;
+            rpt.DetailReport.DataMember = "Products";
+            rpt.BindingData();
             rpt.ShowPreview();
+        }
+
+        void BindingData()
+        {
+            xtcorderNumber.DataBindings.Add("Text", this.DataSource, "OrderNumber");
+
+
+            //xtcOrderProductName.ExpressionBindings.Add(new ExpressionBinding("BeforePrint","Text", "+1"));
+            xtcOrderProductName.ExpressionBindings.Add(new ExpressionBinding("BeforePrint","Text", "ProductName"));
+            xtOrderProductUnit.ExpressionBindings.Add(new ExpressionBinding("BeforePrint","Text", "UnitName"));
+            xtcOrderProductQantity.ExpressionBindings.Add(new ExpressionBinding("BeforePrint","Text", "Quantity"));
+            xtcOrderProductPrice.ExpressionBindings.Add(new ExpressionBinding("BeforePrint","Text", "Price"));
+            xtcOrderProductTotal.ExpressionBindings.Add(new ExpressionBinding("BeforePrint","Text", "Quantity * Price"));
         }
 
 

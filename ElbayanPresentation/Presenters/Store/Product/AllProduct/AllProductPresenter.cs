@@ -20,6 +20,12 @@ namespace ElbayaNPresentation.Presenters.Store.Product.AllProduct
         public AllProductPresenter(IViewAllProduct view)
         {
             _view = view;
+            InitiateFormEvents();
+        }
+
+        private void InitiateFormEvents()
+        {
+            _view.ActiveObject.DoubleClick += new EventHandler(PopulatefrmNewProduct);
         }
 
         public void OnLoadUC()
@@ -72,7 +78,7 @@ namespace ElbayaNPresentation.Presenters.Store.Product.AllProduct
             int? ProductNymber = NullableNumber.ProductNumber(_view.SearchKeyword.Text);
             _view.ActiveObject.DataSource =  productSerice.GetByName(productName, Barcode, ProductNymber).ToList();
         }
-        public void PopulatefrmNewProduct()
+        public void PopulatefrmNewProduct(object sender, EventArgs e)
         {
             if(_view.TabContainer.SelectedIndex == 0)
             {
@@ -107,8 +113,8 @@ namespace ElbayaNPresentation.Presenters.Store.Product.AllProduct
             frmNewProduct.Instance.cbIsExpired.Checked = model.IsExpired;
             frmNewProduct.Instance.txtQuantity.Text = model.TotalQuantity.ToString();
             frmNewProduct.Instance.cbIsDeleted.Visible = true;
+            frmNewProduct.Instance.cbIsDeleted.Enabled = true;
             frmNewProduct.Instance.cbIsDeleted.Checked = model.IsDeleted;
-            
             if(model.IsUnitSale == true)
             {
                 frmNewProduct.Instance.rbLargeUnitIsMainUnit.Checked = true;
@@ -132,6 +138,8 @@ namespace ElbayaNPresentation.Presenters.Store.Product.AllProduct
             }
             frmNewProduct.Instance.btnUpdate.Visible = true;
             frmNewProduct.Instance.btnDeleteOrRestore.Visible = true;
+            frmNewProduct.Instance.btnAdd.Visible = false;
+            frmNewProduct.Instance.ShowDialog();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using ElbayanDatabase.ConnectionTools;
@@ -17,7 +18,7 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
         {
             _context = context;
         }
-        public bool CreateSupplierOrder(OrderDto model)
+        public Guid CreateSupplierOrder(OrderDto model)
         {
             var order = _context.Orders.Add(new Order()
             {
@@ -56,7 +57,7 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
                     _context.SaveChanges();
                 }
             }
-            return true;
+            return order.Id;
         }
         private void CreateProductOrder(OrderProductDto model, Guid orderId)
         {
@@ -102,7 +103,7 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
                 DateTime = DateTime.Now,
             });
         }
-        private void SupplierProductPrice(Guid productId, decimal price, decimal discount, int vat)
+        private void SupplierProductPrice(Guid productId, decimal price, decimal discount, decimal vat)
         {
             var product = _context.ProductPrices.Add(new ProductPrice()
             {
@@ -145,11 +146,10 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
             {
                 return product.ProcPrice;
             }
-
             return 0;
         }
 
-        public InvoiceDetailsDto PrintInvoice(Guid orderId)
+        public List<InvoiceDetailsDto> PrintInvoice(Guid orderId)
         {
             var order = _context.Orders
                 .Include(d => d.OrderProduct).FirstOrDefault(d => d.Id == orderId);
@@ -165,9 +165,10 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
                 .Include(d => d.Product.LargeUnit)
                 .Where(d => d.OrderId == orderId).ToList();
             var firm = _context.Firms.FirstOrDefault();
+
             if (order != null)
             {
-                return new InvoiceDetailsDto()
+                var inovioce =  new InvoiceDetailsDto()
                 {
 
                     FirmName = firm.Name,
@@ -198,9 +199,12 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
                         UnitName = d.Product.IsUnitSale ? d.Product.LargeUnit.Name : d.Product.SmallUnit.Name,
                         Price = d.PriceSale
                     }).ToList()
+                    
                 };
+                List<InvoiceDetailsDto> invoiceDetails = new List<InvoiceDetailsDto>();
+                invoiceDetails.Add(inovioce);
+                return invoiceDetails.ToList();
             }
-
             return null;
         }
     }

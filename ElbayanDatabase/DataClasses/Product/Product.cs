@@ -14,7 +14,7 @@ namespace ElbayanDatabase.DataClasses.Product
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
-        public int UCP { get; set; }
+        public long UCP { get; set; }
         public long BarCode { get; set; }
         [Required]
         public string Name { get; set; }

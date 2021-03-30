@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace ElbayanServices.Repository.Employees.Employees.Dtos
 {
-   public class EmployeeDto
+    public class EmployeeDto
     {
         public Guid Id { get; set; }
-         public string Name { get; set; }
-
+        public string Name { get; set; }
+        public string UserName { get; set; }
         public string Email { get; set; }
-         public string Password { get; set; }
-         public bool IsActive { get; set; } = true;
+        public string Password { get; set; }
+        public bool IsActive { get; set; } = true;
         public string Mobile { get; set; }
         public string Address { get; set; }
         public DateTime DateOfBirth { get; set; }

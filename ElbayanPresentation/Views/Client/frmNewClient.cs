@@ -1,5 +1,4 @@
-﻿using DevExpress.XtraEditors;
-using ElbayaNPresentation.Presenters.Clients;
+﻿using ElbayaNPresentation.Presenters.Clients;
 using ElbayaNPresentation.Views.Purchases.Procurement;
 using Guna.UI2.WinForms;
 using System;
@@ -14,7 +13,7 @@ using System.Windows.Forms;
 
 namespace ElbayaNPresentation.Views.Client
 {
-    public partial class frmNewClient : DevExpress.XtraEditors.XtraForm, IViewNewClient
+    public partial class frmNewClient : MetroFramework.Forms.MetroForm, IViewNewClient
     {
         public frmNewClient()
         {
