@@ -16,7 +16,7 @@ namespace ElbayanServices.Repository.Products.ProductStock.Dtos
         public DateTime DateTime { get; set; }
         public int Quantity { get; set; }
         public long BarCode { get; set; }
-        public int ProductNumber { get; set; }
+        public long ProductNumber { get; set; }
         public string StockStatues { get; set; }
     }
 }

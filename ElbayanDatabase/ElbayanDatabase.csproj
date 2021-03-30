@@ -110,6 +110,10 @@
     <Compile Include="Migrations\202103282031504_EnhancemntProductStock.designer.cs">
       <DependentUpon>202103282031504_EnhancemntProductStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103292040361_UpdateProductNumberUCPType.cs" />
+    <Compile Include="Migrations\202103292040361_UpdateProductNumberUCPType.designer.cs">
+      <DependentUpon>202103292040361_UpdateProductNumberUCPType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -126,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103282031504_EnhancemntProductStock.resx">
       <DependentUpon>202103282031504_EnhancemntProductStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103292040361_UpdateProductNumberUCPType.resx">
+      <DependentUpon>202103292040361_UpdateProductNumberUCPType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

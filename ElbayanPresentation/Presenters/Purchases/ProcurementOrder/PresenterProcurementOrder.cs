@@ -41,7 +41,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
         internal void PopulateUser()
         {
             var user = User.GetById(new Guid("7b706e91-4784-eb11-84c2-80a5899d8326"));
-            _view.UserName.Text = user.Name;
+            //_view.UserName.Text = user.Name;
         }
         private void PopulateSuppliers()
         {
@@ -332,13 +332,14 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
             //rptOrderPurchase.PrintOrder(Product.GetAll());
 
             rptOrderPurchase rpt = new rptOrderPurchase();
-           
+
             //var ds = Product.GetAll();
             //var pr = Product.GetById(new Guid("d918755e-d682-eb11-84c2-80a5899d8326"));
             //rpt.DataSource = pr;
             //rpt.DataMember = null;
             //rpt.xtcorderNumber.DataBindings.Add("Text", pr, "UCP");
-            
+
+            //rpt.PrintOrder();
             rpt.ShowPreview();
         }
     }

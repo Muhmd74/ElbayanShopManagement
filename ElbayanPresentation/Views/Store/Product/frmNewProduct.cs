@@ -1,28 +1,20 @@
-﻿using DevExpress.XtraEditors;
-using ElbayaNPresentation.Presenters.CommonPresenter;
-using ElbayaNPresentation.Presenters.Store.Product.ProductCard;
+﻿using ElbayaNPresentation.Presenters.Store.Product.ProductCard;
 using Guna.UI2.WinForms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ElbayaNPresentation.Views.Store.Product
 {
-    public partial class frmNewProduct : DevExpress.XtraEditors.XtraForm, IViewNewProdcut
+    public partial class frmNewProduct : MetroFramework.Forms.MetroForm, IViewNewProdcut
     {
         public frmNewProduct()
         {
             InitializeComponent();
             _instance = this;
-            Presenter = new ProductPresnter(this);
+            Presenter = new ProductPresnter(this); 
             Presenter.OnLoad();
         }
+
         private static frmNewProduct _instance;
         public static frmNewProduct Instance
         {
@@ -62,57 +54,29 @@ namespace ElbayaNPresentation.Views.Store.Product
         public Guna2PictureBox ProductPicture { get => pbProductImage; set => pbProductImage = value; }
         public Guna2CustomRadioButton LargeUnitIsMainUnit { get => rbLargeUnitIsMainUnit; set => rbLargeUnitIsMainUnit = value; }
         public Guna2CustomRadioButton SmallUnitIsMainUnit { get => rbSmallUnitIsMainUnit; set => rbSmallUnitIsMainUnit = value; }
-
-        private void btnUploadPicture_Click(object sender, EventArgs e)
-        {
-           Presenter.UploadPicture();
-        }
         private void btnGenerateBarcode_Click(object sender, EventArgs e)
         {
             txtCBCNumber.Text = Presenter.GenerateProductNumber().ToString();
         }
-
-        private void txtLimitedDemand_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            ValidateControls.ValidateTextBoxOnlyNumber(sender, e, txtLimitedDemand);
-        }
-
         private void txtUCPNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
-            ValidateControls.ValidateTextBoxOnlyNumber(sender, e, txtUCPNumber);
-
-            // Read Barcod:
+           // Read Barcod:
             if (e.KeyChar == 13)
             {
                 txtUCPNumber.Text = e.KeyChar.ToString();
             }
         }
-
         private void cbxLargeUnit_SelectedIndexChanged(object sender, EventArgs e)
         {
             Presenter.FillcbxSmallunit();
         }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            Presenter.OnCLickbtnAdd();
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            Presenter.OnCLickbtnUpdate();
-            frmNewProduct.Instance.Close();
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btnDeleteOrRestore_Click(object sender, EventArgs e)
         {
             Presenter.OnClickDeletOrRestore();
-            frmNewProduct.Instance.Close();
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using DevExpress.XtraReports.UI;
-using ElbayanServices.Repository.Products.Product;
+using ElbayanServices.Repository.Clints.OrderProcurement;
 using System;
 using System.Collections;
 using System.ComponentModel;
@@ -13,15 +13,21 @@ namespace ElbayaNPresentation.Reports
         {
             InitializeComponent();
         }
-        private readonly ProductService Product = new ProductService(new ElbayanDatabase.ConnectionTools.ConnectionOption());
-        public static void PrintOrder(object ds)
+        private static OrderProcurementService Invoice = new OrderProcurementService(new ElbayanDatabase.ConnectionTools.ConnectionOption());
+        public void PrintOrder(Guid ID)
         {
             rptOrderPurchase rpt = new rptOrderPurchase();
+            var ds = Invoice.PrintInvoice(ID);
             rpt.DataSource = ds;
             rpt.DetailReport.DataSource = ds;
-            rpt.DetailReport.DataMember = "";
-
+            rpt.DetailReport.DataMember = "productOrder";
+            xtcorderNumber.DataBindings.Add("Text", ds, "OrderNumber");
             rpt.ShowPreview();
+        }
+
+        void BindingData()
+        {
+
         }
 
 

@@ -13,14 +13,10 @@ namespace ElbayanServices.Repository.Products.Product
     public class ProductService : IProduct, IDisposable
     {
         private readonly ConnectionOption _context;
-
-
         public ProductService(ConnectionOption context)
         {
             _context = context;
         }
-
-
         public bool Add(ProductDto model)
         {
 
@@ -28,28 +24,27 @@ namespace ElbayanServices.Repository.Products.Product
             {
                 Description = model.Description,
                 Name = model.Name,
-                BarCode = GeneratorRandomNumber(),
+                BarCode = model.BarCode,
                 PurchaseDefaultPrice = model.PurchaseDefaultPrice,
                 IsExpired = model.IsExpired,
                 LargeUnitId = model.LargeUnitId,
                 LimitedDemand = model.LimitedDemand,
-                ProductNumber = GenerateProductNumber(),
+                ProductNumber = model.ProductNumber,
                 SmallUnitId = model.SmallUnitId,
                 SubCategoryId = model.SubCategoryId,
                 UCP = model.UCP,
                 IsDeleted = false,
-                DateTime = DateTime.UtcNow,
+                DateTime = DateTime.Now,
                 SaleDefaultPrice = model.SaleDefaultPrice,
                 WholesalePrice = model.WholesalePrice,
                 IsUnitSale = model.IsUnitSale,
                 ImageUrl = model.ImageUrl,
                 Discount = Convert.ToInt32(model.Discount),
                 Vat = Convert.ToInt32(model.Vat),
-            });
+            }); ;
             _context.SaveChanges();
             return true;
         }
-
         public bool Update(ProductDto model)
         {
 
@@ -57,7 +52,7 @@ namespace ElbayanServices.Repository.Products.Product
             if (result == null) return false;
             result.Description = model.Description;
             result.Name = model.Name;
-            result.BarCode = Convert.ToInt32(model.BarCode);
+            result.BarCode = model.BarCode;
             result.PurchaseDefaultPrice = model.PurchaseDefaultPrice;
             result.SaleDefaultPrice = model.SaleDefaultPrice;
             result.WholesalePrice = model.WholesalePrice;
@@ -66,11 +61,9 @@ namespace ElbayanServices.Repository.Products.Product
             result.LimitedDemand = model.LimitedDemand;
             result.SubCategoryId = model.SubCategoryId;
             result.UCP = model.UCP;
-            
             _context.SaveChanges();
             return true;
         }
-
         public List<SmallUnitNameDto> GetAllSmallUnitByLargeUnit(Guid largeUnitId)
         {
             var model = _context.SmallUnits.
@@ -85,7 +78,6 @@ namespace ElbayanServices.Repository.Products.Product
 
             return model;
         }
-
         public List<SmallUnitNameDto> GetAllSmallUnit()
         {
             var model = _context.SmallUnits.
@@ -97,7 +89,6 @@ namespace ElbayanServices.Repository.Products.Product
                 }).ToList();
             return model;
         }
-
         public List<SubCategoryNameDto> GetAllSubCategory()
         {
             var model = _context.SubCategories.
@@ -109,7 +100,6 @@ namespace ElbayanServices.Repository.Products.Product
                 }).ToList();
             return model;
         }
-
         public List<LargeUnitNameDto> GetAllLargeUnit()
         {
             var model = _context.LargeUnits.
@@ -124,7 +114,6 @@ namespace ElbayanServices.Repository.Products.Product
             return model;
 
         }
-
         public bool IsDeleted(Guid id)
         {
             var model = _context.Products.FirstOrDefault(d => d.Id == id);
@@ -149,7 +138,6 @@ namespace ElbayanServices.Repository.Products.Product
 
             return false;
         }
-
         public List<ProductDto> GetAllProductDeleted()
         {
             return _context.Products.Where(d => d.IsDeleted)
@@ -184,7 +172,6 @@ namespace ElbayanServices.Repository.Products.Product
 
                 }).ToList();
         }
-
         public List<ProductDto> GetAll()
         {
             return _context.Products.Where(d => d.IsDeleted == false
@@ -226,7 +213,6 @@ namespace ElbayanServices.Repository.Products.Product
                 }).ToList();
 
         }
-
         public List<ProductDto> GetAllEqualZero()
         {
             return _context.Products.Where(d => d.IsDeleted == false
@@ -268,7 +254,6 @@ namespace ElbayanServices.Repository.Products.Product
 
                 }).ToList();
         }
-
         public List<ProductDto> GetProductsLimitedDemand()
         {
             return _context.Products.Where(d => d.IsDeleted == false
@@ -310,7 +295,6 @@ namespace ElbayanServices.Repository.Products.Product
 
                 }).ToList();
         }
-
         public List<ProductDto> GetAllByCategory(Guid categoryId)
         {
             return _context.Products
@@ -347,7 +331,6 @@ namespace ElbayanServices.Repository.Products.Product
 
                 }).ToList();
         }
-
         public ProductDto GetById(Guid id)
         {
             var model = _context.Products
@@ -387,7 +370,6 @@ namespace ElbayanServices.Repository.Products.Product
 
             return null;
         }
-
         public List<ProductDto> GetByName(string productName, long? barcode, int? productNumber)
         {
             //if (productName!=null)
@@ -498,9 +480,7 @@ namespace ElbayanServices.Repository.Products.Product
             //}
             //return null;
         }
-
-
-        public List<ProductNameDto> GetAllProductName()
+       public List<ProductNameDto> GetAllProductName()
         {
             var model = _context.Products.Where(d => d.IsDeleted == false)
                 .Select(d => new ProductNameDto()
@@ -510,7 +490,6 @@ namespace ElbayanServices.Repository.Products.Product
                 }).ToList();
             return model;
         }
-
         public long GetBarcodeByProductName(string productName)
         {
             var product = _context.Products.FirstOrDefault(d => d.Name == productName);
@@ -561,7 +540,6 @@ namespace ElbayanServices.Repository.Products.Product
 
             return null;
         }
-
         public long GetBarcodeByProductNumber(int productNumber)
         {
             var product = _context.Products.FirstOrDefault(d => d.ProductNumber == productNumber);
@@ -576,7 +554,7 @@ namespace ElbayanServices.Repository.Products.Product
         {
             while (true)
             {
-                var number = new Random().NextLong(1, 1000000);
+                var number = new Random().NextLong(1, 10000000000);
                 if (!_context.Products.Any(d => d.ProductNumber == number))
                 {
                     return number;
@@ -591,7 +569,7 @@ namespace ElbayanServices.Repository.Products.Product
                 return (int)(lastNumber + 1);
             }
 
-            return 1001;
+            return 01001;
         }
         public long GenerateSequenceNumber()
         {

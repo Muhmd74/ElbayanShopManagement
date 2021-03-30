@@ -63,8 +63,8 @@ namespace ElbayaNPresentation.Views.Store.Product
 
         private void dgvAllProduct_DoubleClick(object sender, EventArgs e)
         {
-            Presenter.PopulatefrmNewProduct();
-            frmNewProduct.Instance.ShowDialog();
+            //Presenter.PopulatefrmNewProduct();
+            //frmNewProduct.Instance.ShowDialog();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -74,8 +74,8 @@ namespace ElbayaNPresentation.Views.Store.Product
 
         private void dgvAllDeletedProduct_DoubleClick(object sender, EventArgs e)
         {
-            Presenter.PopulatefrmNewProduct();
-            frmNewProduct.Instance.ShowDialog();
+            //Presenter.PopulatefrmNewProduct();
+            //frmNewProduct.Instance.ShowDialog();
         }
     }
 }

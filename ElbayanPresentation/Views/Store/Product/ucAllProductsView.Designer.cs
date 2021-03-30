@@ -32,8 +32,8 @@ namespace ElbayaNPresentation.Views.Store.Product
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucAllProductsView));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2GroupBox4 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
@@ -66,7 +66,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.ImageUrl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpArchieveLargeUnits = new System.Windows.Forms.TabPage();
             this.dgvAllDeletedProduct = new System.Windows.Forms.DataGridView();
-            this.dgvLimitedDemand = new System.Windows.Forms.TabPage();
             this.DeletedObjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,6 +89,31 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvLimitedDemand = new System.Windows.Forms.TabPage();
+            this.dgvProductLimitedDemand = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn45 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn46 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn47 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn48 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn49 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn54 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn55 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn56 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn57 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn58 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn59 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn60 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn61 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn62 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn63 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn64 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn65 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn66 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn67 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvProductZeroQuantity = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -115,30 +139,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn42 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn43 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn44 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvProductLimitedDemand = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn45 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn46 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn47 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn48 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn49 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn54 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn55 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn56 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn57 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn58 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn59 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn60 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn61 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn62 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn63 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn64 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn65 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn66 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn67 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2GroupBox4.SuspendLayout();
             this.dgvTabContainer.SuspendLayout();
@@ -147,9 +147,9 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.tpArchieveLargeUnits.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllDeletedProduct)).BeginInit();
             this.dgvLimitedDemand.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductLimitedDemand)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductZeroQuantity)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductLimitedDemand)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -174,7 +174,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.guna2GroupBox4.Controls.Add(this.txtSearch);
             this.guna2GroupBox4.Controls.Add(this.label9);
             this.guna2GroupBox4.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(173)))), ((int)(((byte)(78)))));
-            this.guna2GroupBox4.CustomBorderThickness = new System.Windows.Forms.Padding(0, 35, 0, 0);
+            this.guna2GroupBox4.CustomBorderThickness = new System.Windows.Forms.Padding(0);
             this.guna2GroupBox4.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2GroupBox4.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox4.ForeColor = System.Drawing.Color.White;
@@ -599,16 +599,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dgvAllDeletedProduct.TabIndex = 1;
             this.dgvAllDeletedProduct.DoubleClick += new System.EventHandler(this.dgvAllDeletedProduct_DoubleClick);
             // 
-            // dgvLimitedDemand
-            // 
-            this.dgvLimitedDemand.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.dgvLimitedDemand.Controls.Add(this.dgvProductLimitedDemand);
-            this.dgvLimitedDemand.Location = new System.Drawing.Point(4, 43);
-            this.dgvLimitedDemand.Name = "dgvLimitedDemand";
-            this.dgvLimitedDemand.Size = new System.Drawing.Size(1010, 425);
-            this.dgvLimitedDemand.TabIndex = 2;
-            this.dgvLimitedDemand.Text = "منتجات تحت حد الطلب | نواقص";
-            // 
             // DeletedObjectName
             // 
             this.DeletedObjectName.DataPropertyName = "Name";
@@ -825,6 +815,285 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn23.ReadOnly = true;
             this.dataGridViewTextBoxColumn23.Visible = false;
             this.dataGridViewTextBoxColumn23.Width = 141;
+            // 
+            // dgvLimitedDemand
+            // 
+            this.dgvLimitedDemand.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.dgvLimitedDemand.Controls.Add(this.dgvProductLimitedDemand);
+            this.dgvLimitedDemand.Location = new System.Drawing.Point(4, 43);
+            this.dgvLimitedDemand.Name = "dgvLimitedDemand";
+            this.dgvLimitedDemand.Size = new System.Drawing.Size(1010, 425);
+            this.dgvLimitedDemand.TabIndex = 2;
+            this.dgvLimitedDemand.Text = "منتجات تحت حد الطلب | نواقص";
+            // 
+            // dgvProductLimitedDemand
+            // 
+            this.dgvProductLimitedDemand.AllowUserToAddRows = false;
+            this.dgvProductLimitedDemand.AllowUserToDeleteRows = false;
+            this.dgvProductLimitedDemand.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvProductLimitedDemand.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProductLimitedDemand.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvProductLimitedDemand.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductLimitedDemand.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn45,
+            this.dataGridViewTextBoxColumn46,
+            this.dataGridViewTextBoxColumn47,
+            this.dataGridViewTextBoxColumn48,
+            this.dataGridViewTextBoxColumn49,
+            this.dataGridViewTextBoxColumn50,
+            this.dataGridViewTextBoxColumn51,
+            this.dataGridViewTextBoxColumn52,
+            this.dataGridViewTextBoxColumn53,
+            this.dataGridViewTextBoxColumn54,
+            this.dataGridViewTextBoxColumn55,
+            this.dataGridViewTextBoxColumn56,
+            this.dataGridViewTextBoxColumn57,
+            this.dataGridViewTextBoxColumn58,
+            this.dataGridViewTextBoxColumn59,
+            this.dataGridViewTextBoxColumn60,
+            this.dataGridViewTextBoxColumn61,
+            this.dataGridViewTextBoxColumn62,
+            this.dataGridViewTextBoxColumn63,
+            this.dataGridViewTextBoxColumn64,
+            this.dataGridViewTextBoxColumn65,
+            this.dataGridViewTextBoxColumn66,
+            this.dataGridViewTextBoxColumn67});
+            this.dgvProductLimitedDemand.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProductLimitedDemand.Location = new System.Drawing.Point(0, 0);
+            this.dgvProductLimitedDemand.Name = "dgvProductLimitedDemand";
+            this.dgvProductLimitedDemand.ReadOnly = true;
+            this.dgvProductLimitedDemand.RowHeadersWidth = 51;
+            this.dgvProductLimitedDemand.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgvProductLimitedDemand.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.dgvProductLimitedDemand.RowTemplate.Height = 35;
+            this.dgvProductLimitedDemand.Size = new System.Drawing.Size(1010, 425);
+            this.dgvProductLimitedDemand.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn45
+            // 
+            this.dataGridViewTextBoxColumn45.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn45.HeaderText = "اسم الصنف";
+            this.dataGridViewTextBoxColumn45.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn45.Name = "dataGridViewTextBoxColumn45";
+            this.dataGridViewTextBoxColumn45.ReadOnly = true;
+            this.dataGridViewTextBoxColumn45.Width = 106;
+            // 
+            // dataGridViewTextBoxColumn46
+            // 
+            this.dataGridViewTextBoxColumn46.DataPropertyName = "SubCategoryName";
+            this.dataGridViewTextBoxColumn46.HeaderText = "التصنيف";
+            this.dataGridViewTextBoxColumn46.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn46.Name = "dataGridViewTextBoxColumn46";
+            this.dataGridViewTextBoxColumn46.ReadOnly = true;
+            this.dataGridViewTextBoxColumn46.Width = 90;
+            // 
+            // dataGridViewTextBoxColumn47
+            // 
+            this.dataGridViewTextBoxColumn47.DataPropertyName = "IsMAinSalesUnit";
+            this.dataGridViewTextBoxColumn47.HeaderText = "وحدة البيع الرئيسية";
+            this.dataGridViewTextBoxColumn47.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn47.Name = "dataGridViewTextBoxColumn47";
+            this.dataGridViewTextBoxColumn47.ReadOnly = true;
+            this.dataGridViewTextBoxColumn47.Width = 149;
+            // 
+            // dataGridViewTextBoxColumn48
+            // 
+            this.dataGridViewTextBoxColumn48.DataPropertyName = "UCP";
+            this.dataGridViewTextBoxColumn48.HeaderText = "رقم الباركود الدولي";
+            this.dataGridViewTextBoxColumn48.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn48.Name = "dataGridViewTextBoxColumn48";
+            this.dataGridViewTextBoxColumn48.ReadOnly = true;
+            this.dataGridViewTextBoxColumn48.Width = 143;
+            // 
+            // dataGridViewTextBoxColumn49
+            // 
+            this.dataGridViewTextBoxColumn49.DataPropertyName = "BarCode";
+            this.dataGridViewTextBoxColumn49.HeaderText = "رقم باركود الشركة";
+            this.dataGridViewTextBoxColumn49.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn49.Name = "dataGridViewTextBoxColumn49";
+            this.dataGridViewTextBoxColumn49.ReadOnly = true;
+            this.dataGridViewTextBoxColumn49.Width = 141;
+            // 
+            // dataGridViewTextBoxColumn50
+            // 
+            this.dataGridViewTextBoxColumn50.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn50.HeaderText = "رقم المنتج المرجعي";
+            this.dataGridViewTextBoxColumn50.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn50.Name = "dataGridViewTextBoxColumn50";
+            this.dataGridViewTextBoxColumn50.ReadOnly = true;
+            this.dataGridViewTextBoxColumn50.Visible = false;
+            this.dataGridViewTextBoxColumn50.Width = 168;
+            // 
+            // dataGridViewTextBoxColumn51
+            // 
+            this.dataGridViewTextBoxColumn51.DataPropertyName = "ProductNumber";
+            this.dataGridViewTextBoxColumn51.HeaderText = "رقم مختصر للمنتج";
+            this.dataGridViewTextBoxColumn51.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn51.Name = "dataGridViewTextBoxColumn51";
+            this.dataGridViewTextBoxColumn51.ReadOnly = true;
+            this.dataGridViewTextBoxColumn51.Width = 141;
+            // 
+            // dataGridViewTextBoxColumn52
+            // 
+            this.dataGridViewTextBoxColumn52.DataPropertyName = "PurchaseDefaultPrice";
+            this.dataGridViewTextBoxColumn52.HeaderText = "سعر الشراء الإفتراضي";
+            this.dataGridViewTextBoxColumn52.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn52.Name = "dataGridViewTextBoxColumn52";
+            this.dataGridViewTextBoxColumn52.ReadOnly = true;
+            this.dataGridViewTextBoxColumn52.Width = 160;
+            // 
+            // dataGridViewTextBoxColumn53
+            // 
+            this.dataGridViewTextBoxColumn53.DataPropertyName = "SaleDefaultPrice";
+            this.dataGridViewTextBoxColumn53.HeaderText = "سعر البيع الافتراضي";
+            this.dataGridViewTextBoxColumn53.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn53.Name = "dataGridViewTextBoxColumn53";
+            this.dataGridViewTextBoxColumn53.ReadOnly = true;
+            this.dataGridViewTextBoxColumn53.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn54
+            // 
+            this.dataGridViewTextBoxColumn54.DataPropertyName = "WholesalePrice";
+            this.dataGridViewTextBoxColumn54.HeaderText = "سعر البيع بالجملة";
+            this.dataGridViewTextBoxColumn54.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn54.Name = "dataGridViewTextBoxColumn54";
+            this.dataGridViewTextBoxColumn54.ReadOnly = true;
+            this.dataGridViewTextBoxColumn54.Width = 138;
+            // 
+            // dataGridViewTextBoxColumn55
+            // 
+            this.dataGridViewTextBoxColumn55.DataPropertyName = "Discount";
+            this.dataGridViewTextBoxColumn55.HeaderText = "الخصم الإفتراضي";
+            this.dataGridViewTextBoxColumn55.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn55.Name = "dataGridViewTextBoxColumn55";
+            this.dataGridViewTextBoxColumn55.ReadOnly = true;
+            this.dataGridViewTextBoxColumn55.Width = 135;
+            // 
+            // dataGridViewTextBoxColumn56
+            // 
+            this.dataGridViewTextBoxColumn56.DataPropertyName = "VAT";
+            this.dataGridViewTextBoxColumn56.HeaderText = "قيمة الضريبة";
+            this.dataGridViewTextBoxColumn56.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn56.Name = "dataGridViewTextBoxColumn56";
+            this.dataGridViewTextBoxColumn56.ReadOnly = true;
+            this.dataGridViewTextBoxColumn56.Width = 114;
+            // 
+            // dataGridViewTextBoxColumn57
+            // 
+            this.dataGridViewTextBoxColumn57.DataPropertyName = "LimitedDemand";
+            this.dataGridViewTextBoxColumn57.HeaderText = "حد الطلب للمنتج";
+            this.dataGridViewTextBoxColumn57.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn57.Name = "dataGridViewTextBoxColumn57";
+            this.dataGridViewTextBoxColumn57.ReadOnly = true;
+            this.dataGridViewTextBoxColumn57.Width = 133;
+            // 
+            // dataGridViewTextBoxColumn58
+            // 
+            this.dataGridViewTextBoxColumn58.DataPropertyName = "IsExpired";
+            this.dataGridViewTextBoxColumn58.HeaderText = "له تاريخ صلاحية";
+            this.dataGridViewTextBoxColumn58.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn58.Name = "dataGridViewTextBoxColumn58";
+            this.dataGridViewTextBoxColumn58.ReadOnly = true;
+            this.dataGridViewTextBoxColumn58.Visible = false;
+            this.dataGridViewTextBoxColumn58.Width = 154;
+            // 
+            // dataGridViewTextBoxColumn59
+            // 
+            this.dataGridViewTextBoxColumn59.DataPropertyName = "LargeUnitName";
+            this.dataGridViewTextBoxColumn59.HeaderText = "وحدة البيع الرئيسة";
+            this.dataGridViewTextBoxColumn59.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn59.Name = "dataGridViewTextBoxColumn59";
+            this.dataGridViewTextBoxColumn59.ReadOnly = true;
+            this.dataGridViewTextBoxColumn59.Visible = false;
+            this.dataGridViewTextBoxColumn59.Width = 182;
+            // 
+            // dataGridViewTextBoxColumn60
+            // 
+            this.dataGridViewTextBoxColumn60.DataPropertyName = "SmallUnitName";
+            this.dataGridViewTextBoxColumn60.HeaderText = "وحدة البيع الفرعية";
+            this.dataGridViewTextBoxColumn60.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn60.Name = "dataGridViewTextBoxColumn60";
+            this.dataGridViewTextBoxColumn60.ReadOnly = true;
+            this.dataGridViewTextBoxColumn60.Visible = false;
+            this.dataGridViewTextBoxColumn60.Width = 183;
+            // 
+            // dataGridViewTextBoxColumn61
+            // 
+            this.dataGridViewTextBoxColumn61.DataPropertyName = "Description";
+            this.dataGridViewTextBoxColumn61.HeaderText = "وصف الصنف";
+            this.dataGridViewTextBoxColumn61.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn61.Name = "dataGridViewTextBoxColumn61";
+            this.dataGridViewTextBoxColumn61.ReadOnly = true;
+            this.dataGridViewTextBoxColumn61.Visible = false;
+            this.dataGridViewTextBoxColumn61.Width = 147;
+            // 
+            // dataGridViewTextBoxColumn62
+            // 
+            this.dataGridViewTextBoxColumn62.DataPropertyName = "SubCategoryId";
+            this.dataGridViewTextBoxColumn62.HeaderText = "رقم التصنيف الفرحعي المرجعي";
+            this.dataGridViewTextBoxColumn62.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn62.Name = "dataGridViewTextBoxColumn62";
+            this.dataGridViewTextBoxColumn62.ReadOnly = true;
+            this.dataGridViewTextBoxColumn62.Visible = false;
+            this.dataGridViewTextBoxColumn62.Width = 264;
+            // 
+            // dataGridViewTextBoxColumn63
+            // 
+            this.dataGridViewTextBoxColumn63.DataPropertyName = "LargeUnitId";
+            this.dataGridViewTextBoxColumn63.HeaderText = "الرقم المرجعي للوحدة الكبري";
+            this.dataGridViewTextBoxColumn63.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn63.Name = "dataGridViewTextBoxColumn63";
+            this.dataGridViewTextBoxColumn63.ReadOnly = true;
+            this.dataGridViewTextBoxColumn63.Visible = false;
+            this.dataGridViewTextBoxColumn63.Width = 246;
+            // 
+            // dataGridViewTextBoxColumn64
+            // 
+            this.dataGridViewTextBoxColumn64.DataPropertyName = "SmallUnitId";
+            this.dataGridViewTextBoxColumn64.HeaderText = "الرقم المرجعي للوحة الصغرى";
+            this.dataGridViewTextBoxColumn64.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn64.Name = "dataGridViewTextBoxColumn64";
+            this.dataGridViewTextBoxColumn64.ReadOnly = true;
+            this.dataGridViewTextBoxColumn64.Visible = false;
+            this.dataGridViewTextBoxColumn64.Width = 250;
+            // 
+            // dataGridViewTextBoxColumn65
+            // 
+            this.dataGridViewTextBoxColumn65.DataPropertyName = "IsUnitSale";
+            this.dataGridViewTextBoxColumn65.HeaderText = "وحدة بيع";
+            this.dataGridViewTextBoxColumn65.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn65.Name = "dataGridViewTextBoxColumn65";
+            this.dataGridViewTextBoxColumn65.ReadOnly = true;
+            this.dataGridViewTextBoxColumn65.Visible = false;
+            this.dataGridViewTextBoxColumn65.Width = 109;
+            // 
+            // dataGridViewTextBoxColumn66
+            // 
+            this.dataGridViewTextBoxColumn66.DataPropertyName = "IsDeleted";
+            this.dataGridViewTextBoxColumn66.HeaderText = "صنف مؤرشف";
+            this.dataGridViewTextBoxColumn66.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn66.Name = "dataGridViewTextBoxColumn66";
+            this.dataGridViewTextBoxColumn66.ReadOnly = true;
+            this.dataGridViewTextBoxColumn66.Visible = false;
+            this.dataGridViewTextBoxColumn66.Width = 147;
+            // 
+            // dataGridViewTextBoxColumn67
+            // 
+            this.dataGridViewTextBoxColumn67.DataPropertyName = "ImageUrl";
+            this.dataGridViewTextBoxColumn67.HeaderText = "رابط ملف الصورة";
+            this.dataGridViewTextBoxColumn67.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn67.Name = "dataGridViewTextBoxColumn67";
+            this.dataGridViewTextBoxColumn67.ReadOnly = true;
+            this.dataGridViewTextBoxColumn67.Visible = false;
+            this.dataGridViewTextBoxColumn67.Width = 174;
             // 
             // tabPage1
             // 
@@ -1106,275 +1375,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dataGridViewTextBoxColumn44.Visible = false;
             this.dataGridViewTextBoxColumn44.Width = 174;
             // 
-            // dgvProductLimitedDemand
-            // 
-            this.dgvProductLimitedDemand.AllowUserToAddRows = false;
-            this.dgvProductLimitedDemand.AllowUserToDeleteRows = false;
-            this.dgvProductLimitedDemand.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvProductLimitedDemand.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProductLimitedDemand.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvProductLimitedDemand.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductLimitedDemand.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn45,
-            this.dataGridViewTextBoxColumn46,
-            this.dataGridViewTextBoxColumn47,
-            this.dataGridViewTextBoxColumn48,
-            this.dataGridViewTextBoxColumn49,
-            this.dataGridViewTextBoxColumn50,
-            this.dataGridViewTextBoxColumn51,
-            this.dataGridViewTextBoxColumn52,
-            this.dataGridViewTextBoxColumn53,
-            this.dataGridViewTextBoxColumn54,
-            this.dataGridViewTextBoxColumn55,
-            this.dataGridViewTextBoxColumn56,
-            this.dataGridViewTextBoxColumn57,
-            this.dataGridViewTextBoxColumn58,
-            this.dataGridViewTextBoxColumn59,
-            this.dataGridViewTextBoxColumn60,
-            this.dataGridViewTextBoxColumn61,
-            this.dataGridViewTextBoxColumn62,
-            this.dataGridViewTextBoxColumn63,
-            this.dataGridViewTextBoxColumn64,
-            this.dataGridViewTextBoxColumn65,
-            this.dataGridViewTextBoxColumn66,
-            this.dataGridViewTextBoxColumn67});
-            this.dgvProductLimitedDemand.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvProductLimitedDemand.Location = new System.Drawing.Point(0, 0);
-            this.dgvProductLimitedDemand.Name = "dgvProductLimitedDemand";
-            this.dgvProductLimitedDemand.ReadOnly = true;
-            this.dgvProductLimitedDemand.RowHeadersWidth = 51;
-            this.dgvProductLimitedDemand.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgvProductLimitedDemand.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            this.dgvProductLimitedDemand.RowTemplate.Height = 35;
-            this.dgvProductLimitedDemand.Size = new System.Drawing.Size(1010, 425);
-            this.dgvProductLimitedDemand.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn45
-            // 
-            this.dataGridViewTextBoxColumn45.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn45.HeaderText = "اسم الصنف";
-            this.dataGridViewTextBoxColumn45.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn45.Name = "dataGridViewTextBoxColumn45";
-            this.dataGridViewTextBoxColumn45.ReadOnly = true;
-            this.dataGridViewTextBoxColumn45.Width = 106;
-            // 
-            // dataGridViewTextBoxColumn46
-            // 
-            this.dataGridViewTextBoxColumn46.DataPropertyName = "SubCategoryName";
-            this.dataGridViewTextBoxColumn46.HeaderText = "التصنيف";
-            this.dataGridViewTextBoxColumn46.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn46.Name = "dataGridViewTextBoxColumn46";
-            this.dataGridViewTextBoxColumn46.ReadOnly = true;
-            this.dataGridViewTextBoxColumn46.Width = 90;
-            // 
-            // dataGridViewTextBoxColumn47
-            // 
-            this.dataGridViewTextBoxColumn47.DataPropertyName = "IsMAinSalesUnit";
-            this.dataGridViewTextBoxColumn47.HeaderText = "وحدة البيع الرئيسية";
-            this.dataGridViewTextBoxColumn47.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn47.Name = "dataGridViewTextBoxColumn47";
-            this.dataGridViewTextBoxColumn47.ReadOnly = true;
-            this.dataGridViewTextBoxColumn47.Width = 149;
-            // 
-            // dataGridViewTextBoxColumn48
-            // 
-            this.dataGridViewTextBoxColumn48.DataPropertyName = "UCP";
-            this.dataGridViewTextBoxColumn48.HeaderText = "رقم الباركود الدولي";
-            this.dataGridViewTextBoxColumn48.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn48.Name = "dataGridViewTextBoxColumn48";
-            this.dataGridViewTextBoxColumn48.ReadOnly = true;
-            this.dataGridViewTextBoxColumn48.Width = 143;
-            // 
-            // dataGridViewTextBoxColumn49
-            // 
-            this.dataGridViewTextBoxColumn49.DataPropertyName = "BarCode";
-            this.dataGridViewTextBoxColumn49.HeaderText = "رقم باركود الشركة";
-            this.dataGridViewTextBoxColumn49.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn49.Name = "dataGridViewTextBoxColumn49";
-            this.dataGridViewTextBoxColumn49.ReadOnly = true;
-            this.dataGridViewTextBoxColumn49.Width = 141;
-            // 
-            // dataGridViewTextBoxColumn50
-            // 
-            this.dataGridViewTextBoxColumn50.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn50.HeaderText = "رقم المنتج المرجعي";
-            this.dataGridViewTextBoxColumn50.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn50.Name = "dataGridViewTextBoxColumn50";
-            this.dataGridViewTextBoxColumn50.ReadOnly = true;
-            this.dataGridViewTextBoxColumn50.Visible = false;
-            this.dataGridViewTextBoxColumn50.Width = 168;
-            // 
-            // dataGridViewTextBoxColumn51
-            // 
-            this.dataGridViewTextBoxColumn51.DataPropertyName = "ProductNumber";
-            this.dataGridViewTextBoxColumn51.HeaderText = "رقم مختصر للمنتج";
-            this.dataGridViewTextBoxColumn51.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn51.Name = "dataGridViewTextBoxColumn51";
-            this.dataGridViewTextBoxColumn51.ReadOnly = true;
-            this.dataGridViewTextBoxColumn51.Width = 141;
-            // 
-            // dataGridViewTextBoxColumn52
-            // 
-            this.dataGridViewTextBoxColumn52.DataPropertyName = "PurchaseDefaultPrice";
-            this.dataGridViewTextBoxColumn52.HeaderText = "سعر الشراء الإفتراضي";
-            this.dataGridViewTextBoxColumn52.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn52.Name = "dataGridViewTextBoxColumn52";
-            this.dataGridViewTextBoxColumn52.ReadOnly = true;
-            this.dataGridViewTextBoxColumn52.Width = 160;
-            // 
-            // dataGridViewTextBoxColumn53
-            // 
-            this.dataGridViewTextBoxColumn53.DataPropertyName = "SaleDefaultPrice";
-            this.dataGridViewTextBoxColumn53.HeaderText = "سعر البيع الافتراضي";
-            this.dataGridViewTextBoxColumn53.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn53.Name = "dataGridViewTextBoxColumn53";
-            this.dataGridViewTextBoxColumn53.ReadOnly = true;
-            this.dataGridViewTextBoxColumn53.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn54
-            // 
-            this.dataGridViewTextBoxColumn54.DataPropertyName = "WholesalePrice";
-            this.dataGridViewTextBoxColumn54.HeaderText = "سعر البيع بالجملة";
-            this.dataGridViewTextBoxColumn54.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn54.Name = "dataGridViewTextBoxColumn54";
-            this.dataGridViewTextBoxColumn54.ReadOnly = true;
-            this.dataGridViewTextBoxColumn54.Width = 138;
-            // 
-            // dataGridViewTextBoxColumn55
-            // 
-            this.dataGridViewTextBoxColumn55.DataPropertyName = "Discount";
-            this.dataGridViewTextBoxColumn55.HeaderText = "الخصم الإفتراضي";
-            this.dataGridViewTextBoxColumn55.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn55.Name = "dataGridViewTextBoxColumn55";
-            this.dataGridViewTextBoxColumn55.ReadOnly = true;
-            this.dataGridViewTextBoxColumn55.Width = 135;
-            // 
-            // dataGridViewTextBoxColumn56
-            // 
-            this.dataGridViewTextBoxColumn56.DataPropertyName = "VAT";
-            this.dataGridViewTextBoxColumn56.HeaderText = "قيمة الضريبة";
-            this.dataGridViewTextBoxColumn56.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn56.Name = "dataGridViewTextBoxColumn56";
-            this.dataGridViewTextBoxColumn56.ReadOnly = true;
-            this.dataGridViewTextBoxColumn56.Width = 114;
-            // 
-            // dataGridViewTextBoxColumn57
-            // 
-            this.dataGridViewTextBoxColumn57.DataPropertyName = "LimitedDemand";
-            this.dataGridViewTextBoxColumn57.HeaderText = "حد الطلب للمنتج";
-            this.dataGridViewTextBoxColumn57.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn57.Name = "dataGridViewTextBoxColumn57";
-            this.dataGridViewTextBoxColumn57.ReadOnly = true;
-            this.dataGridViewTextBoxColumn57.Width = 133;
-            // 
-            // dataGridViewTextBoxColumn58
-            // 
-            this.dataGridViewTextBoxColumn58.DataPropertyName = "IsExpired";
-            this.dataGridViewTextBoxColumn58.HeaderText = "له تاريخ صلاحية";
-            this.dataGridViewTextBoxColumn58.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn58.Name = "dataGridViewTextBoxColumn58";
-            this.dataGridViewTextBoxColumn58.ReadOnly = true;
-            this.dataGridViewTextBoxColumn58.Visible = false;
-            this.dataGridViewTextBoxColumn58.Width = 154;
-            // 
-            // dataGridViewTextBoxColumn59
-            // 
-            this.dataGridViewTextBoxColumn59.DataPropertyName = "LargeUnitName";
-            this.dataGridViewTextBoxColumn59.HeaderText = "وحدة البيع الرئيسة";
-            this.dataGridViewTextBoxColumn59.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn59.Name = "dataGridViewTextBoxColumn59";
-            this.dataGridViewTextBoxColumn59.ReadOnly = true;
-            this.dataGridViewTextBoxColumn59.Visible = false;
-            this.dataGridViewTextBoxColumn59.Width = 182;
-            // 
-            // dataGridViewTextBoxColumn60
-            // 
-            this.dataGridViewTextBoxColumn60.DataPropertyName = "SmallUnitName";
-            this.dataGridViewTextBoxColumn60.HeaderText = "وحدة البيع الفرعية";
-            this.dataGridViewTextBoxColumn60.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn60.Name = "dataGridViewTextBoxColumn60";
-            this.dataGridViewTextBoxColumn60.ReadOnly = true;
-            this.dataGridViewTextBoxColumn60.Visible = false;
-            this.dataGridViewTextBoxColumn60.Width = 183;
-            // 
-            // dataGridViewTextBoxColumn61
-            // 
-            this.dataGridViewTextBoxColumn61.DataPropertyName = "Description";
-            this.dataGridViewTextBoxColumn61.HeaderText = "وصف الصنف";
-            this.dataGridViewTextBoxColumn61.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn61.Name = "dataGridViewTextBoxColumn61";
-            this.dataGridViewTextBoxColumn61.ReadOnly = true;
-            this.dataGridViewTextBoxColumn61.Visible = false;
-            this.dataGridViewTextBoxColumn61.Width = 147;
-            // 
-            // dataGridViewTextBoxColumn62
-            // 
-            this.dataGridViewTextBoxColumn62.DataPropertyName = "SubCategoryId";
-            this.dataGridViewTextBoxColumn62.HeaderText = "رقم التصنيف الفرحعي المرجعي";
-            this.dataGridViewTextBoxColumn62.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn62.Name = "dataGridViewTextBoxColumn62";
-            this.dataGridViewTextBoxColumn62.ReadOnly = true;
-            this.dataGridViewTextBoxColumn62.Visible = false;
-            this.dataGridViewTextBoxColumn62.Width = 264;
-            // 
-            // dataGridViewTextBoxColumn63
-            // 
-            this.dataGridViewTextBoxColumn63.DataPropertyName = "LargeUnitId";
-            this.dataGridViewTextBoxColumn63.HeaderText = "الرقم المرجعي للوحدة الكبري";
-            this.dataGridViewTextBoxColumn63.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn63.Name = "dataGridViewTextBoxColumn63";
-            this.dataGridViewTextBoxColumn63.ReadOnly = true;
-            this.dataGridViewTextBoxColumn63.Visible = false;
-            this.dataGridViewTextBoxColumn63.Width = 246;
-            // 
-            // dataGridViewTextBoxColumn64
-            // 
-            this.dataGridViewTextBoxColumn64.DataPropertyName = "SmallUnitId";
-            this.dataGridViewTextBoxColumn64.HeaderText = "الرقم المرجعي للوحة الصغرى";
-            this.dataGridViewTextBoxColumn64.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn64.Name = "dataGridViewTextBoxColumn64";
-            this.dataGridViewTextBoxColumn64.ReadOnly = true;
-            this.dataGridViewTextBoxColumn64.Visible = false;
-            this.dataGridViewTextBoxColumn64.Width = 250;
-            // 
-            // dataGridViewTextBoxColumn65
-            // 
-            this.dataGridViewTextBoxColumn65.DataPropertyName = "IsUnitSale";
-            this.dataGridViewTextBoxColumn65.HeaderText = "وحدة بيع";
-            this.dataGridViewTextBoxColumn65.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn65.Name = "dataGridViewTextBoxColumn65";
-            this.dataGridViewTextBoxColumn65.ReadOnly = true;
-            this.dataGridViewTextBoxColumn65.Visible = false;
-            this.dataGridViewTextBoxColumn65.Width = 109;
-            // 
-            // dataGridViewTextBoxColumn66
-            // 
-            this.dataGridViewTextBoxColumn66.DataPropertyName = "IsDeleted";
-            this.dataGridViewTextBoxColumn66.HeaderText = "صنف مؤرشف";
-            this.dataGridViewTextBoxColumn66.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn66.Name = "dataGridViewTextBoxColumn66";
-            this.dataGridViewTextBoxColumn66.ReadOnly = true;
-            this.dataGridViewTextBoxColumn66.Visible = false;
-            this.dataGridViewTextBoxColumn66.Width = 147;
-            // 
-            // dataGridViewTextBoxColumn67
-            // 
-            this.dataGridViewTextBoxColumn67.DataPropertyName = "ImageUrl";
-            this.dataGridViewTextBoxColumn67.HeaderText = "رابط ملف الصورة";
-            this.dataGridViewTextBoxColumn67.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn67.Name = "dataGridViewTextBoxColumn67";
-            this.dataGridViewTextBoxColumn67.ReadOnly = true;
-            this.dataGridViewTextBoxColumn67.Visible = false;
-            this.dataGridViewTextBoxColumn67.Width = 174;
-            // 
             // ucAllProductsView
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -1393,9 +1393,9 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.tpArchieveLargeUnits.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllDeletedProduct)).EndInit();
             this.dgvLimitedDemand.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductLimitedDemand)).EndInit();
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductZeroQuantity)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductLimitedDemand)).EndInit();
             this.ResumeLayout(false);
 
         }

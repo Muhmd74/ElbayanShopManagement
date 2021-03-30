@@ -5,7 +5,7 @@ namespace ElbayanServices.Repository.Products.Product.Dtos
    public class ProductDto
     {
         public Guid Id { get; set; }
-        public int UCP { get; set; }
+        public long UCP { get; set; }
         public string ImageUrl { get; set; }
         public string IsMAinSalesUnit { get; set; }
         public long BarCode { get; set; }
@@ -15,7 +15,7 @@ namespace ElbayanServices.Repository.Products.Product.Dtos
         public string Description { get; set; }
         public Guid SubCategoryId { get; set; }
         public string SubCategoryName { get; set; }
-        public long ProductNumber { get; set; }
+        public int ProductNumber { get; set; }
         public bool IsExpired { get; set; } = false;
         public Guid LargeUnitId { get; set; }
         public string LargeUnitName { get; set; }
