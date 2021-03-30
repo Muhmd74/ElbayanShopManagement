@@ -51,6 +51,7 @@ namespace ElbayanServices.Repository.Firms
                 firm.NatureWork = model.NatureWork;
                 firm.Name = model.Name;
                 firm.Start = model.Start;
+                firm.Phone = model.Phone;
                 _context.SaveChanges();
                 return true;
             }

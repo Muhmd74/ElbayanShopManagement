@@ -15,8 +15,8 @@ namespace ElbayanServices.Repository.Firms.Dtos
         public DateTime Start { get; set; }
         public DateTime End { get; set; }
         public string MessageInvoice { get; set; }
-        public string Mobile { get; set; }
-        public string Phone { get; set; }
+        public int Mobile { get; set; }
+        public int Phone { get; set; }
         public string Email { get; set; }
         public string NatureWork { get; set; }
     }
