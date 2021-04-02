@@ -33,7 +33,7 @@ namespace ElbayanServices.Repository.Employees.Employees
             var employee = _context.Employees.Add(new Employee()
             {
                 Address = model.Address,
-                DateOfBirth = model.DateOfBirth.ToUniversalTime(),
+                DateOfBirth = model.DateOfBirth,
                 Email = model.Email,
                 Identity = model.Identity,
                 IsActive = true,
@@ -45,7 +45,8 @@ namespace ElbayanServices.Repository.Employees.Employees
                 Password = model.Password.ToEncrypt(),
                 ResidenceType = model.ResidenceType,
                 Position = model.Position,
-                Salary = model.Salary
+                Salary = model.Salary,
+                UserName = model.UserName,
             });
             _context.SaveChanges();
             return true;

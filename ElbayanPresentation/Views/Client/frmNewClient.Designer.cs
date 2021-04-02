@@ -722,11 +722,6 @@ namespace ElbayaNPresentation.Views.Client
             // 
             // frmNewClient
             // 
-            this.Appearance.BackColor = System.Drawing.Color.White;
-            this.Appearance.ForeColor = System.Drawing.Color.White;
-            this.Appearance.Options.UseBackColor = true;
-            this.Appearance.Options.UseFont = true;
-            this.Appearance.Options.UseForeColor = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1088, 634);
             this.ControlBox = false;
@@ -766,12 +761,14 @@ namespace ElbayaNPresentation.Views.Client
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "frmNewClient";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "إصافة بيانات مورد جديد";
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmNewClient_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.nudCurrentBalance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOpeningBalance)).EndInit();

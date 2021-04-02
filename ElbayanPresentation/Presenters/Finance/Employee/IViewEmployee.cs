@@ -16,6 +16,7 @@ namespace ElbayaNPresentation.Presenters.Finance.Employee
         Guna2TextBox Email { get; set; }
         Guna2TextBox Password { get; set; }
         Guna2TextBox Mobile { get; set; }
+        Guna2TextBox UserName { get; set; }
         Guna2TextBox Address { get; set; }
         Guna2TextBox Identity { get; set; }
         Guna2DateTimePicker DateOfBirth { get; set; }

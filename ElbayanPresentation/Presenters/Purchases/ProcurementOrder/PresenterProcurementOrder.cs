@@ -30,11 +30,11 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
         public PresenterProcurementOrder(IViewProcurementOrder view)
         {
             _view = view;
+            PopulateActiveProduct.PopulateProducts(_view.Products);
         }
         internal void OnLoad()
         {
             PopulateSuppliers();
-            PopulateActiveProduct.PopulateProducts(_view.Products); 
             PopulateUser();
             _view.OrderNumber.Text = orderProcuremnt.GenerateSequenceNumberSupplier().ToString();
         }
@@ -64,27 +64,28 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
                 {
                     //try
                     //{
-                        orderProcuremnt.CreateSupplierOrder(new OrderDto
-                        {
-                            EmployeeId = new Guid("7b706e91-4784-eb11-84c2-80a5899d8326"),
-                            IsDeferred = _view.IsDeferred.Checked,
-                            Deferred = Convert.ToDecimal(_view.Deferred.Text),
-                            DateTime = _view.OrderDate.Value,
-                            Payment = Convert.ToDecimal(_view.Paid.Text),
-                            OrderNumber = long.Parse(_view.OrderNumber.Text),
-                            ClintId = new Guid(_view.Suppliers.SelectedValue.ToString()),
-                            DueDatePayingOff = _view.OrderDeferredDate.Value,
-                            PaymentPerMonth = 150m,
-                            OrderProductDto = GetOrderProducts().ToList(),
-                            TotalDiscount = Convert.ToDecimal(_view.TotalOrderDiscount.Text),
-                            SubTotalWithoutDiscount = Convert.ToDecimal(_view.TotalOrderWithoutDiscount.Text),
-                            TotalAfterDiscount = Convert.ToDecimal(_view.TotalOrderWithDiscount.Text),
-                            PosId = new Guid("90cd83b1-cf81-eb11-84c2-80a5899d8326"),
+                    var newOrder = orderProcuremnt.CreateSupplierOrder(new OrderDto
+                    {
+                        EmployeeId = new Guid("0B664256-3F93-EB11-84C5-80A5899D8326"),
+                        IsDeferred = _view.IsDeferred.Checked,
+                        Deferred = Convert.ToDecimal(_view.Deferred.Text),
+                        DateTime = _view.OrderDate.Value,
+                        Payment = Convert.ToDecimal(_view.Paid.Text),
+                        OrderNumber = long.Parse(_view.OrderNumber.Text),
+                        ClintId = new Guid(_view.Suppliers.SelectedValue.ToString()),
+                        DueDatePayingOff = _view.OrderDeferredDate.Value,
+                        PaymentPerMonth = 150m,
+                        OrderProductDto = GetOrderProducts().ToList(),
+                        TotalDiscount = Convert.ToDecimal(_view.TotalOrderDiscount.Text),
+                        SubTotalWithoutDiscount = Convert.ToDecimal(_view.TotalOrderWithoutDiscount.Text),
+                        TotalAfterDiscount = Convert.ToDecimal(_view.TotalOrderWithDiscount.Text),
+                        PosId = new Guid("AA552BAA-2890-EB11-84C5-80A5899D8326"),
+                    });
 
-                        });
-                        
-                        MessageBox.Show("DONE");
-                        ClearControl();
+                    Guid orderId = newOrder;
+                    var ds = orderProcuremnt.PrintInvoice(orderId);
+                    rptOrderPurchase.PrintOrder(ds);
+                    ClearControl();
                     //}
                     //catch (Exception)
                     //{//MessageBox.Show(e.InnerException.Message);
@@ -120,7 +121,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
                                      Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["PriceTOQuantity"].Value.ToString()))
                                      + Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["VATValue"].Value.ToString()),
                     TotalProductPrice = Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["Subtotal"].Value),
-                    Vat = (int) _view.OrderProduct.Rows[i].Cells["VATValue"].Value
+                    Vat = Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["VATValue"].Value)
                 };
                 orderProducts.Add(orderProduct);
             }
@@ -136,7 +137,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
             frmEditQuantity.Instance.Quantity.Text = "1";
             frmEditQuantity.Instance.DefaultPrice.Text = _view.OrderProduct.Rows[index].Cells["LastPurchasePrice"].Value.ToString();
             frmEditQuantity.Instance.Discount.Text = _view.OrderProduct.Rows[index].Cells["DiscountPercent"].Value.ToString();
-          
+
             frmEditQuantity.Instance.Subtotal.Text = Math.Round((Convert.ToDecimal(frmEditQuantity.Instance.Quantity.Text)
                 * Convert.ToDecimal(frmEditQuantity.Instance.DefaultPrice.Text)), 2).ToString();
             // Calulate Discount = Subtotal - (SubTotal * (Discount / 100))
@@ -146,7 +147,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
             // Calulate VAT => TotalProductPrice + (TotalProductPrice * (Product VAT))
             decimal VATPercent = Convert.ToDecimal(_view.OrderProduct.Rows[index].Cells["VATPercent"].Value);
 
-            
+
             if (VATPercent > 0)
             {
                 frmEditQuantity.Instance.IsVatIncluded.Checked = true;
@@ -188,7 +189,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
         {
             if (_view.OrderProduct.Rows.Count >= 1)
             {
-                if(_view.OrderProduct.SelectedRows.Count > 0)
+                if (_view.OrderProduct.SelectedRows.Count > 0)
                 {
                     int currentRow = _view.OrderProduct.SelectedRows[0].Index;
                     _view.OrderProduct.Rows.RemoveAt(currentRow);
@@ -232,6 +233,10 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
                 _view.OrderProduct.Rows[index].Cells["Qunatity"].Value = 1;
 
                 // Calulate PriceTOQuantity -> Quantity Price => Qunatity * Last Purchase price
+                if (LastPurchasePrice == 0)
+                {
+                    LastPurchasePrice = model.PurchaseDefaultPrice;
+                }
                 decimal ProductPrice = LastPurchasePrice * Convert.ToDecimal(_view.OrderProduct.Rows[index].Cells["Qunatity"].Value);
                 _view.OrderProduct.Rows[index].Cells["PriceTOQuantity"].Value = Math.Round(ProductPrice, 2);
                 // Discount
@@ -240,9 +245,9 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
                 decimal ProductDiscount = ProductPrice * DiscountValue;
                 _view.OrderProduct.Rows[index].Cells["Discount"].Value = Math.Round(ProductDiscount, 2);
                 _view.OrderProduct.Rows[index].Cells["DiscountPercent"].Value = Math.Round(model.Discount, 2);
-               
+
                 // Calualte VAT Value (Default Price + (Default Price * (Model.VAT / 100)))
-                if(model.Vat > 0)
+                if (model.Vat > 0)
                 {
                     decimal VATValue = model.Vat / 100; // convert Percent To Value
                     _view.OrderProduct.Rows[index].Cells["VATPercent"].Value = model.Vat;
@@ -326,21 +331,6 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
             var model = Supplier.GetSupplierById(new Guid(_view.Suppliers.SelectedValue.ToString()));
             _view.SupplierMobile.Text = model.Mobile.ToString();
         }
-       
-        internal void PrintReport()
-        {
-            //rptOrderPurchase.PrintOrder(Product.GetAll());
-
-            rptOrderPurchase rpt = new rptOrderPurchase();
-
-            //var ds = Product.GetAll();
-            //var pr = Product.GetById(new Guid("d918755e-d682-eb11-84c2-80a5899d8326"));
-            //rpt.DataSource = pr;
-            //rpt.DataMember = null;
-            //rpt.xtcorderNumber.DataBindings.Add("Text", pr, "UCP");
-
-            //rpt.PrintOrder();
-            rpt.ShowPreview();
-        }
+        
     }
 }

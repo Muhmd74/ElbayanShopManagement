@@ -15,7 +15,7 @@ namespace ElbayanDatabase.DataClasses.Product
         public DateTime DateTime { get; set; }
         public decimal ProcPrice { get; set; }
         public string ProcessType { get; set; }
-        public int Vat { get; set; }
+        public decimal Vat { get; set; }
         public decimal Sale { get; set; }
         public decimal Discount { get; set; }
         public bool IsBounce { get; set; }

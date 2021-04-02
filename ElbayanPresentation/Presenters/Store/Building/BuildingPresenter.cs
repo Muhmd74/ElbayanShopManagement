@@ -41,12 +41,12 @@ namespace ElbayaNPresentation.Presenters.Store.Building
             _view.dgvDeletedObjects.DataSource = buildingService.GetAllBuildingDeleted().ToList();
         }
 
-         // CRUD Operation: 
-         // 1- Create:
-         public void CreateNewObject()
-         {
-            if(_view.BuildingName.Text != "")
-           {
+        // CRUD Operation: 
+        // 1- Create:
+        public void CreateNewObject()
+        {
+            if (_view.BuildingName.Text != "")
+            {
                 buildingService.Create(new BuildingDto
                 {
                     Name = _view.BuildingName.Text,
@@ -65,7 +65,7 @@ namespace ElbayaNPresentation.Presenters.Store.Building
                 MessageBox.Show("كرما لا بد من إدخال حقل الإسم", "تأكيد", MessageBoxButtons.OK);
                 return;
             }
-         }
+        }
 
         // 2.2 Update -> Data Grid View Active object Double click Event 
 
@@ -100,7 +100,7 @@ namespace ElbayaNPresentation.Presenters.Store.Building
                 return;
             }
         }
-      
+
         public void OnClickbtnDelete()
         {
             if (_view.BuildingName.Text != "")
@@ -129,11 +129,11 @@ namespace ElbayaNPresentation.Presenters.Store.Building
         private void OnDoubleDvgGetById(Guid ID)
         {
             BuildingDto model = buildingService.GetById(ID);
-            _view.BuildingName.Text = model.Name;                    
+            _view.BuildingName.Text = model.Name;
             _view.BuildingDescription.Text = model.Description;
             _view.BuildingAddress.Text = model.Address;
             _view.BuildingPhoneNumber.Text = model.PhoneNumber;
-           
+
             // Disable Add new button:
             _view.btnAddObject.Enabled = false;
             _view.btnDeleteObject.Enabled = true;
@@ -144,7 +144,7 @@ namespace ElbayaNPresentation.Presenters.Store.Building
 
         public void OnIndexChangedTabContainer()
         {
-            if(_view.dgvContainer.SelectedIndex == 0)
+            if (_view.dgvContainer.SelectedIndex == 0)
             {
                 _view.btnDeleteObject.Text = "أرشفة";
                 _view.btnAddObject.Enabled = true;
@@ -166,20 +166,20 @@ namespace ElbayaNPresentation.Presenters.Store.Building
             _view.BuildingName.Text = _view.BuildingDescription.Text
                 = _view.BuildingAddress.Text = _view.BuildingPhoneNumber.Text = "";
         }
-   
+
         // Search ->
         public void OnTextChnagedtxtSearch()
         {
             if (_view.dgvContainer.SelectedIndex == 0)
             {
-               _view.dgvActiveObjects.DataSource =  buildingService.GetAllBuilding().
-                    Where(d => d.Name.Contains(_view.SearchtxtBox.Text) 
-                    || d.PhoneNumber.Contains(_view.SearchtxtBox.Text)).ToList();
+                _view.dgvActiveObjects.DataSource = buildingService.GetAllBuilding().
+                     Where(d => d.Name.Contains(_view.SearchtxtBox.Text)
+                     || d.PhoneNumber.Contains(_view.SearchtxtBox.Text)).ToList();
             }
             else
             {
                 _view.dgvDeletedObjects.DataSource = buildingService.GetAllBuildingDeleted().
-                    Where(d => d.Name.Contains(_view.SearchtxtBox.Text) 
+                    Where(d => d.Name.Contains(_view.SearchtxtBox.Text)
                     || d.PhoneNumber.Contains(_view.SearchtxtBox.Text)).ToList();
             }
         }

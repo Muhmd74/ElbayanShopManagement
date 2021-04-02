@@ -13,21 +13,27 @@ namespace ElbayaNPresentation.Reports
         {
             InitializeComponent();
         }
-        private static OrderProcurementService Invoice = new OrderProcurementService(new ElbayanDatabase.ConnectionTools.ConnectionOption());
-        public void PrintOrder(Guid ID)
+        public static void PrintOrder(object ds)
         {
             rptOrderPurchase rpt = new rptOrderPurchase();
-            var ds = Invoice.PrintInvoice(ID);
             rpt.DataSource = ds;
-            rpt.DetailReport.DataSource = ds;
-            rpt.DetailReport.DataMember = "productOrder";
-            xtcorderNumber.DataBindings.Add("Text", ds, "OrderNumber");
+            rpt.DetailReport.DataSource = rpt.DataSource;
+            rpt.DetailReport.DataMember = "Products";
+            rpt.BindingData();
             rpt.ShowPreview();
         }
 
         void BindingData()
         {
+            xtcorderNumber.DataBindings.Add("Text", this.DataSource, "OrderNumber");
 
+
+            //xtcOrderProductName.ExpressionBindings.Add(new ExpressionBinding("BeforePrint","Text", "+1"));
+            xtcOrderProductName.ExpressionBindings.Add(new ExpressionBinding("BeforePrint","Text", "ProductName"));
+            xtOrderProductUnit.ExpressionBindings.Add(new ExpressionBinding("BeforePrint","Text", "UnitName"));
+            xtcOrderProductQantity.ExpressionBindings.Add(new ExpressionBinding("BeforePrint","Text", "Quantity"));
+            xtcOrderProductPrice.ExpressionBindings.Add(new ExpressionBinding("BeforePrint","Text", "Price"));
+            xtcOrderProductTotal.ExpressionBindings.Add(new ExpressionBinding("BeforePrint","Text", "Quantity * Price"));
         }
 
 

@@ -15,6 +15,7 @@ namespace ElbayaNPresentation.Presenters.CommonPresenter
         public static void PopulateProducts(ComboBox activeProduct)
         {
             activeProduct.DisplayMember = "Name";
+            activeProduct.ValueMember = "Id";
             activeProduct.SelectedIndex = -1;
             activeProduct.SelectedValue = "Id";
             activeProduct.DataSource = Product.GetAll();

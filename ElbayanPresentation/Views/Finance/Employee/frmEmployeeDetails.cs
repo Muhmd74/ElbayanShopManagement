@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace ElbayaNPresentation.Views.Finance.Employee
 {
-    public partial class frmEmployeeDetails : Form, IViewEmployee
+    public partial class frmEmployeeDetails : MetroFramework.Forms.MetroForm, IViewEmployee
     {
         public frmEmployeeDetails()
         {
@@ -40,6 +40,7 @@ namespace ElbayaNPresentation.Views.Finance.Employee
         public Guna2TextBox Mobile { get => txtEmployeeMobile; set => txtEmployeeMobile = value; }
         public Guna2TextBox Address { get => txtEmployeeAddress; set => txtEmployeeAddress = value; }
         public Guna2TextBox Identity { get => txtEmployeeNationalIdentity; set => txtEmployeeNationalIdentity = value; }
+        public Guna2TextBox UserName { get => txtEmployeeUserName; set => txtEmployeeUserName = value; }
         public Guna2DateTimePicker DateOfBirth { get => dtpEmployeeDateOfBirth; set => dtpEmployeeDateOfBirth = value; }
         public Guna2DateTimePicker IdentityExpirationDate { get => dtpEmployeeIDExpirationDate; set => dtpEmployeeIDExpirationDate = value; }
         public Guna2TextBox PassportNumber { get => txtEmployeePassport; set => txtEmployeePassport = value; }

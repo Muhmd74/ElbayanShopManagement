@@ -15,7 +15,7 @@ namespace ElbayanServices.Repository.Employees.Employees.Validators
         {
             //Name
             RuleFor(d => d.Name)
-                .NotEmpty().WithMessage("يجب ألا يكون الحقل فارغاً")
+                .NotEmpty().WithMessage("يجب ألا يكون حقل الاسم فارغا")
                 .NotNull().WithMessage("يجب ألا يكون الحقل فارغاً"); 
             //Email
             RuleFor(d => d.Email)
