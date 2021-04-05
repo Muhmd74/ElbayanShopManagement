@@ -62,8 +62,6 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
             {
                 if (_view.Suppliers.SelectedIndex != -1)
                 {
-                    //try
-                    //{
                     var newOrder = orderProcuremnt.CreateSupplierOrder(new OrderDto
                     {
                         EmployeeId = new Guid("0B664256-3F93-EB11-84C5-80A5899D8326"),
@@ -81,15 +79,9 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
                         TotalAfterDiscount = Convert.ToDecimal(_view.TotalOrderWithDiscount.Text),
                         PosId = new Guid("AA552BAA-2890-EB11-84C5-80A5899D8326"),
                     });
-
-                    Guid orderId = newOrder;
-                    var ds = orderProcuremnt.PrintInvoice(orderId);
-                    rptOrderPurchase.PrintOrder(ds);
+                    _view.ID = newOrder;
+                    PrintInvioce(_view.ID);
                     ClearControl();
-                    //}
-                    //catch (Exception)
-                    //{//MessageBox.Show(e.InnerException.Message);
-                    //}
                 }
                 else
                 {
@@ -102,6 +94,11 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
                 MessageBox.Show("كرما أضف منتجات للفاتورة أولا");
                 return;
             }
+        }
+        private void PrintInvioce(Guid iD)
+        {
+            var ds = orderProcuremnt.PrintInvoice(iD);
+            rptOrderPurchase.PrintOrder(ds);
         }
         private List<OrderProductDto> GetOrderProducts()
         {

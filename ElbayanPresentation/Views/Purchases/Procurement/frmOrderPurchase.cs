@@ -188,7 +188,6 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
                 }
             }
         }
-
         private void btnPrintOrder_Click(object sender, EventArgs e)
         {
             //ReportPrintTool printTools = new ReportPrintTool(Presenter.PrintReport());

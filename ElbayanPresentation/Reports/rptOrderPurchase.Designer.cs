@@ -50,11 +50,11 @@ namespace ElbayaNPresentation.Reports
             this.xrTableRow5 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell10 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell9 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
-            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrlInvoiceName = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrpbLogo = new DevExpress.XtraReports.UI.XRPictureBox();
+            this.xrFirmePhone = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLine2 = new DevExpress.XtraReports.UI.XRLine();
-            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrFirmName = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
@@ -122,11 +122,11 @@ namespace ElbayaNPresentation.Reports
             // 
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable1,
-            this.xrLabel3,
-            this.xrPictureBox1,
-            this.xrLabel2,
+            this.xrlInvoiceName,
+            this.xrpbLogo,
+            this.xrFirmePhone,
             this.xrLine2,
-            this.xrLabel1});
+            this.xrFirmName});
             this.Detail.Dpi = 254F;
             this.Detail.HeightF = 594.4416F;
             this.Detail.HierarchyPrintOptions.Indent = 50.8F;
@@ -321,58 +321,58 @@ namespace ElbayaNPresentation.Reports
             this.xrTableCell9.Text = "#######";
             this.xrTableCell9.Weight = 2.6700851783385793D;
             // 
-            // xrLabel3
+            // xrlInvoiceName
             // 
-            this.xrLabel3.BackColor = System.Drawing.Color.White;
-            this.xrLabel3.BorderColor = System.Drawing.Color.DimGray;
-            this.xrLabel3.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            this.xrlInvoiceName.BackColor = System.Drawing.Color.White;
+            this.xrlInvoiceName.BorderColor = System.Drawing.Color.DimGray;
+            this.xrlInvoiceName.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrLabel3.BorderWidth = 1F;
-            this.xrLabel3.Dpi = 254F;
-            this.xrLabel3.Font = new System.Drawing.Font("Droid Arabic Kufi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(181.3181F, 141.3867F);
-            this.xrLabel3.Multiline = true;
-            this.xrLabel3.Name = "xrLabel3";
-            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel3.RightToLeft = DevExpress.XtraReports.UI.RightToLeft.Yes;
-            this.xrLabel3.SizeF = new System.Drawing.SizeF(374.6094F, 82.84764F);
-            this.xrLabel3.StylePriority.UseBackColor = false;
-            this.xrLabel3.StylePriority.UseBorderColor = false;
-            this.xrLabel3.StylePriority.UseBorders = false;
-            this.xrLabel3.StylePriority.UseBorderWidth = false;
-            this.xrLabel3.StylePriority.UseFont = false;
-            this.xrLabel3.StylePriority.UseTextAlignment = false;
-            this.xrLabel3.Text = "فاتورة مشتريات";
-            this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrlInvoiceName.BorderWidth = 1F;
+            this.xrlInvoiceName.Dpi = 254F;
+            this.xrlInvoiceName.Font = new System.Drawing.Font("Droid Arabic Kufi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrlInvoiceName.LocationFloat = new DevExpress.Utils.PointFloat(182.2764F, 141.3867F);
+            this.xrlInvoiceName.Multiline = true;
+            this.xrlInvoiceName.Name = "xrlInvoiceName";
+            this.xrlInvoiceName.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrlInvoiceName.RightToLeft = DevExpress.XtraReports.UI.RightToLeft.Yes;
+            this.xrlInvoiceName.SizeF = new System.Drawing.SizeF(373.6511F, 82.84763F);
+            this.xrlInvoiceName.StylePriority.UseBackColor = false;
+            this.xrlInvoiceName.StylePriority.UseBorderColor = false;
+            this.xrlInvoiceName.StylePriority.UseBorders = false;
+            this.xrlInvoiceName.StylePriority.UseBorderWidth = false;
+            this.xrlInvoiceName.StylePriority.UseFont = false;
+            this.xrlInvoiceName.StylePriority.UseTextAlignment = false;
+            this.xrlInvoiceName.Text = "فاتورة مشتريات";
+            this.xrlInvoiceName.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
-            // xrPictureBox1
+            // xrpbLogo
             // 
-            this.xrPictureBox1.Dpi = 254F;
-            this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("svg", resources.GetString("xrPictureBox1.ImageSource"));
-            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(25.68524F, 0F);
-            this.xrPictureBox1.Name = "xrPictureBox1";
-            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(128.9844F, 130.4726F);
-            this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage;
+            this.xrpbLogo.Dpi = 254F;
+            this.xrpbLogo.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("svg", resources.GetString("xrpbLogo.ImageSource"));
+            this.xrpbLogo.LocationFloat = new DevExpress.Utils.PointFloat(25.68524F, 0F);
+            this.xrpbLogo.Name = "xrpbLogo";
+            this.xrpbLogo.SizeF = new System.Drawing.SizeF(128.9844F, 130.4726F);
+            this.xrpbLogo.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage;
             // 
-            // xrLabel2
+            // xrFirmePhone
             // 
-            this.xrLabel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.xrLabel2.BorderColor = System.Drawing.Color.Transparent;
-            this.xrLabel2.Dpi = 254F;
-            this.xrLabel2.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(193.3852F, 78.87888F);
-            this.xrLabel2.Multiline = true;
-            this.xrLabel2.Name = "xrLabel2";
-            this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel2.RightToLeft = DevExpress.XtraReports.UI.RightToLeft.Yes;
-            this.xrLabel2.SizeF = new System.Drawing.SizeF(481.7071F, 51.59373F);
-            this.xrLabel2.StylePriority.UseBackColor = false;
-            this.xrLabel2.StylePriority.UseBorderColor = false;
-            this.xrLabel2.StylePriority.UseFont = false;
-            this.xrLabel2.StylePriority.UseTextAlignment = false;
-            this.xrLabel2.Text = "ت: 01120215145";
-            this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrFirmePhone.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.xrFirmePhone.BorderColor = System.Drawing.Color.Transparent;
+            this.xrFirmePhone.Dpi = 254F;
+            this.xrFirmePhone.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrFirmePhone.LocationFloat = new DevExpress.Utils.PointFloat(194.3435F, 78.87888F);
+            this.xrFirmePhone.Multiline = true;
+            this.xrFirmePhone.Name = "xrFirmePhone";
+            this.xrFirmePhone.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrFirmePhone.RightToLeft = DevExpress.XtraReports.UI.RightToLeft.Yes;
+            this.xrFirmePhone.SizeF = new System.Drawing.SizeF(480.7488F, 51.59373F);
+            this.xrFirmePhone.StylePriority.UseBackColor = false;
+            this.xrFirmePhone.StylePriority.UseBorderColor = false;
+            this.xrFirmePhone.StylePriority.UseFont = false;
+            this.xrFirmePhone.StylePriority.UseTextAlignment = false;
+            this.xrFirmePhone.Text = "ت: 01120215145";
+            this.xrFirmePhone.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLine2
             // 
@@ -384,24 +384,24 @@ namespace ElbayaNPresentation.Reports
             this.xrLine2.SizeF = new System.Drawing.SizeF(699.9999F, 28.57806F);
             this.xrLine2.StylePriority.UseBorderWidth = false;
             // 
-            // xrLabel1
+            // xrFirmName
             // 
-            this.xrLabel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.xrLabel1.BorderColor = System.Drawing.Color.Transparent;
-            this.xrLabel1.Dpi = 254F;
-            this.xrLabel1.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(193.978F, 0F);
-            this.xrLabel1.Multiline = true;
-            this.xrLabel1.Name = "xrLabel1";
-            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel1.RightToLeft = DevExpress.XtraReports.UI.RightToLeft.Yes;
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(481.7072F, 78.87888F);
-            this.xrLabel1.StylePriority.UseBackColor = false;
-            this.xrLabel1.StylePriority.UseBorderColor = false;
-            this.xrLabel1.StylePriority.UseFont = false;
-            this.xrLabel1.StylePriority.UseTextAlignment = false;
-            this.xrLabel1.Text = "شركة دوجتي لصناعة البرمجيات";
-            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrFirmName.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.xrFirmName.BorderColor = System.Drawing.Color.Transparent;
+            this.xrFirmName.Dpi = 254F;
+            this.xrFirmName.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrFirmName.LocationFloat = new DevExpress.Utils.PointFloat(194.9363F, 0F);
+            this.xrFirmName.Multiline = true;
+            this.xrFirmName.Name = "xrFirmName";
+            this.xrFirmName.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrFirmName.RightToLeft = DevExpress.XtraReports.UI.RightToLeft.Yes;
+            this.xrFirmName.SizeF = new System.Drawing.SizeF(480.7489F, 78.87888F);
+            this.xrFirmName.StylePriority.UseBackColor = false;
+            this.xrFirmName.StylePriority.UseBorderColor = false;
+            this.xrFirmName.StylePriority.UseFont = false;
+            this.xrFirmName.StylePriority.UseTextAlignment = false;
+            this.xrFirmName.Text = "شركة دوجتي لصناعة البرمجيات";
+            this.xrFirmName.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // ReportHeader
             // 
@@ -424,11 +424,11 @@ namespace ElbayaNPresentation.Reports
             // 
             this.xrLabel4.Dpi = 254F;
             this.xrLabel4.Font = new System.Drawing.Font("Droid Arabic Kufi", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(13.97524F, 313.0286F);
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(14.93355F, 313.0286F);
             this.xrLabel4.Multiline = true;
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel4.SizeF = new System.Drawing.SizeF(673.7501F, 181.5881F);
+            this.xrLabel4.SizeF = new System.Drawing.SizeF(672.7918F, 181.5881F);
             this.xrLabel4.StylePriority.UseFont = false;
             this.xrLabel4.Text = "ملاحظات:\r\n.....................";
             // 
@@ -770,7 +770,7 @@ namespace ElbayaNPresentation.Reports
             this.xrTableCell30.StylePriority.UseBorders = false;
             this.xrTableCell30.StylePriority.UseFont = false;
             this.xrTableCell30.Text = "م.";
-            this.xrTableCell30.Weight = 0.51889265081539815D;
+            this.xrTableCell30.Weight = 0.52998993645644232D;
             // 
             // xtcOrderProductName
             // 
@@ -788,7 +788,7 @@ namespace ElbayaNPresentation.Reports
             this.xtcOrderProductName.StylePriority.UseTextAlignment = false;
             this.xtcOrderProductName.Text = "اسم الصنف";
             this.xtcOrderProductName.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            this.xtcOrderProductName.Weight = 2.3905354033488089D;
+            this.xtcOrderProductName.Weight = 2.3794381177077648D;
             // 
             // xtOrderProductUnit
             // 
@@ -985,7 +985,7 @@ namespace ElbayaNPresentation.Reports
             this.ReportFooter,
             this.DetailReport});
             this.Dpi = 254F;
-            this.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margins = new System.Drawing.Printing.Margins(49, 50, 50, 50);
             this.PageHeight = 2794;
             this.PageWidth = 800;
@@ -1010,10 +1010,10 @@ namespace ElbayaNPresentation.Reports
         private DevExpress.XtraReports.UI.BottomMarginBand BottomMargin;
         private DevExpress.XtraReports.UI.DetailBand Detail;
         private DevExpress.XtraReports.UI.ReportHeaderBand ReportHeader;
-        private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox1;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel1;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel3;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel2;
+        private DevExpress.XtraReports.UI.XRPictureBox xrpbLogo;
+        private DevExpress.XtraReports.UI.XRLabel xrFirmName;
+        private DevExpress.XtraReports.UI.XRLabel xrlInvoiceName;
+        private DevExpress.XtraReports.UI.XRLabel xrFirmePhone;
         private DevExpress.XtraReports.UI.XRTable xrTable1;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow1;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell2;

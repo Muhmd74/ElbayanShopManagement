@@ -20,7 +20,8 @@ namespace ElbayaNPresentation.Reports
             rpt.DetailReport.DataSource = rpt.DataSource;
             rpt.DetailReport.DataMember = "Products";
             rpt.BindingData();
-            rpt.ShowPreview();
+            //rpt.ShowPreview();
+            rpt.PrintDialog();
         }
 
         void BindingData()
