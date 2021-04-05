@@ -26,8 +26,15 @@ namespace ElbayaNPresentation.Reports
 
         void BindingData()
         {
+            xrFirmName.DataBindings.Add("Text", this.DataSource, "FirmName");
+            xrFirmePhone.DataBindings.Add("Text", this.DataSource, "Phone");
+            xrpbLogo.DataBindings.Add("ImageUrl", this.DataSource, "LogoInvoice");
+            xrlblInvoiceType.DataBindings.Add("Text", this.DataSource, "OrderType");
             xtcorderNumber.DataBindings.Add("Text", this.DataSource, "OrderNumber");
-
+            xrlblOrderDate.DataBindings.Add("Text", this.DataSource, "DateTime");
+            xrlblSupplierName.DataBindings.Add("Text", this.DataSource, "ClintName");
+            xrlblUserName.DataBindings.Add("Text", this.DataSource, "EmployeeName");
+            xrlblPOS.DataBindings.Add("Text", this.DataSource, "PosName");
 
             //xtcOrderProductName.ExpressionBindings.Add(new ExpressionBinding("BeforePrint","Text", "+1"));
             xtcOrderProductName.ExpressionBindings.Add(new ExpressionBinding("BeforePrint","Text", "ProductName"));
@@ -35,6 +42,14 @@ namespace ElbayaNPresentation.Reports
             xtcOrderProductQantity.ExpressionBindings.Add(new ExpressionBinding("BeforePrint","Text", "Quantity"));
             xtcOrderProductPrice.ExpressionBindings.Add(new ExpressionBinding("BeforePrint","Text", "Price"));
             xtcOrderProductTotal.ExpressionBindings.Add(new ExpressionBinding("BeforePrint","Text", "Quantity * Price"));
+
+            xrcTotalOrder.DataBindings.Add("Text", this.DataSource, "TotalAfterDiscount");
+            xrcTotalDiscount.DataBindings.Add("Text", this.DataSource, "TotalDiscount");
+            xrcPayment.DataBindings.Add("Text", this.DataSource, "Payment");
+            xrcDeferred.DataBindings.Add("Text", this.DataSource, "DeferredPrice");
+
+            xrLblNote.DataBindings.Add("Text", this.DataSource, "MessageInvoice");
+            xrBcOrderNumber.DataBindings.Add("Text", this.DataSource, "OrderNumber");
         }
 
 

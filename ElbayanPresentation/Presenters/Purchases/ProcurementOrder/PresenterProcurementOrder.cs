@@ -31,12 +31,16 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
         {
             _view = view;
             PopulateActiveProduct.PopulateProducts(_view.Products);
+            _view.PrintOrder.Click += new EventHandler(onPrintbtnClick);
+            
         }
         internal void OnLoad()
         {
             PopulateSuppliers();
             PopulateUser();
             _view.OrderNumber.Text = orderProcuremnt.GenerateSequenceNumberSupplier().ToString();
+            
+            _view.UserName.Text = User.GetById(new Guid("0B664256-3F93-EB11-84C5-80A5899D8326")).Name;
         }
         internal void PopulateUser()
         {
@@ -80,7 +84,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
                         PosId = new Guid("AA552BAA-2890-EB11-84C5-80A5899D8326"),
                     });
                     _view.ID = newOrder;
-                    PrintInvioce(_view.ID);
+                    //PrintInvioce(_view.ID);
                     ClearControl();
                 }
                 else
@@ -328,6 +332,16 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
             var model = Supplier.GetSupplierById(new Guid(_view.Suppliers.SelectedValue.ToString()));
             _view.SupplierMobile.Text = model.Mobile.ToString();
         }
-        
+        private void onPrintbtnClick(object sender, EventArgs e)
+        {
+            if(_view.ID != null)
+            {
+                PrintInvioce(_view.ID);
+            }
+            else
+            {
+                MessageBox.Show("لا بد من حفظ الفاتورة أولا ");
+            }
+        }
     }
 }
