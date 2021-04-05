@@ -20,9 +20,18 @@ namespace ElbayaNPresentation.Presenters.Clients
             _view = view;
         }
 
+        public void OnLoad()
+        {
+           _view.RefSupplierNumber.Text =  GenerateClientNumber();
+            _view.SuppliersName.Select();
+        }
         // CRUD:
         // 1. Create new Object:
-
+        private string GenerateClientNumber()
+        {
+            long ClientNumber = Client.GenerateClientNumber();
+            return ClientNumber.ToString();
+        }
         public void OnClickbtnAddNewOpect()
         {
             if (!string.IsNullOrEmpty(_view.SuppliersName.Text) && !string.IsNullOrEmpty(_view.Mobile.Text))

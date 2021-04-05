@@ -164,8 +164,17 @@ namespace ElbayanServices.Repository.Clints.Customer
 
             return false;
         }
+        public long GenerateClientNumber()
+        {
+            var lastNumber = _context.Clints.AsEnumerable().Select(d => d.ReferenceNumber).LastOrDefault(); // Error Not active can not count ?
+            if (lastNumber >= 0)
+            {
+                return (long)(lastNumber + 1);
+            }
 
-       
+            return 201001;
+        }
+
 
         public void Dispose()
         {

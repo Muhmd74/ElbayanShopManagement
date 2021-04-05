@@ -27,6 +27,8 @@ namespace ElbayaNPresentation.Views.Client
             //System.Drawing.Rectangle rect = Screen.GetWorkingArea(this);
             //this.MaximizedBounds = Screen.GetWorkingArea(this);
             //this.WindowState = FormWindowState.Normal;
+
+            Presenter.OnLoad();
         }
       
         private static frmNewClient _instance;
