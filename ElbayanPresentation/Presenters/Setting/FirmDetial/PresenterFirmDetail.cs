@@ -22,12 +22,13 @@ namespace ElbayaNPresentation.Presenters.Setting.FirmDetial
         {
             _view.Save.Click += new EventHandler(SaveFrimData);
             _view.UploadPicture.Click += new EventHandler(UploadPicture);
+            GetFirmById();
         }
         private void SaveFrimData(object sender, EventArgs e)
         {
-            if(_view.FirmName.Text != string.Empty)
+            if (_view.FirmName.Text != string.Empty)
             {
-                Firm.CreateFirm(new ElbayanServices.Repository.Firms.Dtos.FirmDto
+                Firm.UpdateFirm(new ElbayanServices.Repository.Firms.Dtos.FirmDto
                 {
                     Name = _view.FirmName.Text,
                     Phone = Convert.ToInt32(_view.FirmPhone.Text),
@@ -47,7 +48,6 @@ namespace ElbayaNPresentation.Presenters.Setting.FirmDetial
                 MessageBox.Show("لا بد من إدخال اسم الشركة ");
             }
         }
-
         private void UploadPicture(object sender, EventArgs e)
         {
             OpenFileDialog image = new OpenFileDialog();
@@ -63,6 +63,28 @@ namespace ElbayaNPresentation.Presenters.Setting.FirmDetial
                 //File.Move(@"c:\test\SomeFile.txt", @"c:\test\Test\SomeFile.txt");
                 File.Copy(image.FileName, _view.LogoURL);
             }
+        }
+
+        // To Update Firm Data
+        // - Load By Id
+        private Guid GetFirmById()
+        {
+            var firm = Firm.Get();
+            if (firm != null)
+            {
+                _view.FirmName.Text = firm.Name;
+                _view.FirmEmail.Text = firm.Email;
+                _view.FirmNeturework.Text = firm.NatureWork;
+                _view.FirmMobile.Text = firm.Mobile.ToString();
+                _view.FirmPhone.Text = firm.Phone.ToString();
+                _view.FirmAddress.Text = firm.Address;
+                _view.StartDay.Value = firm.Start;
+                _view.EndDay.Value = firm.End;
+                _view.LogoURL = firm.LogoInvoice;
+                _view.FirmLogo.Image = new Bitmap(_view.LogoURL);
+                _view.InvoiceNote.Text = firm.MessageInvoice;
+            }
+            return firm.Id;
         }
     }
 }

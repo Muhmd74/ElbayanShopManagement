@@ -7,9 +7,10 @@ using ElbayanServices.Repository.Firms.Dtos;
 
 namespace ElbayanServices.Repository.Firms
 {
-   public interface IFirm
-   {
-       bool CreateFirm(FirmDto model);
-       bool UpdateFirm(FirmDto model);
-   }
+    public interface IFirm
+    {
+        bool CreateFirm(FirmDto model);
+        bool UpdateFirm(FirmDto model);
+        FirmDto Get();
+    }
 }

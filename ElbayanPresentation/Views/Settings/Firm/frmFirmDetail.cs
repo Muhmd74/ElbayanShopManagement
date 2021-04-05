@@ -29,7 +29,6 @@ namespace ElbayaNPresentation.Views.Settings.Firm
                 return _instance;
             }
         }
-
         public PresenterFirmDetail Presenter { get; set; }
         public Guna2TextBox FirmName { get => txtFirmName; set => txtFirmName = value; }
         public Guna2TextBox FirmEmail { get => txtFirmEmail; set => txtFirmEmail = value; }
