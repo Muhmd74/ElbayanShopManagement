@@ -68,10 +68,10 @@ namespace ElbayanServices.Repository.Products.ProductStock
                 .Include(d => d.Product.SmallUnit)
                 .Include(d => d.Order.Clint)
                 .OrderByDescending(d => d.DateTime)
-                .Where(d => d.DateTime <= firstDateTime && d.DateTime <= lastDateTime || d.Order.OrderType == orderType || d.ProductId == productId)
+                .Where(d => d.DateTime <= firstDateTime && d.DateTime >= lastDateTime && d.Order.OrderType == orderType && d.ProductId == productId)
                 .Select(d => new ProductStockDetails
                 {
-                    DateTime = d.Order.DateTime,
+                    DateTime = d.DateTime,
                     Quantity = d.Stock,
                     OrderNumber = d.Order.OrderNumber,
                     OrderType = d.Order.OrderType,

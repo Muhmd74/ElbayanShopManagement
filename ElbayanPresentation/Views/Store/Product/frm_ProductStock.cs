@@ -43,7 +43,7 @@ namespace ElbayaNPresentation.Views.Store.Product
         {
             if(e.KeyCode == Keys.F3)
             {
-                Presenter.FilterBy();
+                Presenter.btnFilter_onClick(null, null);
             }
         }
         private void txtProductBarcode_KeyDown(object sender, KeyEventArgs e)
@@ -52,6 +52,14 @@ namespace ElbayaNPresentation.Views.Store.Product
             {
                 Presenter.FilterBy();
             }
+        }
+        private void cbxActiveProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.txtProductBarcode.Clear();
+        }
+        private void txtProductBarcode_Enter(object sender, EventArgs e)
+        {
+            this.cbxActiveProduct.SelectedIndex = -1;
         }
     }
 }

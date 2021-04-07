@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ElbayaNPresentation.Presenters.Store.Product.ProductStock
 {
@@ -51,25 +52,28 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductStock
             return null;
         }
         // Filter By Barcode All order type all time
-        private void btnFilter_onClick(object sender, EventArgs e)
+        public void btnFilter_onClick(object sender, EventArgs e)
         {
+            ValiadateStartDateBeforeEndDate();
+            GetAllByOrderType();
+            GetProductPeriodByIdAndOrderType();
             FilterBy();
         }
         public void FilterBy()
         {
             if (!string.IsNullOrEmpty(_view.Search.Text))
             {
-                string barcode = _view.ProductBarCode.Text;
-                var FilterByBarcode = ProductStock.GetAllProductStockDetails().Where(d => d.ProductNumber == long.Parse(barcode)
-                || d.BarCode == long.Parse(barcode));
-                if (_view.ProcessType.SelectedIndex != -1)
+                if (_view.ProductBarCode.Text != string.Empty)
                 {
-                    FilterByBarcode = ProductStock.GetAllProductStockDetails().Where(d => d.ProductNumber == long.Parse(barcode)
-                    || d.BarCode == long.Parse(barcode) 
-                    && d.OrderType == "مبيعات");
+                    if (_view.ProcessType.SelectedIndex != -1)
+                    {
+                        FilterByBarcodeandOrderType();
+                    }
+                    long? barcode = NullableNumber.BarecodeNumber(_view.ProductBarCode.Text);
+                    var FilterByBarcode = ProductStock.GetAllProductStockDetails().Where(d => d.ProductNumber == barcode || d.BarCode == barcode);
                     _view.SearchResult.DataSource = FilterByBarcode.ToList();
                 }
-                //_view.SearchResult.DataSource = FilterByBarcode.ToList();
+
             }
             else
             {
@@ -79,6 +83,45 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductStock
         internal void OnLoad()
         {
             PopulateActiveProduct.PopulateProducts(_view.ActiveProduct);
+        }
+        private void ValiadateStartDateBeforeEndDate()
+        {
+            if (_view.EndDate.Value < _view.StartDate.Value)
+            {
+                MessageBox.Show("يجب أن يكون بداية المدة قبل نهاية المدة", "تأكيد", MessageBoxButtons.OK);
+                _view.EndDate.Value = DateTime.Now;
+                _view.StartDate.Value = DateTime.Now;
+                return;
+            }
+        }
+        private void GetAllByOrderType()
+        {
+            if (_view.ProcessType.SelectedIndex != -1)
+            {
+                _view.SearchResult.DataSource = ProductStock.GetAllProductStockDetailsByType(_view.ProcessType.Text);
+            }
+        }
+        private void GetProductPeriodByIdAndOrderType()
+        {
+            if (_view.ActiveProduct.SelectedIndex != -1)
+            {
+                if (_view.ProcessType.SelectedIndex != -1)
+                {
+                    DateTime? firstDate = _view.EndDate.Value;
+                    DateTime? lastDate = _view.StartDate.Value;
+                    string orderType = _view.ProcessType.Text;
+                    Guid? ProductId = new Guid(_view.ActiveProduct.SelectedValue.ToString());
+                    _view.SearchResult.DataSource = ProductStock.GetAllProductStockDetailsByDateTime(firstDate, lastDate, orderType, ProductId);
+                }
+            }
+        }
+        private void FilterByBarcodeandOrderType()
+        {
+            string orderType = _view.ProcessType.Text;
+            long? barcode = NullableNumber.BarecodeNumber(_view.ProductBarCode.Text);
+            var FilterByBarcodeandOrderType = ProductStock.GetAllProductStockDetails().Where(d => d.ProductNumber == barcode || d.BarCode == barcode
+            && d.OrderType == orderType);
+            _view.SearchResult.DataSource = FilterByBarcodeandOrderType.ToList();
         }
     }
 }

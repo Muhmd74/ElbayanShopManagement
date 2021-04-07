@@ -29,22 +29,12 @@ namespace ElbayaNPresentation.Views.Store.Product
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ProductStock));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvSearchResult = new System.Windows.Forms.DataGridView();
-            this.OrderProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PSNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qunatity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StockType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StockDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BarCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StockStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtpEndDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -61,6 +51,17 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.OrderProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PSNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qunatity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StockType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StockDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BarCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StockStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -100,118 +101,32 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.StockDateTime,
             this.BarCode,
             this.StockStatus});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(171)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSearchResult.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(171)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSearchResult.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSearchResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSearchResult.Location = new System.Drawing.Point(3, 26);
             this.dgvSearchResult.Name = "dgvSearchResult";
             this.dgvSearchResult.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.OldLace;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSearchResult.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.OldLace;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSearchResult.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSearchResult.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.LemonChiffon;
             this.dgvSearchResult.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F);
             this.dgvSearchResult.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvSearchResult.RowTemplate.Height = 29;
             this.dgvSearchResult.Size = new System.Drawing.Size(938, 357);
             this.dgvSearchResult.TabIndex = 13;
-            // 
-            // OrderProductId
-            // 
-            this.OrderProductId.DataPropertyName = "Id";
-            this.OrderProductId.HeaderText = "رقم مرجعي المنتج";
-            this.OrderProductId.Name = "OrderProductId";
-            this.OrderProductId.ReadOnly = true;
-            this.OrderProductId.Visible = false;
-            // 
-            // PSNumber
-            // 
-            this.PSNumber.DataPropertyName = "ProductNumber";
-            this.PSNumber.FillWeight = 81.21827F;
-            this.PSNumber.HeaderText = "رقم المنتج";
-            this.PSNumber.Name = "PSNumber";
-            this.PSNumber.ReadOnly = true;
-            // 
-            // ProductName
-            // 
-            this.ProductName.DataPropertyName = "ProductName";
-            this.ProductName.FillWeight = 147.0976F;
-            this.ProductName.HeaderText = "اسم المنتج";
-            this.ProductName.Name = "ProductName";
-            this.ProductName.ReadOnly = true;
-            // 
-            // Unit
-            // 
-            this.Unit.DataPropertyName = "UnitName";
-            this.Unit.FillWeight = 58.1288F;
-            this.Unit.HeaderText = "الوحدة";
-            this.Unit.Name = "Unit";
-            this.Unit.ReadOnly = true;
-            // 
-            // Qunatity
-            // 
-            this.Qunatity.DataPropertyName = "Quantity";
-            this.Qunatity.FillWeight = 58.16371F;
-            this.Qunatity.HeaderText = "الكمية";
-            this.Qunatity.Name = "Qunatity";
-            this.Qunatity.ReadOnly = true;
-            // 
-            // StockType
-            // 
-            this.StockType.DataPropertyName = "OrderType";
-            this.StockType.FillWeight = 96.86215F;
-            this.StockType.HeaderText = "نوع العلمية";
-            this.StockType.Name = "StockType";
-            this.StockType.ReadOnly = true;
-            // 
-            // ClientName
-            // 
-            this.ClientName.DataPropertyName = "UserName";
-            this.ClientName.FillWeight = 120.9946F;
-            this.ClientName.HeaderText = "اسم العميل";
-            this.ClientName.Name = "ClientName";
-            this.ClientName.ReadOnly = true;
-            // 
-            // OrderNumber
-            // 
-            this.OrderNumber.DataPropertyName = "OrderNumber";
-            this.OrderNumber.FillWeight = 120.9946F;
-            this.OrderNumber.HeaderText = "رقم الفاتورة";
-            this.OrderNumber.Name = "OrderNumber";
-            this.OrderNumber.ReadOnly = true;
-            // 
-            // StockDateTime
-            // 
-            this.StockDateTime.DataPropertyName = "DateTime";
-            this.StockDateTime.HeaderText = "اليوم والتاريخ";
-            this.StockDateTime.Name = "StockDateTime";
-            this.StockDateTime.ReadOnly = true;
-            // 
-            // BarCode
-            // 
-            this.BarCode.DataPropertyName = "BarCode";
-            this.BarCode.HeaderText = "رقم الباركود ";
-            this.BarCode.Name = "BarCode";
-            this.BarCode.ReadOnly = true;
-            // 
-            // StockStatus
-            // 
-            this.StockStatus.DataPropertyName = "StockStatues";
-            this.StockStatus.HeaderText = "حالة العملية";
-            this.StockStatus.Name = "StockStatus";
-            this.StockStatus.ReadOnly = true;
-            this.StockStatus.Visible = false;
             // 
             // groupBox2
             // 
@@ -256,7 +171,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dtpEndDate.ShadowDecoration.Parent = this.dtpEndDate;
             this.dtpEndDate.Size = new System.Drawing.Size(170, 31);
             this.dtpEndDate.TabIndex = 17;
-            this.dtpEndDate.Value = new System.DateTime(2021, 3, 21, 0, 19, 36, 36);
+            this.dtpEndDate.Value = new System.DateTime(2021, 4, 7, 0, 0, 0, 0);
             // 
             // label5
             // 
@@ -264,7 +179,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(223, 73);
+            this.label5.Location = new System.Drawing.Point(219, 73);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 22);
             this.label5.TabIndex = 16;
@@ -288,7 +203,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dtpStartDate.ShadowDecoration.Parent = this.dtpStartDate;
             this.dtpStartDate.Size = new System.Drawing.Size(170, 31);
             this.dtpStartDate.TabIndex = 17;
-            this.dtpStartDate.Value = new System.DateTime(2021, 3, 21, 0, 19, 36, 36);
+            this.dtpStartDate.Value = new System.DateTime(2021, 4, 7, 0, 0, 0, 0);
             // 
             // label4
             // 
@@ -331,6 +246,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.cbxActiveProduct.Size = new System.Drawing.Size(188, 33);
             this.cbxActiveProduct.TabIndex = 15;
             this.cbxActiveProduct.Text = "أختر منتج";
+            this.cbxActiveProduct.SelectedIndexChanged += new System.EventHandler(this.cbxActiveProduct_SelectedIndexChanged);
             // 
             // btnSearch
             // 
@@ -404,6 +320,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.txtProductBarcode.Size = new System.Drawing.Size(182, 35);
             this.txtProductBarcode.TabIndex = 13;
             this.txtProductBarcode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtProductBarcode.Enter += new System.EventHandler(this.txtProductBarcode_Enter);
             this.txtProductBarcode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtProductBarcode_KeyDown);
             // 
             // label3
@@ -460,6 +377,94 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label2.Size = new System.Drawing.Size(153, 28);
             this.label2.TabIndex = 3;
             this.label2.Text = "متابعة حركة المنتج";
+            // 
+            // OrderProductId
+            // 
+            this.OrderProductId.DataPropertyName = "Id";
+            this.OrderProductId.HeaderText = "رقم مرجعي المنتج";
+            this.OrderProductId.Name = "OrderProductId";
+            this.OrderProductId.ReadOnly = true;
+            this.OrderProductId.Visible = false;
+            // 
+            // PSNumber
+            // 
+            this.PSNumber.DataPropertyName = "ProductNumber";
+            this.PSNumber.FillWeight = 81.21827F;
+            this.PSNumber.HeaderText = "رقم المنتج";
+            this.PSNumber.Name = "PSNumber";
+            this.PSNumber.ReadOnly = true;
+            // 
+            // ProductName
+            // 
+            this.ProductName.DataPropertyName = "ProductName";
+            this.ProductName.FillWeight = 147.0976F;
+            this.ProductName.HeaderText = "اسم المنتج";
+            this.ProductName.Name = "ProductName";
+            this.ProductName.ReadOnly = true;
+            // 
+            // Unit
+            // 
+            this.Unit.DataPropertyName = "UnitName";
+            this.Unit.FillWeight = 58.1288F;
+            this.Unit.HeaderText = "الوحدة";
+            this.Unit.Name = "Unit";
+            this.Unit.ReadOnly = true;
+            // 
+            // Qunatity
+            // 
+            this.Qunatity.DataPropertyName = "Quantity";
+            this.Qunatity.FillWeight = 58.16371F;
+            this.Qunatity.HeaderText = "الكمية";
+            this.Qunatity.Name = "Qunatity";
+            this.Qunatity.ReadOnly = true;
+            // 
+            // StockType
+            // 
+            this.StockType.DataPropertyName = "OrderType";
+            this.StockType.FillWeight = 96.86215F;
+            this.StockType.HeaderText = "نوع العلمية";
+            this.StockType.Name = "StockType";
+            this.StockType.ReadOnly = true;
+            // 
+            // ClientName
+            // 
+            this.ClientName.DataPropertyName = "UserName";
+            this.ClientName.FillWeight = 120.9946F;
+            this.ClientName.HeaderText = "اسم العميل";
+            this.ClientName.Name = "ClientName";
+            this.ClientName.ReadOnly = true;
+            // 
+            // OrderNumber
+            // 
+            this.OrderNumber.DataPropertyName = "OrderNumber";
+            this.OrderNumber.FillWeight = 120.9946F;
+            this.OrderNumber.HeaderText = "رقم الفاتورة";
+            this.OrderNumber.Name = "OrderNumber";
+            this.OrderNumber.ReadOnly = true;
+            // 
+            // StockDateTime
+            // 
+            this.StockDateTime.DataPropertyName = "DateTime";
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
+            this.StockDateTime.DefaultCellStyle = dataGridViewCellStyle1;
+            this.StockDateTime.HeaderText = "اليوم والتاريخ";
+            this.StockDateTime.Name = "StockDateTime";
+            this.StockDateTime.ReadOnly = true;
+            // 
+            // BarCode
+            // 
+            this.BarCode.DataPropertyName = "BarCode";
+            this.BarCode.HeaderText = "رقم الباركود ";
+            this.BarCode.Name = "BarCode";
+            this.BarCode.ReadOnly = true;
+            // 
+            // StockStatus
+            // 
+            this.StockStatus.DataPropertyName = "StockStatues";
+            this.StockStatus.HeaderText = "حالة العملية";
+            this.StockStatus.Name = "StockStatus";
+            this.StockStatus.ReadOnly = true;
+            this.StockStatus.Visible = false;
             // 
             // frm_ProductStock
             // 
