@@ -139,6 +139,8 @@
     <Compile Include="Presenters\Store\Product\AllProduct\IViewAllProduct.cs" />
     <Compile Include="Presenters\Store\Product\ProductCard\IViewProdcut.cs" />
     <Compile Include="Presenters\Store\Product\ProductCard\ProductPresnter.cs" />
+    <Compile Include="Presenters\Store\Product\ProductOpeningBalance\IViewProductOpeningBakance.cs" />
+    <Compile Include="Presenters\Store\Product\ProductOpeningBalance\PresenterProductOpeneingBalance.cs" />
     <Compile Include="Presenters\Store\Product\ProductStock\IViewProductStoc.cs" />
     <Compile Include="Presenters\Store\Product\ProductStock\PresenterProductStock.cs" />
     <Compile Include="Presenters\Store\Unit\LargeUnit\IViewLargeUnit.cs" />
@@ -250,6 +252,18 @@
     <Compile Include="Views\Store\Product\frmNewProduct.Designer.cs">
       <DependentUpon>frmNewProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Store\Product\frmProductOpeningBalance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Store\Product\frmProductOpeningBalance.Designer.cs">
+      <DependentUpon>frmProductOpeningBalance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Store\Product\frmProductPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Store\Product\frmProductPrice.Designer.cs">
+      <DependentUpon>frmProductPrice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Store\Product\frm_ProductStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -324,6 +338,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Store\Product\frmNewProduct.resx">
       <DependentUpon>frmNewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Store\Product\frmProductOpeningBalance.resx">
+      <DependentUpon>frmProductOpeningBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Store\Product\frmProductPrice.resx">
+      <DependentUpon>frmProductPrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Store\Product\frm_ProductStock.resx">
       <DependentUpon>frm_ProductStock.cs</DependentUpon>

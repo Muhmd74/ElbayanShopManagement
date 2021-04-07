@@ -239,5 +239,10 @@ namespace ElbayaNPresentation
             frmFirmDetail.Instance.BringToFront();
             frmFirmDetail.Instance.Show();
         }
+
+        private void barButtonItem25_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmProductOpeningBalance.Insatnce.ShowDialog();
+        }
     }
 }
