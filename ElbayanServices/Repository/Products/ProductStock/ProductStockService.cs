@@ -13,12 +13,10 @@ namespace ElbayanServices.Repository.Products.ProductStock
     public class ProductStockService : IProductStock, IDisposable
     {
         private readonly ConnectionOption _context;
-
         public ProductStockService(ConnectionOption context)
         {
             _context = context;
         }
-
         public bool CreateOpeningBalancesProduct(int stock, Guid productId)
         {
             var productStock = _context.ProductStocks.Add(new ElbayanDatabase.DataClasses.Product.ProductStock
@@ -42,7 +40,6 @@ namespace ElbayanServices.Repository.Products.ProductStock
             return false;
 
         }
-
         public List<ProductStockDetails> GetAllProductStockDetails()
         {
             return _context.ProductStocks
@@ -64,15 +61,14 @@ namespace ElbayanServices.Repository.Products.ProductStock
                     StockStatues = d.StockStatues
                 }).ToList();
         }
-
-        public List<ProductStockDetails> GetAllProductStockDetailsByDateTime(DateTime firstDateTime, DateTime lastDateTime, string orderType, Guid productId)
+        public List<ProductStockDetails> GetAllProductStockDetailsByDateTime(DateTime? firstDateTime, DateTime? lastDateTime, string? orderType, Guid? productId)
         {
             return _context.ProductStocks
                 .Include(d => d.Product.LargeUnit)
                 .Include(d => d.Product.SmallUnit)
                 .Include(d => d.Order.Clint)
                 .OrderByDescending(d => d.DateTime)
-                .Where(d => d.DateTime >= firstDateTime && d.DateTime <= lastDateTime || d.Order.OrderType == orderType || d.ProductId == productId)
+                .Where(d => d.DateTime <= firstDateTime && d.DateTime <= lastDateTime || d.Order.OrderType == orderType || d.ProductId == productId)
                 .Select(d => new ProductStockDetails
                 {
                     DateTime = d.Order.DateTime,
@@ -88,7 +84,6 @@ namespace ElbayanServices.Repository.Products.ProductStock
 
                 }).ToList();
         }
-
         public List<ProductStockDetails> GetAllProductStockDetailsByType(string orderType)
         {
             return _context.ProductStocks
@@ -112,7 +107,6 @@ namespace ElbayanServices.Repository.Products.ProductStock
 
                 }).ToList();
         }
-
         public List<ProductStockDetails> GetAllProductStockDetailsSearch(string productName, long barCode)
         {
             return _context.ProductStocks
@@ -135,8 +129,6 @@ namespace ElbayanServices.Repository.Products.ProductStock
                     StockStatues = d.StockStatues
                 }).ToList();
         }
-
-
         public void Dispose()
         {
             _context.Dispose();

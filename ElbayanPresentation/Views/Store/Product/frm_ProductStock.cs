@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace ElbayaNPresentation.Views.Store.Product
 {
-    public partial class frm_ProductStock : MetroFramework.Forms.MetroForm, IViewProductStoc
+    public partial class frm_ProductStock : MetroFramework.Forms.MetroForm, IViewProductStock
     {
         public frm_ProductStock()
         {
@@ -31,7 +31,6 @@ namespace ElbayaNPresentation.Views.Store.Product
                 return _instance;
             }
         }
-
         public PresenterProductStock Presenter { get; set; }
         public Guna2TextBox ProductBarCode { get => txtProductBarcode; set => txtProductBarcode = value; }
         public ComboBox ActiveProduct { get => cbxActiveProduct; set => cbxActiveProduct = value; }
@@ -40,5 +39,19 @@ namespace ElbayaNPresentation.Views.Store.Product
         public Guna2DateTimePicker EndDate { get => dtpEndDate; set => dtpEndDate = value; }
         public Guna2Button Search { get => btnSearch; set => btnSearch = value; }
         public DataGridView SearchResult { get => dgvSearchResult; set => dgvSearchResult = value; }
+        private void frm_ProductStock_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.F3)
+            {
+                Presenter.FilterBy();
+            }
+        }
+        private void txtProductBarcode_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Presenter.FilterBy();
+            }
+        }
     }
 }
