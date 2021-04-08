@@ -15,6 +15,7 @@ namespace ElbayaNPresentation.Views.Client
 {
     public partial class frmNewClient : MetroFramework.Forms.MetroForm, IViewNewClient
     {
+        
         public frmNewClient()
         {
             InitializeComponent();

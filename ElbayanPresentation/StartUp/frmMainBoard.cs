@@ -265,5 +265,9 @@ namespace ElbayaNPresentation
             frmProductPrice.Instance.Show();
         }
 
+        private void barButtonItem28_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmOrderSales.Intance.ShowDialog();
+        }
     }
 }

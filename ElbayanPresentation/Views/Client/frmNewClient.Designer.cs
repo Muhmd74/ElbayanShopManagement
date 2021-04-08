@@ -119,11 +119,11 @@ namespace ElbayaNPresentation.Views.Client
             this.cbIsActive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbIsActive.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbIsActive.ForeColor = System.Drawing.Color.Black;
-            this.cbIsActive.Location = new System.Drawing.Point(503, 382);
+            this.cbIsActive.Location = new System.Drawing.Point(520, 379);
             this.cbIsActive.Name = "cbIsActive";
-            this.cbIsActive.Size = new System.Drawing.Size(87, 26);
+            this.cbIsActive.Size = new System.Drawing.Size(54, 26);
             this.cbIsActive.TabIndex = 77;
-            this.cbIsActive.Text = "مورد نشط";
+            this.cbIsActive.Text = "نشط";
             this.cbIsActive.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.cbIsActive.UseVisualStyleBackColor = true;
             this.cbIsActive.Click += new System.EventHandler(this.cbIsActive_Click);
@@ -490,7 +490,7 @@ namespace ElbayaNPresentation.Views.Client
             this.txtName.ForeColor = System.Drawing.Color.Black;
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtName.HoverState.Parent = this.txtName;
-            this.txtName.Location = new System.Drawing.Point(146, 116);
+            this.txtName.Location = new System.Drawing.Point(146, 119);
             this.txtName.Margin = new System.Windows.Forms.Padding(9, 8, 9, 8);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
@@ -565,11 +565,11 @@ namespace ElbayaNPresentation.Views.Client
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(60, 76);
+            this.label5.Location = new System.Drawing.Point(23, 76);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 22);
+            this.label5.Size = new System.Drawing.Size(115, 22);
             this.label5.TabIndex = 88;
-            this.label5.Text = "رقم المورد";
+            this.label5.Text = "الرقم التعريفي : ";
             // 
             // btnUpdate
             // 
@@ -720,11 +720,11 @@ namespace ElbayaNPresentation.Views.Client
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(52, 131);
+            this.label1.Location = new System.Drawing.Point(44, 131);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 22);
+            this.label1.Size = new System.Drawing.Size(90, 22);
             this.label1.TabIndex = 94;
-            this.label1.Text = "اسم المورد ";
+            this.label1.Text = "الأسم كاملا :";
             // 
             // label9
             // 
@@ -735,9 +735,9 @@ namespace ElbayaNPresentation.Views.Client
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(72, 26);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(164, 22);
+            this.label9.Size = new System.Drawing.Size(121, 22);
             this.label9.TabIndex = 88;
-            this.label9.Text = "البيانات الأساسية للعملاء";
+            this.label9.Text = "البيانات الأساسية ";
             // 
             // frmNewClient
             // 
