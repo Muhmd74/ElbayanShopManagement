@@ -31,10 +31,21 @@ namespace ElbayaNPresentation.Views.Store.Product
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ProductStock));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ProductStock));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvSearchResult = new System.Windows.Forms.DataGridView();
+            this.OrderProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PSNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qunatity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StockType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StockDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BarCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StockStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtpEndDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,27 +58,16 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label7 = new System.Windows.Forms.Label();
             this.txtProductBarcode = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.OrderProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PSNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qunatity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StockType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StockDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BarCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StockStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -128,6 +128,94 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.dgvSearchResult.Size = new System.Drawing.Size(938, 357);
             this.dgvSearchResult.TabIndex = 13;
             // 
+            // OrderProductId
+            // 
+            this.OrderProductId.DataPropertyName = "Id";
+            this.OrderProductId.HeaderText = "رقم مرجعي المنتج";
+            this.OrderProductId.Name = "OrderProductId";
+            this.OrderProductId.ReadOnly = true;
+            this.OrderProductId.Visible = false;
+            // 
+            // PSNumber
+            // 
+            this.PSNumber.DataPropertyName = "ProductNumber";
+            this.PSNumber.FillWeight = 81.21827F;
+            this.PSNumber.HeaderText = "رقم المنتج";
+            this.PSNumber.Name = "PSNumber";
+            this.PSNumber.ReadOnly = true;
+            // 
+            // ProductName
+            // 
+            this.ProductName.DataPropertyName = "ProductName";
+            this.ProductName.FillWeight = 147.0976F;
+            this.ProductName.HeaderText = "اسم المنتج";
+            this.ProductName.Name = "ProductName";
+            this.ProductName.ReadOnly = true;
+            // 
+            // Unit
+            // 
+            this.Unit.DataPropertyName = "UnitName";
+            this.Unit.FillWeight = 58.1288F;
+            this.Unit.HeaderText = "الوحدة";
+            this.Unit.Name = "Unit";
+            this.Unit.ReadOnly = true;
+            // 
+            // Qunatity
+            // 
+            this.Qunatity.DataPropertyName = "Quantity";
+            this.Qunatity.FillWeight = 58.16371F;
+            this.Qunatity.HeaderText = "الكمية";
+            this.Qunatity.Name = "Qunatity";
+            this.Qunatity.ReadOnly = true;
+            // 
+            // StockType
+            // 
+            this.StockType.DataPropertyName = "OrderType";
+            this.StockType.FillWeight = 96.86215F;
+            this.StockType.HeaderText = "نوع العلمية";
+            this.StockType.Name = "StockType";
+            this.StockType.ReadOnly = true;
+            // 
+            // ClientName
+            // 
+            this.ClientName.DataPropertyName = "UserName";
+            this.ClientName.FillWeight = 120.9946F;
+            this.ClientName.HeaderText = "اسم العميل";
+            this.ClientName.Name = "ClientName";
+            this.ClientName.ReadOnly = true;
+            // 
+            // OrderNumber
+            // 
+            this.OrderNumber.DataPropertyName = "OrderNumber";
+            this.OrderNumber.FillWeight = 120.9946F;
+            this.OrderNumber.HeaderText = "رقم الفاتورة";
+            this.OrderNumber.Name = "OrderNumber";
+            this.OrderNumber.ReadOnly = true;
+            // 
+            // StockDateTime
+            // 
+            this.StockDateTime.DataPropertyName = "DateTime";
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
+            this.StockDateTime.DefaultCellStyle = dataGridViewCellStyle1;
+            this.StockDateTime.HeaderText = "اليوم والتاريخ";
+            this.StockDateTime.Name = "StockDateTime";
+            this.StockDateTime.ReadOnly = true;
+            // 
+            // BarCode
+            // 
+            this.BarCode.DataPropertyName = "BarCode";
+            this.BarCode.HeaderText = "رقم الباركود ";
+            this.BarCode.Name = "BarCode";
+            this.BarCode.ReadOnly = true;
+            // 
+            // StockStatus
+            // 
+            this.StockStatus.DataPropertyName = "StockStatues";
+            this.StockStatus.HeaderText = "حالة العملية";
+            this.StockStatus.Name = "StockStatus";
+            this.StockStatus.ReadOnly = true;
+            this.StockStatus.Visible = false;
+            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -146,9 +234,9 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.groupBox2.Controls.Add(this.pictureBox3);
             this.groupBox2.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(171)))), ((int)(((byte)(215)))));
-            this.groupBox2.Location = new System.Drawing.Point(222, 7);
+            this.groupBox2.Location = new System.Drawing.Point(219, 14);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(742, 114);
+            this.groupBox2.Size = new System.Drawing.Size(742, 105);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "الفلترة والبحث";
@@ -335,28 +423,27 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label3.TabIndex = 12;
             this.label3.Text = "رقم باركو المنتج";
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(708, 26);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(30, 28);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 11;
-            this.pictureBox3.TabStop = false;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.pictureBox1);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(171)))), ((int)(((byte)(215)))));
-            this.groupBox3.Location = new System.Drawing.Point(20, 30);
+            this.groupBox3.Location = new System.Drawing.Point(20, 14);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(196, 77);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(34, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(125, 22);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "متابعة حركة المنتج";
             // 
             // pictureBox1
             // 
@@ -368,103 +455,16 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // label2
+            // pictureBox3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Droid Arabic Kufi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(153, 28);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "متابعة حركة المنتج";
-            // 
-            // OrderProductId
-            // 
-            this.OrderProductId.DataPropertyName = "Id";
-            this.OrderProductId.HeaderText = "رقم مرجعي المنتج";
-            this.OrderProductId.Name = "OrderProductId";
-            this.OrderProductId.ReadOnly = true;
-            this.OrderProductId.Visible = false;
-            // 
-            // PSNumber
-            // 
-            this.PSNumber.DataPropertyName = "ProductNumber";
-            this.PSNumber.FillWeight = 81.21827F;
-            this.PSNumber.HeaderText = "رقم المنتج";
-            this.PSNumber.Name = "PSNumber";
-            this.PSNumber.ReadOnly = true;
-            // 
-            // ProductName
-            // 
-            this.ProductName.DataPropertyName = "ProductName";
-            this.ProductName.FillWeight = 147.0976F;
-            this.ProductName.HeaderText = "اسم المنتج";
-            this.ProductName.Name = "ProductName";
-            this.ProductName.ReadOnly = true;
-            // 
-            // Unit
-            // 
-            this.Unit.DataPropertyName = "UnitName";
-            this.Unit.FillWeight = 58.1288F;
-            this.Unit.HeaderText = "الوحدة";
-            this.Unit.Name = "Unit";
-            this.Unit.ReadOnly = true;
-            // 
-            // Qunatity
-            // 
-            this.Qunatity.DataPropertyName = "Quantity";
-            this.Qunatity.FillWeight = 58.16371F;
-            this.Qunatity.HeaderText = "الكمية";
-            this.Qunatity.Name = "Qunatity";
-            this.Qunatity.ReadOnly = true;
-            // 
-            // StockType
-            // 
-            this.StockType.DataPropertyName = "OrderType";
-            this.StockType.FillWeight = 96.86215F;
-            this.StockType.HeaderText = "نوع العلمية";
-            this.StockType.Name = "StockType";
-            this.StockType.ReadOnly = true;
-            // 
-            // ClientName
-            // 
-            this.ClientName.DataPropertyName = "UserName";
-            this.ClientName.FillWeight = 120.9946F;
-            this.ClientName.HeaderText = "اسم العميل";
-            this.ClientName.Name = "ClientName";
-            this.ClientName.ReadOnly = true;
-            // 
-            // OrderNumber
-            // 
-            this.OrderNumber.DataPropertyName = "OrderNumber";
-            this.OrderNumber.FillWeight = 120.9946F;
-            this.OrderNumber.HeaderText = "رقم الفاتورة";
-            this.OrderNumber.Name = "OrderNumber";
-            this.OrderNumber.ReadOnly = true;
-            // 
-            // StockDateTime
-            // 
-            this.StockDateTime.DataPropertyName = "DateTime";
-            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
-            this.StockDateTime.DefaultCellStyle = dataGridViewCellStyle1;
-            this.StockDateTime.HeaderText = "اليوم والتاريخ";
-            this.StockDateTime.Name = "StockDateTime";
-            this.StockDateTime.ReadOnly = true;
-            // 
-            // BarCode
-            // 
-            this.BarCode.DataPropertyName = "BarCode";
-            this.BarCode.HeaderText = "رقم الباركود ";
-            this.BarCode.Name = "BarCode";
-            this.BarCode.ReadOnly = true;
-            // 
-            // StockStatus
-            // 
-            this.StockStatus.DataPropertyName = "StockStatues";
-            this.StockStatus.HeaderText = "حالة العملية";
-            this.StockStatus.Name = "StockStatus";
-            this.StockStatus.ReadOnly = true;
-            this.StockStatus.Visible = false;
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(708, 26);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(30, 28);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 11;
+            this.pictureBox3.TabStop = false;
             // 
             // frm_ProductStock
             // 
@@ -489,10 +489,10 @@ namespace ElbayaNPresentation.Views.Store.Product
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }

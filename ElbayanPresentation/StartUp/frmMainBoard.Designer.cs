@@ -89,6 +89,12 @@ namespace ElbayaNPresentation
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
+            this.barButtonItem26 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem27 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem28 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem29 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem30 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,7 +104,7 @@ namespace ElbayaNPresentation
             this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(42, 46, 42, 46);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1386, 26);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1233, 26);
             // 
             // ribbon
             // 
@@ -140,10 +146,15 @@ namespace ElbayaNPresentation
             this.barButtonItem22,
             this.barButtonItem23,
             this.barButtonItem24,
-            this.barButtonItem25});
+            this.barButtonItem25,
+            this.barButtonItem26,
+            this.barButtonItem27,
+            this.barButtonItem28,
+            this.barButtonItem29,
+            this.barButtonItem30});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(42, 46, 42, 46);
-            this.ribbon.MaxItemId = 48;
+            this.ribbon.MaxItemId = 53;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsMenuMinWidth = 1010;
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -157,7 +168,7 @@ namespace ElbayaNPresentation
             this.ribbon.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowPageHeadersInFormCaption = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbon.Size = new System.Drawing.Size(1386, 183);
+            this.ribbon.Size = new System.Drawing.Size(1233, 183);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Above;
             // 
@@ -408,6 +419,7 @@ namespace ElbayaNPresentation
             this.barButtonItem7.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.barButtonItem7.Name = "barButtonItem7";
             this.barButtonItem7.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
             // 
             // barButtonItem8
             // 
@@ -458,6 +470,7 @@ namespace ElbayaNPresentation
             this.barButtonItem11.ItemAppearance.Pressed.Options.UseTextOptions = true;
             this.barButtonItem11.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.barButtonItem11.Name = "barButtonItem11";
+            this.barButtonItem11.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem11_ItemClick);
             // 
             // barBtnBuilding
             // 
@@ -982,13 +995,16 @@ namespace ElbayaNPresentation
             this.rpSales.Appearance.Font = new System.Drawing.Font("Sakkal Majalla", 16.2F, System.Drawing.FontStyle.Bold);
             this.rpSales.Appearance.Options.UseFont = true;
             this.rpSales.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup9});
+            this.ribbonPageGroup9,
+            this.ribbonPageGroup16});
             this.rpSales.Name = "rpSales";
             this.rpSales.Text = "إدارة المبيعات";
             // 
             // ribbonPageGroup9
             // 
             this.ribbonPageGroup9.ItemLinks.Add(this.barButtonItem7);
+            this.ribbonPageGroup9.ItemLinks.Add(this.barButtonItem26);
+            this.ribbonPageGroup9.ItemLinks.Add(this.barButtonItem27);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             // 
             // rpFinance
@@ -1071,7 +1087,7 @@ namespace ElbayaNPresentation
             this.gcContainer.Font = new System.Drawing.Font("Arabic Typesetting", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gcContainer.Location = new System.Drawing.Point(0, 183);
             this.gcContainer.Name = "gcContainer";
-            this.gcContainer.Size = new System.Drawing.Size(1386, 579);
+            this.gcContainer.Size = new System.Drawing.Size(1233, 579);
             this.gcContainer.TabIndex = 13;
             // 
             // ribbonPageGroup2
@@ -1120,6 +1136,134 @@ namespace ElbayaNPresentation
             this.splitterControl1.TabIndex = 16;
             this.splitterControl1.TabStop = false;
             // 
+            // barButtonItem26
+            // 
+            this.barButtonItem26.Caption = "حسابات العملاء";
+            this.barButtonItem26.Id = 48;
+            this.barButtonItem26.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem26.ImageOptions.Image")));
+            this.barButtonItem26.ItemAppearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem26.ItemAppearance.Disabled.Options.UseFont = true;
+            this.barButtonItem26.ItemAppearance.Disabled.Options.UseTextOptions = true;
+            this.barButtonItem26.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem26.ItemAppearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem26.ItemAppearance.Hovered.Options.UseFont = true;
+            this.barButtonItem26.ItemAppearance.Hovered.Options.UseTextOptions = true;
+            this.barButtonItem26.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem26.ItemAppearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem26.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem26.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.barButtonItem26.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem26.ItemAppearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem26.ItemAppearance.Pressed.Options.UseFont = true;
+            this.barButtonItem26.ItemAppearance.Pressed.Options.UseTextOptions = true;
+            this.barButtonItem26.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem26.Name = "barButtonItem26";
+            this.barButtonItem26.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barButtonItem27
+            // 
+            this.barButtonItem27.Caption = "حسابات العملاء دائن";
+            this.barButtonItem27.Id = 49;
+            this.barButtonItem27.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem27.ImageOptions.Image")));
+            this.barButtonItem27.ItemAppearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem27.ItemAppearance.Disabled.Options.UseFont = true;
+            this.barButtonItem27.ItemAppearance.Disabled.Options.UseTextOptions = true;
+            this.barButtonItem27.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem27.ItemAppearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 11.8F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem27.ItemAppearance.Hovered.Options.UseFont = true;
+            this.barButtonItem27.ItemAppearance.Hovered.Options.UseTextOptions = true;
+            this.barButtonItem27.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem27.ItemAppearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem27.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem27.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.barButtonItem27.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem27.ItemAppearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem27.ItemAppearance.Pressed.Options.UseFont = true;
+            this.barButtonItem27.ItemAppearance.Pressed.Options.UseTextOptions = true;
+            this.barButtonItem27.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem27.Name = "barButtonItem27";
+            this.barButtonItem27.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // ribbonPageGroup16
+            // 
+            this.ribbonPageGroup16.ItemLinks.Add(this.barButtonItem28);
+            this.ribbonPageGroup16.ItemLinks.Add(this.barButtonItem29);
+            this.ribbonPageGroup16.ItemLinks.Add(this.barButtonItem30);
+            this.ribbonPageGroup16.Name = "ribbonPageGroup16";
+            this.ribbonPageGroup16.Text = "المبيعات";
+            // 
+            // barButtonItem28
+            // 
+            this.barButtonItem28.Caption = "فاتورة مبيعات";
+            this.barButtonItem28.Id = 50;
+            this.barButtonItem28.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem28.ImageOptions.Image")));
+            this.barButtonItem28.ItemAppearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem28.ItemAppearance.Disabled.Options.UseFont = true;
+            this.barButtonItem28.ItemAppearance.Disabled.Options.UseTextOptions = true;
+            this.barButtonItem28.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem28.ItemAppearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 11.8F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem28.ItemAppearance.Hovered.Options.UseFont = true;
+            this.barButtonItem28.ItemAppearance.Hovered.Options.UseTextOptions = true;
+            this.barButtonItem28.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem28.ItemAppearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem28.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem28.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.barButtonItem28.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem28.ItemAppearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem28.ItemAppearance.Pressed.Options.UseFont = true;
+            this.barButtonItem28.ItemAppearance.Pressed.Options.UseTextOptions = true;
+            this.barButtonItem28.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem28.Name = "barButtonItem28";
+            this.barButtonItem28.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barButtonItem29
+            // 
+            this.barButtonItem29.Caption = "عرض سعر";
+            this.barButtonItem29.Id = 51;
+            this.barButtonItem29.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem29.ImageOptions.Image")));
+            this.barButtonItem29.ItemAppearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem29.ItemAppearance.Disabled.Options.UseFont = true;
+            this.barButtonItem29.ItemAppearance.Disabled.Options.UseTextOptions = true;
+            this.barButtonItem29.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem29.ItemAppearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 11.8F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem29.ItemAppearance.Hovered.Options.UseFont = true;
+            this.barButtonItem29.ItemAppearance.Hovered.Options.UseTextOptions = true;
+            this.barButtonItem29.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem29.ItemAppearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem29.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem29.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.barButtonItem29.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem29.ItemAppearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem29.ItemAppearance.Pressed.Options.UseFont = true;
+            this.barButtonItem29.ItemAppearance.Pressed.Options.UseTextOptions = true;
+            this.barButtonItem29.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem29.Name = "barButtonItem29";
+            this.barButtonItem29.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barButtonItem30
+            // 
+            this.barButtonItem30.Caption = "مرتجع مبيعات";
+            this.barButtonItem30.Id = 52;
+            this.barButtonItem30.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem30.ImageOptions.Image")));
+            this.barButtonItem30.ItemAppearance.Disabled.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem30.ItemAppearance.Disabled.Options.UseFont = true;
+            this.barButtonItem30.ItemAppearance.Disabled.Options.UseTextOptions = true;
+            this.barButtonItem30.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem30.ItemAppearance.Hovered.Font = new System.Drawing.Font("Sakkal Majalla", 11.8F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem30.ItemAppearance.Hovered.Options.UseFont = true;
+            this.barButtonItem30.ItemAppearance.Hovered.Options.UseTextOptions = true;
+            this.barButtonItem30.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem30.ItemAppearance.Normal.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem30.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem30.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.barButtonItem30.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem30.ItemAppearance.Pressed.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem30.ItemAppearance.Pressed.Options.UseFont = true;
+            this.barButtonItem30.ItemAppearance.Pressed.Options.UseTextOptions = true;
+            this.barButtonItem30.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem30.Name = "barButtonItem30";
+            this.barButtonItem30.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
             // frmMainBoard
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -1127,7 +1271,7 @@ namespace ElbayaNPresentation
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.ClientSize = new System.Drawing.Size(1233, 788);
             this.Controls.Add(this.gcContainer);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.tabFormContentContainer1);
@@ -1211,5 +1355,11 @@ namespace ElbayaNPresentation
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup15;
         private DevExpress.XtraBars.BarButtonItem barButtonItem24;
         private DevExpress.XtraBars.BarButtonItem barButtonItem25;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem26;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem27;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem28;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem29;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem30;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup16;
     }
 }

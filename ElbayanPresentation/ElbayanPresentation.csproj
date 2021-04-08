@@ -258,12 +258,6 @@
     <Compile Include="Views\Store\Product\frmProductOpeningBalance.Designer.cs">
       <DependentUpon>frmProductOpeningBalance.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Store\Product\frmProductPrice.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Store\Product\frmProductPrice.Designer.cs">
-      <DependentUpon>frmProductPrice.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\Store\Product\frm_ProductStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +269,12 @@
     </Compile>
     <Compile Include="Views\Store\Product\ucAllProductsView.Designer.cs">
       <DependentUpon>ucAllProductsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Store\Product\frmProductPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Store\Product\frmProductPrice.Designer.cs">
+      <DependentUpon>frmProductPrice.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Store\Unit\ucLargeUnit.cs">
       <SubType>UserControl</SubType>
@@ -342,14 +342,14 @@
     <EmbeddedResource Include="Views\Store\Product\frmProductOpeningBalance.resx">
       <DependentUpon>frmProductOpeningBalance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Store\Product\frmProductPrice.resx">
-      <DependentUpon>frmProductPrice.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\Store\Product\frm_ProductStock.resx">
       <DependentUpon>frm_ProductStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Store\Product\ucAllProductsView.resx">
       <DependentUpon>ucAllProductsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Store\Product\frmProductPrice.resx">
+      <DependentUpon>frmProductPrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Store\Unit\ucLargeUnit.resx">
       <DependentUpon>ucLargeUnit.cs</DependentUpon>
