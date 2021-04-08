@@ -29,7 +29,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrderPurchase));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrderSales));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
@@ -163,7 +163,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.dtpOrderDate.ShadowDecoration.Parent = this.dtpOrderDate;
             this.dtpOrderDate.Size = new System.Drawing.Size(244, 36);
             this.dtpOrderDate.TabIndex = 5;
-            this.dtpOrderDate.Value = new System.DateTime(2021, 3, 21, 0, 19, 36, 36);
+            this.dtpOrderDate.Value = new System.DateTime(2021, 4, 8, 0, 0, 0, 0);
             // 
             // txtOrderNumber
             // 
@@ -322,9 +322,9 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(351, 40);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 25);
+            this.label5.Size = new System.Drawing.Size(99, 25);
             this.label5.TabIndex = 4;
-            this.label5.Text = "اسم المورد : ";
+            this.label5.Text = "اسم العميل :";
             // 
             // pictureBox5
             // 
@@ -1100,9 +1100,9 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(168)))), ((int)(((byte)(211)))));
             this.label4.Location = new System.Drawing.Point(56, 15);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(149, 31);
+            this.label4.Size = new System.Drawing.Size(123, 31);
             this.label4.TabIndex = 2;
-            this.label4.Text = "فاتورة المشتريات";
+            this.label4.Text = "فاتورة مبيعات";
             // 
             // groupBox7
             // 
@@ -1177,7 +1177,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.pictureBox4.TabIndex = 1;
             this.pictureBox4.TabStop = false;
             // 
-            // frmOrderPurchase
+            // frmOrderSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1198,7 +1198,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmOrderPurchase";
+            this.Name = "frmOrderSales";
             this.Padding = new System.Windows.Forms.Padding(23, 69, 23, 23);
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
