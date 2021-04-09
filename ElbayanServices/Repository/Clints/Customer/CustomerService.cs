@@ -127,7 +127,7 @@ namespace ElbayanServices.Repository.Clints.Customer
         }
         public ClintDto GetCustomerById(Guid id)
         {
-            var customer = _context.Clints.FirstOrDefault(d => d.IsSupplier==false&&d.Id == id);
+            var customer = _context.Clints.FirstOrDefault(d => d.IsSupplier==false && d.Id == id);
             if (customer!=null)
             {
                 return new ClintDto()

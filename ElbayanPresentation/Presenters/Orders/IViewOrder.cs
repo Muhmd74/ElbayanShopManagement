@@ -6,12 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
+namespace ElbayaNPresentation.Presenters.Orders
 {
-    public interface IViewProcurementOrder
+    public interface IViewOrder
     {
         Guid ID { get; set; }
-        PresenterProcurementOrder Presenter { get; set; }
+
         Guna2TextBox OrderNumber { get; set; }
         Guna2TextBox BareCode { get; set; }
         Guna2TextBox TotalOrderWithoutDiscount { get; set; }
