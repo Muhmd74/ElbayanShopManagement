@@ -127,6 +127,7 @@
     <Compile Include="Presenters\Purchases\QuantityEditForm\PresenterQuantityEdit.cs" />
     <Compile Include="Presenters\Purchases\Supplier\AllSuppliers\IViewAllSuppleir.cs" />
     <Compile Include="Presenters\Purchases\Supplier\AllSuppliers\PresenterAllSupplierData.cs" />
+    <Compile Include="Presenters\Sales\OrderSales\PresenterOrderSales.cs" />
     <Compile Include="Presenters\Setting\FirmDetial\IViewFirmDetail.cs" />
     <Compile Include="Presenters\Setting\FirmDetial\PresenterFirmDetail.cs" />
     <Compile Include="Presenters\Store\Building\BuildingPresenter.cs" />
@@ -139,6 +140,8 @@
     <Compile Include="Presenters\Store\Product\AllProduct\IViewAllProduct.cs" />
     <Compile Include="Presenters\Store\Product\ProductCard\IViewProdcut.cs" />
     <Compile Include="Presenters\Store\Product\ProductCard\ProductPresnter.cs" />
+    <Compile Include="Presenters\Store\Product\ProductOpeningBalance\IViewProductOpeningBakance.cs" />
+    <Compile Include="Presenters\Store\Product\ProductOpeningBalance\PresenterProductOpeneingBalance.cs" />
     <Compile Include="Presenters\Store\Product\ProductStock\IViewProductStoc.cs" />
     <Compile Include="Presenters\Store\Product\ProductStock\PresenterProductStock.cs" />
     <Compile Include="Presenters\Store\Unit\LargeUnit\IViewLargeUnit.cs" />
@@ -166,6 +169,12 @@
     <Compile Include="Presenters\Store\Category\SubCategory\IViewSubCategory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StartUp\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartUp\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="StartUp\ucMainBoard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -208,17 +217,17 @@
     <Compile Include="Views\Purchases\Procurement\frmOrderPurchase.Designer.cs">
       <DependentUpon>frmOrderPurchase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Purchases\Procurement\frmProcurementOrder.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Purchases\Procurement\frmProcurementOrder.Designer.cs">
-      <DependentUpon>frmProcurementOrder.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\Purchases\Procurement\PurchasesOffers.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Purchases\Procurement\PurchasesOffers.Designer.cs">
       <DependentUpon>PurchasesOffers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sales\OrderSales\frmOrderSalese.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Sales\OrderSales\frmOrderSalese.Designer.cs">
+      <DependentUpon>frmOrderSalese.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Settings\Firm\frmFirmDetail.cs">
       <SubType>Form</SubType>
@@ -256,6 +265,12 @@
     <Compile Include="Views\Store\Product\frmNewProduct.Designer.cs">
       <DependentUpon>frmNewProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Store\Product\frmProductOpeningBalance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Store\Product\frmProductOpeningBalance.Designer.cs">
+      <DependentUpon>frmProductOpeningBalance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Store\Product\frm_ProductStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +282,12 @@
     </Compile>
     <Compile Include="Views\Store\Product\ucAllProductsView.Designer.cs">
       <DependentUpon>ucAllProductsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Store\Product\frmProductPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Store\Product\frmProductPrice.Designer.cs">
+      <DependentUpon>frmProductPrice.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Store\Unit\ucLargeUnit.cs">
       <SubType>UserControl</SubType>
@@ -292,6 +313,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="StartUp\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StartUp\ucMainBoard.resx">
       <DependentUpon>ucMainBoard.cs</DependentUpon>
     </EmbeddedResource>
@@ -313,8 +337,8 @@
     <EmbeddedResource Include="Views\Purchases\Procurement\frmOrderPurchase.resx">
       <DependentUpon>frmOrderPurchase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Purchases\Procurement\frmProcurementOrder.resx">
-      <DependentUpon>frmProcurementOrder.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Sales\OrderSales\frmOrderSalese.resx">
+      <DependentUpon>frmOrderSalese.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Settings\Firm\frmFirmDetail.resx">
       <DependentUpon>frmFirmDetail.cs</DependentUpon>
@@ -334,11 +358,17 @@
     <EmbeddedResource Include="Views\Store\Product\frmNewProduct.resx">
       <DependentUpon>frmNewProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Store\Product\frmProductOpeningBalance.resx">
+      <DependentUpon>frmProductOpeningBalance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Store\Product\frm_ProductStock.resx">
       <DependentUpon>frm_ProductStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Store\Product\ucAllProductsView.resx">
       <DependentUpon>ucAllProductsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Store\Product\frmProductPrice.resx">
+      <DependentUpon>frmProductPrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Store\Unit\ucLargeUnit.resx">
       <DependentUpon>ucLargeUnit.cs</DependentUpon>

@@ -1,14 +1,15 @@
-﻿using Guna.UI2.WinForms;
+﻿using ElbayaNPresentation.Views.Store.Product;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading.Tasks; 
 using System.Windows.Forms;
 
 namespace ElbayaNPresentation.Presenters.Store.Product.ProductStock
 {
-    public interface IViewProductStoc
+    public interface IViewProductStock
     {
         PresenterProductStock Presenter { get; set; }
         Guna2TextBox ProductBarCode { get; set; }

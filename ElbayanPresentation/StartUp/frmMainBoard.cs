@@ -22,6 +22,7 @@ using ElbayaNPresentation.Views.Finance.Employee;
 using ElbayaNPresentation.StartUp;
 using ElbayaNPresentation.Views.Purchases.Procurement;
 using ElbayaNPresentation.Views.Settings.Firm;
+using ElbayaNPresentation.Views.Client;
 
 namespace ElbayaNPresentation
 {
@@ -188,7 +189,6 @@ namespace ElbayaNPresentation
                 ucAllSupplier.Instance.BringToFront();
             }
             ucAllSupplier.Instance.BringToFront();
-
         }
 
         private void barButtonItem17_ItemClick(object sender, ItemClickEventArgs e)
@@ -238,6 +238,36 @@ namespace ElbayaNPresentation
             }
             frmFirmDetail.Instance.BringToFront();
             frmFirmDetail.Instance.Show();
+        }
+
+        private void barButtonItem25_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmProductOpeningBalance.Insatnce.ShowDialog();
+        }
+
+        private void barButtonItem7_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmNewClient.Instance.ShowDialog();
+        }
+
+        private void barButtonItem11_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!this.gcContainer.Controls.Contains(frmProductPrice.Instance))
+            {
+                frmProductPrice.Instance.TopLevel = false;
+                frmProductPrice.Instance.TopMost = false;
+                this.gcContainer.Controls.Add(frmProductPrice.Instance);
+                frmProductPrice.Instance.Dock = DockStyle.Fill;
+                frmProductPrice.Instance.BringToFront();
+                frmProductPrice.Instance.Show();
+            }
+            frmProductPrice.Instance.BringToFront();
+            frmProductPrice.Instance.Show();
+        }
+
+        private void barButtonItem28_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmOrderSales.Intance.ShowDialog();
         }
     }
 }

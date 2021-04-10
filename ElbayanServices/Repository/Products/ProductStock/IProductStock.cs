@@ -11,7 +11,7 @@ namespace ElbayanServices.Repository.Products.ProductStock
     {
         bool CreateOpeningBalancesProduct(int stock, Guid productId);
         List<ProductStockDetails> GetAllProductStockDetails();
-        List<ProductStockDetails> GetAllProductStockDetailsByDateTime(DateTime firstDateTime , DateTime lastDateTime,string orderType, Guid productId);
+        List<ProductStockDetails> GetAllProductStockDetailsByDateTime(DateTime? firstDateTime , DateTime? lastDateTime,string? orderType, Guid? productId);
         List<ProductStockDetails> GetAllProductStockDetailsByType(string orderType);
         List<ProductStockDetails> GetAllProductStockDetailsSearch(string productName,long barCode);
     }

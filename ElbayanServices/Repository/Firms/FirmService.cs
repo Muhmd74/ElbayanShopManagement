@@ -58,7 +58,28 @@ namespace ElbayanServices.Repository.Firms
 
             return false;
         }
-
+        public FirmDto Get()
+        {
+            var model = _context.Firms.FirstOrDefault();
+            if(model != null)
+            {
+                return new FirmDto()
+                {
+                    Id = model.Id,
+                    Name = model.Name,
+                    Address = model.Address,
+                    Email = model.Email,
+                    End = model.End,
+                    Start = model.Start,
+                    LogoInvoice = model.LogoInvoice,
+                    MessageInvoice = model.MessageInvoice,
+                    Mobile = model.Mobile,
+                    NatureWork = model.NatureWork,
+                    Phone = model.Phone
+                };
+            }
+            return null;
+        }
         public void Dispose()
         {
             _context?.Dispose();

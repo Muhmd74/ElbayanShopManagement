@@ -1,7 +1,7 @@
 ﻿
 namespace ElbayaNPresentation.Views.Store.Product
 {
-    partial class frm_ProductStock
+    partial class frmProductPrice
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,10 @@ namespace ElbayaNPresentation.Views.Store.Product
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ProductStock));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductPrice));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvSearchResult = new System.Windows.Forms.DataGridView();
             this.OrderProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,16 +58,16 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label7 = new System.Windows.Forms.Label();
             this.txtProductBarcode = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -101,26 +101,26 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.StockDateTime,
             this.BarCode,
             this.StockStatus});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(171)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSearchResult.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(171)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSearchResult.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvSearchResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSearchResult.Location = new System.Drawing.Point(3, 26);
             this.dgvSearchResult.Name = "dgvSearchResult";
             this.dgvSearchResult.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.OldLace;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSearchResult.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.OldLace;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSearchResult.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvSearchResult.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.LemonChiffon;
             this.dgvSearchResult.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F);
             this.dgvSearchResult.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -195,8 +195,8 @@ namespace ElbayaNPresentation.Views.Store.Product
             // StockDateTime
             // 
             this.StockDateTime.DataPropertyName = "DateTime";
-            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
-            this.StockDateTime.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Format = "dd/MM/yyyy";
+            this.StockDateTime.DefaultCellStyle = dataGridViewCellStyle7;
             this.StockDateTime.HeaderText = "اليوم والتاريخ";
             this.StockDateTime.Name = "StockDateTime";
             this.StockDateTime.ReadOnly = true;
@@ -232,11 +232,11 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.groupBox2.Controls.Add(this.txtProductBarcode);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.pictureBox3);
-            this.groupBox2.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(171)))), ((int)(((byte)(215)))));
-            this.groupBox2.Location = new System.Drawing.Point(219, 14);
+            this.groupBox2.Location = new System.Drawing.Point(219, 8);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(742, 105);
+            this.groupBox2.Size = new System.Drawing.Size(742, 114);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "الفلترة والبحث";
@@ -331,7 +331,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.cbxActiveProduct.FormattingEnabled = true;
             this.cbxActiveProduct.Location = new System.Drawing.Point(142, 24);
             this.cbxActiveProduct.Name = "cbxActiveProduct";
-            this.cbxActiveProduct.Size = new System.Drawing.Size(188, 33);
+            this.cbxActiveProduct.Size = new System.Drawing.Size(188, 29);
             this.cbxActiveProduct.TabIndex = 15;
             this.cbxActiveProduct.Text = "أختر منتج";
             this.cbxActiveProduct.SelectedIndexChanged += new System.EventHandler(this.cbxActiveProduct_SelectedIndexChanged);
@@ -423,38 +423,6 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.label3.TabIndex = 12;
             this.label3.Text = "رقم باركو المنتج";
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.pictureBox1);
-            this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(171)))), ((int)(((byte)(215)))));
-            this.groupBox3.Location = new System.Drawing.Point(20, 14);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(196, 77);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(34, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 22);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "متابعة حركة المنتج";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(165, 32);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 28);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
             // pictureBox3
             // 
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -466,7 +434,39 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.pictureBox3.TabIndex = 11;
             this.pictureBox3.TabStop = false;
             // 
-            // frm_ProductStock
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.pictureBox1);
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(171)))), ((int)(((byte)(215)))));
+            this.groupBox3.Location = new System.Drawing.Point(17, 18);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(196, 77);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(165, 32);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 28);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Droid Arabic Kufi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(161, 28);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "متابعة حركة الأسعار";
+            // 
+            // frmProductPrice
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(984, 546);
@@ -478,7 +478,7 @@ namespace ElbayaNPresentation.Views.Store.Product
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;
-            this.Name = "frm_ProductStock";
+            this.Name = "frmProductPrice";
             this.Resizable = false;
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
@@ -489,10 +489,10 @@ namespace ElbayaNPresentation.Views.Store.Product
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }

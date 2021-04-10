@@ -12,22 +12,22 @@ using System.Windows.Forms;
 
 namespace ElbayaNPresentation.Views.Store.Product
 {
-    public partial class frm_ProductStock : MetroFramework.Forms.MetroForm, IViewProductStock
+    public partial class frmProductPrice : MetroFramework.Forms.MetroForm, IViewProductStock
     {
-        public frm_ProductStock()
+        public frmProductPrice()
         {
             InitializeComponent();
             _instance = this;
             Presenter = new PresenterProductStock(this);
             Presenter.OnLoad();
         }
-        private static frm_ProductStock _instance;
-        public static frm_ProductStock Instance
+        private static frmProductPrice _instance;
+        public static frmProductPrice Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new frm_ProductStock();
+                    _instance = new frmProductPrice();
                 return _instance;
             }
         }

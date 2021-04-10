@@ -14,7 +14,6 @@ namespace ElbayanServices.Repository.Clints.Customer
         List<ClintDto> GetAllCustomerNotActive();
         ClintDto GetCustomerById(Guid id);
         bool ChangeActivity(Guid id);
-
-
+        long GenerateClientNumber();
     }
 }

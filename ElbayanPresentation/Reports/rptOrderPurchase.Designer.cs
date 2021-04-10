@@ -29,7 +29,6 @@ namespace ElbayaNPresentation.Reports
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rptOrderPurchase));
             DevExpress.XtraPrinting.BarCode.Code128Generator code128Generator1 = new DevExpress.XtraPrinting.BarCode.Code128Generator();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
@@ -40,42 +39,42 @@ namespace ElbayaNPresentation.Reports
             this.xtcorderNumber = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow2 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell4 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell3 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrlblOrderDate = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow3 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell6 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell5 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrlblSupplierName = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow4 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell8 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell7 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrlblUserName = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow5 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell10 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell9 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
-            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrlblPOS = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrlInvoiceName = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrpbLogo = new DevExpress.XtraReports.UI.XRPictureBox();
+            this.xrFirmePhone = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLine2 = new DevExpress.XtraReports.UI.XRLine();
-            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrFirmName = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
-            this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLblNote = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
-            this.xrBarCode1 = new DevExpress.XtraReports.UI.XRBarCode();
+            this.xrBcOrderNumber = new DevExpress.XtraReports.UI.XRBarCode();
             this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow6 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell11 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell12 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell37 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell44 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrcTotalOrder = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow8 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell15 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell16 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrcTotalDiscount = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell39 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell46 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrcVAT = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow10 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell19 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell20 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrcDeferred = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell41 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell48 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrcPayment = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow11 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell21 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell22 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -100,6 +99,7 @@ namespace ElbayaNPresentation.Reports
             this.xrTableCell27 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell35 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell28 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrlblInvoiceType = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
@@ -121,12 +121,13 @@ namespace ElbayaNPresentation.Reports
             // Detail
             // 
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrlblInvoiceType,
             this.xrTable1,
-            this.xrLabel3,
-            this.xrPictureBox1,
-            this.xrLabel2,
+            this.xrlInvoiceName,
+            this.xrpbLogo,
+            this.xrFirmePhone,
             this.xrLine2,
-            this.xrLabel1});
+            this.xrFirmName});
             this.Detail.Dpi = 254F;
             this.Detail.HeightF = 594.4416F;
             this.Detail.HierarchyPrintOptions.Indent = 50.8F;
@@ -193,7 +194,7 @@ namespace ElbayaNPresentation.Reports
             // 
             this.xrTableRow2.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
             this.xrTableCell4,
-            this.xrTableCell3});
+            this.xrlblOrderDate});
             this.xrTableRow2.Dpi = 254F;
             this.xrTableRow2.Name = "xrTableRow2";
             this.xrTableRow2.Weight = 1D;
@@ -212,21 +213,23 @@ namespace ElbayaNPresentation.Reports
             this.xrTableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             this.xrTableCell4.Weight = 1.4016868981753503D;
             // 
-            // xrTableCell3
+            // xrlblOrderDate
             // 
-            this.xrTableCell3.BackColor = System.Drawing.Color.White;
-            this.xrTableCell3.Dpi = 254F;
-            this.xrTableCell3.Multiline = true;
-            this.xrTableCell3.Name = "xrTableCell3";
-            this.xrTableCell3.StylePriority.UseBackColor = false;
-            this.xrTableCell3.TextFormatString = "{0:ddd dd/MM/yyyy hh:mm:tt}";
-            this.xrTableCell3.Weight = 2.6700851783385793D;
+            this.xrlblOrderDate.BackColor = System.Drawing.Color.White;
+            this.xrlblOrderDate.Dpi = 254F;
+            this.xrlblOrderDate.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrlblOrderDate.Multiline = true;
+            this.xrlblOrderDate.Name = "xrlblOrderDate";
+            this.xrlblOrderDate.StylePriority.UseBackColor = false;
+            this.xrlblOrderDate.StylePriority.UseFont = false;
+            this.xrlblOrderDate.TextFormatString = "{0:dd/MM/yyyy hh:mm:tt}";
+            this.xrlblOrderDate.Weight = 2.6700851783385793D;
             // 
             // xrTableRow3
             // 
             this.xrTableRow3.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
             this.xrTableCell6,
-            this.xrTableCell5});
+            this.xrlblSupplierName});
             this.xrTableRow3.Dpi = 254F;
             this.xrTableRow3.Name = "xrTableRow3";
             this.xrTableRow3.Weight = 1D;
@@ -245,21 +248,20 @@ namespace ElbayaNPresentation.Reports
             this.xrTableCell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             this.xrTableCell6.Weight = 1.4016868981753503D;
             // 
-            // xrTableCell5
+            // xrlblSupplierName
             // 
-            this.xrTableCell5.BackColor = System.Drawing.Color.White;
-            this.xrTableCell5.Dpi = 254F;
-            this.xrTableCell5.Multiline = true;
-            this.xrTableCell5.Name = "xrTableCell5";
-            this.xrTableCell5.StylePriority.UseBackColor = false;
-            this.xrTableCell5.Text = "#####";
-            this.xrTableCell5.Weight = 2.6700851783385793D;
+            this.xrlblSupplierName.BackColor = System.Drawing.Color.White;
+            this.xrlblSupplierName.Dpi = 254F;
+            this.xrlblSupplierName.Multiline = true;
+            this.xrlblSupplierName.Name = "xrlblSupplierName";
+            this.xrlblSupplierName.StylePriority.UseBackColor = false;
+            this.xrlblSupplierName.Weight = 2.6700851783385793D;
             // 
             // xrTableRow4
             // 
             this.xrTableRow4.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
             this.xrTableCell8,
-            this.xrTableCell7});
+            this.xrlblUserName});
             this.xrTableRow4.Dpi = 254F;
             this.xrTableRow4.Name = "xrTableRow4";
             this.xrTableRow4.Weight = 1D;
@@ -278,21 +280,20 @@ namespace ElbayaNPresentation.Reports
             this.xrTableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             this.xrTableCell8.Weight = 1.4016868981753503D;
             // 
-            // xrTableCell7
+            // xrlblUserName
             // 
-            this.xrTableCell7.BackColor = System.Drawing.Color.White;
-            this.xrTableCell7.Dpi = 254F;
-            this.xrTableCell7.Multiline = true;
-            this.xrTableCell7.Name = "xrTableCell7";
-            this.xrTableCell7.StylePriority.UseBackColor = false;
-            this.xrTableCell7.Text = "######";
-            this.xrTableCell7.Weight = 2.6700851783385793D;
+            this.xrlblUserName.BackColor = System.Drawing.Color.White;
+            this.xrlblUserName.Dpi = 254F;
+            this.xrlblUserName.Multiline = true;
+            this.xrlblUserName.Name = "xrlblUserName";
+            this.xrlblUserName.StylePriority.UseBackColor = false;
+            this.xrlblUserName.Weight = 2.6700851783385793D;
             // 
             // xrTableRow5
             // 
             this.xrTableRow5.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
             this.xrTableCell10,
-            this.xrTableCell9});
+            this.xrlblPOS});
             this.xrTableRow5.Dpi = 254F;
             this.xrTableRow5.Name = "xrTableRow5";
             this.xrTableRow5.Weight = 1D;
@@ -311,68 +312,69 @@ namespace ElbayaNPresentation.Reports
             this.xrTableCell10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             this.xrTableCell10.Weight = 1.4016868981753503D;
             // 
-            // xrTableCell9
+            // xrlblPOS
             // 
-            this.xrTableCell9.BackColor = System.Drawing.Color.White;
-            this.xrTableCell9.Dpi = 254F;
-            this.xrTableCell9.Multiline = true;
-            this.xrTableCell9.Name = "xrTableCell9";
-            this.xrTableCell9.StylePriority.UseBackColor = false;
-            this.xrTableCell9.Text = "#######";
-            this.xrTableCell9.Weight = 2.6700851783385793D;
+            this.xrlblPOS.BackColor = System.Drawing.Color.White;
+            this.xrlblPOS.Dpi = 254F;
+            this.xrlblPOS.Multiline = true;
+            this.xrlblPOS.Name = "xrlblPOS";
+            this.xrlblPOS.StylePriority.UseBackColor = false;
+            this.xrlblPOS.Weight = 2.6700851783385793D;
             // 
-            // xrLabel3
+            // xrlInvoiceName
             // 
-            this.xrLabel3.BackColor = System.Drawing.Color.White;
-            this.xrLabel3.BorderColor = System.Drawing.Color.DimGray;
-            this.xrLabel3.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            this.xrlInvoiceName.BackColor = System.Drawing.Color.White;
+            this.xrlInvoiceName.BorderColor = System.Drawing.Color.DimGray;
+            this.xrlInvoiceName.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrLabel3.BorderWidth = 1F;
-            this.xrLabel3.Dpi = 254F;
-            this.xrLabel3.Font = new System.Drawing.Font("Droid Arabic Kufi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(181.3181F, 141.3867F);
-            this.xrLabel3.Multiline = true;
-            this.xrLabel3.Name = "xrLabel3";
-            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel3.RightToLeft = DevExpress.XtraReports.UI.RightToLeft.Yes;
-            this.xrLabel3.SizeF = new System.Drawing.SizeF(374.6094F, 82.84764F);
-            this.xrLabel3.StylePriority.UseBackColor = false;
-            this.xrLabel3.StylePriority.UseBorderColor = false;
-            this.xrLabel3.StylePriority.UseBorders = false;
-            this.xrLabel3.StylePriority.UseBorderWidth = false;
-            this.xrLabel3.StylePriority.UseFont = false;
-            this.xrLabel3.StylePriority.UseTextAlignment = false;
-            this.xrLabel3.Text = "فاتورة مشتريات";
-            this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrlInvoiceName.BorderWidth = 1F;
+            this.xrlInvoiceName.Dpi = 254F;
+            this.xrlInvoiceName.Font = new System.Drawing.Font("Droid Arabic Kufi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrlInvoiceName.LocationFloat = new DevExpress.Utils.PointFloat(180.5889F, 154.6158F);
+            this.xrlInvoiceName.Multiline = true;
+            this.xrlInvoiceName.Name = "xrlInvoiceName";
+            this.xrlInvoiceName.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrlInvoiceName.RightToLeft = DevExpress.XtraReports.UI.RightToLeft.Yes;
+            this.xrlInvoiceName.SizeF = new System.Drawing.SizeF(161.4874F, 82.84761F);
+            this.xrlInvoiceName.StylePriority.UseBackColor = false;
+            this.xrlInvoiceName.StylePriority.UseBorderColor = false;
+            this.xrlInvoiceName.StylePriority.UseBorders = false;
+            this.xrlInvoiceName.StylePriority.UseBorderWidth = false;
+            this.xrlInvoiceName.StylePriority.UseFont = false;
+            this.xrlInvoiceName.StylePriority.UseTextAlignment = false;
+            this.xrlInvoiceName.Text = "فاتورة";
+            this.xrlInvoiceName.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
-            // xrPictureBox1
+            // xrpbLogo
             // 
-            this.xrPictureBox1.Dpi = 254F;
-            this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("svg", resources.GetString("xrPictureBox1.ImageSource"));
-            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(25.68524F, 0F);
-            this.xrPictureBox1.Name = "xrPictureBox1";
-            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(128.9844F, 130.4726F);
-            this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage;
+            this.xrpbLogo.Dpi = 254F;
+            this.xrpbLogo.LocationFloat = new DevExpress.Utils.PointFloat(25.95831F, 25.00001F);
+            this.xrpbLogo.Name = "xrpbLogo";
+            this.xrpbLogo.SizeF = new System.Drawing.SizeF(128.9844F, 130.4726F);
+            this.xrpbLogo.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage;
             // 
-            // xrLabel2
+            // xrFirmePhone
             // 
-            this.xrLabel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.xrLabel2.BorderColor = System.Drawing.Color.Transparent;
-            this.xrLabel2.Dpi = 254F;
-            this.xrLabel2.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(193.3852F, 78.87888F);
-            this.xrLabel2.Multiline = true;
-            this.xrLabel2.Name = "xrLabel2";
-            this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel2.RightToLeft = DevExpress.XtraReports.UI.RightToLeft.Yes;
-            this.xrLabel2.SizeF = new System.Drawing.SizeF(481.7071F, 51.59373F);
-            this.xrLabel2.StylePriority.UseBackColor = false;
-            this.xrLabel2.StylePriority.UseBorderColor = false;
-            this.xrLabel2.StylePriority.UseFont = false;
-            this.xrLabel2.StylePriority.UseTextAlignment = false;
-            this.xrLabel2.Text = "ت: 01120215145";
-            this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrFirmePhone.BackColor = System.Drawing.Color.White;
+            this.xrFirmePhone.BorderColor = System.Drawing.Color.Silver;
+            this.xrFirmePhone.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrFirmePhone.Dpi = 254F;
+            this.xrFirmePhone.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrFirmePhone.LocationFloat = new DevExpress.Utils.PointFloat(195.8946F, 89.4622F);
+            this.xrFirmePhone.Multiline = true;
+            this.xrFirmePhone.Name = "xrFirmePhone";
+            this.xrFirmePhone.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrFirmePhone.RightToLeft = DevExpress.XtraReports.UI.RightToLeft.Yes;
+            this.xrFirmePhone.SizeF = new System.Drawing.SizeF(480.7488F, 51.59373F);
+            this.xrFirmePhone.StylePriority.UseBackColor = false;
+            this.xrFirmePhone.StylePriority.UseBorderColor = false;
+            this.xrFirmePhone.StylePriority.UseBorders = false;
+            this.xrFirmePhone.StylePriority.UseFont = false;
+            this.xrFirmePhone.StylePriority.UseTextAlignment = false;
+            this.xrFirmePhone.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLine2
             // 
@@ -384,24 +386,27 @@ namespace ElbayaNPresentation.Reports
             this.xrLine2.SizeF = new System.Drawing.SizeF(699.9999F, 28.57806F);
             this.xrLine2.StylePriority.UseBorderWidth = false;
             // 
-            // xrLabel1
+            // xrFirmName
             // 
-            this.xrLabel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.xrLabel1.BorderColor = System.Drawing.Color.Transparent;
-            this.xrLabel1.Dpi = 254F;
-            this.xrLabel1.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(193.978F, 0F);
-            this.xrLabel1.Multiline = true;
-            this.xrLabel1.Name = "xrLabel1";
-            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel1.RightToLeft = DevExpress.XtraReports.UI.RightToLeft.Yes;
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(481.7072F, 78.87888F);
-            this.xrLabel1.StylePriority.UseBackColor = false;
-            this.xrLabel1.StylePriority.UseBorderColor = false;
-            this.xrLabel1.StylePriority.UseFont = false;
-            this.xrLabel1.StylePriority.UseTextAlignment = false;
-            this.xrLabel1.Text = "شركة دوجتي لصناعة البرمجيات";
-            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrFirmName.BackColor = System.Drawing.Color.White;
+            this.xrFirmName.BorderColor = System.Drawing.Color.Silver;
+            this.xrFirmName.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrFirmName.Dpi = 254F;
+            this.xrFirmName.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrFirmName.LocationFloat = new DevExpress.Utils.PointFloat(194.9363F, 0F);
+            this.xrFirmName.Multiline = true;
+            this.xrFirmName.Name = "xrFirmName";
+            this.xrFirmName.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrFirmName.RightToLeft = DevExpress.XtraReports.UI.RightToLeft.Yes;
+            this.xrFirmName.SizeF = new System.Drawing.SizeF(480.7489F, 78.87888F);
+            this.xrFirmName.StylePriority.UseBackColor = false;
+            this.xrFirmName.StylePriority.UseBorderColor = false;
+            this.xrFirmName.StylePriority.UseBorders = false;
+            this.xrFirmName.StylePriority.UseFont = false;
+            this.xrFirmName.StylePriority.UseTextAlignment = false;
+            this.xrFirmName.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // ReportHeader
             // 
@@ -412,25 +417,24 @@ namespace ElbayaNPresentation.Reports
             // ReportFooter
             // 
             this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLabel4,
+            this.xrLblNote,
             this.xrLine1,
-            this.xrBarCode1,
+            this.xrBcOrderNumber,
             this.xrTable2});
             this.ReportFooter.Dpi = 254F;
             this.ReportFooter.HeightF = 719.9061F;
             this.ReportFooter.Name = "ReportFooter";
             // 
-            // xrLabel4
+            // xrLblNote
             // 
-            this.xrLabel4.Dpi = 254F;
-            this.xrLabel4.Font = new System.Drawing.Font("Droid Arabic Kufi", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(13.97524F, 313.0286F);
-            this.xrLabel4.Multiline = true;
-            this.xrLabel4.Name = "xrLabel4";
-            this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel4.SizeF = new System.Drawing.SizeF(673.7501F, 181.5881F);
-            this.xrLabel4.StylePriority.UseFont = false;
-            this.xrLabel4.Text = "ملاحظات:\r\n.....................";
+            this.xrLblNote.Dpi = 254F;
+            this.xrLblNote.Font = new System.Drawing.Font("Droid Arabic Kufi", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLblNote.LocationFloat = new DevExpress.Utils.PointFloat(14.93355F, 313.0286F);
+            this.xrLblNote.Multiline = true;
+            this.xrLblNote.Name = "xrLblNote";
+            this.xrLblNote.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLblNote.SizeF = new System.Drawing.SizeF(672.7918F, 181.5881F);
+            this.xrLblNote.StylePriority.UseFont = false;
             // 
             // xrLine1
             // 
@@ -442,19 +446,18 @@ namespace ElbayaNPresentation.Reports
             this.xrLine1.SizeF = new System.Drawing.SizeF(699.9999F, 28.57806F);
             this.xrLine1.StylePriority.UseBorderWidth = false;
             // 
-            // xrBarCode1
+            // xrBcOrderNumber
             // 
-            this.xrBarCode1.AutoModule = true;
-            this.xrBarCode1.Dpi = 254F;
-            this.xrBarCode1.LocationFloat = new DevExpress.Utils.PointFloat(0.3971281F, 507.3485F);
-            this.xrBarCode1.Module = 5.08F;
-            this.xrBarCode1.Name = "xrBarCode1";
-            this.xrBarCode1.Padding = new DevExpress.XtraPrinting.PaddingInfo(26, 26, 0, 0, 254F);
-            this.xrBarCode1.SizeF = new System.Drawing.SizeF(688.6329F, 136.9219F);
-            this.xrBarCode1.StylePriority.UseTextAlignment = false;
-            this.xrBarCode1.Symbology = code128Generator1;
-            this.xrBarCode1.Text = "122122132123546";
-            this.xrBarCode1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomCenter;
+            this.xrBcOrderNumber.AutoModule = true;
+            this.xrBcOrderNumber.Dpi = 254F;
+            this.xrBcOrderNumber.LocationFloat = new DevExpress.Utils.PointFloat(0.3971281F, 507.3485F);
+            this.xrBcOrderNumber.Module = 5.08F;
+            this.xrBcOrderNumber.Name = "xrBcOrderNumber";
+            this.xrBcOrderNumber.Padding = new DevExpress.XtraPrinting.PaddingInfo(26, 26, 0, 0, 254F);
+            this.xrBcOrderNumber.SizeF = new System.Drawing.SizeF(688.6329F, 136.9219F);
+            this.xrBcOrderNumber.StylePriority.UseTextAlignment = false;
+            this.xrBcOrderNumber.Symbology = code128Generator1;
+            this.xrBcOrderNumber.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomCenter;
             // 
             // xrTable2
             // 
@@ -478,7 +481,7 @@ namespace ElbayaNPresentation.Reports
             this.xrTableCell11,
             this.xrTableCell12,
             this.xrTableCell37,
-            this.xrTableCell44});
+            this.xrcTotalOrder});
             this.xrTableRow6.Dpi = 254F;
             this.xrTableRow6.Name = "xrTableRow6";
             this.xrTableRow6.Weight = 1D;
@@ -499,11 +502,13 @@ namespace ElbayaNPresentation.Reports
             // 
             this.xrTableCell12.BackColor = System.Drawing.Color.White;
             this.xrTableCell12.Dpi = 254F;
+            this.xrTableCell12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrTableCell12.Multiline = true;
             this.xrTableCell12.Name = "xrTableCell12";
             this.xrTableCell12.StylePriority.UseBackColor = false;
+            this.xrTableCell12.StylePriority.UseFont = false;
             this.xrTableCell12.StylePriority.UseTextAlignment = false;
-            this.xrTableCell12.Text = "#####";
+            this.xrTableCell12.Text = "---";
             this.xrTableCell12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             this.xrTableCell12.Weight = 2.0142758033144785D;
             // 
@@ -517,27 +522,28 @@ namespace ElbayaNPresentation.Reports
             this.xrTableCell37.StylePriority.UseBackColor = false;
             this.xrTableCell37.StylePriority.UseFont = false;
             this.xrTableCell37.Text = "إجمالي الفاتورة : ";
-            this.xrTableCell37.Weight = 2.460066378392554D;
+            this.xrTableCell37.Weight = 2.2479341422021388D;
             // 
-            // xrTableCell44
+            // xrcTotalOrder
             // 
-            this.xrTableCell44.BackColor = System.Drawing.Color.White;
-            this.xrTableCell44.Dpi = 254F;
-            this.xrTableCell44.Multiline = true;
-            this.xrTableCell44.Name = "xrTableCell44";
-            this.xrTableCell44.StylePriority.UseBackColor = false;
-            this.xrTableCell44.StylePriority.UseTextAlignment = false;
-            this.xrTableCell44.Text = "#####";
-            this.xrTableCell44.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
-            this.xrTableCell44.Weight = 2.0071197265181606D;
+            this.xrcTotalOrder.BackColor = System.Drawing.Color.White;
+            this.xrcTotalOrder.Dpi = 254F;
+            this.xrcTotalOrder.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.xrcTotalOrder.Multiline = true;
+            this.xrcTotalOrder.Name = "xrcTotalOrder";
+            this.xrcTotalOrder.StylePriority.UseBackColor = false;
+            this.xrcTotalOrder.StylePriority.UseFont = false;
+            this.xrcTotalOrder.StylePriority.UseTextAlignment = false;
+            this.xrcTotalOrder.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            this.xrcTotalOrder.Weight = 2.2192519627085758D;
             // 
             // xrTableRow8
             // 
             this.xrTableRow8.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
             this.xrTableCell15,
-            this.xrTableCell16,
+            this.xrcTotalDiscount,
             this.xrTableCell39,
-            this.xrTableCell46});
+            this.xrcVAT});
             this.xrTableRow8.Dpi = 254F;
             this.xrTableRow8.Name = "xrTableRow8";
             this.xrTableRow8.Weight = 1D;
@@ -554,17 +560,16 @@ namespace ElbayaNPresentation.Reports
             this.xrTableCell15.Text = "قيمة الخصم : ";
             this.xrTableCell15.Weight = 1.9857241966855215D;
             // 
-            // xrTableCell16
+            // xrcTotalDiscount
             // 
-            this.xrTableCell16.BackColor = System.Drawing.Color.White;
-            this.xrTableCell16.Dpi = 254F;
-            this.xrTableCell16.Multiline = true;
-            this.xrTableCell16.Name = "xrTableCell16";
-            this.xrTableCell16.StylePriority.UseBackColor = false;
-            this.xrTableCell16.StylePriority.UseTextAlignment = false;
-            this.xrTableCell16.Text = "#####";
-            this.xrTableCell16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
-            this.xrTableCell16.Weight = 2.0142758033144785D;
+            this.xrcTotalDiscount.BackColor = System.Drawing.Color.White;
+            this.xrcTotalDiscount.Dpi = 254F;
+            this.xrcTotalDiscount.Multiline = true;
+            this.xrcTotalDiscount.Name = "xrcTotalDiscount";
+            this.xrcTotalDiscount.StylePriority.UseBackColor = false;
+            this.xrcTotalDiscount.StylePriority.UseTextAlignment = false;
+            this.xrcTotalDiscount.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            this.xrcTotalDiscount.Weight = 2.0142758033144785D;
             // 
             // xrTableCell39
             // 
@@ -576,27 +581,27 @@ namespace ElbayaNPresentation.Reports
             this.xrTableCell39.StylePriority.UseBackColor = false;
             this.xrTableCell39.StylePriority.UseFont = false;
             this.xrTableCell39.Text = "قيمة الضريبة : ";
-            this.xrTableCell39.Weight = 2.45290661546195D;
+            this.xrTableCell39.Weight = 2.2407741949648203D;
             // 
-            // xrTableCell46
+            // xrcVAT
             // 
-            this.xrTableCell46.BackColor = System.Drawing.Color.White;
-            this.xrTableCell46.Dpi = 254F;
-            this.xrTableCell46.Multiline = true;
-            this.xrTableCell46.Name = "xrTableCell46";
-            this.xrTableCell46.StylePriority.UseBackColor = false;
-            this.xrTableCell46.StylePriority.UseTextAlignment = false;
-            this.xrTableCell46.Text = "#####";
-            this.xrTableCell46.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
-            this.xrTableCell46.Weight = 2.0142794894487648D;
+            this.xrcVAT.BackColor = System.Drawing.Color.White;
+            this.xrcVAT.Dpi = 254F;
+            this.xrcVAT.Multiline = true;
+            this.xrcVAT.Name = "xrcVAT";
+            this.xrcVAT.StylePriority.UseBackColor = false;
+            this.xrcVAT.StylePriority.UseTextAlignment = false;
+            this.xrcVAT.Text = "---";
+            this.xrcVAT.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            this.xrcVAT.Weight = 2.2264119099458943D;
             // 
             // xrTableRow10
             // 
             this.xrTableRow10.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
             this.xrTableCell19,
-            this.xrTableCell20,
+            this.xrcDeferred,
             this.xrTableCell41,
-            this.xrTableCell48});
+            this.xrcPayment});
             this.xrTableRow10.Dpi = 254F;
             this.xrTableRow10.Name = "xrTableRow10";
             this.xrTableRow10.Weight = 1D;
@@ -613,17 +618,17 @@ namespace ElbayaNPresentation.Reports
             this.xrTableCell19.Text = "الصافي :";
             this.xrTableCell19.Weight = 1.9857241966855215D;
             // 
-            // xrTableCell20
+            // xrcDeferred
             // 
-            this.xrTableCell20.BackColor = System.Drawing.Color.White;
-            this.xrTableCell20.Dpi = 254F;
-            this.xrTableCell20.Multiline = true;
-            this.xrTableCell20.Name = "xrTableCell20";
-            this.xrTableCell20.StylePriority.UseBackColor = false;
-            this.xrTableCell20.StylePriority.UseTextAlignment = false;
-            this.xrTableCell20.Text = "#####";
-            this.xrTableCell20.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
-            this.xrTableCell20.Weight = 2.0142758033144785D;
+            this.xrcDeferred.BackColor = System.Drawing.Color.White;
+            this.xrcDeferred.Dpi = 254F;
+            this.xrcDeferred.Multiline = true;
+            this.xrcDeferred.Name = "xrcDeferred";
+            this.xrcDeferred.StylePriority.UseBackColor = false;
+            this.xrcDeferred.StylePriority.UseTextAlignment = false;
+            this.xrcDeferred.Text = "---";
+            this.xrcDeferred.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            this.xrcDeferred.Weight = 2.0142758033144785D;
             // 
             // xrTableCell41
             // 
@@ -635,19 +640,20 @@ namespace ElbayaNPresentation.Reports
             this.xrTableCell41.StylePriority.UseBackColor = false;
             this.xrTableCell41.StylePriority.UseFont = false;
             this.xrTableCell41.Text = "مسدد نقداً : ";
-            this.xrTableCell41.Weight = 2.4529066154619503D;
+            this.xrTableCell41.Weight = 2.2407741949648208D;
             // 
-            // xrTableCell48
+            // xrcPayment
             // 
-            this.xrTableCell48.BackColor = System.Drawing.Color.White;
-            this.xrTableCell48.Dpi = 254F;
-            this.xrTableCell48.Multiline = true;
-            this.xrTableCell48.Name = "xrTableCell48";
-            this.xrTableCell48.StylePriority.UseBackColor = false;
-            this.xrTableCell48.StylePriority.UseTextAlignment = false;
-            this.xrTableCell48.Text = "#####";
-            this.xrTableCell48.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
-            this.xrTableCell48.Weight = 2.0142794894487643D;
+            this.xrcPayment.BackColor = System.Drawing.Color.White;
+            this.xrcPayment.Dpi = 254F;
+            this.xrcPayment.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.xrcPayment.Multiline = true;
+            this.xrcPayment.Name = "xrcPayment";
+            this.xrcPayment.StylePriority.UseBackColor = false;
+            this.xrcPayment.StylePriority.UseFont = false;
+            this.xrcPayment.StylePriority.UseTextAlignment = false;
+            this.xrcPayment.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            this.xrcPayment.Weight = 2.2264119099458939D;
             // 
             // xrTableRow11
             // 
@@ -680,7 +686,7 @@ namespace ElbayaNPresentation.Reports
             this.xrTableCell22.Name = "xrTableCell22";
             this.xrTableCell22.StylePriority.UseBackColor = false;
             this.xrTableCell22.StylePriority.UseTextAlignment = false;
-            this.xrTableCell22.Text = "#####";
+            this.xrTableCell22.Text = "----";
             this.xrTableCell22.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             this.xrTableCell22.Weight = 2.0142758033144785D;
             // 
@@ -694,7 +700,7 @@ namespace ElbayaNPresentation.Reports
             this.xrTableCell42.StylePriority.UseBackColor = false;
             this.xrTableCell42.StylePriority.UseFont = false;
             this.xrTableCell42.Text = "رصيد حالي :";
-            this.xrTableCell42.Weight = 2.4529066154619503D;
+            this.xrTableCell42.Weight = 2.2407741949648208D;
             // 
             // xrTableCell49
             // 
@@ -704,9 +710,9 @@ namespace ElbayaNPresentation.Reports
             this.xrTableCell49.Name = "xrTableCell49";
             this.xrTableCell49.StylePriority.UseBackColor = false;
             this.xrTableCell49.StylePriority.UseTextAlignment = false;
-            this.xrTableCell49.Text = "#####";
+            this.xrTableCell49.Text = "----";
             this.xrTableCell49.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
-            this.xrTableCell49.Weight = 2.0142794894487643D;
+            this.xrTableCell49.Weight = 2.2264119099458939D;
             // 
             // DetailReport
             // 
@@ -770,7 +776,7 @@ namespace ElbayaNPresentation.Reports
             this.xrTableCell30.StylePriority.UseBorders = false;
             this.xrTableCell30.StylePriority.UseFont = false;
             this.xrTableCell30.Text = "م.";
-            this.xrTableCell30.Weight = 0.51889265081539815D;
+            this.xrTableCell30.Weight = 0.52998993645644232D;
             // 
             // xtcOrderProductName
             // 
@@ -788,7 +794,7 @@ namespace ElbayaNPresentation.Reports
             this.xtcOrderProductName.StylePriority.UseTextAlignment = false;
             this.xtcOrderProductName.Text = "اسم الصنف";
             this.xtcOrderProductName.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            this.xtcOrderProductName.Weight = 2.3905354033488089D;
+            this.xtcOrderProductName.Weight = 2.3794381177077648D;
             // 
             // xtOrderProductUnit
             // 
@@ -975,6 +981,30 @@ namespace ElbayaNPresentation.Reports
             this.xrTableCell28.Text = "الإجمالي";
             this.xrTableCell28.Weight = 1.5047411238171975D;
             // 
+            // xrlblInvoiceType
+            // 
+            this.xrlblInvoiceType.BackColor = System.Drawing.Color.White;
+            this.xrlblInvoiceType.BorderColor = System.Drawing.Color.DimGray;
+            this.xrlblInvoiceType.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrlblInvoiceType.BorderWidth = 1F;
+            this.xrlblInvoiceType.Dpi = 254F;
+            this.xrlblInvoiceType.Font = new System.Drawing.Font("Droid Arabic Kufi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrlblInvoiceType.LocationFloat = new DevExpress.Utils.PointFloat(373.7083F, 151.97F);
+            this.xrlblInvoiceType.Multiline = true;
+            this.xrlblInvoiceType.Name = "xrlblInvoiceType";
+            this.xrlblInvoiceType.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrlblInvoiceType.RightToLeft = DevExpress.XtraReports.UI.RightToLeft.Yes;
+            this.xrlblInvoiceType.SizeF = new System.Drawing.SizeF(278.8625F, 82.84761F);
+            this.xrlblInvoiceType.StylePriority.UseBackColor = false;
+            this.xrlblInvoiceType.StylePriority.UseBorderColor = false;
+            this.xrlblInvoiceType.StylePriority.UseBorders = false;
+            this.xrlblInvoiceType.StylePriority.UseBorderWidth = false;
+            this.xrlblInvoiceType.StylePriority.UseFont = false;
+            this.xrlblInvoiceType.StylePriority.UseTextAlignment = false;
+            this.xrlblInvoiceType.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
             // rptOrderPurchase
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -985,7 +1015,7 @@ namespace ElbayaNPresentation.Reports
             this.ReportFooter,
             this.DetailReport});
             this.Dpi = 254F;
-            this.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margins = new System.Drawing.Printing.Margins(49, 50, 50, 50);
             this.PageHeight = 2794;
             this.PageWidth = 800;
@@ -1010,10 +1040,10 @@ namespace ElbayaNPresentation.Reports
         private DevExpress.XtraReports.UI.BottomMarginBand BottomMargin;
         private DevExpress.XtraReports.UI.DetailBand Detail;
         private DevExpress.XtraReports.UI.ReportHeaderBand ReportHeader;
-        private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox1;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel1;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel3;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel2;
+        private DevExpress.XtraReports.UI.XRPictureBox xrpbLogo;
+        private DevExpress.XtraReports.UI.XRLabel xrFirmName;
+        private DevExpress.XtraReports.UI.XRLabel xrlInvoiceName;
+        private DevExpress.XtraReports.UI.XRLabel xrFirmePhone;
         private DevExpress.XtraReports.UI.XRTable xrTable1;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow1;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell2;
@@ -1021,25 +1051,25 @@ namespace ElbayaNPresentation.Reports
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell4;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow3;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell6;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell5;
+        private DevExpress.XtraReports.UI.XRTableCell xrlblSupplierName;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow4;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell8;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell7;
+        private DevExpress.XtraReports.UI.XRTableCell xrlblUserName;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow5;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell10;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell9;
+        private DevExpress.XtraReports.UI.XRTableCell xrlblPOS;
         private DevExpress.XtraReports.UI.ReportFooterBand ReportFooter;
-        private DevExpress.XtraReports.UI.XRBarCode xrBarCode1;
+        private DevExpress.XtraReports.UI.XRBarCode xrBcOrderNumber;
         private DevExpress.XtraReports.UI.XRTable xrTable2;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow6;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell11;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell12;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow8;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell15;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell16;
+        private DevExpress.XtraReports.UI.XRTableCell xrcTotalDiscount;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow10;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell19;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell20;
+        private DevExpress.XtraReports.UI.XRTableCell xrcDeferred;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow11;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell21;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell22;
@@ -1061,19 +1091,20 @@ namespace ElbayaNPresentation.Reports
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell29;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell27;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell28;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel4;
+        private DevExpress.XtraReports.UI.XRLabel xrLblNote;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell37;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell44;
+        private DevExpress.XtraReports.UI.XRTableCell xrcTotalOrder;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell39;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell46;
+        private DevExpress.XtraReports.UI.XRTableCell xrcVAT;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell41;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell48;
+        private DevExpress.XtraReports.UI.XRTableCell xrcPayment;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell42;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell49;
         private DevExpress.XtraReports.UI.XRTableCell xtcOrderProductPrice;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell35;
         public DevExpress.XtraReports.UI.XRTableCell xtcorderNumber;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell3;
+        private DevExpress.XtraReports.UI.XRTableCell xrlblOrderDate;
         public DevExpress.XtraReports.UI.DetailBand deOrderDetails;
+        private DevExpress.XtraReports.UI.XRLabel xrlblInvoiceType;
     }
 }

@@ -14,9 +14,9 @@ using System.Windows.Forms;
 
 namespace ElbayaNPresentation.Views.Purchases.Procurement
 {
-    public partial class frmOrderPurchase : MetroFramework.Forms.MetroForm, IViewProcurementOrder
+    public partial class frmOrderSales : MetroFramework.Forms.MetroForm, IViewProcurementOrder
     {
-        public frmOrderPurchase()
+        public frmOrderSales()
         {
             InitializeComponent();
             _intsance = this;
@@ -25,13 +25,13 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             txtProductBarcode.Select();
 
         }
-        private static frmOrderPurchase _intsance;
-        public static frmOrderPurchase Intance
+        private static frmOrderSales _intsance;
+        public static frmOrderSales Intance
         {
             get
             {
                 if (_intsance == null)
-                    _intsance = new frmOrderPurchase();
+                    _intsance = new frmOrderSales();
                 return _intsance;
             }
         }

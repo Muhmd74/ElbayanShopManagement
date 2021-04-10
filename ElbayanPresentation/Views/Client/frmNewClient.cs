@@ -15,6 +15,7 @@ namespace ElbayaNPresentation.Views.Client
 {
     public partial class frmNewClient : MetroFramework.Forms.MetroForm, IViewNewClient
     {
+        
         public frmNewClient()
         {
             InitializeComponent();
@@ -27,6 +28,8 @@ namespace ElbayaNPresentation.Views.Client
             //System.Drawing.Rectangle rect = Screen.GetWorkingArea(this);
             //this.MaximizedBounds = Screen.GetWorkingArea(this);
             //this.WindowState = FormWindowState.Normal;
+
+            Presenter.OnLoad();
         }
       
         private static frmNewClient _instance;
