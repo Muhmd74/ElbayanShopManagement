@@ -96,7 +96,7 @@ namespace ElbayaNPresentation.Presenters.Sales.OrderSales
         {
             throw new NotImplementedException();
         }
-        public void PrintInvioce(Guid iD)
+        public new void PrintInvioce(Guid iD)
         {
             throw new NotImplementedException();
         }

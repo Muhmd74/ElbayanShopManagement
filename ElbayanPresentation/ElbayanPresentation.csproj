@@ -185,6 +185,12 @@
     <Compile Include="StartUp\ucMainBoard.Designer.cs">
       <DependentUpon>ucMainBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Client\Customers\ucAllCustomers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Client\Customers\ucAllCustomers.Designer.cs">
+      <DependentUpon>ucAllCustomers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Client\frmNewClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -323,6 +329,9 @@
     <EmbeddedResource Include="StartUp\ucMainBoard.resx">
       <DependentUpon>ucMainBoard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Client\Customers\ucAllCustomers.resx">
+      <DependentUpon>ucAllCustomers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Client\frmNewClient.resx">
       <DependentUpon>frmNewClient.cs</DependentUpon>
     </EmbeddedResource>
@@ -406,6 +415,7 @@
     <Folder Include="Presenters\Finance\Employee\EmployeeFinance\" />
     <Folder Include="Properties\DataSources\" />
     <Folder Include="Resources\ProductImage\" />
+    <Folder Include="Views\Purchases\Suppliers\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\addchartpane_16x16.png" />
