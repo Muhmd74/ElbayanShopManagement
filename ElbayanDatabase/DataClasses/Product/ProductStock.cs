@@ -16,7 +16,7 @@ namespace ElbayanDatabase.DataClasses.Product
         public int Stock { get; set; }
         public string StockStatues { get; set; }
 
-        public Guid OrderId { get; set; }
+        public Guid? OrderId { get; set; }
         public Order Order { get; set; }
     }
 
