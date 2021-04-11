@@ -42,6 +42,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.Supplier.AllSuppliers
         // 1 - Create 
         public void OnClickbtnAddNewObject()
         {
+            frmNewClient.Instance.IsSupplier = false;
             frmNewClient.Instance.ShowDialog();
         }
         // 3- Update

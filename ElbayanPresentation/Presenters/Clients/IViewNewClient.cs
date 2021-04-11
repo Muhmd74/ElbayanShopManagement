@@ -32,7 +32,6 @@ namespace ElbayaNPresentation.Presenters.Clients
         Guna2Button UpdateObject { get; set; }
         Guna2Button DeleteObject { get; set; }
         Guna2Button BackToUc { get; set; }
-
         PresenterNewClient Presenter { get; set; }
     }
 }

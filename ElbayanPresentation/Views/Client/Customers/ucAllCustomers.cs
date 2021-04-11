@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using ElbayaNPresentation.Presenters.Purchases.Supplier.AllSuppliers;
+using ElbayanServices.Repository.Clints.Customer;
 using Guna.UI2.WinForms;
 
 namespace ElbayaNPresentation.Views.Client.Customers
@@ -12,7 +13,9 @@ namespace ElbayaNPresentation.Views.Client.Customers
             InitializeComponent();
             _instance = this;
             Presenter = new PresenterSupplierData(this);
-            Presenter.OnLoadUC();
+            //Presenter.OnLoadUC();
+            CustomerService service = new CustomerService(new ElbayanDatabase.ConnectionTools.ConnectionOption());
+            dgvActiveObjects.DataSource = service.GetAllCustomer();
         }
 
         private static ucAllCustomers _instance;

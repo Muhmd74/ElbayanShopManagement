@@ -14,12 +14,10 @@ namespace ElbayaNPresentation.Presenters.Clients
     {
         private readonly IViewNewClient _view;
         private readonly CustomerService Client = new CustomerService(new ElbayanDatabase.ConnectionTools.ConnectionOption());
-
         public PresenterNewClient(IViewNewClient view)
         {
             _view = view;
         }
-
         public void OnLoad()
         {
            _view.RefSupplierNumber.Text =  GenerateClientNumber();
@@ -77,7 +75,7 @@ namespace ElbayaNPresentation.Presenters.Clients
             });
         }
        // 2. Update Current Object:
-       private void UpdateClient()
+        private void UpdateClient()
         {
             Client.UpdateCustomer(new ElbayanServices.Repository.Clints.Supplier.Dtos.ClintDto
             {
@@ -99,7 +97,7 @@ namespace ElbayaNPresentation.Presenters.Clients
                 Phone = _view.FirmPhoneNumber.Text
             });
         }
-       public void OnClickbtnUpdate()
+        public void OnClickbtnUpdate()
         {
             if (!string.IsNullOrEmpty(_view.SuppliersName.Text) && !string.IsNullOrEmpty(_view.Mobile.Text))
             {
@@ -122,7 +120,6 @@ namespace ElbayaNPresentation.Presenters.Clients
                 return;
             }
         }
-
         internal void OnActiveChekedChanged()
         {
             if (_view.IsActive.Checked == false)
@@ -139,7 +136,6 @@ namespace ElbayaNPresentation.Presenters.Clients
 
             }
         }
-
         private void ClearControls()
         {
             _view.SuppliersName.Text = _view.IdentityNumber.Text = _view.FirmName.Text =

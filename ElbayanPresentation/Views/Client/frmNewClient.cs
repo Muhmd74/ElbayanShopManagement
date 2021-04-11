@@ -67,28 +67,23 @@ namespace ElbayaNPresentation.Views.Client
 
         public bool IsSupplier { get; set; } = true;
         public bool IsCustomer { get; set; } = true;
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Presenter.OnClickbtnAddNewOpect();
         }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             Presenter.OnClickbtnUpdate();
         }
-
         private void btnBackToUc_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void cbIsActive_Click(object sender, EventArgs e)
         {
             Presenter.OnActiveChekedChanged();
 
         }
-
         private void frmNewClient_FormClosing(object sender, FormClosingEventArgs e)
         {
             frmOrderPurchase.Intance.Presenter.OnLoad();
