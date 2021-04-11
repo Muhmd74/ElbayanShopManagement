@@ -6,6 +6,8 @@ namespace ElbayanDatabase.DataClasses.Employees.Employees
 {
     public  class Users
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
 
         [Required]

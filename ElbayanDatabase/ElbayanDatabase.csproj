@@ -122,6 +122,10 @@
     <Compile Include="Migrations\202104012259448_RemoveUserFromEmployeeModel.designer.cs">
       <DependentUpon>202104012259448_RemoveUserFromEmployeeModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104102225551_ConvertOrderIdOptional.cs" />
+    <Compile Include="Migrations\202104102225551_ConvertOrderIdOptional.designer.cs">
+      <DependentUpon>202104102225551_ConvertOrderIdOptional.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -147,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104012259448_RemoveUserFromEmployeeModel.resx">
       <DependentUpon>202104012259448_RemoveUserFromEmployeeModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104102225551_ConvertOrderIdOptional.resx">
+      <DependentUpon>202104102225551_ConvertOrderIdOptional.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

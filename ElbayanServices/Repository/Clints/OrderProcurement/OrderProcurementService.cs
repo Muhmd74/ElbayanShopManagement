@@ -152,16 +152,18 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
         public List<InvoiceDetailsDto> PrintInvoice(Guid orderId)
         {
             var order = _context.Orders
-                .Include(d => d.Clint)
-                .Include(d => d.Employee)
-                .Include(d => d.Pos)
-                .Include(d => d.OrderProduct)
-                .FirstOrDefault(d => d.Id == orderId);
+                .Include(d => d.OrderProduct).FirstOrDefault(d => d.Id == orderId);
+            var clint = _context.Orders
+                .Include(d => d.Clint).FirstOrDefault(d => d.Id == orderId);
+            var employee = _context.Orders
+                .Include(d => d.Employee).FirstOrDefault(d => d.Id == orderId);
+            var pos = _context.Orders
+                .Include(d => d.Pos).FirstOrDefault(d => d.Id == orderId);
 
             var productOrder = _context.OrderProducts
                 .Include(d => d.Product.SmallUnit)
                 .Include(d => d.Product.LargeUnit)
-                .Where(d => d.OrderId == orderId);
+                .Where(d => d.OrderId == orderId).ToList();
             var firm = _context.Firms.FirstOrDefault();
 
             if (order != null)
@@ -183,9 +185,10 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
                     Payment = order.Payment,
                     TotalDiscount = order.TotalDiscount,
 
-                    ClintName = order.Clint.Name,
-                    EmployeeName = order.Employee.Name,
-                    PosName = order.Pos.Name,
+                    ClintName = clint.Clint.Name,
+                    EmployeeName = employee.Employee.Name,
+                    PosName = pos.Pos.Name,
+
                     ProductCount = order.OrderProduct.Count,
                     TotalVat = order.OrderProduct.Sum(d => d.Vat),
                     Products = productOrder.Select(d => new ProductDto

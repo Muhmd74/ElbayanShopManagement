@@ -24,7 +24,8 @@ namespace ElbayanServices.Repository.Products.ProductStock
                 Stock = stock,
                 ProductId = productId,
                 DateTime = DateTime.Now,
-                StockStatues = "رصيد افتتاحي"
+                StockStatues = "رصيد افتتاحي",
+                Id = Guid.NewGuid()
             });
             _context.SaveChanges();
             var product = _context.Products.FirstOrDefault(d => d.Id == productId);
