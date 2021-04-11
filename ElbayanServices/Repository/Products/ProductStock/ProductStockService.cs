@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ElbayanDatabase.ConnectionTools;
-using ElbayanServices.Common;
 using ElbayanServices.Repository.Products.ProductStock.Dtos;
 
 namespace ElbayanServices.Repository.Products.ProductStock
@@ -27,7 +24,6 @@ namespace ElbayanServices.Repository.Products.ProductStock
                 StockStatues = "رصيد افتتاحي",
                 Id = Guid.NewGuid()
             });
-            _context.SaveChanges();
             var product = _context.Products.FirstOrDefault(d => d.Id == productId);
             if (product != null)
             {
@@ -130,6 +126,18 @@ namespace ElbayanServices.Repository.Products.ProductStock
                     StockStatues = d.StockStatues
                 }).ToList();
         }
+
+        public int GetProductQuantity(Guid productId)
+        {
+            var model = _context.Products.FirstOrDefault(d => d.Id == productId);
+            if (model!=null)
+            {
+                return model.TotalQuantity;
+            }
+
+            return 0;
+        }
+
         public void Dispose()
         {
             _context.Dispose();

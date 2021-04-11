@@ -185,9 +185,9 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
                     Payment = order.Payment,
                     TotalDiscount = order.TotalDiscount,
 
-                    ClintName = clint.Clint.Name,
-                    EmployeeName = employee.Employee.Name,
-                    PosName = pos.Pos.Name,
+                    ClintName = clint?.Clint.Name,
+                    EmployeeName = employee?.Employee.Name,
+                    PosName = pos?.Pos.Name,
 
                     ProductCount = order.OrderProduct.Count,
                     TotalVat = order.OrderProduct.Sum(d => d.Vat),
