@@ -49,7 +49,7 @@ namespace ElbayanServices.Repository.Products.ProductStock
                     DateTime = d.Order.DateTime,
                     Quantity = d.Stock,
                     OrderNumber = d.Order.OrderNumber,
-                    OrderType = d.Order.OrderType,
+                    OrderType = d.StockStatues,
                     ProductName = d.Product.Name,
                     UnitName = d.Product.IsUnitSale ? d.Product.LargeUnit.Name : d.Product.SmallUnit.Name,
                     UserName = d.Order.Clint.Name,

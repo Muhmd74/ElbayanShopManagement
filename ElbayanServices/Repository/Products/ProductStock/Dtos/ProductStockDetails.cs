@@ -12,11 +12,11 @@ namespace ElbayanServices.Repository.Products.ProductStock.Dtos
         public string UserName { get; set; }
         public string UnitName { get; set; }
         public string OrderType { get; set; }
-        public long OrderNumber { get; set; }
-        public DateTime DateTime { get; set; }
-        public int Quantity { get; set; }
-        public long BarCode { get; set; }
-        public long ProductNumber { get; set; }
+        public long? OrderNumber { get; set; }
+        public DateTime? DateTime { get; set; }
+        public int? Quantity { get; set; }
+        public long? BarCode { get; set; }
+        public long? ProductNumber { get; set; }
         public string StockStatues { get; set; }
     }
 }

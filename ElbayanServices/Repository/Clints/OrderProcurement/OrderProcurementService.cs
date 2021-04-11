@@ -101,6 +101,7 @@ namespace ElbayanServices.Repository.Clints.OrderProcurement
                 Stock = quantity,
                 Id = Guid.NewGuid(),
                 DateTime = DateTime.Now,
+                StockStatues = "مشتريات"
             });
         }
         private void SupplierProductPrice(Guid productId, decimal price, decimal discount, decimal vat)
