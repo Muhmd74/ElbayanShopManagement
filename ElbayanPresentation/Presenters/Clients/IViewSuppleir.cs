@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ElbayaNPresentation.Presenters.Clients
 {
-    public interface IViewSuppleir : IViewNewClient
+    public interface IViewSuppleir : IViewAllClient
     {
         PresenterNewClient Presenter { get; set; }
     }

@@ -1,4 +1,6 @@
 ﻿using ElbayaNPresentation.Presenters.Clients;
+using ElbayaNPresentation.Views.Client.Customers;
+using ElbayaNPresentation.Views.Client.Suppliers;
 using ElbayaNPresentation.Views.Purchases.Procurement;
 using Guna.UI2.WinForms;
 using System;
@@ -64,7 +66,6 @@ namespace ElbayaNPresentation.Views.Client
         public Guna2Button DeleteObject { get; set; }
         public Guna2Button BackToUc { get => btnBackToUc; set => btnBackToUc = value; }
         public PresenterNewClient Presenter { get; set; }
-
         public bool IsSupplier { get; set; } = true;
         public bool IsCustomer { get; set; } = true;
         private void btnAdd_Click(object sender, EventArgs e)
@@ -82,11 +83,12 @@ namespace ElbayaNPresentation.Views.Client
         private void cbIsActive_Click(object sender, EventArgs e)
         {
             Presenter.OnActiveChekedChanged();
-
         }
         private void frmNewClient_FormClosing(object sender, FormClosingEventArgs e)
         {
             frmOrderPurchase.Intance.Presenter.OnLoad();
+            ucAllCustomers.Instance.Presenter.OnLoadUC();
+            ucAllSupplier.Instance.Presenter.OnLoadUC();
         }
     }
 }

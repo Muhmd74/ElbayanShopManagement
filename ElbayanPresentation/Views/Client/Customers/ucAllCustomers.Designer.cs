@@ -40,6 +40,23 @@ namespace ElbayaNPresentation.Views.Client.Customers
             this.tabDGVContainer = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dgvActiveObjects = new System.Windows.Forms.DataGridView();
+            this.ActiveObjectId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActiveObjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActiveObjectNationalIdentity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActiveObjectIsActive = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActiveObjectFirmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActiveObjectAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActiveObjectCommercialREgistration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActiveObjectMobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActiveObjectEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActiveObjectRefNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActiveObjectTaxNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActiveObjectDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActiveObjectOpeningBalance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActiveObjectFaxNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActiveObjectPhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActiveObjectIsSupplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActiveObjectIsCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dgvDeletedObjects = new System.Windows.Forms.DataGridView();
             this.NotActiveObjectId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,23 +76,6 @@ namespace ElbayaNPresentation.Views.Client.Customers
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActiveObjectId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActiveObjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActiveObjectNationalIdentity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActiveObjectIsActive = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActiveObjectFirmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActiveObjectAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActiveObjectCommercialREgistration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActiveObjectMobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActiveObjectEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActiveObjectRefNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActiveObjectTaxNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActiveObjectDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActiveObjectOpeningBalance = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActiveObjectFaxNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActiveObjectPhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActiveObjectIsSupplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActiveObjectIsCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.pActions.SuspendLayout();
             this.tabDGVContainer.SuspendLayout();
@@ -95,9 +95,9 @@ namespace ElbayaNPresentation.Views.Client.Customers
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.66666F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1024, 600);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.16667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.83334F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1024, 514);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // pActions
@@ -109,7 +109,7 @@ namespace ElbayaNPresentation.Views.Client.Customers
             this.pActions.Location = new System.Drawing.Point(2, 2);
             this.pActions.Margin = new System.Windows.Forms.Padding(2);
             this.pActions.Name = "pActions";
-            this.pActions.Size = new System.Drawing.Size(1020, 94);
+            this.pActions.Size = new System.Drawing.Size(1020, 48);
             this.pActions.TabIndex = 12;
             // 
             // txtSearch
@@ -138,7 +138,7 @@ namespace ElbayaNPresentation.Views.Client.Customers
             this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
             this.txtSearch.IconRightOffset = new System.Drawing.Point(10, 0);
             this.txtSearch.IconRightSize = new System.Drawing.Size(35, 35);
-            this.txtSearch.Location = new System.Drawing.Point(542, 21);
+            this.txtSearch.Location = new System.Drawing.Point(540, 10);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
@@ -148,14 +148,13 @@ namespace ElbayaNPresentation.Views.Client.Customers
             this.txtSearch.Size = new System.Drawing.Size(284, 31);
             this.txtSearch.TabIndex = 24;
             this.txtSearch.TextOffset = new System.Drawing.Point(25, 0);
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // label9
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label9.Font = new System.Drawing.Font("Sakkal Majalla", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(862, 27);
+            this.label9.Location = new System.Drawing.Point(860, 16);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(139, 26);
@@ -176,7 +175,7 @@ namespace ElbayaNPresentation.Views.Client.Customers
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnAdd.ImageSize = new System.Drawing.Size(31, 31);
-            this.btnAdd.Location = new System.Drawing.Point(12, 21);
+            this.btnAdd.Location = new System.Drawing.Point(10, 10);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
@@ -184,7 +183,6 @@ namespace ElbayaNPresentation.Views.Client.Customers
             this.btnAdd.TabIndex = 17;
             this.btnAdd.Text = "إضافة جديدة";
             this.btnAdd.TextOffset = new System.Drawing.Point(-15, 0);
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // tabDGVContainer
             // 
@@ -193,15 +191,14 @@ namespace ElbayaNPresentation.Views.Client.Customers
             this.tabDGVContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tabDGVContainer.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.tabDGVContainer.ItemSize = new System.Drawing.Size(132, 39);
-            this.tabDGVContainer.Location = new System.Drawing.Point(2, 118);
+            this.tabDGVContainer.Location = new System.Drawing.Point(2, 54);
             this.tabDGVContainer.Margin = new System.Windows.Forms.Padding(2);
             this.tabDGVContainer.MinimumSize = new System.Drawing.Size(375, 214);
             this.tabDGVContainer.Name = "tabDGVContainer";
             this.tabDGVContainer.RightToLeftLayout = true;
             this.tabDGVContainer.SelectedIndex = 0;
-            this.tabDGVContainer.Size = new System.Drawing.Size(1020, 480);
+            this.tabDGVContainer.Size = new System.Drawing.Size(1020, 458);
             this.tabDGVContainer.TabIndex = 13;
-            this.tabDGVContainer.SelectedIndexChanged += new System.EventHandler(this.tabDGVContainer_SelectedIndexChanged);
             // 
             // tabPage3
             // 
@@ -214,9 +211,9 @@ namespace ElbayaNPresentation.Views.Client.Customers
             this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage3.Size = new System.Drawing.Size(1012, 433);
+            this.tabPage3.Size = new System.Drawing.Size(1012, 411);
             this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "الموردون النشطون";
+            this.tabPage3.Text = "العملاء النشطون";
             // 
             // dgvActiveObjects
             // 
@@ -264,219 +261,8 @@ namespace ElbayaNPresentation.Views.Client.Customers
             this.dgvActiveObjects.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvActiveObjects.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.dgvActiveObjects.RowTemplate.Height = 35;
-            this.dgvActiveObjects.Size = new System.Drawing.Size(1010, 427);
+            this.dgvActiveObjects.Size = new System.Drawing.Size(1010, 405);
             this.dgvActiveObjects.TabIndex = 0;
-            this.dgvActiveObjects.DoubleClick += new System.EventHandler(this.dgvActiveObjects_DoubleClick);
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.tabPage4.Controls.Add(this.dgvDeletedObjects);
-            this.tabPage4.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
-            this.tabPage4.ForeColor = System.Drawing.Color.White;
-            this.tabPage4.Location = new System.Drawing.Point(4, 43);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage4.Size = new System.Drawing.Size(1012, 433);
-            this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "الموردون غير النشطوين";
-            // 
-            // dgvDeletedObjects
-            // 
-            this.dgvDeletedObjects.AllowUserToAddRows = false;
-            this.dgvDeletedObjects.AllowUserToDeleteRows = false;
-            this.dgvDeletedObjects.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvDeletedObjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDeletedObjects.BackgroundColor = System.Drawing.Color.White;
-            this.dgvDeletedObjects.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDeletedObjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDeletedObjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDeletedObjects.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NotActiveObjectId,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17});
-            this.dgvDeletedObjects.Location = new System.Drawing.Point(2, 2);
-            this.dgvDeletedObjects.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvDeletedObjects.Name = "dgvDeletedObjects";
-            this.dgvDeletedObjects.ReadOnly = true;
-            this.dgvDeletedObjects.RowHeadersWidth = 51;
-            this.dgvDeletedObjects.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgvDeletedObjects.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            this.dgvDeletedObjects.RowTemplate.Height = 35;
-            this.dgvDeletedObjects.Size = new System.Drawing.Size(1009, 484);
-            this.dgvDeletedObjects.TabIndex = 1;
-            this.dgvDeletedObjects.DoubleClick += new System.EventHandler(this.dgvDeletedObjects_DoubleClick);
-            // 
-            // NotActiveObjectId
-            // 
-            this.NotActiveObjectId.DataPropertyName = "Id";
-            this.NotActiveObjectId.HeaderText = "الرقم المرجعي";
-            this.NotActiveObjectId.MinimumWidth = 8;
-            this.NotActiveObjectId.Name = "NotActiveObjectId";
-            this.NotActiveObjectId.ReadOnly = true;
-            this.NotActiveObjectId.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "اسم المورد";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "NationalIdentity";
-            this.dataGridViewTextBoxColumn3.HeaderText = "رقم الهوية";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "IsActive";
-            this.dataGridViewTextBoxColumn4.HeaderText = "حالة المورد";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "FirmName";
-            this.dataGridViewTextBoxColumn5.HeaderText = "اسم الشركة";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Address";
-            this.dataGridViewTextBoxColumn6.HeaderText = "عنوان المورد";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "CommercialRegister";
-            this.dataGridViewTextBoxColumn7.HeaderText = "الترخيص التجاري";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Mobile";
-            this.dataGridViewTextBoxColumn8.HeaderText = "رقم الجوال";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.HeaderText = "البريد الالكتروني";
-            this.dataGridViewTextBoxColumn9.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "ReferenceNumber";
-            this.dataGridViewTextBoxColumn10.HeaderText = "رقم المورد";
-            this.dataGridViewTextBoxColumn10.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "TaxNumber";
-            this.dataGridViewTextBoxColumn11.HeaderText = "الرقم الضريبي";
-            this.dataGridViewTextBoxColumn11.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "Description";
-            this.dataGridViewTextBoxColumn12.HeaderText = "ملاحظات";
-            this.dataGridViewTextBoxColumn12.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "OpeningBalance";
-            this.dataGridViewTextBoxColumn13.HeaderText = "الرصيد الافتتاحي";
-            this.dataGridViewTextBoxColumn13.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "FaxNumber";
-            this.dataGridViewTextBoxColumn14.HeaderText = "رقم الفاكس";
-            this.dataGridViewTextBoxColumn14.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            this.dataGridViewTextBoxColumn14.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "Phone";
-            this.dataGridViewTextBoxColumn15.HeaderText = "رقم الهاتف";
-            this.dataGridViewTextBoxColumn15.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            this.dataGridViewTextBoxColumn15.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "IsSupplier";
-            this.dataGridViewTextBoxColumn16.HeaderText = "إنه مورد";
-            this.dataGridViewTextBoxColumn16.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.ReadOnly = true;
-            this.dataGridViewTextBoxColumn16.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "IsCustomer";
-            this.dataGridViewTextBoxColumn17.HeaderText = "إنه عميل";
-            this.dataGridViewTextBoxColumn17.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.ReadOnly = true;
-            this.dataGridViewTextBoxColumn17.Visible = false;
             // 
             // ActiveObjectId
             // 
@@ -624,6 +410,215 @@ namespace ElbayaNPresentation.Views.Client.Customers
             this.ActiveObjectIsCustomer.ReadOnly = true;
             this.ActiveObjectIsCustomer.Visible = false;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.tabPage4.Controls.Add(this.dgvDeletedObjects);
+            this.tabPage4.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            this.tabPage4.ForeColor = System.Drawing.Color.White;
+            this.tabPage4.Location = new System.Drawing.Point(4, 43);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage4.Size = new System.Drawing.Size(1012, 411);
+            this.tabPage4.TabIndex = 1;
+            this.tabPage4.Text = "العملاء غير النشطوين";
+            // 
+            // dgvDeletedObjects
+            // 
+            this.dgvDeletedObjects.AllowUserToAddRows = false;
+            this.dgvDeletedObjects.AllowUserToDeleteRows = false;
+            this.dgvDeletedObjects.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDeletedObjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDeletedObjects.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDeletedObjects.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDeletedObjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDeletedObjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDeletedObjects.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NotActiveObjectId,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17});
+            this.dgvDeletedObjects.Location = new System.Drawing.Point(2, 2);
+            this.dgvDeletedObjects.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvDeletedObjects.Name = "dgvDeletedObjects";
+            this.dgvDeletedObjects.ReadOnly = true;
+            this.dgvDeletedObjects.RowHeadersWidth = 51;
+            this.dgvDeletedObjects.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgvDeletedObjects.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.dgvDeletedObjects.RowTemplate.Height = 35;
+            this.dgvDeletedObjects.Size = new System.Drawing.Size(1009, 407);
+            this.dgvDeletedObjects.TabIndex = 1;
+            // 
+            // NotActiveObjectId
+            // 
+            this.NotActiveObjectId.DataPropertyName = "Id";
+            this.NotActiveObjectId.HeaderText = "الرقم المرجعي";
+            this.NotActiveObjectId.MinimumWidth = 8;
+            this.NotActiveObjectId.Name = "NotActiveObjectId";
+            this.NotActiveObjectId.ReadOnly = true;
+            this.NotActiveObjectId.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "اسم العميل";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "NationalIdentity";
+            this.dataGridViewTextBoxColumn3.HeaderText = "رقم الهوية";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "IsActive";
+            this.dataGridViewTextBoxColumn4.HeaderText = "حالة المورد";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "FirmName";
+            this.dataGridViewTextBoxColumn5.HeaderText = "اسم الشركة";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Address";
+            this.dataGridViewTextBoxColumn6.HeaderText = "عنوان المورد";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "CommercialRegister";
+            this.dataGridViewTextBoxColumn7.HeaderText = "الترخيص التجاري";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Mobile";
+            this.dataGridViewTextBoxColumn8.HeaderText = "رقم الجوال";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "البريد الالكتروني";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "ReferenceNumber";
+            this.dataGridViewTextBoxColumn10.HeaderText = "رقم المورد";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "TaxNumber";
+            this.dataGridViewTextBoxColumn11.HeaderText = "الرقم الضريبي";
+            this.dataGridViewTextBoxColumn11.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Description";
+            this.dataGridViewTextBoxColumn12.HeaderText = "ملاحظات";
+            this.dataGridViewTextBoxColumn12.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "OpeningBalance";
+            this.dataGridViewTextBoxColumn13.HeaderText = "الرصيد الافتتاحي";
+            this.dataGridViewTextBoxColumn13.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "FaxNumber";
+            this.dataGridViewTextBoxColumn14.HeaderText = "رقم الفاكس";
+            this.dataGridViewTextBoxColumn14.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "Phone";
+            this.dataGridViewTextBoxColumn15.HeaderText = "رقم الهاتف";
+            this.dataGridViewTextBoxColumn15.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            this.dataGridViewTextBoxColumn15.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "IsSupplier";
+            this.dataGridViewTextBoxColumn16.HeaderText = "إنه مورد";
+            this.dataGridViewTextBoxColumn16.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            this.dataGridViewTextBoxColumn16.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "IsCustomer";
+            this.dataGridViewTextBoxColumn17.HeaderText = "إنه عميل";
+            this.dataGridViewTextBoxColumn17.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            this.dataGridViewTextBoxColumn17.Visible = false;
+            // 
             // ucAllCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -632,7 +627,7 @@ namespace ElbayaNPresentation.Views.Client.Customers
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ucAllCustomers";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Size = new System.Drawing.Size(1024, 600);
+            this.Size = new System.Drawing.Size(1024, 514);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.pActions.ResumeLayout(false);
             this.tabDGVContainer.ResumeLayout(false);
@@ -655,23 +650,6 @@ namespace ElbayaNPresentation.Views.Client.Customers
         private System.Windows.Forms.DataGridView dgvActiveObjects;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DataGridView dgvDeletedObjects;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NotActiveObjectId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         internal System.Windows.Forms.TabControl tabDGVContainer;
         private System.Windows.Forms.DataGridViewTextBoxColumn ActiveObjectId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ActiveObjectName;
@@ -690,5 +668,22 @@ namespace ElbayaNPresentation.Views.Client.Customers
         private System.Windows.Forms.DataGridViewTextBoxColumn ActiveObjectPhoneNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn ActiveObjectIsSupplier;
         private System.Windows.Forms.DataGridViewTextBoxColumn ActiveObjectIsCustomer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NotActiveObjectId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
     }
 }

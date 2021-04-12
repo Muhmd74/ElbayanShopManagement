@@ -110,7 +110,6 @@ namespace ElbayaNPresentation.Presenters.Clients
                 {
                     UpdateClient();
                     ClearControls();
-                    ucAllSupplier.Instance.Presenter.OnLoadUC();
                     frmNewClient.Instance.Close();
                 }
             }
@@ -122,12 +121,11 @@ namespace ElbayaNPresentation.Presenters.Clients
         }
         internal void OnActiveChekedChanged()
         {
-            if (_view.IsActive.Checked == false)
+            if (_view.IsActive.Checked)
             {
                 if (MessageBox.Show("هل تريد تحويل المورد إلى غير نشط", "تأكيد", MessageBoxButtons.YesNo) == DialogResult.Yes) 
                 {
                     Client.ChangeActivity(_view.ID);
-                    ucAllSupplier.Instance.tabDGVContainer.SelectedIndex = 1;
                     frmNewClient.Instance.Close();
                 }
             }

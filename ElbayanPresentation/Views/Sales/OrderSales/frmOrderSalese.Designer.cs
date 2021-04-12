@@ -1197,6 +1197,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.Padding = new System.Windows.Forms.Padding(23, 69, 23, 23);
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmOrderPurchase_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();

@@ -135,6 +135,11 @@ namespace ElbayaNPresentation.Views.Client
             this.nudCurrentBalance.Enabled = false;
             this.nudCurrentBalance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.nudCurrentBalance.Location = new System.Drawing.Point(756, 364);
+            this.nudCurrentBalance.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
             this.nudCurrentBalance.Name = "nudCurrentBalance";
             this.nudCurrentBalance.Size = new System.Drawing.Size(123, 29);
             this.nudCurrentBalance.TabIndex = 95;
@@ -147,6 +152,11 @@ namespace ElbayaNPresentation.Views.Client
             this.nudOpeningBalance.BackColor = System.Drawing.Color.White;
             this.nudOpeningBalance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.nudOpeningBalance.Location = new System.Drawing.Point(756, 402);
+            this.nudOpeningBalance.Maximum = new decimal(new int[] {
+            1215752192,
+            23,
+            0,
+            0});
             this.nudOpeningBalance.Name = "nudOpeningBalance";
             this.nudOpeningBalance.Size = new System.Drawing.Size(123, 29);
             this.nudOpeningBalance.TabIndex = 78;

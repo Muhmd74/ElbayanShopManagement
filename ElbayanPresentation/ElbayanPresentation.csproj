@@ -106,9 +106,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Presenters\Clients\IViewCustomer.cs" />
+    <Compile Include="Presenters\Clients\IViewAllClient.cs" />
+    <Compile Include="Presenters\Clients\IViewCustomers.cs" />
     <Compile Include="Presenters\Clients\IViewNewClient.cs" />
     <Compile Include="Presenters\Clients\IViewSuppleir.cs" />
+    <Compile Include="Presenters\Clients\PresenterCustomers.cs" />
     <Compile Include="Presenters\Clients\PresenterNewClient.cs" />
     <Compile Include="Presenters\CommonPresenter\DataGridViewStyle.cs" />
     <Compile Include="Presenters\CommonPresenter\NullableNumber.cs" />
