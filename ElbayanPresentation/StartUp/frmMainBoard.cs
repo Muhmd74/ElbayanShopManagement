@@ -276,5 +276,20 @@ namespace ElbayaNPresentation
         {
             frmOrderSales.Intance.ShowDialog();
         }
+
+        private void barButtonItem12_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!this.gcContainer.Controls.Contains(frmSupplierAccountStatement.Instance))
+            {
+                frmSupplierAccountStatement.Instance.TopLevel = false;
+                frmSupplierAccountStatement.Instance.TopMost = false;
+                this.gcContainer.Controls.Add(frmSupplierAccountStatement.Instance);
+                frmSupplierAccountStatement.Instance.Dock = DockStyle.Fill;
+                frmSupplierAccountStatement.Instance.BringToFront();
+                frmSupplierAccountStatement.Instance.Show();
+            }
+            frmSupplierAccountStatement.Instance.BringToFront();
+            frmSupplierAccountStatement.Instance.Show();
+        }
     }
 }
