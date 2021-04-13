@@ -1,7 +1,7 @@
 ﻿
 namespace ElbayaNPresentation.Views.Client
 {
-    partial class frmNewClient
+    partial class frmNewSupplier
     {
         /// <summary>
         /// Required designer variable.
@@ -126,7 +126,6 @@ namespace ElbayaNPresentation.Views.Client
             this.cbIsActive.Text = "نشط";
             this.cbIsActive.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.cbIsActive.UseVisualStyleBackColor = true;
-            this.cbIsActive.Click += new System.EventHandler(this.cbIsActive_Click);
             // 
             // nudCurrentBalance
             // 
@@ -135,6 +134,11 @@ namespace ElbayaNPresentation.Views.Client
             this.nudCurrentBalance.Enabled = false;
             this.nudCurrentBalance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.nudCurrentBalance.Location = new System.Drawing.Point(756, 364);
+            this.nudCurrentBalance.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
             this.nudCurrentBalance.Name = "nudCurrentBalance";
             this.nudCurrentBalance.Size = new System.Drawing.Size(123, 29);
             this.nudCurrentBalance.TabIndex = 95;
@@ -147,6 +151,11 @@ namespace ElbayaNPresentation.Views.Client
             this.nudOpeningBalance.BackColor = System.Drawing.Color.White;
             this.nudOpeningBalance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.nudOpeningBalance.Location = new System.Drawing.Point(756, 402);
+            this.nudOpeningBalance.Maximum = new decimal(new int[] {
+            1215752192,
+            23,
+            0,
+            0});
             this.nudOpeningBalance.Name = "nudOpeningBalance";
             this.nudOpeningBalance.Size = new System.Drawing.Size(123, 29);
             this.nudOpeningBalance.TabIndex = 78;
@@ -517,7 +526,6 @@ namespace ElbayaNPresentation.Views.Client
             this.btnAdd.Size = new System.Drawing.Size(151, 39);
             this.btnAdd.TabIndex = 79;
             this.btnAdd.Text = "إضافة جديدة";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label15
             // 
@@ -589,7 +597,6 @@ namespace ElbayaNPresentation.Views.Client
             this.btnUpdate.TabIndex = 80;
             this.btnUpdate.Text = "حفظ التعديلات";
             this.btnUpdate.Visible = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnBackToUc
             // 
@@ -607,7 +614,6 @@ namespace ElbayaNPresentation.Views.Client
             this.btnBackToUc.Size = new System.Drawing.Size(151, 39);
             this.btnBackToUc.TabIndex = 81;
             this.btnBackToUc.Text = "رجوع";
-            this.btnBackToUc.Click += new System.EventHandler(this.btnBackToUc_Click);
             // 
             // label3
             // 
@@ -791,7 +797,6 @@ namespace ElbayaNPresentation.Views.Client
             this.RightToLeftLayout = true;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmNewClient_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.nudCurrentBalance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOpeningBalance)).EndInit();
             this.ResumeLayout(false);

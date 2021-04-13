@@ -65,14 +65,6 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         public int RowIndex { get; set; }
 
         // Supplier Populate
-        private void btnAddNewSupplier_Click(object sender, EventArgs e)
-        {
-            Presenter.NewSupplier_OnCLick();
-        }
-        private void cbxSupplier_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            Presenter.OnSelectedValueChanged_SupplierMobile();
-        }
         private void cbxSupplier_Leave(object sender, EventArgs e)
         {
             if(this.cbxSupplier.Text != string.Empty)
@@ -88,26 +80,11 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             
         }
         // Product Populate
-        private void txtProductBarcode_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.F1)
-            {
-                Presenter.AddProductToDGV();
-            }
-        }
-        private void btnAddNewProductDGV_Click(object sender, EventArgs e)
-        {
-            Presenter.AddProductToDGVbtn();
-        }
-        private void btnDeletedProductFromOrder_Click(object sender, EventArgs e)
-        {
-            Presenter.DeleteFromDGV();
-        }
         private void frmOrderPurchase_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F10)
             {
-                Presenter.CreateSupplierOrder();
+                Presenter.CreateClientOrder();
             }
             if (e.KeyCode == Keys.F11)
             {
@@ -116,7 +93,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
                     if (dgvOrderProduct.SelectedRows.Count > 0)
                     {
                         //RowIndex = dgvOrderProduct.SelectedRows[0].Index;
-                        Presenter.PopulateQualityEdit();
+                        Presenter.PopulateQualityEdit(dgvOrderProduct);
                         frmEditQuantity.Instance.ShowDialog();
                     }
                     else
@@ -134,7 +111,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             }
             if (e.KeyCode == Keys.F2)
             {
-                Presenter.AddProductToDGVbtn();
+                Presenter.btnAddToDGV_OnClick(null, null);
             }
         }
         private void btnUpdateProudctQuantity_Click(object sender, EventArgs e)
@@ -143,7 +120,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             {
                 if (dgvOrderProduct.SelectedRows.Count > 0)
                 {
-                    Presenter.PopulateQualityEdit();
+                    Presenter.PopulateQualityEdit(dgvOrderProduct);
                     frmEditQuantity.Instance.ShowDialog();
                 }
                 else
@@ -165,7 +142,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         }
         private void btnSaveOrder_Click(object sender, EventArgs e)
         {
-            Presenter.CreateSupplierOrder();
+            Presenter.CreateClientOrder();
         }
         private void btnBackTo_Click(object sender, EventArgs e)
         {

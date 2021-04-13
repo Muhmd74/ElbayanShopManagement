@@ -267,7 +267,6 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.cbxSupplier.Name = "cbxSupplier";
             this.cbxSupplier.Size = new System.Drawing.Size(277, 39);
             this.cbxSupplier.TabIndex = 10;
-            this.cbxSupplier.SelectionChangeCommitted += new System.EventHandler(this.cbxSupplier_SelectionChangeCommitted);
             this.cbxSupplier.Leave += new System.EventHandler(this.cbxSupplier_Leave);
             // 
             // btnAddNewSupplier
@@ -285,7 +284,6 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.btnAddNewSupplier.Size = new System.Drawing.Size(43, 31);
             this.btnAddNewSupplier.TabIndex = 9;
             this.btnAddNewSupplier.Text = "+";
-            this.btnAddNewSupplier.Click += new System.EventHandler(this.btnAddNewSupplier_Click);
             // 
             // txtSupplierMobile
             // 
@@ -549,7 +547,6 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.btnAddNewProductDGV.Size = new System.Drawing.Size(122, 35);
             this.btnAddNewProductDGV.TabIndex = 9;
             this.btnAddNewProductDGV.Text = "أضف الصنف | F2";
-            this.btnAddNewProductDGV.Click += new System.EventHandler(this.btnAddNewProductDGV_Click);
             // 
             // btnDeletedProductFromOrder
             // 
@@ -566,7 +563,6 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.btnDeletedProductFromOrder.Size = new System.Drawing.Size(126, 35);
             this.btnDeletedProductFromOrder.TabIndex = 9;
             this.btnDeletedProductFromOrder.Text = "حذف صنف | Del";
-            this.btnDeletedProductFromOrder.Click += new System.EventHandler(this.btnDeletedProductFromOrder_Click);
             // 
             // label7
             // 
@@ -609,7 +605,6 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.txtProductBarcode.Size = new System.Drawing.Size(220, 35);
             this.txtProductBarcode.TabIndex = 7;
             this.txtProductBarcode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtProductBarcode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtProductBarcode_KeyDown);
             // 
             // label3
             // 

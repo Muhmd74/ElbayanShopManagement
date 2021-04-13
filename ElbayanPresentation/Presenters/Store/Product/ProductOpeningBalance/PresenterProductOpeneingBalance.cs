@@ -35,7 +35,9 @@ namespace ElbayaNPresentation.Presenters.Store.Product.ProductOpeningBalance
                     decimal stockDe = Convert.ToDecimal(_view.ProductStock.Text);
                     int stock = Convert.ToInt32(stockDe);
                     Guid ProductId = new Guid(_view.ActiveProduct.SelectedValue.ToString());
-                    OpeningBalance.CreateOpeningBalancesProduct(stock, ProductId);  
+                    OpeningBalance.CreateOpeningBalancesProduct(stock, ProductId);
+                    MessageBox.Show("تمت العملية بنجاح", "تأكيد", MessageBoxButtons.OK);
+                    return;
                 }
                 else
                 {

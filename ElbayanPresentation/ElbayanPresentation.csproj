@@ -106,8 +106,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Presenters\Clients\Customers\IViewNewCustomer.cs" />
+    <Compile Include="Presenters\Clients\Customers\PresenterNewCutsomer.cs" />
+    <Compile Include="Presenters\Clients\IViewAllClient.cs" />
+    <Compile Include="Presenters\Clients\Customers\IViewCustomers.cs" />
     <Compile Include="Presenters\Clients\IViewNewClient.cs" />
-    <Compile Include="Presenters\Clients\PresenterNewClient.cs" />
+    <Compile Include="Presenters\Clients\Suppliers\IViewNewSupplier.cs" />
+    <Compile Include="Presenters\Clients\Suppliers\IViewSuppleirs.cs" />
+    <Compile Include="Presenters\Clients\Customers\PresenterCustomers.cs" />
+    <Compile Include="Presenters\Clients\Suppliers\PresenterNewSupplier.cs" />
+    <Compile Include="Presenters\Clients\Suppliers\PresenterSuppliers.cs" />
     <Compile Include="Presenters\CommonPresenter\DataGridViewStyle.cs" />
     <Compile Include="Presenters\CommonPresenter\NullableNumber.cs" />
     <Compile Include="Presenters\CommonPresenter\PopulateActiveProduct.cs" />
@@ -121,13 +129,17 @@
     <Compile Include="Presenters\Finance\TreasuryAndBank\Bank\IViewBank.cs" />
     <Compile Include="Presenters\Finance\TreasuryAndBank\CatchReceipt\IViewCatchReceipt.cs" />
     <Compile Include="Presenters\Finance\TreasuryAndBank\Treasury\IViewTreasury.cs" />
-    <Compile Include="Presenters\Purchases\ProcurementOrder\IViewProcurementOrder.cs" />
-    <Compile Include="Presenters\Purchases\ProcurementOrder\PresenterProcurementOrder.cs" />
-    <Compile Include="Presenters\Purchases\QuantityEditForm\IViewQuantityEdit.cs" />
-    <Compile Include="Presenters\Purchases\QuantityEditForm\PresenterQuantityEdit.cs" />
-    <Compile Include="Presenters\Purchases\Supplier\AllSuppliers\IViewAllSuppleir.cs" />
-    <Compile Include="Presenters\Purchases\Supplier\AllSuppliers\PresenterAllSupplierData.cs" />
-    <Compile Include="Presenters\Sales\OrderSales\PresenterOrderSales.cs" />
+    <Compile Include="Presenters\Orders\IPresenterOrder.cs" />
+    <Compile Include="Presenters\Orders\IViewOrder.cs" />
+    <Compile Include="Presenters\Orders\PresenterOrder.cs" />
+    <Compile Include="Presenters\Orders\Purchases\ProcurementOrder\IViewProcurementOrder.cs" />
+    <Compile Include="Presenters\Orders\Purchases\ProcurementOrder\PresenterProcurementOrder.cs" />
+    <Compile Include="Presenters\Orders\Purchases\QuantityEditForm\IViewQuantityEdit.cs" />
+    <Compile Include="Presenters\Orders\Purchases\QuantityEditForm\PresenterQuantityEdit.cs" />
+    <Compile Include="Presenters\Orders\Purchases\Supplier\AllSuppliers\IViewAllSuppleir.cs" />
+    <Compile Include="Presenters\Orders\Purchases\Supplier\AllSuppliers\PresenterAllSupplierData.cs" />
+    <Compile Include="Presenters\Orders\Sales\OrderSales\IViewOrderSale.cs" />
+    <Compile Include="Presenters\Orders\Sales\OrderSales\PresenterOrderSales.cs" />
     <Compile Include="Presenters\Setting\FirmDetial\IViewFirmDetail.cs" />
     <Compile Include="Presenters\Setting\FirmDetial\PresenterFirmDetail.cs" />
     <Compile Include="Presenters\Store\Building\BuildingPresenter.cs" />
@@ -181,11 +193,35 @@
     <Compile Include="StartUp\ucMainBoard.Designer.cs">
       <DependentUpon>ucMainBoard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Client\frmNewClient.cs">
+    <Compile Include="Views\Client\Customers\frmCustomerDeferred.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Client\frmNewClient.Designer.cs">
-      <DependentUpon>frmNewClient.cs</DependentUpon>
+    <Compile Include="Views\Client\Customers\frmCustomerDeferred.Designer.cs">
+      <DependentUpon>frmCustomerDeferred.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Client\Customers\ucAllCustomers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Client\Customers\ucAllCustomers.Designer.cs">
+      <DependentUpon>ucAllCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Client\Customers\frmNewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Client\Customers\frmNewCustomer.Designer.cs">
+      <DependentUpon>frmNewCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Client\Suppliers\frmNewSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Client\Suppliers\frmNewSupplier.Designer.cs">
+      <DependentUpon>frmNewSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Client\Suppliers\frmSupplierAccountStatement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Client\Suppliers\frmSupplierAccountStatement.Designer.cs">
+      <DependentUpon>frmSupplierAccountStatement.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Client\Suppliers\ucAllSupplier.cs">
       <SubType>UserControl</SubType>
@@ -222,6 +258,12 @@
     </Compile>
     <Compile Include="Views\Purchases\Procurement\PurchasesOffers.Designer.cs">
       <DependentUpon>PurchasesOffers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Client\Suppliers\frmSupplierDebits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Client\Suppliers\frmSupplierDebits.Designer.cs">
+      <DependentUpon>frmSupplierDebits.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Sales\OrderSales\frmOrderSalese.cs">
       <SubType>Form</SubType>
@@ -319,8 +361,20 @@
     <EmbeddedResource Include="StartUp\ucMainBoard.resx">
       <DependentUpon>ucMainBoard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Client\frmNewClient.resx">
-      <DependentUpon>frmNewClient.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Client\Customers\frmCustomerDeferred.resx">
+      <DependentUpon>frmCustomerDeferred.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Client\Customers\ucAllCustomers.resx">
+      <DependentUpon>ucAllCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Client\Customers\frmNewCustomer.resx">
+      <DependentUpon>frmNewCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Client\Suppliers\frmNewSupplier.resx">
+      <DependentUpon>frmNewSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Client\Suppliers\frmSupplierAccountStatement.resx">
+      <DependentUpon>frmSupplierAccountStatement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Client\Suppliers\ucAllSupplier.resx">
       <DependentUpon>ucAllSupplier.cs</DependentUpon>
@@ -336,6 +390,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Purchases\Procurement\frmOrderPurchase.resx">
       <DependentUpon>frmOrderPurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Client\Suppliers\frmSupplierDebits.resx">
+      <DependentUpon>frmSupplierDebits.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Sales\OrderSales\frmOrderSalese.resx">
       <DependentUpon>frmOrderSalese.cs</DependentUpon>
