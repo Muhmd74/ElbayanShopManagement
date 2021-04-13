@@ -144,7 +144,9 @@ namespace ElbayanServices.Repository.Clints.Customer
                     OpeningBalance = customer.OpeningBalance,
                     TaxNumber = customer.TaxNumber,
                     Phone = customer.Phone,
-                    FaxNumber = customer.FaxNumber
+                    FaxNumber = customer.FaxNumber,
+                    IsActive = customer.IsActive,
+                    IsCustomer = customer.IsCustomer,
                 };
             }
 
@@ -172,7 +174,7 @@ namespace ElbayanServices.Repository.Clints.Customer
                 return (long)(lastNumber + 1);
             }
 
-            return 201001;
+            return 21001;
         }
 
 

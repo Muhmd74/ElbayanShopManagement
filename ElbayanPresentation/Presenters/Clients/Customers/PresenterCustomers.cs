@@ -64,8 +64,7 @@ namespace ElbayaNPresentation.Presenters.Clients
         }
         private void NewCustomerButton_onClick(object sender, EventArgs e)
         {
-            frmNewClient.Instance.IsSupplier = false;
-            frmNewClient.Instance.ShowDialog();
+            frmNewCustomer.Instance.ShowDialog();
         }
         // 3- Update
         public void dgvActiveObjects_DoubleClick(object sender, EventArgs e)
@@ -81,23 +80,25 @@ namespace ElbayaNPresentation.Presenters.Clients
         private void OnDoubleCLickDGV(Guid ID)
         {
             var model = customerService.GetCustomerById(ID);
-            frmNewClient.Instance.ID = model.Id;
-            frmNewClient.Instance.SuppliersName.Text = model.Name;
-            frmNewClient.Instance.IdentityNumber.Text = model.NationalIdentity.ToString();
-            frmNewClient.Instance.IsActive.Checked = model.IsActive;
-            frmNewClient.Instance.FirmName.Text = model.FirmName;
-            frmNewClient.Instance.Address.Text = model.Address;
-            frmNewClient.Instance.TradeLicense.Text = model.CommercialRegister;
-            frmNewClient.Instance.RefSupplierNumber.Text = model.ReferenceNumber.ToString();
-            frmNewClient.Instance.Note.Text = model.Description;
-            frmNewClient.Instance.Mobile.Text = model.Mobile;
-            frmNewClient.Instance.TaxNumber.Text = model.TaxNumber;
-            frmNewClient.Instance.OpeningBalance.Value = model.OpeningBalance;
-            frmNewClient.Instance.Fax.Text = model.FaxNumber;
-            frmNewClient.Instance.FirmPhoneNumber.Text = model.Phone;
-            frmNewClient.Instance.UpdateObject.Visible = true;
-            frmNewClient.Instance.cbIsActive.Enabled = true;
-            frmNewClient.Instance.ShowDialog();
+            frmNewCustomer.Instance.ID = model.Id;
+            frmNewCustomer.Instance.SuppliersName.Text = model.Name;
+            frmNewCustomer.Instance.IdentityNumber.Text = model.NationalIdentity.ToString();
+            frmNewCustomer.Instance.IsActive.Checked = model.IsActive;
+            frmNewCustomer.Instance.FirmName.Text = model.FirmName;
+            frmNewCustomer.Instance.Address.Text = model.Address;
+            frmNewCustomer.Instance.TradeLicense.Text = model.CommercialRegister;
+            frmNewCustomer.Instance.RefSupplierNumber.Text = model.ReferenceNumber.ToString();
+            frmNewCustomer.Instance.Note.Text = model.Description;
+            frmNewCustomer.Instance.Mobile.Text = model.Mobile;
+            frmNewCustomer.Instance.TaxNumber.Text = model.TaxNumber;
+            frmNewCustomer.Instance.OpeningBalance.Value = model.OpeningBalance;
+            frmNewCustomer.Instance.Fax.Text = model.FaxNumber;
+            frmNewCustomer.Instance.FirmPhoneNumber.Text = model.Phone;
+            frmNewCustomer.Instance.IsCustomer.Checked = model.IsCustomer;
+            frmNewCustomer.Instance.UpdateObject.Visible = true;
+            frmNewCustomer.Instance.AddNewObject.Visible = false;
+            frmNewCustomer.Instance.cbIsActive.Enabled = true;
+            frmNewCustomer.Instance.ShowDialog();
         }
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {

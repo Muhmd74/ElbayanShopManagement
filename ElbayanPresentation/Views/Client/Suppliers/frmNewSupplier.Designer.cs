@@ -1,7 +1,7 @@
 ﻿
 namespace ElbayaNPresentation.Views.Client
 {
-    partial class frmNewClient
+    partial class frmNewSupplier
     {
         /// <summary>
         /// Required designer variable.
@@ -126,7 +126,6 @@ namespace ElbayaNPresentation.Views.Client
             this.cbIsActive.Text = "نشط";
             this.cbIsActive.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.cbIsActive.UseVisualStyleBackColor = true;
-            this.cbIsActive.Click += new System.EventHandler(this.cbIsActive_Click);
             // 
             // nudCurrentBalance
             // 
@@ -527,7 +526,6 @@ namespace ElbayaNPresentation.Views.Client
             this.btnAdd.Size = new System.Drawing.Size(151, 39);
             this.btnAdd.TabIndex = 79;
             this.btnAdd.Text = "إضافة جديدة";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label15
             // 
@@ -599,7 +597,6 @@ namespace ElbayaNPresentation.Views.Client
             this.btnUpdate.TabIndex = 80;
             this.btnUpdate.Text = "حفظ التعديلات";
             this.btnUpdate.Visible = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnBackToUc
             // 
@@ -617,7 +614,6 @@ namespace ElbayaNPresentation.Views.Client
             this.btnBackToUc.Size = new System.Drawing.Size(151, 39);
             this.btnBackToUc.TabIndex = 81;
             this.btnBackToUc.Text = "رجوع";
-            this.btnBackToUc.Click += new System.EventHandler(this.btnBackToUc_Click);
             // 
             // label3
             // 
@@ -801,7 +797,6 @@ namespace ElbayaNPresentation.Views.Client
             this.RightToLeftLayout = true;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmNewClient_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.nudCurrentBalance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOpeningBalance)).EndInit();
             this.ResumeLayout(false);

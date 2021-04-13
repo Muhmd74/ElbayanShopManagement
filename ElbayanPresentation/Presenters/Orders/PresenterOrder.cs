@@ -157,7 +157,7 @@ namespace ElbayaNPresentation.Presenters.Orders
         }
         public void NewSupplier_OnCLick(object sender, EventArgs e)
         {
-            frmNewClient.Instance.ShowDialog();
+            frmNewSupplier.Instance.ShowDialog();
         }
         public void PopulateQualityEdit(DataGridView OrderProduct)
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ElbayaNPresentation.Presenters.Clients.Suppliers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace ElbayaNPresentation.Presenters.Clients
 {
     public interface IViewSuppleir : IViewAllClient
     {
-        PresenterNewClient Presenter { get; set; }
+        PresenterSuppliers Presenter { get; set; }
     }
 }

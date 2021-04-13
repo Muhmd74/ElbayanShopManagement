@@ -1,4 +1,5 @@
 ﻿using ElbayaNPresentation.Presenters.Clients;
+using ElbayaNPresentation.Presenters.Clients.Customers;
 using ElbayaNPresentation.Views.Client.Customers;
 using ElbayaNPresentation.Views.Client.Suppliers;
 using ElbayaNPresentation.Views.Purchases.Procurement;
@@ -15,16 +16,16 @@ using System.Windows.Forms;
 
 namespace ElbayaNPresentation.Views.Client
 {
-    public partial class frmNewClient : MetroFramework.Forms.MetroForm, IViewNewClient
+    public partial class frmNewCustomer : MetroFramework.Forms.MetroForm, IViewNewCustomer
     {
         
-        public frmNewClient()
+        public frmNewCustomer()
         {
             InitializeComponent();
-            Presenter = new PresenterNewClient(this);
+            Presenter = new PresenterNewCutsomer(this);
             _instance = this;
-
             btnUpdate.Visible = false;
+            cbIsActive.Enabled = false;
 
             //// Hanle Full screen Issues 
             //System.Drawing.Rectangle rect = Screen.GetWorkingArea(this);
@@ -34,17 +35,16 @@ namespace ElbayaNPresentation.Views.Client
             Presenter.OnLoad();
         }
       
-        private static frmNewClient _instance;
-        public static frmNewClient Instance
+        private static frmNewCustomer _instance;
+        public static frmNewCustomer Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new frmNewClient();
+                    _instance = new frmNewCustomer();
                 return _instance;
             }
         }
-
         public Guid ID { get; set; }
         public Guna2TextBox RefSupplierNumber { get => txtRefNumber; set => txtRefNumber = value; }
         public Guna2TextBox SuppliersName { get => txtName; set => txtName = value; }
@@ -65,13 +65,9 @@ namespace ElbayaNPresentation.Views.Client
         public Guna2Button UpdateObject { get => btnUpdate; set => btnUpdate = value; }
         public Guna2Button DeleteObject { get; set; }
         public Guna2Button BackToUc { get => btnBackToUc; set => btnBackToUc = value; }
-        public PresenterNewClient Presenter { get; set; }
-        public bool IsSupplier { get; set; } = true;
-        public bool IsCustomer { get; set; } = true;
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            Presenter.OnClickbtnAddNewOpect();
-        }
+        public PresenterNewCutsomer Presenter { get; set; }
+        public CheckBox IsSupplier { get => cbIsSupplier; set => cbIsSupplier = value; }
+        public CheckBox IsCustomer { get => cbIsCustomer; set => cbIsCustomer = value; }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             Presenter.OnClickbtnUpdate();
