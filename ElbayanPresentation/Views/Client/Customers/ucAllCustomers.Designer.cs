@@ -138,26 +138,26 @@ namespace ElbayaNPresentation.Views.Client.Customers
             this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
             this.txtSearch.IconRightOffset = new System.Drawing.Point(10, 0);
             this.txtSearch.IconRightSize = new System.Drawing.Size(35, 35);
-            this.txtSearch.Location = new System.Drawing.Point(540, 10);
+            this.txtSearch.Location = new System.Drawing.Point(504, 4);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "";
             this.txtSearch.SelectedText = "";
             this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
-            this.txtSearch.Size = new System.Drawing.Size(284, 31);
+            this.txtSearch.Size = new System.Drawing.Size(284, 35);
             this.txtSearch.TabIndex = 24;
             this.txtSearch.TextOffset = new System.Drawing.Point(25, 0);
             // 
             // label9
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label9.Font = new System.Drawing.Font("Sakkal Majalla", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(860, 16);
+            this.label9.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(809, 8);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(139, 26);
+            this.label9.Size = new System.Drawing.Size(209, 26);
             this.label9.TabIndex = 25;
             this.label9.Text = "بحث باسم أو رقم مورد أو جوال";
             // 
@@ -175,11 +175,11 @@ namespace ElbayaNPresentation.Views.Client.Customers
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnAdd.ImageSize = new System.Drawing.Size(31, 31);
-            this.btnAdd.Location = new System.Drawing.Point(10, 10);
+            this.btnAdd.Location = new System.Drawing.Point(10, 7);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
-            this.btnAdd.Size = new System.Drawing.Size(123, 31);
+            this.btnAdd.Size = new System.Drawing.Size(123, 35);
             this.btnAdd.TabIndex = 17;
             this.btnAdd.Text = "إضافة جديدة";
             this.btnAdd.TextOffset = new System.Drawing.Point(-15, 0);
@@ -190,7 +190,7 @@ namespace ElbayaNPresentation.Views.Client.Customers
             this.tabDGVContainer.Controls.Add(this.tabPage4);
             this.tabDGVContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tabDGVContainer.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
-            this.tabDGVContainer.ItemSize = new System.Drawing.Size(132, 39);
+            this.tabDGVContainer.ItemSize = new System.Drawing.Size(132, 31);
             this.tabDGVContainer.Location = new System.Drawing.Point(2, 54);
             this.tabDGVContainer.Margin = new System.Windows.Forms.Padding(2);
             this.tabDGVContainer.MinimumSize = new System.Drawing.Size(375, 214);
@@ -207,11 +207,11 @@ namespace ElbayaNPresentation.Views.Client.Customers
             this.tabPage3.Controls.Add(this.dgvActiveObjects);
             this.tabPage3.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.tabPage3.ForeColor = System.Drawing.Color.White;
-            this.tabPage3.Location = new System.Drawing.Point(4, 43);
+            this.tabPage3.Location = new System.Drawing.Point(4, 35);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage3.Size = new System.Drawing.Size(1012, 411);
+            this.tabPage3.Size = new System.Drawing.Size(1012, 419);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "العملاء النشطون";
             // 
@@ -261,7 +261,7 @@ namespace ElbayaNPresentation.Views.Client.Customers
             this.dgvActiveObjects.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvActiveObjects.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.dgvActiveObjects.RowTemplate.Height = 35;
-            this.dgvActiveObjects.Size = new System.Drawing.Size(1010, 405);
+            this.dgvActiveObjects.Size = new System.Drawing.Size(1010, 413);
             this.dgvActiveObjects.TabIndex = 0;
             // 
             // ActiveObjectId
@@ -416,11 +416,11 @@ namespace ElbayaNPresentation.Views.Client.Customers
             this.tabPage4.Controls.Add(this.dgvDeletedObjects);
             this.tabPage4.Font = new System.Drawing.Font("Sakkal Majalla", 13.8F, System.Drawing.FontStyle.Bold);
             this.tabPage4.ForeColor = System.Drawing.Color.White;
-            this.tabPage4.Location = new System.Drawing.Point(4, 43);
+            this.tabPage4.Location = new System.Drawing.Point(4, 35);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage4.Size = new System.Drawing.Size(1012, 411);
+            this.tabPage4.Size = new System.Drawing.Size(1012, 419);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "العملاء غير النشطوين";
             // 
@@ -470,7 +470,7 @@ namespace ElbayaNPresentation.Views.Client.Customers
             this.dgvDeletedObjects.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvDeletedObjects.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.dgvDeletedObjects.RowTemplate.Height = 35;
-            this.dgvDeletedObjects.Size = new System.Drawing.Size(1009, 407);
+            this.dgvDeletedObjects.Size = new System.Drawing.Size(1009, 415);
             this.dgvDeletedObjects.TabIndex = 1;
             // 
             // NotActiveObjectId
@@ -621,8 +621,7 @@ namespace ElbayaNPresentation.Views.Client.Customers
             // 
             // ucAllCustomers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ucAllCustomers";

@@ -15,6 +15,15 @@ namespace ElbayaNPresentation.Views.Client.Customers
         public frmCustomerDeferred()
         {
             InitializeComponent();
+            _instance = this;
+        }
+        private static frmCustomerDeferred _instance;
+
+        public static frmCustomerDeferred Instance { get { if (_instance == null) _instance = new frmCustomerDeferred(); return _instance; } }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            frmPayDebit.Instance.ShowDialog();
         }
     }
 }

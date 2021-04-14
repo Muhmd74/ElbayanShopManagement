@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ElbayaNPresentation.Views.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,24 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers
         public frmSupplierDebits()
         {
             InitializeComponent();
+            _instance = this;
+        }
+        private static frmSupplierDebits _instance;
+
+        public static frmSupplierDebits Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new frmSupplierDebits();
+                return _instance;
+            }
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            frmPayDebit.Instance.ShowDialog();
         }
     }
+
 }

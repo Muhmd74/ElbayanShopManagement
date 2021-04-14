@@ -24,6 +24,7 @@ using ElbayaNPresentation.Views.Purchases.Procurement;
 using ElbayaNPresentation.Views.Settings.Firm;
 using ElbayaNPresentation.Views.Client;
 using ElbayaNPresentation.Views.Client.Customers;
+using ElbayaNPresentation.Views.Purchases.Suppliers;
 
 namespace ElbayaNPresentation
 {
@@ -290,6 +291,51 @@ namespace ElbayaNPresentation
             }
             frmSupplierAccountStatement.Instance.BringToFront();
             frmSupplierAccountStatement.Instance.Show();
+        }
+
+        private void barButtonItem13_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!this.gcContainer.Controls.Contains(frmSupplierDebits.Instance))
+            {
+                frmSupplierDebits.Instance.TopLevel = false;
+                frmSupplierDebits.Instance.TopMost = false;
+                this.gcContainer.Controls.Add(frmSupplierDebits.Instance);
+                frmSupplierDebits.Instance.Dock = DockStyle.Fill;
+                frmSupplierDebits.Instance.BringToFront();
+                frmSupplierDebits.Instance.Show();
+            }
+            frmSupplierDebits.Instance.BringToFront();
+            frmSupplierDebits.Instance.Show();
+        }
+
+        private void barButtonItem26_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!this.gcContainer.Controls.Contains(frmCustomerAccountStatement.Instance))
+            {
+                frmCustomerAccountStatement.Instance.TopLevel = false;
+                frmCustomerAccountStatement.Instance.TopMost = false;
+                this.gcContainer.Controls.Add(frmCustomerAccountStatement.Instance);
+                frmCustomerAccountStatement.Instance.Dock = DockStyle.Fill;
+                frmCustomerAccountStatement.Instance.BringToFront();
+                frmCustomerAccountStatement.Instance.Show();
+            }
+            frmCustomerAccountStatement.Instance.BringToFront();
+            frmCustomerAccountStatement.Instance.Show();
+        }
+
+        private void barButtonItem27_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!this.gcContainer.Controls.Contains(frmCustomerDeferred.Instance))
+            {
+                frmCustomerDeferred.Instance.TopLevel = false;
+                frmCustomerDeferred.Instance.TopMost = false;
+                this.gcContainer.Controls.Add(frmCustomerDeferred.Instance);
+                frmCustomerDeferred.Instance.Dock = DockStyle.Fill;
+                frmCustomerDeferred.Instance.BringToFront();
+                frmCustomerDeferred.Instance.Show();
+            }
+            frmCustomerDeferred.Instance.BringToFront();
+            frmCustomerDeferred.Instance.Show();
         }
     }
 }
