@@ -4,6 +4,7 @@ using ElbayaNPresentation.Presenters.Purchases.Supplier.AllSuppliers;
 using ElbayanServices.Repository.Clints.Supplier;
 using ElbayaNPresentation.Views.Client;
 using System;
+using ElbayanServices.Repository.Suppliers.Supplier;
 
 namespace ElbayaNPresentation.Presenters.Purchases.Supplier.AllSuppliers
 {

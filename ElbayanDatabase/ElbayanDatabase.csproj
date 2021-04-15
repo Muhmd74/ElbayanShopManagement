@@ -126,6 +126,10 @@
     <Compile Include="Migrations\202104102225551_ConvertOrderIdOptional.designer.cs">
       <DependentUpon>202104102225551_ConvertOrderIdOptional.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104152310486_CreateMovemnetSupplier.cs" />
+    <Compile Include="Migrations\202104152310486_CreateMovemnetSupplier.designer.cs">
+      <DependentUpon>202104152310486_CreateMovemnetSupplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -154,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104102225551_ConvertOrderIdOptional.resx">
       <DependentUpon>202104102225551_ConvertOrderIdOptional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104152310486_CreateMovemnetSupplier.resx">
+      <DependentUpon>202104152310486_CreateMovemnetSupplier.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

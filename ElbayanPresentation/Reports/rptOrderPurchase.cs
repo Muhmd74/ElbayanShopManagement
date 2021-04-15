@@ -1,9 +1,4 @@
 ﻿using DevExpress.XtraReports.UI;
-using ElbayanServices.Repository.Clints.OrderProcurement;
-using System;
-using System.Collections;
-using System.ComponentModel;
-using System.Drawing;
 
 namespace ElbayaNPresentation.Reports
 {

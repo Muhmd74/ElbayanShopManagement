@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using ElbayanServices.Repository.Clints.Customer.Dtos;
-using ClintDto = ElbayanServices.Repository.Clints.Supplier.Dtos.ClintDto;
+using ClintDto = ElbayanServices.Repository.Suppliers.Supplier.Dtos.ClintDto;
 
 namespace ElbayanServices.Repository.Clints.Customer
 {

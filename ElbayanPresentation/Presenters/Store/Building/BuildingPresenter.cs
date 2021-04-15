@@ -3,7 +3,8 @@ using System;
 using System.Linq;
 using System.Windows.Forms;
 using ElbayanServices.Repository.Clints.Building;
-using ElbayanServices.Repository.Clints.Building.Dtos;
+using ElbayanServices.Repository.Employees.Building;
+using ElbayanServices.Repository.Employees.Building.Dtos;
 
 namespace ElbayaNPresentation.Presenters.Store.Building
 {
