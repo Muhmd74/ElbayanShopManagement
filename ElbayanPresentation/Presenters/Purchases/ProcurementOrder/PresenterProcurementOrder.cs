@@ -76,7 +76,6 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
                         OrderNumber = long.Parse(_view.OrderNumber.Text),
                         ClintId = new Guid(_view.Suppliers.SelectedValue.ToString()),
                         DueDatePayingOff = _view.OrderDeferredDate.Value,
-                        PaymentPerMonth = 150m,
                         OrderProductDto = GetOrderProducts().ToList(),
                         TotalDiscount = Convert.ToDecimal(_view.TotalOrderDiscount.Text),
                         SubTotalWithoutDiscount = Convert.ToDecimal(_view.TotalOrderWithoutDiscount.Text),

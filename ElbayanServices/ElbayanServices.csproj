@@ -87,6 +87,13 @@
     <Compile Include="Repository\Clints\OrderProcurement\IOrderProcurement.cs" />
     <Compile Include="Repository\Clints\OrderProcurement\OrderProcurementService.cs" />
     <Compile Include="Repository\Clints\Poses\Validators\CreatePosValidator.cs" />
+    <Compile Include="Repository\Clints\SupplierMovement\Dto\GetSupplierPaymentByUserDto.cs" />
+    <Compile Include="Repository\Clints\SupplierMovement\Dto\PaymentAllDeferredDto.cs" />
+    <Compile Include="Repository\Clints\SupplierMovement\Dto\PrintInvoicePaymentOnceDto.cs" />
+    <Compile Include="Repository\Clints\SupplierMovement\Dto\SupplierMovementDto.cs" />
+    <Compile Include="Repository\Clints\SupplierMovement\Dto\SupplierMovementCreateDto.cs" />
+    <Compile Include="Repository\Clints\SupplierMovement\ISupplierMovement.cs" />
+    <Compile Include="Repository\Clints\SupplierMovement\SupplierMovementService.cs" />
     <Compile Include="Repository\Clints\Supplier\Dtos\SupplierNameDto.cs" />
     <Compile Include="Repository\Clints\Supplier\SupplierService.cs" />
     <Compile Include="Repository\Clints\Supplier\Dtos\ClintDto.cs" />
@@ -139,6 +146,9 @@
     <Compile Include="Repository\Products\Category\Dtos\CategoryDto.cs" />
     <Compile Include="Repository\Products\Category\ICategory.cs" />
     <Compile Include="Repository\Products\Category\Validators\CreateCategoryValidator.cs" />
+    <Compile Include="Repository\Products\ProductPrice\Dto\MovementProductPriceDto.cs" />
+    <Compile Include="Repository\Products\ProductPrice\IProductPrice.cs" />
+    <Compile Include="Repository\Products\ProductPrice\ProductPriceService.cs" />
     <Compile Include="Repository\Products\ProductStock\Dtos\ProductStockDetails.cs" />
     <Compile Include="Repository\Products\ProductStock\Dtos\ProductStockDto.cs" />
     <Compile Include="Repository\Products\ProductStock\IProductStock.cs" />

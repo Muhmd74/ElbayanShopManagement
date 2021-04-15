@@ -83,11 +83,10 @@ namespace ElbayanServices.Repository.Clints.OrderReturns
                 Payment = 0,
                 OrderId = orderId,
                 DeferredOfOrder = deferred,
-                CollectingPaymentDate = DateTime.UtcNow,
+                CreatedDate = DateTime.UtcNow,
                 DueDatePayingOff = dueDatePayingOff,
                 TotalPayment = 0,
                 ClintId = clintId,
-                PaymentPerMonth = paymentPerMonth
             });
             _context.SaveChanges();
         }
