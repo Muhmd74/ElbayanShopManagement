@@ -77,6 +77,9 @@
     <Compile Include="Repository\Clints\Customer\Dtos\CustomerNameDto.cs" />
     <Compile Include="Repository\Clints\Customer\ICustomer.cs" />
     <Compile Include="Repository\Clints\Customer\CustomerService.cs" />
+    <Compile Include="Repository\Products\ClassificationMovement\ClassificationMovementService.cs" />
+    <Compile Include="Repository\Products\ClassificationMovement\Dtos\ClassificationMovementDto.cs" />
+    <Compile Include="Repository\Products\ClassificationMovement\IClassificationMovement.cs" />
     <Compile Include="Repository\Suppliers\OrderProcurement\Dtos\InvoiceDetailsDto.cs" />
     <Compile Include="Repository\Clints\OrderReturns\Dtos\OrderDto.cs" />
     <Compile Include="Repository\Clints\OrderReturns\Dtos\ProductPriceMovementDto.cs" />
