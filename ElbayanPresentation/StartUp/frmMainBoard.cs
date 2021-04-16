@@ -25,6 +25,7 @@ using ElbayaNPresentation.Views.Settings.Firm;
 using ElbayaNPresentation.Views.Client;
 using ElbayaNPresentation.Views.Client.Customers;
 using ElbayaNPresentation.Views.Purchases.Suppliers;
+using ElbayaNPresentation.Views.Purchases;
 
 namespace ElbayaNPresentation
 {
@@ -336,6 +337,11 @@ namespace ElbayaNPresentation
             }
             frmCustomerDeferred.Instance.BringToFront();
             frmCustomerDeferred.Instance.Show();
+        }
+
+        private void barButtonItem16_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmPurchaseReturns.Instance.ShowDialog();
         }
     }
 }

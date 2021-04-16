@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace ElbayaNPresentation.Views.Purchases
 {
-    public partial class frmPurchaseReturns : Form
+    public partial class frmPurchaseReturns : MetroFramework.Forms.MetroForm
     {
         public frmPurchaseReturns()
         {
             InitializeComponent();
+            _instance = this;
+            dtpOrderReturnDate.Value = DateTime.Now;
         }
+        private static frmPurchaseReturns _instance;
+        public static frmPurchaseReturns Instance { get { if (_instance == null) _instance = new frmPurchaseReturns(); return _instance; } }
+
     }
 }

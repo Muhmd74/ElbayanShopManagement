@@ -259,10 +259,10 @@
     <Compile Include="Views\Purchases\EditQuantity.Designer.cs">
       <DependentUpon>EditQuantity.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Purchases\frmPurchaseReturns.cs">
+    <Compile Include="Views\Purchases\Procurement\frmPurchaseReturns.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Purchases\frmPurchaseReturns.Designer.cs">
+    <Compile Include="Views\Purchases\Procurement\frmPurchaseReturns.Designer.cs">
       <DependentUpon>frmPurchaseReturns.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Purchases\Procurement\frmOrderPurchase.cs">
@@ -270,12 +270,6 @@
     </Compile>
     <Compile Include="Views\Purchases\Procurement\frmOrderPurchase.Designer.cs">
       <DependentUpon>frmOrderPurchase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Purchases\Procurement\PurchasesOffers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Purchases\Procurement\PurchasesOffers.Designer.cs">
-      <DependentUpon>PurchasesOffers.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Client\Suppliers\frmSupplierDebits.cs">
       <SubType>Form</SubType>
@@ -411,6 +405,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Purchases\EditQuantity.resx">
       <DependentUpon>EditQuantity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Purchases\Procurement\frmPurchaseReturns.resx">
+      <DependentUpon>frmPurchaseReturns.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Purchases\Procurement\frmOrderPurchase.resx">
       <DependentUpon>frmOrderPurchase.cs</DependentUpon>
