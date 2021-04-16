@@ -15,55 +15,6 @@ namespace ElbayanServices.Repository.Suppliers.Supplier
             _context = context;
         }
 
-        // public bool CreateSupplier(ClintDto model)
-        //{
-        //    var customer = _context.Clints.Add(new Clint()
-        //    {
-        //        Name = model.Name,
-        //        NationalIdentity = model.NationalIdentity,
-        //        IsActive = true,
-        //        FirmName = model.FirmName,
-        //        Address = model.Address,
-        //        CommercialRegister = model.CommercialRegister,
-        //        ReferenceNumber = model.ReferenceNumber,
-        //        Description = model.Description,
-        //        Mobile = model.Mobile,
-        //        TaxNumber = model.TaxNumber,
-        //        OpeningBalance = model.OpeningBalance,
-        //        FaxNumber = model.FaxNumber,
-        //        IsSupplier = true,
-        //        Phone = model.Phone,
-
-        //    });
-        //    _context.SaveChanges();
-        //    return true;
-        //}
-
-        //public bool UpdateSupplier(ClintDto model)
-        //{
-        //    var clint = _context.Clints.FirstOrDefault(d => d.Id == model.Id);
-
-        //    if (clint!=null)
-        //    {
-        //        clint.Description = model.Description;
-        //        clint.FirmName = model.FirmName;
-        //        clint.Address = model.Address;
-        //        clint.CommercialRegister = model.CommercialRegister;
-        //        clint.NationalIdentity = model.NationalIdentity;
-        //        clint.Mobile = model.Mobile;
-        //        clint.OpeningBalance = model.OpeningBalance;
-        //        clint.TaxNumber = model.TaxNumber;
-        //        clint.Name = model.Name;
-        //        clint.ReferenceNumber = model.ReferenceNumber;
-        //        clint.Phone = model.Phone;
-        //        _context.SaveChanges();
-        //        return true;
-
-        //    }
-
-        //    return false;
-        //}
-
         public List<ClintDto> GetAllSupplier()
         {
             return _context.Clints

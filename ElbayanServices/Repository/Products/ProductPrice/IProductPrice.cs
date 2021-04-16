@@ -11,9 +11,8 @@ namespace ElbayanServices.Repository.Products.ProductPrice
     public interface IProductPrice
     {
         List<MovementProductPriceDto> GetAllProductPrice();
-        List<MovementProductPriceDto> GetAllProductPriceByDateTime(DateTime? firstDateTime, DateTime? lastDateTime, string? orderType, Guid? productId);
-        List<MovementProductPriceDto> GetAllProductPriceByType(string orderType);
-        List<MovementProductPriceDto> GetAllProductPriceSearch(string productName, long barCode);
-        int GetProductQuantity(Guid productId);
+        List<MovementProductPriceDto> GetAllProductPriceByDateTime(DateTime? firstDateTime, DateTime? lastDateTime, string processType, Guid? productId);
+        List<MovementProductPriceDto> GetAllProductPriceByType(string processType);
+        List<MovementProductPriceDto> GetAllProductPriceSearch(string productName, long? barCode);
     }
 }

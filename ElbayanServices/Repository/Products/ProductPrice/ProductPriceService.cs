@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,48 +9,116 @@ using ElbayanServices.Repository.Products.ProductPrice.Dto;
 
 namespace ElbayanServices.Repository.Products.ProductPrice
 {
-  public  class ProductPriceService : IProductPrice , IDisposable
-  {
-      private readonly ConnectionOption _context;
+    public class ProductPriceService : IProductPrice, IDisposable
+    {
+        private readonly ConnectionOption _context;
 
-      public ProductPriceService(ConnectionOption context)
-      {
-          _context = context;
-      }
-
-      public List<MovementProductPriceDto> GetAllProductPrice()
-      {
-          return _context.ProductPrices.Select(d => new MovementProductPriceDto()
-          {
-              BarCode = d.Product.BarCode,
-              DateTime = d.DateTime,
-              Discount=d.Discount,
-          }).ToList();
-      }
-
-        public List<MovementProductPriceDto> GetAllProductPriceByDateTime(DateTime? firstDateTime, DateTime? lastDateTime, string? orderType, Guid? productId)
+        public ProductPriceService(ConnectionOption context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public List<MovementProductPriceDto> GetAllProductPriceByType(string orderType)
+        public List<MovementProductPriceDto> GetAllProductPrice()
         {
-            throw new NotImplementedException();
+            return _context.ProductPrices
+                .Include(d => d.Product.LargeUnit)
+                .Include(d => d.Product.SmallUnit)
+                .OrderByDescending(d => d.DateTime)
+                .Select(d => new MovementProductPriceDto()
+                {
+                    BarCode = d.Product.BarCode,
+                    DateTime = d.DateTime,
+                    Discount = d.Discount,
+                    PriceSale = d.ProcPrice,
+                    SaleDefaultPrice = d.Product.SaleDefaultPrice,
+                    ProductNumber = d.Product.ProductNumber,
+                    ProductName = d.Product.Name,
+                    ProcessType = d.ProcessType,
+                    Vat = d.Product.Vat,
+                    UnitName = d.Product.IsUnitSale ? d.Product.LargeUnit.Name : d.Product.SmallUnit.Name,
+
+                }).ToList();
         }
 
-        public List<MovementProductPriceDto> GetAllProductPriceSearch(string productName, long barCode)
+        public List<MovementProductPriceDto> GetAllProductPriceByDateTime(DateTime? firstDateTime, DateTime? lastDateTime, string processType, Guid? productId)
         {
-            throw new NotImplementedException();
+            return _context.ProductPrices
+                .Include(d => d.Product.LargeUnit)
+                .Include(d => d.Product.SmallUnit)
+                .OrderByDescending(d => d.DateTime)
+                .Where(d => d.DateTime >= firstDateTime || d.DateTime <= lastDateTime
+                || d.ProcessType == processType
+                || d.ProductId == productId
+                )
+                .Select(d => new MovementProductPriceDto()
+                {
+                    BarCode = d.Product.BarCode,
+                    DateTime = d.DateTime,
+                    Discount = d.Discount,
+                    PriceSale = d.ProcPrice,
+                    SaleDefaultPrice = d.Product.SaleDefaultPrice,
+                    ProductNumber = d.Product.ProductNumber,
+                    ProductName = d.Product.Name,
+                    ProcessType = d.ProcessType,
+                    Vat = d.Product.Vat,
+                    UnitName = d.Product.IsUnitSale ? d.Product.LargeUnit.Name : d.Product.SmallUnit.Name,
+
+                }).ToList();
         }
 
-        public int GetProductQuantity(Guid productId)
+        public List<MovementProductPriceDto> GetAllProductPriceByType(string processType)
         {
-            throw new NotImplementedException();
+            return _context.ProductPrices
+                .Include(d => d.Product.LargeUnit)
+                .Include(d => d.Product.SmallUnit)
+                .OrderByDescending(d => d.DateTime)
+                .Where(d =>d.ProcessType == processType
+                )
+                .Select(d => new MovementProductPriceDto()
+                {
+                    BarCode = d.Product.BarCode,
+                    DateTime = d.DateTime,
+                    Discount = d.Discount,
+                    PriceSale = d.ProcPrice,
+                    SaleDefaultPrice = d.Product.SaleDefaultPrice,
+                    ProductNumber = d.Product.ProductNumber,
+                    ProductName = d.Product.Name,
+                    ProcessType = d.ProcessType,
+                    Vat = d.Product.Vat,
+                    UnitName = d.Product.IsUnitSale ? d.Product.LargeUnit.Name : d.Product.SmallUnit.Name,
+
+                }).ToList();
         }
+
+        public List<MovementProductPriceDto> GetAllProductPriceSearch(string productName, long? barCode)
+        {
+            return _context.ProductPrices
+                .Include(d => d.Product.LargeUnit)
+                .Include(d => d.Product.SmallUnit)
+                .OrderByDescending(d => d.DateTime)
+                .Where(d => d.Product.Name.Contains(productName)
+                            || d.Product.BarCode.ToString().Contains(barCode.ToString())
+                )
+                .Select(d => new MovementProductPriceDto()
+                {
+                    BarCode = d.Product.BarCode,
+                    DateTime = d.DateTime,
+                    Discount = d.Discount,
+                    PriceSale = d.ProcPrice,
+                    SaleDefaultPrice = d.Product.SaleDefaultPrice,
+                    ProductNumber = d.Product.ProductNumber,
+                    ProductName = d.Product.Name,
+                    ProcessType = d.ProcessType,
+                    Vat = d.Product.Vat,
+                    UnitName = d.Product.IsUnitSale ? d.Product.LargeUnit.Name : d.Product.SmallUnit.Name,
+
+                }).ToList();
+        }
+
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _context.Dispose();
         }
     }
 }
