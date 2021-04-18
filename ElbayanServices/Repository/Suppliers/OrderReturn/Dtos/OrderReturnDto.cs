@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using ElbayanServices.Repository.Suppliers.OrderProcurement.Dtos;
 
 namespace ElbayanServices.Repository.Suppliers.OrderReturn.Dtos
 {

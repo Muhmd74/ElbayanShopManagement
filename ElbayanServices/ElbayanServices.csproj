@@ -108,7 +108,7 @@
     <Compile Include="Repository\Clints\DeferredPayments\Dtos\SupplierDeferredPaymentDto.cs" />
     <Compile Include="Repository\Clints\DeferredPayments\Dtos\OrderNameDto.cs" />
     <Compile Include="Repository\Clints\DeferredPayments\IDeferredPayment.cs" />
-    <Compile Include="Repository\Clints\Orders\Dtos\OrderDto.cs" />
+    <Compile Include="Repository\Clints\Orders\Dtos\OrderCustomerDto.cs" />
     <Compile Include="Repository\Clints\Orders\Dtos\ProductPriceMovementDto.cs" />
     <Compile Include="Repository\Clints\Orders\IOrder.cs" />
     <Compile Include="Repository\Clints\Orders\OrderService.cs" />

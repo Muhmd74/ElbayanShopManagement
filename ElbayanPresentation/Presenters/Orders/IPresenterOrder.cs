@@ -1,11 +1,8 @@
-﻿using ElbayanServices.Repository.Clints.OrderProcurement.Dtos;
-using Guna.UI2.WinForms;
+﻿using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using ElbayanServices.Repository.Suppliers.OrderProcurement.Dtos;
 
 namespace ElbayaNPresentation.Presenters.Orders
 {

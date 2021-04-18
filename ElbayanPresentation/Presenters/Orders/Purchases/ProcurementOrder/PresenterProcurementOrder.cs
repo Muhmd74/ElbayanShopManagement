@@ -1,23 +1,14 @@
-﻿using DevExpress.XtraReports.UI;
-using ElbayanDatabase.ConnectionTools;
-using ElbayaNPresentation.Presenters.CommonPresenter;
+﻿using ElbayanDatabase.ConnectionTools;
 using ElbayaNPresentation.Presenters.Orders;
 using ElbayaNPresentation.Reports;
-using ElbayaNPresentation.Views.Client;
-using ElbayaNPresentation.Views.Purchases;
-using ElbayanServices.Repository.Clints.OrderProcurement;
-using ElbayanServices.Repository.Clints.OrderProcurement.Dtos;
-using ElbayanServices.Repository.Clints.Supplier;
 using ElbayanServices.Repository.Employees.Employees;
 using ElbayanServices.Repository.Products.Product;
-using ElbayanServices.Repository.Products.Product.Dtos;
 using System;
-using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using ElbayanServices.Repository.Suppliers.OrderProcurement;
+using ElbayanServices.Repository.Suppliers.OrderProcurement.Dtos;
+using ElbayanServices.Repository.Suppliers.Supplier;
 
 namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
 {

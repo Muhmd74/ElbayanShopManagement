@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ElbayanServices.Repository.Clints.Orders.Dtos
 {
-  public class OrderDto
+  public class OrderCustomerDto
     {
       public Guid Id { get; set; }
       public DateTime DateTime { get; set; }
@@ -21,11 +21,11 @@ namespace ElbayanServices.Repository.Clints.Orders.Dtos
       public Guid EmployeeId { get; set; }
 
       //OrderProduct
-      public List<OrderProductDto> OrderProductDto { get; set; }
+      public List<OrderProductCustomerDto> OrderProductDto { get; set; }
 
   }
 
-  public class OrderProductDto
+  public class OrderProductCustomerDto
   {
       public string ProductName { get; set; }
       public Guid ProductId { get; set; }
