@@ -43,7 +43,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.Supplier.AllSuppliers
         // 1 - Create 
         public void OnClickbtnAddNewObject()
         {
-            frmNewClient.Instance.ShowDialog();
+            frmNewSupplier.Instance.ShowDialog();
         }
         // 3- Update
         public void OnDoubleClickdgvActiveObject()
@@ -59,23 +59,23 @@ namespace ElbayaNPresentation.Presenters.Purchases.Supplier.AllSuppliers
         private void OnDoubleCLickDGV(Guid ID)
         {
             var model = supplierService.GetSupplierById(ID);
-            frmNewClient.Instance.ID = model.Id;
-            frmNewClient.Instance.SuppliersName.Text = model.Name;
-            frmNewClient.Instance.IdentityNumber.Text = model.NationalIdentity.ToString();
-            frmNewClient.Instance.IsActive.Checked = model.IsActive;
-            frmNewClient.Instance.FirmName.Text = model.FirmName;
-            frmNewClient.Instance.Address.Text = model.Address;
-            frmNewClient.Instance.TradeLicense.Text = model.CommercialRegister;
-            frmNewClient.Instance.RefSupplierNumber.Text = model.ReferenceNumber.ToString();
-            frmNewClient.Instance.Note.Text = model.Description;
-            frmNewClient.Instance.Mobile.Text = model.Mobile;
-            frmNewClient.Instance.TaxNumber.Text = model.TaxNumber;
-            frmNewClient.Instance.OpeningBalance.Value = model.OpeningBalance;
-            frmNewClient.Instance.Fax.Text = model.FaxNumber;
-            frmNewClient.Instance.FirmPhoneNumber.Text = model.Phone;
+            frmNewSupplier.Instance.ID = model.Id;
+            frmNewSupplier.Instance.SuppliersName.Text = model.Name;
+            frmNewSupplier.Instance.IdentityNumber.Text = model.NationalIdentity.ToString();
+            frmNewSupplier.Instance.IsActive.Checked = model.IsActive;
+            frmNewSupplier.Instance.FirmName.Text = model.FirmName;
+            frmNewSupplier.Instance.Address.Text = model.Address;
+            frmNewSupplier.Instance.TradeLicense.Text = model.CommercialRegister;
+            frmNewSupplier.Instance.RefSupplierNumber.Text = model.ReferenceNumber.ToString();
+            frmNewSupplier.Instance.Note.Text = model.Description;
+            frmNewSupplier.Instance.Mobile.Text = model.Mobile;
+            frmNewSupplier.Instance.TaxNumber.Text = model.TaxNumber;
+            frmNewSupplier.Instance.OpeningBalance.Value = model.OpeningBalance;
+            frmNewSupplier.Instance.Fax.Text = model.FaxNumber;
+            frmNewSupplier.Instance.FirmPhoneNumber.Text = model.Phone;
 
-            frmNewClient.Instance.UpdateObject.Visible = true;
-            frmNewClient.Instance.ShowDialog();
+            frmNewSupplier.Instance.UpdateObject.Visible = true;
+            frmNewSupplier.Instance.ShowDialog();
         }
 
         internal void OnSelectedIndexChanged_TabControl()

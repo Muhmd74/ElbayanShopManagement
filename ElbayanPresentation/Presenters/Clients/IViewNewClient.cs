@@ -24,8 +24,8 @@ namespace ElbayaNPresentation.Presenters.Clients
         Guna2TextBox Address { get; set; }
         Guna2TextBox Note { get; set; }
         CheckBox IsActive { get; set; }
-        bool IsSupplier { get; set; }
-        bool IsCustomer { get; set; }
+        CheckBox IsSupplier { get; set; }
+        CheckBox IsCustomer { get; set; }
         NumericUpDown OpeningBalance { get; set; }
         NumericUpDown CurrentBalance { get; set; }
         Guna2Button AddNewObject { get; set; }
@@ -33,6 +33,5 @@ namespace ElbayaNPresentation.Presenters.Clients
         Guna2Button DeleteObject { get; set; }
         Guna2Button BackToUc { get; set; }
 
-        PresenterNewClient Presenter { get; set; }
     }
 }

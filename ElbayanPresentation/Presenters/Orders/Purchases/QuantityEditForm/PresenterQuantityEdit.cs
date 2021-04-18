@@ -81,7 +81,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.QuantityEditForm
             frmOrderPurchase.Intance.dgvOrderProduct.Rows[index].Cells["Subtotal"].Value = _view.TotalWithVat.Text;
             
             frmOrderPurchase.Intance.Presenter.ClaculateTotalOrderAmount();
-            frmOrderPurchase.Intance.Presenter.SelectLastRow();
+            frmOrderPurchase.Intance.Presenter.SelectLastRow(frmOrderPurchase.Intance.dgvOrderProduct);
         }
     }
 }

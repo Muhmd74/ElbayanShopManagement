@@ -127,7 +127,7 @@ namespace ElbayanServices.Repository.Clints.Customer
         }
         public ClintDto GetCustomerById(Guid id)
         {
-            var customer = _context.Clints.FirstOrDefault(d => d.IsSupplier==false&&d.Id == id);
+            var customer = _context.Clints.FirstOrDefault(d => d.IsCustomer && d.Id == id);
             if (customer!=null)
             {
                 return new ClintDto()
@@ -144,7 +144,9 @@ namespace ElbayanServices.Repository.Clints.Customer
                     OpeningBalance = customer.OpeningBalance,
                     TaxNumber = customer.TaxNumber,
                     Phone = customer.Phone,
-                    FaxNumber = customer.FaxNumber
+                    FaxNumber = customer.FaxNumber,
+                    IsActive = customer.IsActive,
+                    IsCustomer = customer.IsCustomer,
                 };
             }
 
@@ -172,7 +174,7 @@ namespace ElbayanServices.Repository.Clints.Customer
                 return (long)(lastNumber + 1);
             }
 
-            return 201001;
+            return 21001;
         }
 
 
