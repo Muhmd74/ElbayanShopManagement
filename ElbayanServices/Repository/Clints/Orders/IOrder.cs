@@ -5,7 +5,7 @@ namespace ElbayanServices.Repository.Clints.Orders
 {
     public interface IOrder
     {
-        bool CreateCustomerOrder(OrderDto model);
+        bool CreateCustomerOrder(OrderCustomerDto model);
         ProductPriceMovementDto GetProductPriceMovement(Guid productId);
         decimal GetLastProductPrice(Guid productId);
 

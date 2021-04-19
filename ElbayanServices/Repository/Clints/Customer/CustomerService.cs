@@ -4,7 +4,7 @@ using System.Linq;
 using ElbayanDatabase.ConnectionTools;
 using ElbayanDatabase.DataClasses.Clints;
 using ElbayanServices.Repository.Clints.Customer.Dtos;
-using ClintDto = ElbayanServices.Repository.Clints.Supplier.Dtos.ClintDto;
+using ClintDto = ElbayanServices.Repository.Suppliers.Supplier.Dtos.ClintDto;
 
 namespace ElbayanServices.Repository.Clints.Customer
 {

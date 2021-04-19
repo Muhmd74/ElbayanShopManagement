@@ -7,7 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ElbayanServices.Repository.Clints.Poses;
-using ElbayanServices.Repository.Clints.Poses.Dtos;
+using ElbayanServices.Repository.Employees.Poses;
+using ElbayanServices.Repository.Employees.Poses.Dtos;
 
 namespace ElbayaNPresentation.Presenters.Store.Building.POS
 {

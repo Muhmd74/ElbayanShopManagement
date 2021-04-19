@@ -1,20 +1,13 @@
 ﻿using ElbayanDatabase.ConnectionTools;
-using ElbayaNPresentation.Presenters.CommonPresenter;
 using ElbayaNPresentation.Presenters.Orders;
-using ElbayaNPresentation.Presenters.Purchases.ProcurementOrder;
-using ElbayaNPresentation.Views.Client;
-using ElbayaNPresentation.Views.Purchases.Procurement;
 using ElbayanServices.Repository.Clints.Customer;
-using ElbayanServices.Repository.Clints.OrderProcurement.Dtos;
 using ElbayanServices.Repository.Clints.Orders;
 using ElbayanServices.Repository.Employees.Employees;
 using ElbayanServices.Repository.Products.Product;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using ElbayanServices.Repository.Suppliers.OrderProcurement.Dtos;
 
 namespace ElbayaNPresentation.Presenters.Sales.OrderSales
 {

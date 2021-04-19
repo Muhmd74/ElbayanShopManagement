@@ -1,20 +1,16 @@
 ﻿using ElbayaNPresentation.Presenters.CommonPresenter;
-using ElbayanServices.Repository.Clints.OrderProcurement.Dtos;
-using ElbayaNPresentation.Presenters.Orders;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ElbayanDatabase.ConnectionTools;
 using ElbayanServices.Repository.Employees.Employees;
 using ElbayanServices.Repository.Products.Product;
 using ElbayaNPresentation.Views.Client;
 using Guna.UI2.WinForms;
-using ElbayanServices.Repository.Products.Product.Dtos;
 using ProductDto = ElbayanServices.Repository.Products.Product.Dtos.ProductDto;
 using ElbayaNPresentation.Views.Purchases;
+using ElbayanServices.Repository.Clints.Orders.Dtos;
+using ElbayanServices.Repository.Suppliers.OrderProcurement.Dtos;
 
 namespace ElbayaNPresentation.Presenters.Orders
 {

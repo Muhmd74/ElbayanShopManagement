@@ -13,7 +13,7 @@ namespace ElbayanServices.Repository.Products.ProductStock
         List<ProductStockDetails> GetAllProductStockDetails();
         List<ProductStockDetails> GetAllProductStockDetailsByDateTime(DateTime? firstDateTime , DateTime? lastDateTime,string orderType, Guid? productId);
         List<ProductStockDetails> GetAllProductStockDetailsByType(string orderType);
-        List<ProductStockDetails> GetAllProductStockDetailsSearch(string productName,long barCode);
+        List<ProductStockDetails> GetAllProductStockDetailsSearch(string productName,long? barCode);
         int GetProductQuantity(Guid productId);
     }
 }

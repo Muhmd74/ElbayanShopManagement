@@ -104,7 +104,7 @@ namespace ElbayanServices.Repository.Products.ProductStock
 
                 }).ToList();
         }
-        public List<ProductStockDetails> GetAllProductStockDetailsSearch(string productName, long barCode)
+        public List<ProductStockDetails> GetAllProductStockDetailsSearch(string productName, long? barCode)
         {
             return _context.ProductStocks
                 .Include(d => d.Product.LargeUnit)

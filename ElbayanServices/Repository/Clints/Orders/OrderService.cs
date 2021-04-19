@@ -43,7 +43,7 @@ namespace ElbayanServices.Repository.Clints.Orders
             return 0;
         }
 
-        public bool CreateCustomerOrder(OrderDto model)
+        public bool CreateCustomerOrder(OrderCustomerDto model)
         {
 
             var order = _context.Orders.Add(new Order
@@ -121,7 +121,7 @@ namespace ElbayanServices.Repository.Clints.Orders
             product.TotalQuantity = productQuantity;
         }
 
-        private void CreateProductOrder(OrderProductDto model,Guid orderId)
+        private void CreateProductOrder(OrderProductCustomerDto model,Guid orderId)
         {
             var productOrder = _context.OrderProducts.Add(new OrderProduct()
             {
@@ -146,11 +146,10 @@ namespace ElbayanServices.Repository.Clints.Orders
                 Payment = 0,
                 OrderId = orderId,
                 DeferredOfOrder = deferred,
-                CollectingPaymentDate = DateTime.UtcNow,
+                CreatedDate = DateTime.UtcNow,
                 DueDatePayingOff = dueDatePayingOff,
                 TotalPayment = 0,
                 ClintId = clintId,
-                PaymentPerMonth = paymentPerMonth
             });
             _context.SaveChanges();
         }

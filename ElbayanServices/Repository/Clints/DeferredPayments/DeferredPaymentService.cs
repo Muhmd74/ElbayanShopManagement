@@ -21,23 +21,21 @@ namespace ElbayanServices.Repository.Clints.DeferredPayments
             // ReSharper disable once PossibleNullReferenceException
             //Create this function In Order 
             var deferredPayment = _context.Orders.FirstOrDefault(d => d.Id == model.OrderId&&d.IsDeferred);
-            if (deferredPayment!=null)
-            {
+            //if (deferredPayment!=null)
+            //{
                 var payment = _context.DeferredPayments.Add(new DeferredPayment()
                 {
                     Balance = model.Balance,
                     Payment = model.Payment,
                     OrderId = model.OrderId,
                     DeferredOfOrder = deferredPayment.Deferred,
-                    CollectingPaymentDate = DateTime.UtcNow,
+                    CreatedDate = DateTime.UtcNow,
                     DueDatePayingOff = model.DueDatePayingOff,
                     TotalPayment = model.TotalPayment
                 });
                 _context.SaveChanges();
                 return true;
-            }
-
-            return false;
+            //}
         }
 
         public bool PayingDeferred(SupplierDeferredPaymentDto model)
@@ -48,7 +46,7 @@ namespace ElbayanServices.Repository.Clints.DeferredPayments
                     Balance =- model.Balance,
                     Payment = model.Payment,
                     OrderId = model.OrderId,
-                    CollectingPaymentDate = DateTime.UtcNow,
+                    CreatedDate = DateTime.UtcNow,
                     DueDatePayingOff = model.DueDatePayingOff,
                     TotalPayment =+ model.TotalPayment ,
                     ClintId = model.ClintId
@@ -65,7 +63,7 @@ namespace ElbayanServices.Repository.Clints.DeferredPayments
             {
                 deferredPayment.Payment = model.Payment;
                 deferredPayment.Balance = model.Balance;
-                deferredPayment.CollectingPaymentDate=DateTime.UtcNow;
+                deferredPayment.CreatedDate=DateTime.UtcNow;
                 deferredPayment.DueDatePayingOff = model.DueDatePayingOff;
                 deferredPayment.TotalPayment += model.Payment;
                 _context.SaveChanges();

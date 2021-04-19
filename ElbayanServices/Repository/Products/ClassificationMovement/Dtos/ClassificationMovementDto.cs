@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ElbayanServices.Repository.Products.ClassificationMovement.Dtos
+{
+   public class ClassificationMovementDto
+    {
+        public string ProductName { get; set; }
+        public string UserName { get; set; }
+        public string UnitName { get; set; }
+        public string CategoryName { get; set; }
+        public string SubCategoryName { get; set; }
+        public string OrderType { get; set; }
+        public long? OrderNumber { get; set; }
+        public DateTime? DateTime { get; set; }
+        public int? QuantityInStore { get; set; }
+
+        public long? BarCode { get; set; }
+        public long? ProductNumber { get; set; }
+        public string StockStatues { get; set; }
+    }
+}

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ElbayanServices.Repository.Suppliers.Supplier.Dtos;
 
 namespace ElbayaNPresentation.Presenters.Clients.Customers
 {
@@ -62,7 +63,7 @@ namespace ElbayaNPresentation.Presenters.Clients.Customers
         }
         private void CreateCustomer()
         {
-            Client.CreateCustomer(new ElbayanServices.Repository.Clints.Supplier.Dtos.ClintDto
+            Client.CreateCustomer(new ClintDto
             {
                 Name = _view.SuppliersName.Text,
                 NationalIdentity = Convert.ToInt32(_view.IdentityNumber.Text),
@@ -84,7 +85,7 @@ namespace ElbayaNPresentation.Presenters.Clients.Customers
         // 2. Update Current Object:
         private void UpdateClient()
         {
-            Client.UpdateCustomer(new ElbayanServices.Repository.Clints.Supplier.Dtos.ClintDto
+            Client.UpdateCustomer(new ClintDto
             {
                 Id = _view.ID,
                 Name = _view.SuppliersName.Text,
