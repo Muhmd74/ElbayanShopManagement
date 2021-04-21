@@ -11,6 +11,7 @@ namespace ElbayanServices.Repository.Suppliers.SupplierMovement
         GetSupplierPaymentByUserDto GetLastPaymentByUserId(Guid clintId);
         PrintInvoicePaymentOnceDto PrintInvoicePaymentOnce(Guid id);
         List<SupplierMovementDto> GetAllSupplierMovement();
+        List<GetAllMovementOrderInOneDayDto> GetAllMovementOrderInOneDay();
         List<SupplierMovementDto> GetAllSupplierMovementByClintId(Guid clintId);
         List<SupplierMovementDto> FilterPaymentsByDate( DateTime firstDate, DateTime lastDate, Guid? clintId, string paymentType);
     }

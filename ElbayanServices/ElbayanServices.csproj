@@ -93,6 +93,7 @@
     <Compile Include="Repository\Suppliers\OrderReturn\Dtos\OrderReturnDto.cs" />
     <Compile Include="Repository\Suppliers\OrderReturn\IOrderReturn.cs" />
     <Compile Include="Repository\Suppliers\OrderReturn\SupplierOrderReturnService.cs" />
+    <Compile Include="Repository\Suppliers\SupplierMovement\Dto\GetAllMovementOrderInOneDayDto.cs" />
     <Compile Include="Repository\Suppliers\SupplierMovement\Dto\GetSupplierPaymentByUserDto.cs" />
     <Compile Include="Repository\Suppliers\SupplierMovement\Dto\PaymentAllDeferredDto.cs" />
     <Compile Include="Repository\Suppliers\SupplierMovement\Dto\PrintInvoicePaymentOnceDto.cs" />

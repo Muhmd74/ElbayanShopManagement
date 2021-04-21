@@ -136,6 +136,31 @@ namespace ElbayanServices.Repository.Suppliers.SupplierMovement
             }
         }
 
+        public List<GetAllMovementOrderInOneDayDto> GetAllMovementOrderInOneDay()
+        {
+            return _context.ProductStocks
+                .Include(d => d.Product.LargeUnit)
+                .Include(d => d.Product.SmallUnit)
+                .Include(d => d.Order.Clint)
+                .OrderByDescending(d => d.DateTime)
+                .Where(d=>d.DateTime==DateTime.Today)
+                .Select(d =>  new GetAllMovementOrderInOneDayDto
+                {
+                    DateTime = d.DateTime,
+                    Quantity = d.Stock,
+                    OrderNumber = d.Order.OrderNumber,
+                    OrderType = d.Order.OrderType,
+                    ProductName = d.Product.Name,
+                    UnitName = d.Product.IsUnitSale ? d.Product.LargeUnit.Name : d.Product.SmallUnit.Name,
+                    UserName = d.Order.Clint.Name,
+                    BarCode = d.Product.BarCode,
+                    ProductNumber = d.Product.ProductNumber,
+                    Deferred = d.Order.Deferred,
+                    Payment = d.Order.Payment
+
+                }).ToList();
+        }
+
         public List<SupplierMovementDto> GetAllSupplierMovementByClintId(Guid clintId)
         {
             try
