@@ -259,6 +259,12 @@
     <Compile Include="Views\Purchases\EditQuantity.Designer.cs">
       <DependentUpon>EditQuantity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Purchases\Procurement\frmPurchaseMovement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Purchases\Procurement\frmPurchaseMovement.Designer.cs">
+      <DependentUpon>frmPurchaseMovement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Purchases\Procurement\frmPurchaseReturns.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -276,6 +282,12 @@
     </Compile>
     <Compile Include="Views\Client\Suppliers\frmSupplierDebits.Designer.cs">
       <DependentUpon>frmSupplierDebits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Purchases\Procurement\frmPurchasesDailyMovements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Purchases\Procurement\frmPurchasesDailyMovements.Designer.cs">
+      <DependentUpon>frmPurchasesDailyMovements.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Sales\OrderSales\frmOrderSalese.cs">
       <SubType>Form</SubType>
@@ -406,6 +418,9 @@
     <EmbeddedResource Include="Views\Purchases\EditQuantity.resx">
       <DependentUpon>EditQuantity.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Purchases\Procurement\frmPurchaseMovement.resx">
+      <DependentUpon>frmPurchaseMovement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Purchases\Procurement\frmPurchaseReturns.resx">
       <DependentUpon>frmPurchaseReturns.cs</DependentUpon>
     </EmbeddedResource>
@@ -414,6 +429,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Client\Suppliers\frmSupplierDebits.resx">
       <DependentUpon>frmSupplierDebits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Purchases\Procurement\frmPurchasesDailyMovements.resx">
+      <DependentUpon>frmPurchasesDailyMovements.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Sales\OrderSales\frmOrderSalese.resx">
       <DependentUpon>frmOrderSalese.cs</DependentUpon>
