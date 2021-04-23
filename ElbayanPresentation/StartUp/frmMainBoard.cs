@@ -25,6 +25,7 @@ using ElbayaNPresentation.Views.Settings.Firm;
 using ElbayaNPresentation.Views.Client;
 using ElbayaNPresentation.Views.Client.Customers;
 using ElbayaNPresentation.Views.Purchases.Suppliers;
+using ElbayaNPresentation.Views.Purchases;
 
 namespace ElbayaNPresentation
 {
@@ -336,6 +337,41 @@ namespace ElbayaNPresentation
             }
             frmCustomerDeferred.Instance.BringToFront();
             frmCustomerDeferred.Instance.Show();
+        }
+
+        private void barButtonItem16_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmPurchaseReturns.Instance.ShowDialog();
+        }
+
+        private void barButtonItem31_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!this.gcContainer.Controls.Contains(frmPurchasesDailyMovements.Instance))
+            {
+                frmPurchasesDailyMovements.Instance.TopLevel = false;
+                frmPurchasesDailyMovements.Instance.TopMost = false;
+                this.gcContainer.Controls.Add(frmPurchasesDailyMovements.Instance);
+                frmPurchasesDailyMovements.Instance.Dock = DockStyle.Fill;
+                frmPurchasesDailyMovements.Instance.BringToFront();
+                frmPurchasesDailyMovements.Instance.Show();
+            }
+            frmPurchasesDailyMovements.Instance.BringToFront();
+            frmPurchasesDailyMovements.Instance.Show();
+        }
+
+        private void barButtonItem32_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!this.gcContainer.Controls.Contains(frmPurchaseMovement.Instance))
+            {
+                frmPurchaseMovement.Instance.TopLevel = false;
+                frmPurchaseMovement.Instance.TopMost = false;
+                this.gcContainer.Controls.Add(frmPurchaseMovement.Instance);
+                frmPurchaseMovement.Instance.Dock = DockStyle.Fill;
+                frmPurchaseMovement.Instance.BringToFront();
+                frmPurchaseMovement.Instance.Show();
+            }
+            frmPurchaseMovement.Instance.BringToFront();
+            frmPurchaseMovement.Instance.Show();
         }
     }
 }

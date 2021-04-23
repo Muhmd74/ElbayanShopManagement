@@ -15,7 +15,7 @@ namespace ElbayanServices.Repository.Clints.DeferredPayments
         {
             _context = context;
         }
-
+        
         public bool Create(SupplierDeferredPaymentDto model)
         {
             // ReSharper disable once PossibleNullReferenceException
