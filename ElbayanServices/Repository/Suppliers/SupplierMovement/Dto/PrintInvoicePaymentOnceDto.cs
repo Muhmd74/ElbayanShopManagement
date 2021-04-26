@@ -19,6 +19,7 @@ namespace ElbayanServices.Repository.Suppliers.SupplierMovement.Dto
         public string? PaymentType { get; set; }// نوع الدفع كاش ولا بنك 
         public decimal? TotalPayment { get; set; } //ناتج جمع الدفعات //دائن  
         public decimal? Balance { get; set; }// ناتج الديون بعد طرع الدفعات منها مدين  in add DeferredOfOrder in update Balance - Payment
+        public decimal LastBalance { get; set; }
         public DateTime DueDatePayingOff { get; set; }
         public DateTime CollectingPaymentDate { get; set; }
         public Guid? ClintId { get; set; }

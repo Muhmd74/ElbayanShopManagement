@@ -9,7 +9,7 @@ namespace ElbayaNPresentation.Presenters.Orders
     public interface IPresenterOrder
     {
         string PopulateUser();
-        void PopulateClient(object source, ComboBox cbxSupplier);
+        void PopulateClient(ComboBox cbxSupplier);
         void NewSupplier_OnCLick(object sender, EventArgs e);
         void PrintInvioce(Guid iD);
         List<OrderProductDto> GetOrderProducts(DataGridView OrderProduct);

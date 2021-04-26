@@ -11,12 +11,10 @@ namespace ElbayanServices.Repository.Suppliers.SupplierMovement
     public class SupplierMovementService : ISupplierMovement, IDisposable
     {
         private readonly ConnectionOption _context;
-
         public SupplierMovementService(ConnectionOption context)
         {
             _context = context;
         }
-
         public Guid CreatePayment(SupplierMovementCreateDto model)
         {
             var payment = _context.DeferredPayments.Add(new DeferredPayment()
@@ -33,24 +31,22 @@ namespace ElbayanServices.Repository.Suppliers.SupplierMovement
             });
             return payment.Id;
         }
-
         public Guid PaymentAllDeferred(PaymentAllDeferredDto model)
         {
             var payment = _context.DeferredPayments.Add(new DeferredPayment()
             {
                 Payment = GetBalance(model.ClintId),
-                Balance = GetBalance(model.ClintId),
+                Balance = 0,
                 Description = model.Description,
                 ClintId = model.ClintId,
                 CreatedDate = DateTime.Now,
                 DueDatePayingOff = DateTime.Now,
                 PaymentType = model.PaymentType,
-                TotalPayment = GetBalance(model.ClintId),
+                TotalPayment = model.TotalPayment,
                 DepositNumber = model.DepositNumber
             });
             return payment.Id;
         }
-
         public decimal GetBalance(Guid? clintId)
         {
             var model = _context.DeferredPayments.OrderByDescending(d => d.CreatedDate)
@@ -58,9 +54,7 @@ namespace ElbayanServices.Repository.Suppliers.SupplierMovement
             if (model != null)
             {
                 return model.Balance;
-
             }
-
             return 0;
         }
         public GetSupplierPaymentByUserDto GetLastPaymentByUserId(Guid clintId)
@@ -80,7 +74,6 @@ namespace ElbayanServices.Repository.Suppliers.SupplierMovement
             }
             return null;
         }
-
         public PrintInvoicePaymentOnceDto PrintInvoicePaymentOnce(Guid id)
         {
             var firm = _context.Firms.FirstOrDefault();
@@ -104,13 +97,13 @@ namespace ElbayanServices.Repository.Suppliers.SupplierMovement
                     TotalPayment = deferredPayments.TotalPayment,
                     DueDatePayingOff = deferredPayments.DueDatePayingOff,
                     CollectingPaymentDate = deferredPayments.CreatedDate,
-                    Description = deferredPayments.Description
+                    Description = deferredPayments.Description,
+                    LastBalance = 0m
                 };
             }
 
             return null;
         }
-
         public List<SupplierMovementDto> GetAllSupplierMovement()
         {
             try
@@ -135,7 +128,6 @@ namespace ElbayanServices.Repository.Suppliers.SupplierMovement
                 return null;
             }
         }
-
         public List<GetAllMovementOrderInOneDayDto> GetAllMovementOrderInOneDay()
         {
             return _context.ProductStocks
@@ -160,7 +152,6 @@ namespace ElbayanServices.Repository.Suppliers.SupplierMovement
 
                 }).ToList();
         }
-
         public List<SupplierMovementDto> GetAllSupplierMovementByClintId(Guid clintId)
         {
             try
@@ -186,7 +177,6 @@ namespace ElbayanServices.Repository.Suppliers.SupplierMovement
                 return null;
             }
         }
-
         public List<SupplierMovementDto> FilterPaymentsByDate(DateTime firstDate, DateTime lastDate, Guid? clintId, string paymentType)
         {
             try
@@ -214,8 +204,6 @@ namespace ElbayanServices.Repository.Suppliers.SupplierMovement
                 return null;
             }
         }
-
-
         public void Dispose()
         {
             _context.Dispose();

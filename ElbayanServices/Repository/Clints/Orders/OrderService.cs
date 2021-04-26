@@ -34,7 +34,8 @@ namespace ElbayanServices.Repository.Clints.Orders
 
         public decimal GetLastProductPrice(Guid productId)
         {
-            var product = _context.ProductPrices.OrderByDescending(d=>d.DateTime).FirstOrDefault(d => d.Id == productId);
+            var product = _context.ProductPrices.OrderByDescending(d=>d.DateTime).FirstOrDefault(d => d.Id == productId 
+            && d.ProcessType == "مبيعات");
             if (product!=null)
             {
                 return product.ProcPrice;

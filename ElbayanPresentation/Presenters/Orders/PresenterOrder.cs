@@ -23,12 +23,9 @@ namespace ElbayaNPresentation.Presenters.Orders
         {
             PopulateActiveProduct.PopulateProducts(cbxProduct);
         }
-        public void PopulateClient(object source, ComboBox cbxSupplier)
+        public void PopulateClient(ComboBox Suppliers)
         {
-            cbxSupplier.DisplayMember = "Name";
-            cbxSupplier.ValueMember = "Id";
-            cbxSupplier.SelectedValue = "Id";
-            cbxSupplier.DataSource = source;
+            PopulateActiveSuppliers.PopulateSuppliers(Suppliers);
         }
         public void AddProductToDGV(Guid ID, DataGridView OrderProduct, decimal LastPrice)
         {

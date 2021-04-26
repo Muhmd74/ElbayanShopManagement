@@ -149,10 +149,6 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
         {
             this.Close();
         }
-        private void btnNewOrder_Click(object sender, EventArgs e)
-        {
-            Presenter.ClearControl();
-        }
         private void cbxActiveProduct_Leave(object sender, EventArgs e)
         {
             if (this.cbxActiveProduct.Text != string.Empty)
@@ -171,6 +167,11 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             //ReportPrintTool printTools = new ReportPrintTool(Presenter.PrintReport());
             //printTools.ShowPreview();
             //Presenter.PrintReport();
+        }
+
+        private void btnNewOrder_Click(object sender, EventArgs e)
+        {
+            Presenter.ClearControl();
         }
     }
 }
