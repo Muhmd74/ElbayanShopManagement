@@ -119,6 +119,7 @@
     <Compile Include="Presenters\CommonPresenter\DataGridViewStyle.cs" />
     <Compile Include="Presenters\CommonPresenter\NullableNumber.cs" />
     <Compile Include="Presenters\CommonPresenter\PopulateActiveProduct.cs" />
+    <Compile Include="Presenters\CommonPresenter\PopulateActiveClients.cs" />
     <Compile Include="Presenters\CommonPresenter\ValidateControls.cs" />
     <Compile Include="Presenters\Finance\Employee\ALLEmployee\IViewAllEmployee.cs" />
     <Compile Include="Presenters\Finance\Employee\ALLEmployee\PresenterAllEmployee.cs" />

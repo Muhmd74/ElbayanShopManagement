@@ -263,7 +263,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.cbxSupplier.FormattingEnabled = true;
             this.cbxSupplier.IntegralHeight = false;
             this.cbxSupplier.ItemHeight = 31;
-            this.cbxSupplier.Location = new System.Drawing.Point(57, 28);
+            this.cbxSupplier.Location = new System.Drawing.Point(57, 32);
             this.cbxSupplier.Name = "cbxSupplier";
             this.cbxSupplier.Size = new System.Drawing.Size(277, 39);
             this.cbxSupplier.TabIndex = 10;
@@ -278,10 +278,10 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             this.btnAddNewSupplier.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddNewSupplier.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnAddNewSupplier.HoverState.Parent = this.btnAddNewSupplier;
-            this.btnAddNewSupplier.Location = new System.Drawing.Point(8, 36);
+            this.btnAddNewSupplier.Location = new System.Drawing.Point(8, 32);
             this.btnAddNewSupplier.Name = "btnAddNewSupplier";
             this.btnAddNewSupplier.ShadowDecoration.Parent = this.btnAddNewSupplier;
-            this.btnAddNewSupplier.Size = new System.Drawing.Size(43, 31);
+            this.btnAddNewSupplier.Size = new System.Drawing.Size(43, 35);
             this.btnAddNewSupplier.TabIndex = 9;
             this.btnAddNewSupplier.Text = "+";
             // 

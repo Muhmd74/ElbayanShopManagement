@@ -21,4 +21,5 @@ namespace ElbayaNPresentation.Presenters.CommonPresenter
             activeProduct.SelectedValue = "Id";
         }
     }
+
 }

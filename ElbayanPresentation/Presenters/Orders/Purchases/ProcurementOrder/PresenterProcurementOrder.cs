@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using ElbayanServices.Repository.Suppliers.OrderProcurement;
 using ElbayanServices.Repository.Suppliers.OrderProcurement.Dtos;
 using ElbayanServices.Repository.Suppliers.Supplier;
+using ElbayaNPresentation.Presenters.CommonPresenter;
+using System.Collections.Generic;
 
 namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
 {
@@ -28,21 +30,23 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
         // Load Data :
         internal void OnLoad()
         {
-            var model = Supplier.GetAllSupplier();
-            PopulateClient(model, _view.Suppliers);
+            PopulateActiveClients.PopulateSuppliers(_view.Suppliers);
             _view.UserName.Text = PopulateUser();
             FillProduct(_view.Products);
             _view.OrderNumber.Text = orderProcuremnt.GenerateSequenceNumberSupplier().ToString();
+            // Date Time . Now
+            _view.OrderDate.Value = DateTime.Now;
+            _view.OrderDeferredDate.Value = DateTime.Now;
         }
         // Event Handler : 
         void EventHandler()
         {
             _view.NewSupplier.Click += new EventHandler(NewSupplier_OnCLick);
             _view.Suppliers.SelectionChangeCommitted += new EventHandler(cbxSupplier_SelectionChangeCommitted);
-            _view.PrintOrder.Click += new EventHandler(onPrintbtnClick);
             _view.DeleteProductFromOrder.Click += new EventHandler(DeleteFrombtn_OnClick);
             _view.AddNewProductDGV.Click += new EventHandler(btnAddToDGV_OnClick);
             _view.BareCode.KeyDown += new KeyEventHandler(txtProductBarcode_KeyDown);
+            _view.PrintOrder.Click += new EventHandler(onPrintbtnClick);
         }
         public override void cbxSupplier_SelectionChangeCommitted(object sender, EventArgs e)
         {
@@ -58,26 +62,6 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
                 _view.Paid.Text = "0.0";
             }
             ClaculateTotalOrderAmount();
-        }
-        internal void txtProductBarcode_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.F1)
-            {
-                var model = GetProductID(_view.BareCode);
-                if (model != null)
-                {
-                    Guid ID = model.Id;
-                    decimal lastPurchasePrice = orderProcuremnt.GetLastProductPrice(ID);
-                    AddProductToDGV(ID, _view.OrderProduct, lastPurchasePrice);
-                    ClaculateTotalOrderAmount();
-                }
-                else
-                {
-                    MessageBox.Show("يجب ادخال رقم منتج صحيح", "تأكيد");
-                    return;
-                }
-
-            }
         }
         internal void btnAddToDGV_OnClick(object sender, EventArgs e)
         {
@@ -111,16 +95,24 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
                 return;
             }
         }
-        private void onPrintbtnClick(object sender, EventArgs e)
+        internal void txtProductBarcode_KeyDown(object sender, KeyEventArgs e)
         {
-            if (_view.ID != null)
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.F1)
             {
-                PrintInvioce(_view.ID);
-            }
-            else
-            {
-                MessageBox.Show("لا بد من حفظ الفاتورة أولا ");
-                return;
+                var model = GetProductID(_view.BareCode);
+                if (model != null)
+                {
+                    Guid ID = model.Id;
+                    decimal lastPurchasePrice = orderProcuremnt.GetLastProductPrice(ID);
+                    AddProductToDGV(ID, _view.OrderProduct, lastPurchasePrice);
+                    ClaculateTotalOrderAmount();
+                }
+                else
+                {
+                    MessageBox.Show("يجب ادخال رقم منتج صحيح", "تأكيد");
+                    return;
+                }
+
             }
         }
         internal void CreateClientOrder()
@@ -129,18 +121,17 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
             {
                 if (_view.Suppliers.SelectedIndex != -1)
                 {
-                    if (Convert.ToDecimal(_view.Deferred.Text) == 0 || _view.IsDeferred.Checked == true)
+                    if (Convert.ToDecimal(_view.Deferred.Text) != 0 && _view.IsDeferred.Checked == false)
+                    {
+                        MessageBox.Show("كرما اختر الفاتورة أجل أو ادفع المبلغ كاملا");
+                        return; 
+                    }
+                    else
                     {
                         _view.ID = CreatePorcurementOrder();
                         //PrintInvioce(_view.ID);
                         ClearControl();
                     }
-                    else
-                    {
-                        MessageBox.Show("كرما اختر الفاتورة أجل أو ادفع المبلغ كاملا");
-                        return;
-                    }
-
                 }
                 else
                 {
@@ -175,6 +166,42 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
             });
             return newOrder;
         }
+        public List<OrderProductDto> GetOrderProducts(DataGridView OrderProduct)
+        {
+            List<OrderProductDto> orderProducts = new List<OrderProductDto>();
+            for (int i = 0; i <= OrderProduct.Rows.Count - 1; i++)
+            {
+                var orderProduct = new OrderProductDto()
+                {
+                    ProductId = new Guid(OrderProduct.Rows[i].Cells["OrderProductId"].Value.ToString()),
+                    ProductName = OrderProduct.Rows[i].Cells["ProductName"].Value.ToString(),
+                    Discount = Convert.ToDecimal(OrderProduct.Rows[i].Cells["Discount"].Value.ToString()),
+                    PriceSale = Convert.ToDecimal(OrderProduct.Rows[i].Cells["PriceTOQuantity"].Value.ToString()),
+                    Quantity = Convert.ToInt32(OrderProduct.Rows[i].Cells["Qunatity"].Value),
+                    SubTotalPrice = Convert.ToDecimal(OrderProduct.Rows[i].Cells["Qunatity"].Value.ToString()) *
+                                     Convert.ToDecimal(OrderProduct.Rows[i].Cells["PriceTOQuantity"].Value.ToString()),
+                    TotalPrice = (Convert.ToDecimal(OrderProduct.Rows[i].Cells["Qunatity"].Value.ToString()) *
+                                     Convert.ToDecimal(OrderProduct.Rows[i].Cells["PriceTOQuantity"].Value.ToString()))
+                                     + Convert.ToDecimal(OrderProduct.Rows[i].Cells["VATValue"].Value.ToString()),
+                    TotalProductPrice = Convert.ToDecimal(OrderProduct.Rows[i].Cells["Subtotal"].Value),
+                    Vat = Convert.ToDecimal(OrderProduct.Rows[i].Cells["VATValue"].Value)
+                };
+                orderProducts.Add(orderProduct);
+            }
+            return orderProducts;
+        }
+        private void onPrintbtnClick(object sender, EventArgs e)
+        {
+            if (_view.ID != null)
+            {
+                PrintInvioce(_view.ID);
+            }
+            else
+            {
+                MessageBox.Show("لا بد من حفظ الفاتورة أولا ");
+                return;
+            }
+        }
         private new void PrintInvioce(Guid ID)
         {
             var ds = orderProcuremnt.PrintInvoice(ID);
@@ -182,31 +209,27 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
         }
         internal void ClaculateTotalOrderAmount()
         {
-            try
+            decimal TotalOrderWithoutDiscount = 0;
+            decimal TotalOrderDiscount = 0;
+            decimal TotalOrderWithDiscount = 0;
+            decimal TotalVATValue = 0;
+            for (int i = 0; i <= _view.OrderProduct.Rows.Count - 1; i++)
             {
-
-                decimal TotalOrderWithoutDiscount = 0;
-                decimal TotalOrderDiscount = 0;
-                decimal TotalOrderWithDiscount = 0;
-                decimal TotalVATValue = 0;
-                for (int i = 0; i <= _view.OrderProduct.Rows.Count - 1; i++)
-                {
-                    decimal PriceQauntity = Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["PriceTOQuantity"].Value)
-                        * Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["Qunatity"].Value);
-                    TotalOrderWithoutDiscount += PriceQauntity;
-                    TotalOrderDiscount += Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["Discount"].Value);
-                    TotalOrderWithDiscount += Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["Subtotal"].Value);
-                    TotalVATValue += Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["VATValue"].Value);
-                }
-                _view.TotalOrderWithoutDiscount.Text = Math.Round(TotalOrderWithoutDiscount, 2).ToString();
-                _view.TotalOrderDiscount.Text = Math.Round(TotalOrderDiscount, 2).ToString();
-                _view.TotalOrderWithDiscount.Text = Math.Round(TotalOrderWithDiscount, 2).ToString();
-                _view.TotalOrderVAT.Text = Math.Round(TotalVATValue, 2).ToString();
-                _view.TotalOrderWithoutVAT.Text = Math.Round(TotalOrderWithDiscount - TotalVATValue, 2).ToString();
-
-                _view.Deferred.Text = Math.Round(TotalOrderWithDiscount - Convert.ToDecimal(_view.Paid.Text), 2).ToString();
+                decimal PriceQauntity = Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["PriceTOQuantity"].Value)
+                    * Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["Qunatity"].Value);
+                TotalOrderWithoutDiscount += PriceQauntity;
+                TotalOrderDiscount += Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["Discount"].Value);
+                TotalOrderWithDiscount += Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["Subtotal"].Value);
+                TotalVATValue += Convert.ToDecimal(_view.OrderProduct.Rows[i].Cells["VATValue"].Value);
             }
-            catch (Exception) { }
+            _view.TotalOrderWithoutDiscount.Text = Math.Round(TotalOrderWithoutDiscount, 2).ToString();
+            _view.TotalOrderDiscount.Text = Math.Round(TotalOrderDiscount, 2).ToString();
+            _view.TotalOrderWithDiscount.Text = Math.Round(TotalOrderWithDiscount, 2).ToString();
+            _view.TotalOrderVAT.Text = Math.Round(TotalVATValue, 2).ToString();
+            _view.TotalOrderWithoutVAT.Text = Math.Round(TotalOrderWithDiscount - TotalVATValue, 2).ToString();
+            decimal Paid = Convert.ToDecimal(_view.Paid.Text);
+            _view.Deferred.Text = Math.Round(TotalOrderWithDiscount - Paid, 2).ToString();
+
         }
         internal void ClearControl()
         {
@@ -215,7 +238,6 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
             _view.Products.SelectedIndex = -1;
             _view.BareCode.Clear();
             _view.BareCode.Select();
-            _view.Paid.Clear();
             _view.BareCode.Focus();
             _view.Suppliers.Text = "";
             _view.IsDeferred.Checked = false;

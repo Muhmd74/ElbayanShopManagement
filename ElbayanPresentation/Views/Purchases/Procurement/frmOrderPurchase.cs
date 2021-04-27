@@ -94,6 +94,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
                     {
                         //RowIndex = dgvOrderProduct.SelectedRows[0].Index;
                         Presenter.PopulateQualityEdit(dgvOrderProduct);
+                        frmEditQuantity.Instance.IsPurchase = true;
                         frmEditQuantity.Instance.ShowDialog();
                     }
                     else
@@ -121,6 +122,7 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
                 if (dgvOrderProduct.SelectedRows.Count > 0)
                 {
                     Presenter.PopulateQualityEdit(dgvOrderProduct);
+                    frmEditQuantity.Instance.IsPurchase = true;
                     frmEditQuantity.Instance.ShowDialog();
                 }
                 else

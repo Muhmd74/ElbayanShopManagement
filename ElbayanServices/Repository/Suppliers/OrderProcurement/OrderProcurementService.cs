@@ -102,7 +102,7 @@ namespace ElbayanServices.Repository.Suppliers.OrderProcurement
                 DueDatePayingOff = dueDatePayingOff,
                 TotalPayment = 0,
                 ClintId = clintId,
-                PaymentType = "دفع اجل"
+                PaymentType = "مشتريات اجل"
             });
             _context.SaveChanges();
         }
@@ -185,7 +185,6 @@ namespace ElbayanServices.Repository.Suppliers.OrderProcurement
             {
                 var inovioce =  new InvoiceDetailsDto()
                 {
-
                     FirmName = firm.Name,
                     LogoInvoice = firm.LogoInvoice,
                     MessageInvoice = firm.MessageInvoice,
