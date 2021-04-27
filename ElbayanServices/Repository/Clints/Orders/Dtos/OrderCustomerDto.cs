@@ -34,7 +34,7 @@ namespace ElbayanServices.Repository.Clints.Orders.Dtos
       public decimal SubTotalPrice { get; set; } // Quantity * PriceSale 
       public decimal Discount { get; set; }
       public decimal TotalProductPrice { get; set; } // subtotal-Discount
-      public int Vat { get; set; } // price * vat in Product /100 
+      public decimal Vat { get; set; } // price * vat in Product /100 
       public decimal TotalPrice { get; set; } // TotalProductPrice + vat
       public Guid OrderId { get; set; }
   }

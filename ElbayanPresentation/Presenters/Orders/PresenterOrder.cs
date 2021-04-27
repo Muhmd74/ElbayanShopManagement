@@ -9,7 +9,6 @@ using ElbayaNPresentation.Views.Client;
 using Guna.UI2.WinForms;
 using ProductDto = ElbayanServices.Repository.Products.Product.Dtos.ProductDto;
 using ElbayaNPresentation.Views.Purchases;
-using ElbayanServices.Repository.Clints.Orders.Dtos;
 using ElbayanServices.Repository.Suppliers.OrderProcurement.Dtos;
 
 namespace ElbayaNPresentation.Presenters.Orders
@@ -22,10 +21,6 @@ namespace ElbayaNPresentation.Presenters.Orders
         public void FillProduct(ComboBox cbxProduct)
         {
             PopulateActiveProduct.PopulateProducts(cbxProduct);
-        }
-        public void PopulateClient(ComboBox Suppliers)
-        {
-            PopulateActiveSuppliers.PopulateSuppliers(Suppliers);
         }
         public void AddProductToDGV(Guid ID, DataGridView OrderProduct, decimal LastPrice)
         {
@@ -77,30 +72,6 @@ namespace ElbayaNPresentation.Presenters.Orders
                     SelectLastRow(OrderProduct);
                 }
             }
-        }
-        public List<OrderProductDto> GetOrderProducts(DataGridView OrderProduct)
-        {
-            List<OrderProductDto> orderProducts = new List<OrderProductDto>();
-            for (int i = 0; i <= OrderProduct.Rows.Count - 1; i++)
-            {
-                var orderProduct = new OrderProductDto()
-                {
-                    ProductId = new Guid(OrderProduct.Rows[i].Cells["OrderProductId"].Value.ToString()),
-                    ProductName = OrderProduct.Rows[i].Cells["ProductName"].Value.ToString(),
-                    Discount = Convert.ToDecimal(OrderProduct.Rows[i].Cells["Discount"].Value.ToString()),
-                    PriceSale = Convert.ToDecimal(OrderProduct.Rows[i].Cells["PriceTOQuantity"].Value.ToString()),
-                    Quantity = Convert.ToInt32(OrderProduct.Rows[i].Cells["Qunatity"].Value),
-                    SubTotalPrice = Convert.ToDecimal(OrderProduct.Rows[i].Cells["Qunatity"].Value.ToString()) *
-                                     Convert.ToDecimal(OrderProduct.Rows[i].Cells["PriceTOQuantity"].Value.ToString()),
-                    TotalPrice = (Convert.ToDecimal(OrderProduct.Rows[i].Cells["Qunatity"].Value.ToString()) *
-                                     Convert.ToDecimal(OrderProduct.Rows[i].Cells["PriceTOQuantity"].Value.ToString()))
-                                     + Convert.ToDecimal(OrderProduct.Rows[i].Cells["VATValue"].Value.ToString()),
-                    TotalProductPrice = Convert.ToDecimal(OrderProduct.Rows[i].Cells["Subtotal"].Value),
-                    Vat = Convert.ToDecimal(OrderProduct.Rows[i].Cells["VATValue"].Value)
-                };
-                orderProducts.Add(orderProduct);
-            }
-            return orderProducts;
         }
         public void GetProduct(ProductDto model, DataGridView OrderProduct, decimal LastPrice)
         {

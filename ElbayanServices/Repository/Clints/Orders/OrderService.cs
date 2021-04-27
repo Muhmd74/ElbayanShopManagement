@@ -44,7 +44,7 @@ namespace ElbayanServices.Repository.Clints.Orders
             return 0;
         }
 
-        public bool CreateCustomerOrder(OrderCustomerDto model)
+        public Guid CreateCustomerOrder(OrderCustomerDto model)
         {
 
             var order = _context.Orders.Add(new Order
@@ -52,10 +52,10 @@ namespace ElbayanServices.Repository.Clints.Orders
                 EmployeeId = model.EmployeeId,
                 IsDeferred = model.IsDeferred,
                 Deferred = model.Deferred,
-                DateTime =DateTime.UtcNow,
+                DateTime = model.DateTime,
                 Payment = model.Payment,
                 IsReturn = false,
-                OrderNumber = GenerateSequenceNumberSupplier(),
+                OrderNumber = model.OrderNumber,
                 OrderType = "مبيعات",
                 ClintId = model.ClintId,
                 TotalDiscount = model.TotalDiscount,
@@ -80,20 +80,19 @@ namespace ElbayanServices.Repository.Clints.Orders
                     OrderProductQuantity(orderProduct.ProductId, orderProduct.Quantity);
                     //اضافة الكميه الجديده الي جدول حركة المنتج 
                     OrderProductStock(orderProduct.ProductId, orderProduct.Quantity, order.Id);
-
                     OrderProductPrice(orderProduct.ProductId, productPriceOnce, orderProduct.Discount, orderProduct.Vat);
                     _context.SaveChanges();
                 }
               
             }
-            return true;
+            return order.Id;
         }
-        private void OrderProductPrice(Guid productId, decimal price, decimal discount, int vat)
+        private void OrderProductPrice(Guid productId, decimal price, decimal discount, decimal vat)
         {
             var product = _context.ProductPrices.Add(new ProductPrice()
             {
                 ProductId = productId,
-                DateTime = DateTime.UtcNow,
+                DateTime = DateTime.Now,
                 Discount = discount,
                 Vat = vat,
                 ProcPrice = price,
@@ -111,6 +110,7 @@ namespace ElbayanServices.Repository.Clints.Orders
                 Stock = quantity,
                 Id = Guid.NewGuid(),
                 DateTime = DateTime.UtcNow,
+                StockStatues = "مبيعات"
             });
         }
         private void OrderProductQuantity(Guid productId, int quantity)

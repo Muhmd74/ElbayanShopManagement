@@ -23,6 +23,6 @@ namespace ElbayaNPresentation.Presenters.Purchases.QuantityEditForm
         Guna2TextBox VatValue { get; set; }
         Guna2TextBox DiscountValue { get; set; }
         Guna2Button SaveQuantityt { get; set; }
-
+        bool IsPurchase { get; set; }
     }
 }

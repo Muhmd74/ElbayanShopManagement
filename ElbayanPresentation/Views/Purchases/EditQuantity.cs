@@ -48,6 +48,8 @@ namespace ElbayaNPresentation.Views.Purchases
         public Guna2TextBox VatValue { get => txtVatValue; set => txtVatValue = value; }
         public Guna2TextBox DiscountValue { get => txtDiscountValue; set => txtDiscountValue = value; }
         public decimal Vat { get; set; }
+        public bool IsPurchase { get; set; } = true;
+
         private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidateControls.ValidateTextBoxOnlyNumber(sender, e, txtQuantity);

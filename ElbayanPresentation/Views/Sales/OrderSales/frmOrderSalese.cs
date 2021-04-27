@@ -94,7 +94,8 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
                     if (dgvOrderProduct.SelectedRows.Count > 0)
                     {
                         //RowIndex = dgvOrderProduct.SelectedRows[0].Index;
-                        Presenter.PopulateQualityEdit();
+                        Presenter.PopulateQualityEdit(dgvOrderProduct);
+                        frmEditQuantity.Instance.IsPurchase = false;
                         frmEditQuantity.Instance.ShowDialog();
                     }
                     else
@@ -121,7 +122,8 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             {
                 if (dgvOrderProduct.SelectedRows.Count > 0)
                 {
-                    Presenter.PopulateQualityEdit();
+                    Presenter.PopulateQualityEdit(dgvOrderProduct);
+                    frmEditQuantity.Instance.IsPurchase = false;
                     frmEditQuantity.Instance.ShowDialog();
                 }
                 else
@@ -168,7 +170,6 @@ namespace ElbayaNPresentation.Views.Purchases.Procurement
             //printTools.ShowPreview();
             //Presenter.PrintReport();
         }
-
         private void btnNewOrder_Click(object sender, EventArgs e)
         {
             Presenter.ClearControl();
