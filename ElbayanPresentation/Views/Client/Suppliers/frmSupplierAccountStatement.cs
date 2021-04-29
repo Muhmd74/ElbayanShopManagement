@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,9 +16,11 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
         public frmSupplierAccountStatement()
         {
             InitializeComponent();
+            _instance = this;
         }
         private static frmSupplierAccountStatement _instance;
-
         public static frmSupplierAccountStatement Instance { get { if (_instance == null) _instance = new frmSupplierAccountStatement(); return _instance; } }
+
+       
     }
 }

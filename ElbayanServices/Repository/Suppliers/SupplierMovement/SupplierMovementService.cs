@@ -110,6 +110,7 @@ namespace ElbayanServices.Repository.Suppliers.SupplierMovement
             {
                 return _context.DeferredPayments
                     .Include(d => d.Clint)
+                    .Include(d => d.Order)
                     .OrderByDescending(d => d.CreatedDate)
                     .Select(d => new SupplierMovementDto()
                     {
@@ -120,7 +121,8 @@ namespace ElbayanServices.Repository.Suppliers.SupplierMovement
                         CollectingPaymentDate = d.CreatedDate,
                         DepositNumber = d.DepositNumber,
                         ClintId = d.ClintId,
-                        DueDatePayingOff = d.DueDatePayingOff
+                        DueDatePayingOff = d.DueDatePayingOff,
+                       OrderNumber = d.Order.OrderNumber
                     }).ToList();
             }
             catch (Exception e)

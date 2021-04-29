@@ -151,6 +151,7 @@ namespace ElbayanServices.Repository.Clints.Orders
                 DueDatePayingOff = dueDatePayingOff,
                 TotalPayment = 0,
                 ClintId = clintId,
+                PaymentType = "مبيعات أجل"
             });
             _context.SaveChanges();
         }

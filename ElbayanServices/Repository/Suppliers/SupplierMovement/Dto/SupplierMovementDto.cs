@@ -14,6 +14,7 @@ namespace ElbayanServices.Repository.Suppliers.SupplierMovement.Dto
         public string PaymentType { get; set; }// نوع الدفع كاش ولا بنك 
         public decimal Balance { get; set; }//مدين
         public decimal Payment { get; set; } //دائن
+        public long OrderNumber { get; set; }
 
     }
 }

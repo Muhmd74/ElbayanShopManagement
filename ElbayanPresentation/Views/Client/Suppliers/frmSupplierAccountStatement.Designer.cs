@@ -30,15 +30,15 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSupplierAccountStatement));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtpEndDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.dtpStartDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.cbxActiveProduct = new System.Windows.Forms.ComboBox();
+            this.cbxActiveSuppliers = new System.Windows.Forms.ComboBox();
             this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,7 +53,7 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.Credit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPrintStatement = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -68,7 +68,7 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.dtpStartDate);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.cbxActiveProduct);
+            this.groupBox2.Controls.Add(this.cbxActiveSuppliers);
             this.groupBox2.Controls.Add(this.btnSearch);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -144,16 +144,16 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.label4.TabIndex = 16;
             this.label4.Text = "من تاريخ : ";
             // 
-            // cbxActiveProduct
+            // cbxActiveSuppliers
             // 
-            this.cbxActiveProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxActiveProduct.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cbxActiveProduct.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbxActiveProduct.FormattingEnabled = true;
-            this.cbxActiveProduct.Location = new System.Drawing.Point(679, 24);
-            this.cbxActiveProduct.Name = "cbxActiveProduct";
-            this.cbxActiveProduct.Size = new System.Drawing.Size(188, 33);
-            this.cbxActiveProduct.TabIndex = 15;
+            this.cbxActiveSuppliers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxActiveSuppliers.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbxActiveSuppliers.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxActiveSuppliers.FormattingEnabled = true;
+            this.cbxActiveSuppliers.Location = new System.Drawing.Point(679, 24);
+            this.cbxActiveSuppliers.Name = "cbxActiveSuppliers";
+            this.cbxActiveSuppliers.Size = new System.Drawing.Size(188, 33);
+            this.cbxActiveSuppliers.TabIndex = 15;
             // 
             // btnSearch
             // 
@@ -233,26 +233,26 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.Credit,
             this.StockDateTime,
             this.Subtotal});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(171)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSearchResult.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(171)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSearchResult.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSearchResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSearchResult.Location = new System.Drawing.Point(3, 26);
             this.dgvSearchResult.Name = "dgvSearchResult";
             this.dgvSearchResult.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.OldLace;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSearchResult.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.OldLace;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSearchResult.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSearchResult.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.LemonChiffon;
             this.dgvSearchResult.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F);
             this.dgvSearchResult.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -305,8 +305,8 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             // 
             // StockDateTime
             // 
-            dataGridViewCellStyle4.Format = "dd/MM/yyyy";
-            this.StockDateTime.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
+            this.StockDateTime.DefaultCellStyle = dataGridViewCellStyle1;
             this.StockDateTime.HeaderText = "اليوم والتاريخ";
             this.StockDateTime.Name = "StockDateTime";
             this.StockDateTime.ReadOnly = true;
@@ -318,22 +318,22 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.Subtotal.ReadOnly = true;
             this.Subtotal.Visible = false;
             // 
-            // guna2Button1
+            // btnPrintStatement
             // 
-            this.guna2Button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button1.BorderRadius = 5;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.Gray;
-            this.guna2Button1.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Bold);
-            this.guna2Button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(858, 12);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(122, 35);
-            this.guna2Button1.TabIndex = 14;
-            this.guna2Button1.Text = "طباعة الكشف";
+            this.btnPrintStatement.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrintStatement.BorderRadius = 5;
+            this.btnPrintStatement.CheckedState.Parent = this.btnPrintStatement;
+            this.btnPrintStatement.CustomImages.Parent = this.btnPrintStatement;
+            this.btnPrintStatement.FillColor = System.Drawing.Color.Gray;
+            this.btnPrintStatement.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnPrintStatement.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPrintStatement.HoverState.Parent = this.btnPrintStatement;
+            this.btnPrintStatement.Location = new System.Drawing.Point(858, 12);
+            this.btnPrintStatement.Name = "btnPrintStatement";
+            this.btnPrintStatement.ShadowDecoration.Parent = this.btnPrintStatement;
+            this.btnPrintStatement.Size = new System.Drawing.Size(122, 35);
+            this.btnPrintStatement.TabIndex = 14;
+            this.btnPrintStatement.Text = "طباعة الكشف";
             // 
             // frmSupplierAccountStatement
             // 
@@ -344,7 +344,7 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.guna2Button1);
+            this.Controls.Add(this.btnPrintStatement);
             this.Movable = false;
             this.Name = "frmSupplierAccountStatement";
             this.Resizable = false;
@@ -369,7 +369,7 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpStartDate;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cbxActiveProduct;
+        private System.Windows.Forms.ComboBox cbxActiveSuppliers;
         private Guna.UI2.WinForms.Guna2Button btnSearch;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
@@ -384,6 +384,6 @@ namespace ElbayaNPresentation.Views.Client.Suppliers
         private System.Windows.Forms.DataGridViewTextBoxColumn Credit;
         private System.Windows.Forms.DataGridViewTextBoxColumn StockDateTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnPrintStatement;
     }
 }

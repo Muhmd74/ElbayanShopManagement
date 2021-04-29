@@ -116,6 +116,8 @@
     <Compile Include="Presenters\Clients\Customers\PresenterCustomers.cs" />
     <Compile Include="Presenters\Clients\Suppliers\PresenterNewSupplier.cs" />
     <Compile Include="Presenters\Clients\Suppliers\PresenterSuppliers.cs" />
+    <Compile Include="Presenters\Clients\Suppliers\SupplierDebit\IViewSupplierDebit.cs" />
+    <Compile Include="Presenters\Clients\Suppliers\SupplierDebit\PresenterSupplierDebit.cs" />
     <Compile Include="Presenters\CommonPresenter\DataGridViewStyle.cs" />
     <Compile Include="Presenters\CommonPresenter\NullableNumber.cs" />
     <Compile Include="Presenters\CommonPresenter\PopulateActiveProduct.cs" />

@@ -34,19 +34,13 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnPrint = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPrintStatement = new Guna.UI2.WinForms.Guna2Button();
             this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
-            this.cbxSuppliers = new System.Windows.Forms.ComboBox();
+            this.cbxActiveSuppliers = new System.Windows.Forms.ComboBox();
             this.rbOneSupplier = new System.Windows.Forms.RadioButton();
             this.rbAllSuppliers = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvSearchResult = new System.Windows.Forms.DataGridView();
-            this.OrderProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProcessType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Debit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StockDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -56,6 +50,13 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers
             this.label2 = new System.Windows.Forms.Label();
             this.rbPayPartOfDefered = new System.Windows.Forms.RadioButton();
             this.rbPayAllDefereds = new System.Windows.Forms.RadioButton();
+            this.OrderProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProcessType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Debit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StockDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClintId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).BeginInit();
@@ -65,9 +66,9 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnPrint);
+            this.groupBox1.Controls.Add(this.btnPrintStatement);
             this.groupBox1.Controls.Add(this.btnSearch);
-            this.groupBox1.Controls.Add(this.cbxSuppliers);
+            this.groupBox1.Controls.Add(this.cbxActiveSuppliers);
             this.groupBox1.Controls.Add(this.rbOneSupplier);
             this.groupBox1.Controls.Add(this.rbAllSuppliers);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -77,25 +78,25 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
-            // btnPrint
+            // btnPrintStatement
             // 
-            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrint.BorderRadius = 5;
-            this.btnPrint.CheckedState.Parent = this.btnPrint;
-            this.btnPrint.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.CustomImages.Image")));
-            this.btnPrint.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnPrint.CustomImages.Parent = this.btnPrint;
-            this.btnPrint.FillColor = System.Drawing.Color.Gray;
-            this.btnPrint.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnPrint.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPrint.HoverState.Parent = this.btnPrint;
-            this.btnPrint.Location = new System.Drawing.Point(46, 17);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.ShadowDecoration.Parent = this.btnPrint;
-            this.btnPrint.Size = new System.Drawing.Size(169, 35);
-            this.btnPrint.TabIndex = 15;
-            this.btnPrint.Text = "طباعة الكشف";
-            this.btnPrint.TextOffset = new System.Drawing.Point(-11, 0);
+            this.btnPrintStatement.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrintStatement.BorderRadius = 5;
+            this.btnPrintStatement.CheckedState.Parent = this.btnPrintStatement;
+            this.btnPrintStatement.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintStatement.CustomImages.Image")));
+            this.btnPrintStatement.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnPrintStatement.CustomImages.Parent = this.btnPrintStatement;
+            this.btnPrintStatement.FillColor = System.Drawing.Color.Gray;
+            this.btnPrintStatement.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnPrintStatement.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPrintStatement.HoverState.Parent = this.btnPrintStatement;
+            this.btnPrintStatement.Location = new System.Drawing.Point(46, 17);
+            this.btnPrintStatement.Name = "btnPrintStatement";
+            this.btnPrintStatement.ShadowDecoration.Parent = this.btnPrintStatement;
+            this.btnPrintStatement.Size = new System.Drawing.Size(169, 35);
+            this.btnPrintStatement.TabIndex = 15;
+            this.btnPrintStatement.Text = "طباعة الكشف";
+            this.btnPrintStatement.TextOffset = new System.Drawing.Point(-11, 0);
             // 
             // btnSearch
             // 
@@ -114,20 +115,20 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers
             this.btnSearch.TabIndex = 16;
             this.btnSearch.Text = "بحث | F3";
             // 
-            // cbxSuppliers
+            // cbxActiveSuppliers
             // 
-            this.cbxSuppliers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxSuppliers.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cbxSuppliers.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbxSuppliers.DropDownHeight = 150;
-            this.cbxSuppliers.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Bold);
-            this.cbxSuppliers.FormattingEnabled = true;
-            this.cbxSuppliers.IntegralHeight = false;
-            this.cbxSuppliers.ItemHeight = 25;
-            this.cbxSuppliers.Location = new System.Drawing.Point(435, 18);
-            this.cbxSuppliers.Name = "cbxSuppliers";
-            this.cbxSuppliers.Size = new System.Drawing.Size(205, 33);
-            this.cbxSuppliers.TabIndex = 11;
+            this.cbxActiveSuppliers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxActiveSuppliers.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbxActiveSuppliers.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxActiveSuppliers.DropDownHeight = 150;
+            this.cbxActiveSuppliers.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Bold);
+            this.cbxActiveSuppliers.FormattingEnabled = true;
+            this.cbxActiveSuppliers.IntegralHeight = false;
+            this.cbxActiveSuppliers.ItemHeight = 25;
+            this.cbxActiveSuppliers.Location = new System.Drawing.Point(435, 18);
+            this.cbxActiveSuppliers.Name = "cbxActiveSuppliers";
+            this.cbxActiveSuppliers.Size = new System.Drawing.Size(205, 33);
+            this.cbxActiveSuppliers.TabIndex = 11;
             // 
             // rbOneSupplier
             // 
@@ -180,7 +181,8 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers
             this.ProcessType,
             this.OrderNumber,
             this.Debit,
-            this.StockDateTime});
+            this.StockDateTime,
+            this.ClintId});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -207,51 +209,6 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers
             this.dgvSearchResult.RowTemplate.Height = 29;
             this.dgvSearchResult.Size = new System.Drawing.Size(878, 284);
             this.dgvSearchResult.TabIndex = 13;
-            // 
-            // OrderProductId
-            // 
-            this.OrderProductId.DataPropertyName = "Id";
-            this.OrderProductId.HeaderText = "رقم مرجعي المنتج";
-            this.OrderProductId.Name = "OrderProductId";
-            this.OrderProductId.ReadOnly = true;
-            this.OrderProductId.Visible = false;
-            // 
-            // SupplierName
-            // 
-            this.SupplierName.FillWeight = 147.4798F;
-            this.SupplierName.HeaderText = "اسم المورد";
-            this.SupplierName.Name = "SupplierName";
-            this.SupplierName.ReadOnly = true;
-            // 
-            // ProcessType
-            // 
-            this.ProcessType.FillWeight = 95.68217F;
-            this.ProcessType.HeaderText = "البيان";
-            this.ProcessType.Name = "ProcessType";
-            this.ProcessType.ReadOnly = true;
-            // 
-            // OrderNumber
-            // 
-            this.OrderNumber.FillWeight = 77.42466F;
-            this.OrderNumber.HeaderText = "رقم الفاتورة";
-            this.OrderNumber.Name = "OrderNumber";
-            this.OrderNumber.ReadOnly = true;
-            // 
-            // Debit
-            // 
-            this.Debit.FillWeight = 112.1535F;
-            this.Debit.HeaderText = "مدين (مستحق للمورد)";
-            this.Debit.Name = "Debit";
-            this.Debit.ReadOnly = true;
-            // 
-            // StockDateTime
-            // 
-            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
-            this.StockDateTime.DefaultCellStyle = dataGridViewCellStyle1;
-            this.StockDateTime.FillWeight = 74.69918F;
-            this.StockDateTime.HeaderText = "اليوم والتاريخ";
-            this.StockDateTime.Name = "StockDateTime";
-            this.StockDateTime.ReadOnly = true;
             // 
             // pictureBox1
             // 
@@ -394,6 +351,64 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers
             this.rbPayAllDefereds.Text = "تسديد كامل المستحقات";
             this.rbPayAllDefereds.UseVisualStyleBackColor = true;
             // 
+            // OrderProductId
+            // 
+            this.OrderProductId.DataPropertyName = "Id";
+            this.OrderProductId.HeaderText = "رقم مرجعي المنتج";
+            this.OrderProductId.Name = "OrderProductId";
+            this.OrderProductId.ReadOnly = true;
+            this.OrderProductId.Visible = false;
+            // 
+            // SupplierName
+            // 
+            this.SupplierName.DataPropertyName = "ClintName";
+            this.SupplierName.FillWeight = 147.4798F;
+            this.SupplierName.HeaderText = "اسم المورد";
+            this.SupplierName.Name = "SupplierName";
+            this.SupplierName.ReadOnly = true;
+            // 
+            // ProcessType
+            // 
+            this.ProcessType.DataPropertyName = "PaymentType";
+            this.ProcessType.FillWeight = 95.68217F;
+            this.ProcessType.HeaderText = "البيان";
+            this.ProcessType.Name = "ProcessType";
+            this.ProcessType.ReadOnly = true;
+            // 
+            // OrderNumber
+            // 
+            this.OrderNumber.DataPropertyName = "OrderNumber";
+            this.OrderNumber.FillWeight = 77.42466F;
+            this.OrderNumber.HeaderText = "رقم الفاتورة";
+            this.OrderNumber.Name = "OrderNumber";
+            this.OrderNumber.ReadOnly = true;
+            // 
+            // Debit
+            // 
+            this.Debit.DataPropertyName = "Balance";
+            this.Debit.FillWeight = 112.1535F;
+            this.Debit.HeaderText = "مدين (مستحق للمورد)";
+            this.Debit.Name = "Debit";
+            this.Debit.ReadOnly = true;
+            // 
+            // StockDateTime
+            // 
+            this.StockDateTime.DataPropertyName = "CollectingPaymentDate";
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
+            this.StockDateTime.DefaultCellStyle = dataGridViewCellStyle1;
+            this.StockDateTime.FillWeight = 74.69918F;
+            this.StockDateTime.HeaderText = "اليوم والتاريخ";
+            this.StockDateTime.Name = "StockDateTime";
+            this.StockDateTime.ReadOnly = true;
+            // 
+            // ClintId
+            // 
+            this.ClintId.DataPropertyName = "ClintId";
+            this.ClintId.HeaderText = "الرقم المرجعي للعميل";
+            this.ClintId.Name = "ClintId";
+            this.ClintId.ReadOnly = true;
+            this.ClintId.Visible = false;
+            // 
             // frmSupplierDebits
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -427,17 +442,11 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbOneSupplier;
         private System.Windows.Forms.RadioButton rbAllSuppliers;
-        private System.Windows.Forms.ComboBox cbxSuppliers;
-        private Guna.UI2.WinForms.Guna2Button btnPrint;
+        private System.Windows.Forms.ComboBox cbxActiveSuppliers;
+        private Guna.UI2.WinForms.Guna2Button btnPrintStatement;
         private Guna.UI2.WinForms.Guna2Button btnSearch;
         private System.Windows.Forms.GroupBox groupBox2;
         public System.Windows.Forms.DataGridView dgvSearchResult;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OrderProductId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProcessType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OrderNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Debit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StockDateTime;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -447,5 +456,12 @@ namespace ElbayaNPresentation.Views.Purchases.Suppliers
         private Guna.UI2.WinForms.Guna2TextBox txtTotalSupplierDefered;
         private System.Windows.Forms.Label lblCurency;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderProductId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProcessType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Debit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StockDateTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClintId;
     }
 }
