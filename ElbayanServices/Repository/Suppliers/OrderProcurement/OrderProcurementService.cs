@@ -77,7 +77,6 @@ namespace ElbayanServices.Repository.Suppliers.OrderProcurement
 
             });
         }
-
         private decimal LastPaymentLeft(Guid clintId)
         {
             var balance = _context.DeferredPayments.OrderByDescending(d => d.CreatedDate)
@@ -155,7 +154,7 @@ namespace ElbayanServices.Repository.Suppliers.OrderProcurement
         }
         public decimal GetLastProductPrice(Guid productId)
         {
-            var product = _context.ProductPrices.OrderBy(d => d.DateTime)
+            var product = _context.ProductPrices.OrderByDescending(d => d.DateTime)
                 .FirstOrDefault(d => d.ProcessType == "مشتريات" && d.ProductId == productId);
             if (product != null)
             {
@@ -163,7 +162,6 @@ namespace ElbayanServices.Repository.Suppliers.OrderProcurement
             }
             return 0;
         }
-
         public List<InvoiceDetailsDto> PrintInvoice(Guid orderId)
         {
             var order = _context.Orders

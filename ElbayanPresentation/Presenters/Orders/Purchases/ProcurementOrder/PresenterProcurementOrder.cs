@@ -171,20 +171,21 @@ namespace ElbayaNPresentation.Presenters.Purchases.ProcurementOrder
             List<OrderProductDto> orderProducts = new List<OrderProductDto>();
             for (int i = 0; i <= OrderProduct.Rows.Count - 1; i++)
             {
+                decimal subTotal = Convert.ToDecimal(OrderProduct.Rows[i].Cells["Qunatity"].Value.ToString()) *
+                                     Convert.ToDecimal(OrderProduct.Rows[i].Cells["PriceTOQuantity"].Value.ToString());
+                decimal totalProduct = subTotal - Convert.ToDecimal(OrderProduct.Rows[i].Cells["Discount"].Value);
                 var orderProduct = new OrderProductDto()
                 {
                     ProductId = new Guid(OrderProduct.Rows[i].Cells["OrderProductId"].Value.ToString()),
                     ProductName = OrderProduct.Rows[i].Cells["ProductName"].Value.ToString(),
-                    Discount = Convert.ToDecimal(OrderProduct.Rows[i].Cells["Discount"].Value.ToString()),
-                    PriceSale = Convert.ToDecimal(OrderProduct.Rows[i].Cells["PriceTOQuantity"].Value.ToString()),
                     Quantity = Convert.ToInt32(OrderProduct.Rows[i].Cells["Qunatity"].Value),
-                    SubTotalPrice = Convert.ToDecimal(OrderProduct.Rows[i].Cells["Qunatity"].Value.ToString()) *
-                                     Convert.ToDecimal(OrderProduct.Rows[i].Cells["PriceTOQuantity"].Value.ToString()),
-                    TotalPrice = (Convert.ToDecimal(OrderProduct.Rows[i].Cells["Qunatity"].Value.ToString()) *
-                                     Convert.ToDecimal(OrderProduct.Rows[i].Cells["PriceTOQuantity"].Value.ToString()))
-                                     + Convert.ToDecimal(OrderProduct.Rows[i].Cells["VATValue"].Value.ToString()),
-                    TotalProductPrice = Convert.ToDecimal(OrderProduct.Rows[i].Cells["Subtotal"].Value),
-                    Vat = Convert.ToDecimal(OrderProduct.Rows[i].Cells["VATValue"].Value)
+                    PriceSale = Convert.ToDecimal(OrderProduct.Rows[i].Cells["PriceTOQuantity"].Value.ToString()),
+                    Discount = Convert.ToDecimal(OrderProduct.Rows[i].Cells["Discount"].Value.ToString()),
+                    SubTotalPrice = subTotal,
+                    TotalProductPrice = totalProduct,
+                    Vat = Convert.ToDecimal(OrderProduct.Rows[i].Cells["VATValue"].Value),
+                    TotalPrice = totalProduct +
+                                  Convert.ToDecimal(OrderProduct.Rows[i].Cells["VATValue"].Value),
                 };
                 orderProducts.Add(orderProduct);
             }

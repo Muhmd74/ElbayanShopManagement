@@ -1,21 +1,51 @@
 ﻿using System;
 using System.Linq;
 using ElbayanDatabase.ConnectionTools;
+using System.Data.Entity;
 using ElbayanDatabase.DataClasses.Clints.Sales;
 using ElbayanDatabase.DataClasses.Product;
 using ElbayanServices.Repository.Suppliers.OrderReturn.Dtos;
+using System.Collections.Generic;
 
 namespace ElbayanServices.Repository.Suppliers.OrderReturn
 {
     public class SupplierOrderReturnService : IOrderReturn, IDisposable
     {
         private readonly ConnectionOption _context;
-
         public SupplierOrderReturnService(ConnectionOption context)
         {
             _context = context;
         }
-
+        public OrderReturnDto GetPurchaseOrderByOrderNumber(long orderNumber)
+        {
+            var order = _context.Orders
+                              .Include(d => d.OrderProduct)
+                              .Include(d => d.Clint)
+                              .Where(d => d.OrderNumber == orderNumber).FirstOrDefault();
+            if (order != null)
+            {
+                return new OrderReturnDto()
+                {
+                    DateTime = order.DateTime,
+                    SupplierName = order.Clint.Name,
+                    TotalAfterDiscount = order.TotalAfterDiscount,
+                    Payment = order.Payment,
+                    Deferred = order.Deferred,
+                    
+                    OrderReturnProduct = order.OrderProduct.Select(d => new OrderReturnProductDto()
+                    {
+                        ProductName = d.Name,
+                        Quantity = d.Quantity,
+                        PriceSale = d.PriceSale,
+                        Discount = d.Discount,
+                        Vat = d.Vat,
+                        SubTotalPrice = d.SubTotalPrice,
+                        TotalPrice = d.TotalPrice
+                    }).ToList(),
+                };
+            }
+            return null;
+        }
         public Guid CreateSupplierOrderReturn(OrderReturnDto model)
         {
             var order = _context.Orders.Add(new Order()
@@ -39,7 +69,6 @@ namespace ElbayanServices.Repository.Suppliers.OrderReturn
             {
                 CreateDeferredPayments(model.ClintId, order.Deferred, order.Id, model.DueDatePayingOff);
             }
-
             foreach (var orderProduct in model.OrderReturnProduct)
             {
                 var productPriceOnce = orderProduct.PriceSale / orderProduct.Quantity;
@@ -84,7 +113,7 @@ namespace ElbayanServices.Repository.Suppliers.OrderReturn
         {
             var product = _context.Products.FirstOrDefault(d => d.Id == productId);
 
-            if (product!=null)
+            if (product != null)
             {
                 var productQuantity = product.TotalQuantity;
                 productQuantity = productQuantity - quantity;

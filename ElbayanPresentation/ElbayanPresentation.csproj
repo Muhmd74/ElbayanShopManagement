@@ -137,6 +137,8 @@
     <Compile Include="Presenters\Orders\PresenterOrder.cs" />
     <Compile Include="Presenters\Orders\Purchases\ProcurementOrder\IViewProcurementOrder.cs" />
     <Compile Include="Presenters\Orders\Purchases\ProcurementOrder\PresenterProcurementOrder.cs" />
+    <Compile Include="Presenters\Orders\Purchases\PurchaseReturn\IViewPurchaseReturn.cs" />
+    <Compile Include="Presenters\Orders\Purchases\PurchaseReturn\PresenterPurchaseReturn.cs" />
     <Compile Include="Presenters\Orders\Purchases\QuantityEditForm\IViewQuantityEdit.cs" />
     <Compile Include="Presenters\Orders\Purchases\QuantityEditForm\PresenterQuantityEdit.cs" />
     <Compile Include="Presenters\Orders\Purchases\Supplier\AllSuppliers\IViewAllSuppleir.cs" />

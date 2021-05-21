@@ -9,6 +9,7 @@ namespace ElbayanServices.Repository.Suppliers.OrderReturn.Dtos
         public DateTime DateTime { get; set; }
         public DateTime DueDatePayingOff { get; set; }
         public Guid ClintId { get; set; }
+        public string SupplierName { get; set; }
         public decimal SubTotalWithoutDiscount { get; set; }// sum all  TotalPrice
         public decimal TotalDiscount { get; set; }
         public long OrderNumber { get; set; }

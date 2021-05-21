@@ -128,8 +128,8 @@ namespace ElbayaNPresentation.Presenters.Orders
             frmEditQuantity.Instance.txtQuantity.SelectAll();
             frmEditQuantity.Instance.txtQuantity.Select();
             int index = OrderProduct.SelectedRows[0].Index;
-            frmEditQuantity.Instance.Quantity.Text = "1";
-            frmEditQuantity.Instance.DefaultPrice.Text = OrderProduct.Rows[index].Cells["LastPurchasePrice"].Value.ToString();
+            frmEditQuantity.Instance.Quantity.Text = OrderProduct.Rows[index].Cells["Qunatity"].Value.ToString();
+            frmEditQuantity.Instance.DefaultPrice.Text = OrderProduct.Rows[index].Cells["PriceTOQuantity"].Value.ToString();
             frmEditQuantity.Instance.Discount.Text = OrderProduct.Rows[index].Cells["DiscountPercent"].Value.ToString();
 
             frmEditQuantity.Instance.Subtotal.Text = Math.Round((Convert.ToDecimal(frmEditQuantity.Instance.Quantity.Text)

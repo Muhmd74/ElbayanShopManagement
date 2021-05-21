@@ -74,7 +74,7 @@ namespace ElbayaNPresentation.Presenters.Purchases.QuantityEditForm
             {
                 int index = frmOrderPurchase.Intance.OrderProduct.SelectedRows[0].Index;
                 frmOrderPurchase.Intance.dgvOrderProduct.Rows[index].Cells["Qunatity"].Value = _view.Quantity.Text;
-                frmOrderPurchase.Intance.dgvOrderProduct.Rows[index].Cells["PriceTOQuantity"].Value = _view.DefaultPrice.Text;
+                frmOrderPurchase.Intance.dgvOrderProduct.Rows[index].Cells["PriceTOQuantity"].Value = _view.Subtotal.Text;
                 frmOrderPurchase.Intance.dgvOrderProduct.Rows[index].Cells["Discount"].Value = _view.DiscountValue.Text;
                 decimal VatValuetxt = Convert.ToDecimal(_view.VatValue.Text);
                 int VATValue = Convert.ToInt32(VatValuetxt);
